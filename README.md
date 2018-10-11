@@ -1,1 +1,0 @@
-# studyz.github.io
