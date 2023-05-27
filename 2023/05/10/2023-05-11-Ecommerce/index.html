@@ -1,0 +1,1888 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    
+
+<script>!function(){var e=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,t=localStorage.getItem("use-color-scheme")||"auto";("dark"===t||e&&"light"!==t)&&document.documentElement.classList.toggle("dark",!0)}()</script>
+
+<meta charset="utf-8" >
+
+<title>基于K-MEANS模型和RFM分类模型的订单交易用户价值分析</title>
+<meta name="keywords" content="基于K-MEANS模型和RFM分类模型的订单交易用户价值分析, Studyz的笔记">
+<meta name="description" content="
+Introduction名词解释K-MEANS聚类 是一种无监督学习的聚类方法,它根据样本之间的相似度将样本分成 K 个簇,每个样本只属于一个簇。
+RFM客户分类 是根据客户的购买时间、购买频率和购买金额3个维度的趋势将客户分成不同细分层">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="stylesheet" href="/style/main.css">
+
+
+<link rel="stylesheet" href="/style/jquery.fancybox.min.css">
+
+
+
+
+    <link rel="stylesheet" href="/style/prism.css"/>
+
+
+
+
+  <meta name="generator" content="Hexo 6.3.0"></head>
+  <body>
+    <div id="app" class="main">
+
+<div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://studyz.github.io">
+        <img class="avatar" src="/images/avatar.png" alt="logo" width="32px" height="32px">
+      </a>
+      <a href="https://studyz.github.io">
+        <h1 class="site-title">Studyz的笔记</h1>
+      </a>
+    </div>
+    <div class="right">
+        <i class="icon menu-switch icon-menu-outline" ></i>
+    </div>
+  </div>
+</div>
+
+<div class="menu-container" style="height: 0;opacity: 0;">
+<nav class="menu-list">
+  
+    
+      <a href="/" class="menu purple-link">
+        首页
+      </a>
+    
+  
+    
+      <a href="/tags" class="menu purple-link">
+        标签
+      </a>
+    
+  
+    
+      <a href="/archives" class="menu purple-link">
+        归档
+      </a>
+    
+  
+    
+      <a href="/about" class="menu purple-link">
+        关于
+      </a>
+    
+  
+</nav>
+</div>
+
+
+
+  <div class="content-container">
+    <div class="post-detail">
+      
+      <h2 class="post-title">基于K-MEANS模型和RFM分类模型的订单交易用户价值分析</h2>
+      <div class="post-info post-detail-info">
+        <span><i class="icon icon-calendar-outline"></i> 2023-05-10</span>
+        
+          <span>
+          <i class="icon icon-pricetags-outline"></i>
+            
+              <a href="/tags/%E7%AC%94%E8%AE%B0/">
+              笔记
+                
+                  ，
+                
+              </a>
+            
+              <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
+              机器学习
+                
+                  ，
+                
+              </a>
+            
+              <a href="/tags/RFM/">
+              RFM
+                
+                  ，
+                
+              </a>
+            
+              <a href="/tags/K-MEANS/">
+              K-MEANS
+                
+              </a>
+            
+          </span>
+        
+      </div>
+      <div class="post-content-wrapper">
+        <div class="post-content">
+          <hr>
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><h3 id="名词解释"><a href="#名词解释" class="headerlink" title="名词解释"></a>名词解释</h3><p><code>K-MEANS聚类</code> 是一种无监督学习的聚类方法,它根据样本之间的相似度将样本分成 K 个簇,每个样本只属于一个簇。</p>
+<p><code>RFM客户分类</code> 是根据客户的购买时间、购买频率和购买金额3个维度的趋势将客户分成不同细分层,每个客户可能属于多个层。</p>
+<p><code>二者区别</code></p>
+<ul>
+<li><code>K-MEANS聚类</code>是一种更广义的聚类方法,可以在任意数据集上进行聚类,但是结果的解释性较差。</li>
+<li><code>RFM客户分类</code> 是一种针对客户数据的特定聚类方法,它只考虑 3 个重要特征,但是结果的可解释性很好,不同层代表的客户类型很清晰。</li>
+</ul>
+<p><code>适用场景</code></p>
+<ul>
+<li>如果目的是发掘数据集中的潜在客户分类,而不仅限于已有的<code>RFM客户分类</code>，<code>K-MEANS聚类</code>会更合适。</li>
+<li>如果针对客户购买数据进行细分,并希望结果具有很强的解释性，<code>RFM客户分类</code>会更加实用。</li>
+<li>也可以先使用<code>K-MEANS聚类</code>对全部客户进行初步分类，然后在每个簇内分别使用<code>RFM客户分类</code>进行进一步细分，这样可以充分利用两种方法的优点。</li>
+</ul>
+<h3 id="项目目的"><a href="#项目目的" class="headerlink" title="项目目的"></a>项目目的</h3><p>本项目旨在使用数据挖掘技术对客户进行分类，以实现精准营销。具体目的如下：</p>
+<ul>
+<li><p>使用<code>K-MEANS聚类</code>初步发现数据集中的大类客户群，为进一步客户细分提供参考。</p>
+</li>
+<li><p>在每个大类内使用<code>RFM客户分类</code>细分，发挥<code>RFM客户分类</code>在表达性强和结果易解释这两个方面的优势。因为在同一大类内,客户的属性相近,所以<code>RFM客户分类</code>细分结果也比较容易理解。</p>
+</li>
+<li><p>结合<code>K-MEANS聚类</code>和<code>RFM客户分类</code>两种方法的优势,进行全面而深入的客户分类，更好地了解客户需求和购买习惯，制定更针对性的营销策略，从而实现精准营销的目的。</p>
+</li>
+</ul>
+<h2 id="Import-Libraries"><a href="#Import-Libraries" class="headerlink" title="Import Libraries"></a>Import Libraries</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np 
+<span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
+<span class="token keyword">import</span> seaborn <span class="token keyword">as</span> sns
+<span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
+<span class="token keyword">import</span> datetime
+<span class="token comment"># 忽略警告提示</span>
+<span class="token keyword">import</span> warnings
+warnings<span class="token punctuation">.</span>filterwarnings<span class="token punctuation">(</span><span class="token string">'ignore'</span><span class="token punctuation">)</span>
+<span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>cluster <span class="token keyword">import</span> KMeans<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="Importing-Data"><a href="#Importing-Data" class="headerlink" title="Importing Data"></a>Importing Data</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># read data from CSV files</span>
+df_initial <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'./data/data.csv'</span><span class="token punctuation">,</span>encoding<span class="token operator">=</span><span class="token string">"ISO-8859-1"</span><span class="token punctuation">,</span>
+                         dtype<span class="token operator">=</span><span class="token punctuation">&#123;</span><span class="token string">'CustomerID'</span><span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">,</span><span class="token string">'InvoiceID'</span><span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+data_df <span class="token operator">=</span> df_initial<span class="token punctuation">.</span>copy<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="Exploring-Data-Analysis-EDA"><a href="#Exploring-Data-Analysis-EDA" class="headerlink" title="Exploring Data Analysis(EDA)"></a>Exploring Data Analysis(EDA)</h2><h3 id="查看数据信息"><a href="#查看数据信息" class="headerlink" title="查看数据信息"></a>查看数据信息</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python">data_df<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<pre><code>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 541909 entries, 0 to 541908
+Data columns (total 8 columns):
+ #   Column       Non-Null Count   Dtype  
+---  ------       --------------   -----  
+ 0   InvoiceNo    541909 non-null  object 
+ 1   StockCode    541909 non-null  object 
+ 2   Description  540455 non-null  object 
+ 3   Quantity     541909 non-null  int64  
+ 4   InvoiceDate  541909 non-null  object 
+ 5   UnitPrice    541909 non-null  float64
+ 6   CustomerID   406829 non-null  object 
+ 7   Country      541909 non-null  object 
+dtypes: float64(1), int64(1), object(6)
+memory usage: 33.1+ MB
+</code></pre>
+<h3 id="查看缺失值"><a href="#查看缺失值" class="headerlink" title="查看缺失值"></a>查看缺失值</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span>data_df<span class="token punctuation">.</span>isna<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>mean<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">*</span><span class="token number">100</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>data_df<span class="token punctuation">.</span>isna<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token builtin">sum</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<pre><code>InvoiceNo       0.000000
+StockCode       0.000000
+Description     0.268311
+Quantity        0.000000
+InvoiceDate     0.000000
+UnitPrice       0.000000
+CustomerID     24.926694
+Country         0.000000
+dtype: float64
+InvoiceNo           0
+StockCode           0
+Description      1454
+Quantity            0
+InvoiceDate         0
+UnitPrice           0
+CustomerID     135080
+Country             0
+dtype: int64
+</code></pre>
+<h3 id="查看重复值"><a href="#查看重复值" class="headerlink" title="查看重复值"></a>查看重复值</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'重复的数据条目: &#123;&#125;'</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>data_df<span class="token punctuation">.</span>duplicated<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token builtin">sum</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<pre><code>重复的数据条目: 5268
+</code></pre>
+<h3 id="查看异常值"><a href="#查看异常值" class="headerlink" title="查看异常值"></a>查看异常值</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python">sns<span class="token punctuation">.</span>boxplot<span class="token punctuation">(</span>data<span class="token operator">=</span>data_df<span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">'UnitPrice'</span><span class="token punctuation">,</span><span class="token string">'Quantity'</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+<p><a href="/output_16_0.png" data-fancybox="lightbox" data-caption="png"><img src="/2023/05/10/2023-05-11-Ecommerce/output_16_0.png" alt="png"></a></p>
+<h2 id="Data-Cleaning"><a href="#Data-Cleaning" class="headerlink" title="Data Cleaning"></a>Data Cleaning</h2><h3 id="缺失值处理"><a href="#缺失值处理" class="headerlink" title="缺失值处理"></a>缺失值处理</h3><p>CustomerID ~25%的数据记录为空的，这意味着有约25%的数据记录没有分配给任何客户。而我们目前没有数据可以将这些数据匹配到到任何客户。所以目前这些数据是没有用的，因此我们可以将其删除</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">data_df<span class="token punctuation">.</span>dropna<span class="token punctuation">(</span>axis <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> subset <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'CustomerID'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>inplace <span class="token operator">=</span> <span class="token boolean">True</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span>data_df<span class="token punctuation">.</span>isna<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token builtin">sum</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>data_df<span class="token punctuation">.</span>shape<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<pre><code>InvoiceNo      0
+StockCode      0
+Description    0
+Quantity       0
+InvoiceDate    0
+UnitPrice      0
+CustomerID     0
+Country        0
+dtype: int64
+(406829, 8)
+</code></pre>
+<h3 id="重复值处理"><a href="#重复值处理" class="headerlink" title="重复值处理"></a>重复值处理</h3><blockquote>
+<p>处理缺失值后，查看是否有重复值，有的话删除</p>
+</blockquote>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">data_df<span class="token punctuation">.</span>drop_duplicates<span class="token punctuation">(</span>inplace <span class="token operator">=</span> <span class="token boolean">True</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="异常值处理"><a href="#异常值处理" class="headerlink" title="异常值处理"></a>异常值处理</h3><h4 id="lt-x3D-0的记录"><a href="#lt-x3D-0的记录" class="headerlink" title="&lt;&#x3D;0的记录"></a>&lt;&#x3D;0的记录</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python">Quantity_zero_count <span class="token operator">=</span> <span class="token builtin">len</span><span class="token punctuation">(</span>data_df<span class="token punctuation">[</span>data_df<span class="token punctuation">[</span><span class="token string">'Quantity'</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+Quantity_nega_count <span class="token operator">=</span> <span class="token builtin">len</span><span class="token punctuation">(</span>data_df<span class="token punctuation">[</span>data_df<span class="token punctuation">[</span><span class="token string">'Quantity'</span><span class="token punctuation">]</span> <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'Quantity=0的个数：</span><span class="token interpolation"><span class="token punctuation">&#123;</span>Quantity_zero_count<span class="token punctuation">&#125;</span></span><span class="token string">\nQuantity&lt;0的个数：</span><span class="token interpolation"><span class="token punctuation">&#123;</span>Quantity_nega_count<span class="token punctuation">&#125;</span></span><span class="token string">'</span></span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre><code>Quantity=0的个数：0
+Quantity&lt;0的个数：8872
+</code></pre>
+<blockquote>
+<p>quantity不存在0值。quantity负值与正数对称，应该是退款，暂不考虑退款，将quantity负数值直接删除。</p>
+</blockquote>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">data_df <span class="token operator">=</span> data_df<span class="token punctuation">[</span>data_df<span class="token punctuation">[</span><span class="token string">'Quantity'</span><span class="token punctuation">]</span> <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 计算UnitPrice为0的数量</span>
+UnitPrice_zero_count <span class="token operator">=</span> <span class="token builtin">len</span><span class="token punctuation">(</span>data_df<span class="token punctuation">[</span>data_df<span class="token punctuation">[</span><span class="token string">'UnitPrice'</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'UnitPrice是0的个数：</span><span class="token interpolation"><span class="token punctuation">&#123;</span>UnitPrice_zero_count<span class="token punctuation">&#125;</span></span><span class="token string">'</span></span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<pre><code>UnitPrice是0的个数：40
+</code></pre>
+<blockquote>
+<p>UnitPrice不存在小于0的记录。等于 0 的记录，对模型没有影响，删除处理以减少数据复杂度。</p>
+</blockquote>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">data_df <span class="token operator">=</span> data_df<span class="token punctuation">[</span>data_df<span class="token punctuation">[</span><span class="token string">'UnitPrice'</span><span class="token punctuation">]</span> <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h4 id="Country"><a href="#Country" class="headerlink" title="Country"></a>Country</h4><blockquote>
+<p>由于客户集群可能因地理位置而异，这里将数据限制为包含大多数客户数据的英国客户</p>
+</blockquote>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">data_df<span class="token punctuation">.</span>Country<span class="token punctuation">.</span>value_counts<span class="token punctuation">(</span>normalize<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span> <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+
+<pre><code>Country
+United Kingdom          0.889254
+Germany                 0.022982
+France                  0.021202
+EIRE                    0.018401
+Spain                   0.006313
+Netherlands             0.006007
+Belgium                 0.005172
+Switzerland             0.004688
+Portugal                0.003700
+Australia               0.003007
+Norway                  0.002727
+Italy                   0.001930
+Channel Islands         0.001902
+Finland                 0.001744
+Cyprus                  0.001536
+Sweden                  0.001146
+Austria                 0.001014
+Denmark                 0.000968
+Poland                  0.000840
+Japan                   0.000817
+Israel                  0.000624
+Unspecified             0.000614
+Singapore               0.000565
+Iceland                 0.000463
+USA                     0.000456
+Canada                  0.000385
+Greece                  0.000369
+Malta                   0.000285
+United Arab Emirates    0.000173
+European Community      0.000153
+RSA                     0.000145
+Lebanon                 0.000115
+Lithuania               0.000089
+Brazil                  0.000081
+Czech Republic          0.000064
+Bahrain                 0.000043
+Saudi Arabia            0.000023
+Name: proportion, dtype: float64
+</code></pre>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">data_df <span class="token operator">=</span> data_df<span class="token punctuation">[</span>data_df<span class="token punctuation">.</span>Country <span class="token operator">==</span> <span class="token string">'United Kingdom'</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><blockquote>
+<p>将 “InvoiceDate” 列转换为日期格式,方便后续计算使用</p>
+</blockquote>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">data_df<span class="token punctuation">[</span><span class="token string">'InvoiceDate'</span><span class="token punctuation">]</span> <span class="token operator">=</span> pd<span class="token punctuation">.</span>to_datetime<span class="token punctuation">(</span>data_df<span class="token punctuation">[</span><span class="token string">'InvoiceDate'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="RFM数据预处理"><a href="#RFM数据预处理" class="headerlink" title="RFM数据预处理"></a>RFM数据预处理</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span>data_df<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>data_df<span class="token punctuation">[</span><span class="token string">'CustomerID'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>unique<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<pre><code>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+Index: 349203 entries, 0 to 541893
+Data columns (total 8 columns):
+ #   Column       Non-Null Count   Dtype         
+---  ------       --------------   -----         
+ 0   InvoiceNo    349203 non-null  object        
+ 1   StockCode    349203 non-null  object        
+ 2   Description  349203 non-null  object        
+ 3   Quantity     349203 non-null  int64         
+ 4   InvoiceDate  349203 non-null  datetime64[ns]
+ 5   UnitPrice    349203 non-null  float64       
+ 6   CustomerID   349203 non-null  object        
+ 7   Country      349203 non-null  object        
+dtypes: datetime64[ns](1), float64(1), int64(1), object(5)
+memory usage: 24.0+ MB
+None
+3920
+</code></pre>
+<h3 id="Recency"><a href="#Recency" class="headerlink" title="Recency"></a>Recency</h3><blockquote>
+<p>计算每个客户最近一次距今的天数</p>
+</blockquote>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">inoviceDate_df <span class="token operator">=</span> data_df<span class="token punctuation">.</span>groupby<span class="token punctuation">(</span><span class="token string">'CustomerID'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token string">'InvoiceDate'</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token builtin">max</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>reset_index<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+recency_df <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span>columns<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'CustomerID'</span><span class="token punctuation">,</span> <span class="token string">'Recency'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+recency_df<span class="token punctuation">[</span><span class="token string">'CustomerID'</span><span class="token punctuation">]</span> <span class="token operator">=</span> inoviceDate_df<span class="token punctuation">[</span><span class="token string">'CustomerID'</span><span class="token punctuation">]</span>
+
+<span class="token comment"># 实际业务中通常是根据当前日期计算</span>
+<span class="token comment"># today = pd.Timestamp(datetime.date.today())</span>
+<span class="token comment"># 因为本项目数据久远，以数据中最新日期的月底日期计算Recency</span>
+invoice_date <span class="token operator">=</span> inoviceDate_df<span class="token punctuation">[</span><span class="token string">'InvoiceDate'</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token builtin">max</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+latest_date <span class="token operator">=</span> pd<span class="token punctuation">.</span>Timestamp<span class="token punctuation">(</span>year<span class="token operator">=</span>invoice_date<span class="token punctuation">.</span>year<span class="token punctuation">,</span> month<span class="token operator">=</span>invoice_date<span class="token punctuation">.</span>month<span class="token punctuation">,</span> day<span class="token operator">=</span>pd<span class="token punctuation">.</span>Period<span class="token punctuation">(</span>invoice_date<span class="token punctuation">,</span> freq<span class="token operator">=</span><span class="token string">'M'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>days_in_month<span class="token punctuation">)</span>
+<span class="token comment"># latest date - customer latest date = Recency</span>
+recency_df<span class="token punctuation">[</span><span class="token string">'Recency'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">(</span>latest_date <span class="token operator">-</span> inoviceDate_df<span class="token punctuation">[</span><span class="token string">'InvoiceDate'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span>dt<span class="token punctuation">.</span>days<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="查看Recency的分布"><a href="#查看Recency的分布" class="headerlink" title="查看Recency的分布"></a>查看Recency的分布</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python"> <span class="token comment"># 创建箱线图</span>
+sns<span class="token punctuation">.</span>boxplot<span class="token punctuation">(</span>data<span class="token operator">=</span>recency_df<span class="token punctuation">)</span>
+
+<span class="token comment"># 添加标题和坐标轴标签</span>
+plt<span class="token punctuation">.</span>title<span class="token punctuation">(</span><span class="token string">'Standardized RFM Data'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>xlabel<span class="token punctuation">(</span><span class="token string">'Features'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>ylabel<span class="token punctuation">(</span><span class="token string">'Normalized Values'</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 显示图像</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<p><a href="/output_42_0.png" data-fancybox="lightbox" data-caption="png"><img src="/2023/05/10/2023-05-11-Ecommerce/output_42_0.png" alt="png"></a></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">recency_df<span class="token punctuation">.</span>describe<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style><p></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Recency</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>3920.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>112.742092</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>99.533485</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>21.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>38.000000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>71.000000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>163.000000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>394.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<h4 id="可视化"><a href="#可视化" class="headerlink" title="可视化"></a>可视化</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python">sns<span class="token punctuation">.</span>histplot<span class="token punctuation">(</span>data<span class="token operator">=</span>recency_df<span class="token punctuation">,</span> x<span class="token operator">=</span><span class="token string">'Recency'</span><span class="token punctuation">,</span> bins<span class="token operator">=</span><span class="token number">100</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+<p><a href="/output_45_0.png" data-fancybox="lightbox" data-caption="png"><img src="/2023/05/10/2023-05-11-Ecommerce/output_45_0.png" alt="png"></a></p>
+<h3 id="Frequency"><a href="#Frequency" class="headerlink" title="Frequency"></a>Frequency</h3><blockquote>
+<p>统计数据时间内每个客户的订单数量作为Frequency</p>
+</blockquote>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 计算每个客户的频率</span>
+<span class="token comment"># 根据业务需求确认时间段（1month/3months/6months/1year），筛选客户的消费频率，因数据久远，用数据全时段的总消费次数作为消费频率</span>
+frequency_df <span class="token operator">=</span> data_df<span class="token punctuation">.</span>groupby<span class="token punctuation">(</span><span class="token string">'CustomerID'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token string">'InvoiceNo'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>nunique<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>reset_index<span class="token punctuation">(</span><span class="token punctuation">)</span>
+frequency_df<span class="token punctuation">.</span>columns <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'CustomerID'</span><span class="token punctuation">,</span> <span class="token string">'Frequency'</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="查看Frequency的分布"><a href="#查看Frequency的分布" class="headerlink" title="查看Frequency的分布"></a>查看Frequency的分布</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 创建箱线图</span>
+sns<span class="token punctuation">.</span>boxplot<span class="token punctuation">(</span>data<span class="token operator">=</span>frequency_df<span class="token punctuation">)</span>
+
+<span class="token comment"># 添加标题和坐标轴标签</span>
+plt<span class="token punctuation">.</span>title<span class="token punctuation">(</span><span class="token string">'Standardized RFM Data'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>xlabel<span class="token punctuation">(</span><span class="token string">'Features'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>ylabel<span class="token punctuation">(</span><span class="token string">'Normalized Values'</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 显示图像</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<p><a href="/output_49_0.png" data-fancybox="lightbox" data-caption="png"><img src="/2023/05/10/2023-05-11-Ecommerce/output_49_0.png" alt="png"></a></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">frequency_df<span class="token punctuation">.</span>describe<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style><p></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Frequency</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>3920.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>4.246429</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>7.199202</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>2.000000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>5.000000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>209.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<h4 id="可视化-1"><a href="#可视化-1" class="headerlink" title="可视化"></a>可视化</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python">sns<span class="token punctuation">.</span>histplot<span class="token punctuation">(</span>data<span class="token operator">=</span>frequency_df<span class="token punctuation">[</span>frequency_df<span class="token punctuation">[</span><span class="token string">'Frequency'</span><span class="token punctuation">]</span><span class="token operator">&lt;</span><span class="token number">30</span><span class="token punctuation">]</span><span class="token punctuation">,</span> x<span class="token operator">=</span><span class="token string">'Frequency'</span><span class="token punctuation">,</span> bins<span class="token operator">=</span><span class="token number">60</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+<p><a href="/output_52_0.png" data-fancybox="lightbox" data-caption="png"><img src="/2023/05/10/2023-05-11-Ecommerce/output_52_0.png" alt="png"></a></p>
+<h3 id="Monetary"><a href="#Monetary" class="headerlink" title="Monetary"></a>Monetary</h3><blockquote>
+<p>统计数据时间内每个客户的总订单金额作为Monetary</p>
+</blockquote>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 计算每个客户的消费金额</span>
+<span class="token comment"># 同理，根据业务需求确认时间段（1month/3months/6months/1year），筛选客户的消费频率，次数用数据全时段的总消费金额作为Monetary</span>
+data_df<span class="token punctuation">[</span><span class="token string">'Monetary'</span><span class="token punctuation">]</span> <span class="token operator">=</span> data_df<span class="token punctuation">[</span><span class="token string">'Quantity'</span><span class="token punctuation">]</span> <span class="token operator">*</span> data_df<span class="token punctuation">[</span><span class="token string">'UnitPrice'</span><span class="token punctuation">]</span>
+monetary_df <span class="token operator">=</span> data_df<span class="token punctuation">.</span>groupby<span class="token punctuation">(</span><span class="token string">'CustomerID'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token string">'Monetary'</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token builtin">sum</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>reset_index<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment"># 保留Monetary列的值到小数点后两位</span>
+monetary_df<span class="token punctuation">[</span><span class="token string">'Monetary'</span><span class="token punctuation">]</span> <span class="token operator">=</span> monetary_df<span class="token punctuation">[</span><span class="token string">'Monetary'</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token builtin">round</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="查看Monetary分布"><a href="#查看Monetary分布" class="headerlink" title="查看Monetary分布"></a>查看Monetary分布</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 创建箱线图</span>
+sns<span class="token punctuation">.</span>boxplot<span class="token punctuation">(</span>data<span class="token operator">=</span>monetary_df<span class="token punctuation">)</span>
+<span class="token comment"># 添加标题和坐标轴标签</span>
+plt<span class="token punctuation">.</span>title<span class="token punctuation">(</span><span class="token string">'Standardized RFM Data'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>xlabel<span class="token punctuation">(</span><span class="token string">'Features'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>ylabel<span class="token punctuation">(</span><span class="token string">'Normalized Values'</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 显示图像</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<p><a href="/output_56_0.png" data-fancybox="lightbox" data-caption="png"><img src="/2023/05/10/2023-05-11-Ecommerce/output_56_0.png" alt="png"></a></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">monetary_df<span class="token punctuation">.</span>describe<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style><p></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Monetary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>3920.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>1858.424653</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>7478.631256</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>3.750000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>298.185000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>644.975000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>1571.285000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>259657.300000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<h4 id="可视化-2"><a href="#可视化-2" class="headerlink" title="可视化"></a>可视化</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python">sns<span class="token punctuation">.</span>histplot<span class="token punctuation">(</span>data<span class="token operator">=</span>monetary_df<span class="token punctuation">[</span>monetary_df<span class="token punctuation">[</span><span class="token string">'Monetary'</span><span class="token punctuation">]</span><span class="token operator">&lt;</span><span class="token number">1800</span><span class="token punctuation">]</span><span class="token punctuation">,</span> x<span class="token operator">=</span><span class="token string">'Monetary'</span><span class="token punctuation">,</span> bins<span class="token operator">=</span><span class="token number">180</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+<p><a href="/output_59_0.png" data-fancybox="lightbox" data-caption="png"><img src="/2023/05/10/2023-05-11-Ecommerce/output_59_0.png" alt="png"></a></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="Customer-RFM"><a href="#Customer-RFM" class="headerlink" title="Customer RFM"></a>Customer RFM</h3><blockquote>
+<p>合并获取RFM的数据集</p>
+</blockquote>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 将三个 DataFrame 按照 CustomerID 列进行合并</span>
+rf_df <span class="token operator">=</span> pd<span class="token punctuation">.</span>merge<span class="token punctuation">(</span>recency_df<span class="token punctuation">,</span> frequency_df<span class="token punctuation">,</span> on<span class="token operator">=</span><span class="token string">'CustomerID'</span><span class="token punctuation">,</span> how<span class="token operator">=</span><span class="token string">'inner'</span><span class="token punctuation">)</span>
+seg_df <span class="token operator">=</span> pd<span class="token punctuation">.</span>merge<span class="token punctuation">(</span>rf_df<span class="token punctuation">,</span> monetary_df<span class="token punctuation">,</span> on<span class="token operator">=</span><span class="token string">'CustomerID'</span><span class="token punctuation">,</span> how<span class="token operator">=</span><span class="token string">'inner'</span><span class="token punctuation">)</span>
+ks_df <span class="token operator">=</span> seg_df<span class="token punctuation">.</span>copy<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="RFM指标相关性分析"><a href="#RFM指标相关性分析" class="headerlink" title="RFM指标相关性分析"></a>RFM指标相关性分析</h3><h4 id="归一化处理"><a href="#归一化处理" class="headerlink" title="归一化处理"></a>归一化处理</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>preprocessing <span class="token keyword">import</span> Normalizer
+
+ks_normalized_df <span class="token operator">=</span> ks_df<span class="token punctuation">.</span>copy<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment"># 创建 Normalizer 对象</span>
+normalizer <span class="token operator">=</span> Normalizer<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 选取需要处理的列</span>
+col_names <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'Recency'</span><span class="token punctuation">,</span> <span class="token string">'Frequency'</span><span class="token punctuation">,</span><span class="token string">'Monetary'</span><span class="token punctuation">]</span>
+rfm_normalized <span class="token operator">=</span> ks_df<span class="token punctuation">[</span>col_names<span class="token punctuation">]</span>
+
+<span class="token comment"># 对选定列进行 L2 归一化处理</span>
+rfm_normalized_array <span class="token operator">=</span> normalizer<span class="token punctuation">.</span>fit_transform<span class="token punctuation">(</span>ks_df<span class="token punctuation">[</span>col_names<span class="token punctuation">]</span><span class="token punctuation">)</span>
+ks_normalized_df<span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">'Recency'</span><span class="token punctuation">,</span> <span class="token string">'Frequency'</span><span class="token punctuation">,</span><span class="token string">'Monetary'</span><span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span>rfm_normalized_array<span class="token punctuation">)</span>
+<span class="token comment"># rfm_normalized.columns = col_names</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">ks_normalized_df<span class="token punctuation">.</span>sample<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span>
+<span class="token comment"># rfm_normalized_df</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style><p></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>CustomerID</th>
+      <th>Recency</th>
+      <th>Frequency</th>
+      <th>Monetary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>3361</th>
+      <td>17516</td>
+      <td>0.047013</td>
+      <td>0.006530</td>
+      <td>0.998873</td>
+    </tr>
+    <tr>
+      <th>3804</th>
+      <td>18129</td>
+      <td>0.919886</td>
+      <td>0.003484</td>
+      <td>0.392171</td>
+    </tr>
+    <tr>
+      <th>1978</th>
+      <td>15596</td>
+      <td>0.085707</td>
+      <td>0.003542</td>
+      <td>0.996314</td>
+    </tr>
+    <tr>
+      <th>2896</th>
+      <td>16849</td>
+      <td>0.856809</td>
+      <td>0.004139</td>
+      <td>0.515617</td>
+    </tr>
+    <tr>
+      <th>3664</th>
+      <td>17934</td>
+      <td>0.101706</td>
+      <td>0.002825</td>
+      <td>0.994811</td>
+    </tr>
+    <tr>
+      <th>2178</th>
+      <td>15860</td>
+      <td>0.063074</td>
+      <td>0.008272</td>
+      <td>0.997975</td>
+    </tr>
+    <tr>
+      <th>3861</th>
+      <td>18210</td>
+      <td>0.008392</td>
+      <td>0.002289</td>
+      <td>0.999962</td>
+    </tr>
+    <tr>
+      <th>2420</th>
+      <td>16200</td>
+      <td>0.023383</td>
+      <td>0.001871</td>
+      <td>0.999725</td>
+    </tr>
+    <tr>
+      <th>3622</th>
+      <td>17880</td>
+      <td>0.642709</td>
+      <td>0.001669</td>
+      <td>0.766109</td>
+    </tr>
+    <tr>
+      <th>1824</th>
+      <td>15385</td>
+      <td>0.189030</td>
+      <td>0.003099</td>
+      <td>0.981966</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<h4 id="Person系数"><a href="#Person系数" class="headerlink" title="Person系数"></a>Person系数</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 计算相关系数</span>
+corr_matrix <span class="token operator">=</span> ks_normalized_df<span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">'Recency'</span><span class="token punctuation">,</span> <span class="token string">'Frequency'</span><span class="token punctuation">,</span> <span class="token string">'Monetary'</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">.</span>corr<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 可视化分析</span>
+sns<span class="token punctuation">.</span>heatmap<span class="token punctuation">(</span>corr_matrix<span class="token punctuation">,</span> annot<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> cmap<span class="token operator">=</span><span class="token string">"YlGnBu"</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 显示图表</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<p><a href="/output_68_0.png" data-fancybox="lightbox" data-caption="png"><img src="/2023/05/10/2023-05-11-Ecommerce/output_68_0.png" alt="png"></a></p>
+<blockquote>
+<p>从图中可以看出 Recncy和Monetary的相关性最高，Recncy和Frequency的相关性次之，Frequency和Monetary的相关性最低。</p>
+</blockquote>
+<h2 id="Kmeans-Segment"><a href="#Kmeans-Segment" class="headerlink" title="Kmeans Segment"></a>Kmeans Segment</h2><p>对 R、F、M 分别进行K-means无监算法督分类，尝试对三者分类的结合进行解释。</p>
+<h3 id="Exploring-Best-K"><a href="#Exploring-Best-K" class="headerlink" title="Exploring Best K"></a>Exploring Best K</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># Elbow Curve</span>
+selected_features <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'Recency'</span><span class="token punctuation">,</span><span class="token string">'Frequency'</span><span class="token punctuation">,</span><span class="token string">'Monetary'</span><span class="token punctuation">]</span>
+
+<span class="token keyword">for</span> feature <span class="token keyword">in</span> selected_features<span class="token punctuation">:</span>
+    wcss <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        kmeans <span class="token operator">=</span> KMeans<span class="token punctuation">(</span>n_clusters<span class="token operator">=</span>i<span class="token punctuation">,</span> init<span class="token operator">=</span><span class="token string">'k-means++'</span><span class="token punctuation">,</span>random_state<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span> max_iter<span class="token operator">=</span><span class="token number">50</span><span class="token punctuation">)</span>
+        kmeans<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>ks_normalized_df<span class="token punctuation">[</span><span class="token punctuation">[</span>feature<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+        wcss<span class="token punctuation">.</span>append<span class="token punctuation">(</span>kmeans<span class="token punctuation">.</span>inertia_<span class="token punctuation">)</span>
+
+    sns<span class="token punctuation">.</span>lineplot<span class="token punctuation">(</span>x<span class="token operator">=</span><span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">)</span><span class="token punctuation">,</span> y<span class="token operator">=</span>wcss<span class="token punctuation">)</span>
+    plt<span class="token punctuation">.</span>title<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'Elbow Method of </span><span class="token interpolation"><span class="token punctuation">&#123;</span>feature<span class="token punctuation">&#125;</span></span><span class="token string">'</span></span><span class="token punctuation">)</span>
+    plt<span class="token punctuation">.</span>xlabel<span class="token punctuation">(</span><span class="token string">'Number of Clusters (k)'</span><span class="token punctuation">)</span>
+    plt<span class="token punctuation">.</span>ylabel<span class="token punctuation">(</span><span class="token string">'WCSS'</span><span class="token punctuation">)</span>
+    plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<p><a href="/output_73_0.png" data-fancybox="lightbox" data-caption="png"><img src="/2023/05/10/2023-05-11-Ecommerce/output_73_0.png" alt="png"></a></p>
+<p><a href="/output_73_1.png" data-fancybox="lightbox" data-caption="png"><img src="/2023/05/10/2023-05-11-Ecommerce/output_73_1.png" alt="png"></a></p>
+<p><a href="/output_73_2.png" data-fancybox="lightbox" data-caption="png"><img src="/2023/05/10/2023-05-11-Ecommerce/output_73_2.png" alt="png"></a></p>
+<p>根据Elbow Curve图，选取K&#x3D;3。实际工作中，根据业务和解释性需求确认clusters数量</p>
+<h3 id="Segment-of-R、F、M"><a href="#Segment-of-R、F、M" class="headerlink" title="Segment of R、F、M"></a>Segment of R、F、M</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">for</span> feature <span class="token keyword">in</span> selected_features<span class="token punctuation">:</span>
+    kmeans <span class="token operator">=</span> KMeans<span class="token punctuation">(</span>n_clusters<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">,</span>random_state<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span>
+    ks_df<span class="token punctuation">[</span>feature<span class="token operator">+</span><span class="token string">'-Cluster'</span><span class="token punctuation">]</span> <span class="token operator">=</span> kmeans<span class="token punctuation">.</span>fit_predict<span class="token punctuation">(</span>ks_df<span class="token punctuation">[</span><span class="token punctuation">[</span>feature<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token comment"># ks_df[feature+'-Cluster'] = kmeans.labels_</span>
+    ks_normalized_df<span class="token punctuation">[</span>feature<span class="token operator">+</span><span class="token string">'-Cluster'</span><span class="token punctuation">]</span> <span class="token operator">=</span>  ks_df<span class="token punctuation">[</span>feature<span class="token operator">+</span><span class="token string">'-Cluster'</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">for</span> feature <span class="token keyword">in</span> <span class="token punctuation">[</span><span class="token string">'Recency'</span><span class="token punctuation">,</span><span class="token string">'Frequency'</span><span class="token punctuation">,</span><span class="token string">'Monetary'</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"</span><span class="token interpolation"><span class="token punctuation">&#123;</span>feature<span class="token punctuation">&#125;</span></span><span class="token string">的区间范围是[</span><span class="token interpolation"><span class="token punctuation">&#123;</span>ks_df<span class="token punctuation">[</span>feature<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token builtin">min</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#125;</span></span><span class="token string">,</span><span class="token interpolation"><span class="token punctuation">&#123;</span>ks_df<span class="token punctuation">[</span>feature<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token builtin">max</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#125;</span></span><span class="token string">]"</span></span><span class="token punctuation">)</span>
+    <span class="token keyword">for</span> cluster <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        min_n <span class="token operator">=</span> ks_df<span class="token punctuation">[</span>ks_df<span class="token punctuation">[</span>feature<span class="token operator">+</span><span class="token string">'-Cluster'</span><span class="token punctuation">]</span><span class="token operator">==</span>cluster<span class="token punctuation">]</span><span class="token punctuation">[</span>feature<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token builtin">min</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        max_n <span class="token operator">=</span> ks_df<span class="token punctuation">[</span>ks_df<span class="token punctuation">[</span>feature<span class="token operator">+</span><span class="token string">'-Cluster'</span><span class="token punctuation">]</span><span class="token operator">==</span>cluster<span class="token punctuation">]</span><span class="token punctuation">[</span>feature<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token builtin">max</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        text_ouput <span class="token operator">=</span> <span class="token string-interpolation"><span class="token string">f"</span><span class="token interpolation"><span class="token punctuation">&#123;</span>feature<span class="token punctuation">&#125;</span></span><span class="token string">的三个分类中，Cluster</span><span class="token interpolation"><span class="token punctuation">&#123;</span>cluster<span class="token punctuation">&#125;</span></span><span class="token string">区间范围是[</span><span class="token interpolation"><span class="token punctuation">&#123;</span>min_n<span class="token punctuation">&#125;</span></span><span class="token string">,</span><span class="token interpolation"><span class="token punctuation">&#123;</span>max_n<span class="token punctuation">&#125;</span></span><span class="token string">]"</span></span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>text_ouput<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'='</span><span class="token operator">*</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>text_ouput<span class="token punctuation">)</span><span class="token operator">+</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre><code>Recency的区间范围是[21,394]
+Recency的三个分类中，Cluster0区间范围是[21,114]
+Recency的三个分类中，Cluster1区间范围是[246,394]
+Recency的三个分类中，Cluster2区间范围是[115,243]
+==============================================
+Frequency的区间范围是[1,209]
+Frequency的三个分类中，Cluster0区间范围是[1,12]
+Frequency的三个分类中，Cluster1区间范围是[13,63]
+Frequency的三个分类中，Cluster2区间范围是[86,209]
+===============================================
+Monetary的区间范围是[3.75,259657.3]
+Monetary的三个分类中，Cluster0区间范围是[3.75,21086.3]
+Monetary的三个分类中，Cluster1区间范围是[168472.5,259657.3]
+Monetary的三个分类中，Cluster2区间范围是[25977.16,91062.38]
+=========================================================
+</code></pre>
+<p>根据RFM模型进行记分</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 将Cluster的值+1，方便后续分类</span>
+<span class="token keyword">for</span> feature <span class="token keyword">in</span> <span class="token punctuation">[</span><span class="token string">'Recency-Cluster'</span><span class="token punctuation">,</span><span class="token string">'Frequency-Cluster'</span><span class="token punctuation">,</span><span class="token string">'Monetary-Cluster'</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+    ks_df<span class="token punctuation">[</span>feature<span class="token punctuation">]</span> <span class="token operator">=</span> ks_df<span class="token punctuation">[</span>feature<span class="token punctuation">]</span><span class="token operator">+</span><span class="token number">1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 替换Monetary-Cluster中2和3的值，以匹配区间</span>
+ks_df<span class="token punctuation">[</span><span class="token string">'Monetary-Cluster'</span><span class="token punctuation">]</span> <span class="token operator">=</span> ks_df<span class="token punctuation">[</span><span class="token string">'Monetary-Cluster'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token punctuation">&#123;</span><span class="token number">2</span><span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+ks_df<span class="token punctuation">[</span><span class="token string">'Recency-Cluster'</span><span class="token punctuation">]</span> <span class="token operator">=</span> ks_df<span class="token punctuation">[</span><span class="token string">'Recency-Cluster'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token punctuation">&#123;</span><span class="token number">1</span><span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 合并['Recency-Cluster','Frequency-Cluster','Monetary-Cluster']三列的分类</span>
+ks_df<span class="token punctuation">[</span><span class="token string">'RFM'</span><span class="token punctuation">]</span> <span class="token operator">=</span> ks_df<span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">'Recency-Cluster'</span><span class="token punctuation">,</span> <span class="token string">'Frequency-Cluster'</span><span class="token punctuation">,</span> <span class="token string">'Monetary-Cluster'</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token builtin">apply</span><span class="token punctuation">(</span><span class="token keyword">lambda</span> row<span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token builtin">map</span><span class="token punctuation">(</span><span class="token builtin">str</span><span class="token punctuation">,</span> row<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>
+ks_df<span class="token punctuation">[</span><span class="token string">'RFM-Score'</span><span class="token punctuation">]</span> <span class="token operator">=</span> ks_df<span class="token punctuation">.</span><span class="token builtin">apply</span><span class="token punctuation">(</span><span class="token keyword">lambda</span> row<span class="token punctuation">:</span> row<span class="token punctuation">[</span><span class="token string">'Recency-Cluster'</span><span class="token punctuation">]</span> <span class="token operator">+</span> row<span class="token punctuation">[</span><span class="token string">'Frequency-Cluster'</span><span class="token punctuation">]</span> <span class="token operator">+</span> row<span class="token punctuation">[</span><span class="token string">'Monetary-Cluster'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="RFM客户分类"><a href="#RFM客户分类" class="headerlink" title="RFM客户分类"></a>RFM客户分类</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 定义RFM模型的分类规则</span>
+code_pattern_list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'333'</span><span class="token punctuation">,</span> <span class="token string">'3*3'</span><span class="token punctuation">,</span> <span class="token string">'*33'</span><span class="token punctuation">,</span> <span class="token string">'**3'</span><span class="token punctuation">,</span> <span class="token string">'33*'</span><span class="token punctuation">,</span> <span class="token string">'3**'</span><span class="token punctuation">,</span> <span class="token string">'*3*'</span><span class="token punctuation">,</span> <span class="token string">'***'</span><span class="token punctuation">]</span>
+
+<span class="token comment"># type_list = ['重要价值客户', '重要发展客户', '重要保持客户', '重要挽留客户',  </span>
+<span class="token comment">#              '一般价值客户', '一般发展客户', '一般保持客户', '一般挽留客户']</span>
+
+<span class="token comment"># type_list = ['Key valuable customer','Key develop customer',</span>
+<span class="token comment">#                 'Key retain customer','Key rescue customer',</span>
+<span class="token comment">#                 'General valuable customer','General develop customer',</span>
+<span class="token comment">#                 'General retain customer','General rescue customer']</span>
+
+type_list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'K-valuable'</span><span class="token punctuation">,</span><span class="token string">'K-develop'</span><span class="token punctuation">,</span><span class="token string">'K-retain'</span><span class="token punctuation">,</span><span class="token string">'K-rescue'</span><span class="token punctuation">,</span>
+                <span class="token string">'G-valuable'</span><span class="token punctuation">,</span><span class="token string">'G-develop'</span><span class="token punctuation">,</span><span class="token string">'G-retain'</span><span class="token punctuation">,</span><span class="token string">'G-rescue'</span><span class="token punctuation">]</span>
+
+customer_type_map <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span> 
+<span class="token keyword">for</span> pattern<span class="token punctuation">,</span> ctype <span class="token keyword">in</span> <span class="token builtin">zip</span><span class="token punctuation">(</span>code_pattern_list<span class="token punctuation">,</span> type_list<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> pattern <span class="token operator">==</span> <span class="token string">'333'</span><span class="token punctuation">:</span>
+        customer_type_map<span class="token punctuation">[</span><span class="token string">'333'</span><span class="token punctuation">]</span> <span class="token operator">=</span> ctype
+    <span class="token keyword">elif</span> pattern <span class="token operator">==</span> <span class="token string">'3*3'</span><span class="token punctuation">:</span>
+        customer_type_map<span class="token punctuation">[</span><span class="token string">'313'</span><span class="token punctuation">]</span> <span class="token operator">=</span> ctype
+        customer_type_map<span class="token punctuation">[</span><span class="token string">'323'</span><span class="token punctuation">]</span> <span class="token operator">=</span> ctype
+    <span class="token keyword">elif</span> pattern <span class="token operator">==</span> <span class="token string">'*33'</span><span class="token punctuation">:</span>
+        customer_type_map<span class="token punctuation">[</span><span class="token string">'331'</span><span class="token punctuation">]</span> <span class="token operator">=</span> ctype 
+        customer_type_map<span class="token punctuation">[</span><span class="token string">'332'</span><span class="token punctuation">]</span> <span class="token operator">=</span> ctype
+    <span class="token keyword">elif</span> pattern <span class="token operator">==</span> <span class="token string">'**3'</span><span class="token punctuation">:</span>
+        customer_type_map<span class="token punctuation">[</span><span class="token string">'311'</span><span class="token punctuation">]</span> <span class="token operator">=</span> ctype
+        customer_type_map<span class="token punctuation">[</span><span class="token string">'312'</span><span class="token punctuation">]</span> <span class="token operator">=</span> ctype
+    <span class="token keyword">elif</span> pattern <span class="token operator">==</span> <span class="token string">'33*'</span><span class="token punctuation">:</span>
+        customer_type_map<span class="token punctuation">[</span><span class="token string">'331'</span><span class="token punctuation">]</span> <span class="token operator">=</span> ctype
+        customer_type_map<span class="token punctuation">[</span><span class="token string">'332'</span><span class="token punctuation">]</span> <span class="token operator">=</span> ctype  
+    <span class="token keyword">elif</span> pattern <span class="token operator">==</span> <span class="token string">'3**'</span><span class="token punctuation">:</span>
+        customer_type_map<span class="token punctuation">[</span><span class="token string">'321'</span><span class="token punctuation">]</span> <span class="token operator">=</span> ctype
+        customer_type_map<span class="token punctuation">[</span><span class="token string">'322'</span><span class="token punctuation">]</span> <span class="token operator">=</span> ctype
+    <span class="token keyword">elif</span> pattern <span class="token operator">==</span> <span class="token string">'*3*'</span><span class="token punctuation">:</span>
+        customer_type_map<span class="token punctuation">[</span><span class="token string">'311'</span><span class="token punctuation">]</span> <span class="token operator">=</span> ctype 
+        customer_type_map<span class="token punctuation">[</span><span class="token string">'312'</span><span class="token punctuation">]</span> <span class="token operator">=</span> ctype
+        customer_type_map<span class="token punctuation">[</span><span class="token string">'321'</span><span class="token punctuation">]</span> <span class="token operator">=</span> ctype
+        customer_type_map<span class="token punctuation">[</span><span class="token string">'322'</span><span class="token punctuation">]</span> <span class="token operator">=</span> ctype
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        customer_type_map<span class="token punctuation">[</span><span class="token string">'111'</span><span class="token punctuation">]</span> <span class="token operator">=</span> ctype
+        customer_type_map<span class="token punctuation">[</span><span class="token string">'112'</span><span class="token punctuation">]</span> <span class="token operator">=</span> ctype
+        customer_type_map<span class="token punctuation">[</span><span class="token string">'121'</span><span class="token punctuation">]</span> <span class="token operator">=</span> ctype
+        customer_type_map<span class="token punctuation">[</span><span class="token string">'122'</span><span class="token punctuation">]</span> <span class="token operator">=</span> ctype
+        customer_type_map<span class="token punctuation">[</span><span class="token string">'211'</span><span class="token punctuation">]</span> <span class="token operator">=</span> ctype
+        customer_type_map<span class="token punctuation">[</span><span class="token string">'212'</span><span class="token punctuation">]</span> <span class="token operator">=</span> ctype
+        customer_type_map<span class="token punctuation">[</span><span class="token string">'221'</span><span class="token punctuation">]</span> <span class="token operator">=</span> ctype
+        customer_type_map<span class="token punctuation">[</span><span class="token string">'222'</span><span class="token punctuation">]</span> <span class="token operator">=</span> ctype
+        
+<span class="token comment"># print(customer_type_map) </span>
+<span class="token comment"># 增加'客户分类'列</span>
+ks_df<span class="token punctuation">[</span><span class="token string">'Segment'</span><span class="token punctuation">]</span> <span class="token operator">=</span> ks_df<span class="token punctuation">[</span><span class="token string">'RFM'</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token builtin">map</span><span class="token punctuation">(</span>customer_type_map<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">ks_df<span class="token punctuation">.</span>sample<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style><p></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>CustomerID</th>
+      <th>Recency</th>
+      <th>Frequency</th>
+      <th>Monetary</th>
+      <th>Recency-Cluster</th>
+      <th>Frequency-Cluster</th>
+      <th>Monetary-Cluster</th>
+      <th>RFM</th>
+      <th>RFM-Score</th>
+      <th>Segment</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1814</th>
+      <td>15370</td>
+      <td>61</td>
+      <td>7</td>
+      <td>2386.05</td>
+      <td>3</td>
+      <td>1</td>
+      <td>1</td>
+      <td>311</td>
+      <td>5</td>
+      <td>一般保持客户</td>
+    </tr>
+    <tr>
+      <th>109</th>
+      <td>12970</td>
+      <td>28</td>
+      <td>4</td>
+      <td>405.47</td>
+      <td>3</td>
+      <td>1</td>
+      <td>1</td>
+      <td>311</td>
+      <td>5</td>
+      <td>一般保持客户</td>
+    </tr>
+    <tr>
+      <th>956</th>
+      <td>14173</td>
+      <td>31</td>
+      <td>4</td>
+      <td>450.84</td>
+      <td>3</td>
+      <td>1</td>
+      <td>1</td>
+      <td>311</td>
+      <td>5</td>
+      <td>一般保持客户</td>
+    </tr>
+    <tr>
+      <th>2360</th>
+      <td>16121</td>
+      <td>78</td>
+      <td>2</td>
+      <td>854.66</td>
+      <td>3</td>
+      <td>1</td>
+      <td>1</td>
+      <td>311</td>
+      <td>5</td>
+      <td>一般保持客户</td>
+    </tr>
+    <tr>
+      <th>636</th>
+      <td>13716</td>
+      <td>290</td>
+      <td>1</td>
+      <td>138.28</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+      <td>211</td>
+      <td>4</td>
+      <td>一般挽留客户</td>
+    </tr>
+    <tr>
+      <th>2394</th>
+      <td>16164</td>
+      <td>38</td>
+      <td>3</td>
+      <td>822.48</td>
+      <td>3</td>
+      <td>1</td>
+      <td>1</td>
+      <td>311</td>
+      <td>5</td>
+      <td>一般保持客户</td>
+    </tr>
+    <tr>
+      <th>1206</th>
+      <td>14523</td>
+      <td>129</td>
+      <td>1</td>
+      <td>241.09</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>111</td>
+      <td>3</td>
+      <td>一般挽留客户</td>
+    </tr>
+    <tr>
+      <th>1072</th>
+      <td>14341</td>
+      <td>66</td>
+      <td>8</td>
+      <td>2166.98</td>
+      <td>3</td>
+      <td>1</td>
+      <td>1</td>
+      <td>311</td>
+      <td>5</td>
+      <td>一般保持客户</td>
+    </tr>
+    <tr>
+      <th>1847</th>
+      <td>15417</td>
+      <td>106</td>
+      <td>1</td>
+      <td>508.80</td>
+      <td>3</td>
+      <td>1</td>
+      <td>1</td>
+      <td>311</td>
+      <td>5</td>
+      <td>一般保持客户</td>
+    </tr>
+    <tr>
+      <th>2469</th>
+      <td>16265</td>
+      <td>30</td>
+      <td>9</td>
+      <td>5447.00</td>
+      <td>3</td>
+      <td>1</td>
+      <td>1</td>
+      <td>311</td>
+      <td>5</td>
+      <td>一般保持客户</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<h3 id="分类可视化"><a href="#分类可视化" class="headerlink" title="分类可视化"></a>分类可视化</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python">segment_df <span class="token operator">=</span> ks_df<span class="token punctuation">[</span><span class="token string">'Segment'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>value_counts<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>to_frame<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>reset_index<span class="token punctuation">(</span><span class="token punctuation">)</span>
+segment_df<span class="token punctuation">[</span><span class="token string">'%'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token builtin">round</span><span class="token punctuation">(</span>segment_df<span class="token punctuation">[</span><span class="token string">'count'</span><span class="token punctuation">]</span><span class="token operator">/</span> <span class="token builtin">len</span><span class="token punctuation">(</span>ks_df<span class="token punctuation">)</span><span class="token operator">*</span><span class="token number">100</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span>
+segment_df<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style><p></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Segment</th>
+      <th>count</th>
+      <th>%</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>一般保持客户</td>
+      <td>2630</td>
+      <td>67.09</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>一般挽留客户</td>
+      <td>1281</td>
+      <td>32.68</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>一般价值客户</td>
+      <td>6</td>
+      <td>0.15</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>重要发展客户</td>
+      <td>3</td>
+      <td>0.08</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 绘制Customers Segments的饼图</span>
+explode <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">0.1</span><span class="token punctuation">,</span> <span class="token number">0.1</span><span class="token punctuation">,</span> <span class="token number">0.1</span><span class="token punctuation">,</span> <span class="token number">2.0</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>pie<span class="token punctuation">(</span>segment_df<span class="token punctuation">[</span><span class="token string">'count'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> explode<span class="token operator">=</span>explode<span class="token punctuation">,</span> labels<span class="token operator">=</span>segment_df<span class="token punctuation">[</span><span class="token string">'Segment'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> autopct<span class="token operator">=</span><span class="token string">'%1.1f%%'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>title<span class="token punctuation">(</span><span class="token string">'Number of Customers by Segments'</span><span class="token punctuation">)</span>
+
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<p><a href="/output_87_0.png" data-fancybox="lightbox" data-caption="png"><img src="/2023/05/10/2023-05-11-Ecommerce/output_87_0.png" alt="png"></a></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">sns<span class="token punctuation">.</span><span class="token builtin">set</span><span class="token punctuation">(</span>style<span class="token operator">=</span><span class="token string">"darkgrid"</span><span class="token punctuation">)</span>  <span class="token comment"># 设置样式</span>
+<span class="token comment"># 假设 segment_df 是一个包含分段数据的DataFrame</span>
+sns<span class="token punctuation">.</span>countplot<span class="token punctuation">(</span>x<span class="token operator">=</span><span class="token string">'Segment'</span><span class="token punctuation">,</span> data<span class="token operator">=</span>ks_df<span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>title<span class="token punctuation">(</span><span class="token string">'Segment Distribution'</span><span class="token punctuation">)</span>  <span class="token comment"># 设置标题</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<p><a href="/output_88_0.png" data-fancybox="lightbox" data-caption="png"><img src="/2023/05/10/2023-05-11-Ecommerce/output_88_0.png" alt="png"></a></p>
+<h2 id="RFM-Segment"><a href="#RFM-Segment" class="headerlink" title="RFM Segment"></a>RFM Segment</h2><h3 id="确认分层标准"><a href="#确认分层标准" class="headerlink" title="确认分层标准"></a>确认分层标准</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python">rfm_df <span class="token operator">=</span> seg_df<span class="token punctuation">.</span>copy<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">rfm_df<span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">'Recency'</span><span class="token punctuation">,</span><span class="token string">'Frequency'</span><span class="token punctuation">,</span><span class="token string">'Monetary'</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">.</span>describe<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style><p></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Recency</th>
+      <th>Frequency</th>
+      <th>Monetary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>3920.000000</td>
+      <td>3920.000000</td>
+      <td>3920.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>112.742092</td>
+      <td>4.246429</td>
+      <td>1858.424653</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>99.533485</td>
+      <td>7.199202</td>
+      <td>7478.631256</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>21.000000</td>
+      <td>1.000000</td>
+      <td>3.750000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>38.000000</td>
+      <td>1.000000</td>
+      <td>298.185000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>71.000000</td>
+      <td>2.000000</td>
+      <td>644.975000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>163.000000</td>
+      <td>5.000000</td>
+      <td>1571.285000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>394.000000</td>
+      <td>209.000000</td>
+      <td>259657.300000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<p>本项目以feature中位数为Segmentation标准，实际项目中以业务需求和实际数据分析为准</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 获取特征中位数</span>
+r_median <span class="token operator">=</span> rfm_df<span class="token punctuation">[</span><span class="token string">'Recency'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>median<span class="token punctuation">(</span><span class="token punctuation">)</span>
+f_median <span class="token operator">=</span> rfm_df<span class="token punctuation">[</span><span class="token string">'Frequency'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>median<span class="token punctuation">(</span><span class="token punctuation">)</span>
+m_median <span class="token operator">=</span> rfm_df<span class="token punctuation">[</span><span class="token string">'Monetary'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>median<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">rfm_df<span class="token punctuation">[</span><span class="token string">'r_C'</span><span class="token punctuation">]</span> <span class="token operator">=</span> rfm_df<span class="token punctuation">[</span><span class="token string">'Recency'</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token builtin">apply</span><span class="token punctuation">(</span><span class="token keyword">lambda</span> x<span class="token punctuation">:</span> <span class="token number">1</span> <span class="token keyword">if</span> x <span class="token operator">></span> r_median <span class="token keyword">else</span> <span class="token number">0</span><span class="token punctuation">)</span>
+rfm_df<span class="token punctuation">[</span><span class="token string">'f_C'</span><span class="token punctuation">]</span> <span class="token operator">=</span> rfm_df<span class="token punctuation">[</span><span class="token string">'Frequency'</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token builtin">apply</span><span class="token punctuation">(</span><span class="token keyword">lambda</span> x<span class="token punctuation">:</span> <span class="token number">1</span> <span class="token keyword">if</span> x <span class="token operator">></span> f_median <span class="token keyword">else</span> <span class="token number">0</span><span class="token punctuation">)</span> 
+rfm_df<span class="token punctuation">[</span><span class="token string">'m_C'</span><span class="token punctuation">]</span> <span class="token operator">=</span> rfm_df<span class="token punctuation">[</span><span class="token string">'Monetary'</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token builtin">apply</span><span class="token punctuation">(</span><span class="token keyword">lambda</span> x<span class="token punctuation">:</span> <span class="token number">1</span> <span class="token keyword">if</span> x <span class="token operator">></span> m_median <span class="token keyword">else</span> <span class="token number">0</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">rfm_df<span class="token punctuation">[</span><span class="token string">'rfm_C'</span><span class="token punctuation">]</span> <span class="token operator">=</span> rfm_df<span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">'r_C'</span><span class="token punctuation">,</span> <span class="token string">'f_C'</span><span class="token punctuation">,</span> <span class="token string">'m_C'</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token builtin">apply</span><span class="token punctuation">(</span><span class="token keyword">lambda</span> row<span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token builtin">map</span><span class="token punctuation">(</span><span class="token builtin">str</span><span class="token punctuation">,</span> row<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>
+rfm_df<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style><p></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>CustomerID</th>
+      <th>Recency</th>
+      <th>Frequency</th>
+      <th>Monetary</th>
+      <th>r_C</th>
+      <th>f_C</th>
+      <th>m_C</th>
+      <th>rfm_C</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>12346</td>
+      <td>346</td>
+      <td>1</td>
+      <td>77183.60</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>101</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>12747</td>
+      <td>23</td>
+      <td>11</td>
+      <td>4196.01</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>011</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>12748</td>
+      <td>21</td>
+      <td>209</td>
+      <td>33053.19</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>011</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>12749</td>
+      <td>24</td>
+      <td>5</td>
+      <td>4090.88</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>011</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>12820</td>
+      <td>24</td>
+      <td>4</td>
+      <td>942.34</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>011</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>3915</th>
+      <td>18280</td>
+      <td>298</td>
+      <td>1</td>
+      <td>180.60</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>100</td>
+    </tr>
+    <tr>
+      <th>3916</th>
+      <td>18281</td>
+      <td>201</td>
+      <td>1</td>
+      <td>80.82</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>100</td>
+    </tr>
+    <tr>
+      <th>3917</th>
+      <td>18282</td>
+      <td>28</td>
+      <td>2</td>
+      <td>178.05</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>000</td>
+    </tr>
+    <tr>
+      <th>3918</th>
+      <td>18283</td>
+      <td>24</td>
+      <td>16</td>
+      <td>2045.53</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>011</td>
+    </tr>
+    <tr>
+      <th>3919</th>
+      <td>18287</td>
+      <td>63</td>
+      <td>3</td>
+      <td>1837.28</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>011</td>
+    </tr>
+  </tbody>
+</table>
+<p>3920 rows × 8 columns</p>
+</div>
+
+
+
+<h3 id="分类情况"><a href="#分类情况" class="headerlink" title="分类情况"></a>分类情况</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python">rfm_segment_df <span class="token operator">=</span> rfm_df<span class="token punctuation">[</span><span class="token string">'rfm_C'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>value_counts<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>to_frame<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>reset_index<span class="token punctuation">(</span><span class="token punctuation">)</span>
+rfm_segment_df<span class="token punctuation">[</span><span class="token string">'%'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token builtin">round</span><span class="token punctuation">(</span>rfm_segment_df<span class="token punctuation">[</span><span class="token string">'count'</span><span class="token punctuation">]</span><span class="token operator">/</span> <span class="token builtin">len</span><span class="token punctuation">(</span>rfm_df<span class="token punctuation">)</span><span class="token operator">*</span><span class="token number">100</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span>
+rfm_segment_df<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style><p></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>rfm_C</th>
+      <th>count</th>
+      <th>%</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>100</td>
+      <td>1195</td>
+      <td>30.48</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>011</td>
+      <td>1190</td>
+      <td>30.36</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>000</td>
+      <td>523</td>
+      <td>13.34</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>111</td>
+      <td>392</td>
+      <td>10.00</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>101</td>
+      <td>238</td>
+      <td>6.07</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>001</td>
+      <td>140</td>
+      <td>3.57</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>110</td>
+      <td>123</td>
+      <td>3.14</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>010</td>
+      <td>119</td>
+      <td>3.04</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<h3 id="解释RFM分类"><a href="#解释RFM分类" class="headerlink" title="解释RFM分类"></a>解释RFM分类</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># rfm_map = &#123;</span>
+<span class="token comment">#     '111': '重要价值客户',</span>
+<span class="token comment">#     '101': '重要发展客户', </span>
+<span class="token comment">#     '011': '重要保持客户',</span>
+<span class="token comment">#     '001': '重要挽留客户',</span>
+<span class="token comment">#     '110': '一般价值客户',</span>
+<span class="token comment">#     '100': '一般发展客户',</span>
+<span class="token comment">#     '010': '一般保持客户',</span>
+<span class="token comment">#     '000': '一般挽留客户'</span>
+<span class="token comment"># &#125;</span>
+
+rfm_map <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+    <span class="token string">'111'</span><span class="token punctuation">:</span> <span class="token string">'K-valuable'</span><span class="token punctuation">,</span> 
+    <span class="token string">'101'</span><span class="token punctuation">:</span> <span class="token string">'K-develop'</span><span class="token punctuation">,</span>
+    <span class="token string">'011'</span><span class="token punctuation">:</span> <span class="token string">'K-retain'</span><span class="token punctuation">,</span>
+    <span class="token string">'001'</span><span class="token punctuation">:</span> <span class="token string">'K-rescue'</span><span class="token punctuation">,</span>
+    <span class="token string">'110'</span><span class="token punctuation">:</span> <span class="token string">'G-valuable'</span><span class="token punctuation">,</span> 
+    <span class="token string">'100'</span><span class="token punctuation">:</span> <span class="token string">'G-develop'</span><span class="token punctuation">,</span>
+    <span class="token string">'010'</span><span class="token punctuation">:</span> <span class="token string">'G-retain'</span><span class="token punctuation">,</span>
+    <span class="token string">'000'</span><span class="token punctuation">:</span> <span class="token string">'G-rescue'</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 增加'客户分类'列</span>
+rfm_df<span class="token punctuation">[</span><span class="token string">'Segment'</span><span class="token punctuation">]</span> <span class="token operator">=</span> rfm_df<span class="token punctuation">[</span><span class="token string">'rfm_C'</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token builtin">map</span><span class="token punctuation">(</span>rfm_map<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">rfm_df<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style><p></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>CustomerID</th>
+      <th>Recency</th>
+      <th>Frequency</th>
+      <th>Monetary</th>
+      <th>r_C</th>
+      <th>f_C</th>
+      <th>m_C</th>
+      <th>rfm_C</th>
+      <th>Segment</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>12346</td>
+      <td>346</td>
+      <td>1</td>
+      <td>77183.60</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>101</td>
+      <td>K-develop</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>12747</td>
+      <td>23</td>
+      <td>11</td>
+      <td>4196.01</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>011</td>
+      <td>K-retain</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>12748</td>
+      <td>21</td>
+      <td>209</td>
+      <td>33053.19</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>011</td>
+      <td>K-retain</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>12749</td>
+      <td>24</td>
+      <td>5</td>
+      <td>4090.88</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>011</td>
+      <td>K-retain</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>12820</td>
+      <td>24</td>
+      <td>4</td>
+      <td>942.34</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>011</td>
+      <td>K-retain</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>3915</th>
+      <td>18280</td>
+      <td>298</td>
+      <td>1</td>
+      <td>180.60</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>100</td>
+      <td>G-develop</td>
+    </tr>
+    <tr>
+      <th>3916</th>
+      <td>18281</td>
+      <td>201</td>
+      <td>1</td>
+      <td>80.82</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>100</td>
+      <td>G-develop</td>
+    </tr>
+    <tr>
+      <th>3917</th>
+      <td>18282</td>
+      <td>28</td>
+      <td>2</td>
+      <td>178.05</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>000</td>
+      <td>G-rescue</td>
+    </tr>
+    <tr>
+      <th>3918</th>
+      <td>18283</td>
+      <td>24</td>
+      <td>16</td>
+      <td>2045.53</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>011</td>
+      <td>K-retain</td>
+    </tr>
+    <tr>
+      <th>3919</th>
+      <td>18287</td>
+      <td>63</td>
+      <td>3</td>
+      <td>1837.28</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>011</td>
+      <td>K-retain</td>
+    </tr>
+  </tbody>
+</table>
+<p>3920 rows × 9 columns</p>
+</div>
+
+
+
+<h3 id="分类可视化-1"><a href="#分类可视化-1" class="headerlink" title="分类可视化"></a>分类可视化</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python">rfm_s_df <span class="token operator">=</span> rfm_df<span class="token punctuation">[</span><span class="token string">'Segment'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>value_counts<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>to_frame<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>reset_index<span class="token punctuation">(</span><span class="token punctuation">)</span>
+rfm_s_df<span class="token punctuation">[</span><span class="token string">'%'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token builtin">round</span><span class="token punctuation">(</span>rfm_s_df<span class="token punctuation">[</span><span class="token string">'count'</span><span class="token punctuation">]</span><span class="token operator">/</span> <span class="token builtin">len</span><span class="token punctuation">(</span>ks_df<span class="token punctuation">)</span><span class="token operator">*</span><span class="token number">100</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span>
+rfm_s_df<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style><p></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Segment</th>
+      <th>count</th>
+      <th>%</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>G-develop</td>
+      <td>1195</td>
+      <td>30.48</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>K-retain</td>
+      <td>1190</td>
+      <td>30.36</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>G-rescue</td>
+      <td>523</td>
+      <td>13.34</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>K-valuable</td>
+      <td>392</td>
+      <td>10.00</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>K-develop</td>
+      <td>238</td>
+      <td>6.07</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>K-rescue</td>
+      <td>140</td>
+      <td>3.57</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>G-valuable</td>
+      <td>123</td>
+      <td>3.14</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>G-retain</td>
+      <td>119</td>
+      <td>3.04</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 绘制Customers Segments的饼图</span>
+<span class="token comment"># len(rfm_s_df)</span>
+explode <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">0.1</span><span class="token punctuation">,</span> <span class="token number">0.1</span><span class="token punctuation">,</span> <span class="token number">0.1</span><span class="token punctuation">,</span> <span class="token number">0.1</span><span class="token punctuation">,</span> <span class="token number">0.1</span><span class="token punctuation">,</span> <span class="token number">0.1</span><span class="token punctuation">,</span> <span class="token number">0.1</span><span class="token punctuation">,</span> <span class="token number">0.1</span><span class="token punctuation">)</span> 
+plt<span class="token punctuation">.</span>pie<span class="token punctuation">(</span>rfm_s_df<span class="token punctuation">[</span><span class="token string">'count'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> explode<span class="token operator">=</span>explode<span class="token punctuation">,</span> labels<span class="token operator">=</span>rfm_s_df<span class="token punctuation">[</span><span class="token string">'Segment'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> autopct<span class="token operator">=</span><span class="token string">'%1.1f%%'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>title<span class="token punctuation">(</span><span class="token string">'Number of Customers by Segments'</span><span class="token punctuation">)</span>
+
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<p><a href="/output_105_0.png" data-fancybox="lightbox" data-caption="png"><img src="/2023/05/10/2023-05-11-Ecommerce/output_105_0.png" alt="png"></a></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>科学的客户分类,可以更有效地进行针对性的营销,为运营提供有效的帮助,给决策层提供直观的数据支撑。</p>
+<ol>
+<li>重要价值客户:这类客户的价值高,是公司的重要客户,应该投入较多资源进行维系和开发。  </li>
+<li>重要发展客户:这类客户具有较高的潜在价值,是公司发展的重要客户,应加大开发力度,扩大业务规模。</li>
+<li>重要保持客户:这类客户当前的价值较高,是公司要重点保持的客户,要投入适度资源进行维护,确保客户关系稳定。</li>
+<li>重要挽留客户:这类客户的价值高,但是存在一定流失风险,是公司要重点挽留的客户,要投入较多资源进行维系,避免客户流失。</li>
+<li>一般价值客户:这类客户的当前价值一般,要适当投入资源进行维系。  </li>
+<li>一般发展客户:这类客户的潜在价值一般,要适度开发,逐步提高其价值。</li>
+<li>一般保持客户:这类客户的当前价值一般,要定期联系,维持良好的客户关系。</li>
+<li>一般挽留客户:这类客户存在一定的流失风险,要适度联系,减少流失概率。</li>
+</ol>
+<ul>
+<li>KMeans算法更加智能和客观,但需要高度的数据分析能力,并且结果也依赖于数据和模型设定。</li>
+<li>RFM模型简单直接,易于理解和应用,但存在一定主观性。</li>
+</ul>
+<p>对于一些数据集不够复杂,且需要比较简单规则化的分类,RFM模型是一个不错的选择。对于数据集复杂,需要发现隐藏数据特征的情况,KMeans算法或更高级的机器学习模型会更加适用。也可以考虑将二者结合,使用KMeans获取客户簇,再为每个簇指定RFM代码,以达到更佳的效果。<br>总之,选择何种模型需要根据实际的业务场景和数据特征进行判断。理解各模型的优缺点,可以帮助我们做出更精准的选择。</p>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://www.sciencedirect.com/science/article/pii/S1319157819309802">RFM model for customer purchase behavior using K-Means algorithm</a></li>
+<li><a target="_blank" rel="noopener" href="https://medium.com/web-mining-is688-spring-2021/exploring-customers-segmentation-with-rfm-analysis-and-k-means-clustering-118f9ffcd9f0">Exploring Customers Segmentation With RFM Analysis and K-Means Clustering</a></li>
+<li><a target="_blank" rel="noopener" href="https://rstudio-pubs-static.s3.amazonaws.com/671942_d7c20cc5f25d4fc2ac33c3556fc13e88.html">RFM Customer Segmentation with K Means</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_45694768/article/details/121590772">Kaggle英国电商数据分析–k-means与RFM模型结合进行用户群体划分</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/ballhacker/article/details/107722255">基于RFM和K-Means的用户分群</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/yeonki/article/details/50573235">RFM模型及其用户运营实践</a></li>
+<li><a target="_blank" rel="noopener" href="https://juejin.cn/post/7068946548066877447">客户价值分析【python建立RFM模型】</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/jasneekchugh/Customer-Segmentation-using-K-mean/blob/main/K-means%20clustering%20using%20RFM%20variables.ipynb">Customer-Segmentation-using-K-mean</a></li>
+</ul>
+
+        </div>
+        <div class="top-div">
+          <ol class="top-box"><li class="top-box-item top-box-level-2"><a class="top-box-link" href="#Introduction"><span class="top-box-text">Introduction</span></a><ol class="top-box-child"><li class="top-box-item top-box-level-3"><a class="top-box-link" href="#%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A"><span class="top-box-text">名词解释</span></a></li><li class="top-box-item top-box-level-3"><a class="top-box-link" href="#%E9%A1%B9%E7%9B%AE%E7%9B%AE%E7%9A%84"><span class="top-box-text">项目目的</span></a></li></ol></li><li class="top-box-item top-box-level-2"><a class="top-box-link" href="#Import-Libraries"><span class="top-box-text">Import Libraries</span></a></li><li class="top-box-item top-box-level-2"><a class="top-box-link" href="#Importing-Data"><span class="top-box-text">Importing Data</span></a></li><li class="top-box-item top-box-level-2"><a class="top-box-link" href="#Exploring-Data-Analysis-EDA"><span class="top-box-text">Exploring Data Analysis(EDA)</span></a><ol class="top-box-child"><li class="top-box-item top-box-level-3"><a class="top-box-link" href="#%E6%9F%A5%E7%9C%8B%E6%95%B0%E6%8D%AE%E4%BF%A1%E6%81%AF"><span class="top-box-text">查看数据信息</span></a></li><li class="top-box-item top-box-level-3"><a class="top-box-link" href="#%E6%9F%A5%E7%9C%8B%E7%BC%BA%E5%A4%B1%E5%80%BC"><span class="top-box-text">查看缺失值</span></a></li><li class="top-box-item top-box-level-3"><a class="top-box-link" href="#%E6%9F%A5%E7%9C%8B%E9%87%8D%E5%A4%8D%E5%80%BC"><span class="top-box-text">查看重复值</span></a></li><li class="top-box-item top-box-level-3"><a class="top-box-link" href="#%E6%9F%A5%E7%9C%8B%E5%BC%82%E5%B8%B8%E5%80%BC"><span class="top-box-text">查看异常值</span></a></li></ol></li><li class="top-box-item top-box-level-2"><a class="top-box-link" href="#Data-Cleaning"><span class="top-box-text">Data Cleaning</span></a><ol class="top-box-child"><li class="top-box-item top-box-level-3"><a class="top-box-link" href="#%E7%BC%BA%E5%A4%B1%E5%80%BC%E5%A4%84%E7%90%86"><span class="top-box-text">缺失值处理</span></a></li><li class="top-box-item top-box-level-3"><a class="top-box-link" href="#%E9%87%8D%E5%A4%8D%E5%80%BC%E5%A4%84%E7%90%86"><span class="top-box-text">重复值处理</span></a></li><li class="top-box-item top-box-level-3"><a class="top-box-link" href="#%E5%BC%82%E5%B8%B8%E5%80%BC%E5%A4%84%E7%90%86"><span class="top-box-text">异常值处理</span></a></li><li class="top-box-item top-box-level-3"><a class="top-box-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="top-box-text">数据类型</span></a></li></ol></li><li class="top-box-item top-box-level-2"><a class="top-box-link" href="#RFM%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86"><span class="top-box-text">RFM数据预处理</span></a><ol class="top-box-child"><li class="top-box-item top-box-level-3"><a class="top-box-link" href="#Recency"><span class="top-box-text">Recency</span></a></li><li class="top-box-item top-box-level-3"><a class="top-box-link" href="#Frequency"><span class="top-box-text">Frequency</span></a></li><li class="top-box-item top-box-level-3"><a class="top-box-link" href="#Monetary"><span class="top-box-text">Monetary</span></a></li><li class="top-box-item top-box-level-3"><a class="top-box-link" href="#Customer-RFM"><span class="top-box-text">Customer RFM</span></a></li><li class="top-box-item top-box-level-3"><a class="top-box-link" href="#RFM%E6%8C%87%E6%A0%87%E7%9B%B8%E5%85%B3%E6%80%A7%E5%88%86%E6%9E%90"><span class="top-box-text">RFM指标相关性分析</span></a></li></ol></li><li class="top-box-item top-box-level-2"><a class="top-box-link" href="#Kmeans-Segment"><span class="top-box-text">Kmeans Segment</span></a><ol class="top-box-child"><li class="top-box-item top-box-level-3"><a class="top-box-link" href="#Exploring-Best-K"><span class="top-box-text">Exploring Best K</span></a></li><li class="top-box-item top-box-level-3"><a class="top-box-link" href="#Segment-of-R%E3%80%81F%E3%80%81M"><span class="top-box-text">Segment of R、F、M</span></a></li><li class="top-box-item top-box-level-3"><a class="top-box-link" href="#RFM%E5%AE%A2%E6%88%B7%E5%88%86%E7%B1%BB"><span class="top-box-text">RFM客户分类</span></a></li><li class="top-box-item top-box-level-3"><a class="top-box-link" href="#%E5%88%86%E7%B1%BB%E5%8F%AF%E8%A7%86%E5%8C%96"><span class="top-box-text">分类可视化</span></a></li></ol></li><li class="top-box-item top-box-level-2"><a class="top-box-link" href="#RFM-Segment"><span class="top-box-text">RFM Segment</span></a><ol class="top-box-child"><li class="top-box-item top-box-level-3"><a class="top-box-link" href="#%E7%A1%AE%E8%AE%A4%E5%88%86%E5%B1%82%E6%A0%87%E5%87%86"><span class="top-box-text">确认分层标准</span></a></li><li class="top-box-item top-box-level-3"><a class="top-box-link" href="#%E5%88%86%E7%B1%BB%E6%83%85%E5%86%B5"><span class="top-box-text">分类情况</span></a></li><li class="top-box-item top-box-level-3"><a class="top-box-link" href="#%E8%A7%A3%E9%87%8ARFM%E5%88%86%E7%B1%BB"><span class="top-box-text">解释RFM分类</span></a></li><li class="top-box-item top-box-level-3"><a class="top-box-link" href="#%E5%88%86%E7%B1%BB%E5%8F%AF%E8%A7%86%E5%8C%96-1"><span class="top-box-text">分类可视化</span></a></li></ol></li><li class="top-box-item top-box-level-2"><a class="top-box-link" href="#%E6%80%BB%E7%BB%93"><span class="top-box-text">总结</span></a></li><li class="top-box-item top-box-level-2"><a class="top-box-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE"><span class="top-box-text">参考文献</span></a></li></ol>
+        </div>
+      </div>
+    </div>
+
+    
+      <div class="next-post">
+        <a class="purple-link" href="/2023/05/05/2023-05-05-%E6%95%B0%E6%8D%AE%E5%A1%AB%E8%A1%A5%E7%AE%97%E6%B3%95%E7%9A%84%E9%80%89%E6%8B%A9%E4%B8%BB%E8%A6%81%E4%BE%9D%E6%8D%AE/">
+          <h3 class="post-title">
+            下一篇：数据填补算法的选择主要依据
+          </h3>
+        </a>
+      </div>
+    
+  </div>
+
+
+
+
+<footer>
+<div class="site-footer">
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  
+    Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> <a href="https://github.com/f-dong/hexo-theme-minimalism" target="_blank">Theme</a>
+  
+  
+  
+  
+  
+  
+</div>
+</footer>
+
+
+      </div>
+      
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.fancybox.min.js"></script>
+
+
+<script id="hexo-configurations">
+    window.theme_config = {"image":{"lazyload_enable":false}};
+    window.is_post = true;
+  </script>
+
+<script src="/js/main.js"></script>
+
+
+
+
+
+    </div>
+  </body>
+</html>
+

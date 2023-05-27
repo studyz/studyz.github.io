@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    
+
+<script>!function(){var e=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,t=localStorage.getItem("use-color-scheme")||"auto";("dark"===t||e&&"light"!==t)&&document.documentElement.classList.toggle("dark",!0)}()</script>
+
+<meta charset="utf-8" >
+
+<title>Hexo踩坑记录</title>
+<meta name="keywords" content="Hexo踩坑记录, Studyz的笔记">
+<meta name="description" content="
+基本信息摘要hexo version 查看hexo版本，我目前的 hexo 版本为hexo: 6.3.0，其它版本可能会有不同。 
+Hexo官方网站Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="stylesheet" href="/style/main.css">
+
+
+<link rel="stylesheet" href="/style/jquery.fancybox.min.css">
+
+
+
+
+    <link rel="stylesheet" href="/style/prism.css"/>
+
+
+
+
+  <meta name="generator" content="Hexo 6.3.0"></head>
+  <body>
+    <div id="app" class="main">
+
+<div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://studyz.github.io">
+        <img class="avatar" src="/images/avatar.png" alt="logo" width="32px" height="32px">
+      </a>
+      <a href="https://studyz.github.io">
+        <h1 class="site-title">Studyz的笔记</h1>
+      </a>
+    </div>
+    <div class="right">
+        <i class="icon menu-switch icon-menu-outline" ></i>
+    </div>
+  </div>
+</div>
+
+<div class="menu-container" style="height: 0;opacity: 0;">
+<nav class="menu-list">
+  
+    
+      <a href="/" class="menu purple-link">
+        首页
+      </a>
+    
+  
+    
+      <a href="/tags" class="menu purple-link">
+        标签
+      </a>
+    
+  
+    
+      <a href="/archives" class="menu purple-link">
+        归档
+      </a>
+    
+  
+    
+      <a href="/about" class="menu purple-link">
+        关于
+      </a>
+    
+  
+</nav>
+</div>
+
+
+
+  <div class="content-container">
+    <div class="post-detail">
+      
+      <h2 class="post-title">Hexo踩坑记录</h2>
+      <div class="post-info post-detail-info">
+        <span><i class="icon icon-calendar-outline"></i> 2023-03-15</span>
+        
+          <span>
+          <i class="icon icon-pricetags-outline"></i>
+            
+              <a href="/tags/hexo/">
+              hexo
+                
+                  ，
+                
+              </a>
+            
+              <a href="/tags/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/">
+              踩坑记录
+                
+              </a>
+            
+          </span>
+        
+      </div>
+      <div class="post-content-wrapper">
+        <div class="post-content">
+          <hr>
+<h3 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h3><h3 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h3><p><code>hexo version</code> 查看hexo版本，我目前的 hexo 版本为<code>hexo: 6.3.0</code>，其它版本可能会有不同。 </p>
+<p><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo官方网站</a><br>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 <a target="_blank" rel="noopener" href="https://github.com/tchapi/markdown-cheatsheet">Markdown</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
+<p><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/agqol9zm/">晨聊 篇十七：markdown也变脸，obsidian + hexo 在群晖NAS上的双剑合璧</a></p>
+<hr>
+<h3 id="图片引入"><a href="#图片引入" class="headerlink" title="图片引入"></a>图片引入</h3><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"><span class="token url"><span class="token operator">!</span>[<span class="token content">picture</span>](<span class="token url">http://via.placeholder.com/200x150</span> <span class="token string">"Title is optional"</span>)</span>
+
+https://img.ithome.com/newsuploadfiles/2022/11/b652aff7-4721-40f1-8803-911915efc1b1.png?x-bce-process=image/format,f_auto
+为什么这个链接就不起作用呢？<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<hr>
+<h3 id="主题踩坑"><a href="#主题踩坑" class="headerlink" title="主题踩坑"></a>主题踩坑</h3><p>使用主题：<a target="_blank" rel="noopener" href="https://github.com/f-dong/hexo-theme-minimalism">hexo-theme-minimalism</a><br>其他主题：<a target="_blank" rel="noopener" href="https://hexo.io/themes/">hexo themes</a></p>
+<h4 id="菜单导航配置"><a href="#菜单导航配置" class="headerlink" title="菜单导航配置:"></a>菜单导航配置:</h4><p>配置基本菜单导航的名称、路径url和图标icon.</p>
+<ol>
+<li>菜单导航名称可以是中文也可以是英文(如：<code>Index</code> 或 <code>主页</code>)</li>
+<li><code>External</code> 表示是否在新标签页打开连接</li>
+<li>导航地址可以是站内地址也可以是外网地址</li>
+</ol>
+<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">menu:
+  Index:
+    url: /
+    External: false
+    name: 首页
+  Tags:
+    url: /tags
+    External: false
+    name: 标签
+<span class="token title important"><span class="token punctuation">#</span>  Categories:</span>
+<span class="token title important"><span class="token punctuation">#</span>    url: /categories</span>
+<span class="token title important"><span class="token punctuation">#</span>    External: false</span>
+<span class="token title important"><span class="token punctuation">#</span>    name: 分类</span>
+  Archives:
+    url: /archives
+    External: false
+    name: 归档
+  About:
+    url: /about
+    External: false
+    name: 关于<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="hexo创建自定义about页"><a href="#hexo创建自定义about页" class="headerlink" title="hexo创建自定义about页"></a>hexo创建自定义about页</h4><p>如果<code>source/about/</code>文件夹内为空，运行一下代码新建<code>index.md</code></p>
+<pre class="line-numbers language-none"><code class="language-none">hexo new page &quot;about&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>主题的 <code>_configy.yml</code>目录结构</p>
+<pre class="line-numbers language-none"><code class="language-none">menu:
+  ...
+  About:
+	url: &#x2F;about
+	External: false
+	name: 关于<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>修改<code>source/about/</code>目录中的<code>index.md</code>文件即可编辑about页面。</p>
+<hr>
+<h3 id="一些有意思的插件"><a href="#一些有意思的插件" class="headerlink" title="一些有意思的插件"></a>一些有意思的插件</h3><p><a target="_blank" rel="noopener" href="https://hexo.io/plugins/">官方插件</a><br><a target="_blank" rel="noopener" href="https://github.com/fluid-dev/hexo-memorial-day">hexo-memorial-day</a>: 哀悼日专用 Hexo 插件，开启后全站灰色<br><a target="_blank" rel="noopener" href="https://github.com/threeq/hexo-tag-mermaid">hexo-tag-mermaid</a>: hexo mermaid插件，各种图<br><a target="_blank" rel="noopener" href="https://github.com/theme-next/theme-next-calendar">theme-next-calendar</a>: 简洁的hexo-next日历云插件, 在日历上显示提交标记<br><a target="_blank" rel="noopener" href="https://github.com/zuoer96/hexo-generator-index-top-hidden">hexo-generator-index-top-hidden</a>: hexo 插件：置顶、隐藏文章、隐藏分类</p>
+<hr>
+<h3 id="skip-render"><a href="#skip-render" class="headerlink" title="skip render"></a>skip render</h3><p><code>issue：</code>osbsidian需要添加模版等方便快速开始编辑post，会添加不需要渲染的目录和文件</p>
+<p><code>solution：</code><br>修改hexo根目录下_config.yml文件，</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">skip_render</span><span class="token punctuation">:</span>
+	<span class="token punctuation">-</span> <span class="token string">'_posts/templates/**'</span>
+	<span class="token punctuation">-</span> <span class="token string">'_posts/draft/**'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>目录结构：<br><code> - hexo/source/_posts/templates/</code> 保存post模版，供Obsidian快速开始Post编写。<br><code> - hexo/source/_posts/draft/</code> 保存未编辑完成，或不想共享的文章内容。</p>
+<p>设置跳过渲染之后，最好使用<code>hexo clean</code>清除以前的编译结果，保证配置生效。再使用<code>hexo g</code>查看。</p>
+<hr>
+<h3 id="自动generate"><a href="#自动generate" class="headerlink" title="自动generate"></a>自动generate</h3><p>定时or设置条件运行命令<code>docker exec -it hexo bash -c &quot;hexo clean &amp;&amp; hexo g&quot;</code>来自动编译。</p>
+<p><strong>踩坑：</strong>  直接在群晖的<code>控制面板</code> - <code>任务计划</code>中添加自定义脚本<code>docker exec -it hexo bash -c &quot;hexo clean &amp;&amp; hexo g&quot;</code>会报错<code>the input device is not a TTY</code>.</p>
+<p>tty一词源于Teletypes,或teletypewriters。这个的意思是说后台linux执行的时候没有终端设备。我们一般执行docker里的命令时候都喜欢加上-it 这个参数，这里的-t 就是表示伪tty。所以，如果我们docker执行后台运行的任务或者程序直接去除 -t 这个参数就不会出现这个报错了。</p>
+<p><strong>所以要用 <code>docker exec hexo bash -c &quot;hexo clean &amp;&amp; hexo g&quot;</code></strong></p>
+<p><strong>待改进：</strong> 设置了每天generate一次。如果设置成有变动就generate就更好了，暂时没想到办法。</p>
+<hr>
+<h3 id="视频嵌入"><a href="#视频嵌入" class="headerlink" title="视频嵌入"></a>视频嵌入</h3><p>现在视频基本上都会分享到各大平台，所以暂时主要以嵌入网络视频展示。<br>研究了几款插件，基本上都是年久失修，使用不易，最终还是选择了<code>iframe</code>嵌入。</p>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">%%bilibili视频嵌入%%
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value css language-css"><span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span> <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span> <span class="token property">height</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span> <span class="token property">padding-bottom</span><span class="token punctuation">:</span> 75%<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>iframe</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>//player.bilibili.com/player.html?aid=244387247&amp;cid=229573649&amp;page=1<span class="token punctuation">"</span></span> <span class="token attr-name">scrolling</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>no<span class="token punctuation">"</span></span> <span class="token attr-name">border</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span> <span class="token attr-name">frameborder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>no<span class="token punctuation">"</span></span> <span class="token attr-name">framespacing</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span> <span class="token attr-name">allowfullscreen</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span> <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value css language-css"><span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span> <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span> <span class="token property">height</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span> <span class="token property">Left</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span> <span class="token property">top</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span></span> <span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>iframe</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>  <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<hr>
+<h3 id="本地图片的调用"><a href="#本地图片的调用" class="headerlink" title="本地图片的调用"></a>本地图片的调用</h3><p>在 hexo 4.2可以在文章引用本地图片，引用方式是这样的：</p>
+<p>首先是在 _posts 文件夹下建立一个博文文件，比如 1.md，在建立一个同名的文件夹 1.md。这篇文章要引用的图片就放在该文件夹下。</p>
+<p>比如我就在该目录下放一个图片1.png。</p>
+<p><a href="/post-20230315112041-Hexo%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95-1.png" data-fancybox="lightbox" data-caption="文件夹实例"><img src="/2023/03/15/2023-03-15-Hexo%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/post-20230315112041-Hexo%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95-1.png" alt="文件夹实例"></a></p>
+<p>然后在博文 MarkDown 文件里引用该图片，怎么引用呢？用下面这种方式：</p>
+<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">![](1.png)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>为什么引用的时候不用加文件夹的路径呢？</strong></p>
+<p>这是因为 hexo 在渲染的时候，会把 1.md 渲染为 下的 index.html 网页文件，而把对应文件夹下的静态资源，比如图片 1.png也拷贝到public 下!</p>
+<p>需要注意的是，在<code>hexo/source/_posts</code>目录下的图片文件名不能重复。</p>
+
+        </div>
+        <div class="top-div">
+          <ol class="top-box"><li class="top-box-item top-box-level-3"><a class="top-box-link" href="#%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF"><span class="top-box-text">基本信息</span></a></li><li class="top-box-item top-box-level-3"><a class="top-box-link" href="#%E6%91%98%E8%A6%81"><span class="top-box-text">摘要</span></a></li><li class="top-box-item top-box-level-3"><a class="top-box-link" href="#%E5%9B%BE%E7%89%87%E5%BC%95%E5%85%A5"><span class="top-box-text">图片引入</span></a></li><li class="top-box-item top-box-level-3"><a class="top-box-link" href="#%E4%B8%BB%E9%A2%98%E8%B8%A9%E5%9D%91"><span class="top-box-text">主题踩坑</span></a></li><li class="top-box-item top-box-level-3"><a class="top-box-link" href="#%E4%B8%80%E4%BA%9B%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84%E6%8F%92%E4%BB%B6"><span class="top-box-text">一些有意思的插件</span></a></li><li class="top-box-item top-box-level-3"><a class="top-box-link" href="#skip-render"><span class="top-box-text">skip render</span></a></li><li class="top-box-item top-box-level-3"><a class="top-box-link" href="#%E8%87%AA%E5%8A%A8generate"><span class="top-box-text">自动generate</span></a></li><li class="top-box-item top-box-level-3"><a class="top-box-link" href="#%E8%A7%86%E9%A2%91%E5%B5%8C%E5%85%A5"><span class="top-box-text">视频嵌入</span></a></li><li class="top-box-item top-box-level-3"><a class="top-box-link" href="#%E6%9C%AC%E5%9C%B0%E5%9B%BE%E7%89%87%E7%9A%84%E8%B0%83%E7%94%A8"><span class="top-box-text">本地图片的调用</span></a></li></ol>
+        </div>
+      </div>
+    </div>
+
+    
+      <div class="next-post">
+        <a class="purple-link" href="/2022/08/01/2022-08-01-Hello%20World/">
+          <h3 class="post-title">
+            下一篇：Hello World
+          </h3>
+        </a>
+      </div>
+    
+  </div>
+
+
+
+
+<footer>
+<div class="site-footer">
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  
+    Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> <a href="https://github.com/f-dong/hexo-theme-minimalism" target="_blank">Theme</a>
+  
+  
+  
+  
+  
+  
+</div>
+</footer>
+
+
+      </div>
+      
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.fancybox.min.js"></script>
+
+
+<script id="hexo-configurations">
+    window.theme_config = {"image":{"lazyload_enable":false}};
+    window.is_post = true;
+  </script>
+
+<script src="/js/main.js"></script>
+
+
+
+
+
+    </div>
+  </body>
+</html>
+

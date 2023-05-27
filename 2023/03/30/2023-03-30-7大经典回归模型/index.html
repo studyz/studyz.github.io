@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    
+
+<script>!function(){var e=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,t=localStorage.getItem("use-color-scheme")||"auto";("dark"===t||e&&"light"!==t)&&document.documentElement.classList.toggle("dark",!0)}()</script>
+
+<meta charset="utf-8" >
+
+<title>7大经典回归模型</title>
+<meta name="keywords" content="7大经典回归模型, Studyz的笔记">
+<meta name="description" content="
+什么是回归分析？回归分析是一种预测性的建模技术，它研究的是因变量（目标）和自变量（预测器）之间的关系。这种技术通常用于预测分析，时间序列模型以及发现变量之间的因果关系。例如，司机的鲁莽驾驶与道路交通事故数量之间的关系，最好的研究方法就是回">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="stylesheet" href="/style/main.css">
+
+
+<link rel="stylesheet" href="/style/jquery.fancybox.min.css">
+
+
+
+
+    <link rel="stylesheet" href="/style/prism.css"/>
+
+
+
+
+  <meta name="generator" content="Hexo 6.3.0"></head>
+  <body>
+    <div id="app" class="main">
+
+<div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://studyz.github.io">
+        <img class="avatar" src="/images/avatar.png" alt="logo" width="32px" height="32px">
+      </a>
+      <a href="https://studyz.github.io">
+        <h1 class="site-title">Studyz的笔记</h1>
+      </a>
+    </div>
+    <div class="right">
+        <i class="icon menu-switch icon-menu-outline" ></i>
+    </div>
+  </div>
+</div>
+
+<div class="menu-container" style="height: 0;opacity: 0;">
+<nav class="menu-list">
+  
+    
+      <a href="/" class="menu purple-link">
+        首页
+      </a>
+    
+  
+    
+      <a href="/tags" class="menu purple-link">
+        标签
+      </a>
+    
+  
+    
+      <a href="/archives" class="menu purple-link">
+        归档
+      </a>
+    
+  
+    
+      <a href="/about" class="menu purple-link">
+        关于
+      </a>
+    
+  
+</nav>
+</div>
+
+
+
+  <div class="content-container">
+    <div class="post-detail">
+      
+      <h2 class="post-title">7大经典回归模型</h2>
+      <div class="post-info post-detail-info">
+        <span><i class="icon icon-calendar-outline"></i> 2023-03-30</span>
+        
+          <span>
+          <i class="icon icon-pricetags-outline"></i>
+            
+              <a href="/tags/test/">
+              test
+                
+              </a>
+            
+          </span>
+        
+      </div>
+      <div class="post-content-wrapper">
+        <div class="post-content">
+          <hr>
+<h2 id="什么是回归分析？"><a href="#什么是回归分析？" class="headerlink" title="什么是回归分析？"></a>什么是回归分析？</h2><p>回归分析是一种预测性的建模技术，它研究的是因变量（目标）和自变量（预测器）之间的关系。这种技术通常用于预测分析，时间序列模型以及发现变量之间的因果关系。例如，司机的鲁莽驾驶与道路交通事故数量之间的关系，最好的研究方法就是回归。</p>
+<p>回归分析是建模和分析数据的重要工具。在这里，我们使用曲线&#x2F;线来拟合这些数据点，在这种方式下，从曲线或线到数据点的距离差异最小。我会在接下来的部分详细解释这一点。</p>
+<p><a target="_blank" rel="noopener" href="https://mmbiz.qpic.cn/mmbiz_png/jupejmznDCicuTUM5kPuCV0a7ibJbmXUIgtnNMay27TGbA3gQIaJMH0Gib1yicVgE7koUc39cyQEDB1EDY5rjQDZFg/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1" data-fancybox="lightbox" data-caption="Image"><img src="https://mmbiz.qpic.cn/mmbiz_png/jupejmznDCicuTUM5kPuCV0a7ibJbmXUIgtnNMay27TGbA3gQIaJMH0Gib1yicVgE7koUc39cyQEDB1EDY5rjQDZFg/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1" alt="Image"></a></p>
+<h2 id="我们为什么使用回归分析？"><a href="#我们为什么使用回归分析？" class="headerlink" title="我们为什么使用回归分析？"></a>我们为什么使用回归分析？</h2><p>如上所述，回归分析估计了两个或多个变量之间的关系。下面，让我们举一个简单的例子来理解它：</p>
+<p>比如说，在当前的经济条件下，你要估计一家公司的销售额增长情况。现在，你有公司最新的数据，这些数据显示出销售额增长大约是经济增长的2.5倍。那么使用回归分析，我们就可以根据当前和过去的信息来预测未来公司的销售情况。</p>
+<p>使用回归分析的好处良多。具体如下：</p>
+<ol>
+<li>它表明自变量和因变量之间的显著关系；</li>
+<li>它表明多个自变量对一个因变量的影响强度。</li>
+</ol>
+<p>回归分析也允许我们去比较那些衡量不同尺度的变量之间的相互影响，如价格变动与促销活动数量之间联系。这些有利于帮助市场研究人员，数据分析人员以及数据科学家排除并估计出一组最佳的变量，用来构建预测模型。</p>
+<h2 id="我们有多少种回归技术？"><a href="#我们有多少种回归技术？" class="headerlink" title="我们有多少种回归技术？"></a>我们有多少种回归技术？</h2><p>有各种各样的回归技术用于预测。这些技术主要有三个度量（自变量的个数，因变量的类型以及回归线的形状）。我们将在下面的部分详细讨论它们。</p>
+<p><a target="_blank" rel="noopener" href="https://mmbiz.qpic.cn/mmbiz_jpg/jupejmznDCicuTUM5kPuCV0a7ibJbmXUIgv0E3Brkic66v6AJxyuEyc0kj4XFXKTn7dUsFPmTBU9aq3AK6W2qVJCA/640?wx_fmt=jpeg&wxfrom=5&wx_lazy=1&wx_co=1" data-fancybox="lightbox" data-caption="Image"><img src="https://mmbiz.qpic.cn/mmbiz_jpg/jupejmznDCicuTUM5kPuCV0a7ibJbmXUIgv0E3Brkic66v6AJxyuEyc0kj4XFXKTn7dUsFPmTBU9aq3AK6W2qVJCA/640?wx_fmt=jpeg&wxfrom=5&wx_lazy=1&wx_co=1" alt="Image"></a></p>
+<p>对于那些有创意的人，如果你觉得有必要使用上面这些参数的一个组合，你甚至可以创造出一个没有被使用过的回归模型。但在你开始之前，先了解如下最常用的回归方法：</p>
+<h3 id="1-Linear-Regression线性回归"><a href="#1-Linear-Regression线性回归" class="headerlink" title="1.Linear Regression线性回归"></a>1.Linear Regression线性回归</h3><p>它是最为人熟知的建模技术之一。线性回归通常是人们在学习预测模型时首选的技术之一。在这种技术中，因变量是连续的，自变量可以是连续的也可以是离散的，回归线的性质是线性的。</p>
+<p>线性回归使用最佳的拟合直线（也就是回归线）在因变量（Y）和一个或多个自变量（X）之间建立一种关系。</p>
+<p>用一个方程式来表示它，即Y&#x3D;a+b*X+e，其中a表示截距，b表示直线的斜率，e是误差项。这个方程可以根据给定的预测变量（s）来预测目标变量的值。</p>
+<p><a target="_blank" rel="noopener" href="https://mmbiz.qpic.cn/mmbiz_png/jupejmznDCicuTUM5kPuCV0a7ibJbmXUIgpjibAboQNenZdKZ4VvGzpAxsPu1O0VcCZZHZhIwXgYTkgoS4WXA2zicA/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1" data-fancybox="lightbox" data-caption="Image"><img src="https://mmbiz.qpic.cn/mmbiz_png/jupejmznDCicuTUM5kPuCV0a7ibJbmXUIgpjibAboQNenZdKZ4VvGzpAxsPu1O0VcCZZHZhIwXgYTkgoS4WXA2zicA/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1" alt="Image"></a></p>
+<p>一元线性回归和多元线性回归的区别在于，多元线性回归有（&gt;1）个自变量，而一元线性回归通常只有1个自变量。现在的问题是“我们如何得到一个最佳的拟合线呢？”。</p>
+<p><strong>如何获得最佳拟合线（a和b的值）？</strong></p>
+<p>这个问题可以使用最小二乘法轻松地完成。最小二乘法也是用于拟合回归线最常用的方法。对于观测数据，它通过最小化每个数据点到线的垂直偏差平方和来计算最佳拟合线。因为在相加时，偏差先平方，所以正值和负值没有抵消。</p>
+<p><a target="_blank" rel="noopener" href="https://mmbiz.qpic.cn/mmbiz_jpg/jupejmznDCicuTUM5kPuCV0a7ibJbmXUIgI1td0e6oAxoVpcOID7ic3GON0PSXLOeNG6DI3lNUd7y5hCMCMibJBHibw/640?wx_fmt=jpeg&wxfrom=5&wx_lazy=1&wx_co=1" data-fancybox="lightbox" data-caption="Image"><img src="https://mmbiz.qpic.cn/mmbiz_jpg/jupejmznDCicuTUM5kPuCV0a7ibJbmXUIgI1td0e6oAxoVpcOID7ic3GON0PSXLOeNG6DI3lNUd7y5hCMCMibJBHibw/640?wx_fmt=jpeg&wxfrom=5&wx_lazy=1&wx_co=1" alt="Image"></a></p>
+<p>我们可以使用R-square指标来评估模型性能。想了解这些指标的详细信息，可以阅读：模型性能指标Part 1,Part 2.</p>
+<blockquote>
+<p><strong>要点：</strong></p>
+<p>1.自变量与因变量之间必须有线性关系</p>
+<p>2.多元回归存在多重共线性，自相关性和异方差性。</p>
+<p>3.线性回归对异常值非常敏感。它会严重影响回归线，最终影响预测值。</p>
+<p>4.多重共线性会增加系数估计值的方差，使得在模型轻微变化下，估计非常敏感。结果就是系数估计值不稳定</p>
+<p>5.在多个自变量的情况下，我们可以使用向前选择法，向后剔除法和逐步筛选法来选择最重要的自变量。</p>
+</blockquote>
+<h3 id="2-Logistic-Regression逻辑回归"><a href="#2-Logistic-Regression逻辑回归" class="headerlink" title="2.Logistic Regression逻辑回归"></a><strong>2.Logistic Regression逻辑回归</strong></h3><p>逻辑回归是用来计算“事件&#x3D;Success”和“事件&#x3D;Failure”的概率。当因变量的类型属于二元（1 &#x2F; 0，真&#x2F;假，是&#x2F;否）变量时，我们就应该使用逻辑回归。这里，Y的值从0到1，它可以用下方程表示。</p>
+<p>odds&#x3D; p&#x2F; (1-p) &#x3D; probability of event occurrence &#x2F; probability of not event occurrenceln(odds) &#x3D; ln(p&#x2F;(1-p))logit(p) &#x3D; ln(p&#x2F;(1-p)) &#x3D; b0+b1X1+b2X2+b3X3….+bkXk</p>
+<p>上述式子中，p表述具有某个特征的概率。你应该会问这样一个问题：“我们为什么要在公式中使用对数log呢？”。</p>
+<p>因为在这里我们使用的是的二项分布（因变量），我们需要选择一个对于这个分布最佳的连结函数。它就是Logit函数。在上述方程中，通过观测样本的极大似然估计值来选择参数，而不是最小化平方和误差（如在普通回归使用的）。</p>
+<p><a target="_blank" rel="noopener" href="https://mmbiz.qpic.cn/mmbiz_jpg/jupejmznDCicuTUM5kPuCV0a7ibJbmXUIgGiamKK8yK7vQ4ZbjK2tDzrevoXlibkgjEgI3M4ddlm2tRrQFHohehxmg/640?wx_fmt=jpeg&wxfrom=5&wx_lazy=1&wx_co=1" data-fancybox="lightbox" data-caption="Image"><img src="https://mmbiz.qpic.cn/mmbiz_jpg/jupejmznDCicuTUM5kPuCV0a7ibJbmXUIgGiamKK8yK7vQ4ZbjK2tDzrevoXlibkgjEgI3M4ddlm2tRrQFHohehxmg/640?wx_fmt=jpeg&wxfrom=5&wx_lazy=1&wx_co=1" alt="Image"></a></p>
+<blockquote>
+<p><strong>要点：</strong></p>
+<p>1.它广泛的用于分类问题。</p>
+<p>2.逻辑回归不要求自变量和因变量是线性关系。它可以处理各种类型的关系，因为它对预测的相对风险指数OR使用了一个非线性的log转换。</p>
+<p>3.为了避免过拟合和欠拟合，我们应该包括所有重要的变量。有一个很好的方法来确保这种情况，就是使用逐步筛选方法来估计逻辑回归。</p>
+<p>4.它需要大的样本量，因为在样本数量较少的情况下，极大似然估计的效果比普通的最小二乘法差。</p>
+<p>5.自变量不应该相互关联的，即不具有多重共线性。然而，在分析和建模中，我们可以选择包含分类变量相互作用的影响。</p>
+<p>6.如果因变量的值是定序变量，则称它为序逻辑回归。</p>
+<p>7.如果因变量是多类的话，则称它为多元逻辑回归。</p>
+</blockquote>
+<h3 id="3-Polynomial-Regression多项式回归"><a href="#3-Polynomial-Regression多项式回归" class="headerlink" title="3.Polynomial Regression多项式回归"></a><strong>3.Polynomial Regression多项式回归</strong></h3><p>对于一个回归方程，如果自变量的指数大于1，那么它就是多项式回归方程。如下方程所示：y&#x3D;a+b*x^2</p>
+<p>在这种回归技术中，最佳拟合线不是直线。而是一个用于拟合数据点的曲线。</p>
+<p><a target="_blank" rel="noopener" href="https://mmbiz.qpic.cn/mmbiz_png/jupejmznDCicuTUM5kPuCV0a7ibJbmXUIgIXkn7MibNgQzb5uXrBVgTtCjiabgWbBZUcNdq610lCuLzmDxhxgEDS3A/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1" data-fancybox="lightbox" data-caption="Image"><img src="https://mmbiz.qpic.cn/mmbiz_png/jupejmznDCicuTUM5kPuCV0a7ibJbmXUIgIXkn7MibNgQzb5uXrBVgTtCjiabgWbBZUcNdq610lCuLzmDxhxgEDS3A/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1" alt="Image"></a></p>
+<blockquote>
+<p>重点：</p>
+<p>虽然会有一个诱导可以拟合一个高次多项式并得到较低的错误，但这可能会导致过拟合。你需要经常画出关系图来查看拟合情况，并且专注于保证拟合合理，既没有过拟合又没有欠拟合。</p>
+</blockquote>
+<p>下面是一个图例，可以帮助理解：</p>
+<p><a target="_blank" rel="noopener" href="https://mmbiz.qpic.cn/mmbiz_png/jupejmznDCicuTUM5kPuCV0a7ibJbmXUIgn9wxg57bR5wdnTRdVl9ohZopy4TFQJjgmTFRZIkYx3zLFIXPAic8BDA/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1" data-fancybox="lightbox" data-caption="Image"><img src="https://mmbiz.qpic.cn/mmbiz_png/jupejmznDCicuTUM5kPuCV0a7ibJbmXUIgn9wxg57bR5wdnTRdVl9ohZopy4TFQJjgmTFRZIkYx3zLFIXPAic8BDA/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1" alt="Image"></a></p>
+<p>明显地向两端寻找曲线点，看看这些形状和趋势是否有意义。更高次的多项式最后可能产生怪异的推断结果。</p>
+<p>![Image](data:image&#x2F;svg+xml,%3C%3Fxml version&#x3D;’1.0’ encoding&#x3D;’UTF-8’%3F%3E%3Csvg width&#x3D;’1px’ height&#x3D;’1px’ viewBox&#x3D;’0 0 1 1’ version&#x3D;’1.1’ xmlns&#x3D;’<a target="_blank" rel="noopener" href="http://www.w3.org/2000/svg">http://www.w3.org/2000/svg</a>‘ xmlns:xlink&#x3D;’<a target="_blank" rel="noopener" href="http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg">http://www.w3.org/1999/xlink&#39;%3E%3Ctitle%3E%3C/title%3E%3Cg</a> stroke&#x3D;’none’ stroke-width&#x3D;’1’ fill&#x3D;’none’ fill-rule&#x3D;’evenodd’ fill-opacity&#x3D;’0’%3E%3Cg transform&#x3D;’translate(-249.000000, -126.000000)’ fill&#x3D;’%23FFFFFF’%3E%3Crect x&#x3D;’249’ y&#x3D;’126’ width&#x3D;’1’ height&#x3D;’1’%3E%3C&#x2F;rect%3E%3C&#x2F;g%3E%3C&#x2F;g%3E%3C&#x2F;svg%3E)</p>
+<h3 id="4-Stepwise-Regression逐步回归"><a href="#4-Stepwise-Regression逐步回归" class="headerlink" title="4.Stepwise Regression逐步回归"></a><strong>4.Stepwise Regression逐步回归</strong></h3><p>在处理多个自变量时，我们可以使用这种形式的回归。在这种技术中，自变量的选择是在一个自动的过程中完成的，其中包括非人为操作。</p>
+<p>这一壮举是通过观察统计的值，如R-square，t-stats和AIC指标，来识别重要的变量。逐步回归通过同时添加&#x2F;删除基于指定标准的协变量来拟合模型。</p>
+<p>下面列出了一些最常用的逐步回归方法：</p>
+<ul>
+<li><p>标准逐步回归法做两件事情。即增加和删除每个步骤所需的预测。</p>
+</li>
+<li><p>向前选择法从模型中最显著的预测开始，然后为每一步添加变量。</p>
+</li>
+<li><p>向后剔除法与模型的所有预测同时开始，然后在每一步消除最小显着性的变量。</p>
+</li>
+</ul>
+<p>这种建模技术的目的是使用最少的预测变量数来最大化预测能力。这也是处理高维数据集的方法之一。</p>
+<p>![Image](data:image&#x2F;svg+xml,%3C%3Fxml version&#x3D;’1.0’ encoding&#x3D;’UTF-8’%3F%3E%3Csvg width&#x3D;’1px’ height&#x3D;’1px’ viewBox&#x3D;’0 0 1 1’ version&#x3D;’1.1’ xmlns&#x3D;’<a target="_blank" rel="noopener" href="http://www.w3.org/2000/svg">http://www.w3.org/2000/svg</a>‘ xmlns:xlink&#x3D;’<a target="_blank" rel="noopener" href="http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg">http://www.w3.org/1999/xlink&#39;%3E%3Ctitle%3E%3C/title%3E%3Cg</a> stroke&#x3D;’none’ stroke-width&#x3D;’1’ fill&#x3D;’none’ fill-rule&#x3D;’evenodd’ fill-opacity&#x3D;’0’%3E%3Cg transform&#x3D;’translate(-249.000000, -126.000000)’ fill&#x3D;’%23FFFFFF’%3E%3Crect x&#x3D;’249’ y&#x3D;’126’ width&#x3D;’1’ height&#x3D;’1’%3E%3C&#x2F;rect%3E%3C&#x2F;g%3E%3C&#x2F;g%3E%3C&#x2F;svg%3E)</p>
+<h3 id="5-Ridge-Regression岭回归"><a href="#5-Ridge-Regression岭回归" class="headerlink" title="5.Ridge Regression岭回归"></a><strong>5.Ridge Regression岭回归</strong></h3><p>岭回归分析是一种用于存在多重共线性（自变量高度相关）数据的技术。在多重共线性情况下，尽管最小二乘法（OLS）对每个变量很公平，但它们的差异很大，使得观测值偏移并远离真实值。岭回归通过给回归估计上增加一个偏差度，来降低标准误差。</p>
+<p>上面，我们看到了线性回归方程。还记得吗？它可以表示为：</p>
+<p>y&#x3D;a+b*x这个方程也有一个误差项。完整的方程是：</p>
+<p>y&#x3D;a+b*x+e (error term),  [error term is the value needed to correct for a prediction error between the observed and predicted value]</p>
+<p>=&gt; y&#x3D;a+y&#x3D; a+ b1x1+ b2x2+….+e, for multiple independent variables.</p>
+<p>在一个线性方程中，预测误差可以分解为2个子分量。一个是偏差，一个是方差。预测错误可能会由这两个分量或者这两个中的任何一个造成。在这里，我们将讨论由方差所造成的有关误差。</p>
+<p>岭回归通过收缩参数λ（lambda）解决多重共线性问题。看下面的公式</p>
+<p>![Image](data:image&#x2F;svg+xml,%3C%3Fxml version&#x3D;’1.0’ encoding&#x3D;’UTF-8’%3F%3E%3Csvg width&#x3D;’1px’ height&#x3D;’1px’ viewBox&#x3D;’0 0 1 1’ version&#x3D;’1.1’ xmlns&#x3D;’<a target="_blank" rel="noopener" href="http://www.w3.org/2000/svg">http://www.w3.org/2000/svg</a>‘ xmlns:xlink&#x3D;’<a target="_blank" rel="noopener" href="http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg">http://www.w3.org/1999/xlink&#39;%3E%3Ctitle%3E%3C/title%3E%3Cg</a> stroke&#x3D;’none’ stroke-width&#x3D;’1’ fill&#x3D;’none’ fill-rule&#x3D;’evenodd’ fill-opacity&#x3D;’0’%3E%3Cg transform&#x3D;’translate(-249.000000, -126.000000)’ fill&#x3D;’%23FFFFFF’%3E%3Crect x&#x3D;’249’ y&#x3D;’126’ width&#x3D;’1’ height&#x3D;’1’%3E%3C&#x2F;rect%3E%3C&#x2F;g%3E%3C&#x2F;g%3E%3C&#x2F;svg%3E)</p>
+<p>在这个公式中，有两个组成部分。第一个是最小二乘项，另一个是β2（β-平方）的λ倍，其中β是相关系数。为了收缩参数把它添加到最小二乘项中以得到一个非常低的方差。</p>
+<blockquote>
+<p>要点：</p>
+<p>1.除常数项以外，这种回归的假设与最小二乘回归类似；</p>
+<p>2.它收缩了相关系数的值，但没有达到零，这表明它没有特征选择功能</p>
+<p>3.这是一个正则化方法，并且使用的是L2正则化。</p>
+</blockquote>
+<p>![Image](data:image&#x2F;svg+xml,%3C%3Fxml version&#x3D;’1.0’ encoding&#x3D;’UTF-8’%3F%3E%3Csvg width&#x3D;’1px’ height&#x3D;’1px’ viewBox&#x3D;’0 0 1 1’ version&#x3D;’1.1’ xmlns&#x3D;’<a target="_blank" rel="noopener" href="http://www.w3.org/2000/svg">http://www.w3.org/2000/svg</a>‘ xmlns:xlink&#x3D;’<a target="_blank" rel="noopener" href="http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg">http://www.w3.org/1999/xlink&#39;%3E%3Ctitle%3E%3C/title%3E%3Cg</a> stroke&#x3D;’none’ stroke-width&#x3D;’1’ fill&#x3D;’none’ fill-rule&#x3D;’evenodd’ fill-opacity&#x3D;’0’%3E%3Cg transform&#x3D;’translate(-249.000000, -126.000000)’ fill&#x3D;’%23FFFFFF’%3E%3Crect x&#x3D;’249’ y&#x3D;’126’ width&#x3D;’1’ height&#x3D;’1’%3E%3C&#x2F;rect%3E%3C&#x2F;g%3E%3C&#x2F;g%3E%3C&#x2F;svg%3E)</p>
+<h3 id="6-Lasso-Regression套索回归"><a href="#6-Lasso-Regression套索回归" class="headerlink" title="6.Lasso Regression套索回归"></a><strong>6.Lasso Regression套索回归</strong></h3><p>它类似于岭回归，Lasso （Least Absolute Shrinkage and Selection Operator）也会惩罚回归系数的绝对值大小。此外，它能够减少变化程度并提高线性回归模型的精度。看看下面的公式：</p>
+<p>![Image](data:image&#x2F;svg+xml,%3C%3Fxml version&#x3D;’1.0’ encoding&#x3D;’UTF-8’%3F%3E%3Csvg width&#x3D;’1px’ height&#x3D;’1px’ viewBox&#x3D;’0 0 1 1’ version&#x3D;’1.1’ xmlns&#x3D;’<a target="_blank" rel="noopener" href="http://www.w3.org/2000/svg">http://www.w3.org/2000/svg</a>‘ xmlns:xlink&#x3D;’<a target="_blank" rel="noopener" href="http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg">http://www.w3.org/1999/xlink&#39;%3E%3Ctitle%3E%3C/title%3E%3Cg</a> stroke&#x3D;’none’ stroke-width&#x3D;’1’ fill&#x3D;’none’ fill-rule&#x3D;’evenodd’ fill-opacity&#x3D;’0’%3E%3Cg transform&#x3D;’translate(-249.000000, -126.000000)’ fill&#x3D;’%23FFFFFF’%3E%3Crect x&#x3D;’249’ y&#x3D;’126’ width&#x3D;’1’ height&#x3D;’1’%3E%3C&#x2F;rect%3E%3C&#x2F;g%3E%3C&#x2F;g%3E%3C&#x2F;svg%3E)</p>
+<p>Lasso 回归与Ridge回归有一点不同，它使用的惩罚函数是绝对值，而不是平方。这导致惩罚（或等于约束估计的绝对值之和）值使一些参数估计结果等于零。使用惩罚值越大，进一步估计会使得缩小值趋近于零。这将导致我们要从给定的n个变量中选择变量。</p>
+<blockquote>
+<p>要点：</p>
+<p>1.除常数项以外，这种回归的假设与最小二乘回归类似；</p>
+<p>2.它收缩系数接近零（等于零），这确实有助于特征选择；</p>
+<p>3.这是一个正则化方法，使用的是L1正则化；</p>
+<p>如果预测的一组变量是高度相关的，Lasso 会选出其中一个变量并且将其它的收缩为零。</p>
+</blockquote>
+<p>![Image](data:image&#x2F;svg+xml,%3C%3Fxml version&#x3D;’1.0’ encoding&#x3D;’UTF-8’%3F%3E%3Csvg width&#x3D;’1px’ height&#x3D;’1px’ viewBox&#x3D;’0 0 1 1’ version&#x3D;’1.1’ xmlns&#x3D;’<a target="_blank" rel="noopener" href="http://www.w3.org/2000/svg">http://www.w3.org/2000/svg</a>‘ xmlns:xlink&#x3D;’<a target="_blank" rel="noopener" href="http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg">http://www.w3.org/1999/xlink&#39;%3E%3Ctitle%3E%3C/title%3E%3Cg</a> stroke&#x3D;’none’ stroke-width&#x3D;’1’ fill&#x3D;’none’ fill-rule&#x3D;’evenodd’ fill-opacity&#x3D;’0’%3E%3Cg transform&#x3D;’translate(-249.000000, -126.000000)’ fill&#x3D;’%23FFFFFF’%3E%3Crect x&#x3D;’249’ y&#x3D;’126’ width&#x3D;’1’ height&#x3D;’1’%3E%3C&#x2F;rect%3E%3C&#x2F;g%3E%3C&#x2F;g%3E%3C&#x2F;svg%3E)</p>
+<h3 id="7-ElasticNet回归"><a href="#7-ElasticNet回归" class="headerlink" title="7.ElasticNet回归"></a><strong>7.ElasticNet回归</strong></h3><p>ElasticNet是Lasso和Ridge回归技术的混合体。它使用L1来训练并且L2优先作为正则化矩阵。当有多个相关的特征时，ElasticNet是很有用的。Lasso 会随机挑选他们其中的一个，而ElasticNet则会选择两个。</p>
+<p>![Image](data:image&#x2F;svg+xml,%3C%3Fxml version&#x3D;’1.0’ encoding&#x3D;’UTF-8’%3F%3E%3Csvg width&#x3D;’1px’ height&#x3D;’1px’ viewBox&#x3D;’0 0 1 1’ version&#x3D;’1.1’ xmlns&#x3D;’<a target="_blank" rel="noopener" href="http://www.w3.org/2000/svg">http://www.w3.org/2000/svg</a>‘ xmlns:xlink&#x3D;’<a target="_blank" rel="noopener" href="http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg">http://www.w3.org/1999/xlink&#39;%3E%3Ctitle%3E%3C/title%3E%3Cg</a> stroke&#x3D;’none’ stroke-width&#x3D;’1’ fill&#x3D;’none’ fill-rule&#x3D;’evenodd’ fill-opacity&#x3D;’0’%3E%3Cg transform&#x3D;’translate(-249.000000, -126.000000)’ fill&#x3D;’%23FFFFFF’%3E%3Crect x&#x3D;’249’ y&#x3D;’126’ width&#x3D;’1’ height&#x3D;’1’%3E%3C&#x2F;rect%3E%3C&#x2F;g%3E%3C&#x2F;g%3E%3C&#x2F;svg%3E)</p>
+<p>Lasso和Ridge之间的实际的优点是，它允许ElasticNet继承循环状态下Ridge的一些稳定性。</p>
+<blockquote>
+<p><strong>要点：</strong></p>
+<p>1.在高度相关变量的情况下，它会产生群体效应；</p>
+<p>2.选择变量的数目没有限制；</p>
+<p>3.它可以承受双重收缩。</p>
+</blockquote>
+<p>除了这7个最常用的回归技术，你也可以看看其他模型，如Bayesian、Ecological和Robust回归。</p>
+<p><strong>如何正确选择回归模型？</strong></p>
+<p>当你只知道一个或两个技术时，生活往往很简单。我知道的一个培训机构告诉他们的学生，如果结果是连续的，就使用线性回归。如果是二元的，就使用逻辑回归！然而，在我们的处理中，可选择的越多，选择正确的一个就越难。类似的情况下也发生在回归模型中。</p>
+<p>在多类回归模型中，基于自变量和因变量的类型，数据的维数以及数据的其它基本特征的情况下，选择最合适的技术非常重要。以下是你要选择正确的回归模型的<strong>关键因素</strong>：</p>
+<p>1.数据探索是构建预测模型的必然组成部分。在选择合适的模型时，比如识别变量的关系和影响时，它应该首选的一步。</p>
+<p>2. 比较适合于不同模型的优点，我们可以分析不同的指标参数，如统计意义的参数，R-square，Adjusted R-square，AIC，BIC以及误差项，另一个是Mallows’ Cp准则。这个主要是通过将模型与所有可能的子模型进行对比（或谨慎选择他们），检查在你的模型中可能出现的偏差。</p>
+<p>3.交叉验证是评估预测模型最好额方法。在这里，将你的数据集分成两份（一份做训练和一份做验证）。使用观测值和预测值之间的一个简单均方差来衡量你的预测精度。</p>
+<p>4.如果你的数据集是多个混合变量，那么你就不应该选择自动模型选择方法，因为你应该不想在同一时间把所有变量放在同一个模型中。</p>
+<p>5.它也将取决于你的目的。可能会出现这样的情况，一个不太强大的模型与具有高度统计学意义的模型相比，更易于实现。</p>
+<p>6.回归正则化方法（Lasso，Ridge和ElasticNet）在高维和数据集变量之间多重共线性情况下运行良好。</p>
+<p>作者：Sunil Ray<br>ref: <a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MjM5NzEyMzg4MA==&mid=2649468348&idx=6&sn=98e8ec166f38992470bd2de5979c33f0&chksm=bec1cffb89b646ed54437df231cfe3c3cf1a66010672daa570a5791d29ee0c022cf7fd36556b&scene=27">7大经典回归模型</a></p>
+<p><code>&#123;% if not is_index %&#125;`
+`-------------本文结束感谢您的阅读-------------`
+`&#123;% endif %&#125;</code></p>
+
+        </div>
+        <div class="top-div">
+          <ol class="top-box"><li class="top-box-item top-box-level-2"><a class="top-box-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%9B%9E%E5%BD%92%E5%88%86%E6%9E%90%EF%BC%9F"><span class="top-box-text">什么是回归分析？</span></a></li><li class="top-box-item top-box-level-2"><a class="top-box-link" href="#%E6%88%91%E4%BB%AC%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%BF%E7%94%A8%E5%9B%9E%E5%BD%92%E5%88%86%E6%9E%90%EF%BC%9F"><span class="top-box-text">我们为什么使用回归分析？</span></a></li><li class="top-box-item top-box-level-2"><a class="top-box-link" href="#%E6%88%91%E4%BB%AC%E6%9C%89%E5%A4%9A%E5%B0%91%E7%A7%8D%E5%9B%9E%E5%BD%92%E6%8A%80%E6%9C%AF%EF%BC%9F"><span class="top-box-text">我们有多少种回归技术？</span></a><ol class="top-box-child"><li class="top-box-item top-box-level-3"><a class="top-box-link" href="#1-Linear-Regression%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92"><span class="top-box-text">1.Linear Regression线性回归</span></a></li><li class="top-box-item top-box-level-3"><a class="top-box-link" href="#2-Logistic-Regression%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92"><span class="top-box-text">2.Logistic Regression逻辑回归</span></a></li><li class="top-box-item top-box-level-3"><a class="top-box-link" href="#3-Polynomial-Regression%E5%A4%9A%E9%A1%B9%E5%BC%8F%E5%9B%9E%E5%BD%92"><span class="top-box-text">3.Polynomial Regression多项式回归</span></a></li><li class="top-box-item top-box-level-3"><a class="top-box-link" href="#4-Stepwise-Regression%E9%80%90%E6%AD%A5%E5%9B%9E%E5%BD%92"><span class="top-box-text">4.Stepwise Regression逐步回归</span></a></li><li class="top-box-item top-box-level-3"><a class="top-box-link" href="#5-Ridge-Regression%E5%B2%AD%E5%9B%9E%E5%BD%92"><span class="top-box-text">5.Ridge Regression岭回归</span></a></li><li class="top-box-item top-box-level-3"><a class="top-box-link" href="#6-Lasso-Regression%E5%A5%97%E7%B4%A2%E5%9B%9E%E5%BD%92"><span class="top-box-text">6.Lasso Regression套索回归</span></a></li><li class="top-box-item top-box-level-3"><a class="top-box-link" href="#7-ElasticNet%E5%9B%9E%E5%BD%92"><span class="top-box-text">7.ElasticNet回归</span></a></li></ol></li></ol>
+        </div>
+      </div>
+    </div>
+
+    
+      <div class="next-post">
+        <a class="purple-link" href="/2023/03/28/2023-03-28-Hadoop%E3%80%81Spark%E3%80%81Flink%E7%AE%80%E5%8D%95%E6%A6%82%E8%A6%81/">
+          <h3 class="post-title">
+            下一篇：Hadoop、Spark、Flink简单概要
+          </h3>
+        </a>
+      </div>
+    
+  </div>
+
+
+
+
+<footer>
+<div class="site-footer">
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  
+    Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> <a href="https://github.com/f-dong/hexo-theme-minimalism" target="_blank">Theme</a>
+  
+  
+  
+  
+  
+  
+</div>
+</footer>
+
+
+      </div>
+      
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.fancybox.min.js"></script>
+
+
+<script id="hexo-configurations">
+    window.theme_config = {"image":{"lazyload_enable":false}};
+    window.is_post = true;
+  </script>
+
+<script src="/js/main.js"></script>
+
+
+
+
+
+    </div>
+  </body>
+</html>
+
