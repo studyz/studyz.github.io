@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    
+
+<script>!function(){var e=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,t=localStorage.getItem("use-color-scheme")||"auto";("dark"===t||e&&"light"!==t)&&document.documentElement.classList.toggle("dark",!0)}()</script>
+
+<meta charset="utf-8" >
+
+<title>Studyz的笔记</title>
+<meta name="keywords" content="Studyz的笔记, Studyz的笔记">
+<meta name="description" content="1. Import Libraryimport numpy as np 
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+2. Loadi">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="stylesheet" href="/style/main.css">
+
+
+<link rel="stylesheet" href="/style/jquery.fancybox.min.css">
+
+
+
+
+    <link rel="stylesheet" href="/style/prism.css"/>
+
+
+
+
+  <meta name="generator" content="Hexo 6.3.0"></head>
+  <body>
+    <div id="app" class="main">
+
+<div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://blog.studyzhome.xyz">
+        <img class="avatar" src="/images/avatar.png" alt="logo" width="32px" height="32px">
+      </a>
+      <a href="https://blog.studyzhome.xyz">
+        <h1 class="site-title">Studyz的笔记</h1>
+      </a>
+    </div>
+    <div class="right">
+        <i class="icon menu-switch icon-menu-outline" ></i>
+    </div>
+  </div>
+</div>
+
+<div class="menu-container" style="height: 0;opacity: 0;">
+<nav class="menu-list">
+  
+    
+      <a href="/" class="menu purple-link">
+        首页
+      </a>
+    
+  
+    
+      <a href="/tags" class="menu purple-link">
+        标签
+      </a>
+    
+  
+    
+      <a href="/archives" class="menu purple-link">
+        归档
+      </a>
+    
+  
+    
+      <a href="/about" class="menu purple-link">
+        关于
+      </a>
+    
+  
+</nav>
+</div>
+
+
+
+  <div class="content-container">
+    <div class="post-detail">
+      
+      <h2 class="post-title"></h2>
+      <div class="post-info post-detail-info">
+        <span><i class="icon icon-calendar-outline"></i> 2023-05-08</span>
+        
+      </div>
+      <div class="post-content-wrapper">
+        <div class="post-content">
+          <h1 id="1-Import-Library"><a href="#1-Import-Library" class="headerlink" title="1. Import Library"></a>1. Import Library</h1><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np 
+<span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
+<span class="token keyword">import</span> seaborn <span class="token keyword">as</span> sns
+<span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h1 id="2-Loading-and-Explore-the-Data"><a href="#2-Loading-and-Explore-the-Data" class="headerlink" title="2. Loading and Explore the Data"></a>2. Loading and Explore the Data</h1><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># read data from CSV files</span>
+_train_df <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">"train.csv"</span><span class="token punctuation">)</span>
+_test_df <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">"test.csv"</span><span class="token punctuation">)</span>
+train_df <span class="token operator">=</span> _train_df<span class="token punctuation">.</span>copy<span class="token punctuation">(</span><span class="token punctuation">)</span>
+test_df <span class="token operator">=</span> _test_df<span class="token punctuation">.</span>copy<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># random check 10 records from train data</span>
+train_df<span class="token punctuation">.</span>sample<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style><p></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>PassengerId</th>
+      <th>Survived</th>
+      <th>Pclass</th>
+      <th>Name</th>
+      <th>Sex</th>
+      <th>Age</th>
+      <th>SibSp</th>
+      <th>Parch</th>
+      <th>Ticket</th>
+      <th>Fare</th>
+      <th>Cabin</th>
+      <th>Embarked</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>481</th>
+      <td>482</td>
+      <td>0</td>
+      <td>2</td>
+      <td>Frost, Mr. Anthony Wood "Archie"</td>
+      <td>male</td>
+      <td>NaN</td>
+      <td>0</td>
+      <td>0</td>
+      <td>239854</td>
+      <td>0.0000</td>
+      <td>NaN</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>46</td>
+      <td>0</td>
+      <td>3</td>
+      <td>Rogers, Mr. William John</td>
+      <td>male</td>
+      <td>NaN</td>
+      <td>0</td>
+      <td>0</td>
+      <td>S.C./A.4. 23567</td>
+      <td>8.0500</td>
+      <td>NaN</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>308</th>
+      <td>309</td>
+      <td>0</td>
+      <td>2</td>
+      <td>Abelson, Mr. Samuel</td>
+      <td>male</td>
+      <td>30.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>P/PP 3381</td>
+      <td>24.0000</td>
+      <td>NaN</td>
+      <td>C</td>
+    </tr>
+    <tr>
+      <th>125</th>
+      <td>126</td>
+      <td>1</td>
+      <td>3</td>
+      <td>Nicola-Yarred, Master. Elias</td>
+      <td>male</td>
+      <td>12.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>2651</td>
+      <td>11.2417</td>
+      <td>NaN</td>
+      <td>C</td>
+    </tr>
+    <tr>
+      <th>511</th>
+      <td>512</td>
+      <td>0</td>
+      <td>3</td>
+      <td>Webber, Mr. James</td>
+      <td>male</td>
+      <td>NaN</td>
+      <td>0</td>
+      <td>0</td>
+      <td>SOTON/OQ 3101316</td>
+      <td>8.0500</td>
+      <td>NaN</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>515</th>
+      <td>516</td>
+      <td>0</td>
+      <td>1</td>
+      <td>Walker, Mr. William Anderson</td>
+      <td>male</td>
+      <td>47.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>36967</td>
+      <td>34.0208</td>
+      <td>D46</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>435</th>
+      <td>436</td>
+      <td>1</td>
+      <td>1</td>
+      <td>Carter, Miss. Lucile Polk</td>
+      <td>female</td>
+      <td>14.0</td>
+      <td>1</td>
+      <td>2</td>
+      <td>113760</td>
+      <td>120.0000</td>
+      <td>B96 B98</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>268</th>
+      <td>269</td>
+      <td>1</td>
+      <td>1</td>
+      <td>Graham, Mrs. William Thompson (Edith Junkins)</td>
+      <td>female</td>
+      <td>58.0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>PC 17582</td>
+      <td>153.4625</td>
+      <td>C125</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>756</th>
+      <td>757</td>
+      <td>0</td>
+      <td>3</td>
+      <td>Carlsson, Mr. August Sigfrid</td>
+      <td>male</td>
+      <td>28.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>350042</td>
+      <td>7.7958</td>
+      <td>NaN</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>75</th>
+      <td>76</td>
+      <td>0</td>
+      <td>3</td>
+      <td>Moen, Mr. Sigurd Hansen</td>
+      <td>male</td>
+      <td>25.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>348123</td>
+      <td>7.6500</td>
+      <td>F G73</td>
+      <td>S</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">train_df<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment"># PassengerID（ID）</span>
+<span class="token comment"># Survived(存活与否)</span>
+<span class="token comment"># Pclass（客舱等级，较为重要）</span>
+<span class="token comment"># Name（姓名，可提取出更多信息）</span>
+<span class="token comment"># Sex（性别，较为重要）</span>
+<span class="token comment"># Age（年龄，较为重要）</span>
+<span class="token comment"># Parch（直系亲友）</span>
+<span class="token comment"># SibSp（旁系）</span>
+<span class="token comment"># Ticket（票编号）</span>
+<span class="token comment"># Fare（票价）</span>
+<span class="token comment"># Cabin（客舱编号）</span>
+<span class="token comment"># Embarked（上船的港口编号）</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre><code>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 891 entries, 0 to 890
+Data columns (total 12 columns):
+ #   Column       Non-Null Count  Dtype  
+---  ------       --------------  -----  
+ 0   PassengerId  891 non-null    int64  
+ 1   Survived     891 non-null    int64  
+ 2   Pclass       891 non-null    int64  
+ 3   Name         891 non-null    object 
+ 4   Sex          891 non-null    object 
+ 5   Age          714 non-null    float64
+ 6   SibSp        891 non-null    int64  
+ 7   Parch        891 non-null    int64  
+ 8   Ticket       891 non-null    object 
+ 9   Fare         891 non-null    float64
+ 10  Cabin        204 non-null    object 
+ 11  Embarked     889 non-null    object 
+dtypes: float64(2), int64(5), object(5)
+memory usage: 83.7+ KB
+</code></pre>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">train_df<span class="token punctuation">.</span>isna<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>mean<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+
+<pre><code>PassengerId    0.000000
+Survived       0.000000
+Pclass         0.000000
+Name           0.000000
+Sex            0.000000
+Age            0.198653
+SibSp          0.000000
+Parch          0.000000
+Ticket         0.000000
+Fare           0.000000
+Cabin          0.771044
+Embarked       0.002245
+dtype: float64
+</code></pre>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># Remove PassengerId since it's not a feature</span>
+train_df<span class="token punctuation">.</span>drop<span class="token punctuation">(</span>columns<span class="token operator">=</span><span class="token string">'PassengerId'</span><span class="token punctuation">,</span> inplace<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+test_df<span class="token punctuation">.</span>drop<span class="token punctuation">(</span>columns<span class="token operator">=</span><span class="token string">'PassengerId'</span><span class="token punctuation">,</span> inplace<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+
+sns<span class="token punctuation">.</span>pairplot<span class="token punctuation">(</span>train_df<span class="token punctuation">,</span> hue<span class="token operator">=</span><span class="token string">"Survived"</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<p><a href="/output_7_0.png" data-fancybox="lightbox" data-caption="png"><img src="/2023/05/08/titanic%202/titanic/output_7_0.png" alt="png"></a></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">train_df_corr <span class="token operator">=</span> train_df<span class="token punctuation">.</span>corr<span class="token punctuation">(</span><span class="token punctuation">)</span>
+sns<span class="token punctuation">.</span>heatmap<span class="token punctuation">(</span>train_df_corr<span class="token punctuation">,</span>annot<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<pre><code>/var/folders/97/1wmfq3zd5vs1f80vgjcmklz40000gn/T/ipykernel_8768/3262137399.py:1: FutureWarning: The default value of numeric_only in DataFrame.corr is deprecated. In a future version, it will default to False. Select only valid columns or specify the value of numeric_only to silence this warning.
+  train_df_corr = train_df.corr()
+
+
+
+
+
+&lt;Axes: &gt;
+</code></pre>
+<p><a href="/output_8_2.png" data-fancybox="lightbox" data-caption="png"><img src="/2023/05/08/titanic%202/titanic/output_8_2.png" alt="png"></a></p>
+<h1 id="3-Data-Fillup"><a href="#3-Data-Fillup" class="headerlink" title="3. Data Fillup"></a>3. Data Fillup</h1><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 存在空缺值的列：  'Age'  'Cabin'  'Embarked' </span>
+<span class="token comment"># 'Cabin' missing ~77%, drop it</span>
+train_df<span class="token punctuation">.</span>drop<span class="token punctuation">(</span>columns<span class="token operator">=</span><span class="token string">'Cabin'</span><span class="token punctuation">,</span> inplace<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+test_df<span class="token punctuation">.</span>drop<span class="token punctuation">(</span>columns<span class="token operator">=</span><span class="token string">'Cabin'</span><span class="token punctuation">,</span> inplace<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 存在空缺值的列：  'Age'  'Cabin'  'Embarked' </span>
+<span class="token comment"># 'Embarked' missing 2value,~0.22%</span>
+<span class="token comment"># 用上一条数据来填充，使用ffill填充'Embarked'</span>
+train_df<span class="token punctuation">[</span><span class="token string">'Embarked'</span><span class="token punctuation">]</span> <span class="token operator">=</span> train_df<span class="token punctuation">[</span><span class="token string">'Embarked'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span>method<span class="token operator">=</span><span class="token string">'ffill'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 存在空缺值的列：  'Age'  'Cabin'  'Embarked' </span>
+<span class="token comment"># 'Age' missing ~19.87% </span>
+<span class="token comment"># 使用随机森林填充'Age'</span>
+<span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>ensemble <span class="token keyword">import</span> RandomForestRegressor
+ 
+<span class="token keyword">def</span> <span class="token function">set_missing_age</span><span class="token punctuation">(</span>df<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    age_df <span class="token operator">=</span> df<span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">'Age'</span><span class="token punctuation">,</span><span class="token string">'Pclass'</span><span class="token punctuation">,</span><span class="token string">'SibSp'</span><span class="token punctuation">,</span><span class="token string">'Parch'</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+    
+    <span class="token comment">#乘客分成已知年龄和未知年龄两个部分</span>
+    known_age <span class="token operator">=</span> age_df<span class="token punctuation">[</span>age_df<span class="token punctuation">[</span><span class="token string">'Age'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>notnull<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">.</span>values
+    unknown_age <span class="token operator">=</span> age_df<span class="token punctuation">[</span>age_df<span class="token punctuation">[</span><span class="token string">'Age'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>isnull<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">.</span>values
+    
+    <span class="token comment"># 目标数据y,取第一列‘age'</span>
+    y <span class="token operator">=</span> known_age<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">]</span>
+    
+    <span class="token comment"># 特征属性数据x，取非‘age'的列</span>
+    x <span class="token operator">=</span> known_age<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">]</span>
+    
+    <span class="token comment"># 利用随机森林进行拟合</span>
+    rfr <span class="token operator">=</span> RandomForestRegressor<span class="token punctuation">(</span>random_state<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span>n_estimators<span class="token operator">=</span><span class="token number">2000</span><span class="token punctuation">,</span>n_jobs<span class="token operator">=</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
+    rfr<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token punctuation">)</span>
+    
+    <span class="token comment"># 利用训练的模型进行预测</span>
+    predictedAges <span class="token operator">=</span> rfr<span class="token punctuation">.</span>predict<span class="token punctuation">(</span>unknown_age<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token comment">#     print(predictedAges)</span>
+    
+    <span class="token comment"># 填补缺失的原始数据</span>
+    df<span class="token punctuation">.</span>loc<span class="token punctuation">[</span><span class="token punctuation">(</span>df<span class="token punctuation">[</span><span class="token string">'Age'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>isnull<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token string">'Age'</span><span class="token punctuation">]</span> <span class="token operator">=</span> predictedAges
+    <span class="token keyword">return</span> df
+
+datas <span class="token operator">=</span> set_missing_age<span class="token punctuation">(</span>train_df<span class="token punctuation">)</span>
+
+datas<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre><code>[28.24046197 33.74111269 28.24046197 28.24046197 28.24046197 28.24046197
+ 37.10229453 28.24046197 28.24046197 28.24046197 28.24046197 24.89248097
+ 28.24046197 27.11708711 41.01306854 41.01306854 20.9920787  28.24046197
+ 28.24046197 28.24046197 28.24046197 28.24046197 28.24046197 28.24046197
+ 24.89248097 28.24046197 28.24046197 20.9920787  20.64649969 28.24046197
+ 28.24046197 10.31568271 37.04234382 41.01306854  4.28780721 10.31568271
+ 33.74111269 41.01306854 24.89248097 28.24046197 28.24046197 10.31568271
+ 24.89248097 28.24046197  4.28780721 28.24046197 24.89248097 24.89248097
+ 28.24046197 41.01306854 28.24046197 28.24046197 41.01306854 28.24046197
+ 33.74111269 41.01306854 41.01306854 41.01306854 28.24046197 27.11708711
+ 33.74111269 28.24046197 41.01306854 10.31568271 27.11708711 37.10229453
+ 28.24046197 24.89248097 41.01306854 28.24046197 28.24046197 28.24046197
+ 24.89248097 28.24046197 28.24046197 37.10229453 28.24046197 28.24046197
+  4.28780721 28.24046197 28.24046197 33.74111269 28.24046197 28.24046197
+ 28.24046197 28.24046197 24.89248097 28.24046197 24.89248097 28.24046197
+ 37.10229453 28.24046197 28.24046197 33.74111269 28.24046197 28.24046197
+ 41.01306854 33.74111269  4.28780721 24.89248097 28.24046197 28.24046197
+ 28.24046197 41.01306854 28.24046197 28.24046197 28.24046197 28.24046197
+ 41.01306854 28.24046197 20.64649969 28.24046197 33.74111269 28.24046197
+ 41.01306854 28.24046197 28.24046197 28.24046197 28.24046197 28.24046197
+ 24.89248097 28.24046197 28.24046197 20.64649969 33.74111269 28.24046197
+ 28.24046197 41.01306854 28.24046197 24.89248097 28.24046197 28.24046197
+ 41.01306854 24.89248097 28.24046197 28.24046197 28.24046197 28.24046197
+ 28.24046197 28.24046197 37.10229453 33.74111269 28.24046197 28.24046197
+ 28.24046197 20.9920787  41.01306854 28.24046197 28.24046197 33.74111269
+ 28.24046197 28.24046197 41.01306854 28.24046197 41.01306854 24.89248097
+ 28.24046197 28.24046197 28.24046197 14.76204046 28.24046197 10.31568271
+ 41.01306854 41.01306854 28.24046197 28.24046197 28.24046197 28.24046197
+ 28.24046197 41.01306854 10.31568271 37.10229453 28.24046197 10.31568271
+ 28.24046197 28.24046197 14.76204046]
+&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 891 entries, 0 to 890
+Data columns (total 10 columns):
+ #   Column    Non-Null Count  Dtype  
+---  ------    --------------  -----  
+ 0   Survived  891 non-null    int64  
+ 1   Pclass    891 non-null    int64  
+ 2   Name      891 non-null    object 
+ 3   Sex       891 non-null    object 
+ 4   Age       891 non-null    float64
+ 5   SibSp     891 non-null    int64  
+ 6   Parch     891 non-null    int64  
+ 7   Ticket    891 non-null    object 
+ 8   Fare      891 non-null    float64
+ 9   Embarked  891 non-null    object 
+dtypes: float64(2), int64(4), object(4)
+memory usage: 69.7+ KB
+</code></pre>
+<h1 id="4-Data-Analysis"><a href="#4-Data-Analysis" class="headerlink" title="4. Data Analysis"></a>4. Data Analysis</h1><pre class="line-numbers language-python" data-language="python"><code class="language-python">datas<span class="token punctuation">[</span><span class="token string">'Sex'</span><span class="token punctuation">]</span> <span class="token operator">=</span> datas<span class="token punctuation">[</span><span class="token string">'Sex'</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token builtin">apply</span> <span class="token punctuation">(</span><span class="token keyword">lambda</span> x<span class="token punctuation">:</span><span class="token number">1</span> <span class="token keyword">if</span> x <span class="token operator">==</span><span class="token string">'male'</span> <span class="token keyword">else</span> <span class="token number">0</span><span class="token punctuation">)</span>
+sns<span class="token punctuation">.</span>displot<span class="token punctuation">(</span>data<span class="token operator">=</span>datas<span class="token punctuation">,</span>x<span class="token operator">=</span><span class="token string">'Age'</span><span class="token punctuation">,</span>hue<span class="token operator">=</span><span class="token string">'Survived'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+
+
+<pre><code>&lt;seaborn.axisgrid.FacetGrid at 0x292919e10&gt;
+</code></pre>
+<p><a href="/output_14_1.png" data-fancybox="lightbox" data-caption="png"><img src="/2023/05/08/titanic%202/titanic/output_14_1.png" alt="png"></a></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">datas<span class="token punctuation">[</span><span class="token string">'Sex'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>describe<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+
+<pre><code>count    891.000000
+mean       0.647587
+std        0.477990
+min        0.000000
+25%        0.000000
+50%        1.000000
+75%        1.000000
+max        1.000000
+Name: Sex, dtype: float64
+</code></pre>
+
+        </div>
+        <div class="top-div">
+          <ol class="top-box"><li class="top-box-item top-box-level-1"><a class="top-box-link" href="#1-Import-Library"><span class="top-box-text">1. Import Library</span></a></li><li class="top-box-item top-box-level-1"><a class="top-box-link" href="#2-Loading-and-Explore-the-Data"><span class="top-box-text">2. Loading and Explore the Data</span></a></li><li class="top-box-item top-box-level-1"><a class="top-box-link" href="#3-Data-Fillup"><span class="top-box-text">3. Data Fillup</span></a></li><li class="top-box-item top-box-level-1"><a class="top-box-link" href="#4-Data-Analysis"><span class="top-box-text">4. Data Analysis</span></a></li></ol>
+        </div>
+      </div>
+    </div>
+
+    
+      <div class="next-post">
+        <a class="purple-link" href="/2023/05/05/post-20230505114446-%E6%95%B0%E6%8D%AE%E5%A1%AB%E8%A1%A5%E7%AE%97%E6%B3%95%E7%9A%84%E9%80%89%E6%8B%A9%E4%B8%BB%E8%A6%81%E4%BE%9D%E6%8D%AE/">
+          <h3 class="post-title">
+            下一篇：数据填补算法的选择主要依据
+          </h3>
+        </a>
+      </div>
+    
+  </div>
+
+
+
+
+<footer>
+<div class="site-footer">
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  
+    Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> <a href="https://github.com/f-dong/hexo-theme-minimalism" target="_blank">Theme</a>
+  
+  
+  
+  
+  
+  
+</div>
+</footer>
+
+
+      </div>
+      
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.fancybox.min.js"></script>
+
+
+<script id="hexo-configurations">
+    window.theme_config = {"image":{"lazyload_enable":false}};
+    window.is_post = true;
+  </script>
+
+<script src="/js/main.js"></script>
+
+
+
+
+
+    </div>
+  </body>
+</html>
+
