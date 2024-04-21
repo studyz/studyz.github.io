@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>杰里米的小站</title>
-  <icon>https://www.gravatar.com/avatar/7990384958647c949f0546ca418ff41d</icon>
+  
   <subtitle>Jeremy&#39;s</subtitle>
   <link href="https://github.com/studyz/atom.xml" rel="self"/>
   
@@ -11,7 +11,7 @@
   
   <author>
     <name>JeremyY</name>
-    <email>xueyang.jeremy@outlook.com</email>
+    
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
