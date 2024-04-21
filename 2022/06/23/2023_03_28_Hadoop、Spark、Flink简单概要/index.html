@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+
+
+<html lang="zh-CN">
+  
+
+    <head>
+      <meta charset="utf-8" />
+       
+      <meta name="keywords" content="数码，生活，代码，技术，博客，分享" />
+       
+      <meta name="description" content="数码" />
+      
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1"
+      />
+      <title>Hadoop、Spark、Flink简单概要 |  杰里米的小站</title>
+  <meta name="generator" content="hexo-theme-ayer">
+      
+      <link rel="shortcut icon" href="/favicon.ico" />
+       
+<link rel="stylesheet" href="/studyz/dist/main.css">
+
+      
+<link rel="stylesheet" href="/studyz/css/fonts/remixicon.css">
+
+      
+<link rel="stylesheet" href="/studyz/css/custom.css">
+ 
+      <script src="https://cdn.staticfile.org/pace/1.2.4/pace.min.js"></script>
+       
+ 
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-bulma@5.0.1/bulma.min.css"
+      />
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
+
+      <!-- mermaid -->
+      
+      <style>
+        .swal2-styled.swal2-confirm {
+          font-size: 1.6rem;
+        }
+      </style>
+    <link rel="alternate" href="/studyz/atom.xml" title="杰里米的小站" type="application/atom+xml">
+</head>
+  </html>
+</html>
+
+
+<body>
+  <div id="app">
+    
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-2023_03_28_Hadoop、Spark、Flink简单概要"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  Hadoop、Spark、Flink简单概要
+</h1>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/studyz/2022/06/23/2023_03_28_Hadoop%E3%80%81Spark%E3%80%81Flink%E7%AE%80%E5%8D%95%E6%A6%82%E8%A6%81/" class="article-date">
+  <time datetime="2022-06-23T10:34:40.000Z" itemprop="datePublished">2022-06-23</time>
+</a>   
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">3.4k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">12 分钟</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/526462792">Hadoop用于离线复杂大数据处理</a></p>
+<p>Spark 用于离线快速的大数据处理</p>
+<p>Flink 用于在线实时的大数据处理</p>
+<h1 id="1-数据处理"><a href="#1-数据处理" class="headerlink" title="1-数据处理"></a>1-数据处理</h1><p>Hadoop：为批处理而构建的Hadoop，它一次性在输入中获取大量数据集，对其进行处理并产生结果。批处理在处理大量数据时非常有效。由于数据的大小和系统的计算能力，输出会出现延迟。</p>
+<p>Spark：Spark也是 Hadoop生态系统的一部分。它本质上也是一个批处理系统，但它也支持流处理。</p>
+<p>Flink：Flink为流式处理和批处理提供了单一的运行时。</p>
+<h1 id="2-流引擎"><a href="#2-流引擎" class="headerlink" title="2-流引擎"></a>2-流引擎</h1><p>Hadoop：Map-reduce是面向批处理的工具。它一次性在输入中获取大量数据集，对其进行处理并产生结果。</p>
+<p>Spark：Apache Spark Streaming以微批处理的形式处理数据流。每个批次都包含在批次期间到达的事件集合。但对于我们需要处理大量实时数据流并实时提供结果的用例来说，这还不够。</p>
+<p>Flink：Apache Flink是真正的流媒体引擎。它使用流来处理工作负载：流式处理、SQL、微批处理和批处理。批处理是一组有限的流数据。</p>
+<h1 id="3-数据流"><a href="#3-数据流" class="headerlink" title="3-数据流"></a>3-数据流</h1><p>Hadoop：MapReduce计算数据流没有任何循环。这是一个阶段链，在每个阶段，您都使用前一阶段的输出向前推进，并为下一阶段产生输入。</p>
+<p>Spark：虽然机器学习算法是一个循环数据流，但 Spark将其表示为（DAG）有向无环图。</p>
+<p>Flink：Flink采用了与其他方法不同的方法。它在运行时支持受控循环依赖图。这有助于以非常有效的方式表示机器学习算法。</p>
+<h1 id="4-计算模型"><a href="#4-计算模型" class="headerlink" title="4-计算模型"></a>4-计算模型</h1><p>Hadoop：MapReduce采用了面向批处理的模型，批处理正在处理静态数据，一次需要大量数据，对其进行处理，然后写出输出。</p>
+<p>Spark：Spark采用了微批处理。微批次本质上是一种“收集然后处理”的计算模型。</p>
+<p>Flink：Flink采用了连续流、基于算子的流模型。连续流算子在数据到达时对其进行处理，而不会延迟收集数据或处理数据。</p>
+<h1 id="5-性能"><a href="#5-性能" class="headerlink" title="5-性能"></a>5-性能</h1><p>Hadoop：Apache Hadoop仅支持批处理。它不处理流数据，因此与Hadoop、Spark和Flink相比，性能更慢。</p>
+<p>Spark：虽然Spark有优秀的社区背景，并且现在被认为是最成熟的社区，但它的流处理效率并不比Flink高，因为它使用的是微批处理。</p>
+<p>Flink：与任何其他数据处理系统相比，Flink的性能非常出色。比较Hadoop、Spark和Flink时可以看出，Flink使用原生闭环迭代运算符，这使得机器学习和图形处理更快。</p>
+<h1 id="6-内存管理"><a href="#6-内存管理" class="headerlink" title="6-内存管理"></a>6-内存管理</h1><p>Hadoop：提供可配置的内存管理，可以动态或静态地执行此操作。</p>
+<p>Spark：提供可配置的内存管理，Spark 1.6 的最新版本已经朝着自动化内存管理的方向发展。</p>
+<p>Flink：提供了自动内存管理，有自己的内存管理系统。</p>
+<h1 id="7-容错"><a href="#7-容错" class="headerlink" title="7-容错"></a>7-容错</h1><p>Hadoop：MapReduce具有高度容错性。如果Hadoop出现任何故障，则无需从头开始重新启动应用程序。</p>
+<p>Spark：Apache Spark Streaming恢复丢失的工作，无需额外的代码或配置。</p>
+<p>Flink：Apache Flink遵循的容错机制是基于Chandy-Lamport分布式快照。该机制是轻量级的，导致在保持高吞吐率的同时提供强大的一致性保证。</p>
+<h1 id="8-可扩展性"><a href="#8-可扩展性" class="headerlink" title="8-可扩展性"></a>8-可扩展性</h1><p>Hadoop：MapReduce具有很强的可扩展性潜力，并已在数万个节点上用于生产。</p>
+<p>Spark：它具有高度可扩展性，我们可以在集群中不断添加 n 个节点，一个已知的大型 Spark集群有8000个节点。</p>
+<p>Flink：Flink也具有很高的可扩展性，我们可以在集群中不断添加 n 个节点，一个已知的大型 Flink 集群有数千个节点。</p>
+<h1 id="9-迭代处理"><a href="#9-迭代处理" class="headerlink" title="9-迭代处理"></a>9-迭代处理</h1><p>Hadoop：不支持迭代处理。</p>
+<p>Spark：它批量迭代其数据。在Spark中，每次迭代都必须单独安排和执行。</p>
+<p>Flink：它通过使用其流式架构来迭代数据。可以指示Flink只处理实际发生变化的部分数据，从而显着提高作业的性能。</p>
+<h1 id="10-语言支持"><a href="#10-语言支持" class="headerlink" title="10-语言支持"></a>10-语言支持</h1><p>Hadoop：主要支持Java，其他支持的语言有c、c++、ruby、groovy、Perl、Python。</p>
+<p>Spark：支持Java、Scala、Python和R。Spark是在Scala中实现的，供其他语言的API，如Java、Python和 R。</p>
+<p>Flink：支持 Java、Scala、Python和R。Flink 是用 Java实现的，同时也提供了Scala API。</p>
+<h1 id="11-优化"><a href="#11-优化" class="headerlink" title="11-优化"></a>11-优化</h1><p>Hadoop：在 MapReduce 中，作业必须手动优化。有几种方法可以优化MapReduce作业：正确配置集群、使用组合器、使用LZO压缩、适当调整 MapReduce任务的数量以及为数据使用最合适和最紧凑的可写类型。</p>
+<p>Spark：在Spark中，作业必须手动优化。有一个新的可扩展优化器 Catalyst，它基于Scala中的函数式编程结构。 Catalyst 的可扩展设计有两个目的：第一，易于添加新的优化技术。其次，使外部开发人员能够扩展优化器催化剂。</p>
+<p>Flink：Apache Flink带有一个独立于实际编程接口的优化器。 Flink优化器的工作方式类似于关系数据库优化器，但将这些优化应用于Flink程序，而不是 SQL查询。</p>
+<h1 id="12-延迟"><a href="#12-延迟" class="headerlink" title="12-延迟"></a>12-延迟</h1><p>Hadoop：Hadoop的MapReduce框架相对较慢，因为它旨在支持不同的格式、结构和海量数据。这就是为什么 Hadoop的延迟比Spark和Flink都高。</p>
+<p>Spark：Spark是另一个批处理系统，但它比Hadoop MapReduce相对快，因为它通过RDD将大部分输入数据缓存在内存中，并将中间数据保存在内存中，最终在完成或需要时将数据写入磁盘。</p>
+<p>Flink：Flink的数据流运行时只需少量配置，即可实现低延迟和高吞吐量。</p>
+<h1 id="14-可视化"><a href="#14-可视化" class="headerlink" title="14-可视化"></a>14-可视化</h1><p>Hadoop：在Hadoop中，数据可视化工具是zoomdata，它可以直接连接到HDFS以及SQL-on-Hadoop技术，如 Impala、Hive、Spark SQL、Presto等。</p>
+<p>Spark：它提供了一个用于提交和执行作业的Web界面，在该界面上可以可视化生成的执行计划。 Flink和Spark都集成到Apache zeppelin中，它提供数据分析、摄取以及发现、可视化和协作。</p>
+<p>Flink：它还提供了一个用于提交和执行作业的Web界面，生成的执行计划可以在这个界面上进行可视化。</p>
+<h1 id="15-恢复"><a href="#15-恢复" class="headerlink" title="15-恢复"></a>15-恢复</h1><p>Hadoop：MapReduce自然地对系统故障或故障具有弹性。它是高度容错的系统。</p>
+<p>Spark：Apache Spark RDD允许通过重新计算DAG来恢复故障节点上的分区，同时还通过检查点支持与Hadoop更相似的恢复方式，以减少RDD的依赖关系。</p>
+<p>Flink：支持checkpointing机制，将程序存储在数据源和数据接收器中，窗口的状态，以及用户自定义的状态，在失败后恢复流式作业。</p>
+<h1 id="16-安全性"><a href="#16-安全性" class="headerlink" title="16-安全性"></a>16-安全性</h1><p>Hadoop：它支持Kerberos身份验证，管理起来有些麻烦。但是，第三方供应商已使组织能够利用Active Directory Kerberos和LDAP进行身份验证。</p>
+<p>Spark：Apache Spark的安全性有点稀疏，目前仅支持通过共享密钥（密码身份验证）进行身份验证。 当你在HDFS上运行Spark，它可以使用HDFS ACL和文件级权限。此外，Spark可以在 YARN上运行以使用Kerberos身份验证。</p>
+<p>Flink：Flink通过Hadoop &#x2F; Kerberos基础设施支持用户身份验证。如果在YARN上运行Flink，Flink会获取提交程序的用户的Kerberos令牌，并使用该令牌在YARN、HDFS和HBase上进行身份验证。Flink即将推出的连接器，流程序可以通过 SSL将自己验证为流代理。</p>
+<h1 id="17-成本"><a href="#17-成本" class="headerlink" title="17-成本"></a>17-成本</h1><p>Hadoop：MapReduce通常可以在比某些替代方案更便宜的硬件上运行，因为它不会尝试将所有内容都存储在内存中。</p>
+<p>Spark：由于Spark需要大量RAM才能在内存中运行，因此在集群中增加它会逐渐增加其成本。</p>
+<p>Flink：Apache Flink也需要大量的RAM在内存中运行，所以它的成本会逐渐增加。</p>
+<h1 id="18-兼容性"><a href="#18-兼容性" class="headerlink" title="18-兼容性"></a>18-兼容性</h1><p>Hadoop：Apache Hadoop MapReduce 和 Apache Spark相互兼容，Spark通过JDBC和ODBC共享MapReduce 对数据源、文件格式和商业智能工具的所有兼容性。</p>
+<p>Spark：Apache Spark和Hadoop相互兼容。 Spark与Hadoop数据兼容。它可以通过YARN或Spark的独立模式在 Hadoop集群中运行，并且可以处理HDFS、HBase、Cassandra、Hive和任何Hadoop InputFormat中的数据。</p>
+<p>Flink：Apache Flink是一个可扩展的数据分析框架，完全兼容Hadoop。它提供了一个Hadoop Compatibility包来包装针对Hadoop的MapReduce接口实现的函数，并将它们嵌入到Flink程序中。</p>
+<h1 id="20-使用感"><a href="#20-使用感" class="headerlink" title="20-使用感"></a>20-使用感</h1><p>Hadoop：MapReduce 开发人员需要手动编写每个操作的代码，这让编程工作变得非常困难。</p>
+<p>Spark：很容易编程，因为它有大量的高级操作符。</p>
+<p>Flink：也有高级算子，易于操作。</p>
+<h1 id="21-交互模式"><a href="#21-交互模式" class="headerlink" title="21-交互模式"></a>21-交互模式</h1><p>Hadoop：MapReduce 没有交互模式。</p>
+<p>Spark：Spark 有一个交互式Shell，可以学习如何充分利用Spark。这是一个用 Scala编写的Spark应用程序，提供一个具有自动完成功能的命令行环境，您可以在其中运行临时查询并熟悉 Spark的功能。</p>
+<p>Flink：它带有一个集成的交互式Scala Shell。它可以在本地设置和集群设置中使用。</p>
+<h1 id="22-实时分析"><a href="#22-实时分析" class="headerlink" title="22-实时分析"></a>22-实时分析</h1><p>Hadoop：MapReduce 在实时数据处理方面失败了，因为它旨在对大量数据执行批处理。</p>
+<p>Spark：它可以处理实时数据，即以每秒数百万个事件的速率来自实时事件流的数据。</p>
+<p>Flink：主要用于实时数据分析，虽然也提供了快速的批量数据处理。</p>
+<h1 id="23-调度器"><a href="#23-调度器" class="headerlink" title="23-调度器"></a>23-调度器</h1><p>Hadoop：Hadoop中的调度程序成为可插拔组件。多用户工作负载有两个调度器：公平调度器和容量调度器。为了调度复杂的流程，MapReduce需要像Oozie这样的外部作业调度程序。</p>
+<p>Spark：由于内存计算，Spark能充当自己的流调度程序。</p>
+<p>Flink：Flink可以使用YARN Scheduler，Flink也有自己的 Scheduler。</p>
+<h1 id="24-SQL支持"><a href="#24-SQL支持" class="headerlink" title="24-SQL支持"></a>24-SQL支持</h1><p>Hadoop：它使用户能够使用 Apache Hive运行SQL查询。</p>
+<p>Spark：它使用户能够使用Spark-SQL运行SQL查询。Spark提供了类似Hives的查询语言和类似DSL的Dataframe 来查询结构化数据。</p>
+<p>Flink：在Flink中，Table API是一种类似SQL的表达式语言，支持DSL等数据帧，目前仍处于测试阶段。有计划添加SQL接口，但不确定何时会进入框架。</p>
+<h1 id="25-缓存"><a href="#25-缓存" class="headerlink" title="25-缓存"></a>25-缓存</h1><p>Hadoop：MapReduce 无法将数据缓存在内存中以满足未来需求。</p>
+<p>Spark：它可以将数据缓存在内存中以进行进一步的迭代，从而提高其性能。</p>
+<p>Flink：它可以将数据缓存在内存中以供进一步迭代以提高其性能。</p>
+<h1 id="26-硬件要求"><a href="#26-硬件要求" class="headerlink" title="26-硬件要求"></a>26-硬件要求</h1><p>Hadoop：MapReduce在商品硬件上运行良好。</p>
+<p>Spark：Apache Spark需要中高级硬件。由于Spark将数据缓存在内存中以供进一步迭代，从而提高其性能。</p>
+<p>Flink：Apache Flink也需要中高级硬件。 Flink还可以将数据缓存在内存中以进行进一步的迭代，从而提高其性能。</p>
+<h1 id="27-机器学习"><a href="#27-机器学习" class="headerlink" title="27-机器学习"></a>27-机器学习</h1><p>Hadoop：需要像Apache Mahout这样的机器学习工具。</p>
+<p>Spark：有自己的一套机器学习MLlib。在内存缓存和其他实现细节中，它确实是实现ML算法的强大平台。</p>
+<p>Flink：有FlinkML，它是Flink的机器学习库。它支持运行时受控的循环依赖图。与DAG表示相比，这使得它们以非常有效的方式表示ML算法。</p>
+<h1 id="28-部署"><a href="#28-部署" class="headerlink" title="28-部署"></a>28-部署</h1><p>Hadoop：在独立模式下，Hadoop 被配置为在单节点、非分布式模式下运行。在伪分布式模式下，Hadoop以伪分布式模式运行。因此，不同之处在于每个Hadoop守护程序以伪分布式模式在单独的Java进程中运行。而在本地模式下，每个Hadoop守护程序都作为单个Java进程运行。在完全分布式模式下，所有守护进程在单独的节点中执行，形成一个多节点集群。</p>
+<p>Spark：还提供了一种简单的独立部署模式，可以在Mesos或YARN集群管理器上运行。它可以手动启动，通过手动启动 master和worker或使用我们提供的启动脚本。也可以在单台机器上运行这些守护进程进行测试。</p>
+<p>Flink：还提供了在YARN集群管理器上运行的独立部署模式。</p>
+<h1 id="29-消除重复"><a href="#29-消除重复" class="headerlink" title="29-消除重复"></a>29-消除重复</h1><p>Hadoop：Hadoop中没有重复消除。</p>
+<p>Spark：Spark还对每条记录进行一次准确的处理，因此消除了重复。</p>
+<p>Flink：Flink只处理一次记录，因此消除了重复，流应用程序可以在计算期间保持自定义状态。Flink的检查点机制确保在出现故障时状态的语义恰好只有一次。</p>
+<h1 id="30-Window标准"><a href="#30-Window标准" class="headerlink" title="30-Window标准"></a>30-Window标准</h1><p>一个数据流需要被分成许多逻辑流，每个逻辑流都可以应用一个窗口操作符。</p>
+<p>Hadoop：不支持流式传输，因此不需要窗口条件。</p>
+<p>Spark：具有基于时间的窗口标准。</p>
+<p>Flink：具有基于记录的或任何自定义的用户定义的Flink Window标准。  </p>
+ 
+      <!-- reward -->
+      
+      <div id="reword-out">
+        <div id="reward-btn">
+          打赏
+        </div>
+      </div>
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>版权声明： </strong>
+          
+          本博客所有文章除特别声明外，著作权归作者所有。转载请注明出处！
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://github.com/studyz/2022/06/23/2023_03_28_Hadoop%E3%80%81Spark%E3%80%81Flink%E7%AE%80%E5%8D%95%E6%A6%82%E8%A6%81/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/studyz/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/studyz/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+      <a href="/studyz/2022/06/29/2023_03_30_%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E7%9A%84%E5%85%AB%E7%A7%8D%E6%96%B9%E6%B3%95/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            统计分析的八种方法
+          
+        </div>
+      </a>
+    
+    
+      <a href="/studyz/2022/06/19/2023_03_23_How%20to%20use%20ChatGPT%20to%20create%20Awesome%20Video%20Scripts/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">AI创建视频脚本提示词</div>
+      </a>
+    
+  </nav>
+
+  
+   
+  
+   
+    <script src="https://cdn.staticfile.org/twikoo/1.4.18/twikoo.all.min.js"></script>
+    <div id="twikoo" class="twikoo"></div>
+    <script>
+        twikoo.init({
+            envId: ""
+        })
+    </script>
+ 
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2015-2024
+        <i class="ri-heart-fill heart_icon"></i> JeremyY
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>访问人数:<span id="busuanzi_value_site_uv"></span></span>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>浏览次数:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
+        
+      </li>
+    </ul>
+  </div>
+</footer>    
+    </main>
+    <div class="float_btns">
+      <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+    </div>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/studyz/"><img src="/images/ayer-side.svg" alt="杰里米的小站"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/studyz/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/studyz/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/studyz/categories">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/studyz/tags">标签</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/studyz/tags/%E6%95%B0%E7%A0%81/">数码</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/studyz/photos">摄影</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/studyz/friends">友链</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/studyz/aboutme/">关于我</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="搜索">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/studyz/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/studyz/images/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/studyz/images/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/studyz/js/jquery-3.6.0.min.js"></script>
+ 
+<script src="/studyz/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+ 
+<script src="/studyz/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
+
+<script src="https://cdn.staticfile.org/jquery-modal/0.9.2/jquery.modal.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.staticfile.org/jquery-modal/0.9.2/jquery.modal.min.css"
+/>
+<script src="https://cdn.staticfile.org/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/studyz/dist/main.js"></script>
+
+<!-- ImageViewer -->
+ <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.staticfile.org/photoswipe/4.1.3/default-skin/default-skin.min.css">
+<script src="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe.min.js"></script>
+<script src="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script> 
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+ 
+<script src="/studyz/js/busuanzi-2.3.pure.min.js"></script>
+ 
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+ 
+<link rel="stylesheet" href="/studyz/css/clipboard.css">
+ <script src="https://cdn.staticfile.org/clipboard.js/2.0.10/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+ 
+<!-- CanvasBackground -->
+
+<script>
+  if (window.mermaid) {
+    mermaid.initialize({ theme: "forest" });
+  }
+</script>
+
+
+    
+    <div id="music">
+    
+    
+    
+    <iframe frameborder="no" border="1" marginwidth="0" marginheight="0" width="200" height="52"
+        src="//music.163.com/outchain/player?type=2&id=22707008&auto=1&height=32"></iframe>
+</div>
+
+<style>
+    #music {
+        position: fixed;
+        right: 15px;
+        bottom: 0;
+        z-index: 998;
+    }
+</style>
+    
+    
+
+  </div>
+</body>
+
+</html>
