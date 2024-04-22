@@ -711,6 +711,19 @@
       </tags>
   </entry>
   <entry>
+    <title>AI创建视频脚本提示词</title>
+    <url>/2022/06/19/How%20to%20use%20ChatGPT%20to%20create%20Awesome%20Video%20Scripts/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="English-Version"><a href="#English-Version" class="headerlink" title="English Version"></a>English Version</h2><p>Step 1: <code>Find Videos that are already successful.</code><br>Step 2: <code>Copy the transcript from the video</code><br>Step 3: Can you make 10 YouTube video titles based on this video script? make these titles more thought-provoking and more clickable and add curiosity.reply in chinese<br>Step 4: Can you write me a short video script for this video titles? reply in chinese<br>Step 5: Can you write me a description for this video title? reply in chinese<br>Step 6: Can you write me a youtube video shooting script based on this video description? reply in chinese</p>
+<span id="more"></span>
+<h2 id="中文翻译"><a href="#中文翻译" class="headerlink" title="中文翻译"></a>中文翻译</h2><p>Step 1: <code>寻找已有成功的视频。</code><br>Step 2: <code>复制视频的脚本。</code><br>Step 3: 能否为这个视频脚本生成10个YouTube视频标题？这些标题应该更加发人深思，并且更加吸引人，同时添加好奇心。回复中文<br>Step 4: 能否为这些视频标题编写一个短的视频脚本？回复中文<br>Step 5: 能否为这些视频标题编写一个描述？回复中文<br>Step 6: 能否为这个视频描述编写一个YouTube视频射击脚本？回复中文</p>
+]]></content>
+      <tags>
+        <tag>GPT</tag>
+        <tag>AI</tag>
+        <tag>视频创作</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>澳洲家中日常必备清单</title>
     <url>/2022/05/19/%E6%BE%B3%E6%B4%B2%E5%AE%B6%E4%B8%AD%E6%97%A5%E5%B8%B8%E5%BF%85%E5%A4%87%E6%B8%85%E5%8D%95/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>1⃣️ CEPACAINE漱口水！ 治疗牙龈肿痛，口腔溃疡。澳洲医生推荐买的，超级有效！猫猫家必备的，再也没有牙口烦恼。 购买地址：Chemist有售 💰价格：$15.49 问题在口腔，吃啥啥不香，买它！喵～</p>
@@ -734,19 +747,6 @@
       <tags>
         <tag>推荐</tag>
         <tag>日常</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>AI创建视频脚本提示词</title>
-    <url>/2022/06/19/How%20to%20use%20ChatGPT%20to%20create%20Awesome%20Video%20Scripts/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="English-Version"><a href="#English-Version" class="headerlink" title="English Version"></a>English Version</h2><p>Step 1: <code>Find Videos that are already successful.</code><br>Step 2: <code>Copy the transcript from the video</code><br>Step 3: Can you make 10 YouTube video titles based on this video script? make these titles more thought-provoking and more clickable and add curiosity.reply in chinese<br>Step 4: Can you write me a short video script for this video titles? reply in chinese<br>Step 5: Can you write me a description for this video title? reply in chinese<br>Step 6: Can you write me a youtube video shooting script based on this video description? reply in chinese</p>
-<span id="more"></span>
-<h2 id="中文翻译"><a href="#中文翻译" class="headerlink" title="中文翻译"></a>中文翻译</h2><p>Step 1: <code>寻找已有成功的视频。</code><br>Step 2: <code>复制视频的脚本。</code><br>Step 3: 能否为这个视频脚本生成10个YouTube视频标题？这些标题应该更加发人深思，并且更加吸引人，同时添加好奇心。回复中文<br>Step 4: 能否为这些视频标题编写一个短的视频脚本？回复中文<br>Step 5: 能否为这些视频标题编写一个描述？回复中文<br>Step 6: 能否为这个视频描述编写一个YouTube视频射击脚本？回复中文</p>
-]]></content>
-      <tags>
-        <tag>GPT</tag>
-        <tag>AI</tag>
-        <tag>视频创作</tag>
       </tags>
   </entry>
   <entry>
@@ -2098,6 +2098,7 @@
 <li>安装及加入到<code>TailScale</code>网络</li>
 <li>透过设定其中1部<code>TailScale</code>的装置为网关「Subnet Router」，可以访问整个内网网段</li>
 </ol>
+<span id="more"></span>
 <p>如果是<strong>Windows</strong>用户可以到<a href="https://tailscale.com/download/windows">官网</a>下载安装<a href="https://pkgs.tailscale.com/stable/tailscale-ipn-setup-1.14.4.exe">Tailscale</a>，或者透过<a href="https://kingtam.win/archives/choco.html">Chocolatey软件包</a>安装。</p>
 <p><code>choco install tailscale -y</code></p>
 <p>双击桌面右下角的图示</p>
@@ -2208,8 +2209,8 @@
 <p><a href="https://movie.douban.com/subject/1463371/">名侦探柯南</a>改编自青山刚昌创作的同名漫画作品 ，由TMS Entertainment（原东京电影新社）负责动画制作 ，于<strong>1996年1月8日</strong>起在读卖电视台播出 。</p>
 </blockquote>
 <p>名侦探柯南是老婆的电子榨菜，已播出的全部剧集+剧场版都已经看过多次了。</p>
-<p>目前居家观影方案是<code>Apple TV</code>安装<code>infuse</code>搭配<code>HomePod</code>，可以从<code>themoviedb</code>抓取视频信息，但名侦探柯南有一个头痛的问题。</p>
-<p>互联网上能搜到的国语配音版本，都是国内版本的，从国外引进时，把一些较长的单剧集拆分了，国外一集的内容，引进国内后被拆分成多集，导致剧集数和<code>themoviedb</code>数据库对不上。强迫症逼死人，为了老婆更方便的反反复复的观看，特意整理了国内外剧集数的对比表，并根据在某网盘的脚本上修改，可以在网页版某网盘实现批量修改集数。</p>
+<p>目前居家观影方案是<code>Apple TV</code>安装<code>infuse</code>搭配<code>HomePod</code>，可以从<code>themoviedb</code>抓取视频信息。</p>
+<p>但名侦探柯南有一个头痛的问题，互联网上能搜到的国语配音版本，都是国内版本的，从国外引进时，把一些较长的单剧集拆分了，国外一集的内容，引进国内后被拆分成多集，导致剧集数和<code>themoviedb</code>数据库对不上。强迫症逼死人，为了老婆更方便的反反复复的观看，特意整理了国内外剧集数的对比表，并根据在某网盘的脚本上修改，可以在网页版某网盘实现批量修改集数。</p>
 <p>矫正剧集数后，infuse可以正确识别全部剧集的介绍、封面、演员表、每集的标题等等。</p>
 <p>todo：名侦探柯南1200集内容，都是第一季，在Apple TV infuse中从第一集开始找特定集数也是非常困难的，目前只能手动拆分播放列表。</p>
 <span id="more"></span>

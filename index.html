@@ -188,76 +188,11 @@
 <ol>
 <li>安装及加入到<code>TailScale</code>网络</li>
 <li>透过设定其中1部<code>TailScale</code>的装置为网关「Subnet Router」，可以访问整个内网网段</li>
-</ol>
-<p>如果是<strong>Windows</strong>用户可以到<a target="_blank" rel="noopener" href="https://tailscale.com/download/windows">官网</a>下载安装<a target="_blank" rel="noopener" href="https://pkgs.tailscale.com/stable/tailscale-ipn-setup-1.14.4.exe">Tailscale</a>，或者透过<a target="_blank" rel="noopener" href="https://kingtam.win/archives/choco.html">Chocolatey软件包</a>安装。</p>
-<p><code>choco install tailscale -y</code></p>
-<p>双击桌面右下角的图示</p>
-<p>使用<a target="_blank" rel="noopener" href="https://pinpai.smzdm.com/2047/">谷歌</a>或者<a target="_blank" rel="noopener" href="https://pinpai.smzdm.com/1461/">微软</a>账号进行登录</p>
-<p>成功授权后可以查看分配到的IP地址</p>
-<p><strong>Linux</strong>用户可以到<a target="_blank" rel="noopener" href="https://tailscale.com/download/linux">Download · Tailscale</a>找到相对应的<a target="_blank" rel="noopener" href="https://www.smzdm.com/fenlei/cpu/">CPU</a>平台及架构安装.</p>
-<p>我以<strong>Ubuntu 20.04</strong>为范例</p>
-<ul>
-<li>添加 <code>Tailscale</code> 的金钥和软件仓库地址</li>
-</ul>
-<p><code>curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/focal.gpg | sudo apt-key a[dd](https://pinpai.smzdm.com/102135/)</code></p>
-<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-curl -fsSL https:<span class="regexp">//</span>pkgs.tailscale.com<span class="regexp">/stable/u</span>buntu<span class="regexp">/focal.list | sudo tee /</span>etc<span class="regexp">/apt/</span>sources.list.d/tailscale.list</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>安装<code>Tailscale</code></li>
-</ul>
-<p><code>sudo apt updatesudo apt install tailscale</code></p>
-<ul>
-<li>启用<code>Tailscale</code> 及透过网址验证登入到<code>Tailscale</code> 网络</li>
-</ul>
-<p>sudo tailscale up</p>
-<p>此页面显示成功授权</p>
-<p>返回到Linux 终端查看分配到的IP地址</p>
-<p>tailscale ip</p>
-<p><code>Tailscale</code> 网络内的装置可以互通</p>
-<p><strong>2. 透过设定其中1部「TailScale」的装置为网关「Subnet Router」，可以访问整个内网网段</strong></p>
-<blockquote>
-<p>因为不是每一部设备都可以安装到Tailscale ， 所以这样设定「Subnet Route」的好处是家里内网只要1部Linux装置接入到Tailscale 网络，其他所有的外网的Tailscale装置都可以透过这部Linux装置作为网关访问家里内网所有的设备，如: 印表机，路由器，伺服器等等。</p>
-</blockquote>
-<ul>
-<li>启用 <strong>Linux</strong> 上的 <strong>IP</strong> 转发(IP Forwarding)</li>
-</ul>
-<p>因为「Subnet Route」的设定需要用到 IP 转发(IP Forwarding)特性</p>
-<p>使用以下指命启用</p>
-<p><code>echo &#39;net.ipv4.ip_forward = 1&#39; | sudo tee -a /etc/sysctl.confecho &#39;net.ipv6.conf.all.forwarding = 1&#39; | sudo tee -a /etc/sysctl.confsudo sysctl -p /etc/sysctl.conf</code></p>
-<ul>
-<li>以Linux作为「Subnet Route」(子网路由网关)连接到<code>Tailscale</code></li>
-</ul>
-<blockquote>
-<p>Tailscale 不需要防火墙配置，会自动管理规则，以允许转发。设定过程也没涉及到iptable，一条指令可以完成。</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># sudo tailscale up --advertise-routes=20.13.3.0/24</span></span><br><span class="line">tailscale up --advertise-routes=192.168.31.0/24 --netfilter-mode=off</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>20.13.3.0&#x2F;24替换为自己的网段，可以是IPV4或者IPV6。</p>
-</blockquote>
-<ul>
-<li>登入到网页控制台 &gt; <code>Machines</code></li>
-</ul>
-<p><code>Enable All</code>允许转发所有</p>
-<p>基于安全特性，<code>Tailscale</code>每隔6个月需要重新授权装置，作为「Subnet Router」(子网路由网关)，建议停用。</p>
-<ul>
-<li>外网的<code>Tailscale</code>装置线路测试</li>
-</ul>
-<p>可以看到是经节点「Subnet Router」IP <code>100.101.41.50</code> 接入到内网 <code>192.168.31.0/24</code>，延迟也很理想。</p>
-<p>以下是使用内网IP连入家里的各服务及装置</p>
-<p>测速</p>
-<blockquote>
-<p>TailSale和ZeroTier的使用场景上非常相近，没有那个占优，根据自身网络环境的连线质量较佳去选取。</p>
-</blockquote>
-<blockquote>
-<p>透过<a target="_blank" rel="noopener" href="https://kingtam.win/archives/zerotier-route.html">ZeroTier 实现远端访问局域网</a>的设定不是对所有自定网段有效，如今次的<code>192.168.31.0/24</code>的网段失效，<code>Zerotier</code>误判为外网网段而不能访问。而使用<code>TailSale</code>的设定可以实现远端访问网段为<code>192.168.31.0/24</code>的局域网。</p>
-</blockquote>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://tailscale.com/download/linux/ubuntu-2004">Download Install the app and sign in to get started Tailscale</a></li>
-<li><a target="_blank" rel="noopener" href="https://tailscale.com/kb/1104/enable-ip-forwarding/">Enable IP forwarding on Linux · Tailscale</a></li>
-<li><a target="_blank" rel="noopener" href="https://tailscale.com/kb/1019/subnets/">Subnet routers and traffic relay nodes · Tailscale</a></li>
-</ul>
- 
+</ol> 
+      <a class="article-more-link" href="/2024/04/22/TailScale%E5%AE%9E%E7%8E%B0%E8%BF%9C%E7%AB%AF%E8%AE%BF%E9%97%AE%E6%95%B4%E6%AE%B5%E5%B1%80%E5%9F%9F%E7%BD%91/"
+        >阅读更多...</a
+      >
+       
       <!-- reward -->
       
     </div>
@@ -308,8 +243,8 @@
 <p><a target="_blank" rel="noopener" href="https://movie.douban.com/subject/1463371/">名侦探柯南</a>改编自青山刚昌创作的同名漫画作品 ，由TMS Entertainment（原东京电影新社）负责动画制作 ，于<strong>1996年1月8日</strong>起在读卖电视台播出 。</p>
 </blockquote>
 <p>名侦探柯南是老婆的电子榨菜，已播出的全部剧集+剧场版都已经看过多次了。</p>
-<p>目前居家观影方案是<code>Apple TV</code>安装<code>infuse</code>搭配<code>HomePod</code>，可以从<code>themoviedb</code>抓取视频信息，但名侦探柯南有一个头痛的问题。</p>
-<p>互联网上能搜到的国语配音版本，都是国内版本的，从国外引进时，把一些较长的单剧集拆分了，国外一集的内容，引进国内后被拆分成多集，导致剧集数和<code>themoviedb</code>数据库对不上。强迫症逼死人，为了老婆更方便的反反复复的观看，特意整理了国内外剧集数的对比表，并根据在某网盘的脚本上修改，可以在网页版某网盘实现批量修改集数。</p>
+<p>目前居家观影方案是<code>Apple TV</code>安装<code>infuse</code>搭配<code>HomePod</code>，可以从<code>themoviedb</code>抓取视频信息。</p>
+<p>但名侦探柯南有一个头痛的问题，互联网上能搜到的国语配音版本，都是国内版本的，从国外引进时，把一些较长的单剧集拆分了，国外一集的内容，引进国内后被拆分成多集，导致剧集数和<code>themoviedb</code>数据库对不上。强迫症逼死人，为了老婆更方便的反反复复的观看，特意整理了国内外剧集数的对比表，并根据在某网盘的脚本上修改，可以在网页版某网盘实现批量修改集数。</p>
 <p>矫正剧集数后，infuse可以正确识别全部剧集的介绍、封面、演员表、每集的标题等等。</p>
 <p>todo：名侦探柯南1200集内容，都是第一季，在Apple TV infuse中从第一集开始找特定集数也是非常困难的，目前只能手动拆分播放列表。</p> 
       <a class="article-more-link" href="/2024/04/22/%E6%9F%AF%E5%8D%97%E5%8A%A8%E7%94%BB%E7%9B%AE%E5%BD%95/"

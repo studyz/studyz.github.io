@@ -6,7 +6,7 @@
   <link href="https://studyz.github.io/atom.xml" rel="self"/>
   
   <link href="https://studyz.github.io/"/>
-  <updated>2024-04-22T08:19:30.874Z</updated>
+  <updated>2024-04-22T08:24:36.390Z</updated>
   <id>https://studyz.github.io/</id>
   
   <author>
@@ -21,16 +21,17 @@
     <link href="https://studyz.github.io/2024/04/22/TailScale%E5%AE%9E%E7%8E%B0%E8%BF%9C%E7%AB%AF%E8%AE%BF%E9%97%AE%E6%95%B4%E6%AE%B5%E5%B1%80%E5%9F%9F%E7%BD%91/"/>
     <id>https://studyz.github.io/2024/04/22/TailScale%E5%AE%9E%E7%8E%B0%E8%BF%9C%E7%AB%AF%E8%AE%BF%E9%97%AE%E6%95%B4%E6%AE%B5%E5%B1%80%E5%9F%9F%E7%BD%91/</id>
     <published>2024-04-22T08:16:49.000Z</published>
-    <updated>2024-04-22T08:19:30.874Z</updated>
+    <updated>2024-04-22T08:24:36.390Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
-        
-      
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;之前的贴文分享了&lt;a href=&quot;https://kingtam.win/archives/zerotier-route.html&quot;&gt;ZeroTier 实现远端访问局域网&lt;/a&gt; ，最近发现一款软件&lt;code&gt;TailScale&lt;/code&gt;(数码小树人的貼文-让你可以随时随地用NAS和家里的电脑)感觉设定上更简单一点，仅仅透过帐号登入就可以接入&lt;code&gt;TailScale&lt;/code&gt;网络内。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;TailScale&lt;/code&gt;是以&lt;a href=&quot;https://www.wireguard.com/&quot;&gt;Wireguard&lt;/a&gt;的协议加密，所以安全性更高，而且是P2P连线，流量不经伺服器，延迟更低、私密性更高。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;安装及加入到&lt;code&gt;TailScale&lt;/code&gt;网络&lt;/li&gt;
+&lt;li&gt;透过设定其中1部&lt;code&gt;TailScale&lt;/code&gt;的装置为网关「Subnet Router」，可以访问整个内网网段&lt;/li&gt;
+&lt;/ol&gt;</summary>
     
     
     
@@ -42,15 +43,15 @@
     <link href="https://studyz.github.io/2024/04/22/%E6%9F%AF%E5%8D%97%E5%8A%A8%E7%94%BB%E7%9B%AE%E5%BD%95/"/>
     <id>https://studyz.github.io/2024/04/22/%E6%9F%AF%E5%8D%97%E5%8A%A8%E7%94%BB%E7%9B%AE%E5%BD%95/</id>
     <published>2024-04-22T07:00:51.000Z</published>
-    <updated>2024-04-22T08:20:22.032Z</updated>
+    <updated>2024-04-22T13:04:02.624Z</updated>
     
     
     <summary type="html">&lt;blockquote&gt;
 &lt;p&gt;&lt;a href=&quot;https://movie.douban.com/subject/1463371/&quot;&gt;名侦探柯南&lt;/a&gt;改编自青山刚昌创作的同名漫画作品 ，由TMS Entertainment（原东京电影新社）负责动画制作 ，于&lt;strong&gt;1996年1月8日&lt;/strong&gt;起在读卖电视台播出 。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;名侦探柯南是老婆的电子榨菜，已播出的全部剧集+剧场版都已经看过多次了。&lt;/p&gt;
-&lt;p&gt;目前居家观影方案是&lt;code&gt;Apple TV&lt;/code&gt;安装&lt;code&gt;infuse&lt;/code&gt;搭配&lt;code&gt;HomePod&lt;/code&gt;，可以从&lt;code&gt;themoviedb&lt;/code&gt;抓取视频信息，但名侦探柯南有一个头痛的问题。&lt;/p&gt;
-&lt;p&gt;互联网上能搜到的国语配音版本，都是国内版本的，从国外引进时，把一些较长的单剧集拆分了，国外一集的内容，引进国内后被拆分成多集，导致剧集数和&lt;code&gt;themoviedb&lt;/code&gt;数据库对不上。强迫症逼死人，为了老婆更方便的反反复复的观看，特意整理了国内外剧集数的对比表，并根据在某网盘的脚本上修改，可以在网页版某网盘实现批量修改集数。&lt;/p&gt;
+&lt;p&gt;目前居家观影方案是&lt;code&gt;Apple TV&lt;/code&gt;安装&lt;code&gt;infuse&lt;/code&gt;搭配&lt;code&gt;HomePod&lt;/code&gt;，可以从&lt;code&gt;themoviedb&lt;/code&gt;抓取视频信息。&lt;/p&gt;
+&lt;p&gt;但名侦探柯南有一个头痛的问题，互联网上能搜到的国语配音版本，都是国内版本的，从国外引进时，把一些较长的单剧集拆分了，国外一集的内容，引进国内后被拆分成多集，导致剧集数和&lt;code&gt;themoviedb&lt;/code&gt;数据库对不上。强迫症逼死人，为了老婆更方便的反反复复的观看，特意整理了国内外剧集数的对比表，并根据在某网盘的脚本上修改，可以在网页版某网盘实现批量修改集数。&lt;/p&gt;
 &lt;p&gt;矫正剧集数后，infuse可以正确识别全部剧集的介绍、封面、演员表、每集的标题等等。&lt;/p&gt;
 &lt;p&gt;todo：名侦探柯南1200集内容，都是第一季，在Apple TV infuse中从第一集开始找特定集数也是非常困难的，目前只能手动拆分播放列表。&lt;/p&gt;</summary>
     
