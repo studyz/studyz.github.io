@@ -113,8 +113,10 @@
 
 <ul>
 <li>PARTITION BY子句是可选的，用于将数据分成不同的分组。如果不指定PARTITION BY子句，将对整个结果集进行排名。</li>
-<li>ORDER BY子句指定用于排序的列。可以根据一个或多个列进行排序，以确定排名的顺序。<span id="more"></span></li>
+<li>ORDER BY子句指定用于排序的列。可以根据一个或多个列进行排序，以确定排名的顺序。</li>
 </ul>
+<span id="more"></span>
+
 <h3 id="example"><a href="#example" class="headerlink" title="example"></a>example</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT name, salary, DENSE_RANK() OVER (ORDER BY salary DESC) AS dense_rank</span><br><span class="line">FROM employees;</span><br></pre></td></tr></table></figure>
 
 

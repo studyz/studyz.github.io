@@ -6,7 +6,7 @@
   <link href="https://studyz.github.io/atom.xml" rel="self"/>
   
   <link href="https://studyz.github.io/"/>
-  <updated>2024-04-22T07:53:58.130Z</updated>
+  <updated>2024-04-22T08:02:48.026Z</updated>
   <id>https://studyz.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://studyz.github.io/2024/04/22/%E6%9F%AF%E5%8D%97%E5%8A%A8%E7%94%BB%E7%9B%AE%E5%BD%95/"/>
     <id>https://studyz.github.io/2024/04/22/%E6%9F%AF%E5%8D%97%E5%8A%A8%E7%94%BB%E7%9B%AE%E5%BD%95/</id>
     <published>2024-04-22T07:00:51.000Z</published>
-    <updated>2024-04-22T07:53:58.130Z</updated>
+    <updated>2024-04-22T08:02:48.026Z</updated>
     
     
     <summary type="html">&lt;blockquote&gt;
@@ -145,12 +145,11 @@
     <link href="https://studyz.github.io/2024/04/20/Git_Hexo/"/>
     <id>https://studyz.github.io/2024/04/20/Git_Hexo/</id>
     <published>2024-04-20T05:11:30.000Z</published>
-    <updated>2024-04-22T07:53:55.985Z</updated>
+    <updated>2024-04-22T08:00:13.134Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;一、前期准备&quot;&gt;&lt;a href=&quot;#一、前期准备&quot; class=&quot;headerlink&quot; title=&quot;一、前期准备&quot;&gt;&lt;/a&gt;一、前期准备&lt;/h2&gt;&lt;h3 id=&quot;1-1-注册-账号-Gitee-GitHub&quot;&gt;&lt;a href=&quot;#1-1-注册-账号-Gitee-GitHub&quot; class=&quot;headerlink&quot; title=&quot;1.1 注册 账号 Gitee&amp;#x2F;GitHub&quot;&gt;&lt;/a&gt;1.1 注册 账号 Gitee&amp;#x2F;GitHub&lt;/h3&gt;&lt;p&gt;注册一个属于自己的 Github 或 Gitee 账号，&lt;/p&gt;
-&lt;p&gt;Gitee在国内访问速度更快，但Gitee需要上传身份证照片若干张进行实名认证，懒得掏身份证，pass掉。&lt;br&gt;&lt;img src=&quot;/2024/04/20/Git_Hexo/%E5%AE%9E%E5%90%8D%E9%AA%8C%E8%AF%81.png&quot; alt=&quot;实名认证&quot;&gt;&lt;/p&gt;
-&lt;p&gt;本文采用 Github 演示。 &lt;/p&gt;</summary>
+&lt;p&gt;Gitee在国内访问速度更快，但Gitee需要上传身份证照片若干张进行实名认证，懒得掏身份证，pass掉。&lt;/p&gt;</summary>
     
     
     
@@ -221,7 +220,7 @@
     <link href="https://studyz.github.io/2024/02/28/DATEDIFF_%E6%97%A5%E6%9C%9F%E4%B9%8B%E5%B7%AE/"/>
     <id>https://studyz.github.io/2024/02/28/DATEDIFF_%E6%97%A5%E6%9C%9F%E4%B9%8B%E5%B7%AE/</id>
     <published>2024-02-28T13:49:50.000Z</published>
-    <updated>2024-04-20T15:25:36.278Z</updated>
+    <updated>2024-04-22T08:00:43.284Z</updated>
     
     
       
@@ -268,14 +267,15 @@
     <link href="https://studyz.github.io/2024/02/28/%E6%8E%92%E5%BA%8F_DENSE_RANK/"/>
     <id>https://studyz.github.io/2024/02/28/%E6%8E%92%E5%BA%8F_DENSE_RANK/</id>
     <published>2024-02-28T13:47:37.000Z</published>
-    <updated>2024-04-22T07:53:54.285Z</updated>
+    <updated>2024-04-22T08:00:57.808Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;rank&quot;&gt;&lt;a href=&quot;#rank&quot; class=&quot;headerlink&quot; title=&quot;rank()&quot;&gt;&lt;/a&gt;rank()&lt;/h2&gt;&lt;h2 id=&quot;dense-rank&quot;&gt;&lt;a href=&quot;#dense-rank&quot; class=&quot;headerlink&quot; title=&quot;dense_rank()&quot;&gt;&lt;/a&gt;dense_rank()&lt;/h2&gt;&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;DENSE_RANK() OVER (PARTITION BY column1, column2... ORDER BY column3, column4...)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
 &lt;ul&gt;
 &lt;li&gt;PARTITION BY子句是可选的，用于将数据分成不同的分组。如果不指定PARTITION BY子句，将对整个结果集进行排名。&lt;/li&gt;
-&lt;li&gt;ORDER BY子句指定用于排序的列。可以根据一个或多个列进行排序，以确定排名的顺序。</summary>
+&lt;li&gt;ORDER BY子句指定用于排序的列。可以根据一个或多个列进行排序，以确定排名的顺序。&lt;/li&gt;
+&lt;/ul&gt;</summary>
     
     
     
@@ -411,16 +411,13 @@
     <link href="https://studyz.github.io/2023/08/21/lora%E8%AE%AD%E7%BB%83/"/>
     <id>https://studyz.github.io/2023/08/21/lora%E8%AE%AD%E7%BB%83/</id>
     <published>2023-08-21T10:34:40.000Z</published>
-    <updated>2024-04-20T17:26:50.469Z</updated>
+    <updated>2024-04-22T07:57:04.676Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
-        
-      
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://github.com/camenduru/stable-diffusion-webui-colab&quot;&gt;https://github.com/camenduru/stable-diffusion-webui-colab&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/camenduru/stable-diffusion-webui-colab/tree/drive&quot;&gt;https://github.com/camenduru/stable-diffusion-webui-colab/tree/drive&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/bmaltais/kohya_ss&quot;&gt;kohya_ss Files:&lt;/a&gt;  &lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://colab.research.google.com/drive/1vvi6lGdbEIbyuhM2Yg1R99dynuOkWh9Y#scrollTo=_u3q60di584x&quot;&gt;在Google Colab上训练LORA模型,保存到谷歌云盘| 免费16GB GPU |KOHYA LORA | Dreambooth扩展 | Stable Diffusion&lt;/a&gt;&lt;/p&gt;</summary>
     
     
     
