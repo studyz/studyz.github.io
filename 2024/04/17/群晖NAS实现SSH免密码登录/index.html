@@ -116,7 +116,7 @@
 <h3 id="登录"><a href="#登录" class="headerlink" title="登录"></a>登录</h3><p>在电脑端，使用终端应用登录群晖，可以使用命令行方式登录，例如：<code>ssh -p 8888 legalgeek@192.168.1.2</code></p>
 <p>也可以在 <code>~/.ssh/config</code> 配置文件中增加一个服务器设定，然后通过 <code>ssh qh</code> 快捷登录</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">修改 ~/.ssh/config 文件示例：</span>  </span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">服务器</span>  </span><br><span class="line">Host qh  </span><br><span class="line">	HostName your_ip  </span><br><span class="line">	Port your_port  </span><br><span class="line">	User your_username</span><br></pre></td></tr></table></figure>
-
+<span id="more"></span>
 <p>上面一步执行完毕，需要输入用户密码。</p>
 <h3 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h3><p>使用 <code>ls -a</code>检测群晖当前用户主目录下是否有 .ssh 文件夹，如果没有使用下列命令创建：</p>
 <h2 id="STEP-2-粘贴公钥"><a href="#STEP-2-粘贴公钥" class="headerlink" title="STEP 2 粘贴公钥"></a>STEP 2 粘贴公钥</h2><p>将自己电脑的公钥粘贴进群晖的<code>authorized_keys</code>，具体方法：</p>

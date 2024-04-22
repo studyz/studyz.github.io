@@ -192,64 +192,11 @@
 <p>在本文中，将介绍NumPy的主要用法，以及它如何呈现不同类型的数据（表格，图像，文本等），这些经Numpy处理后的数据将成为机器学习模型的输入。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br></pre></td></tr></table></figure>
 
-<h1 id="NumPy中的数组操作"><a href="#NumPy中的数组操作" class="headerlink" title="NumPy中的数组操作"></a>NumPy中的数组操作</h1><h3 id="创建数组"><a href="#创建数组" class="headerlink" title="创建数组"></a>创建数组</h3><p>我们可以通过将python列表传入np.array()来创建一个NumPy数组（也就是强大的ndarray）。在下面的例子里，创建出的数组如右边所示，<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0002.png"></p>
-<p>通常情况下，我们希望NumPy为我们初始化数组的值，为此NumPy提供了诸如ones()，zeros()和random.random()之类的方法。我们只需传入元素个数即可：</p>
-<p><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0003.png"><br>一旦我们创建了数组，我们就可以用其做点有趣的应用了，文摘菌将在下文展开说明。</p>
-<h3 id="数组的算术运算"><a href="#数组的算术运算" class="headerlink" title="数组的算术运算"></a>数组的算术运算</h3><p>让我们创建两个NumPy数组，分别称作data和ones：</p>
-<p><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0004.png"><br>若要计算两个数组的加法，只需简单地敲入data + ones，就可以实现对应位置上的数据相加的操作（即每行数据进行相加），这种操作比循环读取数组的方法代码实现更加简洁。<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0005.png"></p>
-<p>当然，在此基础上举一反三，也可以实现减法、乘法和除法等操作：<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0006.png"><br>许多情况下，我们希望进行数组和单个数值的操作（也称作向量和标量之间的操作）。比如：如果数组表示的是以英里为单位的距离，我们的目标是将其转换为公里数。可以简单的写作<code>data \* 1.6</code>：<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0007.png"></p>
-<p>NumPy通过数组广播（broadcasting）知道这种操作需要和数组的每个元素相乘。</p>
-<h3 id="数组的切片操作"><a href="#数组的切片操作" class="headerlink" title="数组的切片操作"></a>数组的切片操作</h3><p>我们可以像python列表操作那样对NumPy数组进行索引和切片，如下图所示：  </p>
-<p><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0008.png"></p>
-<h3 id="聚合函数"><a href="#聚合函数" class="headerlink" title="聚合函数"></a>聚合函数</h3><p>NumPy为我们带来的便利还有聚合函数，聚合函数可以将数据进行压缩，统计数组中的一些特征值：<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0009.png"></p>
-<p>除了<code>min</code>，<code>max</code>和<code>sum</code>等函数，还有<code>mean（均值）</code>，<code>prod（数据乘法）</code>计算所有元素的乘积，std（标准差），等等。上面的所有例子都在一个维度上处理向量。除此之外，NumPy之美的一个关键之处是它能够将之前所看到的所有函数应用到任意维度上。</p>
-<h1 id="NumPy中的矩阵操作"><a href="#NumPy中的矩阵操作" class="headerlink" title="NumPy中的矩阵操作"></a>NumPy中的矩阵操作</h1><h3 id="创建矩阵"><a href="#创建矩阵" class="headerlink" title="创建矩阵"></a>创建矩阵</h3><p>我们可以通过将二维列表传给Numpy来创建矩阵。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">np.array([[<span class="number">1</span>,<span class="number">2</span>],[<span class="number">3</span>,<span class="number">4</span>]])</span><br></pre></td></tr></table></figure>
-
-<p><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0010.png"><br>除此外，也可以使用上文提到的<code>ones()</code>、<code>zeros()</code>和<code>random.random()</code>来创建矩阵，只需传入一个元组来描述矩阵的维度：  </p>
-<p><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0011.png"></p>
-<h3 id="矩阵的算术运算"><a href="#矩阵的算术运算" class="headerlink" title="矩阵的算术运算"></a>矩阵的算术运算</h3><p>对于大小相同的两个矩阵，我们可以使用算术运算符（<code>+-\*/</code>）将其相加或者相乘。NumPy对这类运算采用对应位置（position-wise）操作处理：  </p>
-<p><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0012.png"><br>对于不同大小的矩阵，只有两个矩阵的维度同为1时（例如矩阵只有一列或一行），我们才能进行这些算术运算，在这种情况下，NumPy使用广播规则（broadcast）进行操作处理：<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0013.png"><br>与算术运算有很大区别是使用点积的矩阵乘法。NumPy提供了<code>dot()</code>方法，可用于矩阵之间进行点积运算：<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0014.png"></p>
-<p>上图的底部添加了矩阵尺寸，以强调运算的两个矩阵在列和行必须相等。可以将此操作图解为如下所示：<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0015.png"></p>
-<h3 id="矩阵的切片和聚合"><a href="#矩阵的切片和聚合" class="headerlink" title="矩阵的切片和聚合"></a>矩阵的切片和聚合</h3><p>索引和切片功能在操作矩阵时变得更加有用。可以在不同维度上使用索引操作来对数据进行切片。  </p>
-<p><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0016.png"></p>
-<p>我们可以像聚合向量一样聚合矩阵：</p>
-<p><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0017.png"></p>
-<p>不仅可以聚合矩阵中的所有值，还可以使用<code>axis</code>参数指定行和列的聚合：</p>
-<p><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0018.png"></p>
-<h3 id="矩阵的转置和重构"><a href="#矩阵的转置和重构" class="headerlink" title="矩阵的转置和重构"></a>矩阵的转置和重构</h3><p>处理矩阵时经常需要对矩阵进行转置操作，常见的情况如计算两个矩阵的点积。NumPy数组的属性T可用于获取矩阵的转置。</p>
-<p><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0019.png"></p>
-<p>在较为复杂的用例中，你可能会发现自己需要改变某个矩阵的维度。这在机器学习应用中很常见，例如模型的输入矩阵形状与数据集不同，可以使用NumPy的<code>reshape()</code>方法。只需将矩阵所需的新维度传入即可。也可以传入-1，NumPy可以根据你的矩阵推断出正确的维度：<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0020.png"></p>
-<p>上文中的所有功能都适用于多维数据，其中心数据结构称为ndarray（N维数组）。</p>
-<p><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0021.png"></p>
-<p>很多时候，改变维度只需在NumPy函数的参数中添加一个逗号，如下图所示：</p>
-<p><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0022.png"></p>
-<h1 id="NumPy中的公式应用示例"><a href="#NumPy中的公式应用示例" class="headerlink" title="NumPy中的公式应用示例"></a>NumPy中的公式应用示例</h1><p>NumPy的关键用例是实现适用于矩阵和向量的数学公式。这也Python中常用NumPy的原因。例如，均方误差是监督机器学习模型处理回归问题的核心：</p>
-<p><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0023.png"></p>
-<p>在NumPy中可以很容易地实现均方误差：<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0024.png"></p>
-<p>这样做的好处是，numpy无需考虑predictions与labels具体包含的值。文摘菌将通过一个示例来逐步执行上面代码行中的四个操作：<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0025.png"></p>
-<p>预测（predictions）和标签（labels）向量都包含三个值。这意味着n的值为3。在我们执行减法后，我们最终得到如下值：<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0026.png"></p>
-<p>然后我们可以计算向量中各值的平方：<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0027.png"></p>
-<p>现在我们对这些值求和：<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0028.png"></p>
-<p>最终得到该预测的误差值和模型质量分数。</p>
-<h1 id="用NumPy表示日常数据"><a href="#用NumPy表示日常数据" class="headerlink" title="用NumPy表示日常数据"></a>用NumPy表示日常数据</h1><p>日常接触到的数据类型，如电子表格，图像，音频……等，如何表示呢？Numpy可以解决这个问题。</p>
-<h3 id="表和电子表格"><a href="#表和电子表格" class="headerlink" title="表和电子表格"></a>表和电子表格</h3><p>电子表格或数据表都是二维矩阵。电子表格中的每个工作表都可以是自己的变量。python中类似的结构是pandas数据帧（dataframe），它实际上使用NumPy来构建的。<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0029.png"></p>
-<h3 id="音频和时间序列"><a href="#音频和时间序列" class="headerlink" title="音频和时间序列"></a>音频和时间序列</h3><p>音频文件是一维样本数组。每个样本都是代表一小段音频信号的数字。CD质量的音频每秒可能有44,100个采样样本，每个样本是一个-65535到65536之间的整数。这意味着如果你有一个10秒的CD质量的WAVE文件，你可以将它加载到长度为10 * 44,100 &#x3D; 441,000个样本的NumPy数组中。想要提取音频的第一秒？只需将文件加载到我们称之为audio的NumPy数组中，然后截取audio[:44100]。</p>
-<p>以下是一段音频文件：<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0030.png"></p>
-<p>时间序列数据也是如此（例如，股票价格随时间变化的序列）。</p>
-<h3 id="图像"><a href="#图像" class="headerlink" title="图像"></a>图像</h3><p>图像是大小为（高度×宽度）的像素矩阵。如果图像是黑白图像（也称为灰度图像），则每个像素可以由单个数字表示（通常在0（黑色）和255（白色）之间）。如果对图像做处理，裁剪图像的左上角10 x 10大小的一块像素区域，用NumPy中的image[:10,:10]就可以实现。</p>
-<p>这是一个图像文件的片段：<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0031.png"></p>
-<p>如果图像是彩色的，则每个像素由三个数字表示 ：红色，绿色和蓝色。在这种情况下，我们需要第三维（因为每个单元格只能包含一个数字）。因此彩色图像由尺寸为(高x宽x 3）的ndarray表示。<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0032.png"></p>
-<h3 id="语言"><a href="#语言" class="headerlink" title="语言"></a>语言</h3><p>如果我们处理文本，情况就会有所不同。用数字表示文本需要两个步骤，构建词汇表（模型知道的所有唯一单词的清单）和嵌入（embedding）。让我们看看用数字表示这个（翻译的）古语引用的步骤：“Have the bards who preceded me left any theme unsung?”</p>
-<p>模型需要先训练大量文本才能用数字表示这位战场诗人的诗句。我们可以让模型处理一个小数据集，并使用这个数据集来构建一个词汇表（71,290个单词）：<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0033.png"></p>
-<p>然后可以将句子划分成一系列“词”token（基于通用规则的单词或单词部分）：<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0034.png"></p>
-<p>然后我们用词汇表中的id替换每个单词：<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0035.png"></p>
-<p>这些ID仍然不能为模型提供有价值的信息。因此，在将一系列单词送入模型之前，需要使用嵌入（embedding）来替换token&#x2F;单词（在本例子中使用50维度的word2vec嵌入)：<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0036.png"></p>
-<p>你可以看到此NumPy数组的维度为[embedding_dimension x sequence_length]。</p>
-<p>在实践中，这些数值不一定是这样的，但我以这种方式呈现它是为了视觉上的一致。出于性能原因，深度学习模型倾向于保留批数据大小的第一维（因为如果并行训练多个示例，则可以更快地训练模型）。很明显，这里非常适合使用reshape()。例如，像BERT这样的模型会期望其输入矩阵的形状为：[batch_size，sequence_length，embedding_size]。<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0037.png"></p>
-<p>这是一个数字合集，模型可以处理并执行各种有用的操作。我留空了许多行，可以用其他示例填充以供模型训练（或预测）。</p>
-<p>事实证明，在我们的例子中，那位诗人的话语比其他诗人的诗句更加名垂千古。尽管生而为奴，诗人安塔拉（Antarah）的英勇和语言能力使他获得了自由和神话般的地位，他的诗是伊斯兰教以前的阿拉伯半岛《悬诗》的七首诗之一。</p>
- 
+<h1 id="NumPy中的数组操作"><a href="#NumPy中的数组操作" class="headerlink" title="NumPy中的数组操作"></a>NumPy中的数组操作</h1> 
+      <a class="article-more-link" href="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/"
+        >阅读更多...</a
+      >
+       
       <!-- reward -->
       
     </div>
@@ -388,51 +335,11 @@
 </li>
 <li><p>Create a step by step guide to instruct how to [topic].</p>
   </p>
-</details></li>
-</ol>
-<h2 id="中文版本"><a href="#中文版本" class="headerlink" title="中文版本"></a>中文版本</h2><details>
-  <summary>中文版本</summary>
-  <p> 
-  
-<ol>
-<li><p>脑筋急转弯10个与[topic]相关的内容想法，让[your audience]感兴趣和受益。</p>
-</li>
-<li><p>为[whomever you want]编写一个fun的睡前故事，ta是故事的主要角色。</p>
-</li>
-<li><p>编写一个关于[topic]的的文章，考虑多种角度，使用[preferred tone]的口调。</p>
-</li>
-<li><p>总结[LinkedIn profile url]并 listing the top 5 pain points they likely face in their current role.</p>
-</li>
-<li><p>创建7天social media content，聚焦于[topic]，让[target audience]参与。</p>
-</li>
-</ol>
-<p>  Instructions: 创建social media content，符合choosen topic and target audience。Content should be varied. Content should also include calls to action that encourage users to engage with the content, such as likes, shares, and comments.</p>
-<ol start="6">
-<li><p>我享受[list a few interests or hobbies]。哪些是不完全related的activity？</p>
-</li>
-<li><p>写10个与curiosity gap相关的[topic] theme的subject lines &#x2F; headlines &#x2F; social media threads &#x2F; ad headlines &#x2F; etc.</p>
-</li>
-<li><p>假设你是[role]，列出10个做[task or problem]的方法。比较每个方法并list the pros and cons of each idea.</p>
-</li>
-<li><p>用表格格式 summarize the features, benefits, and pain solved for this product: [url to product features page].</p>
-</li>
-<li><p>创建一个包含常见问题及回答的列表，关于[keyword]。</p>
-</li>
-<li><p>创建5个social media posts promoting this blog post: [blog post URL]。</p>
-</li>
-<li><p>创建一个step by step guide to instruct how to [topic]。</p>
-</li>
-</ol>
-  </p>
-</details>
-
-
-
-
-
-
-
- 
+</details> 
+      <a class="article-more-link" href="/2023/08/12/ChatGPT_Prompt/"
+        >阅读更多...</a
+      >
+       
       <!-- reward -->
       
     </div>
@@ -488,52 +395,11 @@
   <blockquote>
 <p>以前发布节奏都是3年左右更新一代，现在直接一年一更了吗难道？<br>上一代还是2021年发布的。<br>来跟大家分享下新款的Apple TV 4K都更新了哪些东西？值得买吗？已经买了2021款的需要换吗？</p>
 </blockquote>
-<h1 id="两个版本"><a href="#两个版本" class="headerlink" title="两个版本"></a>两个版本</h1><p><img src="https://pic1.zhimg.com/v2-227b2d5b18b852460deaf6c04118bf9c_r.jpg"></p>
-<p><strong>无线版：</strong> 只能WiFi连接，存储64GB<br><strong>有线版本：</strong> 支持WiFi和以太网连接，存储128GB</p>
-<h1 id="与前代对比："><a href="#与前代对比：" class="headerlink" title="与前代对比："></a>与前代对比：</h1><ul>
-<li>A15芯片</li>
-<li>支持 HDR 10+</li>
-<li>遥控器充电口更换为 USB-C</li>
-<li>内存从3GB升级到4GB</li>
-<li>设备容量翻倍，无 32 GB 机型。现在为 64 GB 和 128 GB<br><img src="https://pic1.zhimg.com/v2-4b8debba68fc6523885458324be7d6b9_r.jpg?source=1940ef5c" alt="对比"></li>
-</ul>
-<h3 id="升级点-1：芯片从A12提升到了A15"><a href="#升级点-1：芯片从A12提升到了A15" class="headerlink" title="升级点-1：芯片从A12提升到了A15"></a>升级点-1：芯片从A12提升到了A15</h3><p><img src="https://pic3.zhimg.com/v2-cee98cb8cd1005ce49538f8d071cceba_b.jpg"></p>
-<p>新发布的iPad 2022款3599元起，使用的只是A14芯片！<br>A15对比A12的性能对比数据，CPU提升40%、GPU提升80%</p>
-<p><img src="https://pic1.zhimg.com/80/v2-6e3e66793387915d4a72e3cee3a93b78_1440w.webp"></p>
-<p>晶体管数量A15比A12翻了一倍不止！</p>
-<p><img src="https://pic2.zhimg.com/v2-a6c0c9fe1cafc6ffb132a50c57b13de5_r.jpg"></p>
-<p>安兔兔跑分来看，A15比A12跑分高了51%</p>
-<p>不过苹果官方给的新款Apple TV 数据：</p>
-<p>CPU 性能现在比上一代快 50%，提供更出色的响应能力、更快的导航和更快速的 UI 动画。GPU 性能现在比上一代产品快 30%，游戏体验更加流畅。</p>
-<p>可能是没有风扇的缘故，性能有所保留。</p>
-<p>一个电视盒子，价格1000块，直接上了A15，苹果想干啥？</p>
-<p>这个盒子完全可以用来玩原神了，而且存储最高到了128GB</p>
-<p><strong>苹果肯定是想发展电视游戏平台了！</strong> 已有的Acade会员加上现在的硬件大幅度升级，以后在Apple TV玩原神不是梦，甚至更大胆一点，会不会和明年苹果要发布的AR&#x2F;MR有联动？</p>
-<h3 id="升级点2：变得更薄更小了，重量减轻了"><a href="#升级点2：变得更薄更小了，重量减轻了" class="headerlink" title="升级点2：变得更薄更小了，重量减轻了"></a>升级点2：变得更薄更小了，重量减轻了</h3><p>由于采用A15芯片无风扇设计，与上一代Apple TV 4K相比，该设备的厚度减少了10%以上，重量减轻了约50%。</p>
-<p><img src="https://pic4.zhimg.com/v2-bc4357f9adfd09eca56754d61191da13_r.jpg"></p>
-<h3 id="升级点3：支持HDR10"><a href="#升级点3：支持HDR10" class="headerlink" title="升级点3：支持HDR10+"></a>升级点3：支持HDR10+</h3><p><img src="https://pic3.zhimg.com/v2-3de5f42b7fe35f25601971c743cce8fe_r.jpg"></p>
-<p>对HDR的支持算是补齐了</p>
-<h3 id="升级点4：遥控器充电口更换为-USB-C"><a href="#升级点4：遥控器充电口更换为-USB-C" class="headerlink" title="升级点4：遥控器充电口更换为-USB-C"></a>升级点4：遥控器充电口更换为-USB-C</h3><p><img src="https://pic2.zhimg.com/v2-1a672d02a9a4e251f5ff370efcc5fe41_r.jpg"></p>
-<p>Apple TV的遥控器不怎么需要充电，我的日常半年都不充电一次，</p>
-<p>不过连遥控器都上USB-C了，看来明年iPhone肯定也会全系上USB-C了～</p>
-<h1 id="遗憾："><a href="#遗憾：" class="headerlink" title="遗憾："></a>遗憾：</h1><ol>
-<li>HDMI 2.1 目前仍然只能支持4K 60帧（怀疑使用的是满血版HDMI 2.1，但是固件做了限制）</li>
-<li>音频Dolby Atoms True HD解码，但是不支持源码输出（给新款HomePods准备的？）</li>
-<li>不支持AV1和H.266&lt;VVC&gt;编码</li>
-</ol>
-<p>不过以上其实对绝大部分人没啥影响，放心冲就行了，1000块的价格完全是买A15芯片送盒子了。</p>
-<h1 id="选购建议"><a href="#选购建议" class="headerlink" title="选购建议"></a>选购建议</h1><p>还没买的直接上128GB有线版本<br>如果你现在已经买了Apple TV 4K 2021款，那么可以等等，毕竟A12已经性能过剩了，可以等苹果后续系统更新会不会有更大的动作，再考虑是否换新。</p>
-<h1 id="买港版还是美版"><a href="#买港版还是美版" class="headerlink" title="买港版还是美版"></a>买港版还是美版</h1><p>建议美版，港版和美版的唯一差别就是电源线插头的区别，美版电源插头可以直接用，港版电源插头需要买转接头（插座会高出一大坨的东西），或者买个国标的8字电源线，替换一下。<br><img src="https://pic2.zhimg.com/v2-b184e255c818a5aaabb3410eaf7e5eb1_b.jpg"></p>
-<h1 id="Apple-TV-录屏："><a href="#Apple-TV-录屏：" class="headerlink" title="Apple-TV-录屏："></a>Apple-TV-录屏：</h1><p><strong>系统版本：</strong> tvOS 16.3.3<br><strong>需要硬件设备：</strong> 一台Apple TV，一台macOS设备；<br><strong>网络要求：</strong> 保证Apple TV和你的macOS设备在同一局域网内；<br><strong>软件：</strong> macOS系统的<strong>QuickTime Player</strong><br><strong>操作路径：</strong> 打开<strong>QuickTime Player</strong> -&gt; 菜单栏 -&gt; 文件 -&gt; 新建影片录制 -&gt; 点击红色圆形「录制」按钮右侧的箭头 -&gt; 选择Apple TV设备，例如我家是「家庭影院」  </p>
-<h3 id="Apple-TV-录屏需注意的坑"><a href="#Apple-TV-录屏需注意的坑" class="headerlink" title="Apple-TV-录屏需注意的坑"></a>Apple-TV-录屏需注意的坑</h3><p>如果你的QuickTime Player没有出现Apple TV（一般TVOS 16更新后会出现这种）</p>
-<ol>
-<li><p>设置 -&gt; 「隔空播放和HomeKit」 -&gt; 「会议室显示器」 -&gt; 改为打开<br>如果这个时候，你在QuickTime Player还是没有看到Apple TV，那么你应该是有HomePod，并把<br>HomePod设置成了<strong>默认音频输出</strong>了。</p>
-</li>
-<li><p>设置 -&gt; 「视频和音频」 -&gt; 「音频」 -&gt; 选择电视扬声器<br>这时候就能在QuickTime Player找到Apple TV了！</p>
-</li>
-</ol>
-<h1 id="如何显示视频码率等信息？"><a href="#如何显示视频码率等信息？" class="headerlink" title="如何显示视频码率等信息？"></a>如何显示视频码率等信息？</h1><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/553483619">https://zhuanlan.zhihu.com/p/553483619</a></p>
- 
+<h1 id="两个版本"><a href="#两个版本" class="headerlink" title="两个版本"></a>两个版本</h1> 
+      <a class="article-more-link" href="/2023/08/10/AppleTV4K/"
+        >阅读更多...</a
+      >
+       
       <!-- reward -->
       
     </div>
@@ -588,111 +454,11 @@
        
   <h1 id="什么是回归分析？"><a href="#什么是回归分析？" class="headerlink" title="什么是回归分析？"></a>什么是回归分析？</h1><p>回归分析是一种预测性的建模技术，它研究的是因变量（目标）和自变量（预测器）之间的关系。这种技术通常用于预测分析，时间序列模型以及发现变量之间的因果关系。例如，司机的鲁莽驾驶与道路交通事故数量之间的关系，最好的研究方法就是回归。</p>
 <p>回归分析是建模和分析数据的重要工具。在这里，我们使用曲线&#x2F;线来拟合这些数据点，在这种方式下，从曲线或线到数据点的距离差异最小。我会在接下来的部分详细解释这一点。</p>
-<p><img src="/2023/08/01/7%E5%A4%A7%E7%BB%8F%E5%85%B8%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/10001.png"></p>
-<h1 id="我们为什么使用回归分析？"><a href="#我们为什么使用回归分析？" class="headerlink" title="我们为什么使用回归分析？"></a>我们为什么使用回归分析？</h1><p>如上所述，回归分析估计了两个或多个变量之间的关系。下面，让我们举一个简单的例子来理解它：</p>
-<p>比如说，在当前的经济条件下，你要估计一家公司的销售额增长情况。现在，你有公司最新的数据，这些数据显示出销售额增长大约是经济增长的2.5倍。那么使用回归分析，我们就可以根据当前和过去的信息来预测未来公司的销售情况。</p>
-<p>使用回归分析的好处良多。具体如下：</p>
-<ol>
-<li>它表明自变量和因变量之间的显著关系；</li>
-<li>它表明多个自变量对一个因变量的影响强度。</li>
-</ol>
-<p>回归分析也允许我们去比较那些衡量不同尺度的变量之间的相互影响，如价格变动与促销活动数量之间联系。这些有利于帮助市场研究人员，数据分析人员以及数据科学家排除并估计出一组最佳的变量，用来构建预测模型。</p>
-<h1 id="我们有多少种回归技术？"><a href="#我们有多少种回归技术？" class="headerlink" title="我们有多少种回归技术？"></a>我们有多少种回归技术？</h1><p>有各种各样的回归技术用于预测。这些技术主要有三个度量（自变量的个数，因变量的类型以及回归线的形状）。我们将在下面的部分详细讨论它们。</p>
-<p><img src="/2023/08/01/7%E5%A4%A7%E7%BB%8F%E5%85%B8%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/10002.jpg"></p>
-<p>对于那些有创意的人，如果你觉得有必要使用上面这些参数的一个组合，你甚至可以创造出一个没有被使用过的回归模型。但在你开始之前，先了解如下最常用的回归方法：</p>
-<h3 id="1-Linear-Regression线性回归"><a href="#1-Linear-Regression线性回归" class="headerlink" title="1-Linear-Regression线性回归"></a>1-Linear-Regression线性回归</h3><p>它是最为人熟知的建模技术之一。线性回归通常是人们在学习预测模型时首选的技术之一。在这种技术中，因变量是连续的，自变量可以是连续的也可以是离散的，回归线的性质是线性的。</p>
-<p>线性回归使用最佳的拟合直线（也就是回归线）在因变量（Y）和一个或多个自变量（X）之间建立一种关系。</p>
-<p>用一个方程式来表示它，即Y&#x3D;a+b*X+e，其中a表示截距，b表示直线的斜率，e是误差项。这个方程可以根据给定的预测变量（s）来预测目标变量的值。<br><img src="/2023/08/01/7%E5%A4%A7%E7%BB%8F%E5%85%B8%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/10003.png"></p>
-<p>一元线性回归和多元线性回归的区别在于，多元线性回归有（&gt;1）个自变量，而一元线性回归通常只有1个自变量。现在的问题是“我们如何得到一个最佳的拟合线呢？”。</p>
-<p><strong>如何获得最佳拟合线（a和b的值）？</strong></p>
-<p>这个问题可以使用最小二乘法轻松地完成。最小二乘法也是用于拟合回归线最常用的方法。对于观测数据，它通过最小化每个数据点到线的垂直偏差平方和来计算最佳拟合线。因为在相加时，偏差先平方，所以正值和负值没有抵消。</p>
-<p><img src="/2023/08/01/7%E5%A4%A7%E7%BB%8F%E5%85%B8%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/10004.jpg"></p>
-<p>我们可以使用R-square指标来评估模型性能。想了解这些指标的详细信息，可以阅读：模型性能指标Part 1,Part 2.</p>
-<blockquote>
-<p><strong>要点：</strong></p>
-<p>1.自变量与因变量之间必须有线性关系</p>
-<p>2.多元回归存在多重共线性，自相关性和异方差性。</p>
-<p>3.线性回归对异常值非常敏感。它会严重影响回归线，最终影响预测值。</p>
-<p>4.多重共线性会增加系数估计值的方差，使得在模型轻微变化下，估计非常敏感。结果就是系数估计值不稳定</p>
-<p>5.在多个自变量的情况下，我们可以使用向前选择法，向后剔除法和逐步筛选法来选择最重要的自变量。</p>
-</blockquote>
-<h3 id="2-Logistic-Regression逻辑回归"><a href="#2-Logistic-Regression逻辑回归" class="headerlink" title="2-Logistic-Regression逻辑回归"></a>2-Logistic-Regression逻辑回归</h3><p>逻辑回归是用来计算“事件&#x3D;Success”和“事件&#x3D;Failure”的概率。当因变量的类型属于二元（1 &#x2F; 0，真&#x2F;假，是&#x2F;否）变量时，我们就应该使用逻辑回归。这里，Y的值从0到1，它可以用下方程表示。</p>
-<p>odds&#x3D; p&#x2F; (1-p) &#x3D; probability of event occurrence &#x2F; probability of not event occurrenceln(odds) &#x3D; ln(p&#x2F;(1-p))logit(p) &#x3D; ln(p&#x2F;(1-p)) &#x3D; b0+b1X1+b2X2+b3X3….+bkXk</p>
-<p>上述式子中，p表述具有某个特征的概率。你应该会问这样一个问题：“我们为什么要在公式中使用对数log呢？”。</p>
-<p>因为在这里我们使用的是的二项分布（因变量），我们需要选择一个对于这个分布最佳的连结函数。它就是Logit函数。在上述方程中，通过观测样本的极大似然估计值来选择参数，而不是最小化平方和误差（如在普通回归使用的）。</p>
-<p><img src="/2023/08/01/7%E5%A4%A7%E7%BB%8F%E5%85%B8%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/10005.jpg"></p>
-<blockquote>
-<p><strong>要点：</strong></p>
-<p>1.它广泛的用于分类问题。</p>
-<p>2.逻辑回归不要求自变量和因变量是线性关系。它可以处理各种类型的关系，因为它对预测的相对风险指数OR使用了一个非线性的log转换。</p>
-<p>3.为了避免过拟合和欠拟合，我们应该包括所有重要的变量。有一个很好的方法来确保这种情况，就是使用逐步筛选方法来估计逻辑回归。</p>
-<p>4.它需要大的样本量，因为在样本数量较少的情况下，极大似然估计的效果比普通的最小二乘法差。</p>
-<p>5.自变量不应该相互关联的，即不具有多重共线性。然而，在分析和建模中，我们可以选择包含分类变量相互作用的影响。</p>
-<p>6.如果因变量的值是定序变量，则称它为序逻辑回归。</p>
-<p>7.如果因变量是多类的话，则称它为多元逻辑回归。</p>
-</blockquote>
-<h3 id="3-Polynomial-Regression多项式回归"><a href="#3-Polynomial-Regression多项式回归" class="headerlink" title="3-Polynomial-Regression多项式回归"></a>3-Polynomial-Regression多项式回归</h3><p>对于一个回归方程，如果自变量的指数大于1，那么它就是多项式回归方程。如下方程所示：y&#x3D;a+b*x^2</p>
-<p>在这种回归技术中，最佳拟合线不是直线。而是一个用于拟合数据点的曲线。<br><img src="/2023/08/01/7%E5%A4%A7%E7%BB%8F%E5%85%B8%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/10006.png"></p>
-<blockquote>
-<p>重点：</p>
-<p>虽然会有一个诱导可以拟合一个高次多项式并得到较低的错误，但这可能会导致过拟合。你需要经常画出关系图来查看拟合情况，并且专注于保证拟合合理，既没有过拟合又没有欠拟合。</p>
-</blockquote>
-<p>下面是一个图例，可以帮助理解：</p>
-<p><img src="/2023/08/01/7%E5%A4%A7%E7%BB%8F%E5%85%B8%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/10007.png"></p>
-<p>明显地向两端寻找曲线点，看看这些形状和趋势是否有意义。更高次的多项式最后可能产生怪异的推断结果。</p>
-<h3 id="4-Stepwise-Regression逐步回归"><a href="#4-Stepwise-Regression逐步回归" class="headerlink" title="4-Stepwise-Regression逐步回归"></a>4-Stepwise-Regression逐步回归</h3><p>在处理多个自变量时，我们可以使用这种形式的回归。在这种技术中，自变量的选择是在一个自动的过程中完成的，其中包括非人为操作。</p>
-<p>这一壮举是通过观察统计的值，如R-square，t-stats和AIC指标，来识别重要的变量。逐步回归通过同时添加&#x2F;删除基于指定标准的协变量来拟合模型。</p>
-<p>下面列出了一些最常用的逐步回归方法：</p>
-<ul>
-<li>标准逐步回归法做两件事情。即增加和删除每个步骤所需的预测。</li>
-<li>向前选择法从模型中最显著的预测开始，然后为每一步添加变量。</li>
-<li>向后剔除法与模型的所有预测同时开始，然后在每一步消除最小显着性的变量。</li>
-</ul>
-<p>这种建模技术的目的是使用最少的预测变量数来最大化预测能力。这也是处理高维数据集的方法之一。</p>
-<h3 id="5-Ridge-Regression岭回归"><a href="#5-Ridge-Regression岭回归" class="headerlink" title="5-Ridge-Regression岭回归"></a>5-Ridge-Regression岭回归</h3><p>岭回归分析是一种用于存在多重共线性（自变量高度相关）数据的技术。在多重共线性情况下，尽管最小二乘法（OLS）对每个变量很公平，但它们的差异很大，使得观测值偏移并远离真实值。岭回归通过给回归估计上增加一个偏差度，来降低标准误差。</p>
-<p>上面，我们看到了线性回归方程。还记得吗？它可以表示为：</p>
-<p>y&#x3D;a+b*x这个方程也有一个误差项。完整的方程是：</p>
-<p>y&#x3D;a+b*x+e (error term),  [error term is the value needed to correct for a prediction error between the observed and predicted value]</p>
-<p>=&gt; y&#x3D;a+y&#x3D; a+ b1x1+ b2x2+….+e, for multiple independent variables.</p>
-<p>在一个线性方程中，预测误差可以分解为2个子分量。一个是偏差，一个是方差。预测错误可能会由这两个分量或者这两个中的任何一个造成。在这里，我们将讨论由方差所造成的有关误差。</p>
-<p>岭回归通过收缩参数λ（lambda）解决多重共线性问题。看下面的公式</p>
-<p><img src="/2023/08/01/7%E5%A4%A7%E7%BB%8F%E5%85%B8%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/5.jpg" alt="Image"></p>
-<p>在这个公式中，有两个组成部分。第一个是最小二乘项，另一个是β2（β-平方）的λ倍，其中β是相关系数。为了收缩参数把它添加到最小二乘项中以得到一个非常低的方差。</p>
-<blockquote>
-<p>要点：</p>
-<p>1.除常数项以外，这种回归的假设与最小二乘回归类似；</p>
-<p>2.它收缩了相关系数的值，但没有达到零，这表明它没有特征选择功能</p>
-<p>3.这是一个正则化方法，并且使用的是L2正则化。</p>
-</blockquote>
-<h3 id="6-Lasso-Regression套索回归"><a href="#6-Lasso-Regression套索回归" class="headerlink" title="6-Lasso-Regression套索回归"></a>6-Lasso-Regression套索回归</h3><p>它类似于岭回归，Lasso （Least Absolute Shrinkage and Selection Operator）也会惩罚回归系数的绝对值大小。此外，它能够减少变化程度并提高线性回归模型的精度。看看下面的公式：</p>
-<p><img src="/2023/08/01/7%E5%A4%A7%E7%BB%8F%E5%85%B8%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/6.jpg" alt="Image"></p>
-<p>Lasso 回归与Ridge回归有一点不同，它使用的惩罚函数是绝对值，而不是平方。这导致惩罚（或等于约束估计的绝对值之和）值使一些参数估计结果等于零。使用惩罚值越大，进一步估计会使得缩小值趋近于零。这将导致我们要从给定的n个变量中选择变量。</p>
-<blockquote>
-<p>要点：</p>
-<p>1.除常数项以外，这种回归的假设与最小二乘回归类似；</p>
-<p>2.它收缩系数接近零（等于零），这确实有助于特征选择；</p>
-<p>3.这是一个正则化方法，使用的是L1正则化；</p>
-<p>如果预测的一组变量是高度相关的，Lasso 会选出其中一个变量并且将其它的收缩为零。</p>
-</blockquote>
-<h3 id="7-ElasticNet回归"><a href="#7-ElasticNet回归" class="headerlink" title="7-ElasticNet回归"></a>7-ElasticNet回归</h3><p>ElasticNet是Lasso和Ridge回归技术的混合体。它使用L1来训练并且L2优先作为正则化矩阵。当有多个相关的特征时，ElasticNet是很有用的。Lasso 会随机挑选他们其中的一个，而ElasticNet则会选择两个。<br><img src="/2023/08/01/7%E5%A4%A7%E7%BB%8F%E5%85%B8%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/7.jpg" alt="Image"></p>
-<p>Lasso和Ridge之间的实际的优点是，它允许ElasticNet继承循环状态下Ridge的一些稳定性。</p>
-<blockquote>
-<p><strong>要点：</strong></p>
-<p>1.在高度相关变量的情况下，它会产生群体效应；</p>
-<p>2.选择变量的数目没有限制；</p>
-<p>3.它可以承受双重收缩。</p>
-</blockquote>
-<p>除了这7个最常用的回归技术，你也可以看看其他模型，如Bayesian、Ecological和Robust回归。</p>
-<h1 id="如何正确选择回归模型？"><a href="#如何正确选择回归模型？" class="headerlink" title="如何正确选择回归模型？"></a>如何正确选择回归模型？</h1><p>当你只知道一个或两个技术时，生活往往很简单。我知道的一个培训机构告诉他们的学生，如果结果是连续的，就使用线性回归。如果是二元的，就使用逻辑回归！然而，在我们的处理中，可选择的越多，选择正确的一个就越难。类似的情况下也发生在回归模型中。</p>
-<p>在多类回归模型中，基于自变量和因变量的类型，数据的维数以及数据的其它基本特征的情况下，选择最合适的技术非常重要。以下是你要选择正确的回归模型的<strong>关键因素</strong>：</p>
-<p>1.数据探索是构建预测模型的必然组成部分。在选择合适的模型时，比如识别变量的关系和影响时，它应该首选的一步。</p>
-<p>2. 比较适合于不同模型的优点，我们可以分析不同的指标参数，如统计意义的参数，R-square，Adjusted R-square，AIC，BIC以及误差项，另一个是Mallows’ Cp准则。这个主要是通过将模型与所有可能的子模型进行对比（或谨慎选择他们），检查在你的模型中可能出现的偏差。</p>
-<p>3.交叉验证是评估预测模型最好额方法。在这里，将你的数据集分成两份（一份做训练和一份做验证）。使用观测值和预测值之间的一个简单均方差来衡量你的预测精度。</p>
-<p>4.如果你的数据集是多个混合变量，那么你就不应该选择自动模型选择方法，因为你应该不想在同一时间把所有变量放在同一个模型中。</p>
-<p>5.它也将取决于你的目的。可能会出现这样的情况，一个不太强大的模型与具有高度统计学意义的模型相比，更易于实现。</p>
-<p>6.回归正则化方法（Lasso，Ridge和ElasticNet）在高维和数据集变量之间多重共线性情况下运行良好。</p>
-<p>作者：Sunil Ray<br>ref: <a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MjM5NzEyMzg4MA==&mid=2649468348&idx=6&sn=98e8ec166f38992470bd2de5979c33f0&chksm=bec1cffb89b646ed54437df231cfe3c3cf1a66010672daa570a5791d29ee0c022cf7fd36556b&scene=27">7大经典回归模型</a></p>
- 
+<p><img src="/2023/08/01/7%E5%A4%A7%E7%BB%8F%E5%85%B8%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/10001.png"></p> 
+      <a class="article-more-link" href="/2023/08/01/7%E5%A4%A7%E7%BB%8F%E5%85%B8%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/"
+        >阅读更多...</a
+      >
+       
       <!-- reward -->
       
     </div>
@@ -758,22 +524,11 @@
 <li>How much：分析结果的指标是多少？</li>
 </ul>
 </li>
-<li><p>搜集数据：根据5W2H分析需求，集中相关的数据。</p>
-<ul>
-<li>明确Who、What、When、Where后，能确定需要哪些数据表，搜集哪些记录。</li>
-</ul>
-</li>
-<li><p>处理数据：对搜集到的数据进行清洗、转换和整合，制作可视化。</p>
-</li>
-<li><p>分析结果：使用How指导数据分析方法，How much指出结果衡量标准。</p>
-</li>
-<li><p>建议改进：根据分析结果给出改进建议，回答Why问题。</p>
-</li>
-</ol>
-<p>综上，使用5W2H来梳理数据分析问题和需求，能明确分析的方向性和重点，有利于制定目标和选择数据驱动的方法与策略，更快获得可信赖的结果与洞察力。</p>
-<p>5W2H也可以作为数据分析报告的框架，分别回答7个方面问题，全面呈现分析结果和建议。</p>
-<p>在数字化时代，5W2H这一古老而简单的分析模型仍被广泛使用，它为各种复杂问题提供了一种思考方式，有助于系统、全面地完成数据分析任务。</p>
- 
+</ol> 
+      <a class="article-more-link" href="/2023/06/03/5W2H%E6%A8%A1%E5%9E%8B%E5%9C%A8%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/"
+        >阅读更多...</a
+      >
+       
       <!-- reward -->
       
     </div>
@@ -838,27 +593,11 @@
 <li>总结：这类目前市场上很紧缺，被称为稀缺动物</li>
 </ul>
 </li>
-</ol>
-<h1 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h1><h1 id="python"><a href="#python" class="headerlink" title="python"></a>python</h1><h1 id="tableau-FineBI-powerbi"><a href="#tableau-FineBI-powerbi" class="headerlink" title="tableau-FineBI-powerbi"></a>tableau-FineBI-powerbi</h1><h1 id="掌握的方法论"><a href="#掌握的方法论" class="headerlink" title="掌握的方法论"></a>掌握的方法论</h1><ol>
-<li>ABtest</li>
-<li>AAARRR</li>
-<li>SWOT</li>
-<li>RFM</li>
-<li>28原则</li>
-<li>5W2H</li>
-<li>用户及产品生命周期等</li>
-</ol>
-<h1 id="掌握的统计学"><a href="#掌握的统计学" class="headerlink" title="掌握的统计学"></a>掌握的统计学</h1><ol>
-<li>常规统计指标（均值、中位数、分位数等)</li>
-<li>回归</li>
-<li>聚类</li>
-<li>因子</li>
-<li>决策树</li>
-<li>逻辑回归</li>
-<li>机器学习</li>
-</ol>
-<p>? 热力图</p>
- 
+</ol> 
+      <a class="article-more-link" href="/2023/05/15/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88/"
+        >阅读更多...</a
+      >
+       
       <!-- reward -->
       
     </div>
@@ -916,53 +655,11 @@
 <p>为避免：</p>
 <ol>
 <li>避免某些特征因数值范围过大，对模型产生过大的影响。比如身高在几百英寸，体重在几十公斤，如果不归一化，模型会倾向于选择影响更大的特征。</li>
-<li>避免某些特征因数值过小产生的数值精度问题。<br>需要进行 #特征归一化 处理，对特征的值进行放缩，使之落在一个特定的范围内，常见的范围是0到1之间或者-1到1之间。</li>
-</ol>
-<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><ol>
-<li>简单易实现，无需训练。</li>
-<li>可以处理非线性数据。</li>
-<li>对异常值不敏感。</li>
-</ol>
-<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><ol>
-<li>随着训练样本增加，计算成本会增加。</li>
-<li>K值的选择会影响结果。</li>
-<li>无法给出具有解释性的模型。</li>
-</ol>
-<h1 id="决策树-Decision-Tree"><a href="#决策树-Decision-Tree" class="headerlink" title="决策树(Decision Tree)"></a><a target="_blank" rel="noopener" href="https://alv1.apachecn.org/#/docs/ml/3">决策树(Decision Tree)</a></h1><p>定义：</p>
-<h1 id="降维技术"><a href="#降维技术" class="headerlink" title="降维技术"></a><a target="_blank" rel="noopener" href="https://alv1.apachecn.org/#/docs/ml/13?id=%e9%99%8d%e7%bb%b4%e6%8a%80%e6%9c%af">降维技术</a></h1><p>目的：</p>
-<ol>
-<li>使得数据集更容易使用</li>
-<li>降低很多算法的计算开销</li>
-<li>去除噪音</li>
-<li>使得结果易懂</li>
-</ol>
-<h2 id="3种降维算法"><a href="#3种降维算法" class="headerlink" title="3种降维算法"></a>3种降维算法</h2><h3 id="1-独立成分分析-Independ-Component-Analysis-ICA"><a href="#1-独立成分分析-Independ-Component-Analysis-ICA" class="headerlink" title="1. 独立成分分析(Independ Component Analysis, ICA)"></a>1. 独立成分分析(Independ Component Analysis, ICA)</h3><blockquote>
-<p>通俗理解: ICA 认为观测信号是若干个独立信号的线性组合，ICA 要做的是一个解混过程。</p>
-</blockquote>
-<h3 id="2-因子分析-Factor-Analysis"><a href="#2-因子分析-Factor-Analysis" class="headerlink" title="2. 因子分析(Factor Analysis)"></a>2. 因子分析(Factor Analysis)</h3><blockquote>
-<p>通俗理解: 将多个实测变量转换为少数几个综合指标。它反映一种降维的思想，通过降维将相关性高的变量聚在一起，从而减少需要分析的变量的数量，而减少问题分析的复杂性。</p>
-</blockquote>
-<h3 id="3-主成分分析-Principal-Component-Analysis-PCA"><a href="#3-主成分分析-Principal-Component-Analysis-PCA" class="headerlink" title="3. 主成分分析(Principal Component Analysis, PCA)"></a>3. 主成分分析(Principal Component Analysis, PCA)</h3><p>通俗理解：就是找出一个最主要的特征，然后进行分析。</p>
-<blockquote>
-<p>PCA 工作原理</p>
-</blockquote>
-<ol>
-<li>找出第一个主成分的方向，也就是数据 <code>方差最大</code> 的方向。</li>
-<li>找出第二个主成分的方向，也就是数据 <code>方差次大</code> 的方向，并且该方向与第一个主成分方向 <code>正交(orthogonal 如果是二维空间就叫垂直)</code>。</li>
-<li>通过这种方式计算出所有的主成分方向。</li>
-<li>通过数据集的协方差矩阵及其特征值分析，我们就可以得到这些主成分的值。</li>
-<li>一旦得到了协方差矩阵的特征值和特征向量，我们就可以保留最大的 N 个特征。这些特征向量也给出了 N 个最重要特征的真实结构，我们就可以通过将数据乘上这 N 个特征向量 从而将它转换到新的空间上。</li>
-</ol>
-<p>为什么正交？</p>
-<ol>
-<li>正交是为了数据有效性损失最小</li>
-<li>正交的一个原因是特征值的特征向量是正交的</li>
-</ol>
-<blockquote>
-<p>PCA 优缺点</p>
-</blockquote>
-<p>优点：降低数据的复杂性，识别最重要的多个特征。<br>缺点：不一定需要，且可能损失有用信息。<br>适用数据类型：数值型数据。</p>
- 
+<li>避免某些特征因数值过小产生的数值精度问题。<br>需要进行 #特征归一化 处理，对特征的值进行放缩，使之落在一个特定的范围内，常见的范围是0到1之间或者-1到1之间。 
+      <a class="article-more-link" href="/2023/02/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
+        >阅读更多...</a
+      >
+       
       <!-- reward -->
       
     </div>
@@ -1073,31 +770,11 @@
     <div class="article-entry" itemprop="articleBody">
        
   <h1 id="一、指标对比分析法"><a href="#一、指标对比分析法" class="headerlink" title="一、指标对比分析法"></a>一、指标对比分析法</h1><p>指标对比分析法，又称比较分析法，是统计分析中最常用的方法。是通过有关的指标对比来反映事物数量上差异和变化的方法。有比较才能鉴别。单独看一些指标，只能说明总体的某些数量特征，得不出什么结论性的认识；一经过比较，如与国外、外单位比，与历史数据比，与计划相比，就可以对规模大小、水平高低、速度快慢作出判断和评价。</p>
-<p>指标分析对比分析方法可分为静态比较和动态比较分析。静态比较是同一时间条件下不同总体指标比较，如不同部门、不同地区、不同国家的比较，也叫横向比较；动态比较是同一总体条件不同时期指标数值的比较，也叫纵向比较。这两种方法既可单独使用，也可结合使用。进行对比分析时，可以单独使用总量指标或相对指标或平均指标，也可将它们结合起来进行对比。比较的结果可用相对数，如百分数、倍数、系数等，也可用相差的绝对数和相关的百分点（每1％为一个百分点）来表示，即将对比的指标相减。</p>
-<h1 id="二、分组分析法"><a href="#二、分组分析法" class="headerlink" title="二、分组分析法"></a>二、分组分析法</h1><p>指标对比分析法是总体上的对比，但组成统计总体的各单位具有多种特征，这就使得在同一总体范围内的各单位之间产生了许多差别，统计分析不仅要对总体数量特征和数量关系进行分析，还要深入总体的内部进行分组分析。分组分析法就是根据统计分析的目的要求，把所研究的总体按照一个或者几个标志划分为若干个部分，加以整理，进行观察、分析，以揭示其内在的联系和规律性。</p>
-<p>统计分组法的关键问题在于正确选择分组标值和划分各组界限。</p>
-<h1 id="三、时间数列及动态分析法"><a href="#三、时间数列及动态分析法" class="headerlink" title="三、时间数列及动态分析法"></a>三、时间数列及动态分析法</h1><p>时间数列。是将同一指标在时间上变化和发展的一系列数值，按时间先后顺序排列，就形成时间数列，又称动态数列。它能反映社会经济现象的发展变动情况，通过时间数列的编制和分析，可以找出动态变化规律，为预测未来的发展趋势提供依据。时间数列可分为绝对数时间数列、相对数时间数列、平均数时间数列。</p>
-<p>时间数列速度指标。根据绝对数时间数列可以计算的速度指标：有发展速度、增长速度、平均发展速度、平均增长速度。</p>
-<p>动态分析法。在统计分析中，如果只有孤立的一个时期指标值，是很难作出判断的。如果编制了时间数列，就可以进行动态分析，反映其发展水平和速度的变化规律。</p>
-<p>进行动态分析，要注意数列中各个指标具有的可比性。总体范围、指标计算方法、计算价格和计量单位，都应该前后一致。时间间隔一般也要一致，但也可以根据研究目的，采取不同的间隔期，如按历史时期分。为了消除时间间隔期不同而产生的指标数值不可比，可采用年平均数和年平均发展速度来编制动态数列。此外在统计上，许多综合指标是采用价值形态来反映实物总量，如国内生产总值、工业总产值、社会商品零售总额等计算不同年份的发展速度时，必须消除价格变动因素的影响，才能正确的反映实物量的变化。也就是说必须用可比价格（如用不变价或用价格指数调整）计算不同年份相同产品的价值，然后才能进行对比。</p>
-<p>为了观察我国经济发展的波动轨迹，可将各年国内生产总值的发展速度编制时间数列，并据以绘制成曲线图，令人得到直观认识。</p>
-<h1 id="四、指数分析法"><a href="#四、指数分析法" class="headerlink" title="四、指数分析法"></a>四、指数分析法</h1><p>指数是指反映社会经济现象变动情况的相对数。有广义和狭义之分。根据指数所研究的范围不同可以有个体指数、类指数与总指数之分。</p>
-<p>指数的作用：一是可以综合反映复杂的社会经济现象的总体数量变动的方向和程度；二是可以分析某种社会经济现象的总变动受各因素变动影响的程度，这是一种因素分析法。操作方法是：通过指数体系中的数量关系，假定其他因素不变，来观察某一因素的变动对总变动的影响。</p>
-<p>用指数进行因素分析。因素分析就是将研究对象分解为各个因素，把研究对象的总体看成是各因素变动共同的结果，通过对各个因素的分析，对研究对象总变动中各项因素的影响程度进行测定。因素分析按其所研究的对象的统计指标不同可分为对总量指标的变动的因素分析，对平均指标变动的因素分析。</p>
-<h1 id="五、平衡分析法"><a href="#五、平衡分析法" class="headerlink" title="五、平衡分析法"></a>五、平衡分析法</h1><p>平衡分析是研究社会经济现象数量变化对等关系的一种方法。它把对立统一的双方按其构成要素一一排列起来，给人以整体的概念，以便于全局来观察它们之间的平衡关系。平衡关系广泛存在于经济生活中，大至全国宏观经济运行，小至个人经济收支。平衡种类繁多，如财政平衡表、劳动力平衡表、能源平衡表、国际收支平衡表、投入产出平衡表，等等。平衡分析的作用：一是从数量对等关系上反映社会经济现象的平衡状况，分析各种比例关系相适应状况；二是揭示不平衡的因素和发展潜力；三是利用平衡关系可以从各项已知指标中推算未知的个别指标。</p>
-<h1 id="六、综合评价分析"><a href="#六、综合评价分析" class="headerlink" title="六、综合评价分析"></a>六、综合评价分析</h1><p>社会经济分析现象往往是错综复杂的，社会经济运行状况是多种因素综合作用的结果，而且各个因素的变动方向和变动程度是不同的。如对宏观经济运行的评价，涉及生活、分配、流通、消费各个方面；对企业经济效益的评价，涉及人、财、物合理利用和市场销售状况。如果只用单一指标，就难以作出恰当的评价。</p>
-<p>进行综合评价包括四个步骤：</p>
-<p>（一）确定评价指标体系，这是综合评价的基础和依据。要注意指标体系的全面性和系统性。</p>
-<p>（二）搜集数据，并对不同计量单位的指标数值进行同度量处理。可采用相对化处理、函数化处理、标准化处理等方法。</p>
-<p>（三）确定各指标的权数，以保证评价的科学性。根据各个指标所处的地位和对总体影响程度不同，需要对不同指标赋予不同的权数。</p>
-<p>（四）对指标进行汇总，计算综合分值，并据此作出综合评价。</p>
-<h1 id="七、景气分析经济波动是客观存在的，是任何国家都难以完全避免的"><a href="#七、景气分析经济波动是客观存在的，是任何国家都难以完全避免的" class="headerlink" title="七、景气分析经济波动是客观存在的，是任何国家都难以完全避免的"></a>七、景气分析经济波动是客观存在的，是任何国家都难以完全避免的</h1><p>如何避免大的经济波动，保持经济的稳定发展，一直是各国政府和经济之专家在宏观调控和决策中面临的重要课题，景气分析正是适应这一要求而产生和发展的。景气分析是一种综合评价分析，可分为宏观经济景气分析和企业景气调查分析。</p>
-<p>宏观经济景气分析。是国家统计局20世纪80年代后期开始着手建立监测指标体系和评价方法，经过十多年时间和不断完善，已形成制度，定期提供景气分析报告，对宏观经济运行状态起到晴雨表和报警器的作用，便于国务院和有关部门及时采取宏观调控措施。以经常性的小调整，防止经济的大起大落。</p>
-<p>企业景气调查分析。是全国的大中型各类企业中，采取抽样调查的方法，通过问卷的形式，让企业负责人回答有关情况判断和预期。内容分为两类：一是对宏观经济总体的判断和预期；一是对企业经营状况的判断和预期，如产品订单、原材料购进、价格、存货、就业、市场需求、固定资产投资等。</p>
-<h1 id="八、预测分析宏观经济决策和微观经济决策"><a href="#八、预测分析宏观经济决策和微观经济决策" class="headerlink" title="八、预测分析宏观经济决策和微观经济决策"></a>八、预测分析宏观经济决策和微观经济决策</h1><p>不仅需要了解经济运行中已经发生了的实际情况，而且更需要预见未来将发生的情况。根据已知的过去和现在推测未来，就是预测分析。</p>
-<p>统计预测属于定量预测，是以数据分析为主，在预测中结合定性分析。统计预测的方法大致可分为两类：一类是主要根据指标时间数列自身变化与时间的依存关系进行预测，属于时间数列分析；另一类是根据指标之间相互影响的因果关系进行预测，属于回归分析。</p>
-<p>预测分析的方法有回归分析法、滑动平均法、指数平滑法、周期（季节）变化分析和随机变化分析等。比较复杂的预测分析需要建立计量经济模型，求解模型中的参数又有许多方法。</p>
- 
+<p>指标分析对比分析方法可分为静态比较和动态比较分析。静态比较是同一时间条件下不同总体指标比较，如不同部门、不同地区、不同国家的比较，也叫横向比较；动态比较是同一总体条件不同时期指标数值的比较，也叫纵向比较。这两种方法既可单独使用，也可结合使用。进行对比分析时，可以单独使用总量指标或相对指标或平均指标，也可将它们结合起来进行对比。比较的结果可用相对数，如百分数、倍数、系数等，也可用相差的绝对数和相关的百分点（每1％为一个百分点）来表示，即将对比的指标相减。</p> 
+      <a class="article-more-link" href="/2022/06/29/%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E7%9A%84%E5%85%AB%E7%A7%8D%E6%96%B9%E6%B3%95/"
+        >阅读更多...</a
+      >
+       
       <!-- reward -->
       
     </div>

@@ -111,7 +111,7 @@
        
   <p><a href="/_post/2024_02_28_%E6%8E%92%E5%BA%8F_DENSE_RANK.md">排序_DENSE_RANK</a></p>
 <h2 id="IFNULL"><a href="#IFNULL" class="headerlink" title="IFNULL"></a>IFNULL</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># Write your MySQL query statement below</span><br><span class="line"></span><br><span class="line">select e.name, b.bonus</span><br><span class="line"></span><br><span class="line">from Employee e left join Bonus b</span><br><span class="line"></span><br><span class="line">on e.empId = b.empId</span><br><span class="line"></span><br><span class="line">where ifnull(bonus,0)&lt;1000</span><br><span class="line">## ifnul 就把值替换成0）</span><br></pre></td></tr></table></figure>
-
+<span id="more"></span>
 
 
 

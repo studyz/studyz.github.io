@@ -111,7 +111,7 @@
 <p>通过GROUP BY子句，我们可以将数据按照指定的列进行分组，并对每个组进行聚合计算。这些聚合计算的结果将基于每个组的值。</p>
 <p>下面是一个示例，假设我们有一个名为”orders”的表，其中包含了订单信息：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT product_id, COUNT(*) as total_orders</span><br><span class="line">FROM orders</span><br><span class="line">GROUP BY product_id;</span><br></pre></td></tr></table></figure>
-
+<span id="more"></span>
 <p>在上述示例中，我们按照”product_id”列进行了分组，并计算了每个产品的订单总数。通过使用COUNT(*)函数，我们可以计算每个产品的订单数量。</p>
 <p>GROUP BY子句可以与多个列一起使用，以便更细致地分组数据。例如：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT category_id, product_id, COUNT(*) as total_orders</span><br><span class="line">FROM orders</span><br><span class="line">GROUP BY category_id, product_id;</span><br></pre></td></tr></table></figure>

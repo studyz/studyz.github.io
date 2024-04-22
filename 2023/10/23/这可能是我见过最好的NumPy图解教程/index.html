@@ -120,7 +120,8 @@
 <p>在本文中，将介绍NumPy的主要用法，以及它如何呈现不同类型的数据（表格，图像，文本等），这些经Numpy处理后的数据将成为机器学习模型的输入。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br></pre></td></tr></table></figure>
 
-<h1 id="NumPy中的数组操作"><a href="#NumPy中的数组操作" class="headerlink" title="NumPy中的数组操作"></a>NumPy中的数组操作</h1><h3 id="创建数组"><a href="#创建数组" class="headerlink" title="创建数组"></a>创建数组</h3><p>我们可以通过将python列表传入np.array()来创建一个NumPy数组（也就是强大的ndarray）。在下面的例子里，创建出的数组如右边所示，<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0002.png"></p>
+<h1 id="NumPy中的数组操作"><a href="#NumPy中的数组操作" class="headerlink" title="NumPy中的数组操作"></a>NumPy中的数组操作</h1><span id="more"></span>
+<h3 id="创建数组"><a href="#创建数组" class="headerlink" title="创建数组"></a>创建数组</h3><p>我们可以通过将python列表传入np.array()来创建一个NumPy数组（也就是强大的ndarray）。在下面的例子里，创建出的数组如右边所示，<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0002.png"></p>
 <p>通常情况下，我们希望NumPy为我们初始化数组的值，为此NumPy提供了诸如ones()，zeros()和random.random()之类的方法。我们只需传入元素个数即可：</p>
 <p><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0003.png"><br>一旦我们创建了数组，我们就可以用其做点有趣的应用了，文摘菌将在下文展开说明。</p>
 <h3 id="数组的算术运算"><a href="#数组的算术运算" class="headerlink" title="数组的算术运算"></a>数组的算术运算</h3><p>让我们创建两个NumPy数组，分别称作data和ones：</p>

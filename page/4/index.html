@@ -193,23 +193,11 @@
 <li>鸡胸肉（黑胡椒、13香、橄榄油）</li>
 <li>地瓜（切块、橄榄油）</li>
 <li>温度：180度</li>
-<li>时间：15分钟</li>
-</ul>
-<p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=D8O7myqk0Bw">健身食品制作视频</a></p>
-<h1 id="阳春面调料"><a href="#阳春面调料" class="headerlink" title="阳春面调料"></a>阳春面调料</h1><ul>
-<li>生抽、陈醋、盐、香油或猪油、葱花</li>
-</ul>
-<h1 id="爆炒香辣鱿鱼"><a href="#爆炒香辣鱿鱼" class="headerlink" title="爆炒香辣鱿鱼"></a>爆炒香辣鱿鱼</h1><p>食材：</p>
-<ul>
-<li>鱿鱼须、葱、姜、洋葱、料酒、豆瓣酱、生抽、老抽、蚝油、白糖、盐、熟芝麻</li>
-</ul>
-<p>做法：</p>
-<ol>
-<li>鱿鱼洗净切好备用，冷水下锅，加入姜片、葱段、1勺料酒，焯水捞出备用</li>
-<li>锅中油热，倒入洋葱丝，炒出香味，加入1勺豆瓣酱炒出红油，倒入焯好水的鱿鱼须，翻炒上色</li>
-<li>加入1勺生抽、半勺老抽、1勺蚝油、适量白糖、少许盐、1勺熟芝麻，翻炒均匀，撒上葱花即可</li>
-</ol>
- 
+<li>时间：15分钟 
+      <a class="article-more-link" href="/2020/02/19/%E8%8F%9C%E8%B0%B1/"
+        >阅读更多...</a
+      >
+       
       <!-- reward -->
       
     </div>
@@ -267,102 +255,11 @@
 <h1 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h1><hr>
 <h3 id="init"><a href="#init" class="headerlink" title="init"></a>init</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">hexo init [folder]</span></span><br></pre></td></tr></table></figure>
 
-<p>新建一个网站。如果没有设置 <code>folder</code> ，Hexo 默认在目前的文件夹建立网站。</p>
-<p>本命令相当于执行了以下几步：</p>
-<ol>
-<li>Git clone <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo-starter">hexo-starter</a> 和 <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo-theme-landscape">hexo-theme-landscape</a> 主题到当前目录或指定目录。</li>
-<li>使用 <a target="_blank" rel="noopener" href="https://classic.yarnpkg.com/lang/en/">Yarn 1</a>、<a target="_blank" rel="noopener" href="https://pnpm.io/zh/">pnpm</a> 或 <a target="_blank" rel="noopener" href="https://docs.npmjs.com/cli/install">npm</a> 包管理器下载依赖（如有已安装多个，则列在前面的优先）。npm 默认随 <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/index.html#%E5%AE%89%E8%A3%85-Node-js">Node.js</a> 安装。</li>
-</ol>
-<h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new post <span class="string">&quot;PostName&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br><span class="line"><span class="comment"># 该命令可以简写为</span></span><br><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">hexo generate</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">该命令可以简写为</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">hexo g</span></span><br></pre></td></tr></table></figure>
-
-<p>生成静态文件。</p>
-<table>
-<thead>
-<tr>
-<th>选项</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>-d</code>, <code>--deploy</code></td>
-<td>文件生成后立即部署网站</td>
-</tr>
-<tr>
-<td><code>-w</code>, <code>--watch</code></td>
-<td>监视文件变动</td>
-</tr>
-<tr>
-<td><code>-b</code>, <code>--bail</code></td>
-<td>生成过程中如果发生任何未处理的异常则抛出异常</td>
-</tr>
-<tr>
-<td><code>-f</code>, <code>--force</code></td>
-<td>强制重新生成文件  <br>Hexo 引入了差分机制，如果 <code>public</code> 目录存在，那么 <code>hexo g</code> 只会重新生成改动的文件。  <br>使用该参数的效果接近 <code>hexo clean &amp;&amp; hexo generate</code></td>
-</tr>
-<tr>
-<td><code>-c</code>, <code>--concurrency</code></td>
-<td>最大同时生成文件的数量，默认无限制</td>
-</tr>
-</tbody></table>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br><span class="line"><span class="comment"># 该命令可以简写为</span></span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-<h3 id="version"><a href="#version" class="headerlink" title="version"></a>version</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">hexo version</span></span><br></pre></td></tr></table></figure>
-
-<p>显示 Hexo 版本。</p>
-<h1 id="Notes"><a href="#Notes" class="headerlink" title="Notes"></a>Notes</h1><hr>
-<h3 id="本地图片的调用"><a href="#本地图片的调用" class="headerlink" title="本地图片的调用"></a>本地图片的调用</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">my version</span></span><br><span class="line">hexo: 7.2.0</span><br><span class="line">hexo-cli: 4.3.2</span><br></pre></td></tr></table></figure>
-
-<ol>
-<li><p>手动新建<br>首先是在 _posts 文件夹下建立一个<code>本地图片的调用.md</code>，再建立一个同名的文件夹 <code>本地图片的调用</code>。</p>
-</li>
-<li><p>hexo代码新建<br>使用<code>hexo new post 本地图片的调用</code>，可以生成md文件的同时生成一个同名文件夹用于存储网页资源。</p>
-</li>
-</ol>
-<p>这篇文章要引用的图片就放在该文件夹下。比如我就在该目录下放一个图片<code>1.png</code>。</p>
-<p><img src="/2019/05/01/hello_world/1.png" alt="1.png"></p>
-<p>然后在博文 MarkDown 文件里引用该图片：</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![<span class="string">这里是图片注释</span>](<span class="link">1.png</span>)</span><br></pre></td></tr></table></figure>
-
-<p><strong>为什么引用的时候不用加文件夹的路径呢？</strong></p>
-<p>这是因为 hexo 在渲染的时候，会把<code>本地图片的调用.md</code> 渲染为<code>public</code>下的 <code>本地图片的调用.html</code>网页文件，而把对应文件夹下的静态资源，比如图片 <code>1.png</code>也拷贝到<code>public</code>下!</p>
-<p>需要注意的是，在<code>hexo/source/_posts</code>目录下的图片文件名不能重复。</p>
-<h3 id="skip-render"><a href="#skip-render" class="headerlink" title="skip render"></a>skip render</h3><p>修改hexo根目录下_config.yml文件，</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">skip_render:</span></span><br><span class="line">	<span class="bullet">-</span> <span class="string">&#x27;_posts/templates/**&#x27;</span></span><br><span class="line">	<span class="bullet">-</span> <span class="string">&#x27;_posts/draft/**&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<p>目录结构：<br><code>- hexo/source/_posts/templates/</code> 保存post模版，供Obsidian快速开始Post编写。<br><code>- hexo/source/_posts/draft/</code> 保存未编辑完成，或不想共享的文章内容。</p>
-<p>设置跳过渲染之后，最好使用<code>hexo clean</code>清除以前的编译结果，保证配置生效。再使用<code>hexo g</code>查看。</p>
-<h3 id="自动generate"><a href="#自动generate" class="headerlink" title="自动generate"></a>自动generate</h3><p>定时or设置条件运行命令<code>docker exec -it hexo bash -c &quot;hexo clean &amp;&amp; hexo g&quot;</code>来自动编译。</p>
-<p><strong>踩坑：</strong> 直接在群晖的<code>控制面板</code> - <code>任务计划</code>中添加自定义脚本<code>docker exec -it hexo bash -c &quot;hexo clean &amp;&amp; hexo g&quot;</code>会报错<code>the input device is not a TTY</code>.</p>
-<p>tty一词源于Teletypes,或teletypewriters。这个的意思是说后台linux执行的时候没有终端设备。我们一般执行docker里的命令时候都喜欢加上-it 这个参数，这里的-t 就是表示伪tty。所以，如果我们docker执行后台运行的任务或者程序直接去除 -t 这个参数就不会出现这个报错了。</p>
-<p><strong>所以要用 <code>docker exec hexo bash -c &quot;hexo clean &amp;&amp; hexo g&quot;</code></strong></p>
-<p><strong>待改进：</strong> 设置了每天generate一次。如果设置成有变动就generate就更好了，暂时没想到办法。</p>
-<h3 id="视频嵌入"><a href="#视频嵌入" class="headerlink" title="视频嵌入"></a>视频嵌入</h3><p>现在视频基本上都会分享到各大平台，所以暂时主要以嵌入网络视频展示。<br>研究了几款插件，基本上都是年久失修，使用不易，最终还是选择了<code>iframe</code>嵌入。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">%%bilibili视频嵌入%%</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;position: relative; width: 100%; height: 0; padding-bottom: 75%;&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">src</span>=<span class="string">&quot;//player.bilibili.com/player.html?aid=244387247&amp;cid=229573649&amp;page=1&quot;</span> <span class="attr">scrolling</span>=<span class="string">&quot;no&quot;</span> <span class="attr">border</span>=<span class="string">&quot;0&quot;</span> <span class="attr">frameborder</span>=<span class="string">&quot;no&quot;</span> <span class="attr">framespacing</span>=<span class="string">&quot;0&quot;</span> <span class="attr">allowfullscreen</span>=<span class="string">&quot;true&quot;</span> <span class="attr">style</span>=<span class="string">&quot;position: absolute; width: 100%; height: 100%; Left: 0; top: 0;&quot;</span> &gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span>  </span><br></pre></td></tr></table></figure>
-
-<p><a target="_blank" rel="noopener" href="https://github.com/stephenmkbrady/hexo-tag-html5">hexo-tag-html5video</a></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save hexo-tag-html5video</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% html5video &#x27;100%&#x27; &#x27;250px&#x27; &#x27;video/mp4&#x27; %&#125; </span><br><span class="line">&#123;% asset<span class="emphasis">_path &lt;视频路径&gt; %&#125; </span></span><br><span class="line"><span class="emphasis">&#123;% endhtml5video %&#125;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="菜单导航配置"><a href="#菜单导航配置" class="headerlink" title="菜单导航配置"></a>菜单导航配置</h3><p>配置基本菜单导航的名称、路径url和图标icon.</p>
-<ol>
-<li>菜单导航名称可以是中文也可以是英文(如：<code>Index</code> 或 <code>主页</code>)</li>
-<li><code>External</code> 表示是否在新标签页打开连接</li>
-<li>导航地址可以是站内地址也可以是外网地址</li>
-</ol>
-<h3 id="new-posts新建文件名问题"><a href="#new-posts新建文件名问题" class="headerlink" title="new posts新建文件名问题"></a>new posts新建文件名问题</h3><p>修改hexo根目录下_config.yml文件，为新建post自动加上当前日期，避免title重复，造成的一系列问题。</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Writing</span></span><br><span class="line"><span class="comment"># new_post_name: title.md # default setting</span></span><br><span class="line"><span class="attr">new_post_name:</span> <span class="string">:year_:month_:day_:title.md</span> </span><br><span class="line"><span class="comment"># new posts name as year_month_day_postname</span></span><br><span class="line"><span class="attr">default_layout:</span> <span class="string">post</span></span><br><span class="line"><span class="attr">titlecase:</span> <span class="literal">false</span> <span class="comment"># Transform title into titlecase</span></span><br><span class="line"><span class="attr">external_link:</span></span><br><span class="line"><span class="attr">enable:</span> <span class="literal">true</span> <span class="comment"># Open external links in new tab</span></span><br><span class="line"><span class="attr">field:</span> <span class="string">site</span> <span class="comment"># Apply to the whole site</span></span><br><span class="line"><span class="attr">exclude:</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="attr">filename_case:</span> <span class="number">0</span></span><br><span class="line"><span class="attr">render_drafts:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
-
-<p>More info:<br><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/agqol9zm/">晨聊 篇十七：markdown也变脸，obsidian + hexo 在群晖NAS上的双剑合璧</a></p>
- 
+<p>新建一个网站。如果没有设置 <code>folder</code> ，Hexo 默认在目前的文件夹建立网站。</p> 
+      <a class="article-more-link" href="/2019/05/01/hello_world/"
+        >阅读更多...</a
+      >
+       
       <!-- reward -->
       
     </div>
