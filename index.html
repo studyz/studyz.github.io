@@ -190,7 +190,7 @@
 <li>透过设定其中1部<code>TailScale</code>的装置为网关「Subnet Router」，可以访问整个内网网段</li>
 </ol>
 <p>如果是<strong>Windows</strong>用户可以到<a target="_blank" rel="noopener" href="https://tailscale.com/download/windows">官网</a>下载安装<a target="_blank" rel="noopener" href="https://pkgs.tailscale.com/stable/tailscale-ipn-setup-1.14.4.exe">Tailscale</a>，或者透过<a target="_blank" rel="noopener" href="https://kingtam.win/archives/choco.html">Chocolatey软件包</a>安装。</p>
-<p>choco install tailscale -y</p>
+<p><code>choco install tailscale -y</code></p>
 <p>双击桌面右下角的图示</p>
 <p>使用<a target="_blank" rel="noopener" href="https://pinpai.smzdm.com/2047/">谷歌</a>或者<a target="_blank" rel="noopener" href="https://pinpai.smzdm.com/1461/">微软</a>账号进行登录</p>
 <p>成功授权后可以查看分配到的IP地址</p>
@@ -248,6 +248,8 @@
 <p>测速</p>
 <blockquote>
 <p>TailSale和ZeroTier的使用场景上非常相近，没有那个占优，根据自身网络环境的连线质量较佳去选取。</p>
+</blockquote>
+<blockquote>
 <p>透过<a target="_blank" rel="noopener" href="https://kingtam.win/archives/zerotier-route.html">ZeroTier 实现远端访问局域网</a>的设定不是对所有自定网段有效，如今次的<code>192.168.31.0/24</code>的网段失效，<code>Zerotier</code>误判为外网网段而不能访问。而使用<code>TailSale</code>的设定可以实现远端访问网段为<code>192.168.31.0/24</code>的局域网。</p>
 </blockquote>
 <ul>
@@ -309,88 +311,7 @@
 <p>目前居家观影方案是<code>Apple TV</code>安装<code>infuse</code>搭配<code>HomePod</code>，可以从<code>themoviedb</code>抓取视频信息，但名侦探柯南有一个头痛的问题。</p>
 <p>互联网上能搜到的国语配音版本，都是国内版本的，从国外引进时，把一些较长的单剧集拆分了，国外一集的内容，引进国内后被拆分成多集，导致剧集数和<code>themoviedb</code>数据库对不上。强迫症逼死人，为了老婆更方便的反反复复的观看，特意整理了国内外剧集数的对比表，并根据在某网盘的脚本上修改，可以在网页版某网盘实现批量修改集数。</p>
 <p>矫正剧集数后，infuse可以正确识别全部剧集的介绍、封面、演员表、每集的标题等等。</p>
-<p>todo：名侦探柯南1200集内容，都是第一季，在Apple TV infuse中从第一集开始找特定集数也是非常困难的，目前只能手动拆分播放列表。</p>
-<table>
-<thead>
-<tr>
-<th align="right">序号</th>
-<th align="right">拆分版集数</th>
-<th align="left">拆分版标题</th>
-<th align="right">原版集数</th>
-<th align="left">原版标题</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="right">1</td>
-<td align="right">1</td>
-<td align="left">云霄飞车杀人事件</td>
-<td align="right">1</td>
-<td align="left">云霄飞车杀人事件</td>
-</tr>
-<tr>
-<td align="right">2</td>
-<td align="right">2</td>
-<td align="left">董事长千金绑架事件</td>
-<td align="right">2</td>
-<td align="left">董事长千金绑架事件</td>
-</tr>
-<tr>
-<td align="right">3</td>
-<td align="right">3</td>
-<td align="left">偶像密室杀人事件</td>
-<td align="right">3</td>
-<td align="left">偶像密室杀人事件</td>
-</tr>
-<tr>
-<td align="right">4</td>
-<td align="right">4</td>
-<td align="left">大都会暗号地图事件</td>
-<td align="right">4</td>
-<td align="left">大都会暗号地图事件</td>
-</tr>
-<tr>
-<td align="right">5</td>
-<td align="right">5</td>
-<td align="left">新干线大爆破事件</td>
-<td align="right">5</td>
-<td align="left">新干线大爆破事件</td>
-</tr>
-<tr>
-<td align="right">6</td>
-<td align="right">6</td>
-<td align="left">情人节杀人事件</td>
-<td align="right">6</td>
-<td align="left">情人节杀人事件◆</td>
-</tr>
-<tr>
-<td align="right">7</td>
-<td align="right">7</td>
-<td align="left">每月一件礼物威胁事件</td>
-<td align="right">7</td>
-<td align="left">每月一件礼物威胁事件</td>
-</tr>
-<tr>
-<td align="right">8</td>
-<td align="right">8</td>
-<td align="left">美术馆杀人事件</td>
-<td align="right">8</td>
-<td align="left">美术馆杀人事件</td>
-</tr>
-<tr>
-<td align="right">9</td>
-<td align="right">9</td>
-<td align="left">天下第一夜祭杀人事件</td>
-<td align="right">9</td>
-<td align="left">天下第一夜祭杀人事件</td>
-</tr>
-<tr>
-<td align="right">10</td>
-<td align="right">10</td>
-<td align="left">足球选手恐吓事件</td>
-<td align="right">10</td>
-<td align="left">足球选手恐吓事件</td>
-</tr>
-</tbody></table> 
+<p>todo：名侦探柯南1200集内容，都是第一季，在Apple TV infuse中从第一集开始找特定集数也是非常困难的，目前只能手动拆分播放列表。</p> 
       <a class="article-more-link" href="/2024/04/22/%E6%9F%AF%E5%8D%97%E5%8A%A8%E7%94%BB%E7%9B%AE%E5%BD%95/"
         >阅读更多...</a
       >
