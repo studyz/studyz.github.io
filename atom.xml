@@ -6,7 +6,7 @@
   <link href="https://studyz.github.io/atom.xml" rel="self"/>
   
   <link href="https://studyz.github.io/"/>
-  <updated>2024-04-22T07:37:40.608Z</updated>
+  <updated>2024-04-22T07:49:40.461Z</updated>
   <id>https://studyz.github.io/</id>
   
   <author>
@@ -17,20 +17,172 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>柯南动画目录</title>
+    <title>柯南动画剧集拆分前后对比目录</title>
     <link href="https://studyz.github.io/2024/04/22/%E6%9F%AF%E5%8D%97%E5%8A%A8%E7%94%BB%E7%9B%AE%E5%BD%95/"/>
     <id>https://studyz.github.io/2024/04/22/%E6%9F%AF%E5%8D%97%E5%8A%A8%E7%94%BB%E7%9B%AE%E5%BD%95/</id>
     <published>2024-04-22T07:00:51.000Z</published>
-    <updated>2024-04-22T07:37:40.608Z</updated>
+    <updated>2024-04-22T07:49:40.461Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
-        
-      
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;https://movie.douban.com/subject/1463371/&quot;&gt;名侦探柯南&lt;/a&gt;改编自青山刚昌创作的同名漫画作品 ，由TMS Entertainment（原东京电影新社）负责动画制作 ，于&lt;strong&gt;1996年1月8日&lt;/strong&gt;起在读卖电视台播出 。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;名侦探柯南是老婆的电子榨菜，已播出的全部剧集+剧场版都已经看过多次了。&lt;/p&gt;
+&lt;p&gt;目前居家观影方案是&lt;code&gt;Apple TV&lt;/code&gt;安装&lt;code&gt;infuse&lt;/code&gt;搭配&lt;code&gt;HomePod&lt;/code&gt;，可以从&lt;code&gt;themoviedb&lt;/code&gt;抓取视频信息，但名侦探柯南有一个头痛的问题。&lt;/p&gt;
+&lt;p&gt;互联网上能搜到的国语配音版本，都是国内版本的，从国外引进时，把一些较长的单剧集拆分了，国外一集的内容，引进国内后被拆分成多集，导致剧集数和&lt;code&gt;themoviedb&lt;/code&gt;数据库对不上。强迫症逼死人，为了老婆更方便的反反复复的观看，特意整理了国内外剧集数的对比表，并根据在某网盘的脚本上修改，可以在网页版某网盘实现批量修改集数。&lt;/p&gt;
+&lt;p&gt;矫正剧集数后，infuse可以正确识别全部剧集的介绍、封面、演员表、每集的标题等等。&lt;/p&gt;
+&lt;p&gt;todo：名侦探柯南1200集内容，都是第一季，在Apple TV infuse中从第一集开始找特定集数也是非常困难的，目前只能手动拆分播放列表。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&quot;right&quot;&gt;序号&lt;/th&gt;
+&lt;th align=&quot;right&quot;&gt;拆分版集数&lt;/th&gt;
+&lt;th align=&quot;left&quot;&gt;拆分版标题&lt;/th&gt;
+&lt;th align=&quot;right&quot;&gt;原版集数&lt;/th&gt;
+&lt;th align=&quot;left&quot;&gt;原版标题&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td align=&quot;right&quot;&gt;1&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;1&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;云霄飞车杀人事件&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;1&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;云霄飞车杀人事件&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;right&quot;&gt;2&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;2&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;董事长千金绑架事件&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;2&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;董事长千金绑架事件&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;right&quot;&gt;3&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;3&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;偶像密室杀人事件&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;3&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;偶像密室杀人事件&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;right&quot;&gt;4&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;4&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;大都会暗号地图事件&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;4&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;大都会暗号地图事件&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;right&quot;&gt;5&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;5&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;新干线大爆破事件&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;5&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;新干线大爆破事件&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;right&quot;&gt;6&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;6&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;情人节杀人事件&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;6&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;情人节杀人事件◆&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;right&quot;&gt;7&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;7&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;每月一件礼物威胁事件&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;7&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;每月一件礼物威胁事件&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;right&quot;&gt;8&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;8&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;美术馆杀人事件&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;8&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;美术馆杀人事件&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;right&quot;&gt;9&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;9&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;天下第一夜祭杀人事件&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;9&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;天下第一夜祭杀人事件&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;right&quot;&gt;10&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;10&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;足球选手恐吓事件&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;10&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;足球选手恐吓事件&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;right&quot;&gt;11&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;11&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;钢琴奏鸣曲《月光》杀人事件（一）&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;11&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;钢琴奏鸣曲《月光》杀人事件★&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;right&quot;&gt;12&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;12&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;钢琴奏鸣曲《月光》杀人事件（二）&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;11&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;钢琴奏鸣曲《月光》杀人事件★&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;right&quot;&gt;13&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;13&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;步美被綁架了&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;12&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;步美被绑架事件&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;right&quot;&gt;14&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;14&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;奇怪的寻人事件&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;13&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;奇怪的寻亲杀人事件&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;right&quot;&gt;15&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;15&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;谜样的讯息狙击事件&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;14&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;谜样的讯息狙击事件◆&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;right&quot;&gt;16&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;16&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;消失的尸体&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;15&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;消失的尸体杀人事件&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;right&quot;&gt;17&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;17&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;古董收藏家杀人事件&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;16&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;古董收藏家杀人事件&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;right&quot;&gt;18&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;18&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;百货公司挟持事件&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;17&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;百货公司挟持事件◆&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;right&quot;&gt;19&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;19&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;六月新娘杀人事件&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;18&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;六月新娘杀人事件&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;right&quot;&gt;20&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;20&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;电梯杀人事件&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;19&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;电梯杀人事件◆&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;</summary>
     
     
     
@@ -42,16 +194,18 @@
     <link href="https://studyz.github.io/2024/04/22/%E6%88%91%E7%9A%84%E6%9E%81%E7%AE%80%E7%94%9F%E6%B4%BB%E7%BB%8F%E9%AA%8C/"/>
     <id>https://studyz.github.io/2024/04/22/%E6%88%91%E7%9A%84%E6%9E%81%E7%AE%80%E7%94%9F%E6%B4%BB%E7%BB%8F%E9%AA%8C/</id>
     <published>2024-04-22T06:29:50.000Z</published>
-    <updated>2024-04-22T06:39:30.003Z</updated>
+    <updated>2024-04-22T07:49:59.440Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
-        
-      
+    <summary type="html">&lt;h1 id=&quot;我的极简生活经验：恰到好处的生活艺术&quot;&gt;&lt;a href=&quot;#我的极简生活经验：恰到好处的生活艺术&quot; class=&quot;headerlink&quot; title=&quot;我的极简生活经验：恰到好处的生活艺术&quot;&gt;&lt;/a&gt;我的极简生活经验：恰到好处的生活艺术&lt;/h1&gt;&lt;p&gt;今天我想和大家分享一下我对极简主义的理解。我非常喜欢这种生活方式，但并不是说每个人都需要极简。有些人喜欢收藏，有些人喜欢购物，买很多东西，只要能让自己舒心，任何生活方式都是好的。但如果你也喜欢简单的生活方式，或者有点儿强迫症，那么这些小建议可能适合你。&lt;/p&gt;
+&lt;p&gt;首先，极简主义并不意味着把大部分东西都扔掉，或者在空无一物的环境中生活。极简主义是选择对你重要的东西，而不在于数量多少。同时，也没有必要每个地方都极简。比如说你喜欢读书和收藏，完全可以精挑细选地去置办。极简生活更多的是减少生活中不必要的元素，让你更多地专注在真正重要的事物上。&lt;/p&gt;
+&lt;p&gt;经常性的整理是开始的第一步。一般来说，整理包括扔东西、卖二手、收纳起来。不要总觉得留着以后能用上，如果近一年都没用过，基本上以后也用不上。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;扔东西：可以先从冰箱和厨房开始，把过期的、好久没有动过的东西扔掉。接着收拾各种抽屉和柜子，比如已经坏掉的物件、没有用的配件、廉价的充电线、没用的说明书、之前的票据、快递盒子和购物袋子等。一般来说，这些都是随手放进去，觉得以后会用的，但实际上过了很久也没有用到的东西。&lt;/li&gt;
+&lt;li&gt;卖二手：接下来你会发现有不少东西其实扔掉有些可惜，但是自己又不怎么用了。对于不太值钱但是还有些用的东西，比如再也不看的书、两年都没有穿的旧衣服，可以去支付宝或其他App看看有没有上门回收捐赠的服务。对于还值点钱的，但是因为消费冲动而买的东西，可以擦干净、拍照发到闲鱼上，卖给下一个冲动消费的人。这样可以帮你回一些本。一般来说，比如几乎半年都不用的耳机、二手电脑、手表、小电器这一类很好出手，留下你一直在用而且很好用的那个就好，重复功能的东西只留一件。&lt;/li&gt;
+&lt;li&gt;收纳起来：如果收纳空间有限，可以买几个收纳箱和真空收纳袋。这样你的存放物体的体积缩小一半，放到看不到的地方。比如不是这个季节的衣服、被子，都可以用收纳袋抽干收起来。对于不太方便用袋子装的，可以用盒子装起来放到柜子里，让它整齐和知晓位置，让每一个物品都有它特定的空间位置，用完返回原处，下次找起来会很方便。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;上面整理的这一步，会花费你一些周末时间。但是当整理完成，打扫干净区域后，一般都会让你心情舒畅，感觉很爽。&lt;/p&gt;</summary>
     
     
     
