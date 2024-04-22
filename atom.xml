@@ -6,7 +6,7 @@
   <link href="https://studyz.github.io/atom.xml" rel="self"/>
   
   <link href="https://studyz.github.io/"/>
-  <updated>2024-04-22T08:04:53.349Z</updated>
+  <updated>2024-04-22T08:08:01.312Z</updated>
   <id>https://studyz.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://studyz.github.io/2024/04/22/%E6%9F%AF%E5%8D%97%E5%8A%A8%E7%94%BB%E7%9B%AE%E5%BD%95/"/>
     <id>https://studyz.github.io/2024/04/22/%E6%9F%AF%E5%8D%97%E5%8A%A8%E7%94%BB%E7%9B%AE%E5%BD%95/</id>
     <published>2024-04-22T07:00:51.000Z</published>
-    <updated>2024-04-22T08:04:53.349Z</updated>
+    <updated>2024-04-22T08:08:01.312Z</updated>
     
     
     <summary type="html">&lt;blockquote&gt;
@@ -31,88 +31,7 @@
 &lt;p&gt;目前居家观影方案是&lt;code&gt;Apple TV&lt;/code&gt;安装&lt;code&gt;infuse&lt;/code&gt;搭配&lt;code&gt;HomePod&lt;/code&gt;，可以从&lt;code&gt;themoviedb&lt;/code&gt;抓取视频信息，但名侦探柯南有一个头痛的问题。&lt;/p&gt;
 &lt;p&gt;互联网上能搜到的国语配音版本，都是国内版本的，从国外引进时，把一些较长的单剧集拆分了，国外一集的内容，引进国内后被拆分成多集，导致剧集数和&lt;code&gt;themoviedb&lt;/code&gt;数据库对不上。强迫症逼死人，为了老婆更方便的反反复复的观看，特意整理了国内外剧集数的对比表，并根据在某网盘的脚本上修改，可以在网页版某网盘实现批量修改集数。&lt;/p&gt;
 &lt;p&gt;矫正剧集数后，infuse可以正确识别全部剧集的介绍、封面、演员表、每集的标题等等。&lt;/p&gt;
-&lt;p&gt;todo：名侦探柯南1200集内容，都是第一季，在Apple TV infuse中从第一集开始找特定集数也是非常困难的，目前只能手动拆分播放列表。&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th align=&quot;right&quot;&gt;序号&lt;/th&gt;
-&lt;th align=&quot;right&quot;&gt;拆分版集数&lt;/th&gt;
-&lt;th align=&quot;left&quot;&gt;拆分版标题&lt;/th&gt;
-&lt;th align=&quot;right&quot;&gt;原版集数&lt;/th&gt;
-&lt;th align=&quot;left&quot;&gt;原版标题&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;&lt;tr&gt;
-&lt;td align=&quot;right&quot;&gt;1&lt;/td&gt;
-&lt;td align=&quot;right&quot;&gt;1&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;云霄飞车杀人事件&lt;/td&gt;
-&lt;td align=&quot;right&quot;&gt;1&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;云霄飞车杀人事件&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&quot;right&quot;&gt;2&lt;/td&gt;
-&lt;td align=&quot;right&quot;&gt;2&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;董事长千金绑架事件&lt;/td&gt;
-&lt;td align=&quot;right&quot;&gt;2&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;董事长千金绑架事件&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&quot;right&quot;&gt;3&lt;/td&gt;
-&lt;td align=&quot;right&quot;&gt;3&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;偶像密室杀人事件&lt;/td&gt;
-&lt;td align=&quot;right&quot;&gt;3&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;偶像密室杀人事件&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&quot;right&quot;&gt;4&lt;/td&gt;
-&lt;td align=&quot;right&quot;&gt;4&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;大都会暗号地图事件&lt;/td&gt;
-&lt;td align=&quot;right&quot;&gt;4&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;大都会暗号地图事件&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&quot;right&quot;&gt;5&lt;/td&gt;
-&lt;td align=&quot;right&quot;&gt;5&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;新干线大爆破事件&lt;/td&gt;
-&lt;td align=&quot;right&quot;&gt;5&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;新干线大爆破事件&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&quot;right&quot;&gt;6&lt;/td&gt;
-&lt;td align=&quot;right&quot;&gt;6&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;情人节杀人事件&lt;/td&gt;
-&lt;td align=&quot;right&quot;&gt;6&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;情人节杀人事件◆&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&quot;right&quot;&gt;7&lt;/td&gt;
-&lt;td align=&quot;right&quot;&gt;7&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;每月一件礼物威胁事件&lt;/td&gt;
-&lt;td align=&quot;right&quot;&gt;7&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;每月一件礼物威胁事件&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&quot;right&quot;&gt;8&lt;/td&gt;
-&lt;td align=&quot;right&quot;&gt;8&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;美术馆杀人事件&lt;/td&gt;
-&lt;td align=&quot;right&quot;&gt;8&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;美术馆杀人事件&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&quot;right&quot;&gt;9&lt;/td&gt;
-&lt;td align=&quot;right&quot;&gt;9&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;天下第一夜祭杀人事件&lt;/td&gt;
-&lt;td align=&quot;right&quot;&gt;9&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;天下第一夜祭杀人事件&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&quot;right&quot;&gt;10&lt;/td&gt;
-&lt;td align=&quot;right&quot;&gt;10&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;足球选手恐吓事件&lt;/td&gt;
-&lt;td align=&quot;right&quot;&gt;10&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;足球选手恐吓事件&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;</summary>
+&lt;p&gt;todo：名侦探柯南1200集内容，都是第一季，在Apple TV infuse中从第一集开始找特定集数也是非常困难的，目前只能手动拆分播放列表。&lt;/p&gt;</summary>
     
     
     
