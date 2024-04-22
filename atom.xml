@@ -6,7 +6,7 @@
   <link href="https://studyz.github.io/atom.xml" rel="self"/>
   
   <link href="https://studyz.github.io/"/>
-  <updated>2024-04-22T08:15:50.841Z</updated>
+  <updated>2024-04-22T08:17:03.208Z</updated>
   <id>https://studyz.github.io/</id>
   
   <author>
@@ -17,11 +17,32 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>TailScale实现远端访问整段局域网</title>
+    <link href="https://studyz.github.io/2024/04/22/TailScale%E5%AE%9E%E7%8E%B0%E8%BF%9C%E7%AB%AF%E8%AE%BF%E9%97%AE%E6%95%B4%E6%AE%B5%E5%B1%80%E5%9F%9F%E7%BD%91/"/>
+    <id>https://studyz.github.io/2024/04/22/TailScale%E5%AE%9E%E7%8E%B0%E8%BF%9C%E7%AB%AF%E8%AE%BF%E9%97%AE%E6%95%B4%E6%AE%B5%E5%B1%80%E5%9F%9F%E7%BD%91/</id>
+    <published>2024-04-22T08:16:49.000Z</published>
+    <updated>2024-04-22T08:17:03.208Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>柯南动画剧集拆分前后对比目录</title>
     <link href="https://studyz.github.io/2024/04/22/%E6%9F%AF%E5%8D%97%E5%8A%A8%E7%94%BB%E7%9B%AE%E5%BD%95/"/>
     <id>https://studyz.github.io/2024/04/22/%E6%9F%AF%E5%8D%97%E5%8A%A8%E7%94%BB%E7%9B%AE%E5%BD%95/</id>
     <published>2024-04-22T07:00:51.000Z</published>
-    <updated>2024-04-22T08:15:50.841Z</updated>
+    <updated>2024-04-22T08:17:50.775Z</updated>
     
     
     <summary type="html">&lt;blockquote&gt;
@@ -653,32 +674,6 @@
     <category term="字体" scheme="https://studyz.github.io/tags/%E5%AD%97%E4%BD%93/"/>
     
     <category term="免费" scheme="https://studyz.github.io/tags/%E5%85%8D%E8%B4%B9/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>统计分析的八种方法</title>
-    <link href="https://studyz.github.io/2022/06/29/%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E7%9A%84%E5%85%AB%E7%A7%8D%E6%96%B9%E6%B3%95/"/>
-    <id>https://studyz.github.io/2022/06/29/%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E7%9A%84%E5%85%AB%E7%A7%8D%E6%96%B9%E6%B3%95/</id>
-    <published>2022-06-29T10:34:40.000Z</published>
-    <updated>2024-04-22T07:55:07.386Z</updated>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;一、指标对比分析法&quot;&gt;&lt;a href=&quot;#一、指标对比分析法&quot; class=&quot;headerlink&quot; title=&quot;一、指标对比分析法&quot;&gt;&lt;/a&gt;一、指标对比分析法&lt;/h1&gt;&lt;p&gt;指标对比分析法，又称比较分析法，是统计分析中最常用的方法。是通过有关的指标对比来反映事物数量上差异和变化的方法。有比较才能鉴别。单独看一些指标，只能说明总体的某些数量特征，得不出什么结论性的认识；一经过比较，如与国外、外单位比，与历史数据比，与计划相比，就可以对规模大小、水平高低、速度快慢作出判断和评价。&lt;/p&gt;
-&lt;p&gt;指标分析对比分析方法可分为静态比较和动态比较分析。静态比较是同一时间条件下不同总体指标比较，如不同部门、不同地区、不同国家的比较，也叫横向比较；动态比较是同一总体条件不同时期指标数值的比较，也叫纵向比较。这两种方法既可单独使用，也可结合使用。进行对比分析时，可以单独使用总量指标或相对指标或平均指标，也可将它们结合起来进行对比。比较的结果可用相对数，如百分数、倍数、系数等，也可用相差的绝对数和相关的百分点（每1％为一个百分点）来表示，即将对比的指标相减。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="数据分析" scheme="https://studyz.github.io/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
-    
-    <category term="方法论" scheme="https://studyz.github.io/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/%E6%96%B9%E6%B3%95%E8%AE%BA/"/>
-    
-    
-    <category term="数据分析师" scheme="https://studyz.github.io/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88/"/>
-    
-    <category term="统计" scheme="https://studyz.github.io/tags/%E7%BB%9F%E8%AE%A1/"/>
-    
-    <category term="方法" scheme="https://studyz.github.io/tags/%E6%96%B9%E6%B3%95/"/>
     
   </entry>
   

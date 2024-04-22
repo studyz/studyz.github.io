@@ -154,6 +154,127 @@
     
     
     <article
+  id="post-TailScale实现远端访问整段局域网"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2024/04/22/TailScale%E5%AE%9E%E7%8E%B0%E8%BF%9C%E7%AB%AF%E8%AE%BF%E9%97%AE%E6%95%B4%E6%AE%B5%E5%B1%80%E5%9F%9F%E7%BD%91/"
+    >TailScale实现远端访问整段局域网</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2024/04/22/TailScale%E5%AE%9E%E7%8E%B0%E8%BF%9C%E7%AB%AF%E8%AE%BF%E9%97%AE%E6%95%B4%E6%AE%B5%E5%B1%80%E5%9F%9F%E7%BD%91/" class="article-date">
+  <time datetime="2024-04-22T08:16:49.000Z" itemprop="datePublished">2024-04-22</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <blockquote>
+<p>之前的贴文分享了<a target="_blank" rel="noopener" href="https://kingtam.win/archives/zerotier-route.html">ZeroTier 实现远端访问局域网</a> ，最近发现一款软件<code>TailScale</code>(数码小树人的貼文-让你可以随时随地用NAS和家里的电脑)感觉设定上更简单一点，仅仅透过帐号登入就可以接入<code>TailScale</code>网络内。</p>
+<p><code>TailScale</code>是以<a target="_blank" rel="noopener" href="https://www.wireguard.com/">Wireguard</a>的协议加密，所以安全性更高，而且是P2P连线，流量不经伺服器，延迟更低、私密性更高。</p>
+</blockquote>
+<ol>
+<li>安装及加入到<code>TailScale</code>网络</li>
+<li>透过设定其中1部<code>TailScale</code>的装置为网关「Subnet Router」，可以访问整个内网网段</li>
+</ol>
+<p>如果是<strong>Windows</strong>用户可以到<a target="_blank" rel="noopener" href="https://tailscale.com/download/windows">官网</a>下载安装<a target="_blank" rel="noopener" href="https://pkgs.tailscale.com/stable/tailscale-ipn-setup-1.14.4.exe">Tailscale</a>，或者透过<a target="_blank" rel="noopener" href="https://kingtam.win/archives/choco.html">Chocolatey软件包</a>安装。</p>
+<p>choco install tailscale -y</p>
+<p>双击桌面右下角的图示</p>
+<p>使用<a target="_blank" rel="noopener" href="https://pinpai.smzdm.com/2047/">谷歌</a>或者<a target="_blank" rel="noopener" href="https://pinpai.smzdm.com/1461/">微软</a>账号进行登录</p>
+<p>成功授权后可以查看分配到的IP地址</p>
+<p><strong>Linux</strong>用户可以到<a target="_blank" rel="noopener" href="https://tailscale.com/download/linux">Download · Tailscale</a>找到相对应的<a target="_blank" rel="noopener" href="https://www.smzdm.com/fenlei/cpu/">CPU</a>平台及架构安装.</p>
+<p>我以<strong>Ubuntu 20.04</strong>为范例</p>
+<ul>
+<li>添加 <code>Tailscale</code> 的金钥和软件仓库地址</li>
+</ul>
+<p><code>curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/focal.gpg | sudo apt-key a[dd](https://pinpai.smzdm.com/102135/)</code></p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-curl -fsSL https:<span class="regexp">//</span>pkgs.tailscale.com<span class="regexp">/stable/u</span>buntu<span class="regexp">/focal.list | sudo tee /</span>etc<span class="regexp">/apt/</span>sources.list.d/tailscale.list</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>安装<code>Tailscale</code></li>
+</ul>
+<p><code>sudo apt updatesudo apt install tailscale</code></p>
+<ul>
+<li>启用<code>Tailscale</code> 及透过网址验证登入到<code>Tailscale</code> 网络</li>
+</ul>
+<p>sudo tailscale up</p>
+<p>此页面显示成功授权</p>
+<p>返回到Linux 终端查看分配到的IP地址</p>
+<p>tailscale ip</p>
+<p><code>Tailscale</code> 网络内的装置可以互通</p>
+<p><strong>2. 透过设定其中1部「TailScale」的装置为网关「Subnet Router」，可以访问整个内网网段</strong></p>
+<blockquote>
+<p>因为不是每一部设备都可以安装到Tailscale ， 所以这样设定「Subnet Route」的好处是家里内网只要1部Linux装置接入到Tailscale 网络，其他所有的外网的Tailscale装置都可以透过这部Linux装置作为网关访问家里内网所有的设备，如: 印表机，路由器，伺服器等等。</p>
+</blockquote>
+<ul>
+<li>启用 <strong>Linux</strong> 上的 <strong>IP</strong> 转发(IP Forwarding)</li>
+</ul>
+<p>因为「Subnet Route」的设定需要用到 IP 转发(IP Forwarding)特性</p>
+<p>使用以下指命启用</p>
+<p><code>echo &#39;net.ipv4.ip_forward = 1&#39; | sudo tee -a /etc/sysctl.confecho &#39;net.ipv6.conf.all.forwarding = 1&#39; | sudo tee -a /etc/sysctl.confsudo sysctl -p /etc/sysctl.conf</code></p>
+<ul>
+<li>以Linux作为「Subnet Route」(子网路由网关)连接到<code>Tailscale</code></li>
+</ul>
+<blockquote>
+<p>Tailscale 不需要防火墙配置，会自动管理规则，以允许转发。设定过程也没涉及到iptable，一条指令可以完成。</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># sudo tailscale up --advertise-routes=20.13.3.0/24</span></span><br><span class="line">tailscale up --advertise-routes=192.168.31.0/24 --netfilter-mode=off</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>20.13.3.0&#x2F;24替换为自己的网段，可以是IPV4或者IPV6。</p>
+</blockquote>
+<ul>
+<li>登入到网页控制台 &gt; <code>Machines</code></li>
+</ul>
+<p><code>Enable All</code>允许转发所有</p>
+<p>基于安全特性，<code>Tailscale</code>每隔6个月需要重新授权装置，作为「Subnet Router」(子网路由网关)，建议停用。</p>
+<ul>
+<li>外网的<code>Tailscale</code>装置线路测试</li>
+</ul>
+<p>可以看到是经节点「Subnet Router」IP <code>100.101.41.50</code> 接入到内网 <code>192.168.31.0/24</code>，延迟也很理想。</p>
+<p>以下是使用内网IP连入家里的各服务及装置</p>
+<p>测速</p>
+<blockquote>
+<p>TailSale和ZeroTier的使用场景上非常相近，没有那个占优，根据自身网络环境的连线质量较佳去选取。</p>
+<p>透过<a target="_blank" rel="noopener" href="https://kingtam.win/archives/zerotier-route.html">ZeroTier 实现远端访问局域网</a>的设定不是对所有自定网段有效，如今次的<code>192.168.31.0/24</code>的网段失效，<code>Zerotier</code>误判为外网网段而不能访问。而使用<code>TailSale</code>的设定可以实现远端访问网段为<code>192.168.31.0/24</code>的局域网。</p>
+</blockquote>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://tailscale.com/download/linux/ubuntu-2004">Download Install the app and sign in to get started Tailscale</a></li>
+<li><a target="_blank" rel="noopener" href="https://tailscale.com/kb/1104/enable-ip-forwarding/">Enable IP forwarding on Linux · Tailscale</a></li>
+<li><a target="_blank" rel="noopener" href="https://tailscale.com/kb/1019/subnets/">Subnet routers and traffic relay nodes · Tailscale</a></li>
+</ul>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+   
+   
+  
+</article>
+
+    
+    <article
   id="post-柯南动画目录"
   class="article article-type-post"
   itemscope
@@ -777,66 +898,6 @@
     <footer class="article-footer">
        
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SQL/" rel="tag">SQL</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a></li></ul>
-
-    </footer>
-  </div>
-
-   
-   
-  
-</article>
-
-    
-    <article
-  id="post-数据分析师所需的技术与理论"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2023/10/23/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E6%89%80%E9%9C%80%E7%9A%84%E6%8A%80%E6%9C%AF%E4%B8%8E%E7%90%86%E8%AE%BA/"
-    >数据分析师所需的技术与理论</a> 
-</h2>
- 
-
-      
-    </header>
-     
-    <div class="article-meta">
-      <a href="/2023/10/23/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E6%89%80%E9%9C%80%E7%9A%84%E6%8A%80%E6%9C%AF%E4%B8%8E%E7%90%86%E8%AE%BA/" class="article-date">
-  <time datetime="2023-10-23T05:11:30.000Z" itemprop="datePublished">2023-10-23</time>
-</a> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">数据分析</a> / <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/%E6%96%B9%E6%B3%95%E8%AE%BA/">方法论</a>
-  </div>
-   
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <blockquote>
-<p>对数据分析师来说，要想避免沦为取数、跑数的工具人命运，就明确并巩固自己的优势与价值。因此明确数据分析师的成长路径、能力要求、能力提升方法就显得格外重要。而笔者作为数据分析专家，也就此分享了自己的思考与见解。</p>
-</blockquote>
-<h1 id="一、数据分析师的种类、职责与升级路线"><a href="#一、数据分析师的种类、职责与升级路线" class="headerlink" title="一、数据分析师的种类、职责与升级路线"></a>一、数据分析师的种类、职责与升级路线</h1><p>在国内数据分析师一般分为5大种类：<strong>数据产品、数据分析师、数据建模师、数据工程师与数据科</strong>学家，这5类人才的必备能力和成长路线我们来逐一介绍。</p> 
-      <a class="article-more-link" href="/2023/10/23/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E6%89%80%E9%9C%80%E7%9A%84%E6%8A%80%E6%9C%AF%E4%B8%8E%E7%90%86%E8%AE%BA/"
-        >阅读更多...</a
-      >
-       
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88/" rel="tag">数据分析师</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%96%B9%E6%B3%95%E8%AE%BA/" rel="tag">方法论</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a></li></ul>
 
     </footer>
   </div>
