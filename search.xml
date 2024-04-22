@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>Hexo Hello World</title>
-    <url>/2019/05/01/2019_05_01_hello_world/</url>
+    <url>/2019/05/01/hello_world/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
 <p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Here-Cheatsheet">Markdown</a> 使用<a href="https://github.com/younghz/Markdown">Markdown 基本语法</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
 <h1 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h1><hr>
@@ -68,7 +68,7 @@
 </li>
 </ol>
 <p>这篇文章要引用的图片就放在该文件夹下。比如我就在该目录下放一个图片<code>1.png</code>。</p>
-<p><img src="/2019/05/01/2019_05_01_hello_world/1.png" alt="1.png"></p>
+<p><img src="/2019/05/01/hello_world/1.png" alt="1.png"></p>
 <p>然后在博文 MarkDown 文件里引用该图片：</p>
 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">这里是图片注释</span>](<span class="link">1.png</span>)</span><br></pre></td></tr></table></figure>
 
@@ -95,19 +95,12 @@
 
 <h3 id="菜单导航配置"><a href="#菜单导航配置" class="headerlink" title="菜单导航配置"></a>菜单导航配置</h3><p>配置基本菜单导航的名称、路径url和图标icon.</p>
 <ol>
-<li><p>菜单导航名称可以是中文也可以是英文(如：<code>Index</code> 或 <code>主页</code>)</p>
-</li>
-<li><p><code>External</code> 表示是否在新标签页打开连接</p>
-</li>
-<li><p>导航地址可以是站内地址也可以是外网地址</p>
-</li>
+<li>菜单导航名称可以是中文也可以是英文(如：<code>Index</code> 或 <code>主页</code>)</li>
+<li><code>External</code> 表示是否在新标签页打开连接</li>
+<li>导航地址可以是站内地址也可以是外网地址</li>
 </ol>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">menu:</span><br><span class="line"></span><br><span class="line"><span class="code">	Index:</span></span><br><span class="line"><span class="code">	</span></span><br><span class="line"><span class="code">		url: /</span></span><br><span class="line"><span class="code">		</span></span><br><span class="line"><span class="code">		External: false</span></span><br><span class="line"><span class="code">		</span></span><br><span class="line"><span class="code">		name: 首页</span></span><br><span class="line"><span class="code">	</span></span><br><span class="line"><span class="code">	Tags:</span></span><br><span class="line"><span class="code">	</span></span><br><span class="line"><span class="code">		url: /tags</span></span><br><span class="line"><span class="code">		</span></span><br><span class="line"><span class="code">		External: false</span></span><br><span class="line"><span class="code">		</span></span><br><span class="line"><span class="code">		name: 标签</span></span><br><span class="line"><span class="code">	</span></span><br><span class="line"><span class="code">	# Categories:</span></span><br><span class="line"><span class="code">	</span></span><br><span class="line"><span class="code">		# url: /categories</span></span><br><span class="line"><span class="code">		</span></span><br><span class="line"><span class="code">		# External: false</span></span><br><span class="line"><span class="code">		</span></span><br><span class="line"><span class="code">		# name: 分类</span></span><br><span class="line"><span class="code">	</span></span><br><span class="line"><span class="code">	Archives:</span></span><br><span class="line"><span class="code">	</span></span><br><span class="line"><span class="code">		url: /archives</span></span><br><span class="line"><span class="code">		</span></span><br><span class="line"><span class="code">		External: false</span></span><br><span class="line"><span class="code">		</span></span><br><span class="line"><span class="code">		name: 归档</span></span><br><span class="line"><span class="code">		</span></span><br><span class="line"><span class="code">	About:</span></span><br><span class="line"><span class="code">	</span></span><br><span class="line"><span class="code">		url: /about</span></span><br><span class="line"><span class="code">		</span></span><br><span class="line"><span class="code">		External: false</span></span><br><span class="line"><span class="code">		</span></span><br><span class="line"><span class="code">		name: 关于</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-
+<h3 id="new-posts新建文件名问题"><a href="#new-posts新建文件名问题" class="headerlink" title="new posts新建文件名问题"></a>new posts新建文件名问题</h3><p>修改hexo根目录下_config.yml文件，为新建post自动加上当前日期，避免title重复，造成的一系列问题。</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Writing</span></span><br><span class="line"><span class="comment"># new_post_name: title.md # default setting</span></span><br><span class="line"><span class="attr">new_post_name:</span> <span class="string">:year_:month_:day_:title.md</span> </span><br><span class="line"><span class="comment"># new posts name as year_month_day_postname</span></span><br><span class="line"><span class="attr">default_layout:</span> <span class="string">post</span></span><br><span class="line"><span class="attr">titlecase:</span> <span class="literal">false</span> <span class="comment"># Transform title into titlecase</span></span><br><span class="line"><span class="attr">external_link:</span></span><br><span class="line"><span class="attr">enable:</span> <span class="literal">true</span> <span class="comment"># Open external links in new tab</span></span><br><span class="line"><span class="attr">field:</span> <span class="string">site</span> <span class="comment"># Apply to the whole site</span></span><br><span class="line"><span class="attr">exclude:</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="attr">filename_case:</span> <span class="number">0</span></span><br><span class="line"><span class="attr">render_drafts:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
 
 <p>More info:<br><a href="https://post.smzdm.com/p/agqol9zm/">晨聊 篇十七：markdown也变脸，obsidian + hexo 在群晖NAS上的双剑合璧</a></p>
 ]]></content>
@@ -123,7 +116,7 @@
   </entry>
   <entry>
     <title>鸡尾酒配方</title>
-    <url>/2020/05/04/2020_05_04_%E9%B8%A1%E5%B0%BE%E9%85%92%E9%85%8D%E6%96%B9/</url>
+    <url>/2020/05/04/%E9%B8%A1%E5%B0%BE%E9%85%92%E9%85%8D%E6%96%B9/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="鸡尾酒配方"><a href="#鸡尾酒配方" class="headerlink" title="鸡尾酒配方"></a>鸡尾酒配方</h1><h2 id="茶酒"><a href="#茶酒" class="headerlink" title="茶酒"></a>茶酒</h2><ul>
 <li>茶：120ml</li>
 <li>酒：45ml</li>
@@ -276,7 +269,7 @@
   </entry>
   <entry>
     <title>GoPro Hero最实用的四个必备配件:打造完美生态</title>
-    <url>/2022/03/15/2022_03_15_GoproHero/</url>
+    <url>/2022/03/15/GoproHero/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">
 <iframe src="//player.bilibili.com/player.html?aid=244387247&bvid=BV1Av411174q&cid=229573649&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; Left: 0; top: 0;" ></iframe></div> 
 ]]></content>
@@ -292,7 +285,7 @@
   </entry>
   <entry>
     <title>菜谱</title>
-    <url>/2020/02/19/2022_04_19_%E8%8F%9C%E8%B0%B1/</url>
+    <url>/2020/02/19/%E8%8F%9C%E8%B0%B1/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="空气炸锅鸡排"><a href="#空气炸锅鸡排" class="headerlink" title="空气炸锅鸡排"></a>空气炸锅鸡排</h1><ul>
 <li>温度：200度</li>
 <li>时间：8分钟 + 4分钟</li>
@@ -329,7 +322,7 @@
   </entry>
   <entry>
     <title>Pandas基本操作</title>
-    <url>/2022/04/19/2023_03_15_Pandas%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</url>
+    <url>/2022/04/19/Pandas%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="查看数据"><a href="#查看数据" class="headerlink" title="查看数据"></a>查看数据</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 查看头部 head(n)</span></span><br><span class="line">df.head()  <span class="comment">#默认查看前5条记录 </span></span><br><span class="line">df.head(<span class="number">8</span>)  <span class="comment">#指定查看前8条记录</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">## 查看尾部 tail(n)</span></span><br><span class="line">df.tail()  <span class="comment">#默认查看后面5条记录 </span></span><br><span class="line">df.tail(<span class="number">4</span>)  <span class="comment">#指定查看后面4条记录</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 随机查看样本 sample(n)</span></span><br><span class="line">df.sample()  <span class="comment">#随机查看一条记录 </span></span><br><span class="line">df.sample(<span class="number">4</span>)  <span class="comment">#随机查看4条记录</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 查看统计摘要</span></span><br><span class="line">df.describe()  <span class="comment">#返回所有数字列的统计摘要</span></span><br></pre></td></tr></table></figure>
 
 <h1 id="检索数据"><a href="#检索数据" class="headerlink" title="检索数据"></a>检索数据</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 切片[]</span></span><br><span class="line">df[<span class="number">0</span>:<span class="number">3</span>]  <span class="comment">#通过切片检索行数据</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## loc\iloc</span></span><br><span class="line">df.loc[<span class="number">1</span>]  <span class="comment">#标量标签，返回该行标签的Series数据 </span></span><br><span class="line">df.loc[[<span class="number">1</span>,<span class="number">3</span>]]  <span class="comment">#标签列表，返回标签列表的行DataFrame数据 </span></span><br><span class="line">df.loc[<span class="number">0</span>:<span class="number">3</span>]  <span class="comment">#切片对象，返回切片的行DataFrame数据 </span></span><br><span class="line">df.loc[<span class="number">0</span>:<span class="number">3</span>,<span class="string">&#x27;staff_id&#x27;</span>:<span class="string">&#x27;staff_salary&#x27;</span>]  <span class="comment">#根据行切片，列切片检索数据 </span></span><br><span class="line">df.loc[[<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="string">&#x27;staff_id&#x27;</span>,<span class="string">&#x27;staff_name&#x27;</span>,<span class="string">&#x27;staff_age&#x27;</span>]]  <span class="comment">#根据行标签列表，列标签列表检索数据</span></span><br><span class="line">df.iloc[<span class="number">1</span>]  <span class="comment">#整数标量选择，数据从0开始，为1的就是第二行的数据，返回的是Series </span></span><br><span class="line">df.iloc[[<span class="number">1</span>,<span class="number">3</span>]]  <span class="comment">#整数列表选择，选择位置为1和3的数据，返回的是DataFrame </span></span><br><span class="line">df.iloc[<span class="number">1</span>:<span class="number">3</span>]  <span class="comment">#切片选择，选择位置1至2的数据，不包含边界结束值，也就是不包含3的位置 </span></span><br><span class="line">df.iloc[<span class="number">1</span>:<span class="number">3</span>,<span class="number">1</span>:<span class="number">4</span>]  <span class="comment">#切片选择位置为1至3的行和1至4的列不含位置为3的行和位置为4的列</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## at\iat</span></span><br><span class="line">df.at[<span class="string">&#x27;A&#x27;</span>,<span class="string">&#x27;staff_name&#x27;</span>]  <span class="comment">#检索第“A”行的列标签为&quot;staff_name&quot;的数据 df.iat[0,1]  #检索第1行第2列的数据</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
@@ -340,7 +333,7 @@
   </entry>
   <entry>
     <title>Python一些文章</title>
-    <url>/2022/04/23/2023_03_15_Python%E4%B8%80%E4%BA%9B%E6%96%87%E7%AB%A0/</url>
+    <url>/2022/04/23/Python%E4%B8%80%E4%BA%9B%E6%96%87%E7%AB%A0/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="https://pythontutor.com/">Visualize code in Python, JavaScript, C, C++, and Java: pythontutor</a><br><a href="https://visualgo.net/">visualising data structures and algorithms through animation:Python动画算法</a></p>
 <hr>
 <p><a href="https://www.programcreek.com/python">Python Code Examples: Python代码例子</a><br><a href="https://mp.weixin.qq.com/s/0b_bG83S-LEpQOtaWZXv3A">Python网站开发库大全整理完了</a><br><a href="https://mp.weixin.qq.com/s/5bYBrDs90JWMj1A25K4WkQ">14个VSCode插件，让你写代码如同神一般</a><br><a href="https://mp.weixin.qq.com/s/B1q3n--GrK9ybtUcw9eC-Q">Python中关于进度条的6个实用技巧</a><br><a href="https://mp.weixin.qq.com/s/lRicXgAoUYAYO_WpFdQo6A">45个Git经典操作场景，专治不会合代码</a><br><a href="https://mp.weixin.qq.com/s/9qtNkNs6qcJqqEFS15jw-w">进阶版的Pandas神器：Polars</a><br><a href="https://mp.weixin.qq.com/s/qbSoq05Aaw-YPmdbYrgUdg">Sklearn模块中不为人知又超级好用的API函数</a><br><a href="https://mp.weixin.qq.com/s/ndmIgNGN6eBsoF4Y1CeaFg">Python列表解析式到底该怎么用？</a><br><a href="https://mp.weixin.qq.com/s/ScoUXRyeJGo1g0LaiLoxSw">20个短小精悍的pandas骚操作</a><br><a href="https://mp.weixin.qq.com/s/LoFWiuCteDPgO4P3CAHqHw">数据分析打工人的Pandas75个高频操作（收藏查询用~）</a><br><a href="https://mp.weixin.qq.com/s/DnLJbvVUhTx87-S24FXd8w">一文详解Python-Conda包管理工具</a><br><a href="https://mp.weixin.qq.com/s/YYS2Oq9UvryHKEvJ5MONXA">这些10种Numpy高级操作你都会吗？</a></p>
@@ -353,7 +346,7 @@
   </entry>
   <entry>
     <title>Python代码笔记</title>
-    <url>/2022/04/28/2023_03_15_Python%E4%BB%A3%E7%A0%81%E7%AC%94%E8%AE%B0/</url>
+    <url>/2022/04/28/Python%E4%BB%A3%E7%A0%81%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="iloc"><a href="#iloc" class="headerlink" title="iloc"></a>iloc</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">df.iloc[a,b]</span><br><span class="line"><span class="comment"># 其中df是DataFrame数据结构的数据，a是 #行索引，b是 #列索引。</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> pandas</span><br><span class="line">df = pandas.read_csv(<span class="string">&#x27;a.csv&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(df.iloc[<span class="number">0</span>:<span class="number">2</span>,<span class="number">2</span>]) <span class="comment">#数据结构是Series</span></span><br><span class="line"><span class="built_in">print</span>(df.iloc[<span class="number">0</span>:<span class="number">2</span>,<span class="number">2</span>].values) <span class="comment">#数据结构是ndarray</span></span><br><span class="line"><span class="comment">#Out1：0    87</span></span><br><span class="line"><span class="comment">#      1    95</span></span><br><span class="line"><span class="comment"># Name: 分数, dtype: int64</span></span><br><span class="line"><span class="comment">#Out2：[87 95]</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="解除列打印限制"><a href="#解除列打印限制" class="headerlink" title="解除列打印限制"></a>解除列打印限制</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置expand_frame_repr属性为False，即可在打印输出dataframe时不隐藏部分列</span></span><br><span class="line"></span><br><span class="line">pd.set_option(<span class="string">&#x27;expand_frame_repr&#x27;</span>, <span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
@@ -466,7 +459,7 @@
   </entry>
   <entry>
     <title>Python网站开发库大全</title>
-    <url>/2022/04/30/2023_03_15_Python%E7%BD%91%E7%AB%99%E5%BC%80%E5%8F%91%E5%BA%93%E5%A4%A7%E5%85%A8/</url>
+    <url>/2022/04/30/Python%E7%BD%91%E7%AB%99%E5%BC%80%E5%8F%91%E5%BA%93%E5%A4%A7%E5%85%A8/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
 <p>Q：Web 框架到底是什么？<br>A：Web 框架主要用于网站开发。开发者在基于 Web 框架实现自己的业务逻辑。Web 框架实现了很多功能，为实现业务逻辑提供了一套通用方法。  </p>
 </blockquote>
@@ -669,7 +662,7 @@
   </entry>
   <entry>
     <title>数据分析师</title>
-    <url>/2023/05/15/2023_03_15_%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88/</url>
+    <url>/2023/05/15/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="数据分析师"><a href="#数据分析师" class="headerlink" title="数据分析师"></a>数据分析师</h1><ol>
 <li><p>特点：独当一面、战斗力极强、对企业决策者有一定的影响</p>
 </li>
@@ -714,7 +707,7 @@
   </entry>
   <entry>
     <title>澳洲家中日常必备清单</title>
-    <url>/2022/05/19/2023_03_22_%E6%BE%B3%E6%B4%B2%E5%AE%B6%E4%B8%AD%E6%97%A5%E5%B8%B8%E5%BF%85%E5%A4%87%E6%B8%85%E5%8D%95/</url>
+    <url>/2022/05/19/%E6%BE%B3%E6%B4%B2%E5%AE%B6%E4%B8%AD%E6%97%A5%E5%B8%B8%E5%BF%85%E5%A4%87%E6%B8%85%E5%8D%95/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>1⃣️ CEPACAINE漱口水！ 治疗牙龈肿痛，口腔溃疡。澳洲医生推荐买的，超级有效！猫猫家必备的，再也没有牙口烦恼。 购买地址：Chemist有售 💰价格：$15.49 问题在口腔，吃啥啥不香，买它！喵～</p>
 <hr>
 <p>2⃣️ Quick EZE胃糖 腹胀、胃酸、胃痛。消化不良、吃颗糖就能缓解～ 主要是这糖咋还那么好吃！ 购买地址：Chemist 💰价格：$4.99 胃也需要轻轻安抚，买它！喵～</p>
@@ -739,7 +732,7 @@
   </entry>
   <entry>
     <title>AI创建视频脚本提示词</title>
-    <url>/2022/06/19/2023_03_23_How%20to%20use%20ChatGPT%20to%20create%20Awesome%20Video%20Scripts/</url>
+    <url>/2022/06/19/How%20to%20use%20ChatGPT%20to%20create%20Awesome%20Video%20Scripts/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="English-Version"><a href="#English-Version" class="headerlink" title="English Version"></a>English Version</h2><p>Step 1: <code>Find Videos that are already successful.</code><br>Step 2: <code>Copy the transcript from the video</code><br>Step 3: Can you make 10 YouTube video titles based on this video script? make these titles more thought-provoking and more clickable and add curiosity.reply in chinese<br>Step 4: Can you write me a short video script for this video titles? reply in chinese<br>Step 5: Can you write me a description for this video title? reply in chinese<br>Step 6: Can you write me a youtube video shooting script based on this video description? reply in chinese</p>
 <h2 id="中文翻译"><a href="#中文翻译" class="headerlink" title="中文翻译"></a>中文翻译</h2><p>Step 1: <code>寻找已有成功的视频。</code><br>Step 2: <code>复制视频的脚本。</code><br>Step 3: 能否为这个视频脚本生成10个YouTube视频标题？这些标题应该更加发人深思，并且更加吸引人，同时添加好奇心。回复中文<br>Step 4: 能否为这些视频标题编写一个短的视频脚本？回复中文<br>Step 5: 能否为这些视频标题编写一个描述？回复中文<br>Step 6: 能否为这个视频描述编写一个YouTube视频射击脚本？回复中文</p>
 ]]></content>
@@ -751,7 +744,7 @@
   </entry>
   <entry>
     <title>Hadoop、Spark、Flink简单概要</title>
-    <url>/2022/06/23/2023_03_28_Hadoop%E3%80%81Spark%E3%80%81Flink%E7%AE%80%E5%8D%95%E6%A6%82%E8%A6%81/</url>
+    <url>/2022/06/23/Hadoop%E3%80%81Spark%E3%80%81Flink%E7%AE%80%E5%8D%95%E6%A6%82%E8%A6%81/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="https://zhuanlan.zhihu.com/p/526462792">Hadoop用于离线复杂大数据处理</a></p>
 <p>Spark 用于离线快速的大数据处理</p>
 <p>Flink 用于在线实时的大数据处理</p>
@@ -848,7 +841,7 @@
   </entry>
   <entry>
     <title>统计分析的八种方法</title>
-    <url>/2022/06/29/2023_03_30_%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E7%9A%84%E5%85%AB%E7%A7%8D%E6%96%B9%E6%B3%95/</url>
+    <url>/2022/06/29/%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E7%9A%84%E5%85%AB%E7%A7%8D%E6%96%B9%E6%B3%95/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="一、指标对比分析法"><a href="#一、指标对比分析法" class="headerlink" title="一、指标对比分析法"></a>一、指标对比分析法</h1><p>指标对比分析法，又称比较分析法，是统计分析中最常用的方法。是通过有关的指标对比来反映事物数量上差异和变化的方法。有比较才能鉴别。单独看一些指标，只能说明总体的某些数量特征，得不出什么结论性的认识；一经过比较，如与国外、外单位比，与历史数据比，与计划相比，就可以对规模大小、水平高低、速度快慢作出判断和评价。</p>
 <p>指标分析对比分析方法可分为静态比较和动态比较分析。静态比较是同一时间条件下不同总体指标比较，如不同部门、不同地区、不同国家的比较，也叫横向比较；动态比较是同一总体条件不同时期指标数值的比较，也叫纵向比较。这两种方法既可单独使用，也可结合使用。进行对比分析时，可以单独使用总量指标或相对指标或平均指标，也可将它们结合起来进行对比。比较的结果可用相对数，如百分数、倍数、系数等，也可用相差的绝对数和相关的百分点（每1％为一个百分点）来表示，即将对比的指标相减。</p>
 <h1 id="二、分组分析法"><a href="#二、分组分析法" class="headerlink" title="二、分组分析法"></a>二、分组分析法</h1><p>指标对比分析法是总体上的对比，但组成统计总体的各单位具有多种特征，这就使得在同一总体范围内的各单位之间产生了许多差别，统计分析不仅要对总体数量特征和数量关系进行分析，还要深入总体的内部进行分组分析。分组分析法就是根据统计分析的目的要求，把所研究的总体按照一个或者几个标志划分为若干个部分，加以整理，进行观察、分析，以揭示其内在的联系和规律性。</p>
@@ -887,7 +880,7 @@
   </entry>
   <entry>
     <title>免费商用字体收集</title>
-    <url>/2022/07/01/2023_04_07_%E5%85%8D%E8%B4%B9%E5%95%86%E7%94%A8%E5%AD%97%E4%BD%93%E6%94%B6%E9%9B%86/</url>
+    <url>/2022/07/01/%E5%85%8D%E8%B4%B9%E5%95%86%E7%94%A8%E5%AD%97%E4%BD%93%E6%94%B6%E9%9B%86/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="德拉黑体"><a href="#德拉黑体" class="headerlink" title="德拉黑体"></a><a href="https://github.com/syakuzen/DelaGothic/blob/master/fonts/ttf/DelaGothicOne-Regular.ttf">德拉黑体</a></h2><blockquote>
 <p>3.0&#x2F;5.0</p>
 </blockquote>
@@ -905,7 +898,7 @@
   </entry>
   <entry>
     <title>ChatGPT Prompt</title>
-    <url>/2023/08/12/2023_04_19_ChatGPT_Prompt/</url>
+    <url>/2023/08/12/ChatGPT_Prompt/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="English-Vesion"><a href="#English-Vesion" class="headerlink" title="English Vesion"></a>English Vesion</h2><details>
   <summary>English Version</summary>
   <p> 
@@ -990,7 +983,7 @@
   </entry>
   <entry>
     <title>lora训练</title>
-    <url>/2023/08/21/2023_04_19_lora%E8%AE%AD%E7%BB%83/</url>
+    <url>/2023/08/21/lora%E8%AE%AD%E7%BB%83/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="https://github.com/camenduru/stable-diffusion-webui-colab">https://github.com/camenduru/stable-diffusion-webui-colab</a></p>
 <p><a href="https://github.com/camenduru/stable-diffusion-webui-colab/tree/drive">https://github.com/camenduru/stable-diffusion-webui-colab/tree/drive</a></p>
 <p><a href="https://github.com/bmaltais/kohya_ss">kohya_ss Files:</a>  </p>
@@ -1006,7 +999,7 @@
   </entry>
   <entry>
     <title>机器学习笔记</title>
-    <url>/2023/02/19/2023_05_04_%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <url>/2023/02/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="k-近邻算法-KNN"><a href="#k-近邻算法-KNN" class="headerlink" title="k-近邻算法(KNN)"></a><a href="https://alv1.apachecn.org/#/docs/ml/2">k-近邻算法(KNN)</a></h1><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>KNN是一种基本的 #分类 和 #回归 方法。给一个训练数据集，对新的输入实例，在训练数据集中找到与之最接近（直线距离，欧式距离）的K个实例，这k个实例的多数分类，就是这个输入实例的分类。</p>
 <p>k值的取数决定KNN算法的准确性，太小会使模型变得复杂和过拟合，太大会使得模型变得简单。K值不宜过大过小，需要调试参数获取最好的结果。</p>
 <p>为避免：</p>
@@ -1070,7 +1063,7 @@
   </entry>
   <entry>
     <title>数据填补算法的选择主要依据</title>
-    <url>/2022/04/19/2023_05_05_%E6%95%B0%E6%8D%AE%E5%A1%AB%E8%A1%A5%E7%AE%97%E6%B3%95%E7%9A%84%E9%80%89%E6%8B%A9%E4%B8%BB%E8%A6%81%E4%BE%9D%E6%8D%AE/</url>
+    <url>/2022/04/19/%E6%95%B0%E6%8D%AE%E5%A1%AB%E8%A1%A5%E7%AE%97%E6%B3%95%E7%9A%84%E9%80%89%E6%8B%A9%E4%B8%BB%E8%A6%81%E4%BE%9D%E6%8D%AE/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>数据填补算法的选择主要依据以下几个因素:</p>
 <ol>
 <li>数据类型:数值型数据可以选择均值&#x2F;中位数填补,分类数据可以选择最频繁值填补。时间序列数据可以考虑插值法或回归预测填补。</li>
@@ -1099,7 +1092,7 @@
   </entry>
   <entry>
     <title>5W2H模型在数据分析中的应用</title>
-    <url>/2023/06/03/2023_06_03_5W2H%E6%A8%A1%E5%9E%8B%E5%9C%A8%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/</url>
+    <url>/2023/06/03/5W2H%E6%A8%A1%E5%9E%8B%E5%9C%A8%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="5W2H模型在数据分析中的应用"><a href="#5W2H模型在数据分析中的应用" class="headerlink" title="5W2H模型在数据分析中的应用"></a>5W2H模型在数据分析中的应用</h1><p>5W2H模型可以很好地应用于数据分析，主要做以下几点：</p>
 <ol>
 <li><p>梳理问题：使用5W2H各个维度的问题，对进行数据分析的问题或需求进行清晰地说明。</p>
@@ -1140,10 +1133,10 @@
   </entry>
   <entry>
     <title>7大经典回归模型</title>
-    <url>/2023/08/01/2023_08_01_7%E5%A4%A7%E7%BB%8F%E5%85%B8%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/</url>
+    <url>/2023/08/01/7%E5%A4%A7%E7%BB%8F%E5%85%B8%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="什么是回归分析？"><a href="#什么是回归分析？" class="headerlink" title="什么是回归分析？"></a>什么是回归分析？</h1><p>回归分析是一种预测性的建模技术，它研究的是因变量（目标）和自变量（预测器）之间的关系。这种技术通常用于预测分析，时间序列模型以及发现变量之间的因果关系。例如，司机的鲁莽驾驶与道路交通事故数量之间的关系，最好的研究方法就是回归。</p>
 <p>回归分析是建模和分析数据的重要工具。在这里，我们使用曲线&#x2F;线来拟合这些数据点，在这种方式下，从曲线或线到数据点的距离差异最小。我会在接下来的部分详细解释这一点。</p>
-<p><img src="/2023/08/01/2023_08_01_7%E5%A4%A7%E7%BB%8F%E5%85%B8%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/10001.png"></p>
+<p><img src="/2023/08/01/7%E5%A4%A7%E7%BB%8F%E5%85%B8%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/10001.png"></p>
 <h1 id="我们为什么使用回归分析？"><a href="#我们为什么使用回归分析？" class="headerlink" title="我们为什么使用回归分析？"></a>我们为什么使用回归分析？</h1><p>如上所述，回归分析估计了两个或多个变量之间的关系。下面，让我们举一个简单的例子来理解它：</p>
 <p>比如说，在当前的经济条件下，你要估计一家公司的销售额增长情况。现在，你有公司最新的数据，这些数据显示出销售额增长大约是经济增长的2.5倍。那么使用回归分析，我们就可以根据当前和过去的信息来预测未来公司的销售情况。</p>
 <p>使用回归分析的好处良多。具体如下：</p>
@@ -1153,15 +1146,15 @@
 </ol>
 <p>回归分析也允许我们去比较那些衡量不同尺度的变量之间的相互影响，如价格变动与促销活动数量之间联系。这些有利于帮助市场研究人员，数据分析人员以及数据科学家排除并估计出一组最佳的变量，用来构建预测模型。</p>
 <h1 id="我们有多少种回归技术？"><a href="#我们有多少种回归技术？" class="headerlink" title="我们有多少种回归技术？"></a>我们有多少种回归技术？</h1><p>有各种各样的回归技术用于预测。这些技术主要有三个度量（自变量的个数，因变量的类型以及回归线的形状）。我们将在下面的部分详细讨论它们。</p>
-<p><img src="/2023/08/01/2023_08_01_7%E5%A4%A7%E7%BB%8F%E5%85%B8%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/10002.jpg"></p>
+<p><img src="/2023/08/01/7%E5%A4%A7%E7%BB%8F%E5%85%B8%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/10002.jpg"></p>
 <p>对于那些有创意的人，如果你觉得有必要使用上面这些参数的一个组合，你甚至可以创造出一个没有被使用过的回归模型。但在你开始之前，先了解如下最常用的回归方法：</p>
 <h3 id="1-Linear-Regression线性回归"><a href="#1-Linear-Regression线性回归" class="headerlink" title="1-Linear-Regression线性回归"></a>1-Linear-Regression线性回归</h3><p>它是最为人熟知的建模技术之一。线性回归通常是人们在学习预测模型时首选的技术之一。在这种技术中，因变量是连续的，自变量可以是连续的也可以是离散的，回归线的性质是线性的。</p>
 <p>线性回归使用最佳的拟合直线（也就是回归线）在因变量（Y）和一个或多个自变量（X）之间建立一种关系。</p>
-<p>用一个方程式来表示它，即Y&#x3D;a+b*X+e，其中a表示截距，b表示直线的斜率，e是误差项。这个方程可以根据给定的预测变量（s）来预测目标变量的值。<br><img src="/2023/08/01/2023_08_01_7%E5%A4%A7%E7%BB%8F%E5%85%B8%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/10003.png"></p>
+<p>用一个方程式来表示它，即Y&#x3D;a+b*X+e，其中a表示截距，b表示直线的斜率，e是误差项。这个方程可以根据给定的预测变量（s）来预测目标变量的值。<br><img src="/2023/08/01/7%E5%A4%A7%E7%BB%8F%E5%85%B8%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/10003.png"></p>
 <p>一元线性回归和多元线性回归的区别在于，多元线性回归有（&gt;1）个自变量，而一元线性回归通常只有1个自变量。现在的问题是“我们如何得到一个最佳的拟合线呢？”。</p>
 <p><strong>如何获得最佳拟合线（a和b的值）？</strong></p>
 <p>这个问题可以使用最小二乘法轻松地完成。最小二乘法也是用于拟合回归线最常用的方法。对于观测数据，它通过最小化每个数据点到线的垂直偏差平方和来计算最佳拟合线。因为在相加时，偏差先平方，所以正值和负值没有抵消。</p>
-<p><img src="/2023/08/01/2023_08_01_7%E5%A4%A7%E7%BB%8F%E5%85%B8%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/10004.jpg"></p>
+<p><img src="/2023/08/01/7%E5%A4%A7%E7%BB%8F%E5%85%B8%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/10004.jpg"></p>
 <p>我们可以使用R-square指标来评估模型性能。想了解这些指标的详细信息，可以阅读：模型性能指标Part 1,Part 2.</p>
 <blockquote>
 <p><strong>要点：</strong></p>
@@ -1175,7 +1168,7 @@
 <p>odds&#x3D; p&#x2F; (1-p) &#x3D; probability of event occurrence &#x2F; probability of not event occurrenceln(odds) &#x3D; ln(p&#x2F;(1-p))logit(p) &#x3D; ln(p&#x2F;(1-p)) &#x3D; b0+b1X1+b2X2+b3X3….+bkXk</p>
 <p>上述式子中，p表述具有某个特征的概率。你应该会问这样一个问题：“我们为什么要在公式中使用对数log呢？”。</p>
 <p>因为在这里我们使用的是的二项分布（因变量），我们需要选择一个对于这个分布最佳的连结函数。它就是Logit函数。在上述方程中，通过观测样本的极大似然估计值来选择参数，而不是最小化平方和误差（如在普通回归使用的）。</p>
-<p><img src="/2023/08/01/2023_08_01_7%E5%A4%A7%E7%BB%8F%E5%85%B8%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/10005.jpg"></p>
+<p><img src="/2023/08/01/7%E5%A4%A7%E7%BB%8F%E5%85%B8%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/10005.jpg"></p>
 <blockquote>
 <p><strong>要点：</strong></p>
 <p>1.它广泛的用于分类问题。</p>
@@ -1187,13 +1180,13 @@
 <p>7.如果因变量是多类的话，则称它为多元逻辑回归。</p>
 </blockquote>
 <h3 id="3-Polynomial-Regression多项式回归"><a href="#3-Polynomial-Regression多项式回归" class="headerlink" title="3-Polynomial-Regression多项式回归"></a>3-Polynomial-Regression多项式回归</h3><p>对于一个回归方程，如果自变量的指数大于1，那么它就是多项式回归方程。如下方程所示：y&#x3D;a+b*x^2</p>
-<p>在这种回归技术中，最佳拟合线不是直线。而是一个用于拟合数据点的曲线。<br><img src="/2023/08/01/2023_08_01_7%E5%A4%A7%E7%BB%8F%E5%85%B8%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/10006.png"></p>
+<p>在这种回归技术中，最佳拟合线不是直线。而是一个用于拟合数据点的曲线。<br><img src="/2023/08/01/7%E5%A4%A7%E7%BB%8F%E5%85%B8%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/10006.png"></p>
 <blockquote>
 <p>重点：</p>
 <p>虽然会有一个诱导可以拟合一个高次多项式并得到较低的错误，但这可能会导致过拟合。你需要经常画出关系图来查看拟合情况，并且专注于保证拟合合理，既没有过拟合又没有欠拟合。</p>
 </blockquote>
 <p>下面是一个图例，可以帮助理解：</p>
-<p><img src="/2023/08/01/2023_08_01_7%E5%A4%A7%E7%BB%8F%E5%85%B8%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/10007.png"></p>
+<p><img src="/2023/08/01/7%E5%A4%A7%E7%BB%8F%E5%85%B8%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/10007.png"></p>
 <p>明显地向两端寻找曲线点，看看这些形状和趋势是否有意义。更高次的多项式最后可能产生怪异的推断结果。</p>
 <h3 id="4-Stepwise-Regression逐步回归"><a href="#4-Stepwise-Regression逐步回归" class="headerlink" title="4-Stepwise-Regression逐步回归"></a>4-Stepwise-Regression逐步回归</h3><p>在处理多个自变量时，我们可以使用这种形式的回归。在这种技术中，自变量的选择是在一个自动的过程中完成的，其中包括非人为操作。</p>
 <p>这一壮举是通过观察统计的值，如R-square，t-stats和AIC指标，来识别重要的变量。逐步回归通过同时添加&#x2F;删除基于指定标准的协变量来拟合模型。</p>
@@ -1211,7 +1204,7 @@
 <p>=&gt; y&#x3D;a+y&#x3D; a+ b1x1+ b2x2+….+e, for multiple independent variables.</p>
 <p>在一个线性方程中，预测误差可以分解为2个子分量。一个是偏差，一个是方差。预测错误可能会由这两个分量或者这两个中的任何一个造成。在这里，我们将讨论由方差所造成的有关误差。</p>
 <p>岭回归通过收缩参数λ（lambda）解决多重共线性问题。看下面的公式</p>
-<p><img src="/2023/08/01/2023_08_01_7%E5%A4%A7%E7%BB%8F%E5%85%B8%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/5.jpg" alt="Image"></p>
+<p><img src="/2023/08/01/7%E5%A4%A7%E7%BB%8F%E5%85%B8%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/5.jpg" alt="Image"></p>
 <p>在这个公式中，有两个组成部分。第一个是最小二乘项，另一个是β2（β-平方）的λ倍，其中β是相关系数。为了收缩参数把它添加到最小二乘项中以得到一个非常低的方差。</p>
 <blockquote>
 <p>要点：</p>
@@ -1220,7 +1213,7 @@
 <p>3.这是一个正则化方法，并且使用的是L2正则化。</p>
 </blockquote>
 <h3 id="6-Lasso-Regression套索回归"><a href="#6-Lasso-Regression套索回归" class="headerlink" title="6-Lasso-Regression套索回归"></a>6-Lasso-Regression套索回归</h3><p>它类似于岭回归，Lasso （Least Absolute Shrinkage and Selection Operator）也会惩罚回归系数的绝对值大小。此外，它能够减少变化程度并提高线性回归模型的精度。看看下面的公式：</p>
-<p><img src="/2023/08/01/2023_08_01_7%E5%A4%A7%E7%BB%8F%E5%85%B8%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/6.jpg" alt="Image"></p>
+<p><img src="/2023/08/01/7%E5%A4%A7%E7%BB%8F%E5%85%B8%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/6.jpg" alt="Image"></p>
 <p>Lasso 回归与Ridge回归有一点不同，它使用的惩罚函数是绝对值，而不是平方。这导致惩罚（或等于约束估计的绝对值之和）值使一些参数估计结果等于零。使用惩罚值越大，进一步估计会使得缩小值趋近于零。这将导致我们要从给定的n个变量中选择变量。</p>
 <blockquote>
 <p>要点：</p>
@@ -1229,7 +1222,7 @@
 <p>3.这是一个正则化方法，使用的是L1正则化；</p>
 <p>如果预测的一组变量是高度相关的，Lasso 会选出其中一个变量并且将其它的收缩为零。</p>
 </blockquote>
-<h3 id="7-ElasticNet回归"><a href="#7-ElasticNet回归" class="headerlink" title="7-ElasticNet回归"></a>7-ElasticNet回归</h3><p>ElasticNet是Lasso和Ridge回归技术的混合体。它使用L1来训练并且L2优先作为正则化矩阵。当有多个相关的特征时，ElasticNet是很有用的。Lasso 会随机挑选他们其中的一个，而ElasticNet则会选择两个。<br><img src="/2023/08/01/2023_08_01_7%E5%A4%A7%E7%BB%8F%E5%85%B8%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/7.jpg" alt="Image"></p>
+<h3 id="7-ElasticNet回归"><a href="#7-ElasticNet回归" class="headerlink" title="7-ElasticNet回归"></a>7-ElasticNet回归</h3><p>ElasticNet是Lasso和Ridge回归技术的混合体。它使用L1来训练并且L2优先作为正则化矩阵。当有多个相关的特征时，ElasticNet是很有用的。Lasso 会随机挑选他们其中的一个，而ElasticNet则会选择两个。<br><img src="/2023/08/01/7%E5%A4%A7%E7%BB%8F%E5%85%B8%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/7.jpg" alt="Image"></p>
 <p>Lasso和Ridge之间的实际的优点是，它允许ElasticNet继承循环状态下Ridge的一些稳定性。</p>
 <blockquote>
 <p><strong>要点：</strong></p>
@@ -1260,7 +1253,7 @@
   </entry>
   <entry>
     <title>Apple TV 4K 三代</title>
-    <url>/2023/08/10/2023_08_10_AppleTV4K/</url>
+    <url>/2023/08/10/AppleTV4K/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
 <p>以前发布节奏都是3年左右更新一代，现在直接一年一更了吗难道？<br>上一代还是2021年发布的。<br>来跟大家分享下新款的Apple TV 4K都更新了哪些东西？值得买吗？已经买了2021款的需要换吗？</p>
 </blockquote>
@@ -1322,7 +1315,7 @@
   </entry>
   <entry>
     <title>数据分析师所需的技术与理论</title>
-    <url>/2023/10/23/2023_09_10_%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E6%89%80%E9%9C%80%E7%9A%84%E6%8A%80%E6%9C%AF%E4%B8%8E%E7%90%86%E8%AE%BA/</url>
+    <url>/2023/10/23/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E6%89%80%E9%9C%80%E7%9A%84%E6%8A%80%E6%9C%AF%E4%B8%8E%E7%90%86%E8%AE%BA/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
 <p>对数据分析师来说，要想避免沦为取数、跑数的工具人命运，就明确并巩固自己的优势与价值。因此明确数据分析师的成长路径、能力要求、能力提升方法就显得格外重要。而笔者作为数据分析专家，也就此分享了自己的思考与见解。</p>
 </blockquote>
@@ -1620,69 +1613,69 @@
   </entry>
   <entry>
     <title>这可能是我见过最好的 NumPy 图解教程！</title>
-    <url>/2023/10/23/2023_10_23_%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/</url>
+    <url>/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
 <p>NumPy是Python中用于数据分析、机器学习、科学计算的重要软件包。它极大地简化了向量和矩阵的操作及处理。python的不少数据处理软件包依赖于NumPy作为其基础架构的核心部分（例如scikit-learn、SciPy、pandas和tensorflow）。除了数据切片和数据切块的功能之外，掌握numpy也使得开发者在使用各数据处理库调试和处理复杂用例时更具优势。</p>
 </blockquote>
-<p><img src="/2023/10/23/2023_10_23_%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0001.png"></p>
+<p><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0001.png"></p>
 <p>在本文中，将介绍NumPy的主要用法，以及它如何呈现不同类型的数据（表格，图像，文本等），这些经Numpy处理后的数据将成为机器学习模型的输入。</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br></pre></td></tr></table></figure>
 
-<h1 id="NumPy中的数组操作"><a href="#NumPy中的数组操作" class="headerlink" title="NumPy中的数组操作"></a>NumPy中的数组操作</h1><h3 id="创建数组"><a href="#创建数组" class="headerlink" title="创建数组"></a>创建数组</h3><p>我们可以通过将python列表传入np.array()来创建一个NumPy数组（也就是强大的ndarray）。在下面的例子里，创建出的数组如右边所示，<br><img src="/2023/10/23/2023_10_23_%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0002.png"></p>
+<h1 id="NumPy中的数组操作"><a href="#NumPy中的数组操作" class="headerlink" title="NumPy中的数组操作"></a>NumPy中的数组操作</h1><h3 id="创建数组"><a href="#创建数组" class="headerlink" title="创建数组"></a>创建数组</h3><p>我们可以通过将python列表传入np.array()来创建一个NumPy数组（也就是强大的ndarray）。在下面的例子里，创建出的数组如右边所示，<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0002.png"></p>
 <p>通常情况下，我们希望NumPy为我们初始化数组的值，为此NumPy提供了诸如ones()，zeros()和random.random()之类的方法。我们只需传入元素个数即可：</p>
-<p><img src="/2023/10/23/2023_10_23_%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0003.png"><br>一旦我们创建了数组，我们就可以用其做点有趣的应用了，文摘菌将在下文展开说明。</p>
+<p><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0003.png"><br>一旦我们创建了数组，我们就可以用其做点有趣的应用了，文摘菌将在下文展开说明。</p>
 <h3 id="数组的算术运算"><a href="#数组的算术运算" class="headerlink" title="数组的算术运算"></a>数组的算术运算</h3><p>让我们创建两个NumPy数组，分别称作data和ones：</p>
-<p><img src="/2023/10/23/2023_10_23_%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0004.png"><br>若要计算两个数组的加法，只需简单地敲入data + ones，就可以实现对应位置上的数据相加的操作（即每行数据进行相加），这种操作比循环读取数组的方法代码实现更加简洁。<br><img src="/2023/10/23/2023_10_23_%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0005.png"></p>
-<p>当然，在此基础上举一反三，也可以实现减法、乘法和除法等操作：<br><img src="/2023/10/23/2023_10_23_%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0006.png"><br>许多情况下，我们希望进行数组和单个数值的操作（也称作向量和标量之间的操作）。比如：如果数组表示的是以英里为单位的距离，我们的目标是将其转换为公里数。可以简单的写作<code>data \* 1.6</code>：<br><img src="/2023/10/23/2023_10_23_%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0007.png"></p>
+<p><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0004.png"><br>若要计算两个数组的加法，只需简单地敲入data + ones，就可以实现对应位置上的数据相加的操作（即每行数据进行相加），这种操作比循环读取数组的方法代码实现更加简洁。<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0005.png"></p>
+<p>当然，在此基础上举一反三，也可以实现减法、乘法和除法等操作：<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0006.png"><br>许多情况下，我们希望进行数组和单个数值的操作（也称作向量和标量之间的操作）。比如：如果数组表示的是以英里为单位的距离，我们的目标是将其转换为公里数。可以简单的写作<code>data \* 1.6</code>：<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0007.png"></p>
 <p>NumPy通过数组广播（broadcasting）知道这种操作需要和数组的每个元素相乘。</p>
 <h3 id="数组的切片操作"><a href="#数组的切片操作" class="headerlink" title="数组的切片操作"></a>数组的切片操作</h3><p>我们可以像python列表操作那样对NumPy数组进行索引和切片，如下图所示：  </p>
-<p><img src="/2023/10/23/2023_10_23_%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0008.png"></p>
-<h3 id="聚合函数"><a href="#聚合函数" class="headerlink" title="聚合函数"></a>聚合函数</h3><p>NumPy为我们带来的便利还有聚合函数，聚合函数可以将数据进行压缩，统计数组中的一些特征值：<br><img src="/2023/10/23/2023_10_23_%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0009.png"></p>
+<p><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0008.png"></p>
+<h3 id="聚合函数"><a href="#聚合函数" class="headerlink" title="聚合函数"></a>聚合函数</h3><p>NumPy为我们带来的便利还有聚合函数，聚合函数可以将数据进行压缩，统计数组中的一些特征值：<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0009.png"></p>
 <p>除了<code>min</code>，<code>max</code>和<code>sum</code>等函数，还有<code>mean（均值）</code>，<code>prod（数据乘法）</code>计算所有元素的乘积，std（标准差），等等。上面的所有例子都在一个维度上处理向量。除此之外，NumPy之美的一个关键之处是它能够将之前所看到的所有函数应用到任意维度上。</p>
 <h1 id="NumPy中的矩阵操作"><a href="#NumPy中的矩阵操作" class="headerlink" title="NumPy中的矩阵操作"></a>NumPy中的矩阵操作</h1><h3 id="创建矩阵"><a href="#创建矩阵" class="headerlink" title="创建矩阵"></a>创建矩阵</h3><p>我们可以通过将二维列表传给Numpy来创建矩阵。</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">np.array([[<span class="number">1</span>,<span class="number">2</span>],[<span class="number">3</span>,<span class="number">4</span>]])</span><br></pre></td></tr></table></figure>
 
-<p><img src="/2023/10/23/2023_10_23_%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0010.png"><br>除此外，也可以使用上文提到的<code>ones()</code>、<code>zeros()</code>和<code>random.random()</code>来创建矩阵，只需传入一个元组来描述矩阵的维度：  </p>
-<p><img src="/2023/10/23/2023_10_23_%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0011.png"></p>
+<p><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0010.png"><br>除此外，也可以使用上文提到的<code>ones()</code>、<code>zeros()</code>和<code>random.random()</code>来创建矩阵，只需传入一个元组来描述矩阵的维度：  </p>
+<p><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0011.png"></p>
 <h3 id="矩阵的算术运算"><a href="#矩阵的算术运算" class="headerlink" title="矩阵的算术运算"></a>矩阵的算术运算</h3><p>对于大小相同的两个矩阵，我们可以使用算术运算符（<code>+-\*/</code>）将其相加或者相乘。NumPy对这类运算采用对应位置（position-wise）操作处理：  </p>
-<p><img src="/2023/10/23/2023_10_23_%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0012.png"><br>对于不同大小的矩阵，只有两个矩阵的维度同为1时（例如矩阵只有一列或一行），我们才能进行这些算术运算，在这种情况下，NumPy使用广播规则（broadcast）进行操作处理：<br><img src="/2023/10/23/2023_10_23_%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0013.png"><br>与算术运算有很大区别是使用点积的矩阵乘法。NumPy提供了<code>dot()</code>方法，可用于矩阵之间进行点积运算：<br><img src="/2023/10/23/2023_10_23_%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0014.png"></p>
-<p>上图的底部添加了矩阵尺寸，以强调运算的两个矩阵在列和行必须相等。可以将此操作图解为如下所示：<br><img src="/2023/10/23/2023_10_23_%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0015.png"></p>
+<p><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0012.png"><br>对于不同大小的矩阵，只有两个矩阵的维度同为1时（例如矩阵只有一列或一行），我们才能进行这些算术运算，在这种情况下，NumPy使用广播规则（broadcast）进行操作处理：<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0013.png"><br>与算术运算有很大区别是使用点积的矩阵乘法。NumPy提供了<code>dot()</code>方法，可用于矩阵之间进行点积运算：<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0014.png"></p>
+<p>上图的底部添加了矩阵尺寸，以强调运算的两个矩阵在列和行必须相等。可以将此操作图解为如下所示：<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0015.png"></p>
 <h3 id="矩阵的切片和聚合"><a href="#矩阵的切片和聚合" class="headerlink" title="矩阵的切片和聚合"></a>矩阵的切片和聚合</h3><p>索引和切片功能在操作矩阵时变得更加有用。可以在不同维度上使用索引操作来对数据进行切片。  </p>
-<p><img src="/2023/10/23/2023_10_23_%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0016.png"></p>
+<p><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0016.png"></p>
 <p>我们可以像聚合向量一样聚合矩阵：</p>
-<p><img src="/2023/10/23/2023_10_23_%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0017.png"></p>
+<p><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0017.png"></p>
 <p>不仅可以聚合矩阵中的所有值，还可以使用<code>axis</code>参数指定行和列的聚合：</p>
-<p><img src="/2023/10/23/2023_10_23_%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0018.png"></p>
+<p><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0018.png"></p>
 <h3 id="矩阵的转置和重构"><a href="#矩阵的转置和重构" class="headerlink" title="矩阵的转置和重构"></a>矩阵的转置和重构</h3><p>处理矩阵时经常需要对矩阵进行转置操作，常见的情况如计算两个矩阵的点积。NumPy数组的属性T可用于获取矩阵的转置。</p>
-<p><img src="/2023/10/23/2023_10_23_%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0019.png"></p>
-<p>在较为复杂的用例中，你可能会发现自己需要改变某个矩阵的维度。这在机器学习应用中很常见，例如模型的输入矩阵形状与数据集不同，可以使用NumPy的<code>reshape()</code>方法。只需将矩阵所需的新维度传入即可。也可以传入-1，NumPy可以根据你的矩阵推断出正确的维度：<br><img src="/2023/10/23/2023_10_23_%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0020.png"></p>
+<p><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0019.png"></p>
+<p>在较为复杂的用例中，你可能会发现自己需要改变某个矩阵的维度。这在机器学习应用中很常见，例如模型的输入矩阵形状与数据集不同，可以使用NumPy的<code>reshape()</code>方法。只需将矩阵所需的新维度传入即可。也可以传入-1，NumPy可以根据你的矩阵推断出正确的维度：<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0020.png"></p>
 <p>上文中的所有功能都适用于多维数据，其中心数据结构称为ndarray（N维数组）。</p>
-<p><img src="/2023/10/23/2023_10_23_%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0021.png"></p>
+<p><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0021.png"></p>
 <p>很多时候，改变维度只需在NumPy函数的参数中添加一个逗号，如下图所示：</p>
-<p><img src="/2023/10/23/2023_10_23_%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0022.png"></p>
+<p><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0022.png"></p>
 <h1 id="NumPy中的公式应用示例"><a href="#NumPy中的公式应用示例" class="headerlink" title="NumPy中的公式应用示例"></a>NumPy中的公式应用示例</h1><p>NumPy的关键用例是实现适用于矩阵和向量的数学公式。这也Python中常用NumPy的原因。例如，均方误差是监督机器学习模型处理回归问题的核心：</p>
-<p><img src="/2023/10/23/2023_10_23_%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0023.png"></p>
-<p>在NumPy中可以很容易地实现均方误差：<br><img src="/2023/10/23/2023_10_23_%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0024.png"></p>
-<p>这样做的好处是，numpy无需考虑predictions与labels具体包含的值。文摘菌将通过一个示例来逐步执行上面代码行中的四个操作：<br><img src="/2023/10/23/2023_10_23_%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0025.png"></p>
-<p>预测（predictions）和标签（labels）向量都包含三个值。这意味着n的值为3。在我们执行减法后，我们最终得到如下值：<br><img src="/2023/10/23/2023_10_23_%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0026.png"></p>
-<p>然后我们可以计算向量中各值的平方：<br><img src="/2023/10/23/2023_10_23_%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0027.png"></p>
-<p>现在我们对这些值求和：<br><img src="/2023/10/23/2023_10_23_%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0028.png"></p>
+<p><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0023.png"></p>
+<p>在NumPy中可以很容易地实现均方误差：<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0024.png"></p>
+<p>这样做的好处是，numpy无需考虑predictions与labels具体包含的值。文摘菌将通过一个示例来逐步执行上面代码行中的四个操作：<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0025.png"></p>
+<p>预测（predictions）和标签（labels）向量都包含三个值。这意味着n的值为3。在我们执行减法后，我们最终得到如下值：<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0026.png"></p>
+<p>然后我们可以计算向量中各值的平方：<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0027.png"></p>
+<p>现在我们对这些值求和：<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0028.png"></p>
 <p>最终得到该预测的误差值和模型质量分数。</p>
 <h1 id="用NumPy表示日常数据"><a href="#用NumPy表示日常数据" class="headerlink" title="用NumPy表示日常数据"></a>用NumPy表示日常数据</h1><p>日常接触到的数据类型，如电子表格，图像，音频……等，如何表示呢？Numpy可以解决这个问题。</p>
-<h3 id="表和电子表格"><a href="#表和电子表格" class="headerlink" title="表和电子表格"></a>表和电子表格</h3><p>电子表格或数据表都是二维矩阵。电子表格中的每个工作表都可以是自己的变量。python中类似的结构是pandas数据帧（dataframe），它实际上使用NumPy来构建的。<br><img src="/2023/10/23/2023_10_23_%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0029.png"></p>
+<h3 id="表和电子表格"><a href="#表和电子表格" class="headerlink" title="表和电子表格"></a>表和电子表格</h3><p>电子表格或数据表都是二维矩阵。电子表格中的每个工作表都可以是自己的变量。python中类似的结构是pandas数据帧（dataframe），它实际上使用NumPy来构建的。<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0029.png"></p>
 <h3 id="音频和时间序列"><a href="#音频和时间序列" class="headerlink" title="音频和时间序列"></a>音频和时间序列</h3><p>音频文件是一维样本数组。每个样本都是代表一小段音频信号的数字。CD质量的音频每秒可能有44,100个采样样本，每个样本是一个-65535到65536之间的整数。这意味着如果你有一个10秒的CD质量的WAVE文件，你可以将它加载到长度为10 * 44,100 &#x3D; 441,000个样本的NumPy数组中。想要提取音频的第一秒？只需将文件加载到我们称之为audio的NumPy数组中，然后截取audio[:44100]。</p>
-<p>以下是一段音频文件：<br><img src="/2023/10/23/2023_10_23_%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0030.png"></p>
+<p>以下是一段音频文件：<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0030.png"></p>
 <p>时间序列数据也是如此（例如，股票价格随时间变化的序列）。</p>
 <h3 id="图像"><a href="#图像" class="headerlink" title="图像"></a>图像</h3><p>图像是大小为（高度×宽度）的像素矩阵。如果图像是黑白图像（也称为灰度图像），则每个像素可以由单个数字表示（通常在0（黑色）和255（白色）之间）。如果对图像做处理，裁剪图像的左上角10 x 10大小的一块像素区域，用NumPy中的image[:10,:10]就可以实现。</p>
-<p>这是一个图像文件的片段：<br><img src="/2023/10/23/2023_10_23_%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0031.png"></p>
-<p>如果图像是彩色的，则每个像素由三个数字表示 ：红色，绿色和蓝色。在这种情况下，我们需要第三维（因为每个单元格只能包含一个数字）。因此彩色图像由尺寸为(高x宽x 3）的ndarray表示。<br><img src="/2023/10/23/2023_10_23_%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0032.png"></p>
+<p>这是一个图像文件的片段：<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0031.png"></p>
+<p>如果图像是彩色的，则每个像素由三个数字表示 ：红色，绿色和蓝色。在这种情况下，我们需要第三维（因为每个单元格只能包含一个数字）。因此彩色图像由尺寸为(高x宽x 3）的ndarray表示。<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0032.png"></p>
 <h3 id="语言"><a href="#语言" class="headerlink" title="语言"></a>语言</h3><p>如果我们处理文本，情况就会有所不同。用数字表示文本需要两个步骤，构建词汇表（模型知道的所有唯一单词的清单）和嵌入（embedding）。让我们看看用数字表示这个（翻译的）古语引用的步骤：“Have the bards who preceded me left any theme unsung?”</p>
-<p>模型需要先训练大量文本才能用数字表示这位战场诗人的诗句。我们可以让模型处理一个小数据集，并使用这个数据集来构建一个词汇表（71,290个单词）：<br><img src="/2023/10/23/2023_10_23_%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0033.png"></p>
-<p>然后可以将句子划分成一系列“词”token（基于通用规则的单词或单词部分）：<br><img src="/2023/10/23/2023_10_23_%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0034.png"></p>
-<p>然后我们用词汇表中的id替换每个单词：<br><img src="/2023/10/23/2023_10_23_%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0035.png"></p>
-<p>这些ID仍然不能为模型提供有价值的信息。因此，在将一系列单词送入模型之前，需要使用嵌入（embedding）来替换token&#x2F;单词（在本例子中使用50维度的word2vec嵌入)：<br><img src="/2023/10/23/2023_10_23_%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0036.png"></p>
+<p>模型需要先训练大量文本才能用数字表示这位战场诗人的诗句。我们可以让模型处理一个小数据集，并使用这个数据集来构建一个词汇表（71,290个单词）：<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0033.png"></p>
+<p>然后可以将句子划分成一系列“词”token（基于通用规则的单词或单词部分）：<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0034.png"></p>
+<p>然后我们用词汇表中的id替换每个单词：<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0035.png"></p>
+<p>这些ID仍然不能为模型提供有价值的信息。因此，在将一系列单词送入模型之前，需要使用嵌入（embedding）来替换token&#x2F;单词（在本例子中使用50维度的word2vec嵌入)：<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0036.png"></p>
 <p>你可以看到此NumPy数组的维度为[embedding_dimension x sequence_length]。</p>
-<p>在实践中，这些数值不一定是这样的，但我以这种方式呈现它是为了视觉上的一致。出于性能原因，深度学习模型倾向于保留批数据大小的第一维（因为如果并行训练多个示例，则可以更快地训练模型）。很明显，这里非常适合使用reshape()。例如，像BERT这样的模型会期望其输入矩阵的形状为：[batch_size，sequence_length，embedding_size]。<br><img src="/2023/10/23/2023_10_23_%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0037.png"></p>
+<p>在实践中，这些数值不一定是这样的，但我以这种方式呈现它是为了视觉上的一致。出于性能原因，深度学习模型倾向于保留批数据大小的第一维（因为如果并行训练多个示例，则可以更快地训练模型）。很明显，这里非常适合使用reshape()。例如，像BERT这样的模型会期望其输入矩阵的形状为：[batch_size，sequence_length，embedding_size]。<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0037.png"></p>
 <p>这是一个数字合集，模型可以处理并执行各种有用的操作。我留空了许多行，可以用其他示例填充以供模型训练（或预测）。</p>
 <p>事实证明，在我们的例子中，那位诗人的话语比其他诗人的诗句更加名垂千古。尽管生而为奴，诗人安塔拉（Antarah）的英勇和语言能力使他获得了自由和神话般的地位，他的诗是伊斯兰教以前的阿拉伯半岛《悬诗》的七首诗之一。</p>
 ]]></content>
@@ -1698,7 +1691,7 @@
   </entry>
   <entry>
     <title>DATEDIFF_日期之差</title>
-    <url>/2024/02/28/2024_02_28_DATEDIFF_%E6%97%A5%E6%9C%9F%E4%B9%8B%E5%B7%AE/</url>
+    <url>/2024/02/28/DATEDIFF_%E6%97%A5%E6%9C%9F%E4%B9%8B%E5%B7%AE/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>DATEDIFF是一个SQL函数，用于计算两个日期之间的差距。</p>
 <p>DATEDIFF函数的语法如下：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">DATEDIFF(datepart, startdate, enddate)</span><br></pre></td></tr></table></figure>
@@ -1723,7 +1716,7 @@
   </entry>
   <entry>
     <title>GroupBy</title>
-    <url>/2024/02/28/2024_02_28_GroupBy/</url>
+    <url>/2024/02/28/GroupBy/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>当我们需要对数据进行分组并进行聚合计算时，可以使用GROUP BY子句。GROUP BY子句通常与聚合函数（如SUM、COUNT、AVG等）一起使用。</p>
 <p>通过GROUP BY子句，我们可以将数据按照指定的列进行分组，并对每个组进行聚合计算。这些聚合计算的结果将基于每个组的值。</p>
 <p>下面是一个示例，假设我们有一个名为”orders”的表，其中包含了订单信息：</p>
@@ -1743,7 +1736,7 @@
   </entry>
   <entry>
     <title>SQL学习笔记</title>
-    <url>/2024/02/28/2024_02_28_SQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <url>/2024/02/28/SQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="/_post/2024_02_28_%E6%8E%92%E5%BA%8F_DENSE_RANK.md">排序_DENSE_RANK</a></p>
 <h2 id="IFNULL"><a href="#IFNULL" class="headerlink" title="IFNULL"></a>IFNULL</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Write your MySQL query statement below</span><br><span class="line"></span><br><span class="line">select e.name, b.bonus</span><br><span class="line"></span><br><span class="line">from Employee e left join Bonus b</span><br><span class="line"></span><br><span class="line">on e.empId = b.empId</span><br><span class="line"></span><br><span class="line">where ifnull(bonus,0)&lt;1000</span><br><span class="line">## ifnul 就把值替换成0）</span><br></pre></td></tr></table></figure>
 
@@ -1778,7 +1771,7 @@
   </entry>
   <entry>
     <title>SQL窗口函数_LEAD_LAG详解</title>
-    <url>/2024/02/28/2024_02_28_SQL%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0_LEAD_LAG%E8%AF%A6%E8%A7%A3/</url>
+    <url>/2024/02/28/SQL%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0_LEAD_LAG%E8%AF%A6%E8%A7%A3/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>当涉及到SQL窗口函数时，LEAD()和LAG()是两个非常有用的函数。它们允许我们在查询中访问当前行之前或之后的行的值。</p>
 <p>LEAD()函数返回当前行之后的指定行数的值，而LAG()函数返回当前行之前的指定行数的值。这两个函数在许多情况下都很有用，例如在分析时间序列数据或计算相邻行之间的差异时。</p>
 <p>让我们以一个简单的示例来说明LEAD()和LAG()函数的用法。假设我们有一个名为sales的表，其中包含了销售数据：</p>
@@ -1834,7 +1827,7 @@
   </entry>
   <entry>
     <title>排序_DENSE_RANK</title>
-    <url>/2024/02/28/2024_02_28_%E6%8E%92%E5%BA%8F_DENSE_RANK/</url>
+    <url>/2024/02/28/%E6%8E%92%E5%BA%8F_DENSE_RANK/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="rank"><a href="#rank" class="headerlink" title="rank()"></a>rank()</h2><h2 id="dense-rank"><a href="#dense-rank" class="headerlink" title="dense_rank()"></a>dense_rank()</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">DENSE_RANK() OVER (PARTITION BY column1, column2... ORDER BY column3, column4...)</span><br></pre></td></tr></table></figure>
 
 <ul>
@@ -1967,7 +1960,7 @@
   </entry>
   <entry>
     <title>群晖NAS实现SSH免密码登录</title>
-    <url>/2024/04/17/2024_04_17_%E7%BE%A4%E6%99%96NAS%E5%AE%9E%E7%8E%B0SSH%E5%85%8D%E5%AF%86%E7%A0%81%E7%99%BB%E5%BD%95/</url>
+    <url>/2024/04/17/%E7%BE%A4%E6%99%96NAS%E5%AE%9E%E7%8E%B0SSH%E5%85%8D%E5%AF%86%E7%A0%81%E7%99%BB%E5%BD%95/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
 <p>简介：在群晖 DS920+上传电脑端公钥，并关闭 SSH 密码登录</p>
 </blockquote>
@@ -2013,9 +2006,9 @@
   </entry>
   <entry>
     <title>群晖Git部署Hexo</title>
-    <url>/2024/04/20/2024_04_20_Git_Hexo/</url>
+    <url>/2024/04/20/Git_Hexo/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="一、前期准备"><a href="#一、前期准备" class="headerlink" title="一、前期准备"></a>一、前期准备</h2><h3 id="1-1-注册-账号-Gitee-GitHub"><a href="#1-1-注册-账号-Gitee-GitHub" class="headerlink" title="1.1 注册 账号 Gitee&#x2F;GitHub"></a>1.1 注册 账号 Gitee&#x2F;GitHub</h3><p>注册一个属于自己的 Github 或 Gitee 账号，</p>
-<p>Gitee在国内访问速度更快，但Gitee需要上传身份证照片若干张进行实名认证，懒得掏身份证，pass掉。<br><img src="/2024/04/20/2024_04_20_Git_Hexo/%E5%AE%9E%E5%90%8D%E9%AA%8C%E8%AF%81.png" alt="实名认证"></p>
+<p>Gitee在国内访问速度更快，但Gitee需要上传身份证照片若干张进行实名认证，懒得掏身份证，pass掉。<br><img src="/2024/04/20/Git_Hexo/%E5%AE%9E%E5%90%8D%E9%AA%8C%E8%AF%81.png" alt="实名认证"></p>
 <p>本文采用 Github 演示。 </p>
 <h3 id="1-2-安装-Git"><a href="#1-2-安装-Git" class="headerlink" title="1.2 安装 Git"></a>1.2 安装 Git</h3><p>选择对应的系统平台，下载后，傻瓜式安装即可。 安装完成后，打开运行 –&gt; 输入命令，回车打开命令行窗口 输入以下Git指令</p>
 <figure class="highlight ada"><table><tr><td class="code"><pre><span class="line">git <span class="comment">--version</span></span><br></pre></td></tr></table></figure>
@@ -2063,6 +2056,38 @@
         <tag>笔记</tag>
         <tag>ssh</tag>
         <tag>tutorial</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>我的极简生活经验</title>
+    <url>/2024/04/22/%E6%88%91%E7%9A%84%E6%9E%81%E7%AE%80%E7%94%9F%E6%B4%BB%E7%BB%8F%E9%AA%8C/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="我的极简生活经验：恰到好处的生活艺术"><a href="#我的极简生活经验：恰到好处的生活艺术" class="headerlink" title="我的极简生活经验：恰到好处的生活艺术"></a>我的极简生活经验：恰到好处的生活艺术</h1><p>今天我想和大家分享一下我对极简主义的理解。我非常喜欢这种生活方式，但并不是说每个人都需要极简。有些人喜欢收藏，有些人喜欢购物，买很多东西，只要能让自己舒心，任何生活方式都是好的。但如果你也喜欢简单的生活方式，或者有点儿强迫症，那么这些小建议可能适合你。</p>
+<p>首先，极简主义并不意味着把大部分东西都扔掉，或者在空无一物的环境中生活。极简主义是选择对你重要的东西，而不在于数量多少。同时，也没有必要每个地方都极简。比如说你喜欢读书和收藏，完全可以精挑细选地去置办。极简生活更多的是减少生活中不必要的元素，让你更多地专注在真正重要的事物上。</p>
+<p>经常性的整理是开始的第一步。一般来说，整理包括扔东西、卖二手、收纳起来。不要总觉得留着以后能用上，如果近一年都没用过，基本上以后也用不上。</p>
+<ul>
+<li>扔东西：可以先从冰箱和厨房开始，把过期的、好久没有动过的东西扔掉。接着收拾各种抽屉和柜子，比如已经坏掉的物件、没有用的配件、廉价的充电线、没用的说明书、之前的票据、快递盒子和购物袋子等。一般来说，这些都是随手放进去，觉得以后会用的，但实际上过了很久也没有用到的东西。</li>
+<li>卖二手：接下来你会发现有不少东西其实扔掉有些可惜，但是自己又不怎么用了。对于不太值钱但是还有些用的东西，比如再也不看的书、两年都没有穿的旧衣服，可以去支付宝或其他App看看有没有上门回收捐赠的服务。对于还值点钱的，但是因为消费冲动而买的东西，可以擦干净、拍照发到闲鱼上，卖给下一个冲动消费的人。这样可以帮你回一些本。一般来说，比如几乎半年都不用的耳机、二手电脑、手表、小电器这一类很好出手，留下你一直在用而且很好用的那个就好，重复功能的东西只留一件。</li>
+<li>收纳起来：如果收纳空间有限，可以买几个收纳箱和真空收纳袋。这样你的存放物体的体积缩小一半，放到看不到的地方。比如不是这个季节的衣服、被子，都可以用收纳袋抽干收起来。对于不太方便用袋子装的，可以用盒子装起来放到柜子里，让它整齐和知晓位置，让每一个物品都有它特定的空间位置，用完返回原处，下次找起来会很方便。</li>
+</ul>
+<p>上面整理的这一步，会花费你一些周末时间。但是当整理完成，打扫干净区域后，一般都会让你心情舒畅，感觉很爽。</p>
+<p>接着第二步，慢慢培养自己的消费观。这里一般有几个建议：只买好的、不被消费主义、有目的的购买、不要囤东西。</p>
+<ul>
+<li>只买好的：很多时候东西多的一个很大原因，就是买了很多自己觉得用得上的东西，或者是买的时候有些纠结，但是最后还是买了的那些东西，基本上放柜子里也不想用，还后悔。对于必须品而言，一般建议购买力所能及范围内更好的那一个，比如说手机、电脑、衣服、鞋子、耳机这一类，品质好，价格稍贵，但是会让你很长时间不会纠结要不要换一个更好的，同时也让你生活品质其实会更好。这里还可以新入了一件，可以尽快把之前那件按照第一步方法给整理掉。</li>
+<li>不被消费主义：越来越觉得，现在生活中大部分必须品都已经很满足了。很多时候消费都是属于仪式感下的消费，比如说看到小红书推荐、抖音里面的好东西、得物上的潮流东西，会很容易被当时那个环境下误导下单。因为做电商的开发应该都知道，那一个个小功能其实都是一个大的产品业务团队同学天天想方设法迭代用来提高转化率用的，想方设法让你购买。</li>
+<li>有目的的购买：很容易出现在逛超市、逛山姆的时候，进去前就想着随便逛逛，结果你会发现出来后买了几百块东西，仔细一想，不少是属于可以买可不买的。其实可以在出发前，先想想这次要买的东西，列一个很简单的清单，就不会剁手买一些自认为需要的东西。而且这种有目的的挑选方式会让你更舒服。这里同样适合去逛街的时候，先想好要买的东西和品牌。</li>
+<li>不要囤东西：囤东西本意是为了省钱和省心，当时很多时候买一箱箱的纸、洗衣液、沐浴露用一两年反而会让你烦心，甚至还会出现为了尽快用完，double使用的方式，其实反而浪费了，还占用了你家里很多东西来放这些很多。很多时候，这些东西没有那么紧急，需要下单到到家其实很快的。这里还有一个东西也是容易囤的，那就是实体书了。这里可以先看电子书，再买纸质书，搬家的时候这东西很重的。</li>
+</ul>
+<p>减少网络中的被动消息：上面从出和入两步控制住了你生活中的物件，其实还有一块是虚拟生活中的东西，其实也可以极简起来。这里说的是手机、电脑、知识这几块接收，信息的过载很多时候也让人过得不顺畅，尽量减少被动信息的接收，需要的信息主动寻找。</p>
+<ul>
+<li>App处理：我一般做法是3个月不用的App删除掉，用的时候再装，用完又卸载或者直接用小程序，这样手机App基本上控制在2屏，完全可以满足生活所需。第二个是，控制所有App的消息，我一般只开启银行交易、支付宝交易、微信、工作软件的消息通知，其他的App的消息我都在设置里面去掉了，屏幕上没有小红点，同时很多App里面也可以设置去掉一些营销通知。第三个是，不装新闻软件、不装抖音快手，差不多一年多没有装了，感觉不太需要这种看着有用的新闻消息。这里对于电脑上的软件也是一样。</li>
+<li>资料整理：删除没有用的短消息，其实大部分都没有用，我平时一般是除了亲人信息，其他的定期全删除。然后第二个就是删除没有用的图片和视频，这里可以删除很多东西。第三个是删除没有用的微信聊天消息，之前不知道怎么加上的人也可以删除掉，让你常用的工具都是清爽的。这里对于电脑上的东西也是一样。</li>
+<li>主动接受消息：刚刚这些东西用于处理被动的消息接受，尽可能减少算法灌东西给你。更多的可以订阅RSS接收消息，关注喜欢的博主接收消息，不喜欢的直接屏蔽或者mute就好了。同时，免打扰模式在你需要专注的时候可以开启起来，也即减少你不想看到的消息有很多你自己可以做的事情。</li>
+</ul>
+<p>差不多碎碎念完了，归根结底最重要的就是勤收拾、买好不买多、主动接收这几块。这种极简生活的方式很多时候可以影响一个人的三观，包括他的生活、工作方式、他的喜好性格。最后，同样也希望你快乐，过得幸福。</p>
+]]></content>
+      <tags>
+        <tag>随笔</tag>
+        <tag>分享</tag>
       </tags>
   </entry>
 </search>

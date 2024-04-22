@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+
+
+<html lang="zh-CN">
+  
+
+    <head>
+      <meta charset="utf-8" />
+       
+      <meta name="keywords" content="数码，生活，代码，技术，博客，分享" />
+       
+      <meta name="description" content="数码" />
+      
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1"
+      />
+      <title>数据分析师所需的技术与理论 |  杰里米的小站</title>
+  <meta name="generator" content="hexo-theme-ayer">
+      
+      <link rel="shortcut icon" href="/favicon.ico" />
+       
+<link rel="stylesheet" href="/dist/main.css">
+
+      
+<link rel="stylesheet" href="/css/fonts/remixicon.css">
+
+      
+<link rel="stylesheet" href="/css/custom.css">
+ 
+      <script src="https://cdn.staticfile.org/pace/1.2.4/pace.min.js"></script>
+       
+ 
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-bulma@5.0.1/bulma.min.css"
+      />
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
+
+      <!-- mermaid -->
+      
+      <style>
+        .swal2-styled.swal2-confirm {
+          font-size: 1.6rem;
+        }
+      </style>
+    <link rel="alternate" href="/atom.xml" title="杰里米的小站" type="application/atom+xml">
+</head>
+  </html>
+</html>
+
+
+<body>
+  <div id="app">
+    
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-数据分析师所需的技术与理论"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  数据分析师所需的技术与理论
+</h1>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2023/10/23/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E6%89%80%E9%9C%80%E7%9A%84%E6%8A%80%E6%9C%AF%E4%B8%8E%E7%90%86%E8%AE%BA/" class="article-date">
+  <time datetime="2023-10-23T05:11:30.000Z" itemprop="datePublished">2023-10-23</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">数据分析</a> / <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/%E6%96%B9%E6%B3%95%E8%AE%BA/">方法论</a>
+  </div>
+  
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">8.3k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">28 分钟</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <blockquote>
+<p>对数据分析师来说，要想避免沦为取数、跑数的工具人命运，就明确并巩固自己的优势与价值。因此明确数据分析师的成长路径、能力要求、能力提升方法就显得格外重要。而笔者作为数据分析专家，也就此分享了自己的思考与见解。</p>
+</blockquote>
+<h1 id="一、数据分析师的种类、职责与升级路线"><a href="#一、数据分析师的种类、职责与升级路线" class="headerlink" title="一、数据分析师的种类、职责与升级路线"></a>一、数据分析师的种类、职责与升级路线</h1><p>在国内数据分析师一般分为5大种类：<strong>数据产品、数据分析师、数据建模师、数据工程师与数据科</strong>学家，这5类人才的必备能力和成长路线我们来逐一介绍。</p>
+<h3 id="1-1数据产品"><a href="#1-1数据产品" class="headerlink" title="1.1数据产品"></a>1.1数据产品</h3><p><img src="https://image.woshipm.com/wp-files/2020/02/VelM8G0ntrFFUADracIt.png"></p>
+<p>数据产品概览图</p>
+<p>在产品的基础上，增加数据思维。</p>
+<p>数据产品不仅懂得埋点原理，能够通过抓包等工具抓取数据并进行分析。同时还能够参与数据化产品的制作，如BI报表、CRM系统、AB test试验后台等。</p>
+<p>老板会说：“去给我做个神策、GrowingIO那样婶儿的平台出来”，然后你就根据老板的需求，转化为详细的技术需求，提给技术去开发，这就是数据产品的日常。</p>
+<p><strong>1.1.1 成长路线：</strong> CGO、增长专家、产品总监、数据产品总监、数据运营总监</p>
+<p><strong>1.1.2 必备能力</strong></p>
+<ul>
+<li>① 数据技术</li>
+<li>② 可视化</li>
+<li>⑤ 业务思维</li>
+<li>⑦ 专业能力</li>
+<li>⑧ 沟通能力</li>
+</ul>
+<p>（①②⑤⑦⑧是啥？下文详解）</p>
+<p><strong>1.1.3 成长建议</strong></p>
+<ol>
+<li>数据产品一般会对编程、数据处理、统计等专业知识方面较弱，建议加强数据分析能力，做个有技术、分析能力的产品。</li>
+<li>既然有产品属性，那就涉及到与技术无止境的扯皮之中，如何提升自己业务与沟通能力让自己更专业，同时使工作流程更加顺畅，这便是数据产品的王者能力。</li>
+</ol>
+<h3 id="1-2-数据分析师"><a href="#1-2-数据分析师" class="headerlink" title="1.2 数据分析师"></a>1.2 数据分析师</h3><p><img src="https://image.woshipm.com/wp-files/2020/02/XmNDqkOc1XOsSXIZ7Lw8.png"></p>
+<p>数据分析师概览图</p>
+<p>这就是我们常说的商业化数据分析师，主要负责01搭建可视化监控报表，利用数据挖掘和洞察业务，为需求部门提供数据支撑、分析报告、商业化模型等服务，这里面的key word是监控、挖掘、有价值和服务，在公司里担任领导的眼睛与大脑的角色。</p>
+<p><strong>1.2.1 成长路线：</strong> CGO、增长专家、数据咨询专家、数据分析总监、数据运营总监</p>
+<p><strong>1.2.2 必备能力</strong></p>
+<ul>
+<li>① 数据技术</li>
+<li>② 可视化</li>
+<li>③ 统计学基础</li>
+<li>⑤ 业务思维能力</li>
+<li>⑦ 专业能力</li>
+<li><strong>⑧ 沟通能力</strong></li>
+</ul>
+<p>（①③③⑤⑦⑧是啥？下文详解）</p>
+<p><strong>1.2.3 成长建议</strong></p>
+<p><strong>（1）一定要重视可视化</strong></p>
+<p>为什么呢？</p>
+<p>因为数据分析师花90%的时间用在处理数据上，只贡献了10%的价值，而老板看到你的报告，却用了不到10%的时间便做出决策，贡献了90%的价值，所以说BI可视化尤为重要。下图给大家展示可视化的正反两个例子A和B：</p>
+<p><img src="https://image.woshipm.com/wp-files/2020/02/dOg1xfwIxgwmLXCmO3zg.png"></p>
+<p>可视化对比图</p>
+<p>同样是数据分析师做出来的AB两张图，看了图A的老板点头肯定，看了图B的老板肯定想弄死你，正愁没人裁，有没有？</p>
+<p><strong>（2）分析师要有自己的业务思维能力</strong></p>
+<p>什么意思？比如老板经常会问你今天的DAU怎么暴涨了，留存怎么掉了等等。</p>
+<p>许多大神都有自己的独立业务思维，对答如流，迅速解决问题，并有自己的一套思维，什么留存“六脉神剑”啊，增长“九宫格”啊啥的，这都是业务思维沉淀形成的。</p>
+<p><strong>（3）千万不要把数据分析师做成取数的、跑数的，那样你的可替代性太强</strong></p>
+<p>如果明天要裁一个数据分析师，那么这类“工具人”就是首选。数据分析师的价值是挖掘数据中的价值并让领导知道你这么做的价值，不要你觉得，要你的领导和你都觉得，这才是最重要的。</p>
+<p><strong>（4）沟通能力</strong></p>
+<p>这个是我面试经常会问的问题，你觉得数据分析师最重要的能力是什么？</p>
+<p>对，就是沟通能力，如果你连需求方想要的是什么都唠不明白，那你如何服务于他，目标错误高效的执行就是灾难，咔咔做了2周，发现不是人家想要的，这种事在工作上并不少见，所以说沟通真的很重要。</p>
+<p><strong>（5）要养成大局观</strong></p>
+<p>作为数据分析师不能总局限于自己业务的那些数，也要抬头看看市场上大盘变化，以及竞品变化。</p>
+<p>分析格局的大小源自看待问题的高度，这一点非常重要，初期可以慢慢养成，这也是高阶分析师必备的能力。</p>
+<h3 id="1-3-数据建模师"><a href="#1-3-数据建模师" class="headerlink" title="1.3 数据建模师"></a>1.3 数据建模师</h3><p><img src="https://image.woshipm.com/wp-files/2020/02/mncK7vwEjImFci4UYNqM.png"></p>
+<p>数据建模师概览图</p>
+<p>数据建模师也叫算法工程师，是数理统计知识、编程与业务思维集一身的模型大师，通过建立数学模型、利用算法实现增长，可以说是一家产品的灵魂工作者，你就说信息流产品的推荐算法核不核心、金融行业的反欺诈和信用评级厉不厉害，P2P的智能配标优不优秀。</p>
+<p><strong>1.3.1 成长路线：</strong> CTO、技术总监、资深算法工程师</p>
+<p><strong>1.3.2 必备能力</strong></p>
+<ul>
+<li>① 数据技术</li>
+<li>③ 统计学基础</li>
+<li>④ 建模能力</li>
+<li>⑤ 业务思维能力</li>
+<li>⑥ 大局能力</li>
+<li>⑦ 专业能力</li>
+</ul>
+<p>（①③④⑤⑥⑦是啥？下文详解）</p>
+<p><strong>1.3.3 成长建议</strong></p>
+<p><strong>（1）技术不用说，那必须杠杠的，但容易钻入数据的黑洞，沉迷于算法但又无法与实际业务相结合，最终项目流产</strong></p>
+<p>谷歌眼镜厉不厉害，炫不炫酷，最终惨遭压箱底，暂停个人消费者服务的命运，为什么？</p>
+<p>出发点很好，但花费过高、周边技术不完善等因素，使其不具备商业价值，最终倒在了5G之前。</p>
+<p>我还认识一个彩票公司的小哥，自称研制出了一套“迷人”的算法，能够让公司收益最大化，可最终…呵呵。</p>
+<p>我想说的是技术一定要结合实际业务，通过技术变现这才是王道，并不是所有公司都有钱有精力去做“华而不实”的事情，尤其是在目前的大环境下。</p>
+<p><strong>（2）大家都认为技术不需要沟通，我们的通用语言是R、python、java、自然语言，很冰冷很cool</strong></p>
+<p>但熟不知你若会技术又有业务头脑，那总监的位置是不是在向你招手；你若懂业务、懂管理又会为人处世，拿下CTO这个位置是不是志在必得。</p>
+<p>当然也有喜欢钻研算法，不掺乎管理层的资深技术，所谓事了拂衣去，深藏功与名，说的就是这些人。</p>
+<p>不管怎么说，之所以能够有今天的成就，除了过硬的技术外，很好的沟通能力也是必不可少的。</p>
+<h3 id="1-4-数据工程师"><a href="#1-4-数据工程师" class="headerlink" title="1.4 数据工程师"></a>1.4 数据工程师</h3><p><img src="https://image.woshipm.com/wp-files/2020/02/Y7QB9rKsrRpviujuW6Qb.png"></p>
+<p>数据工程师概览图</p>
+<p>数据工程师的职能更偏向技术工程，主要的工作职责是搭建数据仓库、创建ETL、进行数据治理、数据安全等方面的工作、通过提升运行速度，优化数据结构，更好地服务于数据使用方，比如数据分析师、数据产品及数据建模师。</p>
+<p><strong>1.4.1 成长路线：</strong> CTO、技术总监、资深研发工程师</p>
+<p><strong>1.4.2 必备能力</strong></p>
+<ul>
+<li>① 数据技术</li>
+<li>④ 建模能力</li>
+<li>⑤ 业务思维能力</li>
+<li>⑦ 专业能力</li>
+</ul>
+<p>（①④⑤⑦是啥？下文详解）</p>
+<p><strong>1.4.3 成长建议</strong></p>
+<p><strong>（1）我们不生产数据，只是数据的搬运工，搬好了是我们应该的，但搬不好任务流程挂掉，BI报表自动化任务失败就要扣薪水</strong></p>
+<p>这是许多数据工程师接触都遇到的问题，这个时候就考验专业能力，如何优化流程，监控及预警就尤为重要了。</p>
+<p>举个我自己的亲身经历吧，之前做了流失用户自动召回系统，每天定时按照算法算出目标用户并发送短信、push和红包。</p>
+<p>逻辑简单的说是这样的，A表是全量用户表，B表是活跃用户，那么A-B&#x3D;C，C表就是目标用户，即不活跃的流失用户。</p>
+<p>突然有一天因为一个BUG，导致B表挂掉了，B表变为空表，那么A-B&#x3D;A-0&#x3D;A&#x3D;C，就相当于把A表全量用户都发送优惠券及信息。</p>
+<p>这事故仅次于PDD那次红包事故了，当时我们没有推卸责任（毕竟绩效已经没了），迅速制定了数据异常预警，人工短信确认等机制，避免了类似事故发生。</p>
+<p>这次事故给我的教训就是，人无远虑必有近忧，错误是不可避免的，但如何提升专业水平，降低错误发生概率，提前预知错误，以避免资源的浪费。</p>
+<p><strong>（2）沟通、沟通还是沟通…</strong></p>
+<h3 id="1-5-数据科学家"><a href="#1-5-数据科学家" class="headerlink" title="1.5 数据科学家"></a>1.5 数据科学家</h3><p><img src="https://image.woshipm.com/wp-files/2020/02/vIthzhIoPvbeD0xdSVl7.png"></p>
+<p>数据科学家概览图</p>
+<p>综合性人才，数据分析能力、统计学基础、业务能力、算法与沟通能力集聚一身的人才。市面上有很多不懂技术只会嘴炮的领导，也不缺不懂结合业务的技术大拿，但做到样样精通，实属不易。向下能够了解前沿技术并指导下属进行研究开发，向上能够很好的与领导沟通，让领导理解这么做的价值。</p>
+<ul>
+<li>跟数据分析师比分析能力，数据分析师卒；</li>
+<li>跟算法工程师过算法能力，算法工程师卒；</li>
+<li>跟数据工程师拼技术能力，数据工程师卒；</li>
+<li>跟数据产品唠业务能力，数据产品卒。</li>
+</ul>
+<p>就是这么强大，不过这类人才乃是可遇不可求，正所谓流氓会武术，谁也挡不住；科学家会武术，流氓也挡不住，实在是社会…社会…</p>
+<p><strong>1.5.1 成长路线：</strong> 没啥可建议的，挺好的哥…</p>
+<p><strong>1.5.2 必备能力：</strong> 全部①-⑧</p>
+<p>（①②③④⑤⑥⑦⑧是啥？下文详解）</p>
+<p><strong>1.5.3 成长建议：</strong> 没啥建议，都挺好的，就是建议给别人留条活路，卒。</p>
+<h1 id="二、数据分析师的8种能力"><a href="#二、数据分析师的8种能力" class="headerlink" title="二、数据分析师的8种能力"></a>二、数据分析师的8种能力</h1><hr>
+<h3 id="2-1-数据技术"><a href="#2-1-数据技术" class="headerlink" title="2.1 数据技术"></a>2.1 数据技术</h3><p>既然是数据分析，就要了解数据在各个环节是如何运转的，同时还能运用工具读取和分析数据，在这里我将其分成基础、数据提取、分析工具。</p>
+<p><strong>基础：office软件</strong></p>
+<p>包括且不限于excel、VBA、ppt、word，尤其是excel很深很深，大多数人只用了excel中1%的功能，到现在我只敢说会用excel，谈不上精通，也许我只用了2%吧，但应付日常数据足矣。</p>
+<p><strong>数据提取：SQL、HiveSQL</strong></p>
+<p>都是类SQL软件，会一个就能精通所有，大家不要觉得编程很难就望而却步，其实SQL是最简单的语言，不夸张的说，用心学SQL不到一个月就可以干活了，什么你还学不会？你只是缺个人逼你而已。</p>
+<p><strong>分析工具：SPSS、SPSS modeler、R、Python、SAS</strong></p>
+<p>不是每个人都有机会接触SAS，如果没机会也不要紧，这里推荐大家一定要学SPSS，可以理解为升级版的excel，也很简单；然后Python和R任选其一即可。</p>
+<h3 id="2-2-可视化"><a href="#2-2-可视化" class="headerlink" title="2.2 可视化"></a>2.2 可视化</h3><p>Excel、PPT、Tableau、Echarts、powerBI</p>
+<p>数据可视化的工具很多，除了Python、R、JAVA这类的之外，上面列的几种算是比较常见的BI可视化工具。先说Excel和PPT，没错它们也算可视化软件，如下图：</p>
+<p><img src="https://image.woshipm.com/wp-files/2020/02/ViEc2GTTrYmf1NNICDf0.png"></p>
+<p>Excel可视化</p>
+<p>这是用我用excel做出来的dashboard（看板），也还可以吧，应付一般老板那是够够的。但要想玩的洋一点，就得用例如tableau、powerBI等软件，毕竟老美都用tableau么，样式如下图所示：</p>
+<p><img src="https://image.woshipm.com/wp-files/2020/02/m3tgXqGfXJYIjFhILKSg.png"></p>
+<p>新增用户热力图</p>
+<p>不管是用什么工具，能够将抽象的数据用图形展示出来，便于老板观察和决策，那就是ok的，至于如何做的好看，那就是进阶的课题了。</p>
+<h3 id="2-3-统计学基础"><a href="#2-3-统计学基础" class="headerlink" title="2.3 统计学基础"></a>2.3 统计学基础</h3><p><strong>统计学基础在AB test、数学模型、抽样检验里常常会用到</strong>，有的时候你看到的数据并不是真实的，怎么去解释，我给大家列几个例子：</p>
+<p><strong>示例一 AB test的错觉：</strong></p>
+<p><img src="https://image.woshipm.com/wp-files/2020/02/vhbCVMzF5sAVdsr1FE79.png"></p>
+<p>AB test结果图</p>
+<p>看到这张图，很多人都会认为B比A的转化效果好对吧，但是这里有多大的可能是因为一些随机的因素导致这样的区别呢，这就要用到统计学的假设检验了。</p>
+<p>我们来假设B不会比A效果好，然后试图通过样本来推翻这个假设，如果样本足以推翻假设，那么我们就可以认为实验完成了，所见即所得；否则我们会认为B比A好只是偶然现象，这组AB test没有任何意义，需重新测试。</p>
+<p><strong>示例二 R平方值的重要性：</strong></p>
+<p><img src="https://image.woshipm.com/wp-files/2020/02/23MuaXsTiv1DZT7O2FmQ.png"></p>
+<p>DAU预测图</p>
+<p>上图是一个简单的回归模型用来预测DAU，<strong>红色是指数回归，绿色是多项式回归，哪种模型更精准呢，这时候就要看R方。</strong></p>
+<p>R平方值是趋势线拟合程度的指标，取值范围在0到1之间，它的数值大小可以反映趋势线的估计值与对应的实际数据之间的拟合程度，拟合程度越接近1，趋势线的可靠性就越高。</p>
+<p>同样是预测，3个月后指数预测比多项式预测高出30%，选哪个模型才能使误差率最小化呢，这个时候R方的重要性就体现出来了。</p>
+<p>以上列举了2个统计学的小例子，在实际工作当中还会遇到很多统计学的知识，<strong>比如显著性、置信度、离散度等等，统计学会让我们的分析结果更加专业，更加严谨。</strong></p>
+<h3 id="2-4-建模能力"><a href="#2-4-建模能力" class="headerlink" title="2.4 建模能力"></a>2.4 建模能力</h3><p>根据不同的业务需求，会使用一些模型，下面简单的介绍集中常用模型供大家参考。</p>
+<p><strong>分类：</strong> 基于历史用户行为构建模型，套用到新用户身上，预测用户可能发生某种行为的概率，常用的分类模型有C5.0、决策树、随机森林、逻辑回归等，如下图运用逻辑回归，预测用户是否下单：</p>
+<p><img src="https://image.woshipm.com/wp-files/2020/02/hf8mNrRxwmah8yxHECbP.png"></p>
+<p>模型概念图</p>
+<p><strong>聚类：</strong> 按照个体的特征将他们分类，让同一个类别内的个体之间具有较高的相似度，不同类别之间具有较大的差异性，常用于给用户打标签，如下图K-means聚类所示：</p>
+<p><img src="https://image.woshipm.com/wp-files/2020/02/ZCGej1qGg3bmDqtzpdNt.png"></p>
+<p>聚类概念图</p>
+<p><strong>回归：</strong> 在③提到的指数回归和多项式回归就是典型的例子，常用于预测销量、人口等数据。</p>
+<p><strong>评估：</strong> 评估模型市面上分为2大类，回归和标准化模型，多用于对品牌投放、效果投放、会员积分的评估，如下图所示：</p>
+<p><img src="https://image.woshipm.com/wp-files/2020/02/hFD0wnBoExXLzOuuMukN.png"></p>
+<p>渠道评估模型（AHP标准化模型）</p>
+<p>除了上述的4大类模型外，还有很多种类的模型，根据实际业务去选择对应的模型就ok了，在这里不过多赘述。</p>
+<h3 id="2-5-业务思维能力"><a href="#2-5-业务思维能力" class="headerlink" title="2.5 业务思维能力"></a>2.5 业务思维能力</h3><p>数据是冰冷的，若想开启真相的大门，业务思维便是我们的钥匙。</p>
+<p>举个简单的例子，老板发现2019年6月份的汽车成交量突然猛增，想让你分析一下原因。</p>
+<p>这时候你会发现产品、渠道、技术等等都没问题，那会是什么原因呢？</p>
+<p>如果你没有业务思维就会埋在一堆数据里，如果有业务思维就会去想，国家规定2019年7月1日开始执行国六排放标准，国五汽车将不能再办理牌照，这时候经销商、4s店应该怎么办？那当然是降价清库存啦，你降价了用户当然是买买买啦。所以说业务思维非常重要，不要死看数，看死数。</p>
+<h3 id="2-6-大局能力"><a href="#2-6-大局能力" class="headerlink" title="2.6 大局能力"></a>2.6 大局能力</h3><p>知己知彼，百战不殆。作为分析师亦是如此，知己好做，知彼怎么做呢？</p>
+<p>那就是竞品分析，从竞品数据及竞品策略层面分析对手。</p>
+<p>职场上老板也经常会问咱们的数据怎么样？</p>
+<p>然后你会说大幅增长，形势一片大好。</p>
+<p>老板又问了，竞品数据怎么样？</p>
+<p>这时候你就傻眼了，不是回答不上来，就是数据没有竞品好看。</p>
+<p>优秀的数据分析师则会这样去说：</p>
+<blockquote>
+<p>“我们同比增长XX，环比XX，竞品的数据是XX，我们哪些方面优秀，哪些不足，接下来应该如何如何。”</p>
+</blockquote>
+<p>这样一套操作下来，领导会觉得你的工作做到位了，不是一问三不知，也不是自己“闭门造车”。</p>
+<h3 id="2-7-专业能力"><a href="#2-7-专业能力" class="headerlink" title="2.7 专业能力"></a>2.7 专业能力</h3><p>数据产品如何构建埋点，数据分析师如何输出有价值的商业洞悉报告，数据工程师如何优化数据结构，数据建模型如何针对不同业务建立最优模型，数据科学家如何把大数据中的规律传达给BOSS从而影响产品，流程和决策。</p>
+<h3 id="2-8-沟通能力"><a href="#2-8-沟通能力" class="headerlink" title="2.8 沟通能力"></a>2.8 沟通能力</h3><p>我在面试的时候问的最多的问题是，你觉得数据分析师最重要的技能是什么？</p>
+<p>对！是沟通，什么数据敏感度、增长思维、方法论都是瞎扯，你连话都听不清楚，说不明白，你能知道老板想要的是什么，你又怎么能把分析出来的价值让老板知道，所以说排名第一位的能力是沟通！沟通！沟通！</p>
+<h1 id="数据分析初学者的常见问题"><a href="#数据分析初学者的常见问题" class="headerlink" title="数据分析初学者的常见问题"></a>数据分析初学者的常见问题</h1><p>日积月累，也让我形成了一套自己的认知体系，对<strong>数据分析</strong>有了一定程度的认识。在我的经历中，经常会有一些伙伴问以下两种问题：</p>
+<h3 id="1、小白类"><a href="#1、小白类" class="headerlink" title="1、小白类"></a><strong>1、小白类</strong></h3><ul>
+<li>我要想入行数据分析，应该从哪里开始学？</li>
+<li>想成为数据分析师，我要学习那些技能、掌握那些工具？</li>
+<li>我没做过数据分析，数学特别不好，能学好吗？</li>
+<li>我学的是文科专业，能从事数据分析师吗？</li>
+</ul>
+<h3 id="2、迷茫类"><a href="#2、迷茫类" class="headerlink" title="2、迷茫类"></a>2、迷茫类</h3><ul>
+<li>做了好几年数据分析，感觉看不到以后的晋升线路？</li>
+<li>我对数据分析有一定了解，如何快速用到我现在的职业上</li>
+<li>从事运营、产品的工作，看过和做过一些数据分析，但不专业，能不能成为专业分析师</li>
+<li>以后数据分析师会不会发展不好，未来潜力如何？</li>
+</ul>
+<p>但无论是小白类还是迷茫类，我们都要清楚的认识到<strong>数据分析师到底是干什么的</strong>，在职场中他们到底有什么不同，只有了解了这些，以上的疑惑才能迎刃而解，我们常用的分析思维就是拆分，就好比乐高一样，有很多小积木组合，只要我们理解了这些小积木的形状，我们也就能搭建起自己的梦想。</p>
+<h1 id="数据分析师类型划分"><a href="#数据分析师类型划分" class="headerlink" title="数据分析师类型划分"></a>数据分析师类型划分</h1><p>常见的几个数据分析师划分主要包含以下这6大类，当然每一类其实也有自己的层级，我只是做一个简单的区分，让大家有一个基本的概况：</p>
+<p><img src="https://www.fanruan.com/bw/wp-content/uploads/2020/09/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E8%81%8C%E4%B8%9A%E8%A7%84%E5%88%921.jpg"></p>
+<h3 id="1、A类：商业分析师"><a href="#1、A类：商业分析师" class="headerlink" title="1、A类：商业分析师"></a><strong>1、A类：商业分析师</strong></h3><p><strong>1）特点：</strong> 上手快、深入难</p>
+<p> <strong>2）主要的工作：</strong> 帮助业务、市场以及管理层做一些数据的洞察，还原数据的本质，讲述数据的故事，要很清楚的了解市场要什么？用户爱什么？</p>
+<p> <strong>3）需要掌握的：</strong></p>
+<ul>
+<li>硬性技能：SQL、EXCEL、PPT</li>
+<li>软性技能：表达能力、视觉思维、逻辑性强、思维清晰，特别是沟通能力！</li>
+<li>掌握的方法论：ABtest、AAARRR、SWOT、RFM、28原则、5W2H等</li>
+<li>掌握的统计学：常规统计指标（均值、中位数、分位数、T检验等)、回归、聚类、因子、决策树、逻辑回归等，这些足够了</li>
+<li>加分项：图表可视化、结构化思维、金字塔原理、千万级数据处理经验（这类一般1年遇不到几次）</li>
+</ul>
+<p> <strong>4）适合人群：</strong> 文科类、运营\产品转岗类、不喜欢编程、不善于研究算法的同学</p>
+<p><strong>5）以后发展：</strong> 业务负责人、独立咨询师、管理层、战略分析师、团队领头羊</p>
+<p><strong>6）核心：</strong> 不一定技术强、算法掌握牛，但一定要能深入行业、深入场景</p>
+<p> <strong>注意：</strong> 掌握一些宏观数据的获取方式，没事的时候多收集一些，自己根据所在行业而定，从事互联网或者移动互联网的话，最好掌握一种<a target="_blank" rel="noopener" href="https://www.finebi.com/solutions/dp"><strong>自助式BI工具</strong></a>，比如Google Analytics、FineBI等。</p>
+<h3 id="2、B类：炮灰分析师"><a href="#2、B类：炮灰分析师" class="headerlink" title="2、B类：炮灰分析师"></a><strong>2、B类：炮灰分析师</strong></h3><p><strong>1）特点：</strong> 啥都要学，最累、干的你怀疑数据分析的价值</p>
+<p><strong>2）主要的工作：</strong> 协助业务或者上级完成一些常规的需求，这类一般是别人要什么，我们做什么，但是在不同的行业，不同的部门做的事情差异还是很大</p>
+<p><strong>3）需要掌握的：</strong></p>
+<ul>
+<li>硬性技能：SQL、EXCEL、PPT、python\spss\R任选其一，根据场景而定</li>
+<li>软性技能：沟通能力、抗打击能力、加班能力、数据管理能力（数据库和数据字典）</li>
+<li>掌握的方法论：ABtest、AAARRR、SWOT、RFM、5W2等，不知道也能干</li>
+<li>掌握的统计学：常规统计指标（均值、中位数、分位数等)、回归、聚类、因子、决策树、逻辑回归等，这些足够了，但基本高级的模型用不上，定位决定</li>
+<li>加分项：听话能力、擅长各类工具的应用，能快速响应需求方的需求</li>
+<li>突破：要自己根据环境主动参与一些讨论，承担一些从无到有的分析，从被动变为主动</li>
+</ul>
+<p><strong>4）以后发展：</strong> 纯正数据分析师、数据产品经理、数仓人员</p>
+<p><strong>5）适合人群：</strong> 都可</p>
+<h3 id="3、C类：数据分析师"><a href="#3、C类：数据分析师" class="headerlink" title="3、C类：数据分析师"></a>3、C类：数据分析师</h3><p><strong>1）特点：</strong> 独当一面、战斗力极强、对企业决策者有一定的影响</p>
+<p><strong>2）主要的工作：</strong> 除了被动的常规分析外，还要能主动发现业务存在的问题，会用数据找事，梳理业务发展与指标体系之间的关系，从日常监督分析开始，更多的是专题性的分析，无中生有</p>
+<p><strong>3）需要掌握的：</strong></p>
+<ul>
+<li>硬性技能：SQL、EXCEL、PPT、python\spss\R任选其一，tableau\FineBI\powerbi，也要懂一些市面上流行的数据产品</li>
+<li>软性技能：沟通能力、表达能力、逻辑思维强</li>
+<li>掌握的方法论：ABtest、AAARRR、SWOT、RFM、28原则、5W2H，用户及产品生命周期等</li>
+<li>掌握的统计学：常规统计指标（均值、中位数、分位数等)、回归、聚类、因子、决策树、逻辑回归、机器学习等，这些足够用了</li>
+<li>加分项：图表可视化、PPT展示、系统性思维、在行业有很多认识和沉淀</li>
+<li>要点：算法、技术、工具、业务混为一体，样样都要懂</li>
+<li>总结：这类目前市场上很紧缺，被称为稀缺动物</li>
+</ul>
+<h3 id="4、D类：BI工程师-分析师中的程序员"><a href="#4、D类：BI工程师-分析师中的程序员" class="headerlink" title="4、D类：BI工程师-分析师中的程序员"></a>4、D类：BI工程师-分析师中的程序员</h3><p><strong>1）主要的工作：</strong> 和数据的ETL打交道多，主要做数据规范、数据仓库、业务需求报表开发、多维度呈现等</p>
+<p><strong>2）需要掌握的：</strong></p>
+<ul>
+<li>硬性技能：数据库技术、数据仓库、Informatica, Datastage，Kettle，还有一些厂家的展示产品Business Objects, Cognos，常用梳理工具</li>
+<li>ERwin、echarts等</li>
+<li>软性技能：理解能力、表达能力、思维缜密</li>
+<li>掌握的方法论：无，基本人家让干啥咱干啥</li>
+<li>掌握的统计学：常规统计指标（均值、中位数、分位数等)、回归、聚类、因子、决策树、逻辑回归等，</li>
+<li>加分项：技术过硬，有过大型BI建设经验，既能干DBA又能干BI、视觉思维</li>
+<li>突破：这些人比一般的数据分析师更懂底层，缺少的只是与业务的融合，看自己的定位了</li>
+<li>总结：绝对的苦逼，容易吐血那种，常常怀疑人生</li>
+</ul>
+<p><strong>3）发展线路：</strong> CTO、项目经理、产品经理、平台负责人等</p>
+<h3 id="5、E类：算法工程师-就是你们班技术最强的"><a href="#5、E类：算法工程师-就是你们班技术最强的" class="headerlink" title="5、E类：算法工程师-就是你们班技术最强的"></a>5、E类：算法工程师-就是你们班技术最强的</h3><p><strong>1）主要的工作：</strong> 做算法、搞研发、创新算法</p>
+<p><strong>2）需要掌握的：</strong></p>
+<ul>
+<li>硬性技能：数据库技术、hadoop、python、R、spark等等</li>
+<li>软性技能：理解能力、表达能力、思维能力</li>
+<li>掌握的方法论：懂一些常见的即可</li>
+<li>掌握的统计学：各种算法都要精通，而且在不同的场景下，要自己开发新算法</li>
+<li>加分项：算法很熟悉、技术没得说、学历高</li>
+<li>总结：工资高、压力大，经常断片</li>
+</ul>
+<p><strong>3）适合人群：</strong> 名校对口专业毕业，没办法人太多，某宝从国内top已经要求全球TOP了</p>
+<h1 id="数据分析行业必备能力"><a href="#数据分析行业必备能力" class="headerlink" title="数据分析行业必备能力"></a>数据分析行业必备能力</h1><p>了解了这些数据分析师的百态之后，该如何入门的问题相信也会得到解答，我们一起来探讨一下<strong>数据分析师所需要掌握的那些能力</strong>，我总结出了以下7点和大家分享。</p>
+<p><img src="https://www.finebi.com/wp-content/uploads/2020/11/8f29d7bf2723e340afeaff9bff6420e4.png"></p>
+<h3 id="1、基本工具应用的能力"><a href="#1、基本工具应用的能力" class="headerlink" title="1、基本工具应用的能力"></a>1、基本工具应用的能力</h3><p>Office的三件套是必备的，特别是（excel、PPT），但所有的excel、ppt功能都要学习吗？显然不是，很多人在这个上面浪费的时间太多太多了。</p>
+<ul>
+<li>对于<strong>excel</strong>来讲，基本的函数（加减乘除、条件筛选、匹配函数、透视表、图表）就足够了，VBA对基础业务人员来说可以放弃。</li>
+<li>对<strong>PPT</strong>来讲，不要把自己打造成为一个专业的PPTer，PPT对于分析师来讲，唯一的核心就是展示，因此基本的操作就足够了，可能当入门的时候，你连打开PPT 的机会都没有，就是提数</li>
+</ul>
+<h3 id="2、专业工具使用"><a href="#2、专业工具使用" class="headerlink" title="2、专业工具使用"></a>2、专业工具使用</h3><p>这一块能力主要分为2个方面，<strong>数据分析与处理和数据展示</strong>。</p>
+<p>比如不善于编程的同学可以选择spss、clementine，也可以尝试玩玩kettle，不讨厌编程的话建议直接去学习python、R。</p>
+<p>相对来讲，专业对口的学起来用起来顺手一些，学哪个工具都可以，一般的招聘都是掌握一种就可以，所以不要逼着自己去学不顺手的工具，浪费时间，<strong>投入产出比太低</strong>。</p>
+<p>另外就是可视化的，其实excel就是一个最基础的可视化工具，简单易用，场景多，如果想要可视化分析效率更高，建议掌握tableau、<a target="_blank" rel="noopener" href="https://www.finebi.com/product"><strong>FineBI</strong></a>之类的一种BI工具，现在很多企业都在用商用BI软件了，如果可以提前知道要去的企业应用的哪种，可以重点学习一下。</p>
+<h3 id="3、发现问题的能力"><a href="#3、发现问题的能力" class="headerlink" title="3、发现问题的能力"></a>3、发现问题的能力</h3><p>这是一种很重要的能力，可以塑造自己从被动转为主动，这需要我们有足够的<strong>知识储备和业务的沉淀</strong>，你才有发现问题的资本，而不是让人家觉得你在找茬。</p>
+<h3 id="4、解决问题的能力"><a href="#4、解决问题的能力" class="headerlink" title="4、解决问题的能力"></a>4、解决问题的能力</h3><p>数据分析不但要展示过去、现状、未来，更重要的是遇见问题的时候能告诉大家为什么会发生、为什么是这样，而不是凭我们经验去想当然地下结论。</p>
+<h3 id="5、行业洞察能力"><a href="#5、行业洞察能力" class="headerlink" title="5、行业洞察能力"></a>5、行业洞察能力</h3><p>行业的洞察力不是靠阅读文章的数量，看书多少本来决定的，虽然之前存在一定的关系，但不是纯正相关或者因果关系，而是要依靠咨询公司的那一套方法论去不断的模仿、思考、复盘的。</p>
+<h3 id="6、创新的对应方案"><a href="#6、创新的对应方案" class="headerlink" title="6、创新的对应方案"></a>6、创新的对应方案</h3><p>知道了事情的来龙去脉，能不能站在用户体验的角度设计出一套，记住自己分析数据、呈现数据的时候不仅仅是数据，而是一群人的行为趋势。</p>
+<p>比如你要开一个陕西面馆，你<strong>能否根据用户的数据打造出一套引导改变他们习惯的面馆</strong>，而不仅仅是影响。</p>
+<h3 id="7、数据的解读能力"><a href="#7、数据的解读能力" class="headerlink" title="7、数据的解读能力"></a>7、数据的解读能力</h3><p>经常看一些小伙伴写的分析报告，出现最多的就是同比、环比，而同比、环比之后在没有任何的描述，<strong>这时候你描述的只是一种数据的状态，并没有把数据背后的故事讲清楚</strong>，比如什么原因引起的？你是从哪些角度分析发现的？这样的报告很难带读者到你的思维世界</p>
+<p>许多人在数据分析入门时往往<strong>忽略了<a target="_blank" rel="noopener" href="https://www.finebi.com/product">数据分析</a>的本质</strong>，把太多的时间和精力放在了基本工具、专业工具方面。即使你的工具使用、编程能力不强，但只要你可迁移的能力很强，企业都会要。当然不是说大家不要投入时间去学习工具，而是建议不要投入太多的时间，比如学习excel，有的人要连续学习好几个月，其实一周足够了！</p>
+<p>的趋势。</p>
+<p>备受市场认可的软件其实有很多，选择时必须要结合实际的情况。一般的情况下，都建议选择市面上较主流的产品，比较容易达到好的效果，目前企业数据分析BI软件市场占有率前列的，就是帆软BI软件——<strong>FineBI</strong>。</p>
+<h1 id="数据分析师所需的技术与理论"><a href="#数据分析师所需的技术与理论" class="headerlink" title="数据分析师所需的技术与理论"></a>数据分析师所需的技术与理论</h1><h3 id="1-统计学和概率论"><a href="#1-统计学和概率论" class="headerlink" title="1-统计学和概率论"></a>1-统计学和概率论</h3><p>统计学和概率论可帮助您正确理解数字、回答一些相关假设并做出更好的预测。例如：</p>
+<p>销售旺季的平均销量？</p>
+<p>每天售出单量增长幅度是多少？</p>
+<p>还有多少潜在客户准备购买的？</p>
+<p>多少个咨询客户才能转化成一个下单客户？</p>
+<p>购买我们产品的客户占整个市场的百分比是多少？</p>
+<p>此外，还可以使用回归和时间序列等统计方法，对未来的预期销售额做出相关预测。</p>
+<h3 id="2-数据库知识"><a href="#2-数据库知识" class="headerlink" title="2-数据库知识"></a>2-数据库知识</h3><p>在大数据时代，企业的数据都是存储在数据库中的，因此至少要熟练掌握一个或以上的数据库管理系统。市场上有许多数据库管理系统，如 Oracle、MongoDB、SQLite等。但是最常用的还是MySQL，它是评价最高的开源 DBMS，以其成熟度和可靠性而闻名。但我们如何从数据库中提取所需的数据呢？这正是SQL可以发挥作用的地方，SQL是一种专门设计用于处理大型数据库的结构化语言，检索数据效率非常高。</p>
+<h3 id="3-统计工具"><a href="#3-统计工具" class="headerlink" title="3-统计工具"></a>3-统计工具</h3><p>获得数据后，您需要知道至少一种统计工具，并利用这些统计工具对数据进行分析，常见的统计软件包括SPSS、SAS、Sage、Mathematica等。目前，任何人都可以使用Microsoft Excel进行最简单的统计分析，MS Excel 是一种电子表格，可帮助人们分析和绘制数据，它还可以执行大量复杂的数学和统计功能。</p>
+<h3 id="4-编程语言"><a href="#4-编程语言" class="headerlink" title="4-编程语言"></a>4-编程语言</h3><p>数据分析师最常用的编程语言是 Python 和 R，原因是今天生成的数据量很大，需要掌握这些编程工具才能更好地开展工作。编程语言提供了两个主要好处。首先，它可以使数据转换变得非常容易。其次，这些语言拥有丰富的库，可以帮助人们轻松地制作预测模型，例如python 中的sklearn 库。</p>
+<h3 id="5-可视化"><a href="#5-可视化" class="headerlink" title="5-可视化"></a>5-可视化</h3><p>在21世纪之后，每个行业的数据都可以被可视化，它是决策者和数据分析师了解事情结果的桥梁。目前，市场上最突出的可视化工具包括 – PowerBI、Tableau 和智分析等，以下图的智分析为例，目前的图表可视化正从传统的静态报表逐渐向BI动态报表过渡，可视化能力得到进一步的加强。</p>
+<h1 id="数据分析师所需的软技能"><a href="#数据分析师所需的软技能" class="headerlink" title="数据分析师所需的软技能"></a>数据分析师所需的软技能</h1><h3 id="1-沟通"><a href="#1-沟通" class="headerlink" title="1-沟通"></a>1-沟通</h3><h3 id="2-批判性思维"><a href="#2-批判性思维" class="headerlink" title="2-批判性思维"></a>2-批判性思维</h3><h3 id="3-好奇心"><a href="#3-好奇心" class="headerlink" title="3-好奇心"></a>3-好奇心</h3><h3 id="4-解决问题"><a href="#4-解决问题" class="headerlink" title="4-解决问题"></a>4-解决问题</h3><h3 id="5-终身学习"><a href="#5-终身学习" class="headerlink" title="5-终身学习"></a>5-终身学习</h3> 
+      <!-- reward -->
+      
+      <div id="reword-out">
+        <div id="reward-btn">
+          打赏
+        </div>
+      </div>
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>版权声明： </strong>
+          
+          本博客所有文章除特别声明外，著作权归作者所有。转载请注明出处！
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://studyz.github.io/2023/10/23/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E6%89%80%E9%9C%80%E7%9A%84%E6%8A%80%E6%9C%AF%E4%B8%8E%E7%90%86%E8%AE%BA/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88/" rel="tag">数据分析师</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%96%B9%E6%B3%95%E8%AE%BA/" rel="tag">方法论</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+      <a href="/2024/02/28/SQL%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0_LEAD_LAG%E8%AF%A6%E8%A7%A3/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            SQL窗口函数_LEAD_LAG详解
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">这可能是我见过最好的 NumPy 图解教程！</div>
+      </a>
+    
+  </nav>
+
+  
+   
+  
+   
+    <script src="https://cdn.staticfile.org/twikoo/1.4.18/twikoo.all.min.js"></script>
+    <div id="twikoo" class="twikoo"></div>
+    <script>
+        twikoo.init({
+            envId: ""
+        })
+    </script>
+ 
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2015-2024
+        <i class="ri-heart-fill heart_icon"></i> JeremyY
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>访问人数:<span id="busuanzi_value_site_uv"></span></span>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>浏览次数:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
+        
+      </li>
+    </ul>
+  </div>
+</footer>    
+    </main>
+    <div class="float_btns">
+      <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+    </div>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="杰里米的小站"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags">标签</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags/%E6%95%B0%E7%A0%81/">数码</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/photos">摄影</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/friends">友链</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/aboutme/">关于我</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="搜索">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-3.6.0.min.js"></script>
+ 
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+ 
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
+
+<script src="https://cdn.staticfile.org/jquery-modal/0.9.2/jquery.modal.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.staticfile.org/jquery-modal/0.9.2/jquery.modal.min.css"
+/>
+<script src="https://cdn.staticfile.org/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+ <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.staticfile.org/photoswipe/4.1.3/default-skin/default-skin.min.css">
+<script src="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe.min.js"></script>
+<script src="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script> 
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+ 
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+ 
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+ 
+<link rel="stylesheet" href="/css/clipboard.css">
+ <script src="https://cdn.staticfile.org/clipboard.js/2.0.10/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+ 
+<!-- CanvasBackground -->
+
+<script>
+  if (window.mermaid) {
+    mermaid.initialize({ theme: "forest" });
+  }
+</script>
+
+
+    
+    <div id="music">
+    
+    
+    
+    <iframe frameborder="no" border="1" marginwidth="0" marginheight="0" width="200" height="52"
+        src="//music.163.com/outchain/player?type=2&id=22707008&auto=1&height=32"></iframe>
+</div>
+
+<style>
+    #music {
+        position: fixed;
+        right: 15px;
+        bottom: 0;
+        z-index: 998;
+    }
+</style>
+    
+    
+
+  </div>
+</body>
+
+</html>
