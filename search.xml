@@ -711,19 +711,6 @@
       </tags>
   </entry>
   <entry>
-    <title>AI创建视频脚本提示词</title>
-    <url>/2022/06/19/How%20to%20use%20ChatGPT%20to%20create%20Awesome%20Video%20Scripts/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="English-Version"><a href="#English-Version" class="headerlink" title="English Version"></a>English Version</h2><p>Step 1: <code>Find Videos that are already successful.</code><br>Step 2: <code>Copy the transcript from the video</code><br>Step 3: Can you make 10 YouTube video titles based on this video script? make these titles more thought-provoking and more clickable and add curiosity.reply in chinese<br>Step 4: Can you write me a short video script for this video titles? reply in chinese<br>Step 5: Can you write me a description for this video title? reply in chinese<br>Step 6: Can you write me a youtube video shooting script based on this video description? reply in chinese</p>
-<span id="more"></span>
-<h2 id="中文翻译"><a href="#中文翻译" class="headerlink" title="中文翻译"></a>中文翻译</h2><p>Step 1: <code>寻找已有成功的视频。</code><br>Step 2: <code>复制视频的脚本。</code><br>Step 3: 能否为这个视频脚本生成10个YouTube视频标题？这些标题应该更加发人深思，并且更加吸引人，同时添加好奇心。回复中文<br>Step 4: 能否为这些视频标题编写一个短的视频脚本？回复中文<br>Step 5: 能否为这些视频标题编写一个描述？回复中文<br>Step 6: 能否为这个视频描述编写一个YouTube视频射击脚本？回复中文</p>
-]]></content>
-      <tags>
-        <tag>GPT</tag>
-        <tag>AI</tag>
-        <tag>视频创作</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>澳洲家中日常必备清单</title>
     <url>/2022/05/19/%E6%BE%B3%E6%B4%B2%E5%AE%B6%E4%B8%AD%E6%97%A5%E5%B8%B8%E5%BF%85%E5%A4%87%E6%B8%85%E5%8D%95/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>1⃣️ CEPACAINE漱口水！ 治疗牙龈肿痛，口腔溃疡。澳洲医生推荐买的，超级有效！猫猫家必备的，再也没有牙口烦恼。 购买地址：Chemist有售 💰价格：$15.49 问题在口腔，吃啥啥不香，买它！喵～</p>
@@ -747,6 +734,19 @@
       <tags>
         <tag>推荐</tag>
         <tag>日常</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>AI创建视频脚本提示词</title>
+    <url>/2022/06/19/How%20to%20use%20ChatGPT%20to%20create%20Awesome%20Video%20Scripts/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="English-Version"><a href="#English-Version" class="headerlink" title="English Version"></a>English Version</h2><p>Step 1: <code>Find Videos that are already successful.</code><br>Step 2: <code>Copy the transcript from the video</code><br>Step 3: Can you make 10 YouTube video titles based on this video script? make these titles more thought-provoking and more clickable and add curiosity.reply in chinese<br>Step 4: Can you write me a short video script for this video titles? reply in chinese<br>Step 5: Can you write me a description for this video title? reply in chinese<br>Step 6: Can you write me a youtube video shooting script based on this video description? reply in chinese</p>
+<span id="more"></span>
+<h2 id="中文翻译"><a href="#中文翻译" class="headerlink" title="中文翻译"></a>中文翻译</h2><p>Step 1: <code>寻找已有成功的视频。</code><br>Step 2: <code>复制视频的脚本。</code><br>Step 3: 能否为这个视频脚本生成10个YouTube视频标题？这些标题应该更加发人深思，并且更加吸引人，同时添加好奇心。回复中文<br>Step 4: 能否为这些视频标题编写一个短的视频脚本？回复中文<br>Step 5: 能否为这些视频标题编写一个描述？回复中文<br>Step 6: 能否为这个视频描述编写一个YouTube视频射击脚本？回复中文</p>
+]]></content>
+      <tags>
+        <tag>GPT</tag>
+        <tag>AI</tag>
+        <tag>视频创作</tag>
       </tags>
   </entry>
   <entry>
@@ -2088,62 +2088,33 @@
       </tags>
   </entry>
   <entry>
-    <title>TailScale实现远端访问整段局域网</title>
+    <title>TailScale实现远端访问群晖服务器</title>
     <url>/2024/04/22/TailScale%E5%AE%9E%E7%8E%B0%E8%BF%9C%E7%AB%AF%E8%AE%BF%E9%97%AE%E6%95%B4%E6%AE%B5%E5%B1%80%E5%9F%9F%E7%BD%91/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
-<p>之前的贴文分享了<a href="https://kingtam.win/archives/zerotier-route.html">ZeroTier 实现远端访问局域网</a> ，最近发现一款软件<code>TailScale</code>(数码小树人的貼文-让你可以随时随地用NAS和家里的电脑)感觉设定上更简单一点，仅仅透过帐号登入就可以接入<code>TailScale</code>网络内。</p>
-<p><code>TailScale</code>是以<a href="https://www.wireguard.com/">Wireguard</a>的协议加密，所以安全性更高，而且是P2P连线，流量不经伺服器，延迟更低、私密性更高。</p>
+<p><a href="https://tailscale.com/">Tailscale</a>是以<a href="https://www.wireguard.com/">Wireguard</a>的协议加密，所以安全性更高，而且是P2P连线，流量不经伺服器，延迟更低、私密性更高。</p>
 </blockquote>
 <ol>
 <li>安装及加入到<code>TailScale</code>网络</li>
 <li>透过设定其中1部<code>TailScale</code>的装置为网关「Subnet Router」，可以访问整个内网网段</li>
 </ol>
-<span id="more"></span>
-<p>如果是<strong>Windows</strong>用户可以到<a href="https://tailscale.com/download/windows">官网</a>下载安装<a href="https://pkgs.tailscale.com/stable/tailscale-ipn-setup-1.14.4.exe">Tailscale</a>，或者透过<a href="https://kingtam.win/archives/choco.html">Chocolatey软件包</a>安装。</p>
-<p><code>choco install tailscale -y</code></p>
-<p>双击桌面右下角的图示</p>
-<p>使用<a href="https://pinpai.smzdm.com/2047/">谷歌</a>或者<a href="https://pinpai.smzdm.com/1461/">微软</a>账号进行登录</p>
-<p>成功授权后可以查看分配到的IP地址</p>
-<p><strong>Linux</strong>用户可以到<a href="https://tailscale.com/download/linux">Download · Tailscale</a>找到相对应的<a href="https://www.smzdm.com/fenlei/cpu/">CPU</a>平台及架构安装.</p>
-<p>我以<strong>Ubuntu 20.04</strong>为范例</p>
-<ul>
-<li>添加 <code>Tailscale</code> 的金钥和软件仓库地址</li>
-</ul>
-<p><code>curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/focal.gpg | sudo apt-key a[dd](https://pinpai.smzdm.com/102135/)</code></p>
-<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">-curl -fsSL https:<span class="regexp">//</span>pkgs.tailscale.com<span class="regexp">/stable/u</span>buntu<span class="regexp">/focal.list | sudo tee /</span>etc<span class="regexp">/apt/</span>sources.list.d/tailscale.list</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>安装<code>Tailscale</code></li>
-</ul>
-<p><code>sudo apt updatesudo apt install tailscale</code></p>
-<ul>
-<li>启用<code>Tailscale</code> 及透过网址验证登入到<code>Tailscale</code> 网络</li>
-</ul>
-<p>sudo tailscale up</p>
-<p>此页面显示成功授权</p>
-<p>返回到Linux 终端查看分配到的IP地址</p>
-<p>tailscale ip</p>
-<p><code>Tailscale</code> 网络内的装置可以互通</p>
-<p><strong>2. 透过设定其中1部「TailScale」的装置为网关「Subnet Router」，可以访问整个内网网段</strong></p>
 <blockquote>
+<p>以群晖NAS为例</p>
+</blockquote>
+<h3 id="1-TailScale安装"><a href="#1-TailScale安装" class="headerlink" title="1. TailScale安装"></a>1. TailScale安装</h3><ol>
+<li>群晖套件中心添加spk套件源</li>
+<li>社群套件搜索TailScale安装后登陆，成功授权后可以查看分配到的IP地址</li>
+</ol>
+<span id="more"></span>
+<h3 id="2-IP-转发设置"><a href="#2-IP-转发设置" class="headerlink" title="2.  IP 转发设置"></a>2.  <strong>IP</strong> 转发设置</h3><blockquote>
 <p>因为不是每一部设备都可以安装到Tailscale ， 所以这样设定「Subnet Route」的好处是家里内网只要1部Linux装置接入到Tailscale 网络，其他所有的外网的Tailscale装置都可以透过这部Linux装置作为网关访问家里内网所有的设备，如: 印表机，路由器，伺服器等等。</p>
 </blockquote>
 <ul>
-<li>启用 <strong>Linux</strong> 上的 <strong>IP</strong> 转发(IP Forwarding)</li>
+<li>启用 <strong>群晖</strong> 上的 <strong>IP</strong> 转发(IP Forwarding)</li>
 </ul>
-<p>因为「Subnet Route」的设定需要用到 IP 转发(IP Forwarding)特性</p>
-<p>使用以下指命启用</p>
-<p><code>echo &#39;net.ipv4.ip_forward = 1&#39; | sudo tee -a /etc/sysctl.confecho &#39;net.ipv6.conf.all.forwarding = 1&#39; | sudo tee -a /etc/sysctl.confsudo sysctl -p /etc/sysctl.conf</code></p>
-<ul>
-<li>以Linux作为「Subnet Route」(子网路由网关)连接到<code>Tailscale</code></li>
-</ul>
-<blockquote>
-<p>Tailscale 不需要防火墙配置，会自动管理规则，以允许转发。设定过程也没涉及到iptable，一条指令可以完成。</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># sudo tailscale up --advertise-routes=20.13.3.0/24</span></span><br><span class="line">tailscale up --advertise-routes=192.168.31.0/24 --netfilter-mode=off</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tailscale up --advertise-routes=192.168.1.0/24 --netfilter-mode=off</span><br></pre></td></tr></table></figure>
 
 <blockquote>
-<p>20.13.3.0&#x2F;24替换为自己的网段，可以是IPV4或者IPV6。</p>
+<p>192.168.1.0&#x2F;24替换为自己的网段，可以是IPV4或者IPV6。</p>
 </blockquote>
 <ul>
 <li>登入到网页控制台 &gt; <code>Machines</code></li>
@@ -2153,19 +2124,16 @@
 <ul>
 <li>外网的<code>Tailscale</code>装置线路测试</li>
 </ul>
-<p>可以看到是经节点「Subnet Router」IP <code>100.101.41.50</code> 接入到内网 <code>192.168.31.0/24</code>，延迟也很理想。</p>
-<p>以下是使用内网IP连入家里的各服务及装置</p>
-<p>测速</p>
+<p>可以看到是经节点「Subnet Router」IP <code>100.101.41.50</code> 接入到内网 <code>192.168.1.0/24</code>，延迟也很理想。</p>
 <blockquote>
-<p>TailSale和ZeroTier的使用场景上非常相近，没有那个占优，根据自身网络环境的连线质量较佳去选取。</p>
+<p>透过设定其中1部「TailScale」的装置为网关「Subnet Router」，可以访问整个内网网段**</p>
 </blockquote>
-<blockquote>
-<p>透过<a href="https://kingtam.win/archives/zerotier-route.html">ZeroTier 实现远端访问局域网</a>的设定不是对所有自定网段有效，如今次的<code>192.168.31.0/24</code>的网段失效，<code>Zerotier</code>误判为外网网段而不能访问。而使用<code>TailSale</code>的设定可以实现远端访问网段为<code>192.168.31.0/24</code>的局域网。</p>
-</blockquote>
+<p>Links:</p>
 <ul>
-<li><a href="https://tailscale.com/download/linux/ubuntu-2004">Download Install the app and sign in to get started Tailscale</a></li>
+<li><a href="https://tailscale.com/download/">Download and InstallTailscale</a></li>
 <li><a href="https://tailscale.com/kb/1104/enable-ip-forwarding/">Enable IP forwarding on Linux · Tailscale</a></li>
 <li><a href="https://tailscale.com/kb/1019/subnets/">Subnet routers and traffic relay nodes · Tailscale</a></li>
+<li><a href="https://post.smzdm.com/p/ad2kw7xx/">TailScale 实现远端访问整段局域网(ZeroTier另一选择)</a></li>
 </ul>
 ]]></content>
   </entry>
@@ -2213,6 +2181,8 @@
 <p>但名侦探柯南有一个头痛的问题，互联网上能搜到的国语配音版本，都是国内版本的，从国外引进时，把一些较长的单剧集拆分了，国外一集的内容，引进国内后被拆分成多集，导致剧集数和<code>themoviedb</code>数据库对不上。强迫症逼死人，为了老婆更方便的反反复复的观看，特意整理了国内外剧集数的对比表，并根据在某网盘的脚本上修改，可以在网页版某网盘实现批量修改集数。</p>
 <p>矫正剧集数后，infuse可以正确识别全部剧集的介绍、封面、演员表、每集的标题等等。</p>
 <p>todo：名侦探柯南1200集内容，都是第一季，在Apple TV infuse中从第一集开始找特定集数也是非常困难的，目前只能手动拆分播放列表。</p>
+<p>links:</p>
+<p>1. </p>
 <span id="more"></span>
 
 <table>
