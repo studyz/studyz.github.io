@@ -154,102 +154,6 @@
     
     
     <article
-  id="post-SQL窗口函数_LEAD_LAG详解"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2024/02/28/SQL%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0_LEAD_LAG%E8%AF%A6%E8%A7%A3/"
-    >SQL窗口函数_LEAD_LAG详解</a> 
-</h2>
- 
-
-      
-    </header>
-     
-    <div class="article-meta">
-      <a href="/2024/02/28/SQL%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0_LEAD_LAG%E8%AF%A6%E8%A7%A3/" class="article-date">
-  <time datetime="2024-02-28T13:46:28.000Z" itemprop="datePublished">2024-02-28</time>
-</a> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a> / <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-SQL/">数据分析,SQL</a>
-  </div>
-   
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <p>当涉及到SQL窗口函数时，LEAD()和LAG()是两个非常有用的函数。它们允许我们在查询中访问当前行之前或之后的行的值。</p>
-<p>LEAD()函数返回当前行之后的指定行数的值，而LAG()函数返回当前行之前的指定行数的值。这两个函数在许多情况下都很有用，例如在分析时间序列数据或计算相邻行之间的差异时。</p>
-<p>让我们以一个简单的示例来说明LEAD()和LAG()函数的用法。假设我们有一个名为sales的表，其中包含了销售数据：</p>
-<p>sales表：</p>
-<table>
-<thead>
-<tr>
-<th>sale_id</th>
-<th>sale_date</th>
-<th>sale_amount</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td>2021-01-01</td>
-<td>1000</td>
-</tr>
-<tr>
-<td>2</td>
-<td>2021-01-02</td>
-<td>1500</td>
-</tr>
-<tr>
-<td>3</td>
-<td>2021-01-03</td>
-<td>2000</td>
-</tr>
-<tr>
-<td>4</td>
-<td>2021-01-04</td>
-<td>1200</td>
-</tr>
-<tr>
-<td>5</td>
-<td>2021-01-05</td>
-<td>1800</td>
-</tr>
-</tbody></table>
-<p>如果我们想要计算每天的销售额与前一天销售额的差异，我们可以使用LAG()函数：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">  sale_date,</span><br><span class="line">  sale_amount,</span><br><span class="line">  <span class="built_in">LAG</span>(sale_amount) <span class="keyword">OVER</span> (<span class="keyword">ORDER</span> <span class="keyword">BY</span> sale_date) <span class="keyword">AS</span> previous_day_sale_amount,</span><br><span class="line">  sale_amount <span class="operator">-</span> <span class="built_in">LAG</span>(sale_amount) <span class="keyword">OVER</span> (<span class="keyword">ORDER</span> <span class="keyword">BY</span> sale_date) <span class="keyword">AS</span> difference</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">  sales;</span><br></pre></td></tr></table></figure> 
-      <a class="article-more-link" href="/2024/02/28/SQL%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0_LEAD_LAG%E8%AF%A6%E8%A7%A3/"
-        >阅读更多...</a
-      >
-       
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SQL/" rel="tag">SQL</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a></li></ul>
-
-    </footer>
-  </div>
-
-   
-   
-  
-</article>
-
-    
-    <article
   id="post-数据分析师所需的技术与理论"
   class="article article-type-post"
   itemscope
@@ -783,7 +687,7 @@
 
     
     <article
-  id="post-机器学习笔记"
+  id="post-数据分析师常用的Prompt技巧"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
@@ -794,8 +698,8 @@
     <header class="article-header">
        
 <h2 itemprop="name">
-  <a class="article-title" href="/2023/02/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
-    >机器学习笔记</a> 
+  <a class="article-title" href="/2023/04/24/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E5%B8%B8%E7%94%A8%E7%9A%84Prompt%E6%8A%80%E5%B7%A7/"
+    >数据分析师常用的Prompt技巧</a> 
 </h2>
  
 
@@ -803,27 +707,58 @@
     </header>
      
     <div class="article-meta">
-      <a href="/2023/02/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="article-date">
-  <time datetime="2023-02-19T10:34:40.000Z" itemprop="datePublished">2023-02-19</time>
+      <a href="/2023/04/24/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E5%B8%B8%E7%94%A8%E7%9A%84Prompt%E6%8A%80%E5%B7%A7/" class="article-date">
+  <time datetime="2023-04-24T08:09:00.000Z" itemprop="datePublished">2023-04-24</time>
 </a> 
   <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a> / <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">数据分析,机器学习</a>
+    <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a> / <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD-Prompt/">人工智能,Prompt</a>
   </div>
    
     </div>
       
     <div class="article-entry" itemprop="articleBody">
        
-  <h1 id="k-近邻算法-KNN"><a href="#k-近邻算法-KNN" class="headerlink" title="k-近邻算法(KNN)"></a><a target="_blank" rel="noopener" href="https://alv1.apachecn.org/#/docs/ml/2">k-近邻算法(KNN)</a></h1><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>KNN是一种基本的 #分类 和 #回归 方法。给一个训练数据集，对新的输入实例，在训练数据集中找到与之最接近（直线距离，欧式距离）的K个实例，这k个实例的多数分类，就是这个输入实例的分类。</p>
-<p>k值的取数决定KNN算法的准确性，太小会使模型变得复杂和过拟合，太大会使得模型变得简单。K值不宜过大过小，需要调试参数获取最好的结果。</p>
-<p>为避免：</p>
-<ol>
-<li>避免某些特征因数值范围过大，对模型产生过大的影响。比如身高在几百英寸，体重在几十公斤，如果不归一化，模型会倾向于选择影响更大的特征。</li>
-<li>避免某些特征因数值过小产生的数值精度问题。<br>需要进行 #特征归一化 处理，对特征的值进行放缩，使之落在一个特定的范围内，常见的范围是0到1之间或者-1到1之间。 
-      <a class="article-more-link" href="/2023/02/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
-        >阅读更多...</a
-      >
-       
+  <h3 id="01-什么是探索性分析EDA"><a href="#01-什么是探索性分析EDA" class="headerlink" title="01 什么是探索性分析EDA?"></a>01 什么是探索性分析EDA?</h3><p>探索性数据分析（EDA）是在数据分析初始阶段进行数据了解和探索的过程。通过EDA，我们可以全面了解数据概貌，明确分析方式，并找出异常的可能因素。探索性数据分析在数据分析中非常重要。</p>
+<p>EDA包括三个重要部分，分别是：</p>
+<ul>
+<li><p>数据可视化：这部分的EDA涉及到将原始数据转化为图表和可视化图形等视觉信息。</p>
+</li>
+<li><p>假设检验：它被用来分析两个或两个以上的变量之间是否存在统计学上的显著差异。这可以用来支持或反驳数据相关的理论。</p>
+</li>
+<li><p>总结统计：它包括计算基本统计量，如平均数、中位数和标准差。总结统计有助于理解数据的分布并发现任何异常值。</p>
+</li>
+</ul>
+<p>ChatGPT是一个进行EDA的高效的工具，因为它可以简化上面这些过程。我们可以用这个基于AI的聊天机器人完成EDA任务。我们接下探讨如何使用ChatGPT进行探索性数据分析。</p>
+<h3 id="02-ChatGPT-for-EDA数据可视化"><a href="#02-ChatGPT-for-EDA数据可视化" class="headerlink" title="02 ChatGPT for EDA数据可视化"></a>02 ChatGPT for EDA数据可视化</h3><p>ChatGPT在探索性数据分析中可以提供非常强的数据可视化能力。这里，需要指出的是，ChatGPT本身无法进行动态的数据可视化任务。然而，它可以帮助我们进行数据可视化。</p>
+<p>我们可以使用ChatGPT来清洗数据，排除任何不一致或异常。除此之外，这个聊天机器人还可以帮助我们删除重复记录等。</p>
+<p>此外，我们还可以学习如何使用ChatGPT来协助处理复杂的数据可视化。例如，我们可以使用ChatGPT来帮助我们使用诸如Python、R或SQL这样的编程语言来创建图表和图形。这个聊天机器人会为我们提供代码和所有必要的步骤，以完成数据可视化的任务，并做出数据驱动的决策。</p>
+<h3 id="03-ChatGPT-for-EDA数据预测"><a href="#03-ChatGPT-for-EDA数据预测" class="headerlink" title="03 ChatGPT for EDA数据预测"></a>03 ChatGPT for EDA数据预测</h3><p>预测分析是EDA的另一个重要方面。我们通常基于大量数据集，采用机器学习的方式来找出数据之间的规律并预测可能的结果。现在，ChatGPT可以帮我们确定应该使用哪种机器学习模型，以便我们更准确、高效地分析数据。</p>
+<p>这个聊天机器人被训练得能够处理不同的模型。例如，你可以使用分类模型来对数据进行分类，并为不同的变量赋予预定义的值。我们需要做的就是向聊天机器人描述目标变量，并明确想要使用的模型（在这个情况下，是分类模型）。ChatGPT会对数据进行分类，并根据模式进行预测。</p>
+<p>我们也可以要求聊天机器人根据不同的参数对用户进行划分，比如：</p>
+<p><code>使用以下数据集，并将用户分为&lt;输入类别&gt;&lt;插入数据集&gt;</code></p>
+<p>或者你可以使用一些额外的提示prompts来根据某些行为创建用户画像：</p>
+<p><code>根据&lt;画像特征&gt;，将用户划分为不同的群体</code></p>
+<p>通过这种方式，你可以使用ChatGPT进行一些常见的分类或者回归等预测，帮助我们更高效的找到数据间的规律和模式。</p>
+<h3 id="04-给出有效EDA的建议"><a href="#04-给出有效EDA的建议" class="headerlink" title="04 给出有效EDA的建议"></a>04 给出有效EDA的建议</h3><p>如果我们以正确的方式使用ChatGPT，可以帮助我们在探索性数据分析中获取很多信息。这个聊天机器人可以通过为你推荐正确的行动方向来消除数据分析过程中的难题。</p>
+<p>ChatGPT对于探索性数据分析过程可以帮助你的方式包括：</p>
+<p>它可以为你提供解决数据质量问题的实用方法。</p>
+<p>它可以是选择正确的分析工具和革命性技术的全面指导。</p>
+<p>它可以推荐模型构建和分析的相关特性。</p>
+<p>它可以让你理解哪些变量对于EDA来说是重要的。这样，数据科学家就会知道哪些变量可能更有可能产生影响</p>
+<p>它还可以为数据转换提供建议。例如，ChatGPT可以在处理缺失数据、归一化和缩放方面提供有用的建议。你可以使用简单的ChatGPT提示来让聊天机器人为你推荐EDA的最佳实践，</p>
+<p>比如：<code>使用这个数据库&lt;输入数据库&gt;，并分析&lt;输入时间段&gt;中行业&lt;输入行业名称&gt;的趋势，针对&lt;定义段落/客户人口统计/分析景观&gt;</code></p>
+<h3 id="05-ChatGPT-for-EDA情感分析"><a href="#05-ChatGPT-for-EDA情感分析" class="headerlink" title="05 ChatGPT for EDA情感分析"></a>05 ChatGPT for EDA情感分析</h3><p>ChatGPT的最大潜力在于进行情感分析。聊天机器人配备了先进的语言模型，使其具有自然语言处理能力。情感和探索性数据分析之间存在强烈的联系。</p>
+<p>作为一名数据分析师，我们可以分析巨大的数据集，并研究它们的情感。准确的语言模型可以给我们提供大量的数据。让我们看看情感分析和探索性数据分析之间的联系：</p>
+<p>文本分类：在这里，通过情感分析将文本数据分类为几种情感。文本情感分析允许EDA找到与数据中的情绪语气相关的模式和趋势。常用于分析客户评论、社交媒体帖子或与商品或服务相关的评价。</p>
+<p>观点挖掘：在EDA过程中，情感分析可以用来从文本中提取观点。数据分析师可以洞察人们的态度或偏好。它可以进一步用来确定人们表达的主要观点。通过对这些信息的进一步分析，可以了解不同人在不同维度上的情感表现。</p>
+<h3 id="06-ChatGPT-for-统计分析和建模"><a href="#06-ChatGPT-for-统计分析和建模" class="headerlink" title="06 ChatGPT for 统计分析和建模"></a>06 ChatGPT for 统计分析和建模</h3><p>使用统计分析数据并开发可以用于进行预测模型的过程被称为统计分析和建模。数据描述、汇总和解释都可以通过统计分析来完成。统计分析工具可以用来预测未来的值，发现模式，并从收集数据的人口中得出结论。这样，统计建模就成为了从数据中得出结论的强大技术。</p>
+<p>这个AI驱动的模型的分析软件可以收集预测、趋势，以及对收集的数据给出结论。许多不同的行业，如商业、医疗保健和社会科学，都使用统计分析和建模。</p>
+<p>数据分析师可以用以下方式进行统计分析和建模：</p>
+<p>EDA指导：ChatGPT可以在数据中寻找哪些变量相关或者更重要，以此给出建议来帮助完成EDA。它可能会提供有用的关键信息，以便找出趋势、模式或异常值。</p>
+<p>模型选择：在选择可接受的模型时，ChatGPT可以提供建议。为了提高模型性能，它可能会对模型选择、超参数调整和过程验证提供建议。</p>
+<p>模型预测：这个AI模型可以预测结果，并进行验证。它可以分析结果，评估模型的性能，并找出提高预测准确性的方法。</p>
+<h3 id="07-总结"><a href="#07-总结" class="headerlink" title="07 总结"></a>07 总结</h3><p>如果你是一名数据分析师，我们要开始考虑如何使用ChatGPT在探索性数据分析工作中发挥它的作用了。它可以在数据分析中帮助我们快速、高效、准确的完成EDA的工作，同时它还能给我们一些创新的、隐藏的洞察和建议，可以预见，在不久的将来，ChatGPT一定会重塑甚并颠覆数据分析的技能栈和分析工作内容，所以学会使用它，才能让AI为我们打工。</p>
+ 
       <!-- reward -->
       
     </div>
@@ -833,7 +768,108 @@
     
     <footer class="article-footer">
        
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="tag">机器学习</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GPT/" rel="tag">GPT</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Prompt/" rel="tag">Prompt</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/" rel="tag">数据分析</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+   
+  
+</article>
+
+    
+    <article
+  id="post-数据分析师常用的Prompt技巧"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2023/04/23/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E5%B8%B8%E7%94%A8%E7%9A%84Prompt%E6%8A%80%E5%B7%A7/"
+    >数据分析师常用的Prompt技巧</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2023/04/23/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E5%B8%B8%E7%94%A8%E7%9A%84Prompt%E6%8A%80%E5%B7%A7/" class="article-date">
+  <time datetime="2023-04-23T08:01:17.000Z" itemprop="datePublished">2023-04-23</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a> / <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD-Prompt/">人工智能,Prompt</a>
+  </div>
+   
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <p>Prompt在数据分析中的作用非常重要，特别是在使用ChatGPT辅助数据分析工作时。Prompt可以被看作是向模型提供的任务说明或问题，它能够引导模型按照我们期望的方式进行工作。</p>
+<p>一个好的prompt可以明确指示模型执行具体的任务，例如进行数据清洗、数据可视化、统计分析等，并能够提供足够的上下文信息帮助模型理解任务的需求和目标。通过使用优秀的prompt，我们可以更高效地利用AI技术来协助我们的数据分析工作，大幅提升工作效率，同时也能帮助我们更深入地理解数据，从而得出更有价值的洞见。因此，学习如何编写有效的prompt是进行数据分析工作的重要技能。</p>
+<p>下面将通过数据分析工作中的几个常见任务来分别给出示例，演示如何正确、高效使用Prompt。</p>
+<h3 id="1-形成分析思路"><a href="#1-形成分析思路" class="headerlink" title="1. 形成分析思路"></a>1. 形成分析思路</h3><p>❌【普通人的prompt】:</p>
+<p><code>我需要找出销量最高的产品。</code></p>
+<p> ✅【数据分析师本的prompt】 :</p>
+<p><code>我有一个含&#39;product_id&#39;，&#39;order_id&#39;，&#39;purchase_date&#39;和&#39;sales_volume&#39;等字段的销售数据库。我想找出在过去一年内销量最高的十种产品。请帮我构建一个数据分析思路来进行这项工作。</code></p>
+<p>【两个版本的差异】: 较好版本的prompt明确了所需的数据库字段、时间范围以及具体的分析目标，使模型有更多的信息可以生成具体的分析思路。</p>
+<h3 id="2-构建指标体系"><a href="#2-构建指标体系" class="headerlink" title="2. 构建指标体系"></a>2. 构建指标体系</h3><p>❌【普通人的prompt】: </p>
+<p><code>我需要一些电商指标。</code> </p>
+<p> ✅【数据分析师本的prompt】:</p>
+<p><code>我正在为一家电商网站构建一个业务指标体系，包括了用户行为、销售绩效、市场营销效果等方面的指标。请帮我列出每个方面下可能包含的几个关键指标。</code> </p>
+<p>【两个版本的差异】: 较好版本的prompt明确了需要电商的哪几个方面的指标，使模型可以根据这些方向提供更具体的指标。</p>
+<h3 id="3-数据清洗"><a href="#3-数据清洗" class="headerlink" title="3. 数据清洗"></a>3. 数据清洗</h3><p>❌【普通人的prompt】: </p>
+<p><code>我需要进行数据清洗。</code></p>
+<p> ✅【数据分析师本的prompt】: </p>
+<p><code>我有一份包含用户年龄、性别、购买记录等信息的数据，但我注意到其中有些年龄数据存在负数，有些购买记录数据为空。请帮我规划一下数据清洗的流程，包括如何处理这些异常数据，以及我应该注意哪些可能的数据质量问题。</code></p>
+<p>【两个版本的差异】: 较好版本的prompt详细描述了数据的具体情况和存在的问题，使模型可以给出更具体的数据清洗策略和注意事项。</p>
+<h3 id="4-完成SQL代码"><a href="#4-完成SQL代码" class="headerlink" title="4. 完成SQL代码"></a>4. 完成SQL代码</h3><p>❌【普通人的prompt】: </p>
+<p><code>我需要查询用户的购买信息。</code> </p>
+<p> ✅【数据分析师本的prompt】: </p>
+<p><code>我有一个&#39;orders&#39;表，包含&#39;user_id&#39;, &#39;product_id&#39;, &#39;purchase_date&#39;, &#39;amount&#39;等字段。我想查询出在过去30天内购买金额超过500的用户的列表，并按照购买金额降序排序。请帮我写出对应的SQL代码。</code> </p>
+<p>【两个版本的差异】: 较好版本的prompt提供了明确的表字段、查询条件以及排序要求，使模型可以生成更精确的SQL代码。</p>
+<h3 id="5-SQL性能优化"><a href="#5-SQL性能优化" class="headerlink" title="5. SQL性能优化"></a>5. SQL性能优化</h3><p>❌【普通人的prompt】: </p>
+<p><code>我需要优化我的SQL查询。</code> </p>
+<p> ✅【数据分析师本的prompt】:</p>
+<p><code>我正在运行一个查询，它包含多个联接和子查询，并且查询时间很长。我在&#39;user&#39;表和&#39;order&#39;表之间进行了联接，然后在结果中进行了聚合操作。请帮我提供一些优化此查询性能的策略或建议。</code> </p>
+<p>【两个版本的差异】: 较好版本的prompt详细描述了查询的具体情况，使模型可以给出更具体的优化建议。</p>
+<h3 id="6-统计学分析"><a href="#6-统计学分析" class="headerlink" title="6. 统计学分析"></a>6. 统计学分析</h3><p>❌【普通人的prompt】:</p>
+<p><code>我需要进行一些统计分析。</code> </p>
+<p> ✅【数据分析师本的prompt】: </p>
+<p><code>我想对我们网站的用户年龄进行描述性统计分析，包括计算年龄的平均值、中位数、分位数、最小值、最大值以及标准差。并希望能理解年龄和用户购买金额之间的关系，需要进行相关性分析。请帮我设计一个分析流程。</code> </p>
+<p>【两个版本的差异】: 较好版本的prompt提供了具体的统计分析需求和数据内容，使模型能够生成更具体和有针对性的分析建议。</p>
+<h3 id="7-数据可视化"><a href="#7-数据可视化" class="headerlink" title="7. 数据可视化"></a>7. 数据可视化</h3><p>❌【普通人的prompt】:</p>
+<p><code>我需要进行数据可视化。</code></p>
+<p> ✅【数据分析师本的prompt】:</p>
+<p><code>我正在分析一个包含用户购买行为数据的数据集，我想对用户的购买金额分布和购买金额与购买次数的关系进行可视化展示。请帮我选择合适的可视化图表类型，以及如何设计图表以使信息展示得更清晰易懂。</code></p>
+<p>【两个版本的差异】:较好版本的prompt提供了具体的可视化目标和数据情况，使模型可以给出更具体的可视化建议。</p>
+<h3 id="8-AB-Test-结果分析"><a href="#8-AB-Test-结果分析" class="headerlink" title="8. AB Test 结果分析"></a>8. AB Test 结果分析</h3><p>❌【普通人的prompt】:</p>
+<p><code>我需要进行AB测试的显著性检验。</code></p>
+<p> ✅【数据分析师本的prompt】:</p>
+<p><code>我进行了一次AB测试，A组有500人，其中有200人完成了购买行为；B组有550人，其中有250人完成了购买行为。我想知道B组的转化率是否显著高于A组，需要进行显著性检验。请帮我设计一个检验流程，包括使用哪种统计检验方法，如何进行计算，以及如何解读结果。</code></p>
+<p>【两个版本的差异】:较好版本的prompt提供了具体的AB测试数据和目标，使模型可以生成更具体和有针对性的显著性检验方法和步骤。</p>
+<h3 id="9-完成分析报告"><a href="#9-完成分析报告" class="headerlink" title="9. 完成分析报告"></a>9. 完成分析报告</h3><p>❌【普通人的prompt】:</p>
+<p><code>我需要写一个分析报告。</code> </p>
+<p> ✅【数据分析师本的prompt】:</p>
+<p><code>我已经完成了对用户年龄和购买行为的关系的分析，发现年龄和购买金额之间存在中等程度的正相关性。请帮我撰写一个分析报告来呈现这个发现，包括报告的背景、方法、结果和讨论等部分。</code> </p>
+<p>【两个版本的差异】:较好版本的prompt提供了具体的分析结果以及报告的结构要求，使模型可以生成结构清晰、内容完整的分析报告。</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GPT/" rel="tag">GPT</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Prompt/" rel="tag">Prompt</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/" rel="tag">数据分析</a></li></ul>
 
     </footer>
   </div>

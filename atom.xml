@@ -6,7 +6,7 @@
   <link href="https://studyz.github.io/atom.xml" rel="self"/>
   
   <link href="https://studyz.github.io/"/>
-  <updated>2024-04-23T08:07:22.347Z</updated>
+  <updated>2024-04-23T07:49:17.267Z</updated>
   <id>https://studyz.github.io/</id>
   
   <author>
@@ -15,37 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>数据分析师常用的Prompt技巧</title>
-    <link href="https://studyz.github.io/2024/04/23/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E5%B8%B8%E7%94%A8%E7%9A%84Prompt%E6%8A%80%E5%B7%A7/"/>
-    <id>https://studyz.github.io/2024/04/23/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E5%B8%B8%E7%94%A8%E7%9A%84Prompt%E6%8A%80%E5%B7%A7/</id>
-    <published>2024-04-23T08:01:17.000Z</published>
-    <updated>2024-04-23T08:07:22.347Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="技术" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    <category term="人工智能,Prompt" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD-Prompt/"/>
-    
-    
-    <category term="GPT" scheme="https://studyz.github.io/tags/GPT/"/>
-    
-    <category term="Prompt" scheme="https://studyz.github.io/tags/Prompt/"/>
-    
-    <category term="数据分析" scheme="https://studyz.github.io/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
-    
-  </entry>
   
   <entry>
     <title>TailScale实现远端访问群晖服务器</title>
@@ -638,30 +607,64 @@
   </entry>
   
   <entry>
-    <title>机器学习笔记</title>
-    <link href="https://studyz.github.io/2023/02/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    <id>https://studyz.github.io/2023/02/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
-    <published>2023-02-19T10:34:40.000Z</published>
-    <updated>2024-04-23T07:35:19.806Z</updated>
+    <title>数据分析师常用的Prompt技巧</title>
+    <link href="https://studyz.github.io/2023/04/24/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E5%B8%B8%E7%94%A8%E7%9A%84Prompt%E6%8A%80%E5%B7%A7/"/>
+    <id>https://studyz.github.io/2023/04/24/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E5%B8%B8%E7%94%A8%E7%9A%84Prompt%E6%8A%80%E5%B7%A7/</id>
+    <published>2023-04-24T08:09:00.000Z</published>
+    <updated>2024-04-23T08:12:57.248Z</updated>
     
     
-    <summary type="html">&lt;h1 id=&quot;k-近邻算法-KNN&quot;&gt;&lt;a href=&quot;#k-近邻算法-KNN&quot; class=&quot;headerlink&quot; title=&quot;k-近邻算法(KNN)&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://alv1.apachecn.org/#/docs/ml/2&quot;&gt;k-近邻算法(KNN)&lt;/a&gt;&lt;/h1&gt;&lt;h3 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h3&gt;&lt;p&gt;KNN是一种基本的 #分类 和 #回归 方法。给一个训练数据集，对新的输入实例，在训练数据集中找到与之最接近（直线距离，欧式距离）的K个实例，这k个实例的多数分类，就是这个输入实例的分类。&lt;/p&gt;
-&lt;p&gt;k值的取数决定KNN算法的准确性，太小会使模型变得复杂和过拟合，太大会使得模型变得简单。K值不宜过大过小，需要调试参数获取最好的结果。&lt;/p&gt;
-&lt;p&gt;为避免：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;避免某些特征因数值范围过大，对模型产生过大的影响。比如身高在几百英寸，体重在几十公斤，如果不归一化，模型会倾向于选择影响更大的特征。&lt;/li&gt;
-&lt;li&gt;避免某些特征因数值过小产生的数值精度问题。&lt;br&gt;需要进行 #特征归一化 处理，对特征的值进行放缩，使之落在一个特定的范围内，常见的范围是0到1之间或者-1到1之间。</summary>
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
+        
+      
     
     
     
     <category term="技术" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
     
-    <category term="数据分析,机器学习" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    <category term="人工智能,Prompt" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD-Prompt/"/>
     
     
-    <category term="笔记" scheme="https://studyz.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    <category term="GPT" scheme="https://studyz.github.io/tags/GPT/"/>
     
-    <category term="机器学习" scheme="https://studyz.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    <category term="Prompt" scheme="https://studyz.github.io/tags/Prompt/"/>
+    
+    <category term="数据分析" scheme="https://studyz.github.io/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数据分析师常用的Prompt技巧</title>
+    <link href="https://studyz.github.io/2023/04/23/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E5%B8%B8%E7%94%A8%E7%9A%84Prompt%E6%8A%80%E5%B7%A7/"/>
+    <id>https://studyz.github.io/2023/04/23/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E5%B8%B8%E7%94%A8%E7%9A%84Prompt%E6%8A%80%E5%B7%A7/</id>
+    <published>2023-04-23T08:01:17.000Z</published>
+    <updated>2024-04-23T08:08:24.050Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="技术" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="人工智能,Prompt" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD-Prompt/"/>
+    
+    
+    <category term="GPT" scheme="https://studyz.github.io/tags/GPT/"/>
+    
+    <category term="Prompt" scheme="https://studyz.github.io/tags/Prompt/"/>
+    
+    <category term="数据分析" scheme="https://studyz.github.io/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
     
   </entry>
   
