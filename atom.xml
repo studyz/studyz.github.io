@@ -59,7 +59,7 @@
     <link href="https://studyz.github.io/2024/04/22/%E6%9F%AF%E5%8D%97%E5%8A%A8%E7%94%BB%E7%9B%AE%E5%BD%95/"/>
     <id>https://studyz.github.io/2024/04/22/%E6%9F%AF%E5%8D%97%E5%8A%A8%E7%94%BB%E7%9B%AE%E5%BD%95/</id>
     <published>2024-04-22T07:00:51.000Z</published>
-    <updated>2024-04-23T07:27:34.179Z</updated>
+    <updated>2024-04-23T07:33:31.093Z</updated>
     
     
     <summary type="html">&lt;blockquote&gt;
@@ -75,11 +75,9 @@
     
     
     
-    <category term="生活" scheme="https://studyz.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
-    
     <category term="分享" scheme="https://studyz.github.io/categories/%E5%88%86%E4%BA%AB/"/>
     
-    <category term="碎碎念" scheme="https://studyz.github.io/categories/%E7%94%9F%E6%B4%BB/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
+    <category term="生活,碎碎念" scheme="https://studyz.github.io/categories/%E5%88%86%E4%BA%AB/%E7%94%9F%E6%B4%BB-%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
     
     
     <category term="名侦探柯南" scheme="https://studyz.github.io/tags/%E5%90%8D%E4%BE%A6%E6%8E%A2%E6%9F%AF%E5%8D%97/"/>
@@ -91,7 +89,7 @@
     <link href="https://studyz.github.io/2024/04/22/%E6%88%91%E7%9A%84%E6%9E%81%E7%AE%80%E7%94%9F%E6%B4%BB%E7%BB%8F%E9%AA%8C/"/>
     <id>https://studyz.github.io/2024/04/22/%E6%88%91%E7%9A%84%E6%9E%81%E7%AE%80%E7%94%9F%E6%B4%BB%E7%BB%8F%E9%AA%8C/</id>
     <published>2024-04-22T06:29:50.000Z</published>
-    <updated>2024-04-22T07:53:57.107Z</updated>
+    <updated>2024-04-23T07:29:12.203Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;我的极简生活经验：恰到好处的生活艺术&quot;&gt;&lt;a href=&quot;#我的极简生活经验：恰到好处的生活艺术&quot; class=&quot;headerlink&quot; title=&quot;我的极简生活经验：恰到好处的生活艺术&quot;&gt;&lt;/a&gt;我的极简生活经验：恰到好处的生活艺术&lt;/h1&gt;&lt;p&gt;今天我想和大家分享一下我对极简主义的理解。我非常喜欢这种生活方式，但并不是说每个人都需要极简。有些人喜欢收藏，有些人喜欢购物，买很多东西，只要能让自己舒心，任何生活方式都是好的。但如果你也喜欢简单的生活方式，或者有点儿强迫症，那么这些小建议可能适合你。&lt;/p&gt;
@@ -99,6 +97,10 @@
 &lt;p&gt;经常性的整理是开始的第一步。一般来说，整理包括扔东西、卖二手、收纳起来。不要总觉得留着以后能用上，如果近一年都没用过，基本上以后也用不上。&lt;/p&gt;</summary>
     
     
+    
+    <category term="分享" scheme="https://studyz.github.io/categories/%E5%88%86%E4%BA%AB/"/>
+    
+    <category term="生活,碎碎念" scheme="https://studyz.github.io/categories/%E5%88%86%E4%BA%AB/%E7%94%9F%E6%B4%BB-%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
     
     
     <category term="随笔" scheme="https://studyz.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
@@ -112,7 +114,7 @@
     <link href="https://studyz.github.io/2024/04/20/Git_Hexo/"/>
     <id>https://studyz.github.io/2024/04/20/Git_Hexo/</id>
     <published>2024-04-20T05:11:30.000Z</published>
-    <updated>2024-04-23T07:28:01.435Z</updated>
+    <updated>2024-04-23T07:29:41.847Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;一、前期准备&quot;&gt;&lt;a href=&quot;#一、前期准备&quot; class=&quot;headerlink&quot; title=&quot;一、前期准备&quot;&gt;&lt;/a&gt;一、前期准备&lt;/h2&gt;&lt;h3 id=&quot;1-1-注册-账号-Gitee-GitHub&quot;&gt;&lt;a href=&quot;#1-1-注册-账号-Gitee-GitHub&quot; class=&quot;headerlink&quot; title=&quot;1.1 注册 账号 Gitee&amp;#x2F;GitHub&quot;&gt;&lt;/a&gt;1.1 注册 账号 Gitee&amp;#x2F;GitHub&lt;/h3&gt;&lt;p&gt;注册一个属于自己的 Github 或 Gitee 账号，&lt;/p&gt;
@@ -142,7 +144,7 @@
     <link href="https://studyz.github.io/2024/04/17/%E7%BE%A4%E6%99%96NAS%E5%AE%9E%E7%8E%B0SSH%E5%85%8D%E5%AF%86%E7%A0%81%E7%99%BB%E5%BD%95/"/>
     <id>https://studyz.github.io/2024/04/17/%E7%BE%A4%E6%99%96NAS%E5%AE%9E%E7%8E%B0SSH%E5%85%8D%E5%AF%86%E7%A0%81%E7%99%BB%E5%BD%95/</id>
     <published>2024-04-17T13:42:32.000Z</published>
-    <updated>2024-04-22T07:53:55.107Z</updated>
+    <updated>2024-04-23T07:30:08.014Z</updated>
     
     
     <summary type="html">&lt;blockquote&gt;
@@ -154,6 +156,10 @@
 &lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta prompt_&quot;&gt;# &lt;/span&gt;&lt;span class=&quot;language-bash&quot;&gt;修改 ~/.ssh/config 文件示例：&lt;/span&gt;  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta prompt_&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;language-bash&quot;&gt;服务器&lt;/span&gt;  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Host qh  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	HostName your_ip  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	Port your_port  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	User your_username&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
     
     
+    
+    <category term="技术" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="网络" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/%E7%BD%91%E7%BB%9C/"/>
     
     
     <category term="笔记" scheme="https://studyz.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
@@ -169,13 +175,17 @@
     <link href="https://studyz.github.io/2024/02/28/SQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     <id>https://studyz.github.io/2024/02/28/SQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
     <published>2024-02-28T13:50:40.000Z</published>
-    <updated>2024-04-22T07:53:52.163Z</updated>
+    <updated>2024-04-23T07:34:11.005Z</updated>
     
     
     <summary type="html">&lt;p&gt;&lt;a href=&quot;/_post/2024_02_28_%E6%8E%92%E5%BA%8F_DENSE_RANK.md&quot;&gt;排序_DENSE_RANK&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&quot;IFNULL&quot;&gt;&lt;a href=&quot;#IFNULL&quot; class=&quot;headerlink&quot; title=&quot;IFNULL&quot;&gt;&lt;/a&gt;IFNULL&lt;/h2&gt;&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;# Write your MySQL query statement below&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;select e.name, b.bonus&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;from Employee e left join Bonus b&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;on e.empId = b.empId&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;where ifnull(bonus,0)&amp;lt;1000&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;## ifnul 就把值替换成0）&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
     
     
+    
+    <category term="技术" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="数据分析,SQL" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-SQL/"/>
     
     
     <category term="笔记" scheme="https://studyz.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
@@ -189,7 +199,7 @@
     <link href="https://studyz.github.io/2024/02/28/DATEDIFF_%E6%97%A5%E6%9C%9F%E4%B9%8B%E5%B7%AE/"/>
     <id>https://studyz.github.io/2024/02/28/DATEDIFF_%E6%97%A5%E6%9C%9F%E4%B9%8B%E5%B7%AE/</id>
     <published>2024-02-28T13:49:50.000Z</published>
-    <updated>2024-04-22T08:00:43.284Z</updated>
+    <updated>2024-04-23T07:34:16.505Z</updated>
     
     
       
@@ -201,6 +211,10 @@
       
     
     
+    
+    <category term="技术" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="数据分析,SQL" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-SQL/"/>
     
     
     <category term="笔记" scheme="https://studyz.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
@@ -214,7 +228,7 @@
     <link href="https://studyz.github.io/2024/02/28/GroupBy/"/>
     <id>https://studyz.github.io/2024/02/28/GroupBy/</id>
     <published>2024-02-28T13:48:55.000Z</published>
-    <updated>2024-04-22T07:53:50.230Z</updated>
+    <updated>2024-04-23T07:34:13.672Z</updated>
     
     
     <summary type="html">&lt;p&gt;当我们需要对数据进行分组并进行聚合计算时，可以使用GROUP BY子句。GROUP BY子句通常与聚合函数（如SUM、COUNT、AVG等）一起使用。&lt;/p&gt;
@@ -223,6 +237,10 @@
 &lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;SELECT product_id, COUNT(*) as total_orders&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;FROM orders&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;GROUP BY product_id;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
     
     
+    
+    <category term="技术" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="数据分析,SQL" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-SQL/"/>
     
     
     <category term="笔记" scheme="https://studyz.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
@@ -236,7 +254,7 @@
     <link href="https://studyz.github.io/2024/02/28/%E6%8E%92%E5%BA%8F_DENSE_RANK/"/>
     <id>https://studyz.github.io/2024/02/28/%E6%8E%92%E5%BA%8F_DENSE_RANK/</id>
     <published>2024-02-28T13:47:37.000Z</published>
-    <updated>2024-04-22T08:00:57.808Z</updated>
+    <updated>2024-04-23T07:34:02.848Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;rank&quot;&gt;&lt;a href=&quot;#rank&quot; class=&quot;headerlink&quot; title=&quot;rank()&quot;&gt;&lt;/a&gt;rank()&lt;/h2&gt;&lt;h2 id=&quot;dense-rank&quot;&gt;&lt;a href=&quot;#dense-rank&quot; class=&quot;headerlink&quot; title=&quot;dense_rank()&quot;&gt;&lt;/a&gt;dense_rank()&lt;/h2&gt;&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;DENSE_RANK() OVER (PARTITION BY column1, column2... ORDER BY column3, column4...)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -247,6 +265,10 @@
 &lt;/ul&gt;</summary>
     
     
+    
+    <category term="技术" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="数据分析,SQL" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-SQL/"/>
     
     
     <category term="笔记" scheme="https://studyz.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
@@ -262,7 +284,7 @@
     <link href="https://studyz.github.io/2024/02/28/SQL%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0_LEAD_LAG%E8%AF%A6%E8%A7%A3/"/>
     <id>https://studyz.github.io/2024/02/28/SQL%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0_LEAD_LAG%E8%AF%A6%E8%A7%A3/</id>
     <published>2024-02-28T13:46:28.000Z</published>
-    <updated>2024-04-22T07:53:53.263Z</updated>
+    <updated>2024-04-23T07:34:06.682Z</updated>
     
     
     <summary type="html">&lt;p&gt;当涉及到SQL窗口函数时，LEAD()和LAG()是两个非常有用的函数。它们允许我们在查询中访问当前行之前或之后的行的值。&lt;/p&gt;
@@ -308,6 +330,10 @@
     
     
     
+    <category term="技术" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="数据分析,SQL" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-SQL/"/>
+    
     
     <category term="笔记" scheme="https://studyz.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
     
@@ -320,7 +346,7 @@
     <link href="https://studyz.github.io/2023/10/23/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E6%89%80%E9%9C%80%E7%9A%84%E6%8A%80%E6%9C%AF%E4%B8%8E%E7%90%86%E8%AE%BA/"/>
     <id>https://studyz.github.io/2023/10/23/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E6%89%80%E9%9C%80%E7%9A%84%E6%8A%80%E6%9C%AF%E4%B8%8E%E7%90%86%E8%AE%BA/</id>
     <published>2023-10-23T05:11:30.000Z</published>
-    <updated>2024-04-22T07:54:15.485Z</updated>
+    <updated>2024-04-23T07:34:35.849Z</updated>
     
     
     <summary type="html">&lt;blockquote&gt;
@@ -330,9 +356,9 @@
     
     
     
-    <category term="数据分析" scheme="https://studyz.github.io/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+    <category term="技术" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
     
-    <category term="方法论" scheme="https://studyz.github.io/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/%E6%96%B9%E6%B3%95%E8%AE%BA/"/>
+    <category term="数据分析,方法论" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-%E6%96%B9%E6%B3%95%E8%AE%BA/"/>
     
     
     <category term="笔记" scheme="https://studyz.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
@@ -348,7 +374,7 @@
     <link href="https://studyz.github.io/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/"/>
     <id>https://studyz.github.io/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/</id>
     <published>2023-10-23T05:11:30.000Z</published>
-    <updated>2024-04-22T07:54:10.708Z</updated>
+    <updated>2024-04-23T07:33:10.138Z</updated>
     
     
     <summary type="html">&lt;blockquote&gt;
@@ -362,9 +388,9 @@
     
     
     
-    <category term="tutorial" scheme="https://studyz.github.io/categories/tutorial/"/>
+    <category term="技术" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
     
-    <category term="numpy" scheme="https://studyz.github.io/categories/tutorial/numpy/"/>
+    <category term="数据分析,numpy" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-numpy/"/>
     
     
     <category term="笔记" scheme="https://studyz.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
@@ -380,7 +406,7 @@
     <link href="https://studyz.github.io/2023/08/21/lora%E8%AE%AD%E7%BB%83/"/>
     <id>https://studyz.github.io/2023/08/21/lora%E8%AE%AD%E7%BB%83/</id>
     <published>2023-08-21T10:34:40.000Z</published>
-    <updated>2024-04-22T07:57:04.676Z</updated>
+    <updated>2024-04-23T07:35:37.869Z</updated>
     
     
     <summary type="html">&lt;p&gt;&lt;a href=&quot;https://github.com/camenduru/stable-diffusion-webui-colab&quot;&gt;https://github.com/camenduru/stable-diffusion-webui-colab&lt;/a&gt;&lt;/p&gt;
@@ -390,6 +416,10 @@
     
     
     
+    <category term="技术" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="人工智能,lora" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD-lora/"/>
+    
     
   </entry>
   
@@ -398,7 +428,7 @@
     <link href="https://studyz.github.io/2023/08/12/ChatGPT_Prompt/"/>
     <id>https://studyz.github.io/2023/08/12/ChatGPT_Prompt/</id>
     <published>2023-08-12T10:34:40.000Z</published>
-    <updated>2024-04-22T07:55:02.108Z</updated>
+    <updated>2024-04-23T07:35:52.728Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;English-Vesion&quot;&gt;&lt;a href=&quot;#English-Vesion&quot; class=&quot;headerlink&quot; title=&quot;English Vesion&quot;&gt;&lt;/a&gt;English Vesion&lt;/h2&gt;&lt;details&gt;
@@ -436,6 +466,10 @@
 &lt;/details&gt;</summary>
     
     
+    
+    <category term="技术" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="人工智能,Prompt" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD-Prompt/"/>
     
     
     <category term="GPT" scheme="https://studyz.github.io/tags/GPT/"/>
@@ -477,7 +511,7 @@
     <link href="https://studyz.github.io/2023/08/01/7%E5%A4%A7%E7%BB%8F%E5%85%B8%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/"/>
     <id>https://studyz.github.io/2023/08/01/7%E5%A4%A7%E7%BB%8F%E5%85%B8%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/</id>
     <published>2023-08-01T05:11:30.000Z</published>
-    <updated>2024-04-22T07:54:26.408Z</updated>
+    <updated>2024-04-23T07:34:51.261Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;什么是回归分析？&quot;&gt;&lt;a href=&quot;#什么是回归分析？&quot; class=&quot;headerlink&quot; title=&quot;什么是回归分析？&quot;&gt;&lt;/a&gt;什么是回归分析？&lt;/h1&gt;&lt;p&gt;回归分析是一种预测性的建模技术，它研究的是因变量（目标）和自变量（预测器）之间的关系。这种技术通常用于预测分析，时间序列模型以及发现变量之间的因果关系。例如，司机的鲁莽驾驶与道路交通事故数量之间的关系，最好的研究方法就是回归。&lt;/p&gt;
@@ -486,9 +520,9 @@
     
     
     
-    <category term="数据分析" scheme="https://studyz.github.io/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+    <category term="技术" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
     
-    <category term="模型" scheme="https://studyz.github.io/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/%E6%A8%A1%E5%9E%8B/"/>
+    <category term="数据分析,机器算法" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-%E6%9C%BA%E5%99%A8%E7%AE%97%E6%B3%95/"/>
     
     
     <category term="数据分析" scheme="https://studyz.github.io/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
@@ -504,7 +538,7 @@
     <link href="https://studyz.github.io/2023/06/03/5W2H%E6%A8%A1%E5%9E%8B%E5%9C%A8%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/"/>
     <id>https://studyz.github.io/2023/06/03/5W2H%E6%A8%A1%E5%9E%8B%E5%9C%A8%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/</id>
     <published>2023-06-03T13:39:01.000Z</published>
-    <updated>2024-04-22T07:54:36.308Z</updated>
+    <updated>2024-04-23T07:35:03.553Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;5W2H模型在数据分析中的应用&quot;&gt;&lt;a href=&quot;#5W2H模型在数据分析中的应用&quot; class=&quot;headerlink&quot; title=&quot;5W2H模型在数据分析中的应用&quot;&gt;&lt;/a&gt;5W2H模型在数据分析中的应用&lt;/h1&gt;&lt;p&gt;5W2H模型可以很好地应用于数据分析，主要做以下几点：&lt;/p&gt;
@@ -524,9 +558,9 @@
     
     
     
-    <category term="数据分析" scheme="https://studyz.github.io/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+    <category term="技术" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
     
-    <category term="方法论" scheme="https://studyz.github.io/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/%E6%96%B9%E6%B3%95%E8%AE%BA/"/>
+    <category term="数据分析,方法论" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-%E6%96%B9%E6%B3%95%E8%AE%BA/"/>
     
     
     <category term="数据分析" scheme="https://studyz.github.io/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
@@ -540,7 +574,7 @@
     <link href="https://studyz.github.io/2023/05/15/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88/"/>
     <id>https://studyz.github.io/2023/05/15/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88/</id>
     <published>2023-05-15T10:34:40.000Z</published>
-    <updated>2024-04-22T07:55:31.597Z</updated>
+    <updated>2024-04-23T07:36:44.428Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;数据分析师&quot;&gt;&lt;a href=&quot;#数据分析师&quot; class=&quot;headerlink&quot; title=&quot;数据分析师&quot;&gt;&lt;/a&gt;数据分析师&lt;/h1&gt;&lt;ol&gt;
@@ -563,6 +597,10 @@
     
     
     
+    <category term="技术" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="数据分析,方法论" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-%E6%96%B9%E6%B3%95%E8%AE%BA/"/>
+    
     
     <category term="笔记" scheme="https://studyz.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
     
@@ -575,7 +613,7 @@
     <link href="https://studyz.github.io/2023/02/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     <id>https://studyz.github.io/2023/02/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
     <published>2023-02-19T10:34:40.000Z</published>
-    <updated>2024-04-22T07:54:49.841Z</updated>
+    <updated>2024-04-23T07:35:19.806Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;k-近邻算法-KNN&quot;&gt;&lt;a href=&quot;#k-近邻算法-KNN&quot; class=&quot;headerlink&quot; title=&quot;k-近邻算法(KNN)&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://alv1.apachecn.org/#/docs/ml/2&quot;&gt;k-近邻算法(KNN)&lt;/a&gt;&lt;/h1&gt;&lt;h3 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h3&gt;&lt;p&gt;KNN是一种基本的 #分类 和 #回归 方法。给一个训练数据集，对新的输入实例，在训练数据集中找到与之最接近（直线距离，欧式距离）的K个实例，这k个实例的多数分类，就是这个输入实例的分类。&lt;/p&gt;
@@ -587,9 +625,9 @@
     
     
     
-    <category term="数据分析" scheme="https://studyz.github.io/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+    <category term="技术" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
     
-    <category term="方法论" scheme="https://studyz.github.io/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/%E6%96%B9%E6%B3%95%E8%AE%BA/"/>
+    <category term="数据分析,机器学习" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
     
     <category term="笔记" scheme="https://studyz.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
@@ -603,7 +641,7 @@
     <link href="https://studyz.github.io/2022/07/01/%E5%85%8D%E8%B4%B9%E5%95%86%E7%94%A8%E5%AD%97%E4%BD%93%E6%94%B6%E9%9B%86/"/>
     <id>https://studyz.github.io/2022/07/01/%E5%85%8D%E8%B4%B9%E5%95%86%E7%94%A8%E5%AD%97%E4%BD%93%E6%94%B6%E9%9B%86/</id>
     <published>2022-07-01T10:34:40.000Z</published>
-    <updated>2024-04-20T17:26:27.707Z</updated>
+    <updated>2024-04-23T07:35:57.773Z</updated>
     
     
       

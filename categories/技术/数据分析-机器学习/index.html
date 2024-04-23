@@ -15,7 +15,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title>群晖NAS实现SSH免密码登录 |  杰里米的小站</title>
+      <title>数据分析,机器学习 |  杰里米的小站</title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="/favicon.ico" />
@@ -57,212 +57,58 @@
       
     <main class="content on">
       <section class="outer">
-  <article
-  id="post-群晖NAS实现SSH免密码登录"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
+  
+  
+  <article class="articles">
     
-    <header class="article-header">
+    
+    <h1 class="page-type-title">数据分析,机器学习</h1>
+    
+    
+  
+  
+  
+  
+  
+  
+  <div class="archives-wrap">
+    <div class="archive-year-wrap">
+      <a href="/archives/2023" class="archive-year">2023</a>
+    </div>
+    <div class="archives">
+      
+      <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2023/02/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="archive-article-date">
+  <time datetime="2023-02-19T10:34:40.000Z" itemprop="datePublished">02/19</time>
+</a>
        
-<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  群晖NAS实现SSH免密码登录
-</h1>
+<h2 itemprop="name">
+  <a class="archive-article-title" href="/2023/02/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
+    >机器学习笔记</a> 
+</h2>
  
 
-      
     </header>
-     
-    <div class="article-meta">
-      <a href="/2024/04/17/%E7%BE%A4%E6%99%96NAS%E5%AE%9E%E7%8E%B0SSH%E5%85%8D%E5%AF%86%E7%A0%81%E7%99%BB%E5%BD%95/" class="article-date">
-  <time datetime="2024-04-17T13:42:32.000Z" itemprop="datePublished">2024-04-17</time>
-</a> 
+    
+      
   <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a> / <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF/%E7%BD%91%E7%BB%9C/">网络</a>
-  </div>
-  
-<div class="word_count">
-    <span class="post-time">
-        <span class="post-meta-item-icon">
-            <i class="ri-quill-pen-line"></i>
-            <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">611</span>
-        </span>
-    </span>
-
-    <span class="post-time">
-        &nbsp; | &nbsp;
-        <span class="post-meta-item-icon">
-            <i class="ri-book-open-line"></i>
-            <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">2 分钟</span>
-        </span>
-    </span>
-</div>
- 
-    </div>
-      
-    <div class="tocbot"></div>
-
-
-
-
-  
-    <div class="article-entry" itemprop="articleBody">
-       
-  <blockquote>
-<p>简介：在群晖 DS920+上传电脑端公钥，并关闭 SSH 密码登录</p>
-</blockquote>
-<h2 id="STEP-1-开启并登录-SSH"><a href="#STEP-1-开启并登录-SSH" class="headerlink" title="STEP 1 开启并登录 SSH"></a>STEP 1 开启并登录 SSH</h2><h3 id="开启"><a href="#开启" class="headerlink" title="开启"></a>开启</h3><p>群晖中，启用<code>控制面板 &gt; 终端机和 SNMP &gt; 终端机</code>中的<code>启动 SSH 功能</code> 选项，修改端口号为<code>8888</code> 或者选择其他未占用端口。</p>
-<h3 id="登录"><a href="#登录" class="headerlink" title="登录"></a>登录</h3><p>在电脑端，使用终端应用登录群晖，可以使用命令行方式登录，例如：<code>ssh -p 8888 legalgeek@192.168.1.2</code></p>
-<p>也可以在 <code>~/.ssh/config</code> 配置文件中增加一个服务器设定，然后通过 <code>ssh qh</code> 快捷登录</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">修改 ~/.ssh/config 文件示例：</span>  </span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">服务器</span>  </span><br><span class="line">Host qh  </span><br><span class="line">	HostName your_ip  </span><br><span class="line">	Port your_port  </span><br><span class="line">	User your_username</span><br></pre></td></tr></table></figure>
-<span id="more"></span>
-<p>上面一步执行完毕，需要输入用户密码。</p>
-<h3 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h3><p>使用 <code>ls -a</code>检测群晖当前用户主目录下是否有 .ssh 文件夹，如果没有使用下列命令创建：</p>
-<h2 id="STEP-2-粘贴公钥"><a href="#STEP-2-粘贴公钥" class="headerlink" title="STEP 2 粘贴公钥"></a>STEP 2 粘贴公钥</h2><p>将自己电脑的公钥粘贴进群晖的<code>authorized_keys</code>，具体方法：</p>
-<p>1、当前终端中，使用命令： <code>vim ~/.ssh/authorized_keys</code></p>
-<p>2、然后按 <code>i</code> 进入编辑模式</p>
-<p>3、<strong>新建</strong>一个终端窗口，使用 <code>cat ~/.ssh/id_rsa.pub</code>获取电脑端公钥信息，右键复制，再粘贴到上一步的编辑窗口中</p>
-<p>4、按 <code>ESC</code> 后输入 <code>:wq</code> 并回车保存</p>
-<h2 id="STEP-3-可选-新建公钥"><a href="#STEP-3-可选-新建公钥" class="headerlink" title="STEP 3 (可选) 新建公钥"></a>STEP 3 (可选) 新建公钥</h2><p>如果电脑端没有生成过公钥的话，需要在终端上使用 <code>ssh-keygen -t rsa -C &quot;MyName&quot;</code> 创建一个密钥。</p>
-<p>然后使用 <code>cat ~/.ssh/id_rsa.pub</code>获取公钥信息</p>
-<p>再粘贴到<strong>群晖</strong>的 <code>~/.ssh/authorized_keys</code> 文件中。</p>
-<h2 id="STEP-4-设置权限"><a href="#STEP-4-设置权限" class="headerlink" title="STEP 4 设置权限"></a>STEP 4 设置权限</h2><p>群晖用户目录权限默认为 777，必须要修改为 755 才能免密登录</p>
-<p>具体权限设置命令：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">chmod 755 ~  </span><br><span class="line">chmod 600 ~/.ssh/authorized_keys  </span><br><span class="line">chmod 700 ~/.ssh</span><br></pre></td></tr></table></figure>
-
-
-<h2 id="STEP-5-打开公钥登录设置"><a href="#STEP-5-打开公钥登录设置" class="headerlink" title="STEP 5 打开公钥登录设置"></a>STEP 5 打开公钥登录设置</h2><p>修改 <code>sshd_config</code> 配置文件:</p>
-<p><code>sudo vim /etc/ssh/sshd_config</code></p>
-<p>修改上述文件中以下几个配置（去除行首的注释符号<code>#</code>即可）：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">PubkeyAuthentication yes  </span><br><span class="line">AuthorizedKeysFile .ssh/authorized_keys</span><br></pre></td></tr></table></figure>
-
-<h2 id="STEP-6-重启-SSH-服务"><a href="#STEP-6-重启-SSH-服务" class="headerlink" title="STEP 6 重启 SSH 服务"></a>STEP 6 重启 SSH 服务</h2><p>在群晖<code>控制面板 -&gt; 终端机和 SNMP</code> 关闭再开启 <code>SSH</code>，即可免密登录群晖。</p>
-<h2 id="STEP-7-关闭密码登录"><a href="#STEP-7-关闭密码登录" class="headerlink" title="STEP 7 关闭密码登录"></a>STEP 7 关闭密码登录</h2><p>保存好 <code>密钥对（id_rsa 和 id_rsa.pub）</code>的情况下，关闭密码登录群晖 SSH，增强安全性。</p>
-<p>具体方式：</p>
-<p>修改 <code>sshd_config</code> 配置文件命令：</p>
-<p><code>sudo vim /etc/ssh/sshd_config</code></p>
-<p>修改上述文件中以下配置：</p>
-<p><code>PasswordAuthentication no</code></p>
-<p>然后 重复 STEP 6 重启群晖 <code>SSH</code> 即可关闭密码登录群晖 <code>SSH</code>。</p>
- 
-      <!-- reward -->
-      
-      <div id="reword-out">
-        <div id="reward-btn">
-          打赏
-        </div>
-      </div>
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <div class="declare">
-      <ul class="post-copyright">
-        <li>
-          <i class="ri-copyright-line"></i>
-          <strong>版权声明： </strong>
-          
-          本博客所有文章除特别声明外，著作权归作者所有。转载请注明出处！
-          
-        </li>
-      </ul>
-    </div>
-    
-    <footer class="article-footer">
-       
-<div class="share-btn">
-      <span class="share-sns share-outer">
-        <i class="ri-share-forward-line"></i>
-        分享
-      </span>
-      <div class="share-wrap">
-        <i class="arrow"></i>
-        <div class="share-icons">
-          
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="ri-weibo-fill"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="ri-wechat-fill"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="ri-qq-fill"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="ri-douban-line"></i>
-          </a>
-          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a> -->
-          
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="ri-facebook-circle-fill"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="ri-twitter-fill"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="ri-google-fill"></i>
-          </a>
-        </div>
-      </div>
-</div>
-
-<div class="wx-share-modal">
-    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://studyz.github.io/2024/04/17/%E7%BE%A4%E6%99%96NAS%E5%AE%9E%E7%8E%B0SSH%E5%85%8D%E5%AF%86%E7%A0%81%E7%99%BB%E5%BD%95/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div id="share-mask"></div>  
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ssh/" rel="tag">ssh</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%BE%A4%E6%99%96/" rel="tag">群晖</a></li></ul>
-
-    </footer>
+    <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a> / <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">数据分析,机器学习</a>
   </div>
 
-   
-  <nav class="article-nav">
-    
-      <a href="/2024/04/20/Git_Hexo/" class="article-nav-link">
-        <strong class="article-nav-caption">上一篇</strong>
-        <div class="article-nav-title">
-          
-            群晖Git部署Hexo
-          
-        </div>
-      </a>
     
     
-      <a href="/2024/02/28/SQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="article-nav-link">
-        <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">SQL学习笔记</div>
-      </a>
-    
-  </nav>
-
-  
-   
-  
-   
-    <script src="https://cdn.staticfile.org/twikoo/1.4.18/twikoo.all.min.js"></script>
-    <div id="twikoo" class="twikoo"></div>
-    <script>
-        twikoo.init({
-            envId: ""
-        })
-    </script>
- 
+  </div>
 </article>
+      
+      
+    </div>
+  </div>
+  
+  
 
+  
 </section>
       <footer class="footer">
   <div class="outer">
@@ -411,22 +257,6 @@
 <script src="/js/lazyload.min.js"></script>
 
 <!-- Tocbot -->
- 
-<script src="/js/tocbot.min.js"></script>
-
-<script>
-  tocbot.init({
-    tocSelector: ".tocbot",
-    contentSelector: ".article-entry",
-    headingSelector: "h1, h2, h3, h4, h5, h6",
-    hasInnerContainers: true,
-    scrollSmooth: true,
-    scrollContainer: "main",
-    positionFixedSelector: ".tocbot",
-    positionFixedClass: "is-position-fixed",
-    fixedSidebarOffset: "auto",
-  });
-</script>
 
 <script src="https://cdn.staticfile.org/jquery-modal/0.9.2/jquery.modal.min.js"></script>
 <link

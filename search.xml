@@ -109,8 +109,7 @@
 ]]></content>
       <categories>
         <category>技术</category>
-        <category>博客</category>
-        <category>hexo</category>
+        <category>博客,hexo</category>
       </categories>
       <tags>
         <tag>markdown</tag>
@@ -278,9 +277,8 @@
 <iframe src="//player.bilibili.com/player.html?aid=244387247&bvid=BV1Av411174q&cid=229573649&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; Left: 0; top: 0;" ></iframe></div> 
 ]]></content>
       <categories>
-        <category>数码</category>
-        <category>相机</category>
-        <category>摄影</category>
+        <category>分享</category>
+        <category>数码,相机</category>
       </categories>
       <tags>
         <tag>数码</tag>
@@ -330,6 +328,10 @@
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="查看数据"><a href="#查看数据" class="headerlink" title="查看数据"></a>查看数据</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 查看头部 head(n)</span></span><br><span class="line">df.head()  <span class="comment">#默认查看前5条记录 </span></span><br><span class="line">df.head(<span class="number">8</span>)  <span class="comment">#指定查看前8条记录</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">## 查看尾部 tail(n)</span></span><br><span class="line">df.tail()  <span class="comment">#默认查看后面5条记录 </span></span><br><span class="line">df.tail(<span class="number">4</span>)  <span class="comment">#指定查看后面4条记录</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 随机查看样本 sample(n)</span></span><br><span class="line">df.sample()  <span class="comment">#随机查看一条记录 </span></span><br><span class="line">df.sample(<span class="number">4</span>)  <span class="comment">#随机查看4条记录</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 查看统计摘要</span></span><br><span class="line">df.describe()  <span class="comment">#返回所有数字列的统计摘要</span></span><br></pre></td></tr></table></figure>
 <span id="more"></span>
 <h1 id="检索数据"><a href="#检索数据" class="headerlink" title="检索数据"></a>检索数据</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 切片[]</span></span><br><span class="line">df[<span class="number">0</span>:<span class="number">3</span>]  <span class="comment">#通过切片检索行数据</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## loc\iloc</span></span><br><span class="line">df.loc[<span class="number">1</span>]  <span class="comment">#标量标签，返回该行标签的Series数据 </span></span><br><span class="line">df.loc[[<span class="number">1</span>,<span class="number">3</span>]]  <span class="comment">#标签列表，返回标签列表的行DataFrame数据 </span></span><br><span class="line">df.loc[<span class="number">0</span>:<span class="number">3</span>]  <span class="comment">#切片对象，返回切片的行DataFrame数据 </span></span><br><span class="line">df.loc[<span class="number">0</span>:<span class="number">3</span>,<span class="string">&#x27;staff_id&#x27;</span>:<span class="string">&#x27;staff_salary&#x27;</span>]  <span class="comment">#根据行切片，列切片检索数据 </span></span><br><span class="line">df.loc[[<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="string">&#x27;staff_id&#x27;</span>,<span class="string">&#x27;staff_name&#x27;</span>,<span class="string">&#x27;staff_age&#x27;</span>]]  <span class="comment">#根据行标签列表，列标签列表检索数据</span></span><br><span class="line">df.iloc[<span class="number">1</span>]  <span class="comment">#整数标量选择，数据从0开始，为1的就是第二行的数据，返回的是Series </span></span><br><span class="line">df.iloc[[<span class="number">1</span>,<span class="number">3</span>]]  <span class="comment">#整数列表选择，选择位置为1和3的数据，返回的是DataFrame </span></span><br><span class="line">df.iloc[<span class="number">1</span>:<span class="number">3</span>]  <span class="comment">#切片选择，选择位置1至2的数据，不包含边界结束值，也就是不包含3的位置 </span></span><br><span class="line">df.iloc[<span class="number">1</span>:<span class="number">3</span>,<span class="number">1</span>:<span class="number">4</span>]  <span class="comment">#切片选择位置为1至3的行和1至4的列不含位置为3的行和位置为4的列</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## at\iat</span></span><br><span class="line">df.at[<span class="string">&#x27;A&#x27;</span>,<span class="string">&#x27;staff_name&#x27;</span>]  <span class="comment">#检索第“A”行的列标签为&quot;staff_name&quot;的数据 df.iat[0,1]  #检索第1行第2列的数据</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>技术</category>
+        <category>数据分析,python</category>
+      </categories>
       <tags>
         <tag>笔记</tag>
         <tag>python</tag>
@@ -342,6 +344,10 @@
 <hr>
 <p><a href="https://www.programcreek.com/python">Python Code Examples: Python代码例子</a><br><a href="https://mp.weixin.qq.com/s/0b_bG83S-LEpQOtaWZXv3A">Python网站开发库大全整理完了</a><br><a href="https://mp.weixin.qq.com/s/5bYBrDs90JWMj1A25K4WkQ">14个VSCode插件，让你写代码如同神一般</a><br><a href="https://mp.weixin.qq.com/s/B1q3n--GrK9ybtUcw9eC-Q">Python中关于进度条的6个实用技巧</a><br><a href="https://mp.weixin.qq.com/s/lRicXgAoUYAYO_WpFdQo6A">45个Git经典操作场景，专治不会合代码</a><br><a href="https://mp.weixin.qq.com/s/9qtNkNs6qcJqqEFS15jw-w">进阶版的Pandas神器：Polars</a><br><a href="https://mp.weixin.qq.com/s/qbSoq05Aaw-YPmdbYrgUdg">Sklearn模块中不为人知又超级好用的API函数</a><br><a href="https://mp.weixin.qq.com/s/ndmIgNGN6eBsoF4Y1CeaFg">Python列表解析式到底该怎么用？</a><br><a href="https://mp.weixin.qq.com/s/ScoUXRyeJGo1g0LaiLoxSw">20个短小精悍的pandas骚操作</a><br><a href="https://mp.weixin.qq.com/s/LoFWiuCteDPgO4P3CAHqHw">数据分析打工人的Pandas75个高频操作（收藏查询用~）</a><br><a href="https://mp.weixin.qq.com/s/DnLJbvVUhTx87-S24FXd8w">一文详解Python-Conda包管理工具</a><br><a href="https://mp.weixin.qq.com/s/YYS2Oq9UvryHKEvJ5MONXA">这些10种Numpy高级操作你都会吗？</a></p>
 ]]></content>
+      <categories>
+        <category>技术</category>
+        <category>数据分析,python</category>
+      </categories>
       <tags>
         <tag>笔记</tag>
         <tag>python</tag>
@@ -456,6 +462,10 @@
 
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip list #查看已安装的python模块</span><br><span class="line"></span><br><span class="line">pip freeze &gt;requirements.txt # 导出依赖库名称</span><br><span class="line"></span><br><span class="line">pip download -d packages -r requirements.txt #下载依赖库</span><br><span class="line"></span><br><span class="line">pip install --no-index --find-links=packages -r requirements.txt #将`packages`文件夹和`requirements.txt`文件拷贝至离线机器任意同级目录下，以管理员权限启动cmd命令窗口进入该目录，执行下述命令进行离线安装。</span><br></pre></td></tr></table></figure>
 ]]></content>
+      <categories>
+        <category>技术</category>
+        <category>数据分析,python</category>
+      </categories>
       <tags>
         <tag>笔记</tag>
         <tag>python</tag>
@@ -706,6 +716,10 @@
 </ol>
 <p>? 热力图</p>
 ]]></content>
+      <categories>
+        <category>技术</category>
+        <category>数据分析,方法论</category>
+      </categories>
       <tags>
         <tag>笔记</tag>
         <tag>数据分析师</tag>
@@ -732,6 +746,10 @@
 <p>8⃣️ Mr muscle通道强力剂！ 水槽，浴室如果都便秘了，那主人可就更难受了。 超强清下水道秘方，家家必备的男人。尤其是掉头发比较多的女生经常会堵掉下水道。用它就可以畅通哦。 购买地址：Coles、WWS有售 💰价格：$13.7 搞定下水道，心情好到爆，买它！喵～</p>
 <hr>
 ]]></content>
+      <categories>
+        <category>分享</category>
+        <category>生活,好物推荐</category>
+      </categories>
       <tags>
         <tag>推荐</tag>
         <tag>日常</tag>
@@ -744,6 +762,10 @@
 <span id="more"></span>
 <h2 id="中文翻译"><a href="#中文翻译" class="headerlink" title="中文翻译"></a>中文翻译</h2><p>Step 1: <code>寻找已有成功的视频。</code><br>Step 2: <code>复制视频的脚本。</code><br>Step 3: 能否为这个视频脚本生成10个YouTube视频标题？这些标题应该更加发人深思，并且更加吸引人，同时添加好奇心。回复中文<br>Step 4: 能否为这些视频标题编写一个短的视频脚本？回复中文<br>Step 5: 能否为这些视频标题编写一个描述？回复中文<br>Step 6: 能否为这个视频描述编写一个YouTube视频射击脚本？回复中文</p>
 ]]></content>
+      <categories>
+        <category>技术</category>
+        <category>人工智能,Prompt</category>
+      </categories>
       <tags>
         <tag>GPT</tag>
         <tag>AI</tag>
@@ -843,6 +865,10 @@
 <p>Spark：具有基于时间的窗口标准。</p>
 <p>Flink：具有基于记录的或任何自定义的用户定义的Flink Window标准。  </p>
 ]]></content>
+      <categories>
+        <category>技术</category>
+        <category>数据分析,数据库</category>
+      </categories>
       <tags>
         <tag>笔记</tag>
         <tag>数据库</tag>
@@ -879,8 +905,8 @@
 <p>预测分析的方法有回归分析法、滑动平均法、指数平滑法、周期（季节）变化分析和随机变化分析等。比较复杂的预测分析需要建立计量经济模型，求解模型中的参数又有许多方法。</p>
 ]]></content>
       <categories>
-        <category>数据分析</category>
-        <category>方法论</category>
+        <category>技术</category>
+        <category>数据分析,方法论</category>
       </categories>
       <tags>
         <tag>数据分析师</tag>
@@ -987,6 +1013,10 @@
 
 
 ]]></content>
+      <categories>
+        <category>技术</category>
+        <category>人工智能,Prompt</category>
+      </categories>
       <tags>
         <tag>GPT</tag>
         <tag>Prompt</tag>
@@ -1008,6 +1038,10 @@
 <p><a href="https://civitai.com/images/572647?period=Year&sort=Newest&view=categories&tags=5133">https://civitai.com/images/572647?period=Year&sort=Newest&view=categories&tags=5133</a></p>
 <p>![[Pasted image 20230423175817.png]]</p>
 ]]></content>
+      <categories>
+        <category>技术</category>
+        <category>人工智能,lora</category>
+      </categories>
   </entry>
   <entry>
     <title>机器学习笔记</title>
@@ -1065,8 +1099,8 @@
 <p>优点：降低数据的复杂性，识别最重要的多个特征。<br>缺点：不一定需要，且可能损失有用信息。<br>适用数据类型：数值型数据。</p>
 ]]></content>
       <categories>
-        <category>数据分析</category>
-        <category>方法论</category>
+        <category>技术</category>
+        <category>数据分析,机器学习</category>
       </categories>
       <tags>
         <tag>笔记</tag>
@@ -1103,8 +1137,8 @@
 </ol>
 ]]></content>
       <categories>
-        <category>数据分析</category>
-        <category>方法论</category>
+        <category>技术</category>
+        <category>数据分析,方法论</category>
       </categories>
       <tags>
         <tag>数据分析师</tag>
@@ -1147,8 +1181,8 @@
 <p>在数字化时代，5W2H这一古老而简单的分析模型仍被广泛使用，它为各种复杂问题提供了一种思考方式，有助于系统、全面地完成数据分析任务。</p>
 ]]></content>
       <categories>
-        <category>数据分析</category>
-        <category>方法论</category>
+        <category>技术</category>
+        <category>数据分析,方法论</category>
       </categories>
       <tags>
         <tag>数据分析</tag>
@@ -1267,8 +1301,8 @@
 <p>作者：Sunil Ray<br>ref: <a href="https://mp.weixin.qq.com/s?__biz=MjM5NzEyMzg4MA==&mid=2649468348&idx=6&sn=98e8ec166f38992470bd2de5979c33f0&chksm=bec1cffb89b646ed54437df231cfe3c3cf1a66010672daa570a5791d29ee0c022cf7fd36556b&scene=27">7大经典回归模型</a></p>
 ]]></content>
       <categories>
-        <category>数据分析</category>
-        <category>模型</category>
+        <category>技术</category>
+        <category>数据分析,机器算法</category>
       </categories>
       <tags>
         <tag>数据分析</tag>
@@ -1629,8 +1663,8 @@
 <h3 id="5-可视化"><a href="#5-可视化" class="headerlink" title="5-可视化"></a>5-可视化</h3><p>在21世纪之后，每个行业的数据都可以被可视化，它是决策者和数据分析师了解事情结果的桥梁。目前，市场上最突出的可视化工具包括 – PowerBI、Tableau 和智分析等，以下图的智分析为例，目前的图表可视化正从传统的静态报表逐渐向BI动态报表过渡，可视化能力得到进一步的加强。</p>
 <h1 id="数据分析师所需的软技能"><a href="#数据分析师所需的软技能" class="headerlink" title="数据分析师所需的软技能"></a>数据分析师所需的软技能</h1><h3 id="1-沟通"><a href="#1-沟通" class="headerlink" title="1-沟通"></a>1-沟通</h3><h3 id="2-批判性思维"><a href="#2-批判性思维" class="headerlink" title="2-批判性思维"></a>2-批判性思维</h3><h3 id="3-好奇心"><a href="#3-好奇心" class="headerlink" title="3-好奇心"></a>3-好奇心</h3><h3 id="4-解决问题"><a href="#4-解决问题" class="headerlink" title="4-解决问题"></a>4-解决问题</h3><h3 id="5-终身学习"><a href="#5-终身学习" class="headerlink" title="5-终身学习"></a>5-终身学习</h3>]]></content>
       <categories>
-        <category>数据分析</category>
-        <category>方法论</category>
+        <category>技术</category>
+        <category>数据分析,方法论</category>
       </categories>
       <tags>
         <tag>笔记</tag>
@@ -1708,8 +1742,8 @@
 <p>事实证明，在我们的例子中，那位诗人的话语比其他诗人的诗句更加名垂千古。尽管生而为奴，诗人安塔拉（Antarah）的英勇和语言能力使他获得了自由和神话般的地位，他的诗是伊斯兰教以前的阿拉伯半岛《悬诗》的七首诗之一。</p>
 ]]></content>
       <categories>
-        <category>tutorial</category>
-        <category>numpy</category>
+        <category>技术</category>
+        <category>数据分析,numpy</category>
       </categories>
       <tags>
         <tag>笔记</tag>
@@ -1735,6 +1769,10 @@
 
 <p>上述查询将返回结果为9，表示从2021年1月1日到2021年1月10日之间相差了9天。</p>
 ]]></content>
+      <categories>
+        <category>技术</category>
+        <category>数据分析,SQL</category>
+      </categories>
       <tags>
         <tag>笔记</tag>
         <tag>SQL</tag>
@@ -1755,6 +1793,10 @@
 <p>在这个示例中，我们按照”category_id”和”product_id”两列进行了分组，并计算了每个产品在每个类别中的订单总数。</p>
 <p>需要注意的是，GROUP BY子句必须与SELECT语句一起使用，并且SELECT语句中的列必须是GROUP BY子句中的列或者是聚合函数的参数。这样才能确保查询的正确性。</p>
 ]]></content>
+      <categories>
+        <category>技术</category>
+        <category>数据分析,SQL</category>
+      </categories>
       <tags>
         <tag>笔记</tag>
         <tag>SQL</tag>
@@ -1790,6 +1832,10 @@
 <p>在这个例子中，对于每个学生，我们使用CASE WHEN语句根据他们的分数来判断他们的等级。如果分数大于等于90，那么他们被归类为”优秀”；如果分数大于等于80，但小于90，他们被归类为”良好”；如果分数大于等于60，但小于80，他们被归类为”及格”；否则，他们被归类为”不及格”。</p>
 <p>通过使用CASE WHEN语句，我们可以根据不同的条件返回不同的结果，从而实现灵活的数据处理和转换。</p>
 ]]></content>
+      <categories>
+        <category>技术</category>
+        <category>数据分析,SQL</category>
+      </categories>
       <tags>
         <tag>笔记</tag>
         <tag>SQL</tag>
@@ -1846,6 +1892,10 @@
 <p>这次，我们使用了LEAD()函数来获取后一天的销售额，并计算了差异。</p>
 <p>LEAD()和LAG()函数还支持更复杂的用法，比如指定分区（PARTITION BY）来在不同的组中进行计算，以及指定默认值以处理边界情况。它们可以极大地提升分析和比较相邻行的能力。</p>
 ]]></content>
+      <categories>
+        <category>技术</category>
+        <category>数据分析,SQL</category>
+      </categories>
       <tags>
         <tag>笔记</tag>
         <tag>SQL</tag>
@@ -1980,6 +2030,10 @@
 </tbody></table>
 <p>在上述结果中，我们根据每个班级的考试成绩进行了排名。班级ID为A的学生有三个学生，分别获得了95、90和85分，他们分别被分配密集排名1、2和3。班级ID为B的学生有四个学生，分别获得了92、88、88和80分，他们分别被分配密集排名1、2、2和3。</p>
 ]]></content>
+      <categories>
+        <category>技术</category>
+        <category>数据分析,SQL</category>
+      </categories>
       <tags>
         <tag>笔记</tag>
         <tag>SQL</tag>
@@ -2026,6 +2080,10 @@
 <p><code>PasswordAuthentication no</code></p>
 <p>然后 重复 STEP 6 重启群晖 <code>SSH</code> 即可关闭密码登录群晖 <code>SSH</code>。</p>
 ]]></content>
+      <categories>
+        <category>技术</category>
+        <category>网络</category>
+      </categories>
       <tags>
         <tag>笔记</tag>
         <tag>群晖</tag>
@@ -2176,6 +2234,10 @@
 </ul>
 <p>差不多碎碎念完了，归根结底最重要的就是勤收拾、买好不买多、主动接收这几块。这种极简生活的方式很多时候可以影响一个人的三观，包括他的生活、工作方式、他的喜好性格。最后，同样也希望你快乐，过得幸福。</p>
 ]]></content>
+      <categories>
+        <category>分享</category>
+        <category>生活,碎碎念</category>
+      </categories>
       <tags>
         <tag>随笔</tag>
         <tag>分享</tag>
@@ -10574,9 +10636,8 @@
 </tbody></table>
 ]]></content>
       <categories>
-        <category>生活</category>
         <category>分享</category>
-        <category>碎碎念</category>
+        <category>生活,碎碎念</category>
       </categories>
       <tags>
         <tag>名侦探柯南</tag>
