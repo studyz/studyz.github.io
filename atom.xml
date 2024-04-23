@@ -112,7 +112,7 @@
     <link href="https://studyz.github.io/2024/04/20/Git_Hexo/"/>
     <id>https://studyz.github.io/2024/04/20/Git_Hexo/</id>
     <published>2024-04-20T05:11:30.000Z</published>
-    <updated>2024-04-23T07:29:41.847Z</updated>
+    <updated>2024-04-23T18:04:26.619Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;一、前期准备&quot;&gt;&lt;a href=&quot;#一、前期准备&quot; class=&quot;headerlink&quot; title=&quot;一、前期准备&quot;&gt;&lt;/a&gt;一、前期准备&lt;/h2&gt;&lt;h3 id=&quot;1-1-注册-账号-Gitee-GitHub&quot;&gt;&lt;a href=&quot;#1-1-注册-账号-Gitee-GitHub&quot; class=&quot;headerlink&quot; title=&quot;1.1 注册 账号 Gitee&amp;#x2F;GitHub&quot;&gt;&lt;/a&gt;1.1 注册 账号 Gitee&amp;#x2F;GitHub&lt;/h3&gt;&lt;p&gt;注册一个属于自己的 Github 或 Gitee 账号，&lt;/p&gt;
@@ -344,7 +344,7 @@
     <link href="https://studyz.github.io/2023/10/23/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E6%89%80%E9%9C%80%E7%9A%84%E6%8A%80%E6%9C%AF%E4%B8%8E%E7%90%86%E8%AE%BA/"/>
     <id>https://studyz.github.io/2023/10/23/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E6%89%80%E9%9C%80%E7%9A%84%E6%8A%80%E6%9C%AF%E4%B8%8E%E7%90%86%E8%AE%BA/</id>
     <published>2023-10-23T05:11:30.000Z</published>
-    <updated>2024-04-23T07:34:35.849Z</updated>
+    <updated>2024-04-23T18:11:44.726Z</updated>
     
     
     <summary type="html">&lt;blockquote&gt;
@@ -372,13 +372,13 @@
     <link href="https://studyz.github.io/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/"/>
     <id>https://studyz.github.io/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/</id>
     <published>2023-10-23T05:11:30.000Z</published>
-    <updated>2024-04-23T07:33:10.138Z</updated>
+    <updated>2024-04-23T18:03:40.067Z</updated>
     
     
     <summary type="html">&lt;blockquote&gt;
 &lt;p&gt;NumPy是Python中用于数据分析、机器学习、科学计算的重要软件包。它极大地简化了向量和矩阵的操作及处理。python的不少数据处理软件包依赖于NumPy作为其基础架构的核心部分（例如scikit-learn、SciPy、pandas和tensorflow）。除了数据切片和数据切块的功能之外，掌握numpy也使得开发者在使用各数据处理库调试和处理复杂用例时更具优势。&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&quot;/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0001.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/../images/2023_10_23_%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0001.png&quot;&gt;&lt;/p&gt;
 &lt;p&gt;在本文中，将介绍NumPy的主要用法，以及它如何呈现不同类型的数据（表格，图像，文本等），这些经Numpy处理后的数据将成为机器学习模型的输入。&lt;/p&gt;
 &lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; numpy &lt;span class=&quot;keyword&quot;&gt;as&lt;/span&gt; np&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
@@ -509,12 +509,12 @@
     <link href="https://studyz.github.io/2023/08/01/7%E5%A4%A7%E7%BB%8F%E5%85%B8%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/"/>
     <id>https://studyz.github.io/2023/08/01/7%E5%A4%A7%E7%BB%8F%E5%85%B8%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/</id>
     <published>2023-08-01T05:11:30.000Z</published>
-    <updated>2024-04-23T07:34:51.261Z</updated>
+    <updated>2024-04-23T18:02:32.672Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;什么是回归分析？&quot;&gt;&lt;a href=&quot;#什么是回归分析？&quot; class=&quot;headerlink&quot; title=&quot;什么是回归分析？&quot;&gt;&lt;/a&gt;什么是回归分析？&lt;/h1&gt;&lt;p&gt;回归分析是一种预测性的建模技术，它研究的是因变量（目标）和自变量（预测器）之间的关系。这种技术通常用于预测分析，时间序列模型以及发现变量之间的因果关系。例如，司机的鲁莽驾驶与道路交通事故数量之间的关系，最好的研究方法就是回归。&lt;/p&gt;
 &lt;p&gt;回归分析是建模和分析数据的重要工具。在这里，我们使用曲线&amp;#x2F;线来拟合这些数据点，在这种方式下，从曲线或线到数据点的距离差异最小。我会在接下来的部分详细解释这一点。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/2023/08/01/7%E5%A4%A7%E7%BB%8F%E5%85%B8%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/10001.png&quot;&gt;&lt;/p&gt;</summary>
+&lt;p&gt;&lt;img src=&quot;/../images/2023_08_01_7%E5%A4%A7%E7%BB%8F%E5%85%B8%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/10001.png&quot;&gt;&lt;/p&gt;</summary>
     
     
     
