@@ -5,6 +5,7 @@
     <url>/2019/05/01/hello_world/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
 <p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Here-Cheatsheet">Markdown</a> 使用<a href="https://github.com/younghz/Markdown">Markdown 基本语法</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
+<p><img src="/../images/20240327_DSC09484.jpeg" alt="name"></p>
 <h1 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h1><hr>
 <h3 id="init"><a href="#init" class="headerlink" title="init"></a>init</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">hexo init [folder]</span></span><br></pre></td></tr></table></figure>
 
@@ -296,9 +297,10 @@
 <li>鸡胸肉（黑胡椒、13香、橄榄油）</li>
 <li>地瓜（切块、橄榄油）</li>
 <li>温度：180度</li>
-<li>时间：15分钟<span id="more"></span>
-<a href="https://www.youtube.com/watch?v=D8O7myqk0Bw">健身食品制作视频</a></li>
+<li>时间：15分钟</li>
 </ul>
+<span id="more"></span>
+<p><a href="https://www.youtube.com/watch?v=D8O7myqk0Bw">健身食品制作视频</a></p>
 <h1 id="阳春面调料"><a href="#阳春面调料" class="headerlink" title="阳春面调料"></a>阳春面调料</h1><ul>
 <li>生抽、陈醋、盐、香油或猪油、葱花</li>
 </ul>
@@ -670,13 +672,17 @@
 <p>缺 点：buildbot 对多项目支持并不好。</p>
 <p>引用链接：<a href="https://mp.weixin.qq.com/s/0b_bG83S-LEpQOtaWZXv3A">https://mp.weixin.qq.com/s/0b_bG83S-LEpQOtaWZXv3A</a></p>
 ]]></content>
+      <categories>
+        <category>技术</category>
+        <category>数据分析,python</category>
+      </categories>
       <tags>
         <tag>python</tag>
         <tag>网站</tag>
       </tags>
   </entry>
   <entry>
-    <title>数据分析师</title>
+    <title>数据分析师技术树</title>
     <url>/2023/05/15/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="数据分析师"><a href="#数据分析师" class="headerlink" title="数据分析师"></a>数据分析师</h1><ol>
 <li><p>特点：独当一面、战斗力极强、对企业决策者有一定的影响</p>
@@ -1306,69 +1312,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Apple TV 4K 三代</title>
-    <url>/2023/08/10/AppleTV4K/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
-<p>以前发布节奏都是3年左右更新一代，现在直接一年一更了吗难道？<br>上一代还是2021年发布的。<br>来跟大家分享下新款的Apple TV 4K都更新了哪些东西？值得买吗？已经买了2021款的需要换吗？</p>
-</blockquote>
-<h1 id="两个版本"><a href="#两个版本" class="headerlink" title="两个版本"></a>两个版本</h1><span id="more"></span>
-<p><img src="https://pic1.zhimg.com/v2-227b2d5b18b852460deaf6c04118bf9c_r.jpg"></p>
-<p><strong>无线版：</strong> 只能WiFi连接，存储64GB<br><strong>有线版本：</strong> 支持WiFi和以太网连接，存储128GB</p>
-<h1 id="与前代对比："><a href="#与前代对比：" class="headerlink" title="与前代对比："></a>与前代对比：</h1><ul>
-<li>A15芯片</li>
-<li>支持 HDR 10+</li>
-<li>遥控器充电口更换为 USB-C</li>
-<li>内存从3GB升级到4GB</li>
-<li>设备容量翻倍，无 32 GB 机型。现在为 64 GB 和 128 GB<br><img src="https://pic1.zhimg.com/v2-4b8debba68fc6523885458324be7d6b9_r.jpg?source=1940ef5c" alt="对比"></li>
-</ul>
-<h3 id="升级点-1：芯片从A12提升到了A15"><a href="#升级点-1：芯片从A12提升到了A15" class="headerlink" title="升级点-1：芯片从A12提升到了A15"></a>升级点-1：芯片从A12提升到了A15</h3><p><img src="https://pic3.zhimg.com/v2-cee98cb8cd1005ce49538f8d071cceba_b.jpg"></p>
-<p>新发布的iPad 2022款3599元起，使用的只是A14芯片！<br>A15对比A12的性能对比数据，CPU提升40%、GPU提升80%</p>
-<p><img src="https://pic1.zhimg.com/80/v2-6e3e66793387915d4a72e3cee3a93b78_1440w.webp"></p>
-<p>晶体管数量A15比A12翻了一倍不止！</p>
-<p><img src="https://pic2.zhimg.com/v2-a6c0c9fe1cafc6ffb132a50c57b13de5_r.jpg"></p>
-<p>安兔兔跑分来看，A15比A12跑分高了51%</p>
-<p>不过苹果官方给的新款Apple TV 数据：</p>
-<p>CPU 性能现在比上一代快 50%，提供更出色的响应能力、更快的导航和更快速的 UI 动画。GPU 性能现在比上一代产品快 30%，游戏体验更加流畅。</p>
-<p>可能是没有风扇的缘故，性能有所保留。</p>
-<p>一个电视盒子，价格1000块，直接上了A15，苹果想干啥？</p>
-<p>这个盒子完全可以用来玩原神了，而且存储最高到了128GB</p>
-<p><strong>苹果肯定是想发展电视游戏平台了！</strong> 已有的Acade会员加上现在的硬件大幅度升级，以后在Apple TV玩原神不是梦，甚至更大胆一点，会不会和明年苹果要发布的AR&#x2F;MR有联动？</p>
-<h3 id="升级点2：变得更薄更小了，重量减轻了"><a href="#升级点2：变得更薄更小了，重量减轻了" class="headerlink" title="升级点2：变得更薄更小了，重量减轻了"></a>升级点2：变得更薄更小了，重量减轻了</h3><p>由于采用A15芯片无风扇设计，与上一代Apple TV 4K相比，该设备的厚度减少了10%以上，重量减轻了约50%。</p>
-<p><img src="https://pic4.zhimg.com/v2-bc4357f9adfd09eca56754d61191da13_r.jpg"></p>
-<h3 id="升级点3：支持HDR10"><a href="#升级点3：支持HDR10" class="headerlink" title="升级点3：支持HDR10+"></a>升级点3：支持HDR10+</h3><p><img src="https://pic3.zhimg.com/v2-3de5f42b7fe35f25601971c743cce8fe_r.jpg"></p>
-<p>对HDR的支持算是补齐了</p>
-<h3 id="升级点4：遥控器充电口更换为-USB-C"><a href="#升级点4：遥控器充电口更换为-USB-C" class="headerlink" title="升级点4：遥控器充电口更换为-USB-C"></a>升级点4：遥控器充电口更换为-USB-C</h3><p><img src="https://pic2.zhimg.com/v2-1a672d02a9a4e251f5ff370efcc5fe41_r.jpg"></p>
-<p>Apple TV的遥控器不怎么需要充电，我的日常半年都不充电一次，</p>
-<p>不过连遥控器都上USB-C了，看来明年iPhone肯定也会全系上USB-C了～</p>
-<h1 id="遗憾："><a href="#遗憾：" class="headerlink" title="遗憾："></a>遗憾：</h1><ol>
-<li>HDMI 2.1 目前仍然只能支持4K 60帧（怀疑使用的是满血版HDMI 2.1，但是固件做了限制）</li>
-<li>音频Dolby Atoms True HD解码，但是不支持源码输出（给新款HomePods准备的？）</li>
-<li>不支持AV1和H.266&lt;VVC&gt;编码</li>
-</ol>
-<p>不过以上其实对绝大部分人没啥影响，放心冲就行了，1000块的价格完全是买A15芯片送盒子了。</p>
-<h1 id="选购建议"><a href="#选购建议" class="headerlink" title="选购建议"></a>选购建议</h1><p>还没买的直接上128GB有线版本<br>如果你现在已经买了Apple TV 4K 2021款，那么可以等等，毕竟A12已经性能过剩了，可以等苹果后续系统更新会不会有更大的动作，再考虑是否换新。</p>
-<h1 id="买港版还是美版"><a href="#买港版还是美版" class="headerlink" title="买港版还是美版"></a>买港版还是美版</h1><p>建议美版，港版和美版的唯一差别就是电源线插头的区别，美版电源插头可以直接用，港版电源插头需要买转接头（插座会高出一大坨的东西），或者买个国标的8字电源线，替换一下。<br><img src="https://pic2.zhimg.com/v2-b184e255c818a5aaabb3410eaf7e5eb1_b.jpg"></p>
-<h1 id="Apple-TV-录屏："><a href="#Apple-TV-录屏：" class="headerlink" title="Apple-TV-录屏："></a>Apple-TV-录屏：</h1><p><strong>系统版本：</strong> tvOS 16.3.3<br><strong>需要硬件设备：</strong> 一台Apple TV，一台macOS设备；<br><strong>网络要求：</strong> 保证Apple TV和你的macOS设备在同一局域网内；<br><strong>软件：</strong> macOS系统的<strong>QuickTime Player</strong><br><strong>操作路径：</strong> 打开<strong>QuickTime Player</strong> -&gt; 菜单栏 -&gt; 文件 -&gt; 新建影片录制 -&gt; 点击红色圆形「录制」按钮右侧的箭头 -&gt; 选择Apple TV设备，例如我家是「家庭影院」  </p>
-<h3 id="Apple-TV-录屏需注意的坑"><a href="#Apple-TV-录屏需注意的坑" class="headerlink" title="Apple-TV-录屏需注意的坑"></a>Apple-TV-录屏需注意的坑</h3><p>如果你的QuickTime Player没有出现Apple TV（一般TVOS 16更新后会出现这种）</p>
-<ol>
-<li><p>设置 -&gt; 「隔空播放和HomeKit」 -&gt; 「会议室显示器」 -&gt; 改为打开<br>如果这个时候，你在QuickTime Player还是没有看到Apple TV，那么你应该是有HomePod，并把<br>HomePod设置成了<strong>默认音频输出</strong>了。</p>
-</li>
-<li><p>设置 -&gt; 「视频和音频」 -&gt; 「音频」 -&gt; 选择电视扬声器<br>这时候就能在QuickTime Player找到Apple TV了！</p>
-</li>
-</ol>
-<h1 id="如何显示视频码率等信息？"><a href="#如何显示视频码率等信息？" class="headerlink" title="如何显示视频码率等信息？"></a>如何显示视频码率等信息？</h1><p><a href="https://zhuanlan.zhihu.com/p/553483619">https://zhuanlan.zhihu.com/p/553483619</a></p>
-]]></content>
-      <categories>
-        <category>数码</category>
-        <category>智能家居,智能影音</category>
-      </categories>
-      <tags>
-        <tag>笔记</tag>
-        <tag>数码</tag>
-        <tag>Apple</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>7大经典回归模型</title>
     <url>/2023/08/01/7%E5%A4%A7%E7%BB%8F%E5%85%B8%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="什么是回归分析？"><a href="#什么是回归分析？" class="headerlink" title="什么是回归分析？"></a>什么是回归分析？</h1><p>回归分析是一种预测性的建模技术，它研究的是因变量（目标）和自变量（预测器）之间的关系。这种技术通常用于预测分析，时间序列模型以及发现变量之间的因果关系。例如，司机的鲁莽驾驶与道路交通事故数量之间的关系，最好的研究方法就是回归。</p>
@@ -1487,6 +1430,69 @@
         <tag>数据分析</tag>
         <tag>回归模型</tag>
         <tag>机器算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Apple TV 4K 三代</title>
+    <url>/2023/08/10/AppleTV4K/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
+<p>以前发布节奏都是3年左右更新一代，现在直接一年一更了吗难道？<br>上一代还是2021年发布的。<br>来跟大家分享下新款的Apple TV 4K都更新了哪些东西？值得买吗？已经买了2021款的需要换吗？</p>
+</blockquote>
+<h1 id="两个版本"><a href="#两个版本" class="headerlink" title="两个版本"></a>两个版本</h1><span id="more"></span>
+<p><img src="https://pic1.zhimg.com/v2-227b2d5b18b852460deaf6c04118bf9c_r.jpg"></p>
+<p><strong>无线版：</strong> 只能WiFi连接，存储64GB<br><strong>有线版本：</strong> 支持WiFi和以太网连接，存储128GB</p>
+<h1 id="与前代对比："><a href="#与前代对比：" class="headerlink" title="与前代对比："></a>与前代对比：</h1><ul>
+<li>A15芯片</li>
+<li>支持 HDR 10+</li>
+<li>遥控器充电口更换为 USB-C</li>
+<li>内存从3GB升级到4GB</li>
+<li>设备容量翻倍，无 32 GB 机型。现在为 64 GB 和 128 GB<br><img src="https://pic1.zhimg.com/v2-4b8debba68fc6523885458324be7d6b9_r.jpg?source=1940ef5c" alt="对比"></li>
+</ul>
+<h3 id="升级点-1：芯片从A12提升到了A15"><a href="#升级点-1：芯片从A12提升到了A15" class="headerlink" title="升级点-1：芯片从A12提升到了A15"></a>升级点-1：芯片从A12提升到了A15</h3><p><img src="https://pic3.zhimg.com/v2-cee98cb8cd1005ce49538f8d071cceba_b.jpg"></p>
+<p>新发布的iPad 2022款3599元起，使用的只是A14芯片！<br>A15对比A12的性能对比数据，CPU提升40%、GPU提升80%</p>
+<p><img src="https://pic1.zhimg.com/80/v2-6e3e66793387915d4a72e3cee3a93b78_1440w.webp"></p>
+<p>晶体管数量A15比A12翻了一倍不止！</p>
+<p><img src="https://pic2.zhimg.com/v2-a6c0c9fe1cafc6ffb132a50c57b13de5_r.jpg"></p>
+<p>安兔兔跑分来看，A15比A12跑分高了51%</p>
+<p>不过苹果官方给的新款Apple TV 数据：</p>
+<p>CPU 性能现在比上一代快 50%，提供更出色的响应能力、更快的导航和更快速的 UI 动画。GPU 性能现在比上一代产品快 30%，游戏体验更加流畅。</p>
+<p>可能是没有风扇的缘故，性能有所保留。</p>
+<p>一个电视盒子，价格1000块，直接上了A15，苹果想干啥？</p>
+<p>这个盒子完全可以用来玩原神了，而且存储最高到了128GB</p>
+<p><strong>苹果肯定是想发展电视游戏平台了！</strong> 已有的Acade会员加上现在的硬件大幅度升级，以后在Apple TV玩原神不是梦，甚至更大胆一点，会不会和明年苹果要发布的AR&#x2F;MR有联动？</p>
+<h3 id="升级点2：变得更薄更小了，重量减轻了"><a href="#升级点2：变得更薄更小了，重量减轻了" class="headerlink" title="升级点2：变得更薄更小了，重量减轻了"></a>升级点2：变得更薄更小了，重量减轻了</h3><p>由于采用A15芯片无风扇设计，与上一代Apple TV 4K相比，该设备的厚度减少了10%以上，重量减轻了约50%。</p>
+<p><img src="https://pic4.zhimg.com/v2-bc4357f9adfd09eca56754d61191da13_r.jpg"></p>
+<h3 id="升级点3：支持HDR10"><a href="#升级点3：支持HDR10" class="headerlink" title="升级点3：支持HDR10+"></a>升级点3：支持HDR10+</h3><p><img src="https://pic3.zhimg.com/v2-3de5f42b7fe35f25601971c743cce8fe_r.jpg"></p>
+<p>对HDR的支持算是补齐了</p>
+<h3 id="升级点4：遥控器充电口更换为-USB-C"><a href="#升级点4：遥控器充电口更换为-USB-C" class="headerlink" title="升级点4：遥控器充电口更换为-USB-C"></a>升级点4：遥控器充电口更换为-USB-C</h3><p><img src="https://pic2.zhimg.com/v2-1a672d02a9a4e251f5ff370efcc5fe41_r.jpg"></p>
+<p>Apple TV的遥控器不怎么需要充电，我的日常半年都不充电一次，</p>
+<p>不过连遥控器都上USB-C了，看来明年iPhone肯定也会全系上USB-C了～</p>
+<h1 id="遗憾："><a href="#遗憾：" class="headerlink" title="遗憾："></a>遗憾：</h1><ol>
+<li>HDMI 2.1 目前仍然只能支持4K 60帧（怀疑使用的是满血版HDMI 2.1，但是固件做了限制）</li>
+<li>音频Dolby Atoms True HD解码，但是不支持源码输出（给新款HomePods准备的？）</li>
+<li>不支持AV1和H.266&lt;VVC&gt;编码</li>
+</ol>
+<p>不过以上其实对绝大部分人没啥影响，放心冲就行了，1000块的价格完全是买A15芯片送盒子了。</p>
+<h1 id="选购建议"><a href="#选购建议" class="headerlink" title="选购建议"></a>选购建议</h1><p>还没买的直接上128GB有线版本<br>如果你现在已经买了Apple TV 4K 2021款，那么可以等等，毕竟A12已经性能过剩了，可以等苹果后续系统更新会不会有更大的动作，再考虑是否换新。</p>
+<h1 id="买港版还是美版"><a href="#买港版还是美版" class="headerlink" title="买港版还是美版"></a>买港版还是美版</h1><p>建议美版，港版和美版的唯一差别就是电源线插头的区别，美版电源插头可以直接用，港版电源插头需要买转接头（插座会高出一大坨的东西），或者买个国标的8字电源线，替换一下。<br><img src="https://pic2.zhimg.com/v2-b184e255c818a5aaabb3410eaf7e5eb1_b.jpg"></p>
+<h1 id="Apple-TV-录屏："><a href="#Apple-TV-录屏：" class="headerlink" title="Apple-TV-录屏："></a>Apple-TV-录屏：</h1><p><strong>系统版本：</strong> tvOS 16.3.3<br><strong>需要硬件设备：</strong> 一台Apple TV，一台macOS设备；<br><strong>网络要求：</strong> 保证Apple TV和你的macOS设备在同一局域网内；<br><strong>软件：</strong> macOS系统的<strong>QuickTime Player</strong><br><strong>操作路径：</strong> 打开<strong>QuickTime Player</strong> -&gt; 菜单栏 -&gt; 文件 -&gt; 新建影片录制 -&gt; 点击红色圆形「录制」按钮右侧的箭头 -&gt; 选择Apple TV设备，例如我家是「家庭影院」  </p>
+<h3 id="Apple-TV-录屏需注意的坑"><a href="#Apple-TV-录屏需注意的坑" class="headerlink" title="Apple-TV-录屏需注意的坑"></a>Apple-TV-录屏需注意的坑</h3><p>如果你的QuickTime Player没有出现Apple TV（一般TVOS 16更新后会出现这种）</p>
+<ol>
+<li><p>设置 -&gt; 「隔空播放和HomeKit」 -&gt; 「会议室显示器」 -&gt; 改为打开<br>如果这个时候，你在QuickTime Player还是没有看到Apple TV，那么你应该是有HomePod，并把<br>HomePod设置成了<strong>默认音频输出</strong>了。</p>
+</li>
+<li><p>设置 -&gt; 「视频和音频」 -&gt; 「音频」 -&gt; 选择电视扬声器<br>这时候就能在QuickTime Player找到Apple TV了！</p>
+</li>
+</ol>
+<h1 id="如何显示视频码率等信息？"><a href="#如何显示视频码率等信息？" class="headerlink" title="如何显示视频码率等信息？"></a>如何显示视频码率等信息？</h1><p><a href="https://zhuanlan.zhihu.com/p/553483619">https://zhuanlan.zhihu.com/p/553483619</a></p>
+]]></content>
+      <categories>
+        <category>数码</category>
+        <category>智能家居,智能影音</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+        <tag>数码</tag>
+        <tag>Apple</tag>
       </tags>
   </entry>
   <entry>
