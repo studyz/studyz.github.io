@@ -6,7 +6,7 @@
   <link href="https://studyz.github.io/atom.xml" rel="self"/>
   
   <link href="https://studyz.github.io/"/>
-  <updated>2024-04-23T07:20:31.950Z</updated>
+  <updated>2024-04-23T07:23:04.855Z</updated>
   <id>https://studyz.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://studyz.github.io/2024/04/22/TailScale%E5%AE%9E%E7%8E%B0%E8%BF%9C%E7%AB%AF%E8%AE%BF%E9%97%AE%E6%95%B4%E6%AE%B5%E5%B1%80%E5%9F%9F%E7%BD%91/"/>
     <id>https://studyz.github.io/2024/04/22/TailScale%E5%AE%9E%E7%8E%B0%E8%BF%9C%E7%AB%AF%E8%AE%BF%E9%97%AE%E6%95%B4%E6%AE%B5%E5%B1%80%E5%9F%9F%E7%BD%91/</id>
     <published>2024-04-22T08:16:49.000Z</published>
-    <updated>2024-04-23T07:20:31.950Z</updated>
+    <updated>2024-04-23T07:23:04.855Z</updated>
     
     
     <summary type="html">&lt;blockquote&gt;
@@ -41,7 +41,9 @@
     
     
     
-    <category term="- 技术 - 技术，网络" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF-%E6%8A%80%E6%9C%AF%EF%BC%8C%E7%BD%91%E7%BB%9C/"/>
+    <category term="技术" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="网络" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/%E7%BD%91%E7%BB%9C/"/>
     
     
     <category term="群晖" scheme="https://studyz.github.io/tags/%E7%BE%A4%E6%99%96/"/>
@@ -102,7 +104,7 @@
     <link href="https://studyz.github.io/2024/04/20/Git_Hexo/"/>
     <id>https://studyz.github.io/2024/04/20/Git_Hexo/</id>
     <published>2024-04-20T05:11:30.000Z</published>
-    <updated>2024-04-22T08:00:13.134Z</updated>
+    <updated>2024-04-23T07:22:56.533Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;一、前期准备&quot;&gt;&lt;a href=&quot;#一、前期准备&quot; class=&quot;headerlink&quot; title=&quot;一、前期准备&quot;&gt;&lt;/a&gt;一、前期准备&lt;/h2&gt;&lt;h3 id=&quot;1-1-注册-账号-Gitee-GitHub&quot;&gt;&lt;a href=&quot;#1-1-注册-账号-Gitee-GitHub&quot; class=&quot;headerlink&quot; title=&quot;1.1 注册 账号 Gitee&amp;#x2F;GitHub&quot;&gt;&lt;/a&gt;1.1 注册 账号 Gitee&amp;#x2F;GitHub&lt;/h3&gt;&lt;p&gt;注册一个属于自己的 Github 或 Gitee 账号，&lt;/p&gt;
@@ -110,9 +112,9 @@
     
     
     
-    <category term="tutorial" scheme="https://studyz.github.io/categories/tutorial/"/>
+    <category term="技术" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
     
-    <category term="hexo" scheme="https://studyz.github.io/categories/tutorial/hexo/"/>
+    <category term="博客,hexo" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/%E5%8D%9A%E5%AE%A2-hexo/"/>
     
     
     <category term="hexo" scheme="https://studyz.github.io/tags/hexo/"/>

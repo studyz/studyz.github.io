@@ -108,7 +108,8 @@
 <p>More info:<br><a href="https://post.smzdm.com/p/agqol9zm/">晨聊 篇十七：markdown也变脸，obsidian + hexo 在群晖NAS上的双剑合璧</a></p>
 ]]></content>
       <categories>
-        <category>tutorial</category>
+        <category>技术</category>
+        <category>博客</category>
         <category>hexo</category>
       </categories>
       <tags>
@@ -2077,8 +2078,8 @@
 <p>在NAS上定时执行<code>hexo clean &amp;&amp; hexo deploy</code>，实现自动更新内容。</p>
 ]]></content>
       <categories>
-        <category>tutorial</category>
-        <category>hexo</category>
+        <category>技术</category>
+        <category>博客,hexo</category>
       </categories>
       <tags>
         <tag>hexo</tag>
@@ -2137,7 +2138,8 @@
 </ul>
 ]]></content>
       <categories>
-        <category>- 技术 - 技术，网络</category>
+        <category>技术</category>
+        <category>网络</category>
       </categories>
       <tags>
         <tag>群晖</tag>

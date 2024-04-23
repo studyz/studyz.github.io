@@ -15,7 +15,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title>TailScale实现远端访问群晖服务器 |  杰里米的小站</title>
+      <title>技术 |  杰里米的小站</title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="/favicon.ico" />
@@ -57,212 +57,123 @@
       
     <main class="content on">
       <section class="outer">
-  <article
-  id="post-TailScale实现远端访问整段局域网"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
+  
+  
+  <article class="articles">
     
-    <header class="article-header">
+    
+    <h1 class="page-type-title">技术</h1>
+    
+    
+  
+  
+  
+  
+  
+  
+  <div class="archives-wrap">
+    <div class="archive-year-wrap">
+      <a href="/archives/2024" class="archive-year">2024</a>
+    </div>
+    <div class="archives">
+      
+      <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2024/04/22/TailScale%E5%AE%9E%E7%8E%B0%E8%BF%9C%E7%AB%AF%E8%AE%BF%E9%97%AE%E6%95%B4%E6%AE%B5%E5%B1%80%E5%9F%9F%E7%BD%91/" class="archive-article-date">
+  <time datetime="2024-04-22T08:16:49.000Z" itemprop="datePublished">04/22</time>
+</a>
        
-<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  TailScale实现远端访问群晖服务器
-</h1>
+<h2 itemprop="name">
+  <a class="archive-article-title" href="/2024/04/22/TailScale%E5%AE%9E%E7%8E%B0%E8%BF%9C%E7%AB%AF%E8%AE%BF%E9%97%AE%E6%95%B4%E6%AE%B5%E5%B1%80%E5%9F%9F%E7%BD%91/"
+    >TailScale实现远端访问群晖服务器</a> 
+</h2>
  
 
-      
     </header>
-     
-    <div class="article-meta">
-      <a href="/2024/04/22/TailScale%E5%AE%9E%E7%8E%B0%E8%BF%9C%E7%AB%AF%E8%AE%BF%E9%97%AE%E6%95%B4%E6%AE%B5%E5%B1%80%E5%9F%9F%E7%BD%91/" class="article-date">
-  <time datetime="2024-04-22T08:16:49.000Z" itemprop="datePublished">2024-04-22</time>
-</a> 
+    
+      
   <div class="article-category">
     <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a> / <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF/%E7%BD%91%E7%BB%9C/">网络</a>
   </div>
+
+    
+    
+  </div>
+</article>
+      
   
-<div class="word_count">
-    <span class="post-time">
-        <span class="post-meta-item-icon">
-            <i class="ri-quill-pen-line"></i>
-            <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">414</span>
-        </span>
-    </span>
-
-    <span class="post-time">
-        &nbsp; | &nbsp;
-        <span class="post-meta-item-icon">
-            <i class="ri-book-open-line"></i>
-            <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">1 分钟</span>
-        </span>
-    </span>
-</div>
- 
-    </div>
-      
-    <div class="tocbot"></div>
-
-
-
-
   
-    <div class="article-entry" itemprop="articleBody">
+      <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2024/04/20/Git_Hexo/" class="archive-article-date">
+  <time datetime="2024-04-20T05:11:30.000Z" itemprop="datePublished">04/20</time>
+</a>
        
-  <blockquote>
-<p><a target="_blank" rel="noopener" href="https://tailscale.com/">Tailscale</a>是以<a target="_blank" rel="noopener" href="https://www.wireguard.com/">Wireguard</a>的协议加密，所以安全性更高，而且是P2P连线，流量不经伺服器，延迟更低、私密性更高。</p>
-</blockquote>
-<ol>
-<li>安装及加入到<code>TailScale</code>网络</li>
-<li>透过设定其中1部<code>TailScale</code>的装置为网关「Subnet Router」，可以访问整个内网网段</li>
-</ol>
-<blockquote>
-<p>以群晖NAS为例</p>
-</blockquote>
-<h3 id="1-TailScale安装"><a href="#1-TailScale安装" class="headerlink" title="1. TailScale安装"></a>1. TailScale安装</h3><ol>
-<li>群晖套件中心添加spk套件源</li>
-<li>社群套件搜索TailScale安装后登陆，成功授权后可以查看分配到的IP地址</li>
-</ol>
-<span id="more"></span>
-<h3 id="2-IP-转发设置"><a href="#2-IP-转发设置" class="headerlink" title="2.  IP 转发设置"></a>2.  <strong>IP</strong> 转发设置</h3><blockquote>
-<p>因为不是每一部设备都可以安装到Tailscale ， 所以这样设定「Subnet Route」的好处是家里内网只要1部Linux装置接入到Tailscale 网络，其他所有的外网的Tailscale装置都可以透过这部Linux装置作为网关访问家里内网所有的设备，如: 印表机，路由器，伺服器等等。</p>
-</blockquote>
-<ul>
-<li>启用 <strong>群晖</strong> 上的 <strong>IP</strong> 转发(IP Forwarding)</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tailscale up --advertise-routes=192.168.1.0/24 --netfilter-mode=off</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>192.168.1.0&#x2F;24替换为自己的网段，可以是IPV4或者IPV6。</p>
-</blockquote>
-<ul>
-<li>登入到网页控制台 &gt; <code>Machines</code></li>
-</ul>
-<p><code>Enable All</code>允许转发所有</p>
-<p>基于安全特性，<code>Tailscale</code>每隔6个月需要重新授权装置，作为「Subnet Router」(子网路由网关)，建议停用。</p>
-<ul>
-<li>外网的<code>Tailscale</code>装置线路测试</li>
-</ul>
-<p>可以看到是经节点「Subnet Router」IP <code>100.101.41.50</code> 接入到内网 <code>192.168.1.0/24</code>，延迟也很理想。</p>
-<blockquote>
-<p>透过设定其中1部「TailScale」的装置为网关「Subnet Router」，可以访问整个内网网段**</p>
-</blockquote>
-<p>Links:</p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://tailscale.com/download/">Download and InstallTailscale</a></li>
-<li><a target="_blank" rel="noopener" href="https://tailscale.com/kb/1104/enable-ip-forwarding/">Enable IP forwarding on Linux · Tailscale</a></li>
-<li><a target="_blank" rel="noopener" href="https://tailscale.com/kb/1019/subnets/">Subnet routers and traffic relay nodes · Tailscale</a></li>
-<li><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/ad2kw7xx/">TailScale 实现远端访问整段局域网(ZeroTier另一选择)</a></li>
-</ul>
+<h2 itemprop="name">
+  <a class="archive-article-title" href="/2024/04/20/Git_Hexo/"
+    >群晖Git部署Hexo</a> 
+</h2>
  
-      <!-- reward -->
+
+    </header>
+    
       
-      <div id="reword-out">
-        <div id="reward-btn">
-          打赏
-        </div>
-      </div>
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <div class="declare">
-      <ul class="post-copyright">
-        <li>
-          <i class="ri-copyright-line"></i>
-          <strong>版权声明： </strong>
-          
-          本博客所有文章除特别声明外，著作权归作者所有。转载请注明出处！
-          
-        </li>
-      </ul>
-    </div>
-    
-    <footer class="article-footer">
-       
-<div class="share-btn">
-      <span class="share-sns share-outer">
-        <i class="ri-share-forward-line"></i>
-        分享
-      </span>
-      <div class="share-wrap">
-        <i class="arrow"></i>
-        <div class="share-icons">
-          
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="ri-weibo-fill"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="ri-wechat-fill"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="ri-qq-fill"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="ri-douban-line"></i>
-          </a>
-          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a> -->
-          
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="ri-facebook-circle-fill"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="ri-twitter-fill"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="ri-google-fill"></i>
-          </a>
-        </div>
-      </div>
-</div>
-
-<div class="wx-share-modal">
-    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://studyz.github.io/2024/04/22/TailScale%E5%AE%9E%E7%8E%B0%E8%BF%9C%E7%AB%AF%E8%AE%BF%E9%97%AE%E6%95%B4%E6%AE%B5%E5%B1%80%E5%9F%9F%E7%BD%91/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div id="share-mask"></div>  
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NAS/" rel="tag">NAS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%BD%91%E7%BB%9C/" rel="tag">网络</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%BE%A4%E6%99%96/" rel="tag">群晖</a></li></ul>
-
-    </footer>
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a> / <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF/%E5%8D%9A%E5%AE%A2-hexo/">博客,hexo</a>
   </div>
 
-   
-  <nav class="article-nav">
     
     
-      <a href="/2024/04/22/%E6%9F%AF%E5%8D%97%E5%8A%A8%E7%94%BB%E7%9B%AE%E5%BD%95/" class="article-nav-link">
-        <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">柯南动画剧集拆分前后对比目录</div>
-      </a>
-    
-  </nav>
-
-  
-   
-  
-   
-    <script src="https://cdn.staticfile.org/twikoo/1.4.18/twikoo.all.min.js"></script>
-    <div id="twikoo" class="twikoo"></div>
-    <script>
-        twikoo.init({
-            envId: ""
-        })
-    </script>
- 
+  </div>
 </article>
+      
+  
+  
+  
+  </div>
+  </div>
+  
+  
+  <div class="archives-wrap">
+    <div class="archive-year-wrap">
+      <a href="/archives/2019" class="archive-year">2019</a>
+    </div>
+    <div class="archives">
+      
+      <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2019/05/01/hello_world/" class="archive-article-date">
+  <time datetime="2019-05-01T10:34:40.000Z" itemprop="datePublished">05/01</time>
+</a>
+       
+<h2 itemprop="name">
+  <a class="archive-article-title" href="/2019/05/01/hello_world/"
+    >Hexo Hello World</a> 
+</h2>
+ 
 
+    </header>
+    
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a> / <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF/%E5%8D%9A%E5%AE%A2/">博客</a> / <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF/%E5%8D%9A%E5%AE%A2/hexo/">hexo</a>
+  </div>
+
+    
+    
+  </div>
+</article>
+      
+      
+    </div>
+  </div>
+  
+  
+
+  
 </section>
       <footer class="footer">
   <div class="outer">
@@ -411,22 +322,6 @@
 <script src="/js/lazyload.min.js"></script>
 
 <!-- Tocbot -->
- 
-<script src="/js/tocbot.min.js"></script>
-
-<script>
-  tocbot.init({
-    tocSelector: ".tocbot",
-    contentSelector: ".article-entry",
-    headingSelector: "h1, h2, h3, h4, h5, h6",
-    hasInnerContainers: true,
-    scrollSmooth: true,
-    scrollContainer: "main",
-    positionFixedSelector: ".tocbot",
-    positionFixedClass: "is-position-fixed",
-    fixedSidebarOffset: "auto",
-  });
-</script>
 
 <script src="https://cdn.staticfile.org/jquery-modal/0.9.2/jquery.modal.min.js"></script>
 <link
