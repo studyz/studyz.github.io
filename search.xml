@@ -2085,7 +2085,8 @@
         <tag>hexo</tag>
         <tag>笔记</tag>
         <tag>ssh</tag>
-        <tag>tutorial</tag>
+        <tag>技术</tag>
+        <tag>GitHub</tag>
       </tags>
   </entry>
   <entry>
@@ -10572,5 +10573,13 @@
 </tr>
 </tbody></table>
 ]]></content>
+      <categories>
+        <category>生活</category>
+        <category>分享</category>
+        <category>碎碎念</category>
+      </categories>
+      <tags>
+        <tag>名侦探柯南</tag>
+      </tags>
   </entry>
 </search>

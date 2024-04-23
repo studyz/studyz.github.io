@@ -59,7 +59,7 @@
     <link href="https://studyz.github.io/2024/04/22/%E6%9F%AF%E5%8D%97%E5%8A%A8%E7%94%BB%E7%9B%AE%E5%BD%95/"/>
     <id>https://studyz.github.io/2024/04/22/%E6%9F%AF%E5%8D%97%E5%8A%A8%E7%94%BB%E7%9B%AE%E5%BD%95/</id>
     <published>2024-04-22T07:00:51.000Z</published>
-    <updated>2024-04-23T05:44:51.631Z</updated>
+    <updated>2024-04-23T07:27:34.179Z</updated>
     
     
     <summary type="html">&lt;blockquote&gt;
@@ -75,6 +75,14 @@
     
     
     
+    <category term="生活" scheme="https://studyz.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    <category term="分享" scheme="https://studyz.github.io/categories/%E5%88%86%E4%BA%AB/"/>
+    
+    <category term="碎碎念" scheme="https://studyz.github.io/categories/%E7%94%9F%E6%B4%BB/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
+    
+    
+    <category term="名侦探柯南" scheme="https://studyz.github.io/tags/%E5%90%8D%E4%BE%A6%E6%8E%A2%E6%9F%AF%E5%8D%97/"/>
     
   </entry>
   
@@ -104,7 +112,7 @@
     <link href="https://studyz.github.io/2024/04/20/Git_Hexo/"/>
     <id>https://studyz.github.io/2024/04/20/Git_Hexo/</id>
     <published>2024-04-20T05:11:30.000Z</published>
-    <updated>2024-04-23T07:22:56.533Z</updated>
+    <updated>2024-04-23T07:28:01.435Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;一、前期准备&quot;&gt;&lt;a href=&quot;#一、前期准备&quot; class=&quot;headerlink&quot; title=&quot;一、前期准备&quot;&gt;&lt;/a&gt;一、前期准备&lt;/h2&gt;&lt;h3 id=&quot;1-1-注册-账号-Gitee-GitHub&quot;&gt;&lt;a href=&quot;#1-1-注册-账号-Gitee-GitHub&quot; class=&quot;headerlink&quot; title=&quot;1.1 注册 账号 Gitee&amp;#x2F;GitHub&quot;&gt;&lt;/a&gt;1.1 注册 账号 Gitee&amp;#x2F;GitHub&lt;/h3&gt;&lt;p&gt;注册一个属于自己的 Github 或 Gitee 账号，&lt;/p&gt;
@@ -123,7 +131,9 @@
     
     <category term="ssh" scheme="https://studyz.github.io/tags/ssh/"/>
     
-    <category term="tutorial" scheme="https://studyz.github.io/tags/tutorial/"/>
+    <category term="技术" scheme="https://studyz.github.io/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="GitHub" scheme="https://studyz.github.io/tags/GitHub/"/>
     
   </entry>
   
