@@ -359,7 +359,8 @@
   <entry>
     <title>GoPro Hero最实用的四个必备配件:打造完美生态</title>
     <url>/2022/03/15/GoproHero/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><hr>
+<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">
 <iframe src="//player.bilibili.com/player.html?aid=244387247&bvid=BV1Av411174q&cid=229573649&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; Left: 0; top: 0;" ></iframe></div> 
 ]]></content>
       <categories>
@@ -417,7 +418,9 @@
 <h1 id="检索数据"><a href="#检索数据" class="headerlink" title="检索数据"></a>检索数据</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 切片[]</span></span><br><span class="line">df[<span class="number">0</span>:<span class="number">3</span>]  <span class="comment">#通过切片检索行数据</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## loc\iloc</span></span><br><span class="line">df.loc[<span class="number">1</span>]  <span class="comment">#标量标签，返回该行标签的Series数据 </span></span><br><span class="line">df.loc[[<span class="number">1</span>,<span class="number">3</span>]]  <span class="comment">#标签列表，返回标签列表的行DataFrame数据 </span></span><br><span class="line">df.loc[<span class="number">0</span>:<span class="number">3</span>]  <span class="comment">#切片对象，返回切片的行DataFrame数据 </span></span><br><span class="line">df.loc[<span class="number">0</span>:<span class="number">3</span>,<span class="string">&#x27;staff_id&#x27;</span>:<span class="string">&#x27;staff_salary&#x27;</span>]  <span class="comment">#根据行切片，列切片检索数据 </span></span><br><span class="line">df.loc[[<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="string">&#x27;staff_id&#x27;</span>,<span class="string">&#x27;staff_name&#x27;</span>,<span class="string">&#x27;staff_age&#x27;</span>]]  <span class="comment">#根据行标签列表，列标签列表检索数据</span></span><br><span class="line">df.iloc[<span class="number">1</span>]  <span class="comment">#整数标量选择，数据从0开始，为1的就是第二行的数据，返回的是Series </span></span><br><span class="line">df.iloc[[<span class="number">1</span>,<span class="number">3</span>]]  <span class="comment">#整数列表选择，选择位置为1和3的数据，返回的是DataFrame </span></span><br><span class="line">df.iloc[<span class="number">1</span>:<span class="number">3</span>]  <span class="comment">#切片选择，选择位置1至2的数据，不包含边界结束值，也就是不包含3的位置 </span></span><br><span class="line">df.iloc[<span class="number">1</span>:<span class="number">3</span>,<span class="number">1</span>:<span class="number">4</span>]  <span class="comment">#切片选择位置为1至3的行和1至4的列不含位置为3的行和位置为4的列</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## at\iat</span></span><br><span class="line">df.at[<span class="string">&#x27;A&#x27;</span>,<span class="string">&#x27;staff_name&#x27;</span>]  <span class="comment">#检索第“A”行的列标签为&quot;staff_name&quot;的数据 df.iat[0,1]  #检索第1行第2列的数据</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>技术</category>
-        <category>数据分析,python</category>
+        <category>数据分析</category>
+        <category>python</category>
+        <category>pandas</category>
       </categories>
       <tags>
         <tag>笔记</tag>
@@ -433,7 +436,9 @@
 ]]></content>
       <categories>
         <category>技术</category>
-        <category>数据分析,python</category>
+        <category>数据分析</category>
+        <category>python</category>
+        <category>网站</category>
       </categories>
       <tags>
         <tag>笔记</tag>
@@ -551,11 +556,64 @@
 ]]></content>
       <categories>
         <category>技术</category>
-        <category>数据分析,python</category>
+        <category>数据分析</category>
+        <category>python</category>
+        <category>pandas</category>
       </categories>
       <tags>
         <tag>笔记</tag>
         <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数据分析师技术树</title>
+    <url>/2023/05/15/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="数据分析师"><a href="#数据分析师" class="headerlink" title="数据分析师"></a>数据分析师</h1><ol>
+<li><p>特点：独当一面、战斗力极强、对企业决策者有一定的影响</p>
+</li>
+<li><p>主要的工作：除了被动的常规分析外，还要能主动发现业务存在的问题，会用数据找事，梳理业务发展与指标体系之间的关系，从日常监督分析开始，更多的是专题性的分析，无中生有</p>
+</li>
+<li><p>需要掌握的：</p>
+<ul>
+<li>硬性技能：SQL、EXCEL、PPT、python\spss\R任选其一，tableau\FineBI\powerbi，也要懂一些市面上流行的数据产品</li>
+<li>软性技能：沟通能力、表达能力、逻辑思维强</li>
+<li>掌握的方法论：ABtest、AAARRR、SWOT、RFM、28原则、5W2H，用户及产品生命周期等</li>
+<li>掌握的统计学：常规统计指标（均值、中位数、分位数等)、回归、聚类、因子、决策树、逻辑回归、机器学习等，这些足够用了</li>
+<li>加分项：图表可视化、PPT展示、系统性思维、在行业有很多认识和沉淀</li>
+<li>要点：算法、技术、工具、业务混为一体，样样都要懂</li>
+<li>总结：这类目前市场上很紧缺，被称为稀缺动物</li>
+</ul>
+</li>
+</ol>
+<span id="more"></span>
+<h1 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h1><h1 id="python"><a href="#python" class="headerlink" title="python"></a>python</h1><h1 id="tableau-FineBI-powerbi"><a href="#tableau-FineBI-powerbi" class="headerlink" title="tableau-FineBI-powerbi"></a>tableau-FineBI-powerbi</h1><h1 id="掌握的方法论"><a href="#掌握的方法论" class="headerlink" title="掌握的方法论"></a>掌握的方法论</h1><ol>
+<li>ABtest</li>
+<li>AAARRR</li>
+<li>SWOT</li>
+<li>RFM</li>
+<li>28原则</li>
+<li>5W2H</li>
+<li>用户及产品生命周期等</li>
+</ol>
+<h1 id="掌握的统计学"><a href="#掌握的统计学" class="headerlink" title="掌握的统计学"></a>掌握的统计学</h1><ol>
+<li>常规统计指标（均值、中位数、分位数等)</li>
+<li>回归</li>
+<li>聚类</li>
+<li>因子</li>
+<li>决策树</li>
+<li>逻辑回归</li>
+<li>机器学习</li>
+</ol>
+<p>? 热力图</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>数据分析</category>
+        <category>方法论</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+        <tag>数据分析师</tag>
       </tags>
   </entry>
   <entry>
@@ -759,61 +817,12 @@
 ]]></content>
       <categories>
         <category>技术</category>
-        <category>数据分析,python</category>
+        <category>数据分析</category>
+        <category>python</category>
       </categories>
       <tags>
         <tag>python</tag>
         <tag>网站</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>数据分析师技术树</title>
-    <url>/2023/05/15/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="数据分析师"><a href="#数据分析师" class="headerlink" title="数据分析师"></a>数据分析师</h1><ol>
-<li><p>特点：独当一面、战斗力极强、对企业决策者有一定的影响</p>
-</li>
-<li><p>主要的工作：除了被动的常规分析外，还要能主动发现业务存在的问题，会用数据找事，梳理业务发展与指标体系之间的关系，从日常监督分析开始，更多的是专题性的分析，无中生有</p>
-</li>
-<li><p>需要掌握的：</p>
-<ul>
-<li>硬性技能：SQL、EXCEL、PPT、python\spss\R任选其一，tableau\FineBI\powerbi，也要懂一些市面上流行的数据产品</li>
-<li>软性技能：沟通能力、表达能力、逻辑思维强</li>
-<li>掌握的方法论：ABtest、AAARRR、SWOT、RFM、28原则、5W2H，用户及产品生命周期等</li>
-<li>掌握的统计学：常规统计指标（均值、中位数、分位数等)、回归、聚类、因子、决策树、逻辑回归、机器学习等，这些足够用了</li>
-<li>加分项：图表可视化、PPT展示、系统性思维、在行业有很多认识和沉淀</li>
-<li>要点：算法、技术、工具、业务混为一体，样样都要懂</li>
-<li>总结：这类目前市场上很紧缺，被称为稀缺动物</li>
-</ul>
-</li>
-</ol>
-<span id="more"></span>
-<h1 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h1><h1 id="python"><a href="#python" class="headerlink" title="python"></a>python</h1><h1 id="tableau-FineBI-powerbi"><a href="#tableau-FineBI-powerbi" class="headerlink" title="tableau-FineBI-powerbi"></a>tableau-FineBI-powerbi</h1><h1 id="掌握的方法论"><a href="#掌握的方法论" class="headerlink" title="掌握的方法论"></a>掌握的方法论</h1><ol>
-<li>ABtest</li>
-<li>AAARRR</li>
-<li>SWOT</li>
-<li>RFM</li>
-<li>28原则</li>
-<li>5W2H</li>
-<li>用户及产品生命周期等</li>
-</ol>
-<h1 id="掌握的统计学"><a href="#掌握的统计学" class="headerlink" title="掌握的统计学"></a>掌握的统计学</h1><ol>
-<li>常规统计指标（均值、中位数、分位数等)</li>
-<li>回归</li>
-<li>聚类</li>
-<li>因子</li>
-<li>决策树</li>
-<li>逻辑回归</li>
-<li>机器学习</li>
-</ol>
-<p>? 热力图</p>
-]]></content>
-      <categories>
-        <category>技术</category>
-        <category>数据分析,方法论</category>
-      </categories>
-      <tags>
-        <tag>笔记</tag>
-        <tag>数据分析师</tag>
       </tags>
   </entry>
   <entry>
@@ -855,7 +864,8 @@
 ]]></content>
       <categories>
         <category>技术</category>
-        <category>人工智能,Prompt</category>
+        <category>人工智能</category>
+        <category>Prompt</category>
       </categories>
       <tags>
         <tag>GPT</tag>
@@ -958,7 +968,9 @@
 ]]></content>
       <categories>
         <category>技术</category>
-        <category>数据分析,数据库</category>
+        <category>数据分析</category>
+        <category>数据库</category>
+        <category>笔记</category>
       </categories>
       <tags>
         <tag>笔记</tag>
@@ -997,7 +1009,8 @@
 ]]></content>
       <categories>
         <category>技术</category>
-        <category>数据分析,方法论</category>
+        <category>数据分析</category>
+        <category>方法论</category>
       </categories>
       <tags>
         <tag>数据分析师</tag>
@@ -1106,7 +1119,8 @@
 ]]></content>
       <categories>
         <category>技术</category>
-        <category>人工智能,Prompt</category>
+        <category>人工智能</category>
+        <category>Prompt</category>
       </categories>
       <tags>
         <tag>GPT</tag>
