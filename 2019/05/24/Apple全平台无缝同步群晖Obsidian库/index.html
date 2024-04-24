@@ -15,7 +15,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title>Apple多全平台无缝同步群晖Obsidian库 |  杰里米的小站</title>
+      <title>苹果全平台无缝同步群晖Obsidian库 |  杰里米的小站</title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="/favicon.ico" />
@@ -69,7 +69,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  Apple多全平台无缝同步群晖Obsidian库
+  苹果全平台无缝同步群晖Obsidian库
 </h1>
  
 
@@ -89,7 +89,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">501</span>
+            <span class="post-count">847</span>
         </span>
     </span>
 
@@ -98,7 +98,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">1 分钟</span>
+            <span class="post-count">3 分钟</span>
         </span>
     </span>
 </div>
@@ -113,9 +113,20 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <h1 id="Obsidian-原创方法"><a href="#Obsidian-原创方法" class="headerlink" title="Obsidian 原创方法"></a>Obsidian 原创方法</h1><p>笔记软件 Obsidian 利用群晖的最简单本地加 iCloud 到多端（win+mac+ios）急速同步方案，不用 Webdav、Remotely save 等插件繁琐设置，实现笔记库数据本地化同时多端同步，安全与速度性兼备。</p>
+  <p><strong>前提介绍：</strong></p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://obsidian.md/">Obsidian</a>是一款基于Markdown的笔记软件，以其强大的链接和标签功能、本地化存储及丰富的插件生态，为用户提供高效的知识管理和创作体验。 </p>
+</blockquote>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.synology.cn/zh-cn">群晖NAS</a>是一种基于网络连接的存储设备，它提供集中管理和共享文件的平台，支持多种功能，如数据备份、多媒体服务器等，方便用户随时随地访问和管理数据。</p>
+</blockquote>
+<p>本文的目的：<br><a target="_blank" rel="noopener" href="https://obsidian.md/">Obsidian</a>作为一款优秀的markdown笔记软件，非常适合搭配hexo撰写blog。</p>
+<p>数据同步过程脑图<br>├─ 同步流程<br>│   ├─ macOS上通过群晖Drive同步Hexo的post目录到iCloud<br>│   ├─ macOS与群晖drive同步<br>│   ├─ 通过iCloud在不同苹果设备上同步Hexo的post目录<br>│   ├─ 任意苹果设备撰写blog内容<br>│   ├─ macOS通过群晖drive将新blog内容同步至群晖<br>│   └─ 群晖自动将内容布置到GitHub<br>└─ 同步优势<br>     └─ 实现blog网站的自动更新</p>
+<p>通过macOS上群晖Drive将hexo的post目录同步到iCloud，实现macOS和群晖drive的同步，然后通过iCloud在不同苹果设备上同步hexo的post目录，实现任意苹果设备撰写blog都可以在macOS通过群晖drive将新blog内容同步至群晖，再由群晖将内容自动布置到GitHub，实现blog网站的自动更新。</p>
+<p>问题：<br>iPadOS和iOS端Obsidian只能识别打开iCloud Drive中Obsidian目录下的库，</p>
+<p><a target="_blank" rel="noopener" href="https://obsidian.md/">Obsidian</a> 利用群晖的最简单本地加 iCloud 到多端（win+mac+ios）急速同步方案，不用 Webdav、Remotely save 等插件繁琐设置，实现笔记库数据本地化同时多端同步，安全与速度性兼备。</p>
 <p>前提有nas，原理是 mac 下载 synology drive client 开双向同步，把 iCloud 当工具人。</p>
-<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><h3 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h3><p>在 ios 下打开 obsidian 新建库，一定开启 iCloud 同步，随便建档写几个字。</p>
+<h2 id="解决步骤"><a href="#解决步骤" class="headerlink" title="解决步骤"></a>解决步骤</h2><h3 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h3><p>在 ios 下打开 obsidian 新建库，一定开启 iCloud 同步，随便建档写几个字。</p>
 <h3 id="第二步"><a href="#第二步" class="headerlink" title="第二步"></a>第二步</h3><p>打开 mac 访达，左侧 iCloud 云盘打开，点 obsidian 图标文件下载到本地管理（云箭头表示还在云上）。</p>
 <h3 id="第三步"><a href="#第三步" class="headerlink" title="第三步"></a>第三步</h3><p>mac 终端中输入 显示 Mac 隐藏文件命令：<code>defaults write com.apple.finder AppleShowAllFiles -bool true</code> 后重启 Finder ，找到用户名下的资源库，在上方“查看显示选项”中勾选“显示资源库文件夹”（这样就可以在 synology drive client 中定位到 iCloud 内的文件夹）。</p>
 <h3 id="第四步"><a href="#第四步" class="headerlink" title="第四步"></a>第四步</h3><p>mac 打开 nas 的 配套同步软件 synology drive client 设置，创建选定mac用户名下library中的moblie documents文件，翻到icloud前缀的obsidian文件夹，同步之前 ios 中新建的库即可。</p>
