@@ -354,36 +354,6 @@
   </entry>
   
   <entry>
-    <title>数据分析师所需的技术与理论</title>
-    <link href="https://studyz.github.io/2023/10/23/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E6%89%80%E9%9C%80%E7%9A%84%E6%8A%80%E6%9C%AF%E4%B8%8E%E7%90%86%E8%AE%BA/"/>
-    <id>https://studyz.github.io/2023/10/23/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E6%89%80%E9%9C%80%E7%9A%84%E6%8A%80%E6%9C%AF%E4%B8%8E%E7%90%86%E8%AE%BA/</id>
-    <published>2023-10-23T05:11:30.000Z</published>
-    <updated>2024-04-24T08:23:48.000Z</updated>
-    
-    
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;对数据分析师来说，要想避免沦为取数、跑数的工具人命运，就明确并巩固自己的优势与价值。因此明确数据分析师的成长路径、能力要求、能力提升方法就显得格外重要。而笔者作为数据分析专家，也就此分享了自己的思考与见解。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h1 id=&quot;一、数据分析师的种类、职责与升级路线&quot;&gt;&lt;a href=&quot;#一、数据分析师的种类、职责与升级路线&quot; class=&quot;headerlink&quot; title=&quot;一、数据分析师的种类、职责与升级路线&quot;&gt;&lt;/a&gt;一、数据分析师的种类、职责与升级路线&lt;/h1&gt;&lt;p&gt;在国内数据分析师一般分为5大种类：&lt;strong&gt;数据产品、数据分析师、数据建模师、数据工程师与数据科&lt;/strong&gt;学家，这5类人才的必备能力和成长路线我们来逐一介绍。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="技术" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    <category term="数据分析" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
-    
-    <category term="方法论" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/%E6%96%B9%E6%B3%95%E8%AE%BA/"/>
-    
-    
-    <category term="笔记" scheme="https://studyz.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-    <category term="数据分析师" scheme="https://studyz.github.io/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88/"/>
-    
-    <category term="方法论" scheme="https://studyz.github.io/tags/%E6%96%B9%E6%B3%95%E8%AE%BA/"/>
-    
-  </entry>
-  
-  <entry>
     <title>这可能是我见过最好的 NumPy 图解教程！</title>
     <link href="https://studyz.github.io/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/"/>
     <id>https://studyz.github.io/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/</id>
@@ -414,6 +384,36 @@
     <category term="笔记" scheme="https://studyz.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
     
     <category term="numpy" scheme="https://studyz.github.io/tags/numpy/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数据分析师所需的技术与理论</title>
+    <link href="https://studyz.github.io/2023/10/23/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E6%89%80%E9%9C%80%E7%9A%84%E6%8A%80%E6%9C%AF%E4%B8%8E%E7%90%86%E8%AE%BA/"/>
+    <id>https://studyz.github.io/2023/10/23/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E6%89%80%E9%9C%80%E7%9A%84%E6%8A%80%E6%9C%AF%E4%B8%8E%E7%90%86%E8%AE%BA/</id>
+    <published>2023-10-23T05:11:30.000Z</published>
+    <updated>2024-04-24T08:23:48.000Z</updated>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;对数据分析师来说，要想避免沦为取数、跑数的工具人命运，就明确并巩固自己的优势与价值。因此明确数据分析师的成长路径、能力要求、能力提升方法就显得格外重要。而笔者作为数据分析专家，也就此分享了自己的思考与见解。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;一、数据分析师的种类、职责与升级路线&quot;&gt;&lt;a href=&quot;#一、数据分析师的种类、职责与升级路线&quot; class=&quot;headerlink&quot; title=&quot;一、数据分析师的种类、职责与升级路线&quot;&gt;&lt;/a&gt;一、数据分析师的种类、职责与升级路线&lt;/h1&gt;&lt;p&gt;在国内数据分析师一般分为5大种类：&lt;strong&gt;数据产品、数据分析师、数据建模师、数据工程师与数据科&lt;/strong&gt;学家，这5类人才的必备能力和成长路线我们来逐一介绍。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="技术" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="数据分析" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+    
+    <category term="方法论" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/%E6%96%B9%E6%B3%95%E8%AE%BA/"/>
+    
+    
+    <category term="笔记" scheme="https://studyz.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="数据分析师" scheme="https://studyz.github.io/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88/"/>
+    
+    <category term="方法论" scheme="https://studyz.github.io/tags/%E6%96%B9%E6%B3%95%E8%AE%BA/"/>
     
   </entry>
   
