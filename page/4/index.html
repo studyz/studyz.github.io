@@ -408,6 +408,69 @@
 
     
     <article
+  id="post-Apple全平台无缝同步群晖Obsidian库"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2019/05/24/Apple%E5%85%A8%E5%B9%B3%E5%8F%B0%E6%97%A0%E7%BC%9D%E5%90%8C%E6%AD%A5%E7%BE%A4%E6%99%96Obsidian%E5%BA%93/"
+    >Apple多全平台无缝同步群晖Obsidian库</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2019/05/24/Apple%E5%85%A8%E5%B9%B3%E5%8F%B0%E6%97%A0%E7%BC%9D%E5%90%8C%E6%AD%A5%E7%BE%A4%E6%99%96Obsidian%E5%BA%93/" class="article-date">
+  <time datetime="2019-05-24T04:10:34.000Z" itemprop="datePublished">2019-05-24</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF-hexo/"># 技术 ## hexo</a>
+  </div>
+   
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="Obsidian-原创方法"><a href="#Obsidian-原创方法" class="headerlink" title="Obsidian 原创方法"></a>Obsidian 原创方法</h1><p>笔记软件 Obsidian 利用群晖的最简单本地加 iCloud 到多端（win+mac+ios）急速同步方案，不用 Webdav、Remotely save 等插件繁琐设置，实现笔记库数据本地化同时多端同步，安全与速度性兼备。</p>
+<p>前提有nas，原理是 mac 下载 synology drive client 开双向同步，把 iCloud 当工具人。</p>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><h3 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h3><p>在 ios 下打开 obsidian 新建库，一定开启 iCloud 同步，随便建档写几个字。</p>
+<h3 id="第二步"><a href="#第二步" class="headerlink" title="第二步"></a>第二步</h3><p>打开 mac 访达，左侧 iCloud 云盘打开，点 obsidian 图标文件下载到本地管理（云箭头表示还在云上）。</p>
+<h3 id="第三步"><a href="#第三步" class="headerlink" title="第三步"></a>第三步</h3><p>mac 终端中输入 显示 Mac 隐藏文件命令：<code>defaults write com.apple.finder AppleShowAllFiles -bool true</code> 后重启 Finder ，找到用户名下的资源库，在上方“查看显示选项”中勾选“显示资源库文件夹”（这样就可以在 synology drive client 中定位到 iCloud 内的文件夹）。</p>
+<h3 id="第四步"><a href="#第四步" class="headerlink" title="第四步"></a>第四步</h3><p>mac 打开 nas 的 配套同步软件 synology drive client 设置，创建选定mac用户名下library中的moblie documents文件，翻到icloud前缀的obsidian文件夹，同步之前 ios 中新建的库即可。</p>
+<h3 id="第五步"><a href="#第五步" class="headerlink" title="第五步"></a>第五步</h3><p>win 下 obsidian 打开库文件夹，在网络 nas 中即可找到此 ios 新建的库，见证奇迹。</p>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>我实测，三端设备下修改输入，几乎都是秒刷到账，唯一要担心的是删的太快，如果在一处误删掉某内容，很快会被同步覆盖。不过 nas drive 中可以看同步日志，应问题不大。</p>
+<p>win 如果是笔记本，有外出写作需求，也可下载win 版 drive 再设置win 到 nas 双向。不过我是台机，跟nas永久同局域网，就没必要再双向，同网读取nas即可。</p>
+<p>本方案重器轻用。目前还没有遇上同步问题，但若根据我的方案丢失数据（可能性不大）……鄙人概不负责（有苹果和群晖担着）……</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+   
+  
+</article>
+
+    
+    <article
   id="post-hello_world"
   class="article article-type-post"
   itemscope
