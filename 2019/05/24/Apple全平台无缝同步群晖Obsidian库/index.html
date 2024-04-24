@@ -81,7 +81,7 @@
   <time datetime="2019-05-24T04:10:34.000Z" itemprop="datePublished">2019-05-24</time>
 </a> 
   <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF-hexo/"># 技术 ## hexo</a>
+    <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a> / <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF/%E5%8D%9A%E5%AE%A2-hexo/">博客,hexo</a>
   </div>
   
 <div class="word_count">
@@ -89,7 +89,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">847</span>
+            <span class="post-count">983</span>
         </span>
     </span>
 
@@ -120,10 +120,12 @@
 <blockquote>
 <p><a target="_blank" rel="noopener" href="https://www.synology.cn/zh-cn">群晖NAS</a>是一种基于网络连接的存储设备，它提供集中管理和共享文件的平台，支持多种功能，如数据备份、多媒体服务器等，方便用户随时随地访问和管理数据。</p>
 </blockquote>
-<p>本文的目的：<br><a target="_blank" rel="noopener" href="https://obsidian.md/">Obsidian</a>作为一款优秀的markdown笔记软件，非常适合搭配hexo撰写blog。</p>
-<p>数据同步过程脑图<br>├─ 同步流程<br>│   ├─ macOS上通过群晖Drive同步Hexo的post目录到iCloud<br>│   ├─ macOS与群晖drive同步<br>│   ├─ 通过iCloud在不同苹果设备上同步Hexo的post目录<br>│   ├─ 任意苹果设备撰写blog内容<br>│   ├─ macOS通过群晖drive将新blog内容同步至群晖<br>│   └─ 群晖自动将内容布置到GitHub<br>└─ 同步优势<br>     └─ 实现blog网站的自动更新</p>
+<h2 id="本文的目的"><a href="#本文的目的" class="headerlink" title="本文的目的"></a>本文的目的</h2><p><a target="_blank" rel="noopener" href="https://obsidian.md/">Obsidian</a>作为一款优秀的markdown笔记软件，非常适合搭配hexo撰写blog。</p>
 <p>通过macOS上群晖Drive将hexo的post目录同步到iCloud，实现macOS和群晖drive的同步，然后通过iCloud在不同苹果设备上同步hexo的post目录，实现任意苹果设备撰写blog都可以在macOS通过群晖drive将新blog内容同步至群晖，再由群晖将内容自动布置到GitHub，实现blog网站的自动更新。</p>
-<p>问题：<br>iPadOS和iOS端Obsidian只能识别打开iCloud Drive中Obsidian目录下的库，</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">用户-&gt;&gt;macOS: 在macOS上启动群晖Drive  </span><br><span class="line">macOS-&gt;&gt;群晖Drive: 同步Hexo的post目录到本地  </span><br><span class="line">群晖Drive-&gt;&gt;iCloud: 将同步的post目录上传到iCloud  </span><br><span class="line">  </span><br><span class="line">Note over 用户, macOS, 群晖Drive, iCloud: 等待用户在其他苹果设备上操作  </span><br><span class="line">  </span><br><span class="line">用户-&gt;&gt;苹果设备: 在其他苹果设备上查看iCloud同步的post目录  </span><br><span class="line">苹果设备-&gt;&gt;iCloud: 从iCloud下载post目录  </span><br><span class="line">用户-&gt;&gt;苹果设备: 在苹果设备上撰写新的blog内容  </span><br><span class="line">苹果设备-&gt;&gt;iCloud: 将新blog内容上传到iCloud  </span><br><span class="line">  </span><br><span class="line">Note over 用户, macOS, 群晖Drive, iCloud, 苹果设备: 等待macOS上的群晖Drive同步新内容  </span><br><span class="line">  </span><br><span class="line">iCloud-&gt;&gt;群晖Drive: 将新blog内容同步到群晖Drive  </span><br><span class="line">群晖Drive-&gt;&gt;macOS: 更新Hexo的post目录  </span><br><span class="line">macOS-&gt;&gt;Hexo: Hexo检测到目录变化  </span><br><span class="line">Hexo-&gt;&gt;GitHub: 自动布置新内容到GitHub仓库  </span><br><span class="line">GitHub-&gt;&gt;用户: Blog网站自动更新</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>iPadOS和iOS端Obsidian只能识别打开iCloud Drive中Obsidian目录下的库，</p>
 <p><a target="_blank" rel="noopener" href="https://obsidian.md/">Obsidian</a> 利用群晖的最简单本地加 iCloud 到多端（win+mac+ios）急速同步方案，不用 Webdav、Remotely save 等插件繁琐设置，实现笔记库数据本地化同时多端同步，安全与速度性兼备。</p>
 <p>前提有nas，原理是 mac 下载 synology drive client 开双向同步，把 iCloud 当工具人。</p>
 <h2 id="解决步骤"><a href="#解决步骤" class="headerlink" title="解决步骤"></a>解决步骤</h2><h3 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h3><p>在 ios 下打开 obsidian 新建库，一定开启 iCloud 同步，随便建档写几个字。</p>
@@ -209,7 +211,7 @@
 </div>
 
 <div id="share-mask"></div>  
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Obsidian/" rel="tag">Obsidian</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/markdown/" rel="tag">markdown</a></li></ul>
 
     </footer>
   </div>
@@ -217,11 +219,11 @@
    
   <nav class="article-nav">
     
-      <a href="/2020/02/19/%E8%8F%9C%E8%B0%B1/" class="article-nav-link">
+      <a href="/2019/05/24/%E5%9C%A8hexo%E5%8D%9A%E5%AE%A2%E4%B8%AD%E6%8F%92%E5%85%A5%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/" class="article-nav-link">
         <strong class="article-nav-caption">上一篇</strong>
         <div class="article-nav-title">
           
-            菜谱
+            在hexo博客中插入思维导图
           
         </div>
       </a>
