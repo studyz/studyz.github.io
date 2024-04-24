@@ -89,7 +89,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">1.4k</span>
+            <span class="post-count">1.6k</span>
         </span>
     </span>
 
@@ -98,7 +98,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">5 分钟</span>
+            <span class="post-count">6 分钟</span>
         </span>
     </span>
 </div>
@@ -210,11 +210,24 @@
 <li><code>External</code> 表示是否在新标签页打开连接</li>
 <li>导航地址可以是站内地址也可以是外网地址</li>
 </ol>
-<h3 id="new-posts新建文件名问题"><a href="#new-posts新建文件名问题" class="headerlink" title="new posts新建文件名问题"></a>new posts新建文件名问题</h3><p>修改hexo根目录下_config.yml文件，为新建post自动加上当前日期，避免title重复，造成的一系列问题。</p>
+<h3 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">hexo</span><br><span class="line"><span class="bullet">  -</span> node<span class="emphasis">_modules</span></span><br><span class="line"><span class="emphasis">  - scaffolds # 模板文件夹</span></span><br><span class="line"><span class="emphasis">    - draft.md # 草稿模板文件</span></span><br><span class="line"><span class="emphasis">    - page.md # 页面模板文件</span></span><br><span class="line"><span class="emphasis">    - post.md # 文章模板文件</span></span><br><span class="line"><span class="emphasis">  - source # 资源文件夹</span></span><br><span class="line"><span class="emphasis">    - _</span>drafts # 草稿文件夹</span><br><span class="line"><span class="bullet">    -</span> <span class="emphasis">_posts # post文件夹</span></span><br><span class="line"><span class="emphasis">    - images #图片文件夹</span></span><br><span class="line"><span class="emphasis">  - themes # 主题文件夹</span></span><br><span class="line"><span class="emphasis">    - ayer # 主题文件夹</span></span><br><span class="line"><span class="emphasis">      - _</span>config.yml # 主题配置文件</span><br><span class="line"><span class="bullet">      -</span> languages # 语言文件夹</span><br><span class="line"><span class="bullet">      -</span> layout # 布局文件夹</span><br><span class="line"><span class="bullet">      -</span> scripts # 脚本文件夹</span><br><span class="line"><span class="bullet">      -</span> source # 资源文件夹</span><br><span class="line"><span class="bullet">        -</span> css # 样式文件夹</span><br><span class="line"><span class="bullet">        -</span> fonts # 字体文件夹</span><br><span class="line"><span class="bullet">        -</span> images # 图片文件夹</span><br><span class="line"><span class="bullet">        -</span> js # 脚本文件夹</span><br><span class="line"><span class="bullet">  -</span> <span class="emphasis">_config.yml # 配置文件</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="本地图片的调用-1"><a href="#本地图片的调用-1" class="headerlink" title="本地图片的调用"></a>本地图片的调用</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![<span class="string">这里是图片注释</span>](<span class="link">../images/2019_05_01_hello_world/1.png</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="DIY-hexo-new-post"><a href="#DIY-hexo-new-post" class="headerlink" title="DIY hexo new post"></a>DIY hexo new post</h3><p>修改hexo根目录下_config.yml文件，</p>
+<ol>
+<li>为新建post自动加上当前日期，避免title重复，造成的一系列问题。</li>
+</ol>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Writing</span></span><br><span class="line"><span class="comment"># new_post_name: title.md # default setting</span></span><br><span class="line"><span class="attr">new_post_name:</span> <span class="string">:year_:month_:day_:title.md</span> </span><br><span class="line"><span class="comment"># new posts name as year_month_day_postname</span></span><br><span class="line"><span class="attr">default_layout:</span> <span class="string">post</span></span><br><span class="line"><span class="attr">titlecase:</span> <span class="literal">false</span> <span class="comment"># Transform title into titlecase</span></span><br><span class="line"><span class="attr">external_link:</span></span><br><span class="line"><span class="attr">enable:</span> <span class="literal">true</span> <span class="comment"># Open external links in new tab</span></span><br><span class="line"><span class="attr">field:</span> <span class="string">site</span> <span class="comment"># Apply to the whole site</span></span><br><span class="line"><span class="attr">exclude:</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="attr">filename_case:</span> <span class="number">0</span></span><br><span class="line"><span class="attr">render_drafts:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
 
+<ol start="2">
+<li>为了使_post文件夹尽可能的精简，便于网盘同步，只保留md文件，图片等资源放在<code>source</code>目录下<code>images</code>文件夹内。</li>
+</ol>
+<figure class="highlight sqf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">post_asset_folder: <span class="literal">false</span> </span><br><span class="line"># 改成<span class="literal">true</span>，则在<span class="variable">_post</span>新建下新建md文件的同时新建一个同名的文件夹用于存储当前页面的一些资源。</span><br></pre></td></tr></table></figure>
 
 <h1 id="post在首页全文展示问题"><a href="#post在首页全文展示问题" class="headerlink" title="post在首页全文展示问题"></a>post在首页全文展示问题</h1><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 主题config文件 ~/hexo/themes/ayer/_config.yml</span><br><span class="line"># 文章太长，截断按钮文字(在需要截断的行增加此标记：<span class="comment">&lt;!--more--&gt;</span>)</span><br></pre></td></tr></table></figure>
+
+
 <p>More info:<br><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/agqol9zm/">晨聊 篇十七：markdown也变脸，obsidian + hexo 在群晖NAS上的双剑合璧</a></p>
  
       <!-- reward -->
