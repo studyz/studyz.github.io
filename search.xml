@@ -175,7 +175,8 @@
 ]]></content>
       <categories>
         <category>技术</category>
-        <category>博客,hexo</category>
+        <category>博客</category>
+        <category>hexo</category>
       </categories>
       <tags>
         <tag>markdown</tag>
@@ -193,7 +194,8 @@
 <figure class="highlight clean"><table><tr><td class="code"><pre><span class="line">&#123;% markmap <span class="number">400</span>px %&#125;</span><br><span class="line">  </span><br><span class="line"># Blog内容同步与自动更新流程  </span><br><span class="line">  </span><br><span class="line">## macOS  </span><br><span class="line">### 群晖Drive  </span><br><span class="line">- 同步Hexo的post目录到iCloud  </span><br><span class="line">  </span><br><span class="line">## iCloud  </span><br><span class="line">- 同步Hexo的post目录  </span><br><span class="line">- 跨苹果设备同步  </span><br><span class="line">  </span><br><span class="line">## 苹果设备  </span><br><span class="line">### 任意设备  </span><br><span class="line">- 撰写blog  </span><br><span class="line">- 通过iCloud同步到macOS  </span><br><span class="line">  </span><br><span class="line">## macOS（继续）  </span><br><span class="line">### 群晖Drive（继续）  </span><br><span class="line">- 将新blog内容同步至群晖  </span><br><span class="line">  </span><br><span class="line">## 群晖  </span><br><span class="line">- 将内容自动布置到GitHub  </span><br><span class="line">  </span><br><span class="line">## GitHub  </span><br><span class="line">- 自动更新blog网站</span><br><span class="line">&#123;% endmarkmap %&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>技术</category>
-        <category>博客,hexo</category>
+        <category>博客</category>
+        <category>hexo</category>
       </categories>
       <tags>
         <tag>markdown</tag>
