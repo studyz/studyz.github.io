@@ -566,57 +566,6 @@
       </tags>
   </entry>
   <entry>
-    <title>数据分析师技术树</title>
-    <url>/2023/05/15/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="数据分析师"><a href="#数据分析师" class="headerlink" title="数据分析师"></a>数据分析师</h1><ol>
-<li><p>特点：独当一面、战斗力极强、对企业决策者有一定的影响</p>
-</li>
-<li><p>主要的工作：除了被动的常规分析外，还要能主动发现业务存在的问题，会用数据找事，梳理业务发展与指标体系之间的关系，从日常监督分析开始，更多的是专题性的分析，无中生有</p>
-</li>
-<li><p>需要掌握的：</p>
-<ul>
-<li>硬性技能：SQL、EXCEL、PPT、python\spss\R任选其一，tableau\FineBI\powerbi，也要懂一些市面上流行的数据产品</li>
-<li>软性技能：沟通能力、表达能力、逻辑思维强</li>
-<li>掌握的方法论：ABtest、AAARRR、SWOT、RFM、28原则、5W2H，用户及产品生命周期等</li>
-<li>掌握的统计学：常规统计指标（均值、中位数、分位数等)、回归、聚类、因子、决策树、逻辑回归、机器学习等，这些足够用了</li>
-<li>加分项：图表可视化、PPT展示、系统性思维、在行业有很多认识和沉淀</li>
-<li>要点：算法、技术、工具、业务混为一体，样样都要懂</li>
-<li>总结：这类目前市场上很紧缺，被称为稀缺动物</li>
-</ul>
-</li>
-</ol>
-<span id="more"></span>
-<h1 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h1><h1 id="python"><a href="#python" class="headerlink" title="python"></a>python</h1><h1 id="tableau-FineBI-powerbi"><a href="#tableau-FineBI-powerbi" class="headerlink" title="tableau-FineBI-powerbi"></a>tableau-FineBI-powerbi</h1><h1 id="掌握的方法论"><a href="#掌握的方法论" class="headerlink" title="掌握的方法论"></a>掌握的方法论</h1><ol>
-<li>ABtest</li>
-<li>AAARRR</li>
-<li>SWOT</li>
-<li>RFM</li>
-<li>28原则</li>
-<li>5W2H</li>
-<li>用户及产品生命周期等</li>
-</ol>
-<h1 id="掌握的统计学"><a href="#掌握的统计学" class="headerlink" title="掌握的统计学"></a>掌握的统计学</h1><ol>
-<li>常规统计指标（均值、中位数、分位数等)</li>
-<li>回归</li>
-<li>聚类</li>
-<li>因子</li>
-<li>决策树</li>
-<li>逻辑回归</li>
-<li>机器学习</li>
-</ol>
-<p>? 热力图</p>
-]]></content>
-      <categories>
-        <category>技术</category>
-        <category>数据分析</category>
-        <category>方法论</category>
-      </categories>
-      <tags>
-        <tag>笔记</tag>
-        <tag>数据分析师</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Python网站开发库大全</title>
     <url>/2022/04/30/Python%E7%BD%91%E7%AB%99%E5%BC%80%E5%8F%91%E5%BA%93%E5%A4%A7%E5%85%A8/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
@@ -826,6 +775,57 @@
       </tags>
   </entry>
   <entry>
+    <title>数据分析师技术树</title>
+    <url>/2023/05/15/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="数据分析师"><a href="#数据分析师" class="headerlink" title="数据分析师"></a>数据分析师</h1><ol>
+<li><p>特点：独当一面、战斗力极强、对企业决策者有一定的影响</p>
+</li>
+<li><p>主要的工作：除了被动的常规分析外，还要能主动发现业务存在的问题，会用数据找事，梳理业务发展与指标体系之间的关系，从日常监督分析开始，更多的是专题性的分析，无中生有</p>
+</li>
+<li><p>需要掌握的：</p>
+<ul>
+<li>硬性技能：SQL、EXCEL、PPT、python\spss\R任选其一，tableau\FineBI\powerbi，也要懂一些市面上流行的数据产品</li>
+<li>软性技能：沟通能力、表达能力、逻辑思维强</li>
+<li>掌握的方法论：ABtest、AAARRR、SWOT、RFM、28原则、5W2H，用户及产品生命周期等</li>
+<li>掌握的统计学：常规统计指标（均值、中位数、分位数等)、回归、聚类、因子、决策树、逻辑回归、机器学习等，这些足够用了</li>
+<li>加分项：图表可视化、PPT展示、系统性思维、在行业有很多认识和沉淀</li>
+<li>要点：算法、技术、工具、业务混为一体，样样都要懂</li>
+<li>总结：这类目前市场上很紧缺，被称为稀缺动物</li>
+</ul>
+</li>
+</ol>
+<span id="more"></span>
+<h1 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h1><h1 id="python"><a href="#python" class="headerlink" title="python"></a>python</h1><h1 id="tableau-FineBI-powerbi"><a href="#tableau-FineBI-powerbi" class="headerlink" title="tableau-FineBI-powerbi"></a>tableau-FineBI-powerbi</h1><h1 id="掌握的方法论"><a href="#掌握的方法论" class="headerlink" title="掌握的方法论"></a>掌握的方法论</h1><ol>
+<li>ABtest</li>
+<li>AAARRR</li>
+<li>SWOT</li>
+<li>RFM</li>
+<li>28原则</li>
+<li>5W2H</li>
+<li>用户及产品生命周期等</li>
+</ol>
+<h1 id="掌握的统计学"><a href="#掌握的统计学" class="headerlink" title="掌握的统计学"></a>掌握的统计学</h1><ol>
+<li>常规统计指标（均值、中位数、分位数等)</li>
+<li>回归</li>
+<li>聚类</li>
+<li>因子</li>
+<li>决策树</li>
+<li>逻辑回归</li>
+<li>机器学习</li>
+</ol>
+<p>? 热力图</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>数据分析</category>
+        <category>方法论</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+        <tag>数据分析师</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>澳洲家中日常必备清单</title>
     <url>/2022/05/19/%E6%BE%B3%E6%B4%B2%E5%AE%B6%E4%B8%AD%E6%97%A5%E5%B8%B8%E5%BF%85%E5%A4%87%E6%B8%85%E5%8D%95/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>1⃣️ CEPACAINE漱口水！ 治疗牙龈肿痛，口腔溃疡。澳洲医生推荐买的，超级有效！猫猫家必备的，再也没有牙口烦恼。 购买地址：Chemist有售 💰价格：$15.49 问题在口腔，吃啥啥不香，买它！喵～</p>
@@ -1030,6 +1030,10 @@
 <p>5.0&#x2F;5.0</p>
 </blockquote>
 ]]></content>
+      <categories>
+        <category>资源</category>
+        <category>字体</category>
+      </categories>
       <tags>
         <tag>资源</tag>
         <tag>字体</tag>
@@ -1145,7 +1149,8 @@
 ]]></content>
       <categories>
         <category>技术</category>
-        <category>人工智能,lora</category>
+        <category>人工智能</category>
+        <category>lora</category>
       </categories>
   </entry>
   <entry>
@@ -1202,7 +1207,8 @@
 ]]></content>
       <categories>
         <category>技术</category>
-        <category>人工智能,Prompt</category>
+        <category>人工智能</category>
+        <category>Prompt</category>
       </categories>
       <tags>
         <tag>GPT</tag>
@@ -1256,7 +1262,8 @@
 ]]></content>
       <categories>
         <category>技术</category>
-        <category>人工智能,Prompt</category>
+        <category>人工智能</category>
+        <category>Prompt</category>
       </categories>
       <tags>
         <tag>GPT</tag>
@@ -1321,7 +1328,8 @@
 ]]></content>
       <categories>
         <category>技术</category>
-        <category>数据分析,机器学习</category>
+        <category>数据分析</category>
+        <category>机器学习</category>
       </categories>
       <tags>
         <tag>笔记</tag>
@@ -2358,7 +2366,8 @@
 ]]></content>
       <categories>
         <category>技术</category>
-        <category>博客,hexo</category>
+        <category>博客</category>
+        <category>hexo</category>
       </categories>
       <tags>
         <tag>hexo</tag>
