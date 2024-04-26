@@ -3,11 +3,11 @@
   <title>杰里米的小站</title>
   <icon>https://www.gravatar.com/avatar/7990384958647c949f0546ca418ff41d</icon>
   <subtitle>Jeremy&#39;s</subtitle>
-  <link href="https://studyz.github.io/atom.xml" rel="self"/>
+  <link href="https://www.jeremyang.top/atom.xml" rel="self"/>
   
-  <link href="https://studyz.github.io/"/>
+  <link href="https://www.jeremyang.top/"/>
   <updated>2024-04-24T08:25:26.000Z</updated>
-  <id>https://studyz.github.io/</id>
+  <id>https://www.jeremyang.top/</id>
   
   <author>
     <name>JeremyY</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>TailScale实现远端访问群晖服务器</title>
-    <link href="https://studyz.github.io/2024/04/22/TailScale%E5%AE%9E%E7%8E%B0%E8%BF%9C%E7%AB%AF%E8%AE%BF%E9%97%AE%E6%95%B4%E6%AE%B5%E5%B1%80%E5%9F%9F%E7%BD%91/"/>
-    <id>https://studyz.github.io/2024/04/22/TailScale%E5%AE%9E%E7%8E%B0%E8%BF%9C%E7%AB%AF%E8%AE%BF%E9%97%AE%E6%95%B4%E6%AE%B5%E5%B1%80%E5%9F%9F%E7%BD%91/</id>
+    <link href="https://www.jeremyang.top/2024/04/22/TailScale%E5%AE%9E%E7%8E%B0%E8%BF%9C%E7%AB%AF%E8%AE%BF%E9%97%AE%E6%95%B4%E6%AE%B5%E5%B1%80%E5%9F%9F%E7%BD%91/"/>
+    <id>https://www.jeremyang.top/2024/04/22/TailScale%E5%AE%9E%E7%8E%B0%E8%BF%9C%E7%AB%AF%E8%AE%BF%E9%97%AE%E6%95%B4%E6%AE%B5%E5%B1%80%E5%9F%9F%E7%BD%91/</id>
     <published>2024-04-22T08:16:49.000Z</published>
     <updated>2024-04-24T08:25:26.000Z</updated>
     
@@ -41,23 +41,23 @@
     
     
     
-    <category term="技术" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    <category term="技术" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/"/>
     
-    <category term="网络" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/%E7%BD%91%E7%BB%9C/"/>
+    <category term="网络" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/%E7%BD%91%E7%BB%9C/"/>
     
     
-    <category term="群晖" scheme="https://studyz.github.io/tags/%E7%BE%A4%E6%99%96/"/>
+    <category term="群晖" scheme="https://www.jeremyang.top/tags/%E7%BE%A4%E6%99%96/"/>
     
-    <category term="网络" scheme="https://studyz.github.io/tags/%E7%BD%91%E7%BB%9C/"/>
+    <category term="网络" scheme="https://www.jeremyang.top/tags/%E7%BD%91%E7%BB%9C/"/>
     
-    <category term="NAS" scheme="https://studyz.github.io/tags/NAS/"/>
+    <category term="NAS" scheme="https://www.jeremyang.top/tags/NAS/"/>
     
   </entry>
   
   <entry>
     <title>柯南动画剧集拆分前后对比目录</title>
-    <link href="https://studyz.github.io/2024/04/22/%E6%9F%AF%E5%8D%97%E5%8A%A8%E7%94%BB%E7%9B%AE%E5%BD%95/"/>
-    <id>https://studyz.github.io/2024/04/22/%E6%9F%AF%E5%8D%97%E5%8A%A8%E7%94%BB%E7%9B%AE%E5%BD%95/</id>
+    <link href="https://www.jeremyang.top/2024/04/22/%E6%9F%AF%E5%8D%97%E5%8A%A8%E7%94%BB%E7%9B%AE%E5%BD%95/"/>
+    <id>https://www.jeremyang.top/2024/04/22/%E6%9F%AF%E5%8D%97%E5%8A%A8%E7%94%BB%E7%9B%AE%E5%BD%95/</id>
     <published>2024-04-22T07:00:51.000Z</published>
     <updated>2024-04-24T08:26:23.000Z</updated>
     
@@ -73,21 +73,21 @@
     
     
     
-    <category term="数码" scheme="https://studyz.github.io/categories/%E6%95%B0%E7%A0%81/"/>
+    <category term="数码" scheme="https://www.jeremyang.top/categories/%E6%95%B0%E7%A0%81/"/>
     
-    <category term="智能家居" scheme="https://studyz.github.io/categories/%E6%95%B0%E7%A0%81/%E6%99%BA%E8%83%BD%E5%AE%B6%E5%B1%85/"/>
+    <category term="智能家居" scheme="https://www.jeremyang.top/categories/%E6%95%B0%E7%A0%81/%E6%99%BA%E8%83%BD%E5%AE%B6%E5%B1%85/"/>
     
-    <category term="智能影音" scheme="https://studyz.github.io/categories/%E6%95%B0%E7%A0%81/%E6%99%BA%E8%83%BD%E5%AE%B6%E5%B1%85/%E6%99%BA%E8%83%BD%E5%BD%B1%E9%9F%B3/"/>
+    <category term="智能影音" scheme="https://www.jeremyang.top/categories/%E6%95%B0%E7%A0%81/%E6%99%BA%E8%83%BD%E5%AE%B6%E5%B1%85/%E6%99%BA%E8%83%BD%E5%BD%B1%E9%9F%B3/"/>
     
     
-    <category term="名侦探柯南" scheme="https://studyz.github.io/tags/%E5%90%8D%E4%BE%A6%E6%8E%A2%E6%9F%AF%E5%8D%97/"/>
+    <category term="名侦探柯南" scheme="https://www.jeremyang.top/tags/%E5%90%8D%E4%BE%A6%E6%8E%A2%E6%9F%AF%E5%8D%97/"/>
     
   </entry>
   
   <entry>
     <title>我的极简生活经验</title>
-    <link href="https://studyz.github.io/2024/04/22/%E6%88%91%E7%9A%84%E6%9E%81%E7%AE%80%E7%94%9F%E6%B4%BB%E7%BB%8F%E9%AA%8C/"/>
-    <id>https://studyz.github.io/2024/04/22/%E6%88%91%E7%9A%84%E6%9E%81%E7%AE%80%E7%94%9F%E6%B4%BB%E7%BB%8F%E9%AA%8C/</id>
+    <link href="https://www.jeremyang.top/2024/04/22/%E6%88%91%E7%9A%84%E6%9E%81%E7%AE%80%E7%94%9F%E6%B4%BB%E7%BB%8F%E9%AA%8C/"/>
+    <id>https://www.jeremyang.top/2024/04/22/%E6%88%91%E7%9A%84%E6%9E%81%E7%AE%80%E7%94%9F%E6%B4%BB%E7%BB%8F%E9%AA%8C/</id>
     <published>2024-04-22T06:29:50.000Z</published>
     <updated>2024-04-24T08:25:52.000Z</updated>
     
@@ -98,21 +98,21 @@
     
     
     
-    <category term="生活" scheme="https://studyz.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
+    <category term="生活" scheme="https://www.jeremyang.top/categories/%E7%94%9F%E6%B4%BB/"/>
     
-    <category term="碎碎念" scheme="https://studyz.github.io/categories/%E7%94%9F%E6%B4%BB/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
+    <category term="碎碎念" scheme="https://www.jeremyang.top/categories/%E7%94%9F%E6%B4%BB/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
     
     
-    <category term="随笔" scheme="https://studyz.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
+    <category term="随笔" scheme="https://www.jeremyang.top/tags/%E9%9A%8F%E7%AC%94/"/>
     
-    <category term="分享" scheme="https://studyz.github.io/tags/%E5%88%86%E4%BA%AB/"/>
+    <category term="分享" scheme="https://www.jeremyang.top/tags/%E5%88%86%E4%BA%AB/"/>
     
   </entry>
   
   <entry>
     <title>神州十八</title>
-    <link href="https://studyz.github.io/2024/04/22/%E7%A5%9E%E5%B7%9E%E5%8D%81%E5%85%AB/"/>
-    <id>https://studyz.github.io/2024/04/22/%E7%A5%9E%E5%B7%9E%E5%8D%81%E5%85%AB/</id>
+    <link href="https://www.jeremyang.top/2024/04/22/%E7%A5%9E%E5%B7%9E%E5%8D%81%E5%85%AB/"/>
+    <id>https://www.jeremyang.top/2024/04/22/%E7%A5%9E%E5%B7%9E%E5%8D%81%E5%85%AB/</id>
     <published>2024-04-22T06:29:50.000Z</published>
     <updated>2024-04-25T17:06:58.000Z</updated>
     
@@ -127,21 +127,21 @@
     
     
     
-    <category term="生活" scheme="https://studyz.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
+    <category term="生活" scheme="https://www.jeremyang.top/categories/%E7%94%9F%E6%B4%BB/"/>
     
-    <category term="碎碎念" scheme="https://studyz.github.io/categories/%E7%94%9F%E6%B4%BB/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
+    <category term="碎碎念" scheme="https://www.jeremyang.top/categories/%E7%94%9F%E6%B4%BB/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
     
     
-    <category term="随笔" scheme="https://studyz.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
+    <category term="随笔" scheme="https://www.jeremyang.top/tags/%E9%9A%8F%E7%AC%94/"/>
     
-    <category term="分享" scheme="https://studyz.github.io/tags/%E5%88%86%E4%BA%AB/"/>
+    <category term="分享" scheme="https://www.jeremyang.top/tags/%E5%88%86%E4%BA%AB/"/>
     
   </entry>
   
   <entry>
     <title>群晖Git部署Hexo</title>
-    <link href="https://studyz.github.io/2024/04/20/Git_Hexo/"/>
-    <id>https://studyz.github.io/2024/04/20/Git_Hexo/</id>
+    <link href="https://www.jeremyang.top/2024/04/20/Git_Hexo/"/>
+    <id>https://www.jeremyang.top/2024/04/20/Git_Hexo/</id>
     <published>2024-04-20T05:11:30.000Z</published>
     <updated>2024-04-24T08:20:26.000Z</updated>
     
@@ -151,29 +151,29 @@
     
     
     
-    <category term="技术" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    <category term="技术" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/"/>
     
-    <category term="博客" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/%E5%8D%9A%E5%AE%A2/"/>
+    <category term="博客" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/%E5%8D%9A%E5%AE%A2/"/>
     
-    <category term="hexo" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/%E5%8D%9A%E5%AE%A2/hexo/"/>
+    <category term="hexo" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/%E5%8D%9A%E5%AE%A2/hexo/"/>
     
     
-    <category term="hexo" scheme="https://studyz.github.io/tags/hexo/"/>
+    <category term="hexo" scheme="https://www.jeremyang.top/tags/hexo/"/>
     
-    <category term="笔记" scheme="https://studyz.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    <category term="笔记" scheme="https://www.jeremyang.top/tags/%E7%AC%94%E8%AE%B0/"/>
     
-    <category term="ssh" scheme="https://studyz.github.io/tags/ssh/"/>
+    <category term="ssh" scheme="https://www.jeremyang.top/tags/ssh/"/>
     
-    <category term="技术" scheme="https://studyz.github.io/tags/%E6%8A%80%E6%9C%AF/"/>
+    <category term="技术" scheme="https://www.jeremyang.top/tags/%E6%8A%80%E6%9C%AF/"/>
     
-    <category term="GitHub" scheme="https://studyz.github.io/tags/GitHub/"/>
+    <category term="GitHub" scheme="https://www.jeremyang.top/tags/GitHub/"/>
     
   </entry>
   
   <entry>
     <title>群晖NAS实现SSH免密码登录</title>
-    <link href="https://studyz.github.io/2024/04/17/%E7%BE%A4%E6%99%96NAS%E5%AE%9E%E7%8E%B0SSH%E5%85%8D%E5%AF%86%E7%A0%81%E7%99%BB%E5%BD%95/"/>
-    <id>https://studyz.github.io/2024/04/17/%E7%BE%A4%E6%99%96NAS%E5%AE%9E%E7%8E%B0SSH%E5%85%8D%E5%AF%86%E7%A0%81%E7%99%BB%E5%BD%95/</id>
+    <link href="https://www.jeremyang.top/2024/04/17/%E7%BE%A4%E6%99%96NAS%E5%AE%9E%E7%8E%B0SSH%E5%85%8D%E5%AF%86%E7%A0%81%E7%99%BB%E5%BD%95/"/>
+    <id>https://www.jeremyang.top/2024/04/17/%E7%BE%A4%E6%99%96NAS%E5%AE%9E%E7%8E%B0SSH%E5%85%8D%E5%AF%86%E7%A0%81%E7%99%BB%E5%BD%95/</id>
     <published>2024-04-17T13:42:32.000Z</published>
     <updated>2024-04-24T08:25:14.000Z</updated>
     
@@ -188,23 +188,23 @@
     
     
     
-    <category term="技术" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    <category term="技术" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/"/>
     
-    <category term="网络" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/%E7%BD%91%E7%BB%9C/"/>
+    <category term="网络" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/%E7%BD%91%E7%BB%9C/"/>
     
     
-    <category term="笔记" scheme="https://studyz.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    <category term="笔记" scheme="https://www.jeremyang.top/tags/%E7%AC%94%E8%AE%B0/"/>
     
-    <category term="群晖" scheme="https://studyz.github.io/tags/%E7%BE%A4%E6%99%96/"/>
+    <category term="群晖" scheme="https://www.jeremyang.top/tags/%E7%BE%A4%E6%99%96/"/>
     
-    <category term="ssh" scheme="https://studyz.github.io/tags/ssh/"/>
+    <category term="ssh" scheme="https://www.jeremyang.top/tags/ssh/"/>
     
   </entry>
   
   <entry>
     <title>SQL学习笔记</title>
-    <link href="https://studyz.github.io/2024/02/28/SQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    <id>https://studyz.github.io/2024/02/28/SQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
+    <link href="https://www.jeremyang.top/2024/02/28/SQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>https://www.jeremyang.top/2024/02/28/SQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
     <published>2024-02-28T13:50:40.000Z</published>
     <updated>2024-04-24T08:24:33.000Z</updated>
     
@@ -214,23 +214,23 @@
     
     
     
-    <category term="技术" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    <category term="技术" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/"/>
     
-    <category term="数据分析" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+    <category term="数据分析" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
     
-    <category term="SQL" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/SQL/"/>
+    <category term="SQL" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/SQL/"/>
     
     
-    <category term="笔记" scheme="https://studyz.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    <category term="笔记" scheme="https://www.jeremyang.top/tags/%E7%AC%94%E8%AE%B0/"/>
     
-    <category term="SQL" scheme="https://studyz.github.io/tags/SQL/"/>
+    <category term="SQL" scheme="https://www.jeremyang.top/tags/SQL/"/>
     
   </entry>
   
   <entry>
     <title>DATEDIFF_日期之差</title>
-    <link href="https://studyz.github.io/2024/02/28/DATEDIFF_%E6%97%A5%E6%9C%9F%E4%B9%8B%E5%B7%AE/"/>
-    <id>https://studyz.github.io/2024/02/28/DATEDIFF_%E6%97%A5%E6%9C%9F%E4%B9%8B%E5%B7%AE/</id>
+    <link href="https://www.jeremyang.top/2024/02/28/DATEDIFF_%E6%97%A5%E6%9C%9F%E4%B9%8B%E5%B7%AE/"/>
+    <id>https://www.jeremyang.top/2024/02/28/DATEDIFF_%E6%97%A5%E6%9C%9F%E4%B9%8B%E5%B7%AE/</id>
     <published>2024-02-28T13:49:50.000Z</published>
     <updated>2024-04-24T08:24:13.000Z</updated>
     
@@ -245,23 +245,23 @@
     
     
     
-    <category term="技术" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    <category term="技术" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/"/>
     
-    <category term="数据分析" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+    <category term="数据分析" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
     
-    <category term="SQL" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/SQL/"/>
+    <category term="SQL" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/SQL/"/>
     
     
-    <category term="笔记" scheme="https://studyz.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    <category term="笔记" scheme="https://www.jeremyang.top/tags/%E7%AC%94%E8%AE%B0/"/>
     
-    <category term="SQL" scheme="https://studyz.github.io/tags/SQL/"/>
+    <category term="SQL" scheme="https://www.jeremyang.top/tags/SQL/"/>
     
   </entry>
   
   <entry>
     <title>GroupBy</title>
-    <link href="https://studyz.github.io/2024/02/28/GroupBy/"/>
-    <id>https://studyz.github.io/2024/02/28/GroupBy/</id>
+    <link href="https://www.jeremyang.top/2024/02/28/GroupBy/"/>
+    <id>https://www.jeremyang.top/2024/02/28/GroupBy/</id>
     <published>2024-02-28T13:48:55.000Z</published>
     <updated>2024-04-24T08:24:23.000Z</updated>
     
@@ -273,23 +273,23 @@
     
     
     
-    <category term="技术" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    <category term="技术" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/"/>
     
-    <category term="数据分析" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+    <category term="数据分析" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
     
-    <category term="SQL" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/SQL/"/>
+    <category term="SQL" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/SQL/"/>
     
     
-    <category term="笔记" scheme="https://studyz.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    <category term="笔记" scheme="https://www.jeremyang.top/tags/%E7%AC%94%E8%AE%B0/"/>
     
-    <category term="SQL" scheme="https://studyz.github.io/tags/SQL/"/>
+    <category term="SQL" scheme="https://www.jeremyang.top/tags/SQL/"/>
     
   </entry>
   
   <entry>
     <title>排序_DENSE_RANK</title>
-    <link href="https://studyz.github.io/2024/02/28/%E6%8E%92%E5%BA%8F_DENSE_RANK/"/>
-    <id>https://studyz.github.io/2024/02/28/%E6%8E%92%E5%BA%8F_DENSE_RANK/</id>
+    <link href="https://www.jeremyang.top/2024/02/28/%E6%8E%92%E5%BA%8F_DENSE_RANK/"/>
+    <id>https://www.jeremyang.top/2024/02/28/%E6%8E%92%E5%BA%8F_DENSE_RANK/</id>
     <published>2024-02-28T13:47:37.000Z</published>
     <updated>2024-04-24T08:24:44.000Z</updated>
     
@@ -303,25 +303,25 @@
     
     
     
-    <category term="技术" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    <category term="技术" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/"/>
     
-    <category term="数据分析" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+    <category term="数据分析" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
     
-    <category term="SQL" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/SQL/"/>
+    <category term="SQL" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/SQL/"/>
     
     
-    <category term="笔记" scheme="https://studyz.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    <category term="笔记" scheme="https://www.jeremyang.top/tags/%E7%AC%94%E8%AE%B0/"/>
     
-    <category term="SQL" scheme="https://studyz.github.io/tags/SQL/"/>
+    <category term="SQL" scheme="https://www.jeremyang.top/tags/SQL/"/>
     
-    <category term="排序" scheme="https://studyz.github.io/tags/%E6%8E%92%E5%BA%8F/"/>
+    <category term="排序" scheme="https://www.jeremyang.top/tags/%E6%8E%92%E5%BA%8F/"/>
     
   </entry>
   
   <entry>
     <title>SQL窗口函数_LEAD_LAG详解</title>
-    <link href="https://studyz.github.io/2024/02/28/SQL%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0_LEAD_LAG%E8%AF%A6%E8%A7%A3/"/>
-    <id>https://studyz.github.io/2024/02/28/SQL%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0_LEAD_LAG%E8%AF%A6%E8%A7%A3/</id>
+    <link href="https://www.jeremyang.top/2024/02/28/SQL%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0_LEAD_LAG%E8%AF%A6%E8%A7%A3/"/>
+    <id>https://www.jeremyang.top/2024/02/28/SQL%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0_LEAD_LAG%E8%AF%A6%E8%A7%A3/</id>
     <published>2024-02-28T13:46:28.000Z</published>
     <updated>2024-04-24T08:24:37.000Z</updated>
     
@@ -369,23 +369,23 @@
     
     
     
-    <category term="技术" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    <category term="技术" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/"/>
     
-    <category term="数据分析" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+    <category term="数据分析" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
     
-    <category term="SQL" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/SQL/"/>
+    <category term="SQL" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/SQL/"/>
     
     
-    <category term="笔记" scheme="https://studyz.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    <category term="笔记" scheme="https://www.jeremyang.top/tags/%E7%AC%94%E8%AE%B0/"/>
     
-    <category term="SQL" scheme="https://studyz.github.io/tags/SQL/"/>
+    <category term="SQL" scheme="https://www.jeremyang.top/tags/SQL/"/>
     
   </entry>
   
   <entry>
     <title>我应该怎么与这个世界相处？</title>
-    <link href="https://studyz.github.io/2024/02/22/%E6%88%91%E5%BA%94%E8%AF%A5%E6%80%8E%E4%B9%88%E4%B8%8E%E8%BF%99%E4%B8%AA%E4%B8%96%E7%95%8C%E7%9B%B8%E5%A4%84/"/>
-    <id>https://studyz.github.io/2024/02/22/%E6%88%91%E5%BA%94%E8%AF%A5%E6%80%8E%E4%B9%88%E4%B8%8E%E8%BF%99%E4%B8%AA%E4%B8%96%E7%95%8C%E7%9B%B8%E5%A4%84/</id>
+    <link href="https://www.jeremyang.top/2024/02/22/%E6%88%91%E5%BA%94%E8%AF%A5%E6%80%8E%E4%B9%88%E4%B8%8E%E8%BF%99%E4%B8%AA%E4%B8%96%E7%95%8C%E7%9B%B8%E5%A4%84/"/>
+    <id>https://www.jeremyang.top/2024/02/22/%E6%88%91%E5%BA%94%E8%AF%A5%E6%80%8E%E4%B9%88%E4%B8%8E%E8%BF%99%E4%B8%AA%E4%B8%96%E7%95%8C%E7%9B%B8%E5%A4%84/</id>
     <published>2024-02-22T06:29:50.000Z</published>
     <updated>2024-04-25T15:28:25.000Z</updated>
     
@@ -400,21 +400,21 @@
     
     
     
-    <category term="生活" scheme="https://studyz.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
+    <category term="生活" scheme="https://www.jeremyang.top/categories/%E7%94%9F%E6%B4%BB/"/>
     
-    <category term="碎碎念" scheme="https://studyz.github.io/categories/%E7%94%9F%E6%B4%BB/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
+    <category term="碎碎念" scheme="https://www.jeremyang.top/categories/%E7%94%9F%E6%B4%BB/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
     
     
-    <category term="随笔" scheme="https://studyz.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
+    <category term="随笔" scheme="https://www.jeremyang.top/tags/%E9%9A%8F%E7%AC%94/"/>
     
-    <category term="分享" scheme="https://studyz.github.io/tags/%E5%88%86%E4%BA%AB/"/>
+    <category term="分享" scheme="https://www.jeremyang.top/tags/%E5%88%86%E4%BA%AB/"/>
     
   </entry>
   
   <entry>
     <title>数据分析师所需的技术与理论</title>
-    <link href="https://studyz.github.io/2023/10/23/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E6%89%80%E9%9C%80%E7%9A%84%E6%8A%80%E6%9C%AF%E4%B8%8E%E7%90%86%E8%AE%BA/"/>
-    <id>https://studyz.github.io/2023/10/23/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E6%89%80%E9%9C%80%E7%9A%84%E6%8A%80%E6%9C%AF%E4%B8%8E%E7%90%86%E8%AE%BA/</id>
+    <link href="https://www.jeremyang.top/2023/10/23/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E6%89%80%E9%9C%80%E7%9A%84%E6%8A%80%E6%9C%AF%E4%B8%8E%E7%90%86%E8%AE%BA/"/>
+    <id>https://www.jeremyang.top/2023/10/23/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E6%89%80%E9%9C%80%E7%9A%84%E6%8A%80%E6%9C%AF%E4%B8%8E%E7%90%86%E8%AE%BA/</id>
     <published>2023-10-23T05:11:30.000Z</published>
     <updated>2024-04-24T08:23:48.000Z</updated>
     
@@ -426,25 +426,25 @@
     
     
     
-    <category term="技术" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    <category term="技术" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/"/>
     
-    <category term="数据分析" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+    <category term="数据分析" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
     
-    <category term="方法论" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/%E6%96%B9%E6%B3%95%E8%AE%BA/"/>
+    <category term="方法论" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/%E6%96%B9%E6%B3%95%E8%AE%BA/"/>
     
     
-    <category term="笔记" scheme="https://studyz.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    <category term="笔记" scheme="https://www.jeremyang.top/tags/%E7%AC%94%E8%AE%B0/"/>
     
-    <category term="数据分析师" scheme="https://studyz.github.io/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88/"/>
+    <category term="数据分析师" scheme="https://www.jeremyang.top/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88/"/>
     
-    <category term="方法论" scheme="https://studyz.github.io/tags/%E6%96%B9%E6%B3%95%E8%AE%BA/"/>
+    <category term="方法论" scheme="https://www.jeremyang.top/tags/%E6%96%B9%E6%B3%95%E8%AE%BA/"/>
     
   </entry>
   
   <entry>
     <title>这可能是我见过最好的 NumPy 图解教程！</title>
-    <link href="https://studyz.github.io/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/"/>
-    <id>https://studyz.github.io/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/</id>
+    <link href="https://www.jeremyang.top/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/"/>
+    <id>https://www.jeremyang.top/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/</id>
     <published>2023-10-23T05:11:30.000Z</published>
     <updated>2024-04-24T08:23:59.000Z</updated>
     
@@ -460,25 +460,25 @@
     
     
     
-    <category term="技术" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    <category term="技术" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/"/>
     
-    <category term="数据分析" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+    <category term="数据分析" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
     
-    <category term="numpy" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/numpy/"/>
+    <category term="numpy" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/numpy/"/>
     
     
-    <category term="笔记" scheme="https://studyz.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    <category term="笔记" scheme="https://www.jeremyang.top/tags/%E7%AC%94%E8%AE%B0/"/>
     
-    <category term="python" scheme="https://studyz.github.io/tags/python/"/>
+    <category term="python" scheme="https://www.jeremyang.top/tags/python/"/>
     
-    <category term="numpy" scheme="https://studyz.github.io/tags/numpy/"/>
+    <category term="numpy" scheme="https://www.jeremyang.top/tags/numpy/"/>
     
   </entry>
   
   <entry>
     <title>lora训练</title>
-    <link href="https://studyz.github.io/2023/08/21/lora%E8%AE%AD%E7%BB%83/"/>
-    <id>https://studyz.github.io/2023/08/21/lora%E8%AE%AD%E7%BB%83/</id>
+    <link href="https://www.jeremyang.top/2023/08/21/lora%E8%AE%AD%E7%BB%83/"/>
+    <id>https://www.jeremyang.top/2023/08/21/lora%E8%AE%AD%E7%BB%83/</id>
     <published>2023-08-21T10:34:40.000Z</published>
     <updated>2024-04-24T08:21:37.000Z</updated>
     
@@ -490,19 +490,19 @@
     
     
     
-    <category term="技术" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    <category term="技术" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/"/>
     
-    <category term="人工智能" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
+    <category term="人工智能" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
     
-    <category term="lora" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/lora/"/>
+    <category term="lora" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/lora/"/>
     
     
   </entry>
   
   <entry>
     <title>ChatGPT Prompt</title>
-    <link href="https://studyz.github.io/2023/08/12/ChatGPT_Prompt/"/>
-    <id>https://studyz.github.io/2023/08/12/ChatGPT_Prompt/</id>
+    <link href="https://www.jeremyang.top/2023/08/12/ChatGPT_Prompt/"/>
+    <id>https://www.jeremyang.top/2023/08/12/ChatGPT_Prompt/</id>
     <published>2023-08-12T10:34:40.000Z</published>
     <updated>2024-04-24T08:17:12.000Z</updated>
     
@@ -543,23 +543,23 @@
     
     
     
-    <category term="技术" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    <category term="技术" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/"/>
     
-    <category term="人工智能" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
+    <category term="人工智能" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
     
-    <category term="Prompt" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/Prompt/"/>
+    <category term="Prompt" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/Prompt/"/>
     
     
-    <category term="GPT" scheme="https://studyz.github.io/tags/GPT/"/>
+    <category term="GPT" scheme="https://www.jeremyang.top/tags/GPT/"/>
     
-    <category term="Prompt" scheme="https://studyz.github.io/tags/Prompt/"/>
+    <category term="Prompt" scheme="https://www.jeremyang.top/tags/Prompt/"/>
     
   </entry>
   
   <entry>
     <title>Apple TV 4K 三代</title>
-    <link href="https://studyz.github.io/2023/08/10/AppleTV4K/"/>
-    <id>https://studyz.github.io/2023/08/10/AppleTV4K/</id>
+    <link href="https://www.jeremyang.top/2023/08/10/AppleTV4K/"/>
+    <id>https://www.jeremyang.top/2023/08/10/AppleTV4K/</id>
     <published>2023-08-10T05:11:30.000Z</published>
     <updated>2024-04-24T08:23:34.000Z</updated>
     
@@ -571,25 +571,25 @@
     
     
     
-    <category term="数码" scheme="https://studyz.github.io/categories/%E6%95%B0%E7%A0%81/"/>
+    <category term="数码" scheme="https://www.jeremyang.top/categories/%E6%95%B0%E7%A0%81/"/>
     
-    <category term="智能家居" scheme="https://studyz.github.io/categories/%E6%95%B0%E7%A0%81/%E6%99%BA%E8%83%BD%E5%AE%B6%E5%B1%85/"/>
+    <category term="智能家居" scheme="https://www.jeremyang.top/categories/%E6%95%B0%E7%A0%81/%E6%99%BA%E8%83%BD%E5%AE%B6%E5%B1%85/"/>
     
-    <category term="智能影音" scheme="https://studyz.github.io/categories/%E6%95%B0%E7%A0%81/%E6%99%BA%E8%83%BD%E5%AE%B6%E5%B1%85/%E6%99%BA%E8%83%BD%E5%BD%B1%E9%9F%B3/"/>
+    <category term="智能影音" scheme="https://www.jeremyang.top/categories/%E6%95%B0%E7%A0%81/%E6%99%BA%E8%83%BD%E5%AE%B6%E5%B1%85/%E6%99%BA%E8%83%BD%E5%BD%B1%E9%9F%B3/"/>
     
     
-    <category term="数码" scheme="https://studyz.github.io/tags/%E6%95%B0%E7%A0%81/"/>
+    <category term="笔记" scheme="https://www.jeremyang.top/tags/%E7%AC%94%E8%AE%B0/"/>
     
-    <category term="笔记" scheme="https://studyz.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    <category term="数码" scheme="https://www.jeremyang.top/tags/%E6%95%B0%E7%A0%81/"/>
     
-    <category term="Apple" scheme="https://studyz.github.io/tags/Apple/"/>
+    <category term="Apple" scheme="https://www.jeremyang.top/tags/Apple/"/>
     
   </entry>
   
   <entry>
     <title>7大经典回归模型</title>
-    <link href="https://studyz.github.io/2023/08/01/7%E5%A4%A7%E7%BB%8F%E5%85%B8%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/"/>
-    <id>https://studyz.github.io/2023/08/01/7%E5%A4%A7%E7%BB%8F%E5%85%B8%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/</id>
+    <link href="https://www.jeremyang.top/2023/08/01/7%E5%A4%A7%E7%BB%8F%E5%85%B8%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/"/>
+    <id>https://www.jeremyang.top/2023/08/01/7%E5%A4%A7%E7%BB%8F%E5%85%B8%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/</id>
     <published>2023-08-01T05:11:30.000Z</published>
     <updated>2024-04-24T08:23:19.000Z</updated>
     
@@ -600,25 +600,25 @@
     
     
     
-    <category term="技术" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    <category term="技术" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/"/>
     
-    <category term="数据分析" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+    <category term="数据分析" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
     
-    <category term="机器算法" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/%E6%9C%BA%E5%99%A8%E7%AE%97%E6%B3%95/"/>
+    <category term="机器算法" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/%E6%9C%BA%E5%99%A8%E7%AE%97%E6%B3%95/"/>
     
     
-    <category term="数据分析" scheme="https://studyz.github.io/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+    <category term="数据分析" scheme="https://www.jeremyang.top/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
     
-    <category term="回归模型" scheme="https://studyz.github.io/tags/%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/"/>
+    <category term="回归模型" scheme="https://www.jeremyang.top/tags/%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/"/>
     
-    <category term="机器算法" scheme="https://studyz.github.io/tags/%E6%9C%BA%E5%99%A8%E7%AE%97%E6%B3%95/"/>
+    <category term="机器算法" scheme="https://www.jeremyang.top/tags/%E6%9C%BA%E5%99%A8%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
   <entry>
     <title>5W2H模型在数据分析中的应用</title>
-    <link href="https://studyz.github.io/2023/06/03/5W2H%E6%A8%A1%E5%9E%8B%E5%9C%A8%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/"/>
-    <id>https://studyz.github.io/2023/06/03/5W2H%E6%A8%A1%E5%9E%8B%E5%9C%A8%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/</id>
+    <link href="https://www.jeremyang.top/2023/06/03/5W2H%E6%A8%A1%E5%9E%8B%E5%9C%A8%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/"/>
+    <id>https://www.jeremyang.top/2023/06/03/5W2H%E6%A8%A1%E5%9E%8B%E5%9C%A8%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/</id>
     <published>2023-06-03T13:39:01.000Z</published>
     <updated>2024-04-24T08:23:02.000Z</updated>
     
@@ -640,23 +640,23 @@
     
     
     
-    <category term="技术" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    <category term="技术" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/"/>
     
-    <category term="数据分析" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+    <category term="数据分析" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
     
-    <category term="方法论" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/%E6%96%B9%E6%B3%95%E8%AE%BA/"/>
+    <category term="方法论" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/%E6%96%B9%E6%B3%95%E8%AE%BA/"/>
     
     
-    <category term="数据分析" scheme="https://studyz.github.io/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+    <category term="数据分析" scheme="https://www.jeremyang.top/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
     
-    <category term="方法论" scheme="https://studyz.github.io/tags/%E6%96%B9%E6%B3%95%E8%AE%BA/"/>
+    <category term="方法论" scheme="https://www.jeremyang.top/tags/%E6%96%B9%E6%B3%95%E8%AE%BA/"/>
     
   </entry>
   
   <entry>
     <title>数据分析师技术树</title>
-    <link href="https://studyz.github.io/2023/05/15/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88/"/>
-    <id>https://studyz.github.io/2023/05/15/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88/</id>
+    <link href="https://www.jeremyang.top/2023/05/15/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88/"/>
+    <id>https://www.jeremyang.top/2023/05/15/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88/</id>
     <published>2023-05-15T10:34:40.000Z</published>
     <updated>2024-04-24T08:11:27.000Z</updated>
     
@@ -681,16 +681,16 @@
     
     
     
-    <category term="技术" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    <category term="技术" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/"/>
     
-    <category term="数据分析" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+    <category term="数据分析" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
     
-    <category term="方法论" scheme="https://studyz.github.io/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/%E6%96%B9%E6%B3%95%E8%AE%BA/"/>
+    <category term="方法论" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/%E6%96%B9%E6%B3%95%E8%AE%BA/"/>
     
     
-    <category term="笔记" scheme="https://studyz.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    <category term="笔记" scheme="https://www.jeremyang.top/tags/%E7%AC%94%E8%AE%B0/"/>
     
-    <category term="数据分析师" scheme="https://studyz.github.io/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88/"/>
+    <category term="数据分析师" scheme="https://www.jeremyang.top/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88/"/>
     
   </entry>
   
