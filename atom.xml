@@ -6,7 +6,7 @@
   <link href="https://www.jeremyang.top/atom.xml" rel="self"/>
   
   <link href="https://www.jeremyang.top/"/>
-  <updated>2024-04-26T04:39:17.000Z</updated>
+  <updated>2024-04-26T12:51:04.000Z</updated>
   <id>https://www.jeremyang.top/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>图形推理</title>
+    <link href="https://www.jeremyang.top/2024/04/25/%E5%9B%BE%E5%BD%A2%E6%8E%A8%E7%90%86/"/>
+    <id>https://www.jeremyang.top/2024/04/25/%E5%9B%BE%E5%BD%A2%E6%8E%A8%E7%90%86/</id>
+    <published>2024-04-25T06:29:50.000Z</published>
+    <updated>2024-04-26T12:51:04.000Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;图形推理考点&quot;&gt;&lt;a href=&quot;#图形推理考点&quot; class=&quot;headerlink&quot; title=&quot;图形推理考点&quot;&gt;&lt;/a&gt;图形推理考点&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;位置规律：图形的位置变化，如平移、旋转等。&lt;/li&gt;
+&lt;li&gt;样式规律：图形的形状、颜色、大小等样式变化。&lt;/li&gt;
+&lt;li&gt;属性规律：图形的内部属性，如对称性、连通性等。&lt;/li&gt;
+&lt;li&gt;数量规律：图形中元素的数量变化，如增加、减少或保持不变。&lt;/li&gt;
+&lt;li&gt;特殊规律：图形中的特殊模式或序列，如序列顺序、奇偶性等。&lt;/li&gt;
+&lt;/ol&gt;</summary>
+    
+    
+    
+    <category term="生活" scheme="https://www.jeremyang.top/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    <category term="碎碎念" scheme="https://www.jeremyang.top/categories/%E7%94%9F%E6%B4%BB/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
+    
+    
+    <category term="随笔" scheme="https://www.jeremyang.top/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+    <category term="分享" scheme="https://www.jeremyang.top/tags/%E5%88%86%E4%BA%AB/"/>
+    
+  </entry>
   
   <entry>
     <title>中国历代神州火箭信息</title>
@@ -660,34 +689,6 @@
     
     <category term="lora" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/lora/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>统计分析的八种方法</title>
-    <link href="https://www.jeremyang.top/2023/03/30/%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E7%9A%84%E5%85%AB%E7%A7%8D%E6%96%B9%E6%B3%95/"/>
-    <id>https://www.jeremyang.top/2023/03/30/%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E7%9A%84%E5%85%AB%E7%A7%8D%E6%96%B9%E6%B3%95/</id>
-    <published>2023-03-30T10:34:40.000Z</published>
-    <updated>2024-04-26T04:42:24.000Z</updated>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;一、指标对比分析法&quot;&gt;&lt;a href=&quot;#一、指标对比分析法&quot; class=&quot;headerlink&quot; title=&quot;一、指标对比分析法&quot;&gt;&lt;/a&gt;一、指标对比分析法&lt;/h1&gt;&lt;p&gt;指标对比分析法，又称比较分析法，是统计分析中最常用的方法。是通过有关的指标对比来反映事物数量上差异和变化的方法。有比较才能鉴别。单独看一些指标，只能说明总体的某些数量特征，得不出什么结论性的认识；一经过比较，如与国外、外单位比，与历史数据比，与计划相比，就可以对规模大小、水平高低、速度快慢作出判断和评价。&lt;/p&gt;
-&lt;p&gt;指标分析对比分析方法可分为静态比较和动态比较分析。静态比较是同一时间条件下不同总体指标比较，如不同部门、不同地区、不同国家的比较，也叫横向比较；动态比较是同一总体条件不同时期指标数值的比较，也叫纵向比较。这两种方法既可单独使用，也可结合使用。进行对比分析时，可以单独使用总量指标或相对指标或平均指标，也可将它们结合起来进行对比。比较的结果可用相对数，如百分数、倍数、系数等，也可用相差的绝对数和相关的百分点（每1％为一个百分点）来表示，即将对比的指标相减。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="技术" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    <category term="数据分析" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
-    
-    <category term="方法论" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/%E6%96%B9%E6%B3%95%E8%AE%BA/"/>
-    
-    
-    <category term="数据分析师" scheme="https://www.jeremyang.top/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88/"/>
-    
-    <category term="统计" scheme="https://www.jeremyang.top/tags/%E7%BB%9F%E8%AE%A1/"/>
-    
-    <category term="方法" scheme="https://www.jeremyang.top/tags/%E6%96%B9%E6%B3%95/"/>
     
   </entry>
   
