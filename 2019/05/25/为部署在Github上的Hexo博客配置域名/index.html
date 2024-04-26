@@ -89,7 +89,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">452</span>
+            <span class="post-count">440</span>
         </span>
     </span>
 
@@ -114,18 +114,19 @@
     <div class="article-entry" itemprop="articleBody">
        
   <h4 id="一、Hexo项目部署到Github"><a href="#一、Hexo项目部署到Github" class="headerlink" title="一、Hexo项目部署到Github"></a>一、<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=Hexo&spm=1001.2101.3001.7020">Hexo</a>项目部署到Github</h4><p>首先要确保你的hexo项目已经部署到github上，如果不知道hexo项目如何部署到github上，请看另一篇文章↓</p>
-<p><a href="">群晖Git部署Hexo</a></p>
-<p>如果你的<strong>hexo项目已经搭建好</strong>，可直接跳转到<strong>目录五，看部署到Github</strong>的步骤。</p>
-<h4 id="二、解析域名到GitHub-Pages"><a href="#二、解析域名到GitHub-Pages" class="headerlink" title="二、解析域名到GitHub Pages"></a>二、解析域名到GitHub Pages</h4><h5 id="1：首先购买或注册一个域名"><a href="#1：首先购买或注册一个域名" class="headerlink" title="1：首先购买或注册一个域名"></a>1：首先购买或注册一个域名</h5><p>购买域名的渠道有很多，可以国内，也可以国外，本人是在国外的Namecheap平台上买的（好处是管理比较方便，不用备案啥的了…），具体购买步骤可以看另一篇文章↓</p>
-<p><a target="_blank" rel="noopener" href="https://www.laodengai.com/buy-domain-name-on-Namecheap-20240318/">如何在 Namecheap 上购买域名 | 老登 AI (laodengai.com)</a></p>
-<h5 id="2：解析域名到Github"><a href="#2：解析域名到Github" class="headerlink" title="2：解析域名到Github"></a>2：解析域名到Github</h5><p>首先登录你域名注册商的控制面板，这里以Namecheap为例</p>
+<p><a href="./2019_05_06_Git_Hexo.md">群晖Git部署Hexo</a></p>
+<p>如果你的<strong>hexo项目已经搭建好</strong>，可直接跳转到<strong>第五步，看部署到Github</strong>的步骤。</p>
+<h4 id="二、解析域名到GitHub-Pages"><a href="#二、解析域名到GitHub-Pages" class="headerlink" title="二、解析域名到GitHub Pages"></a>二、解析域名到GitHub Pages</h4><h5 id="1：首先购买或注册一个域名"><a href="#1：首先购买或注册一个域名" class="headerlink" title="1：首先购买或注册一个域名"></a>1：首先购买或注册一个域名</h5><p>购买域名的渠道有很多，可以国内，也可以国外，本人是在国外的GoDaddy平台上买的（好处是管理比较方便，不用备案啥的了…），问题多的话我再写一篇具体申请的blog。</p>
+<h5 id="2：解析域名到Github"><a href="#2：解析域名到Github" class="headerlink" title="2：解析域名到Github"></a>2：解析域名到Github</h5><p>首先登录你域名注册商的控制面板，这里以GoDaddy为例</p>
+<span id="more"></span>
+
 <p>打开<strong>控制面板</strong></p>
 <p><img src="https://img-blog.csdnimg.cn/img_convert/1eb14fcffa6e2d4f653973e99ca35362.png" alt="image-20240319002803003"></p>
 <p>接着<strong>打开DNS配置页面</strong></p>
 <p><img src="https://img-blog.csdnimg.cn/img_convert/73ed9a296534279f450c78fea5f2f904.png" alt="image-20240319002924980"></p>
 <p>接着<strong>添加以下几条解析</strong></p>
 <p><img src="https://img-blog.csdnimg.cn/img_convert/ae6bb469b68d19139b83f2a941799cf0.png" alt="image-20240319004434777"></p>
-<p>上面几条IP地址是从<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=Github%E5%AE%98%E7%BD%91&spm=1001.2101.3001.7020">Github官网</a>上得来的，具体可以查看这个地址<a target="_blank" rel="noopener" href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site#configuring-an-apex-domain">Managing a custom domain for your GitHub Pages site - GitHub Docs</a></p>
+<p>上面几条IP地址是从<a href="">Github官网</a>上得来的，具体可以查看这个地址<a target="_blank" rel="noopener" href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site#configuring-an-apex-domain">Managing a custom domain for your GitHub Pages site - GitHub Docs</a></p>
 <p>至此，域名注册服务商上的github pages域名解析我们就完成了！</p>
 <h4 id="三、配置Hexo项目"><a href="#三、配置Hexo项目" class="headerlink" title="三、配置Hexo项目"></a>三、配置Hexo项目</h4><p>在你的hexo项目的<strong>source</strong>文件夹里添加一个<strong>CNAME</strong>文件（不带任何后缀的文件）</p>
 <p><img src="https://img-blog.csdnimg.cn/img_convert/61763055c831a5eedafa731be332428c.png" alt="image-20240319004806404"></p>
@@ -222,11 +223,11 @@
    
   <nav class="article-nav">
     
-      <a href="/2020/02/19/%E8%8F%9C%E8%B0%B1/" class="article-nav-link">
+      <a href="/2020/05/04/%E9%B8%A1%E5%B0%BE%E9%85%92%E9%85%8D%E6%96%B9/" class="article-nav-link">
         <strong class="article-nav-caption">上一篇</strong>
         <div class="article-nav-title">
           
-            菜谱
+            鸡尾酒配方
           
         </div>
       </a>

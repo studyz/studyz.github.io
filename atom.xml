@@ -6,7 +6,7 @@
   <link href="https://www.jeremyang.top/atom.xml" rel="self"/>
   
   <link href="https://www.jeremyang.top/"/>
-  <updated>2024-04-24T08:25:26.000Z</updated>
+  <updated>2024-04-26T04:39:17.000Z</updated>
   <id>https://www.jeremyang.top/</id>
   
   <author>
@@ -17,40 +17,55 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>TailScale实现远端访问群晖服务器</title>
-    <link href="https://www.jeremyang.top/2024/04/22/TailScale%E5%AE%9E%E7%8E%B0%E8%BF%9C%E7%AB%AF%E8%AE%BF%E9%97%AE%E6%95%B4%E6%AE%B5%E5%B1%80%E5%9F%9F%E7%BD%91/"/>
-    <id>https://www.jeremyang.top/2024/04/22/TailScale%E5%AE%9E%E7%8E%B0%E8%BF%9C%E7%AB%AF%E8%AE%BF%E9%97%AE%E6%95%B4%E6%AE%B5%E5%B1%80%E5%9F%9F%E7%BD%91/</id>
-    <published>2024-04-22T08:16:49.000Z</published>
-    <updated>2024-04-24T08:25:26.000Z</updated>
+    <title>中国历代神州火箭信息</title>
+    <link href="https://www.jeremyang.top/2024/04/25/%E7%A5%9E%E5%B7%9E%E5%8D%81%E5%85%AB/"/>
+    <id>https://www.jeremyang.top/2024/04/25/%E7%A5%9E%E5%B7%9E%E5%8D%81%E5%85%AB/</id>
+    <published>2024-04-25T06:29:50.000Z</published>
+    <updated>2024-04-26T04:39:17.000Z</updated>
     
     
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&quot;https://tailscale.com/&quot;&gt;Tailscale&lt;/a&gt;是以&lt;a href=&quot;https://www.wireguard.com/&quot;&gt;Wireguard&lt;/a&gt;的协议加密，所以安全性更高，而且是P2P连线，流量不经伺服器，延迟更低、私密性更高。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ol&gt;
-&lt;li&gt;安装及加入到&lt;code&gt;TailScale&lt;/code&gt;网络&lt;/li&gt;
-&lt;li&gt;透过设定其中1部&lt;code&gt;TailScale&lt;/code&gt;的装置为网关「Subnet Router」，可以访问整个内网网段&lt;/li&gt;
-&lt;/ol&gt;
-&lt;blockquote&gt;
-&lt;p&gt;以群晖NAS为例&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&quot;1-TailScale安装&quot;&gt;&lt;a href=&quot;#1-TailScale安装&quot; class=&quot;headerlink&quot; title=&quot;1. TailScale安装&quot;&gt;&lt;/a&gt;1. TailScale安装&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;群晖套件中心添加spk套件源&lt;/li&gt;
-&lt;li&gt;社群套件搜索TailScale安装后登陆，成功授权后可以查看分配到的IP地址&lt;/li&gt;
-&lt;/ol&gt;</summary>
+    <summary type="html">&lt;p&gt;新闻看到神州十八的发射直播，趁机梳理一下常识。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;4次任务&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;景海鹏（神舟七号、神舟九号、神舟十一号、神舟十六号）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;3次任务&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;聂海胜（神舟六号、神舟十号、神舟十二号）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;2次任务&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;费俊龙（神舟六号、神舟十五号）&lt;/li&gt;
+&lt;li&gt;刘伯明（神舟七号、神舟十二号）&lt;/li&gt;
+&lt;li&gt;刘洋（神舟九号、神舟十四号）&lt;/li&gt;
+&lt;li&gt;王亚平（神舟十号、神舟十三号）&lt;/li&gt;
+&lt;li&gt;陈冬（神舟十一号、神舟十四号）&lt;/li&gt;
+&lt;li&gt;汤洪波（神舟十二号、神舟十七号）&lt;/li&gt;
+&lt;li&gt;叶光富（神舟十三号、神舟十八号）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;1次任务&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;杨利伟（神舟五号）&lt;/li&gt;
+&lt;li&gt;刘旺（神舟九号）&lt;/li&gt;
+&lt;li&gt;张晓光（神舟十号）&lt;/li&gt;
+&lt;li&gt;朱杨柱（神舟十六号）&lt;/li&gt;
+&lt;li&gt;桂海潮（神舟十六号）&lt;/li&gt;
+&lt;li&gt;唐胜杰（神舟十七号）&lt;/li&gt;
+&lt;li&gt;江新林（神舟十七号）&lt;/li&gt;
+&lt;li&gt;李聪（神舟十八号）&lt;/li&gt;
+&lt;li&gt;李广苏（神舟十八号）&lt;/li&gt;
+&lt;/ul&gt;</summary>
     
     
     
-    <category term="技术" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/"/>
+    <category term="生活" scheme="https://www.jeremyang.top/categories/%E7%94%9F%E6%B4%BB/"/>
     
-    <category term="网络" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/%E7%BD%91%E7%BB%9C/"/>
+    <category term="碎碎念" scheme="https://www.jeremyang.top/categories/%E7%94%9F%E6%B4%BB/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
     
     
-    <category term="群晖" scheme="https://www.jeremyang.top/tags/%E7%BE%A4%E6%99%96/"/>
+    <category term="随笔" scheme="https://www.jeremyang.top/tags/%E9%9A%8F%E7%AC%94/"/>
     
-    <category term="网络" scheme="https://www.jeremyang.top/tags/%E7%BD%91%E7%BB%9C/"/>
-    
-    <category term="NAS" scheme="https://www.jeremyang.top/tags/NAS/"/>
+    <category term="分享" scheme="https://www.jeremyang.top/tags/%E5%88%86%E4%BA%AB/"/>
     
   </entry>
   
@@ -85,56 +100,40 @@
   </entry>
   
   <entry>
-    <title>我的极简生活经验</title>
-    <link href="https://www.jeremyang.top/2024/04/22/%E6%88%91%E7%9A%84%E6%9E%81%E7%AE%80%E7%94%9F%E6%B4%BB%E7%BB%8F%E9%AA%8C/"/>
-    <id>https://www.jeremyang.top/2024/04/22/%E6%88%91%E7%9A%84%E6%9E%81%E7%AE%80%E7%94%9F%E6%B4%BB%E7%BB%8F%E9%AA%8C/</id>
-    <published>2024-04-22T06:29:50.000Z</published>
-    <updated>2024-04-24T08:25:52.000Z</updated>
+    <title>TailScale实现远端访问群晖服务器</title>
+    <link href="https://www.jeremyang.top/2024/04/21/TailScale%E5%AE%9E%E7%8E%B0%E8%BF%9C%E7%AB%AF%E8%AE%BF%E9%97%AE%E6%95%B4%E6%AE%B5%E5%B1%80%E5%9F%9F%E7%BD%91/"/>
+    <id>https://www.jeremyang.top/2024/04/21/TailScale%E5%AE%9E%E7%8E%B0%E8%BF%9C%E7%AB%AF%E8%AE%BF%E9%97%AE%E6%95%B4%E6%AE%B5%E5%B1%80%E5%9F%9F%E7%BD%91/</id>
+    <published>2024-04-21T08:16:49.000Z</published>
+    <updated>2024-04-26T04:39:31.000Z</updated>
     
     
-    <summary type="html">&lt;h1 id=&quot;我的极简生活经验：恰到好处的生活艺术&quot;&gt;&lt;a href=&quot;#我的极简生活经验：恰到好处的生活艺术&quot; class=&quot;headerlink&quot; title=&quot;我的极简生活经验：恰到好处的生活艺术&quot;&gt;&lt;/a&gt;我的极简生活经验：恰到好处的生活艺术&lt;/h1&gt;&lt;p&gt;今天我想和大家分享一下我对极简主义的理解。我非常喜欢这种生活方式，但并不是说每个人都需要极简。有些人喜欢收藏，有些人喜欢购物，买很多东西，只要能让自己舒心，任何生活方式都是好的。但如果你也喜欢简单的生活方式，或者有点儿强迫症，那么这些小建议可能适合你。&lt;/p&gt;
-&lt;p&gt;首先，极简主义并不意味着把大部分东西都扔掉，或者在空无一物的环境中生活。极简主义是选择对你重要的东西，而不在于数量多少。同时，也没有必要每个地方都极简。比如说你喜欢读书和收藏，完全可以精挑细选地去置办。极简生活更多的是减少生活中不必要的元素，让你更多地专注在真正重要的事物上。&lt;/p&gt;
-&lt;p&gt;经常性的整理是开始的第一步。一般来说，整理包括扔东西、卖二手、收纳起来。不要总觉得留着以后能用上，如果近一年都没用过，基本上以后也用不上。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="生活" scheme="https://www.jeremyang.top/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    <category term="碎碎念" scheme="https://www.jeremyang.top/categories/%E7%94%9F%E6%B4%BB/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
-    
-    
-    <category term="随笔" scheme="https://www.jeremyang.top/tags/%E9%9A%8F%E7%AC%94/"/>
-    
-    <category term="分享" scheme="https://www.jeremyang.top/tags/%E5%88%86%E4%BA%AB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>神州十八</title>
-    <link href="https://www.jeremyang.top/2024/04/22/%E7%A5%9E%E5%B7%9E%E5%8D%81%E5%85%AB/"/>
-    <id>https://www.jeremyang.top/2024/04/22/%E7%A5%9E%E5%B7%9E%E5%8D%81%E5%85%AB/</id>
-    <published>2024-04-22T06:29:50.000Z</published>
-    <updated>2024-04-25T17:06:58.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
-        
-      
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;https://tailscale.com/&quot;&gt;Tailscale&lt;/a&gt;是以&lt;a href=&quot;https://www.wireguard.com/&quot;&gt;Wireguard&lt;/a&gt;的协议加密，所以安全性更高，而且是P2P连线，流量不经伺服器，延迟更低、私密性更高。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;安装及加入到&lt;code&gt;TailScale&lt;/code&gt;网络&lt;/li&gt;
+&lt;li&gt;透过设定其中1部&lt;code&gt;TailScale&lt;/code&gt;的装置为网关「Subnet Router」，可以访问整个内网网段&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;以群晖NAS为例&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;1-TailScale安装&quot;&gt;&lt;a href=&quot;#1-TailScale安装&quot; class=&quot;headerlink&quot; title=&quot;1. TailScale安装&quot;&gt;&lt;/a&gt;1. TailScale安装&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;群晖套件中心添加spk套件源&lt;/li&gt;
+&lt;li&gt;社群套件搜索TailScale安装后登陆，成功授权后可以查看分配到的IP地址&lt;/li&gt;
+&lt;/ol&gt;</summary>
     
     
     
-    <category term="生活" scheme="https://www.jeremyang.top/categories/%E7%94%9F%E6%B4%BB/"/>
+    <category term="技术" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/"/>
     
-    <category term="碎碎念" scheme="https://www.jeremyang.top/categories/%E7%94%9F%E6%B4%BB/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
+    <category term="网络" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/%E7%BD%91%E7%BB%9C/"/>
     
     
-    <category term="随笔" scheme="https://www.jeremyang.top/tags/%E9%9A%8F%E7%AC%94/"/>
+    <category term="群晖" scheme="https://www.jeremyang.top/tags/%E7%BE%A4%E6%99%96/"/>
     
-    <category term="分享" scheme="https://www.jeremyang.top/tags/%E5%88%86%E4%BA%AB/"/>
+    <category term="网络" scheme="https://www.jeremyang.top/tags/%E7%BD%91%E7%BB%9C/"/>
+    
+    <category term="NAS" scheme="https://www.jeremyang.top/tags/NAS/"/>
     
   </entry>
   
@@ -170,187 +169,6 @@
   </entry>
   
   <entry>
-    <title>SQL学习笔记</title>
-    <link href="https://www.jeremyang.top/2024/02/28/SQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    <id>https://www.jeremyang.top/2024/02/28/SQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
-    <published>2024-02-28T13:50:40.000Z</published>
-    <updated>2024-04-24T08:24:33.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;&lt;a href=&quot;/_post/2024_02_28_%E6%8E%92%E5%BA%8F_DENSE_RANK.md&quot;&gt;排序_DENSE_RANK&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;IFNULL&quot;&gt;&lt;a href=&quot;#IFNULL&quot; class=&quot;headerlink&quot; title=&quot;IFNULL&quot;&gt;&lt;/a&gt;IFNULL&lt;/h2&gt;&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;# Write your MySQL query statement below&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;select e.name, b.bonus&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;from Employee e left join Bonus b&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;on e.empId = b.empId&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;where ifnull(bonus,0)&amp;lt;1000&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;## ifnul 就把值替换成0）&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
-    
-    
-    
-    <category term="技术" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    <category term="数据分析" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
-    
-    <category term="SQL" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/SQL/"/>
-    
-    
-    <category term="笔记" scheme="https://www.jeremyang.top/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-    <category term="SQL" scheme="https://www.jeremyang.top/tags/SQL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>DATEDIFF_日期之差</title>
-    <link href="https://www.jeremyang.top/2024/02/28/DATEDIFF_%E6%97%A5%E6%9C%9F%E4%B9%8B%E5%B7%AE/"/>
-    <id>https://www.jeremyang.top/2024/02/28/DATEDIFF_%E6%97%A5%E6%9C%9F%E4%B9%8B%E5%B7%AE/</id>
-    <published>2024-02-28T13:49:50.000Z</published>
-    <updated>2024-04-24T08:24:13.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="技术" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    <category term="数据分析" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
-    
-    <category term="SQL" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/SQL/"/>
-    
-    
-    <category term="笔记" scheme="https://www.jeremyang.top/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-    <category term="SQL" scheme="https://www.jeremyang.top/tags/SQL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>GroupBy</title>
-    <link href="https://www.jeremyang.top/2024/02/28/GroupBy/"/>
-    <id>https://www.jeremyang.top/2024/02/28/GroupBy/</id>
-    <published>2024-02-28T13:48:55.000Z</published>
-    <updated>2024-04-24T08:24:23.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;当我们需要对数据进行分组并进行聚合计算时，可以使用GROUP BY子句。GROUP BY子句通常与聚合函数（如SUM、COUNT、AVG等）一起使用。&lt;/p&gt;
-&lt;p&gt;通过GROUP BY子句，我们可以将数据按照指定的列进行分组，并对每个组进行聚合计算。这些聚合计算的结果将基于每个组的值。&lt;/p&gt;
-&lt;p&gt;下面是一个示例，假设我们有一个名为”orders”的表，其中包含了订单信息：&lt;/p&gt;
-&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;SELECT product_id, COUNT(*) as total_orders&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;FROM orders&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;GROUP BY product_id;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
-    
-    
-    
-    <category term="技术" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    <category term="数据分析" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
-    
-    <category term="SQL" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/SQL/"/>
-    
-    
-    <category term="笔记" scheme="https://www.jeremyang.top/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-    <category term="SQL" scheme="https://www.jeremyang.top/tags/SQL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>排序_DENSE_RANK</title>
-    <link href="https://www.jeremyang.top/2024/02/28/%E6%8E%92%E5%BA%8F_DENSE_RANK/"/>
-    <id>https://www.jeremyang.top/2024/02/28/%E6%8E%92%E5%BA%8F_DENSE_RANK/</id>
-    <published>2024-02-28T13:47:37.000Z</published>
-    <updated>2024-04-24T08:24:44.000Z</updated>
-    
-    
-    <summary type="html">&lt;h2 id=&quot;rank&quot;&gt;&lt;a href=&quot;#rank&quot; class=&quot;headerlink&quot; title=&quot;rank()&quot;&gt;&lt;/a&gt;rank()&lt;/h2&gt;&lt;h2 id=&quot;dense-rank&quot;&gt;&lt;a href=&quot;#dense-rank&quot; class=&quot;headerlink&quot; title=&quot;dense_rank()&quot;&gt;&lt;/a&gt;dense_rank()&lt;/h2&gt;&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;DENSE_RANK() OVER (PARTITION BY column1, column2... ORDER BY column3, column4...)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;ul&gt;
-&lt;li&gt;PARTITION BY子句是可选的，用于将数据分成不同的分组。如果不指定PARTITION BY子句，将对整个结果集进行排名。&lt;/li&gt;
-&lt;li&gt;ORDER BY子句指定用于排序的列。可以根据一个或多个列进行排序，以确定排名的顺序。&lt;/li&gt;
-&lt;/ul&gt;</summary>
-    
-    
-    
-    <category term="技术" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    <category term="数据分析" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
-    
-    <category term="SQL" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/SQL/"/>
-    
-    
-    <category term="笔记" scheme="https://www.jeremyang.top/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-    <category term="SQL" scheme="https://www.jeremyang.top/tags/SQL/"/>
-    
-    <category term="排序" scheme="https://www.jeremyang.top/tags/%E6%8E%92%E5%BA%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SQL窗口函数_LEAD_LAG详解</title>
-    <link href="https://www.jeremyang.top/2024/02/28/SQL%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0_LEAD_LAG%E8%AF%A6%E8%A7%A3/"/>
-    <id>https://www.jeremyang.top/2024/02/28/SQL%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0_LEAD_LAG%E8%AF%A6%E8%A7%A3/</id>
-    <published>2024-02-28T13:46:28.000Z</published>
-    <updated>2024-04-24T08:24:37.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;当涉及到SQL窗口函数时，LEAD()和LAG()是两个非常有用的函数。它们允许我们在查询中访问当前行之前或之后的行的值。&lt;/p&gt;
-&lt;p&gt;LEAD()函数返回当前行之后的指定行数的值，而LAG()函数返回当前行之前的指定行数的值。这两个函数在许多情况下都很有用，例如在分析时间序列数据或计算相邻行之间的差异时。&lt;/p&gt;
-&lt;p&gt;让我们以一个简单的示例来说明LEAD()和LAG()函数的用法。假设我们有一个名为sales的表，其中包含了销售数据：&lt;/p&gt;
-&lt;p&gt;sales表：&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;sale_id&lt;/th&gt;
-&lt;th&gt;sale_date&lt;/th&gt;
-&lt;th&gt;sale_amount&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;&lt;tr&gt;
-&lt;td&gt;1&lt;/td&gt;
-&lt;td&gt;2021-01-01&lt;/td&gt;
-&lt;td&gt;1000&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;2021-01-02&lt;/td&gt;
-&lt;td&gt;1500&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;3&lt;/td&gt;
-&lt;td&gt;2021-01-03&lt;/td&gt;
-&lt;td&gt;2000&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;4&lt;/td&gt;
-&lt;td&gt;2021-01-04&lt;/td&gt;
-&lt;td&gt;1200&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;5&lt;/td&gt;
-&lt;td&gt;2021-01-05&lt;/td&gt;
-&lt;td&gt;1800&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;p&gt;如果我们想要计算每天的销售额与前一天销售额的差异，我们可以使用LAG()函数：&lt;/p&gt;
-&lt;figure class=&quot;highlight sql&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;SELECT&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  sale_date,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  sale_amount,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;built_in&quot;&gt;LAG&lt;/span&gt;(sale_amount) &lt;span class=&quot;keyword&quot;&gt;OVER&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;ORDER&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;BY&lt;/span&gt; sale_date) &lt;span class=&quot;keyword&quot;&gt;AS&lt;/span&gt; previous_day_sale_amount,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  sale_amount &lt;span class=&quot;operator&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;LAG&lt;/span&gt;(sale_amount) &lt;span class=&quot;keyword&quot;&gt;OVER&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;ORDER&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;BY&lt;/span&gt; sale_date) &lt;span class=&quot;keyword&quot;&gt;AS&lt;/span&gt; difference&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;FROM&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  sales;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
-    
-    
-    
-    <category term="技术" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    <category term="数据分析" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
-    
-    <category term="SQL" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/SQL/"/>
-    
-    
-    <category term="笔记" scheme="https://www.jeremyang.top/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-    <category term="SQL" scheme="https://www.jeremyang.top/tags/SQL/"/>
-    
-  </entry>
-  
-  <entry>
     <title>我应该怎么与这个世界相处？</title>
     <link href="https://www.jeremyang.top/2024/02/22/%E6%88%91%E5%BA%94%E8%AF%A5%E6%80%8E%E4%B9%88%E4%B8%8E%E8%BF%99%E4%B8%AA%E4%B8%96%E7%95%8C%E7%9B%B8%E5%A4%84/"/>
     <id>https://www.jeremyang.top/2024/02/22/%E6%88%91%E5%BA%94%E8%AF%A5%E6%80%8E%E4%B9%88%E4%B8%8E%E8%BF%99%E4%B8%AA%E4%B8%96%E7%95%8C%E7%9B%B8%E5%A4%84/</id>
@@ -380,32 +198,27 @@
   </entry>
   
   <entry>
-    <title>数据分析师所需的技术与理论</title>
-    <link href="https://www.jeremyang.top/2023/10/23/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E6%89%80%E9%9C%80%E7%9A%84%E6%8A%80%E6%9C%AF%E4%B8%8E%E7%90%86%E8%AE%BA/"/>
-    <id>https://www.jeremyang.top/2023/10/23/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E6%89%80%E9%9C%80%E7%9A%84%E6%8A%80%E6%9C%AF%E4%B8%8E%E7%90%86%E8%AE%BA/</id>
-    <published>2023-10-23T05:11:30.000Z</published>
-    <updated>2024-04-24T08:23:48.000Z</updated>
+    <title>我的极简生活经验</title>
+    <link href="https://www.jeremyang.top/2024/01/22/%E6%88%91%E7%9A%84%E6%9E%81%E7%AE%80%E7%94%9F%E6%B4%BB%E7%BB%8F%E9%AA%8C/"/>
+    <id>https://www.jeremyang.top/2024/01/22/%E6%88%91%E7%9A%84%E6%9E%81%E7%AE%80%E7%94%9F%E6%B4%BB%E7%BB%8F%E9%AA%8C/</id>
+    <published>2024-01-22T06:29:50.000Z</published>
+    <updated>2024-04-26T04:39:40.000Z</updated>
     
     
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;对数据分析师来说，要想避免沦为取数、跑数的工具人命运，就明确并巩固自己的优势与价值。因此明确数据分析师的成长路径、能力要求、能力提升方法就显得格外重要。而笔者作为数据分析专家，也就此分享了自己的思考与见解。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h1 id=&quot;一、数据分析师的种类、职责与升级路线&quot;&gt;&lt;a href=&quot;#一、数据分析师的种类、职责与升级路线&quot; class=&quot;headerlink&quot; title=&quot;一、数据分析师的种类、职责与升级路线&quot;&gt;&lt;/a&gt;一、数据分析师的种类、职责与升级路线&lt;/h1&gt;&lt;p&gt;在国内数据分析师一般分为5大种类：&lt;strong&gt;数据产品、数据分析师、数据建模师、数据工程师与数据科&lt;/strong&gt;学家，这5类人才的必备能力和成长路线我们来逐一介绍。&lt;/p&gt;</summary>
+    <summary type="html">&lt;h1 id=&quot;我的极简生活经验：恰到好处的生活艺术&quot;&gt;&lt;a href=&quot;#我的极简生活经验：恰到好处的生活艺术&quot; class=&quot;headerlink&quot; title=&quot;我的极简生活经验：恰到好处的生活艺术&quot;&gt;&lt;/a&gt;我的极简生活经验：恰到好处的生活艺术&lt;/h1&gt;&lt;p&gt;今天我想和大家分享一下我对极简主义的理解。我非常喜欢这种生活方式，但并不是说每个人都需要极简。有些人喜欢收藏，有些人喜欢购物，买很多东西，只要能让自己舒心，任何生活方式都是好的。但如果你也喜欢简单的生活方式，或者有点儿强迫症，那么这些小建议可能适合你。&lt;/p&gt;
+&lt;p&gt;首先，极简主义并不意味着把大部分东西都扔掉，或者在空无一物的环境中生活。极简主义是选择对你重要的东西，而不在于数量多少。同时，也没有必要每个地方都极简。比如说你喜欢读书和收藏，完全可以精挑细选地去置办。极简生活更多的是减少生活中不必要的元素，让你更多地专注在真正重要的事物上。&lt;/p&gt;
+&lt;p&gt;经常性的整理是开始的第一步。一般来说，整理包括扔东西、卖二手、收纳起来。不要总觉得留着以后能用上，如果近一年都没用过，基本上以后也用不上。&lt;/p&gt;</summary>
     
     
     
-    <category term="技术" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/"/>
+    <category term="生活" scheme="https://www.jeremyang.top/categories/%E7%94%9F%E6%B4%BB/"/>
     
-    <category term="数据分析" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
-    
-    <category term="方法论" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/%E6%96%B9%E6%B3%95%E8%AE%BA/"/>
+    <category term="碎碎念" scheme="https://www.jeremyang.top/categories/%E7%94%9F%E6%B4%BB/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
     
     
-    <category term="笔记" scheme="https://www.jeremyang.top/tags/%E7%AC%94%E8%AE%B0/"/>
+    <category term="随笔" scheme="https://www.jeremyang.top/tags/%E9%9A%8F%E7%AC%94/"/>
     
-    <category term="数据分析师" scheme="https://www.jeremyang.top/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88/"/>
-    
-    <category term="方法论" scheme="https://www.jeremyang.top/tags/%E6%96%B9%E6%B3%95%E8%AE%BA/"/>
+    <category term="分享" scheme="https://www.jeremyang.top/tags/%E5%88%86%E4%BA%AB/"/>
     
   </entry>
   
@@ -444,26 +257,32 @@
   </entry>
   
   <entry>
-    <title>lora训练</title>
-    <link href="https://www.jeremyang.top/2023/08/21/lora%E8%AE%AD%E7%BB%83/"/>
-    <id>https://www.jeremyang.top/2023/08/21/lora%E8%AE%AD%E7%BB%83/</id>
-    <published>2023-08-21T10:34:40.000Z</published>
-    <updated>2024-04-24T08:21:37.000Z</updated>
+    <title>数据分析师所需的技术与理论</title>
+    <link href="https://www.jeremyang.top/2023/09/10/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E6%89%80%E9%9C%80%E7%9A%84%E6%8A%80%E6%9C%AF%E4%B8%8E%E7%90%86%E8%AE%BA/"/>
+    <id>https://www.jeremyang.top/2023/09/10/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E6%89%80%E9%9C%80%E7%9A%84%E6%8A%80%E6%9C%AF%E4%B8%8E%E7%90%86%E8%AE%BA/</id>
+    <published>2023-09-10T05:11:30.000Z</published>
+    <updated>2024-04-26T04:44:09.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://github.com/camenduru/stable-diffusion-webui-colab&quot;&gt;https://github.com/camenduru/stable-diffusion-webui-colab&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/camenduru/stable-diffusion-webui-colab/tree/drive&quot;&gt;https://github.com/camenduru/stable-diffusion-webui-colab/tree/drive&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/bmaltais/kohya_ss&quot;&gt;kohya_ss Files:&lt;/a&gt;  &lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://colab.research.google.com/drive/1vvi6lGdbEIbyuhM2Yg1R99dynuOkWh9Y#scrollTo=_u3q60di584x&quot;&gt;在Google Colab上训练LORA模型,保存到谷歌云盘| 免费16GB GPU |KOHYA LORA | Dreambooth扩展 | Stable Diffusion&lt;/a&gt;&lt;/p&gt;</summary>
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;对数据分析师来说，要想避免沦为取数、跑数的工具人命运，就明确并巩固自己的优势与价值。因此明确数据分析师的成长路径、能力要求、能力提升方法就显得格外重要。而笔者作为数据分析专家，也就此分享了自己的思考与见解。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;一、数据分析师的种类、职责与升级路线&quot;&gt;&lt;a href=&quot;#一、数据分析师的种类、职责与升级路线&quot; class=&quot;headerlink&quot; title=&quot;一、数据分析师的种类、职责与升级路线&quot;&gt;&lt;/a&gt;一、数据分析师的种类、职责与升级路线&lt;/h1&gt;&lt;p&gt;在国内数据分析师一般分为5大种类：&lt;strong&gt;数据产品、数据分析师、数据建模师、数据工程师与数据科&lt;/strong&gt;学家，这5类人才的必备能力和成长路线我们来逐一介绍。&lt;/p&gt;</summary>
     
     
     
     <category term="技术" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/"/>
     
-    <category term="人工智能" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
+    <category term="数据分析" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
     
-    <category term="lora" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/lora/"/>
+    <category term="方法论" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/%E6%96%B9%E6%B3%95%E8%AE%BA/"/>
     
+    
+    <category term="笔记" scheme="https://www.jeremyang.top/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="数据分析师" scheme="https://www.jeremyang.top/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88/"/>
+    
+    <category term="方法论" scheme="https://www.jeremyang.top/tags/%E6%96%B9%E6%B3%95%E8%AE%BA/"/>
     
   </entry>
   
@@ -518,9 +337,9 @@
     <category term="Prompt" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/Prompt/"/>
     
     
-    <category term="GPT" scheme="https://www.jeremyang.top/tags/GPT/"/>
-    
     <category term="Prompt" scheme="https://www.jeremyang.top/tags/Prompt/"/>
+    
+    <category term="GPT" scheme="https://www.jeremyang.top/tags/GPT/"/>
     
   </entry>
   
@@ -580,6 +399,33 @@
     <category term="回归模型" scheme="https://www.jeremyang.top/tags/%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/"/>
     
     <category term="机器算法" scheme="https://www.jeremyang.top/tags/%E6%9C%BA%E5%99%A8%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>AI创建视频脚本提示词</title>
+    <link href="https://www.jeremyang.top/2023/06/23/How%20to%20use%20ChatGPT%20to%20create%20Awesome%20Video%20Scripts/"/>
+    <id>https://www.jeremyang.top/2023/06/23/How%20to%20use%20ChatGPT%20to%20create%20Awesome%20Video%20Scripts/</id>
+    <published>2023-06-23T10:34:40.000Z</published>
+    <updated>2024-04-26T04:42:11.000Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;English-Version&quot;&gt;&lt;a href=&quot;#English-Version&quot; class=&quot;headerlink&quot; title=&quot;English Version&quot;&gt;&lt;/a&gt;English Version&lt;/h2&gt;&lt;p&gt;Step 1: &lt;code&gt;Find Videos that are already successful.&lt;/code&gt;&lt;br&gt;Step 2: &lt;code&gt;Copy the transcript from the video&lt;/code&gt;&lt;br&gt;Step 3: Can you make 10 YouTube video titles based on this video script? make these titles more thought-provoking and more clickable and add curiosity.reply in chinese&lt;br&gt;Step 4: Can you write me a short video script for this video titles? reply in chinese&lt;br&gt;Step 5: Can you write me a description for this video title? reply in chinese&lt;br&gt;Step 6: Can you write me a youtube video shooting script based on this video description? reply in chinese&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="技术" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="人工智能" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
+    
+    <category term="Prompt" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/Prompt/"/>
+    
+    
+    <category term="GPT" scheme="https://www.jeremyang.top/tags/GPT/"/>
+    
+    <category term="AI" scheme="https://www.jeremyang.top/tags/AI/"/>
+    
+    <category term="视频创作" scheme="https://www.jeremyang.top/tags/%E8%A7%86%E9%A2%91%E5%88%9B%E4%BD%9C/"/>
     
   </entry>
   
@@ -663,6 +509,36 @@
   </entry>
   
   <entry>
+    <title>机器学习笔记</title>
+    <link href="https://www.jeremyang.top/2023/05/04/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>https://www.jeremyang.top/2023/05/04/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
+    <published>2023-05-04T10:34:40.000Z</published>
+    <updated>2024-04-26T04:43:42.000Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;k-近邻算法-KNN&quot;&gt;&lt;a href=&quot;#k-近邻算法-KNN&quot; class=&quot;headerlink&quot; title=&quot;k-近邻算法(KNN)&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://alv1.apachecn.org/#/docs/ml/2&quot;&gt;k-近邻算法(KNN)&lt;/a&gt;&lt;/h1&gt;&lt;h3 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h3&gt;&lt;p&gt;KNN是一种基本的 #分类 和 #回归 方法。给一个训练数据集，对新的输入实例，在训练数据集中找到与之最接近（直线距离，欧式距离）的K个实例，这k个实例的多数分类，就是这个输入实例的分类。&lt;/p&gt;
+&lt;p&gt;k值的取数决定KNN算法的准确性，太小会使模型变得复杂和过拟合，太大会使得模型变得简单。K值不宜过大过小，需要调试参数获取最好的结果。&lt;/p&gt;
+&lt;p&gt;为避免：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;避免某些特征因数值范围过大，对模型产生过大的影响。比如身高在几百英寸，体重在几十公斤，如果不归一化，模型会倾向于选择影响更大的特征。&lt;/li&gt;
+&lt;li&gt;避免某些特征因数值过小产生的数值精度问题。&lt;br&gt;需要进行 #特征归一化 处理，对特征的值进行放缩，使之落在一个特定的范围内，常见的范围是0到1之间或者-1到1之间。</summary>
+    
+    
+    
+    <category term="技术" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="数据分析" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+    
+    <category term="机器学习" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="笔记" scheme="https://www.jeremyang.top/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="机器学习" scheme="https://www.jeremyang.top/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
     <title>数据分析师常用的Prompt技巧2/2</title>
     <link href="https://www.jeremyang.top/2023/04/24/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E5%B8%B8%E7%94%A8%E7%9A%84Prompt%E6%8A%80%E5%B7%A7/"/>
     <id>https://www.jeremyang.top/2023/04/24/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E5%B8%B8%E7%94%A8%E7%9A%84Prompt%E6%8A%80%E5%B7%A7/</id>
@@ -687,11 +563,131 @@
     <category term="Prompt" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/Prompt/"/>
     
     
+    <category term="Prompt" scheme="https://www.jeremyang.top/tags/Prompt/"/>
+    
     <category term="GPT" scheme="https://www.jeremyang.top/tags/GPT/"/>
+    
+    <category term="数据分析" scheme="https://www.jeremyang.top/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python一些文章</title>
+    <link href="https://www.jeremyang.top/2023/04/23/Python%E4%B8%80%E4%BA%9B%E6%96%87%E7%AB%A0/"/>
+    <id>https://www.jeremyang.top/2023/04/23/Python%E4%B8%80%E4%BA%9B%E6%96%87%E7%AB%A0/</id>
+    <published>2023-04-23T10:34:40.000Z</published>
+    <updated>2024-04-26T04:43:29.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="技术" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="数据分析" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+    
+    <category term="python" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/python/"/>
+    
+    <category term="网站" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/python/%E7%BD%91%E7%AB%99/"/>
+    
+    
+    <category term="笔记" scheme="https://www.jeremyang.top/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="python" scheme="https://www.jeremyang.top/tags/python/"/>
+    
+    <category term="网站" scheme="https://www.jeremyang.top/tags/%E7%BD%91%E7%AB%99/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数据分析师常用的Prompt技巧1/2</title>
+    <link href="https://www.jeremyang.top/2023/04/23/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E5%B8%B8%E7%94%A8%E7%9A%84Prompt%E6%8A%80%E5%B7%A7/"/>
+    <id>https://www.jeremyang.top/2023/04/23/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E5%B8%B8%E7%94%A8%E7%9A%84Prompt%E6%8A%80%E5%B7%A7/</id>
+    <published>2023-04-23T08:01:17.000Z</published>
+    <updated>2024-04-24T08:20:51.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="技术" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="人工智能" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
+    
+    <category term="Prompt" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/Prompt/"/>
+    
     
     <category term="Prompt" scheme="https://www.jeremyang.top/tags/Prompt/"/>
     
+    <category term="GPT" scheme="https://www.jeremyang.top/tags/GPT/"/>
+    
     <category term="数据分析" scheme="https://www.jeremyang.top/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>lora训练</title>
+    <link href="https://www.jeremyang.top/2023/04/19/lora%E8%AE%AD%E7%BB%83/"/>
+    <id>https://www.jeremyang.top/2023/04/19/lora%E8%AE%AD%E7%BB%83/</id>
+    <published>2023-04-19T10:34:40.000Z</published>
+    <updated>2024-04-26T04:43:23.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://github.com/camenduru/stable-diffusion-webui-colab&quot;&gt;https://github.com/camenduru/stable-diffusion-webui-colab&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/camenduru/stable-diffusion-webui-colab/tree/drive&quot;&gt;https://github.com/camenduru/stable-diffusion-webui-colab/tree/drive&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/bmaltais/kohya_ss&quot;&gt;kohya_ss Files:&lt;/a&gt;  &lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://colab.research.google.com/drive/1vvi6lGdbEIbyuhM2Yg1R99dynuOkWh9Y#scrollTo=_u3q60di584x&quot;&gt;在Google Colab上训练LORA模型,保存到谷歌云盘| 免费16GB GPU |KOHYA LORA | Dreambooth扩展 | Stable Diffusion&lt;/a&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="技术" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="人工智能" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
+    
+    <category term="lora" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/lora/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>统计分析的八种方法</title>
+    <link href="https://www.jeremyang.top/2023/03/30/%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E7%9A%84%E5%85%AB%E7%A7%8D%E6%96%B9%E6%B3%95/"/>
+    <id>https://www.jeremyang.top/2023/03/30/%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E7%9A%84%E5%85%AB%E7%A7%8D%E6%96%B9%E6%B3%95/</id>
+    <published>2023-03-30T10:34:40.000Z</published>
+    <updated>2024-04-26T04:42:24.000Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;一、指标对比分析法&quot;&gt;&lt;a href=&quot;#一、指标对比分析法&quot; class=&quot;headerlink&quot; title=&quot;一、指标对比分析法&quot;&gt;&lt;/a&gt;一、指标对比分析法&lt;/h1&gt;&lt;p&gt;指标对比分析法，又称比较分析法，是统计分析中最常用的方法。是通过有关的指标对比来反映事物数量上差异和变化的方法。有比较才能鉴别。单独看一些指标，只能说明总体的某些数量特征，得不出什么结论性的认识；一经过比较，如与国外、外单位比，与历史数据比，与计划相比，就可以对规模大小、水平高低、速度快慢作出判断和评价。&lt;/p&gt;
+&lt;p&gt;指标分析对比分析方法可分为静态比较和动态比较分析。静态比较是同一时间条件下不同总体指标比较，如不同部门、不同地区、不同国家的比较，也叫横向比较；动态比较是同一总体条件不同时期指标数值的比较，也叫纵向比较。这两种方法既可单独使用，也可结合使用。进行对比分析时，可以单独使用总量指标或相对指标或平均指标，也可将它们结合起来进行对比。比较的结果可用相对数，如百分数、倍数、系数等，也可用相差的绝对数和相关的百分点（每1％为一个百分点）来表示，即将对比的指标相减。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="技术" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="数据分析" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+    
+    <category term="方法论" scheme="https://www.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/%E6%96%B9%E6%B3%95%E8%AE%BA/"/>
+    
+    
+    <category term="数据分析师" scheme="https://www.jeremyang.top/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88/"/>
+    
+    <category term="统计" scheme="https://www.jeremyang.top/tags/%E7%BB%9F%E8%AE%A1/"/>
+    
+    <category term="方法" scheme="https://www.jeremyang.top/tags/%E6%96%B9%E6%B3%95/"/>
     
   </entry>
   
