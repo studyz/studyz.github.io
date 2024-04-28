@@ -625,6 +625,216 @@
       </tags>
   </entry>
   <entry>
+    <title>澳洲家中日常必备清单</title>
+    <url>/2022/05/19/%E6%BE%B3%E6%B4%B2%E5%AE%B6%E4%B8%AD%E6%97%A5%E5%B8%B8%E5%BF%85%E5%A4%87%E6%B8%85%E5%8D%95/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>1⃣️ CEPACAINE漱口水！ 治疗牙龈肿痛，口腔溃疡。澳洲医生推荐买的，超级有效！猫猫家必备的，再也没有牙口烦恼。 购买地址：Chemist有售 💰价格：$15.49 问题在口腔，吃啥啥不香，买它！喵～</p>
+<hr>
+<p>2⃣️ Quick EZE胃糖 腹胀、胃酸、胃痛。消化不良、吃颗糖就能缓解～ 主要是这糖咋还那么好吃！ 购买地址：Chemist 💰价格：$4.99 胃也需要轻轻安抚，买它！喵～</p>
+<span id="more"></span>
+<hr>
+<p>3⃣️ VICKS 通鼻喷剂 在澳洲总感觉鼻子不适，鼻炎老犯，尤其总是鼻塞。这个通鼻喷剂起效快，薄荷味柔和不刺激。 购买地址：Chemist 💰价格$11.99 杜绝张口呼吸，买它！喵～</p>
+<hr>
+<p>4⃣️ Refresh眼药水 在家学习、工作、打游戏、熬夜，眼睛干涩的话最使用用人工泪液成分的眼药水。无刺激，缓解眼睛疲劳，闺蜜们都在用。 购买地址：Chemist 💰价格$13.49 缓解就靠累上加泪。买它，喵～</p>
+<hr>
+<p>5⃣️ LeQure Detox Soap排毒香皂 这款味道超级淡，小众然鹅超棒！主要可以用来控油去杂质。背部长痘痘的宝宝们一定要试试。滋养加排毒，姐妹推荐的，用过也感觉很好。 购买地址：Chemist 💰价格：$5.99 永远不进毒圈，买它，喵～</p>
+<hr>
+<p>6⃣️ Naprogesic止痛片 姨妈期最好的止痛片咯，因为成分对胃损伤小，刺激小。而且止痛的效果起效更快，当地女生首选经期续命药。小蓝片好多朋友都在用。 购买地址：Chemist 💰价格：$7.99 连我姨妈都在用！买它，喵～</p>
+<hr>
+<p>7⃣️ Dettol 洗衣消毒液 家里养宠物的朋友洗衣服都会用这个帮忙杀菌！能灭杀99.9%的细菌。尤其是合租又共用洗衣机的话这个肯定要买！ 购买地址：Coles、 WWS有售 💰价格：$8.99 再也不怕室友用洗衣机洗袜子了，买它！喵～</p>
+<hr>
+<p>8⃣️ Mr muscle通道强力剂！ 水槽，浴室如果都便秘了，那主人可就更难受了。 超强清下水道秘方，家家必备的男人。尤其是掉头发比较多的女生经常会堵掉下水道。用它就可以畅通哦。 购买地址：Coles、WWS有售 💰价格：$13.7 搞定下水道，心情好到爆，买它！喵～</p>
+<hr>
+]]></content>
+      <categories>
+        <category>生活</category>
+        <category>好物推荐</category>
+      </categories>
+      <tags>
+        <tag>推荐</tag>
+        <tag>日常</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>SQL学习笔记</title>
+    <url>/2023/02/27/SQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="/_post/2024_02_28_%E6%8E%92%E5%BA%8F_DENSE_RANK.md">排序_DENSE_RANK</a></p>
+<h2 id="IFNULL"><a href="#IFNULL" class="headerlink" title="IFNULL"></a>IFNULL</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Write your MySQL query statement below</span><br><span class="line"></span><br><span class="line">select e.name, b.bonus</span><br><span class="line"></span><br><span class="line">from Employee e left join Bonus b</span><br><span class="line"></span><br><span class="line">on e.empId = b.empId</span><br><span class="line"></span><br><span class="line">where ifnull(bonus,0)&lt;1000</span><br><span class="line">## ifnul 就把值替换成0）</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+
+
+
+<h2 id="SQL-585"><a href="#SQL-585" class="headerlink" title="SQL 585"></a>SQL 585</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT ROUND(SUM(tiv_2016), 2) AS tiv_2016</span><br><span class="line"></span><br><span class="line">FROM Insurance</span><br><span class="line"></span><br><span class="line">WHERE tiv_2015 IN (</span><br><span class="line"></span><br><span class="line">SELECT tiv_2015</span><br><span class="line"></span><br><span class="line">FROM Insurance</span><br><span class="line"></span><br><span class="line">GROUP BY tiv_2015</span><br><span class="line"></span><br><span class="line">HAVING COUNT(*) &gt; 1</span><br><span class="line"></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">AND (lat, lon) NOT IN (</span><br><span class="line"></span><br><span class="line">SELECT lat, lon</span><br><span class="line"></span><br><span class="line">FROM Insurance</span><br><span class="line"></span><br><span class="line">GROUP BY lat, lon</span><br><span class="line"></span><br><span class="line">HAVING COUNT(*) &gt; 1</span><br><span class="line"></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="SQL-610"><a href="#SQL-610" class="headerlink" title="SQL 610"></a>SQL 610</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Write your MySQL query statement below</span><br><span class="line">select </span><br><span class="line">    *,</span><br><span class="line">    if(x+y&gt;z and x+z&gt;y and y+z&gt;x,&#x27;Yes&#x27;,&#x27;No&#x27;) as triangle</span><br><span class="line">from Triangle</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="SQL1633-ORDER-BY-2-DESC-1"><a href="#SQL1633-ORDER-BY-2-DESC-1" class="headerlink" title="SQL1633 ORDER BY 2 DESC, 1"></a>SQL1633 ORDER BY 2 DESC, 1</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ORDER BY 2 DESC, 1</span><br></pre></td></tr></table></figure>
+
+<p>这一行使用ORDER BY子句对结果进行排序。我们按照第二列（即percentage）的降序进行排序，如果百分比相同，则按照第一列（即contest_id）的升序进行排序。</p>
+<h2 id="SQL1179-CASE-WHEN"><a href="#SQL1179-CASE-WHEN" class="headerlink" title="SQL1179 CASE WHEN"></a>SQL1179 CASE WHEN</h2><p>CASE WHEN语句是SQL中用于根据条件进行条件判断和返回不同结果的表达式。它允许你根据满足特定条件的情况，选择不同的结果进行返回。</p>
+<p>CASE WHEN语句的基本语法如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CASE</span><br><span class="line">   WHEN condition1 THEN result1</span><br><span class="line">   WHEN condition2 THEN result2</span><br><span class="line">   ...</span><br><span class="line">   ELSE resultN</span><br><span class="line">END</span><br></pre></td></tr></table></figure>
+
+<p>首先，你提供一个或多个WHEN子句，每个子句后面跟着一个条件（condition）和一个对应的结果（result）。当满足某个条件时，相应的结果将被返回。ELSE子句是可选的，用于指定当没有任何条件满足时的默认结果。</p>
+<p>让我们通过一个简单的例子来说明CASE WHEN的使用。假设有一个名为”students”的表，其中包含学生的姓名和分数列。如果要将成绩分为优秀、良好和及格三个等级并进行显示，可以使用以下SQL语句：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT name,</span><br><span class="line">       CASE</span><br><span class="line">          WHEN score &gt;= 90 THEN &#x27;优秀&#x27;</span><br><span class="line">          WHEN score &gt;= 80 THEN &#x27;良好&#x27;</span><br><span class="line">          WHEN score &gt;= 60 THEN &#x27;及格&#x27;</span><br><span class="line">          ELSE &#x27;不及格&#x27;</span><br><span class="line">       END AS grade</span><br><span class="line">FROM students;</span><br></pre></td></tr></table></figure>
+
+<p>在这个例子中，对于每个学生，我们使用CASE WHEN语句根据他们的分数来判断他们的等级。如果分数大于等于90，那么他们被归类为”优秀”；如果分数大于等于80，但小于90，他们被归类为”良好”；如果分数大于等于60，但小于80，他们被归类为”及格”；否则，他们被归类为”不及格”。</p>
+<p>通过使用CASE WHEN语句，我们可以根据不同的条件返回不同的结果，从而实现灵活的数据处理和转换。</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>数据分析</category>
+        <category>SQL</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+        <tag>SQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>排序_DENSE_RANK</title>
+    <url>/2023/02/28/%E6%8E%92%E5%BA%8F_DENSE_RANK/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="rank"><a href="#rank" class="headerlink" title="rank()"></a>rank()</h2><h2 id="dense-rank"><a href="#dense-rank" class="headerlink" title="dense_rank()"></a>dense_rank()</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">DENSE_RANK() OVER (PARTITION BY column1, column2... ORDER BY column3, column4...)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>PARTITION BY子句是可选的，用于将数据分成不同的分组。如果不指定PARTITION BY子句，将对整个结果集进行排名。</li>
+<li>ORDER BY子句指定用于排序的列。可以根据一个或多个列进行排序，以确定排名的顺序。</li>
+</ul>
+<span id="more"></span>
+
+<h3 id="example"><a href="#example" class="headerlink" title="example"></a>example</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT name, salary, DENSE_RANK() OVER (ORDER BY salary DESC) AS dense_rank</span><br><span class="line">FROM employees;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>当使用DENSE_RANK函数和PARTITION BY子句时，以下是示例查询的可能返回结果：</p>
+<p>示例1：对每个客户的订单金额进行排名</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT order_id, customer_id, order_amount,</span><br><span class="line">       DENSE_RANK() OVER (PARTITION BY customer_id ORDER BY order_amount DESC) AS dense_rank</span><br><span class="line">FROM orders;</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>order_id</th>
+<th>customer_id</th>
+<th>order_amount</th>
+<th>dense_rank</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>1001</td>
+<td>500</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1001</td>
+<td>500</td>
+<td>1</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1001</td>
+<td>300</td>
+<td>2</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1002</td>
+<td>700</td>
+<td>1</td>
+</tr>
+<tr>
+<td>5</td>
+<td>1002</td>
+<td>600</td>
+<td>2</td>
+</tr>
+<tr>
+<td>6</td>
+<td>1002</td>
+<td>600</td>
+<td>2</td>
+</tr>
+<tr>
+<td>7</td>
+<td>1002</td>
+<td>400</td>
+<td>3</td>
+</tr>
+</tbody></table>
+<p>在上述结果中，我们根据每个客户的订单金额进行了排名。客户ID为1001的客户有两个订单，订单金额都是500，因此它们被分配相同的密集排名1。客户ID为1001的第三个订单金额为300，所以它被分配密集排名2。对于客户ID为1002的客户，有一个订单金额为700，它被分配密集排名1，然后有两个订单金额为600，它们被分配密集排名2，最后一个订单金额为400，它被分配密集排名3。</p>
+<p>示例2：对每个班级的学生成绩进行排名</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT student_id, class_id, exam_score,</span><br><span class="line">       DENSE_RANK() OVER (PARTITION BY class_id ORDER BY exam_score DESC) AS dense_rank</span><br><span class="line">FROM students;</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>student_id</th>
+<th>class_id</th>
+<th>exam_score</th>
+<th>dense_rank</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>A</td>
+<td>95</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>A</td>
+<td>90</td>
+<td>2</td>
+</tr>
+<tr>
+<td>3</td>
+<td>A</td>
+<td>85</td>
+<td>3</td>
+</tr>
+<tr>
+<td>4</td>
+<td>B</td>
+<td>92</td>
+<td>1</td>
+</tr>
+<tr>
+<td>5</td>
+<td>B</td>
+<td>88</td>
+<td>2</td>
+</tr>
+<tr>
+<td>6</td>
+<td>B</td>
+<td>88</td>
+<td>2</td>
+</tr>
+<tr>
+<td>7</td>
+<td>B</td>
+<td>80</td>
+<td>3</td>
+</tr>
+</tbody></table>
+<p>在上述结果中，我们根据每个班级的考试成绩进行了排名。班级ID为A的学生有三个学生，分别获得了95、90和85分，他们分别被分配密集排名1、2和3。班级ID为B的学生有四个学生，分别获得了92、88、88和80分，他们分别被分配密集排名1、2、2和3。</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>数据分析</category>
+        <category>SQL</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+        <tag>SQL</tag>
+        <tag>排序</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>DATEDIFF_日期之差</title>
     <url>/2023/03/02/DATEDIFF_%E6%97%A5%E6%9C%9F%E4%B9%8B%E5%B7%AE/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>DATEDIFF是一个SQL函数，用于计算两个日期之间的差距。</p>
@@ -753,36 +963,6 @@
       <tags>
         <tag>笔记</tag>
         <tag>python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>澳洲家中日常必备清单</title>
-    <url>/2022/05/19/%E6%BE%B3%E6%B4%B2%E5%AE%B6%E4%B8%AD%E6%97%A5%E5%B8%B8%E5%BF%85%E5%A4%87%E6%B8%85%E5%8D%95/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>1⃣️ CEPACAINE漱口水！ 治疗牙龈肿痛，口腔溃疡。澳洲医生推荐买的，超级有效！猫猫家必备的，再也没有牙口烦恼。 购买地址：Chemist有售 💰价格：$15.49 问题在口腔，吃啥啥不香，买它！喵～</p>
-<hr>
-<p>2⃣️ Quick EZE胃糖 腹胀、胃酸、胃痛。消化不良、吃颗糖就能缓解～ 主要是这糖咋还那么好吃！ 购买地址：Chemist 💰价格：$4.99 胃也需要轻轻安抚，买它！喵～</p>
-<span id="more"></span>
-<hr>
-<p>3⃣️ VICKS 通鼻喷剂 在澳洲总感觉鼻子不适，鼻炎老犯，尤其总是鼻塞。这个通鼻喷剂起效快，薄荷味柔和不刺激。 购买地址：Chemist 💰价格$11.99 杜绝张口呼吸，买它！喵～</p>
-<hr>
-<p>4⃣️ Refresh眼药水 在家学习、工作、打游戏、熬夜，眼睛干涩的话最使用用人工泪液成分的眼药水。无刺激，缓解眼睛疲劳，闺蜜们都在用。 购买地址：Chemist 💰价格$13.49 缓解就靠累上加泪。买它，喵～</p>
-<hr>
-<p>5⃣️ LeQure Detox Soap排毒香皂 这款味道超级淡，小众然鹅超棒！主要可以用来控油去杂质。背部长痘痘的宝宝们一定要试试。滋养加排毒，姐妹推荐的，用过也感觉很好。 购买地址：Chemist 💰价格：$5.99 永远不进毒圈，买它，喵～</p>
-<hr>
-<p>6⃣️ Naprogesic止痛片 姨妈期最好的止痛片咯，因为成分对胃损伤小，刺激小。而且止痛的效果起效更快，当地女生首选经期续命药。小蓝片好多朋友都在用。 购买地址：Chemist 💰价格：$7.99 连我姨妈都在用！买它，喵～</p>
-<hr>
-<p>7⃣️ Dettol 洗衣消毒液 家里养宠物的朋友洗衣服都会用这个帮忙杀菌！能灭杀99.9%的细菌。尤其是合租又共用洗衣机的话这个肯定要买！ 购买地址：Coles、 WWS有售 💰价格：$8.99 再也不怕室友用洗衣机洗袜子了，买它！喵～</p>
-<hr>
-<p>8⃣️ Mr muscle通道强力剂！ 水槽，浴室如果都便秘了，那主人可就更难受了。 超强清下水道秘方，家家必备的男人。尤其是掉头发比较多的女生经常会堵掉下水道。用它就可以畅通哦。 购买地址：Coles、WWS有售 💰价格：$13.7 搞定下水道，心情好到爆，买它！喵～</p>
-<hr>
-]]></content>
-      <categories>
-        <category>生活</category>
-        <category>好物推荐</category>
-      </categories>
-      <tags>
-        <tag>推荐</tag>
-        <tag>日常</tag>
       </tags>
   </entry>
   <entry>
@@ -1162,6 +1342,97 @@
       </tags>
   </entry>
   <entry>
+    <title>ChatGPT Prompt</title>
+    <url>/2023/08/12/ChatGPT_Prompt/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="English-Vesion"><a href="#English-Vesion" class="headerlink" title="English Vesion"></a>English Vesion</h2><details>
+  <summary>English Version</summary>
+  <p> 
+
+<ol>
+<li><p>Brainstorm 10 content ideas related to [topic] that [your audience] would find interesting and beneficial.</p>
+</li>
+<li><p>Write a fun bedtime story for [whomever you want], with them as a main character.</p>
+</li>
+<li><p>Write an article about [topic]. Consider diverse perspectives and write it in a [preferred tone] tone.</p>
+</li>
+<li><p>Summarize [LinkedIn profile url] and list the top 5 pain points they likely face in their current role.</p>
+</li>
+<li><p>Create social media content for 7 days that is focused on [topic] and that will engage [target audience].</p>
+</li>
+</ol>
+<p>  Instructions: Create social media content that is appropriate for the chosen topic and target audience. Content should be varied. Content should also include calls to action that encourage users to engage with the content, such as likes, shares, and comments.</p>
+<ol start="6">
+<li><p>I enjoy [list a few interests or hobbies]. What are some completely unrelated activities that I might find interesting?</p>
+</li>
+<li><p>Write 10 [subject lines &#x2F; headlines &#x2F; social media threads &#x2F; ad headlines &#x2F; etc.] with a curiosity gap that discuss [topic].</p>
+</li>
+<li><p>Pretend you are [role], come up with 10 ideas of how to do [task or problem]. Compare each of these ideas and list the pros and cons of each idea.</p>
+</li>
+<li><p>Summarize in table format the features, benefits, and pain solved for this product: [url to product features page].</p>
+</li>
+<li><p>Create a list of [10] frequently asked questions about [keyword] and provide answers for each one of them considering the SERP and rich result guidelines.</p>
+</li>
+<li><p>Create 5 social media posts promoting this blog post: [blog post URL].</p>
+</li>
+<li><p>Create a step by step guide to instruct how to [topic].</p>
+  </p>
+</details>
+<span id="more"></span></li>
+</ol>
+<h2 id="中文版本"><a href="#中文版本" class="headerlink" title="中文版本"></a>中文版本</h2><details>
+  <summary>中文版本</summary>
+  <p> 
+  
+<ol>
+<li><p>脑筋急转弯10个与[topic]相关的内容想法，让[your audience]感兴趣和受益。</p>
+</li>
+<li><p>为[whomever you want]编写一个fun的睡前故事，ta是故事的主要角色。</p>
+</li>
+<li><p>编写一个关于[topic]的的文章，考虑多种角度，使用[preferred tone]的口调。</p>
+</li>
+<li><p>总结[LinkedIn profile url]并 listing the top 5 pain points they likely face in their current role.</p>
+</li>
+<li><p>创建7天social media content，聚焦于[topic]，让[target audience]参与。</p>
+</li>
+</ol>
+<p>  Instructions: 创建social media content，符合choosen topic and target audience。Content should be varied. Content should also include calls to action that encourage users to engage with the content, such as likes, shares, and comments.</p>
+<ol start="6">
+<li><p>我享受[list a few interests or hobbies]。哪些是不完全related的activity？</p>
+</li>
+<li><p>写10个与curiosity gap相关的[topic] theme的subject lines &#x2F; headlines &#x2F; social media threads &#x2F; ad headlines &#x2F; etc.</p>
+</li>
+<li><p>假设你是[role]，列出10个做[task or problem]的方法。比较每个方法并list the pros and cons of each idea.</p>
+</li>
+<li><p>用表格格式 summarize the features, benefits, and pain solved for this product: [url to product features page].</p>
+</li>
+<li><p>创建一个包含常见问题及回答的列表，关于[keyword]。</p>
+</li>
+<li><p>创建5个social media posts promoting this blog post: [blog post URL]。</p>
+</li>
+<li><p>创建一个step by step guide to instruct how to [topic]。</p>
+</li>
+</ol>
+  </p>
+</details>
+
+
+
+
+
+
+
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>人工智能</category>
+        <category>Prompt</category>
+      </categories>
+      <tags>
+        <tag>Prompt</tag>
+        <tag>GPT</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>lora训练</title>
     <url>/2023/04/19/lora%E8%AE%AD%E7%BB%83/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="https://github.com/camenduru/stable-diffusion-webui-colab">https://github.com/camenduru/stable-diffusion-webui-colab</a></p>
@@ -1266,43 +1537,58 @@
       </tags>
   </entry>
   <entry>
-    <title>SQL学习笔记</title>
-    <url>/2023/02/27/SQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="/_post/2024_02_28_%E6%8E%92%E5%BA%8F_DENSE_RANK.md">排序_DENSE_RANK</a></p>
-<h2 id="IFNULL"><a href="#IFNULL" class="headerlink" title="IFNULL"></a>IFNULL</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Write your MySQL query statement below</span><br><span class="line"></span><br><span class="line">select e.name, b.bonus</span><br><span class="line"></span><br><span class="line">from Employee e left join Bonus b</span><br><span class="line"></span><br><span class="line">on e.empId = b.empId</span><br><span class="line"></span><br><span class="line">where ifnull(bonus,0)&lt;1000</span><br><span class="line">## ifnul 就把值替换成0）</span><br></pre></td></tr></table></figure>
-<span id="more"></span>
-
-
-
-<h2 id="SQL-585"><a href="#SQL-585" class="headerlink" title="SQL 585"></a>SQL 585</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT ROUND(SUM(tiv_2016), 2) AS tiv_2016</span><br><span class="line"></span><br><span class="line">FROM Insurance</span><br><span class="line"></span><br><span class="line">WHERE tiv_2015 IN (</span><br><span class="line"></span><br><span class="line">SELECT tiv_2015</span><br><span class="line"></span><br><span class="line">FROM Insurance</span><br><span class="line"></span><br><span class="line">GROUP BY tiv_2015</span><br><span class="line"></span><br><span class="line">HAVING COUNT(*) &gt; 1</span><br><span class="line"></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">AND (lat, lon) NOT IN (</span><br><span class="line"></span><br><span class="line">SELECT lat, lon</span><br><span class="line"></span><br><span class="line">FROM Insurance</span><br><span class="line"></span><br><span class="line">GROUP BY lat, lon</span><br><span class="line"></span><br><span class="line">HAVING COUNT(*) &gt; 1</span><br><span class="line"></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-
-
-<h2 id="SQL-610"><a href="#SQL-610" class="headerlink" title="SQL 610"></a>SQL 610</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Write your MySQL query statement below</span><br><span class="line">select </span><br><span class="line">    *,</span><br><span class="line">    if(x+y&gt;z and x+z&gt;y and y+z&gt;x,&#x27;Yes&#x27;,&#x27;No&#x27;) as triangle</span><br><span class="line">from Triangle</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="SQL1633-ORDER-BY-2-DESC-1"><a href="#SQL1633-ORDER-BY-2-DESC-1" class="headerlink" title="SQL1633 ORDER BY 2 DESC, 1"></a>SQL1633 ORDER BY 2 DESC, 1</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ORDER BY 2 DESC, 1</span><br></pre></td></tr></table></figure>
-
-<p>这一行使用ORDER BY子句对结果进行排序。我们按照第二列（即percentage）的降序进行排序，如果百分比相同，则按照第一列（即contest_id）的升序进行排序。</p>
-<h2 id="SQL1179-CASE-WHEN"><a href="#SQL1179-CASE-WHEN" class="headerlink" title="SQL1179 CASE WHEN"></a>SQL1179 CASE WHEN</h2><p>CASE WHEN语句是SQL中用于根据条件进行条件判断和返回不同结果的表达式。它允许你根据满足特定条件的情况，选择不同的结果进行返回。</p>
-<p>CASE WHEN语句的基本语法如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CASE</span><br><span class="line">   WHEN condition1 THEN result1</span><br><span class="line">   WHEN condition2 THEN result2</span><br><span class="line">   ...</span><br><span class="line">   ELSE resultN</span><br><span class="line">END</span><br></pre></td></tr></table></figure>
-
-<p>首先，你提供一个或多个WHEN子句，每个子句后面跟着一个条件（condition）和一个对应的结果（result）。当满足某个条件时，相应的结果将被返回。ELSE子句是可选的，用于指定当没有任何条件满足时的默认结果。</p>
-<p>让我们通过一个简单的例子来说明CASE WHEN的使用。假设有一个名为”students”的表，其中包含学生的姓名和分数列。如果要将成绩分为优秀、良好和及格三个等级并进行显示，可以使用以下SQL语句：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT name,</span><br><span class="line">       CASE</span><br><span class="line">          WHEN score &gt;= 90 THEN &#x27;优秀&#x27;</span><br><span class="line">          WHEN score &gt;= 80 THEN &#x27;良好&#x27;</span><br><span class="line">          WHEN score &gt;= 60 THEN &#x27;及格&#x27;</span><br><span class="line">          ELSE &#x27;不及格&#x27;</span><br><span class="line">       END AS grade</span><br><span class="line">FROM students;</span><br></pre></td></tr></table></figure>
-
-<p>在这个例子中，对于每个学生，我们使用CASE WHEN语句根据他们的分数来判断他们的等级。如果分数大于等于90，那么他们被归类为”优秀”；如果分数大于等于80，但小于90，他们被归类为”良好”；如果分数大于等于60，但小于80，他们被归类为”及格”；否则，他们被归类为”不及格”。</p>
-<p>通过使用CASE WHEN语句，我们可以根据不同的条件返回不同的结果，从而实现灵活的数据处理和转换。</p>
+    <title>数据分析师常用的Prompt技巧2/2</title>
+    <url>/2023/04/24/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E5%B8%B8%E7%94%A8%E7%9A%84Prompt%E6%8A%80%E5%B7%A7/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="01-什么是探索性分析EDA"><a href="#01-什么是探索性分析EDA" class="headerlink" title="01 什么是探索性分析EDA?"></a>01 什么是探索性分析EDA?</h3><p>探索性数据分析（EDA）是在数据分析初始阶段进行数据了解和探索的过程。通过EDA，我们可以全面了解数据概貌，明确分析方式，并找出异常的可能因素。探索性数据分析在数据分析中非常重要。</p>
+<p>EDA包括三个重要部分，分别是：</p>
+<ul>
+<li><p>数据可视化：这部分的EDA涉及到将原始数据转化为图表和可视化图形等视觉信息。</p>
+</li>
+<li><p>假设检验：它被用来分析两个或两个以上的变量之间是否存在统计学上的显著差异。这可以用来支持或反驳数据相关的理论。</p>
+</li>
+<li><p>总结统计：它包括计算基本统计量，如平均数、中位数和标准差。总结统计有助于理解数据的分布并发现任何异常值。</p>
+</li>
+</ul>
+<p>ChatGPT是一个进行EDA的高效的工具，因为它可以简化上面这些过程。我们可以用这个基于AI的聊天机器人完成EDA任务。我们接下探讨如何使用ChatGPT进行探索性数据分析。</p>
+<h3 id="02-ChatGPT-for-EDA数据可视化"><a href="#02-ChatGPT-for-EDA数据可视化" class="headerlink" title="02 ChatGPT for EDA数据可视化"></a>02 ChatGPT for EDA数据可视化</h3><p>ChatGPT在探索性数据分析中可以提供非常强的数据可视化能力。这里，需要指出的是，ChatGPT本身无法进行动态的数据可视化任务。然而，它可以帮助我们进行数据可视化。</p>
+<p>我们可以使用ChatGPT来清洗数据，排除任何不一致或异常。除此之外，这个聊天机器人还可以帮助我们删除重复记录等。</p>
+<p>此外，我们还可以学习如何使用ChatGPT来协助处理复杂的数据可视化。例如，我们可以使用ChatGPT来帮助我们使用诸如Python、R或SQL这样的编程语言来创建图表和图形。这个聊天机器人会为我们提供代码和所有必要的步骤，以完成数据可视化的任务，并做出数据驱动的决策。</p>
+<h3 id="03-ChatGPT-for-EDA数据预测"><a href="#03-ChatGPT-for-EDA数据预测" class="headerlink" title="03 ChatGPT for EDA数据预测"></a>03 ChatGPT for EDA数据预测</h3><p>预测分析是EDA的另一个重要方面。我们通常基于大量数据集，采用机器学习的方式来找出数据之间的规律并预测可能的结果。现在，ChatGPT可以帮我们确定应该使用哪种机器学习模型，以便我们更准确、高效地分析数据。</p>
+<p>这个聊天机器人被训练得能够处理不同的模型。例如，你可以使用分类模型来对数据进行分类，并为不同的变量赋予预定义的值。我们需要做的就是向聊天机器人描述目标变量，并明确想要使用的模型（在这个情况下，是分类模型）。ChatGPT会对数据进行分类，并根据模式进行预测。</p>
+<p>我们也可以要求聊天机器人根据不同的参数对用户进行划分，比如：</p>
+<p><code>使用以下数据集，并将用户分为&lt;输入类别&gt;&lt;插入数据集&gt;</code></p>
+<p>或者你可以使用一些额外的提示prompts来根据某些行为创建用户画像：</p>
+<p><code>根据&lt;画像特征&gt;，将用户划分为不同的群体</code></p>
+<p>通过这种方式，你可以使用ChatGPT进行一些常见的分类或者回归等预测，帮助我们更高效的找到数据间的规律和模式。</p>
+<h3 id="04-给出有效EDA的建议"><a href="#04-给出有效EDA的建议" class="headerlink" title="04 给出有效EDA的建议"></a>04 给出有效EDA的建议</h3><p>如果我们以正确的方式使用ChatGPT，可以帮助我们在探索性数据分析中获取很多信息。这个聊天机器人可以通过为你推荐正确的行动方向来消除数据分析过程中的难题。</p>
+<p>ChatGPT对于探索性数据分析过程可以帮助你的方式包括：</p>
+<p>它可以为你提供解决数据质量问题的实用方法。</p>
+<p>它可以是选择正确的分析工具和革命性技术的全面指导。</p>
+<p>它可以推荐模型构建和分析的相关特性。</p>
+<p>它可以让你理解哪些变量对于EDA来说是重要的。这样，数据科学家就会知道哪些变量可能更有可能产生影响</p>
+<p>它还可以为数据转换提供建议。例如，ChatGPT可以在处理缺失数据、归一化和缩放方面提供有用的建议。你可以使用简单的ChatGPT提示来让聊天机器人为你推荐EDA的最佳实践，</p>
+<p>比如：<code>使用这个数据库&lt;输入数据库&gt;，并分析&lt;输入时间段&gt;中行业&lt;输入行业名称&gt;的趋势，针对&lt;定义段落/客户人口统计/分析景观&gt;</code></p>
+<h3 id="05-ChatGPT-for-EDA情感分析"><a href="#05-ChatGPT-for-EDA情感分析" class="headerlink" title="05 ChatGPT for EDA情感分析"></a>05 ChatGPT for EDA情感分析</h3><p>ChatGPT的最大潜力在于进行情感分析。聊天机器人配备了先进的语言模型，使其具有自然语言处理能力。情感和探索性数据分析之间存在强烈的联系。</p>
+<p>作为一名数据分析师，我们可以分析巨大的数据集，并研究它们的情感。准确的语言模型可以给我们提供大量的数据。让我们看看情感分析和探索性数据分析之间的联系：</p>
+<p>文本分类：在这里，通过情感分析将文本数据分类为几种情感。文本情感分析允许EDA找到与数据中的情绪语气相关的模式和趋势。常用于分析客户评论、社交媒体帖子或与商品或服务相关的评价。</p>
+<p>观点挖掘：在EDA过程中，情感分析可以用来从文本中提取观点。数据分析师可以洞察人们的态度或偏好。它可以进一步用来确定人们表达的主要观点。通过对这些信息的进一步分析，可以了解不同人在不同维度上的情感表现。</p>
+<h3 id="06-ChatGPT-for-统计分析和建模"><a href="#06-ChatGPT-for-统计分析和建模" class="headerlink" title="06 ChatGPT for 统计分析和建模"></a>06 ChatGPT for 统计分析和建模</h3><p>使用统计分析数据并开发可以用于进行预测模型的过程被称为统计分析和建模。数据描述、汇总和解释都可以通过统计分析来完成。统计分析工具可以用来预测未来的值，发现模式，并从收集数据的人口中得出结论。这样，统计建模就成为了从数据中得出结论的强大技术。</p>
+<p>这个AI驱动的模型的分析软件可以收集预测、趋势，以及对收集的数据给出结论。许多不同的行业，如商业、医疗保健和社会科学，都使用统计分析和建模。</p>
+<p>数据分析师可以用以下方式进行统计分析和建模：</p>
+<p>EDA指导：ChatGPT可以在数据中寻找哪些变量相关或者更重要，以此给出建议来帮助完成EDA。它可能会提供有用的关键信息，以便找出趋势、模式或异常值。</p>
+<p>模型选择：在选择可接受的模型时，ChatGPT可以提供建议。为了提高模型性能，它可能会对模型选择、超参数调整和过程验证提供建议。</p>
+<p>模型预测：这个AI模型可以预测结果，并进行验证。它可以分析结果，评估模型的性能，并找出提高预测准确性的方法。</p>
+<h3 id="07-总结"><a href="#07-总结" class="headerlink" title="07 总结"></a>07 总结</h3><p>如果你是一名数据分析师，我们要开始考虑如何使用ChatGPT在探索性数据分析工作中发挥它的作用了。它可以在数据分析中帮助我们快速、高效、准确的完成EDA的工作，同时它还能给我们一些创新的、隐藏的洞察和建议，可以预见，在不久的将来，ChatGPT一定会重塑甚并颠覆数据分析的技能栈和分析工作内容，所以学会使用它，才能让AI为我们打工。</p>
 ]]></content>
       <categories>
         <category>技术</category>
-        <category>数据分析</category>
-        <category>SQL</category>
+        <category>人工智能</category>
+        <category>Prompt</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
-        <tag>SQL</tag>
+        <tag>Prompt</tag>
+        <tag>GPT</tag>
+        <tag>数据分析</tag>
       </tags>
   </entry>
   <entry>
@@ -1487,61 +1773,6 @@
       <tags>
         <tag>笔记</tag>
         <tag>机器学习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>数据分析师常用的Prompt技巧2/2</title>
-    <url>/2023/04/24/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E5%B8%B8%E7%94%A8%E7%9A%84Prompt%E6%8A%80%E5%B7%A7/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="01-什么是探索性分析EDA"><a href="#01-什么是探索性分析EDA" class="headerlink" title="01 什么是探索性分析EDA?"></a>01 什么是探索性分析EDA?</h3><p>探索性数据分析（EDA）是在数据分析初始阶段进行数据了解和探索的过程。通过EDA，我们可以全面了解数据概貌，明确分析方式，并找出异常的可能因素。探索性数据分析在数据分析中非常重要。</p>
-<p>EDA包括三个重要部分，分别是：</p>
-<ul>
-<li><p>数据可视化：这部分的EDA涉及到将原始数据转化为图表和可视化图形等视觉信息。</p>
-</li>
-<li><p>假设检验：它被用来分析两个或两个以上的变量之间是否存在统计学上的显著差异。这可以用来支持或反驳数据相关的理论。</p>
-</li>
-<li><p>总结统计：它包括计算基本统计量，如平均数、中位数和标准差。总结统计有助于理解数据的分布并发现任何异常值。</p>
-</li>
-</ul>
-<p>ChatGPT是一个进行EDA的高效的工具，因为它可以简化上面这些过程。我们可以用这个基于AI的聊天机器人完成EDA任务。我们接下探讨如何使用ChatGPT进行探索性数据分析。</p>
-<h3 id="02-ChatGPT-for-EDA数据可视化"><a href="#02-ChatGPT-for-EDA数据可视化" class="headerlink" title="02 ChatGPT for EDA数据可视化"></a>02 ChatGPT for EDA数据可视化</h3><p>ChatGPT在探索性数据分析中可以提供非常强的数据可视化能力。这里，需要指出的是，ChatGPT本身无法进行动态的数据可视化任务。然而，它可以帮助我们进行数据可视化。</p>
-<p>我们可以使用ChatGPT来清洗数据，排除任何不一致或异常。除此之外，这个聊天机器人还可以帮助我们删除重复记录等。</p>
-<p>此外，我们还可以学习如何使用ChatGPT来协助处理复杂的数据可视化。例如，我们可以使用ChatGPT来帮助我们使用诸如Python、R或SQL这样的编程语言来创建图表和图形。这个聊天机器人会为我们提供代码和所有必要的步骤，以完成数据可视化的任务，并做出数据驱动的决策。</p>
-<h3 id="03-ChatGPT-for-EDA数据预测"><a href="#03-ChatGPT-for-EDA数据预测" class="headerlink" title="03 ChatGPT for EDA数据预测"></a>03 ChatGPT for EDA数据预测</h3><p>预测分析是EDA的另一个重要方面。我们通常基于大量数据集，采用机器学习的方式来找出数据之间的规律并预测可能的结果。现在，ChatGPT可以帮我们确定应该使用哪种机器学习模型，以便我们更准确、高效地分析数据。</p>
-<p>这个聊天机器人被训练得能够处理不同的模型。例如，你可以使用分类模型来对数据进行分类，并为不同的变量赋予预定义的值。我们需要做的就是向聊天机器人描述目标变量，并明确想要使用的模型（在这个情况下，是分类模型）。ChatGPT会对数据进行分类，并根据模式进行预测。</p>
-<p>我们也可以要求聊天机器人根据不同的参数对用户进行划分，比如：</p>
-<p><code>使用以下数据集，并将用户分为&lt;输入类别&gt;&lt;插入数据集&gt;</code></p>
-<p>或者你可以使用一些额外的提示prompts来根据某些行为创建用户画像：</p>
-<p><code>根据&lt;画像特征&gt;，将用户划分为不同的群体</code></p>
-<p>通过这种方式，你可以使用ChatGPT进行一些常见的分类或者回归等预测，帮助我们更高效的找到数据间的规律和模式。</p>
-<h3 id="04-给出有效EDA的建议"><a href="#04-给出有效EDA的建议" class="headerlink" title="04 给出有效EDA的建议"></a>04 给出有效EDA的建议</h3><p>如果我们以正确的方式使用ChatGPT，可以帮助我们在探索性数据分析中获取很多信息。这个聊天机器人可以通过为你推荐正确的行动方向来消除数据分析过程中的难题。</p>
-<p>ChatGPT对于探索性数据分析过程可以帮助你的方式包括：</p>
-<p>它可以为你提供解决数据质量问题的实用方法。</p>
-<p>它可以是选择正确的分析工具和革命性技术的全面指导。</p>
-<p>它可以推荐模型构建和分析的相关特性。</p>
-<p>它可以让你理解哪些变量对于EDA来说是重要的。这样，数据科学家就会知道哪些变量可能更有可能产生影响</p>
-<p>它还可以为数据转换提供建议。例如，ChatGPT可以在处理缺失数据、归一化和缩放方面提供有用的建议。你可以使用简单的ChatGPT提示来让聊天机器人为你推荐EDA的最佳实践，</p>
-<p>比如：<code>使用这个数据库&lt;输入数据库&gt;，并分析&lt;输入时间段&gt;中行业&lt;输入行业名称&gt;的趋势，针对&lt;定义段落/客户人口统计/分析景观&gt;</code></p>
-<h3 id="05-ChatGPT-for-EDA情感分析"><a href="#05-ChatGPT-for-EDA情感分析" class="headerlink" title="05 ChatGPT for EDA情感分析"></a>05 ChatGPT for EDA情感分析</h3><p>ChatGPT的最大潜力在于进行情感分析。聊天机器人配备了先进的语言模型，使其具有自然语言处理能力。情感和探索性数据分析之间存在强烈的联系。</p>
-<p>作为一名数据分析师，我们可以分析巨大的数据集，并研究它们的情感。准确的语言模型可以给我们提供大量的数据。让我们看看情感分析和探索性数据分析之间的联系：</p>
-<p>文本分类：在这里，通过情感分析将文本数据分类为几种情感。文本情感分析允许EDA找到与数据中的情绪语气相关的模式和趋势。常用于分析客户评论、社交媒体帖子或与商品或服务相关的评价。</p>
-<p>观点挖掘：在EDA过程中，情感分析可以用来从文本中提取观点。数据分析师可以洞察人们的态度或偏好。它可以进一步用来确定人们表达的主要观点。通过对这些信息的进一步分析，可以了解不同人在不同维度上的情感表现。</p>
-<h3 id="06-ChatGPT-for-统计分析和建模"><a href="#06-ChatGPT-for-统计分析和建模" class="headerlink" title="06 ChatGPT for 统计分析和建模"></a>06 ChatGPT for 统计分析和建模</h3><p>使用统计分析数据并开发可以用于进行预测模型的过程被称为统计分析和建模。数据描述、汇总和解释都可以通过统计分析来完成。统计分析工具可以用来预测未来的值，发现模式，并从收集数据的人口中得出结论。这样，统计建模就成为了从数据中得出结论的强大技术。</p>
-<p>这个AI驱动的模型的分析软件可以收集预测、趋势，以及对收集的数据给出结论。许多不同的行业，如商业、医疗保健和社会科学，都使用统计分析和建模。</p>
-<p>数据分析师可以用以下方式进行统计分析和建模：</p>
-<p>EDA指导：ChatGPT可以在数据中寻找哪些变量相关或者更重要，以此给出建议来帮助完成EDA。它可能会提供有用的关键信息，以便找出趋势、模式或异常值。</p>
-<p>模型选择：在选择可接受的模型时，ChatGPT可以提供建议。为了提高模型性能，它可能会对模型选择、超参数调整和过程验证提供建议。</p>
-<p>模型预测：这个AI模型可以预测结果，并进行验证。它可以分析结果，评估模型的性能，并找出提高预测准确性的方法。</p>
-<h3 id="07-总结"><a href="#07-总结" class="headerlink" title="07 总结"></a>07 总结</h3><p>如果你是一名数据分析师，我们要开始考虑如何使用ChatGPT在探索性数据分析工作中发挥它的作用了。它可以在数据分析中帮助我们快速、高效、准确的完成EDA的工作，同时它还能给我们一些创新的、隐藏的洞察和建议，可以预见，在不久的将来，ChatGPT一定会重塑甚并颠覆数据分析的技能栈和分析工作内容，所以学会使用它，才能让AI为我们打工。</p>
-]]></content>
-      <categories>
-        <category>技术</category>
-        <category>人工智能</category>
-        <category>Prompt</category>
-      </categories>
-      <tags>
-        <tag>Prompt</tag>
-        <tag>GPT</tag>
-        <tag>数据分析</tag>
       </tags>
   </entry>
   <entry>
@@ -2323,237 +2554,6 @@
       </tags>
   </entry>
   <entry>
-    <title>排序_DENSE_RANK</title>
-    <url>/2023/02/28/%E6%8E%92%E5%BA%8F_DENSE_RANK/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="rank"><a href="#rank" class="headerlink" title="rank()"></a>rank()</h2><h2 id="dense-rank"><a href="#dense-rank" class="headerlink" title="dense_rank()"></a>dense_rank()</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">DENSE_RANK() OVER (PARTITION BY column1, column2... ORDER BY column3, column4...)</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>PARTITION BY子句是可选的，用于将数据分成不同的分组。如果不指定PARTITION BY子句，将对整个结果集进行排名。</li>
-<li>ORDER BY子句指定用于排序的列。可以根据一个或多个列进行排序，以确定排名的顺序。</li>
-</ul>
-<span id="more"></span>
-
-<h3 id="example"><a href="#example" class="headerlink" title="example"></a>example</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT name, salary, DENSE_RANK() OVER (ORDER BY salary DESC) AS dense_rank</span><br><span class="line">FROM employees;</span><br></pre></td></tr></table></figure>
-
-
-
-<p>当使用DENSE_RANK函数和PARTITION BY子句时，以下是示例查询的可能返回结果：</p>
-<p>示例1：对每个客户的订单金额进行排名</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT order_id, customer_id, order_amount,</span><br><span class="line">       DENSE_RANK() OVER (PARTITION BY customer_id ORDER BY order_amount DESC) AS dense_rank</span><br><span class="line">FROM orders;</span><br></pre></td></tr></table></figure>
-
-<table>
-<thead>
-<tr>
-<th>order_id</th>
-<th>customer_id</th>
-<th>order_amount</th>
-<th>dense_rank</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td>1001</td>
-<td>500</td>
-<td>1</td>
-</tr>
-<tr>
-<td>2</td>
-<td>1001</td>
-<td>500</td>
-<td>1</td>
-</tr>
-<tr>
-<td>3</td>
-<td>1001</td>
-<td>300</td>
-<td>2</td>
-</tr>
-<tr>
-<td>4</td>
-<td>1002</td>
-<td>700</td>
-<td>1</td>
-</tr>
-<tr>
-<td>5</td>
-<td>1002</td>
-<td>600</td>
-<td>2</td>
-</tr>
-<tr>
-<td>6</td>
-<td>1002</td>
-<td>600</td>
-<td>2</td>
-</tr>
-<tr>
-<td>7</td>
-<td>1002</td>
-<td>400</td>
-<td>3</td>
-</tr>
-</tbody></table>
-<p>在上述结果中，我们根据每个客户的订单金额进行了排名。客户ID为1001的客户有两个订单，订单金额都是500，因此它们被分配相同的密集排名1。客户ID为1001的第三个订单金额为300，所以它被分配密集排名2。对于客户ID为1002的客户，有一个订单金额为700，它被分配密集排名1，然后有两个订单金额为600，它们被分配密集排名2，最后一个订单金额为400，它被分配密集排名3。</p>
-<p>示例2：对每个班级的学生成绩进行排名</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT student_id, class_id, exam_score,</span><br><span class="line">       DENSE_RANK() OVER (PARTITION BY class_id ORDER BY exam_score DESC) AS dense_rank</span><br><span class="line">FROM students;</span><br></pre></td></tr></table></figure>
-
-<table>
-<thead>
-<tr>
-<th>student_id</th>
-<th>class_id</th>
-<th>exam_score</th>
-<th>dense_rank</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td>A</td>
-<td>95</td>
-<td>1</td>
-</tr>
-<tr>
-<td>2</td>
-<td>A</td>
-<td>90</td>
-<td>2</td>
-</tr>
-<tr>
-<td>3</td>
-<td>A</td>
-<td>85</td>
-<td>3</td>
-</tr>
-<tr>
-<td>4</td>
-<td>B</td>
-<td>92</td>
-<td>1</td>
-</tr>
-<tr>
-<td>5</td>
-<td>B</td>
-<td>88</td>
-<td>2</td>
-</tr>
-<tr>
-<td>6</td>
-<td>B</td>
-<td>88</td>
-<td>2</td>
-</tr>
-<tr>
-<td>7</td>
-<td>B</td>
-<td>80</td>
-<td>3</td>
-</tr>
-</tbody></table>
-<p>在上述结果中，我们根据每个班级的考试成绩进行了排名。班级ID为A的学生有三个学生，分别获得了95、90和85分，他们分别被分配密集排名1、2和3。班级ID为B的学生有四个学生，分别获得了92、88、88和80分，他们分别被分配密集排名1、2、2和3。</p>
-]]></content>
-      <categories>
-        <category>技术</category>
-        <category>数据分析</category>
-        <category>SQL</category>
-      </categories>
-      <tags>
-        <tag>笔记</tag>
-        <tag>SQL</tag>
-        <tag>排序</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ChatGPT Prompt</title>
-    <url>/2023/08/12/ChatGPT_Prompt/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="English-Vesion"><a href="#English-Vesion" class="headerlink" title="English Vesion"></a>English Vesion</h2><details>
-  <summary>English Version</summary>
-  <p> 
-
-<ol>
-<li><p>Brainstorm 10 content ideas related to [topic] that [your audience] would find interesting and beneficial.</p>
-</li>
-<li><p>Write a fun bedtime story for [whomever you want], with them as a main character.</p>
-</li>
-<li><p>Write an article about [topic]. Consider diverse perspectives and write it in a [preferred tone] tone.</p>
-</li>
-<li><p>Summarize [LinkedIn profile url] and list the top 5 pain points they likely face in their current role.</p>
-</li>
-<li><p>Create social media content for 7 days that is focused on [topic] and that will engage [target audience].</p>
-</li>
-</ol>
-<p>  Instructions: Create social media content that is appropriate for the chosen topic and target audience. Content should be varied. Content should also include calls to action that encourage users to engage with the content, such as likes, shares, and comments.</p>
-<ol start="6">
-<li><p>I enjoy [list a few interests or hobbies]. What are some completely unrelated activities that I might find interesting?</p>
-</li>
-<li><p>Write 10 [subject lines &#x2F; headlines &#x2F; social media threads &#x2F; ad headlines &#x2F; etc.] with a curiosity gap that discuss [topic].</p>
-</li>
-<li><p>Pretend you are [role], come up with 10 ideas of how to do [task or problem]. Compare each of these ideas and list the pros and cons of each idea.</p>
-</li>
-<li><p>Summarize in table format the features, benefits, and pain solved for this product: [url to product features page].</p>
-</li>
-<li><p>Create a list of [10] frequently asked questions about [keyword] and provide answers for each one of them considering the SERP and rich result guidelines.</p>
-</li>
-<li><p>Create 5 social media posts promoting this blog post: [blog post URL].</p>
-</li>
-<li><p>Create a step by step guide to instruct how to [topic].</p>
-  </p>
-</details>
-<span id="more"></span></li>
-</ol>
-<h2 id="中文版本"><a href="#中文版本" class="headerlink" title="中文版本"></a>中文版本</h2><details>
-  <summary>中文版本</summary>
-  <p> 
-  
-<ol>
-<li><p>脑筋急转弯10个与[topic]相关的内容想法，让[your audience]感兴趣和受益。</p>
-</li>
-<li><p>为[whomever you want]编写一个fun的睡前故事，ta是故事的主要角色。</p>
-</li>
-<li><p>编写一个关于[topic]的的文章，考虑多种角度，使用[preferred tone]的口调。</p>
-</li>
-<li><p>总结[LinkedIn profile url]并 listing the top 5 pain points they likely face in their current role.</p>
-</li>
-<li><p>创建7天social media content，聚焦于[topic]，让[target audience]参与。</p>
-</li>
-</ol>
-<p>  Instructions: 创建social media content，符合choosen topic and target audience。Content should be varied. Content should also include calls to action that encourage users to engage with the content, such as likes, shares, and comments.</p>
-<ol start="6">
-<li><p>我享受[list a few interests or hobbies]。哪些是不完全related的activity？</p>
-</li>
-<li><p>写10个与curiosity gap相关的[topic] theme的subject lines &#x2F; headlines &#x2F; social media threads &#x2F; ad headlines &#x2F; etc.</p>
-</li>
-<li><p>假设你是[role]，列出10个做[task or problem]的方法。比较每个方法并list the pros and cons of each idea.</p>
-</li>
-<li><p>用表格格式 summarize the features, benefits, and pain solved for this product: [url to product features page].</p>
-</li>
-<li><p>创建一个包含常见问题及回答的列表，关于[keyword]。</p>
-</li>
-<li><p>创建5个social media posts promoting this blog post: [blog post URL]。</p>
-</li>
-<li><p>创建一个step by step guide to instruct how to [topic]。</p>
-</li>
-</ol>
-  </p>
-</details>
-
-
-
-
-
-
-
-]]></content>
-      <categories>
-        <category>技术</category>
-        <category>人工智能</category>
-        <category>Prompt</category>
-      </categories>
-      <tags>
-        <tag>Prompt</tag>
-        <tag>GPT</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>图形推理</title>
     <url>/2024/04/25/%E5%9B%BE%E5%BD%A2%E6%8E%A8%E7%90%86/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="图形推理考点"><a href="#图形推理考点" class="headerlink" title="图形推理考点"></a>图形推理考点</h2><ol>
@@ -2763,56 +2763,6 @@
       <tags>
         <tag>随笔</tag>
         <tag>分享</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>群晖NAS实现SSH免密码登录</title>
-    <url>/2024/04/17/%E7%BE%A4%E6%99%96NAS%E5%AE%9E%E7%8E%B0SSH%E5%85%8D%E5%AF%86%E7%A0%81%E7%99%BB%E5%BD%95/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
-<p>简介：在群晖 DS920+上传电脑端公钥，并关闭 SSH 密码登录</p>
-</blockquote>
-<h2 id="STEP-1-开启并登录-SSH"><a href="#STEP-1-开启并登录-SSH" class="headerlink" title="STEP 1 开启并登录 SSH"></a>STEP 1 开启并登录 SSH</h2><h3 id="开启"><a href="#开启" class="headerlink" title="开启"></a>开启</h3><p>群晖中，启用<code>控制面板 &gt; 终端机和 SNMP &gt; 终端机</code>中的<code>启动 SSH 功能</code> 选项，修改端口号为<code>8888</code> 或者选择其他未占用端口。</p>
-<h3 id="登录"><a href="#登录" class="headerlink" title="登录"></a>登录</h3><p>在电脑端，使用终端应用登录群晖，可以使用命令行方式登录，例如：<code>ssh -p 8888 legalgeek@192.168.1.2</code></p>
-<p>也可以在 <code>~/.ssh/config</code> 配置文件中增加一个服务器设定，然后通过 <code>ssh qh</code> 快捷登录</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">修改 ~/.ssh/config 文件示例：</span>  </span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">服务器</span>  </span><br><span class="line">Host qh  </span><br><span class="line">	HostName your_ip  </span><br><span class="line">	Port your_port  </span><br><span class="line">	User your_username</span><br></pre></td></tr></table></figure>
-<span id="more"></span>
-<p>上面一步执行完毕，需要输入用户密码。</p>
-<h3 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h3><p>使用 <code>ls -a</code>检测群晖当前用户主目录下是否有 .ssh 文件夹，如果没有使用下列命令创建：</p>
-<h2 id="STEP-2-粘贴公钥"><a href="#STEP-2-粘贴公钥" class="headerlink" title="STEP 2 粘贴公钥"></a>STEP 2 粘贴公钥</h2><p>将自己电脑的公钥粘贴进群晖的<code>authorized_keys</code>，具体方法：</p>
-<p>1、当前终端中，使用命令： <code>vim ~/.ssh/authorized_keys</code></p>
-<p>2、然后按 <code>i</code> 进入编辑模式</p>
-<p>3、<strong>新建</strong>一个终端窗口，使用 <code>cat ~/.ssh/id_rsa.pub</code>获取电脑端公钥信息，右键复制，再粘贴到上一步的编辑窗口中</p>
-<p>4、按 <code>ESC</code> 后输入 <code>:wq</code> 并回车保存</p>
-<h2 id="STEP-3-可选-新建公钥"><a href="#STEP-3-可选-新建公钥" class="headerlink" title="STEP 3 (可选) 新建公钥"></a>STEP 3 (可选) 新建公钥</h2><p>如果电脑端没有生成过公钥的话，需要在终端上使用 <code>ssh-keygen -t rsa -C &quot;MyName&quot;</code> 创建一个密钥。</p>
-<p>然后使用 <code>cat ~/.ssh/id_rsa.pub</code>获取公钥信息</p>
-<p>再粘贴到<strong>群晖</strong>的 <code>~/.ssh/authorized_keys</code> 文件中。</p>
-<h2 id="STEP-4-设置权限"><a href="#STEP-4-设置权限" class="headerlink" title="STEP 4 设置权限"></a>STEP 4 设置权限</h2><p>群晖用户目录权限默认为 777，必须要修改为 755 才能免密登录</p>
-<p>具体权限设置命令：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">chmod 755 ~  </span><br><span class="line">chmod 600 ~/.ssh/authorized_keys  </span><br><span class="line">chmod 700 ~/.ssh</span><br></pre></td></tr></table></figure>
-
-
-<h2 id="STEP-5-打开公钥登录设置"><a href="#STEP-5-打开公钥登录设置" class="headerlink" title="STEP 5 打开公钥登录设置"></a>STEP 5 打开公钥登录设置</h2><p>修改 <code>sshd_config</code> 配置文件:</p>
-<p><code>sudo vim /etc/ssh/sshd_config</code></p>
-<p>修改上述文件中以下几个配置（去除行首的注释符号<code>#</code>即可）：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">PubkeyAuthentication yes  </span><br><span class="line">AuthorizedKeysFile .ssh/authorized_keys</span><br></pre></td></tr></table></figure>
-
-<h2 id="STEP-6-重启-SSH-服务"><a href="#STEP-6-重启-SSH-服务" class="headerlink" title="STEP 6 重启 SSH 服务"></a>STEP 6 重启 SSH 服务</h2><p>在群晖<code>控制面板 -&gt; 终端机和 SNMP</code> 关闭再开启 <code>SSH</code>，即可免密登录群晖。</p>
-<h2 id="STEP-7-关闭密码登录"><a href="#STEP-7-关闭密码登录" class="headerlink" title="STEP 7 关闭密码登录"></a>STEP 7 关闭密码登录</h2><p>保存好 <code>密钥对（id_rsa 和 id_rsa.pub）</code>的情况下，关闭密码登录群晖 SSH，增强安全性。</p>
-<p>具体方式：</p>
-<p>修改 <code>sshd_config</code> 配置文件命令：</p>
-<p><code>sudo vim /etc/ssh/sshd_config</code></p>
-<p>修改上述文件中以下配置：</p>
-<p><code>PasswordAuthentication no</code></p>
-<p>然后 重复 STEP 6 重启群晖 <code>SSH</code> 即可关闭密码登录群晖 <code>SSH</code>。</p>
-]]></content>
-      <categories>
-        <category>技术</category>
-        <category>网络</category>
-      </categories>
-      <tags>
-        <tag>笔记</tag>
-        <tag>ssh</tag>
-        <tag>群晖</tag>
       </tags>
   </entry>
   <entry>
@@ -11285,6 +11235,56 @@
       </categories>
       <tags>
         <tag>名侦探柯南</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>群晖NAS实现SSH免密码登录</title>
+    <url>/2024/04/17/%E7%BE%A4%E6%99%96NAS%E5%AE%9E%E7%8E%B0SSH%E5%85%8D%E5%AF%86%E7%A0%81%E7%99%BB%E5%BD%95/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
+<p>简介：在群晖 DS920+上传电脑端公钥，并关闭 SSH 密码登录</p>
+</blockquote>
+<h2 id="STEP-1-开启并登录-SSH"><a href="#STEP-1-开启并登录-SSH" class="headerlink" title="STEP 1 开启并登录 SSH"></a>STEP 1 开启并登录 SSH</h2><h3 id="开启"><a href="#开启" class="headerlink" title="开启"></a>开启</h3><p>群晖中，启用<code>控制面板 &gt; 终端机和 SNMP &gt; 终端机</code>中的<code>启动 SSH 功能</code> 选项，修改端口号为<code>8888</code> 或者选择其他未占用端口。</p>
+<h3 id="登录"><a href="#登录" class="headerlink" title="登录"></a>登录</h3><p>在电脑端，使用终端应用登录群晖，可以使用命令行方式登录，例如：<code>ssh -p 8888 legalgeek@192.168.1.2</code></p>
+<p>也可以在 <code>~/.ssh/config</code> 配置文件中增加一个服务器设定，然后通过 <code>ssh qh</code> 快捷登录</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">修改 ~/.ssh/config 文件示例：</span>  </span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">服务器</span>  </span><br><span class="line">Host qh  </span><br><span class="line">	HostName your_ip  </span><br><span class="line">	Port your_port  </span><br><span class="line">	User your_username</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+<p>上面一步执行完毕，需要输入用户密码。</p>
+<h3 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h3><p>使用 <code>ls -a</code>检测群晖当前用户主目录下是否有 .ssh 文件夹，如果没有使用下列命令创建：</p>
+<h2 id="STEP-2-粘贴公钥"><a href="#STEP-2-粘贴公钥" class="headerlink" title="STEP 2 粘贴公钥"></a>STEP 2 粘贴公钥</h2><p>将自己电脑的公钥粘贴进群晖的<code>authorized_keys</code>，具体方法：</p>
+<p>1、当前终端中，使用命令： <code>vim ~/.ssh/authorized_keys</code></p>
+<p>2、然后按 <code>i</code> 进入编辑模式</p>
+<p>3、<strong>新建</strong>一个终端窗口，使用 <code>cat ~/.ssh/id_rsa.pub</code>获取电脑端公钥信息，右键复制，再粘贴到上一步的编辑窗口中</p>
+<p>4、按 <code>ESC</code> 后输入 <code>:wq</code> 并回车保存</p>
+<h2 id="STEP-3-可选-新建公钥"><a href="#STEP-3-可选-新建公钥" class="headerlink" title="STEP 3 (可选) 新建公钥"></a>STEP 3 (可选) 新建公钥</h2><p>如果电脑端没有生成过公钥的话，需要在终端上使用 <code>ssh-keygen -t rsa -C &quot;MyName&quot;</code> 创建一个密钥。</p>
+<p>然后使用 <code>cat ~/.ssh/id_rsa.pub</code>获取公钥信息</p>
+<p>再粘贴到<strong>群晖</strong>的 <code>~/.ssh/authorized_keys</code> 文件中。</p>
+<h2 id="STEP-4-设置权限"><a href="#STEP-4-设置权限" class="headerlink" title="STEP 4 设置权限"></a>STEP 4 设置权限</h2><p>群晖用户目录权限默认为 777，必须要修改为 755 才能免密登录</p>
+<p>具体权限设置命令：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">chmod 755 ~  </span><br><span class="line">chmod 600 ~/.ssh/authorized_keys  </span><br><span class="line">chmod 700 ~/.ssh</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="STEP-5-打开公钥登录设置"><a href="#STEP-5-打开公钥登录设置" class="headerlink" title="STEP 5 打开公钥登录设置"></a>STEP 5 打开公钥登录设置</h2><p>修改 <code>sshd_config</code> 配置文件:</p>
+<p><code>sudo vim /etc/ssh/sshd_config</code></p>
+<p>修改上述文件中以下几个配置（去除行首的注释符号<code>#</code>即可）：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">PubkeyAuthentication yes  </span><br><span class="line">AuthorizedKeysFile .ssh/authorized_keys</span><br></pre></td></tr></table></figure>
+
+<h2 id="STEP-6-重启-SSH-服务"><a href="#STEP-6-重启-SSH-服务" class="headerlink" title="STEP 6 重启 SSH 服务"></a>STEP 6 重启 SSH 服务</h2><p>在群晖<code>控制面板 -&gt; 终端机和 SNMP</code> 关闭再开启 <code>SSH</code>，即可免密登录群晖。</p>
+<h2 id="STEP-7-关闭密码登录"><a href="#STEP-7-关闭密码登录" class="headerlink" title="STEP 7 关闭密码登录"></a>STEP 7 关闭密码登录</h2><p>保存好 <code>密钥对（id_rsa 和 id_rsa.pub）</code>的情况下，关闭密码登录群晖 SSH，增强安全性。</p>
+<p>具体方式：</p>
+<p>修改 <code>sshd_config</code> 配置文件命令：</p>
+<p><code>sudo vim /etc/ssh/sshd_config</code></p>
+<p>修改上述文件中以下配置：</p>
+<p><code>PasswordAuthentication no</code></p>
+<p>然后 重复 STEP 6 重启群晖 <code>SSH</code> 即可关闭密码登录群晖 <code>SSH</code>。</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>网络</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+        <tag>ssh</tag>
+        <tag>群晖</tag>
       </tags>
   </entry>
 </search>
