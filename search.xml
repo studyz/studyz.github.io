@@ -233,7 +233,25 @@
 </ol>
 <figure class="highlight sqf"><table><tr><td class="code"><pre><span class="line">post_asset_folder: <span class="literal">false</span> </span><br><span class="line"># 改成<span class="literal">true</span>，则在<span class="variable">_post</span>新建下新建md文件的同时新建一个同名的文件夹用于存储当前页面的一些资源。</span><br></pre></td></tr></table></figure>
 
+<h3 id="引用文章"><a href="#引用文章" class="headerlink" title="引用文章"></a><a href="https://hexo.io/zh-cn/docs/tag-plugins#%E5%BC%95%E7%94%A8%E6%96%87%E7%AB%A0">引用文章</a></h3><p>引用其他文章的链接。</p>
+<figure class="highlight django"><table><tr><td class="code"><pre><span class="line"><span class="template-tag">&#123;% <span class="name">post_path</span> filename %&#125;</span><span class="language-xml">  </span></span><br><span class="line"><span class="language-xml"></span><span class="template-tag">&#123;% <span class="name">post_link</span> filename [title] [escape] %&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>在使用此标签时可以忽略文章文件所在的路径或者文章的永久链接信息、如语言、日期。</p>
+<p>例如，在文章中使用 <code>&#123;% post_link how-to-bake-a-cake %&#125;</code> 时，只需有一个名为 <code>how-to-bake-a-cake.md</code> 的文章文件即可。即使这个文件位于站点文件夹的 <code>source/posts/2015-02-my-family-holiday</code> 目录下、或者文章的永久链接是 <code>2018/en/how-to-bake-a-cake</code>，都没有影响。</p>
+<p>默认链接文字是文章的标题，你也可以自定义要显示的文本。</p>
+<p>默认对文章的标题和自定义标题里的特殊字符进行转义。可以使用 <code>escape</code> 选项，禁止对特殊字符进行转义。</p>
+<p>例如：</p>
+<p><strong>链接使用文章的标题</strong></p>
+<p><code>&#123;% post_link hexo-3-8-released %&#125;</code></p>
+<p><strong>链接使用自定义文字</strong></p>
+<p><code>&#123;% post_link hexo-3-8-released '通往文章的链接' %&#125;</code></p>
+<p><strong>对标题的特殊字符进行转义</strong></p>
+<figure class="highlight crmsh"><table><tr><td class="code"><pre><span class="line">&#123;% post_link hexo-<span class="number">4</span>-released &#x27;How to use <span class="tag">&lt;b&gt;</span> <span class="keyword">tag</span> <span class="title">in</span> title&#x27; %&#125;</span><br></pre></td></tr></table></figure>
+
+
 <h1 id="post在首页全文展示问题"><a href="#post在首页全文展示问题" class="headerlink" title="post在首页全文展示问题"></a>post在首页全文展示问题</h1><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"># 主题config文件 ~/hexo/themes/ayer/_config.yml</span><br><span class="line"># 文章太长，截断按钮文字(在需要截断的行增加此标记：<span class="comment">&lt;!--more--&gt;</span>)</span><br></pre></td></tr></table></figure>
+
+
 
 
 <p>More info:<br><a href="https://post.smzdm.com/p/agqol9zm/">晨聊 篇十七：markdown也变脸，obsidian + hexo 在群晖NAS上的双剑合璧</a></p>
@@ -379,7 +397,8 @@
     <title>为部署在Github上的Hexo博客配置域名</title>
     <url>/2019/05/25/%E4%B8%BA%E9%83%A8%E7%BD%B2%E5%9C%A8Github%E4%B8%8A%E7%9A%84Hexo%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE%E5%9F%9F%E5%90%8D/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="一、Hexo项目部署到Github"><a href="#一、Hexo项目部署到Github" class="headerlink" title="一、Hexo项目部署到Github"></a>一、<a href="https://so.csdn.net/so/search?q=Hexo&spm=1001.2101.3001.7020">Hexo</a>项目部署到Github</h4><p>首先要确保你的hexo项目已经部署到github上，如果不知道hexo项目如何部署到github上，请看另一篇文章↓</p>
-<p><a href="~/2019/05/06/Git_Hexo/index.html">群晖Git部署Hexo</a></p>
+<a href="/2019/05/06/Git_Hexo/" title="群晖Git部署Hexo">群晖Git部署Hexo</a>
+
 <p>如果你的<strong>hexo项目已经搭建好</strong>，可直接跳转到<strong>第五步，看部署到Github</strong>的步骤。</p>
 <h4 id="二、解析域名到GitHub-Pages"><a href="#二、解析域名到GitHub-Pages" class="headerlink" title="二、解析域名到GitHub Pages"></a>二、解析域名到GitHub Pages</h4><h5 id="1：首先购买或注册一个域名"><a href="#1：首先购买或注册一个域名" class="headerlink" title="1：首先购买或注册一个域名"></a>1：首先购买或注册一个域名</h5><p>购买域名的渠道有很多，可以国内，也可以国外，本人是在国外的GoDaddy平台上买的（好处是管理比较方便，不用备案啥的了…），问题多的话我再写一篇具体申请的blog。</p>
 <h5 id="2：解析域名到Github"><a href="#2：解析域名到Github" class="headerlink" title="2：解析域名到Github"></a>2：解析域名到Github</h5><p>首先登录你域名注册商的控制面板，这里以GoDaddy为例</p>
