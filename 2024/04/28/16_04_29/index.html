@@ -85,7 +85,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">274</span>
+            <span class="post-count">585</span>
         </span>
     </span>
 
@@ -94,7 +94,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">1 分钟</span>
+            <span class="post-count">2 分钟</span>
         </span>
     </span>
 </div>
@@ -110,19 +110,43 @@
     <div class="article-entry" itemprop="articleBody">
        
   <h2 id="同步方案"><a href="#同步方案" class="headerlink" title="同步方案"></a>同步方案</h2><blockquote>
-<p>之前分享过以 macOS 为中心，使用群晖 Drive 和 iCloud 同步群晖和苹果生态中的 obsidian 库（详见 <a href="/2019/05/24/Apple%E5%85%A8%E5%B9%B3%E5%8F%B0%E6%97%A0%E7%BC%9D%E5%90%8C%E6%AD%A5%E7%BE%A4%E6%99%96Obsidian%E5%BA%93/" title="苹果全平台无缝同步群晖Obsidian库">苹果全平台无缝同步群晖Obsidian库</a>），但这个方案有一个致命缺点就是需要一个 Mac 作为中继，同步群晖和 iCloud。无法做到任意设备的实时同步。</p>
-<p>这篇文章分享一个可以实时同步的方案顺便分享一些不错的 obsidian 第三方插件。</p>
+<p>[!abstract] 之前分享过以 macOS 为中心，使用群晖 Drive 和 iCloud 同步群晖和苹果生态中的 obsidian 库（详见 <a href="/2019/05/24/Apple%E5%85%A8%E5%B9%B3%E5%8F%B0%E6%97%A0%E7%BC%9D%E5%90%8C%E6%AD%A5%E7%BE%A4%E6%99%96Obsidian%E5%BA%93/" title="苹果全平台无缝同步群晖Obsidian库">苹果全平台无缝同步群晖Obsidian库</a>），但这个方案有一个致命缺点就是需要一个 Mac 作为中继，同步群晖和 iCloud。无法做到任意设备的实时同步。</p>
+</blockquote>
+<blockquote>
+<p>[!Help] 这篇文章分享一个可以实时同步的方案顺便分享一些不错的 obsidian 第三方插件。</p>
 </blockquote>
 <span id="more"></span>
 
 <h3 id="Remotely-save"><a href="#Remotely-save" class="headerlink" title="Remotely save"></a><a target="_blank" rel="noopener" href="https://github.com/remotely-save/remotely-save">Remotely save</a></h3><blockquote>
-<p>一个非官方的 Obsidian 插件允许用户在本地设备和云服务之间同步笔记。支持 S 3、Dropbox、OneDrive、webdav。</p>
+<p>[!note] 一个非官方的 Obsidian 插件允许用户在本地设备和云服务之间同步笔记。支持 S 3、Dropbox、OneDrive、webdav。</p>
 </blockquote>
-<p>![[..&#x2F;images&#x2F;2024_04_28_16_04_29&#x2F;Screenshot 2024-04-28 at 17.16.35.png]]<br>按需求链接，这里以 webdav 为例，输入地址、用户名、密码进行连接。<br>![[..&#x2F;images&#x2F;2024_04_28_16_04_29&#x2F;Screenshot 2024-04-28 at 17.46.02 1.png]]<br>可以加密同步，我是为了同步到群晖，自动 git push 到 GitHub pages，所以就没有选择加密。<br>![[..&#x2F;images&#x2F;2024_04_28_16_04_29&#x2F;image-20240428180548964.png]]</p>
+<p><img src="/../images/2024_04_28_16_04_29/image-20240428171635.png"></p>
+<p>按需求链接，这里以 webdav 为例，输入地址、用户名、密码进行连接。<br><img src="/../images/2024_04_28_16_04_29/image-20240428174602.png"></p>
+<p>可以加密同步，我是为了同步到群晖，自动 git push 到 GitHub pages，所以就没有选择加密。<br><img src="/../images/2024_04_28_16_04_29/image-20240428180548964.png"></p>
 <p>还有其他功能设置，可自行按需设置。</p>
-<h2 id="Obsidian-第三方插件"><a href="#Obsidian-第三方插件" class="headerlink" title="Obsidian 第三方插件"></a>Obsidian 第三方插件</h2><ul>
-<li>TBD</li>
+<h2 id="Obsidian-第三方插件"><a href="#Obsidian-第三方插件" class="headerlink" title="Obsidian 第三方插件"></a>Obsidian 第三方插件</h2><h3 id="Completr-自动联想补全插件"><a href="#Completr-自动联想补全插件" class="headerlink" title="Completr 自动联想补全插件"></a>Completr 自动联想补全插件</h3><blockquote>
+<p>[!summary] 插件提供了 LaTex，Frontmatter，callout 的自动联想补全功能，还提供了扫描当前文件所有文字作为联想备选文字的功能。另外，你还可以自己提供放了文字的文件作为联想的数据。</p>
+</blockquote>
+<ul>
+<li><p>输入 <code>&gt;[</code> 就会出现所有 ob 提供的 callout，点击确认即可自动补全。<br><img src="/../images/2024_04_28_16_04_29/image-20240428190857.png"></p>
+</li>
+<li><p>提供字库作为联想备用文字<br><img src="/../images/2024_04_28_16_04_29/image-20240428190944.png"></p>
+</li>
+<li><p>自动补全 LaTex<br><img src="/../images/2024_04_28_16_04_29/image-20240428190956.png"></p>
+</li>
 </ul>
+<h4 id="简单配置"><a href="#简单配置" class="headerlink" title="简单配置"></a><strong>简单配置</strong></h4><p>默认无法扫描到中文，如果需要中文联想，需要在设置的第一项 Word character regex 的开头插入：<code>\u4e00-\u9fa5</code>，这样就可以扫描到中文了</p>
+<p>不要去掉原来的 <code>a-zA-ZöäüÖÄÜß</code>，那是用来匹配字母的。结果为 <code>\u4e00-\u9fa5a-zA-ZöäüÖÄÜß</code>；</p>
+<p>插件提供的可以修改的设置有:</p>
+<ol>
+<li>最小开始联想的字符；</li>
+<li>替换的方式（是否忽略大小写，是直接替换还是结尾补全等）</li>
+<li>是否启用 LaTex 补全（以及是否需要在代码块中提供补全，是否忽略大小写等）</li>
+<li>是否启用 Frontmatter 补全（以及是否忽略大小写，是否添加后缀）</li>
+<li>是否需要扫描文件作为补全的字库（以及是否包括当前文件）</li>
+<li>是否需要我们自己提供文件作为字库；</li>
+<li>是否启用 Callout 补全功能；</li>
+</ol>
  
       <!-- reward -->
       

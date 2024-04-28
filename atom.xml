@@ -6,7 +6,7 @@
   <link href="https://blog.jeremyang.top/atom.xml" rel="self"/>
   
   <link href="https://blog.jeremyang.top/"/>
-  <updated>2024-04-28T10:13:42.059Z</updated>
+  <updated>2024-04-28T11:55:53.814Z</updated>
   <id>https://blog.jeremyang.top/</id>
   
   <author>
@@ -21,12 +21,14 @@
     <link href="https://blog.jeremyang.top/2024/04/28/16_04_29/"/>
     <id>https://blog.jeremyang.top/2024/04/28/16_04_29/</id>
     <published>2024-04-28T08:31:00.000Z</published>
-    <updated>2024-04-28T10:13:42.059Z</updated>
+    <updated>2024-04-28T11:55:53.814Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;同步方案&quot;&gt;&lt;a href=&quot;#同步方案&quot; class=&quot;headerlink&quot; title=&quot;同步方案&quot;&gt;&lt;/a&gt;同步方案&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;之前分享过以 macOS 为中心，使用群晖 Drive 和 iCloud 同步群晖和苹果生态中的 obsidian 库（详见 &lt;a href=&quot;/2019/05/24/Apple%E5%85%A8%E5%B9%B3%E5%8F%B0%E6%97%A0%E7%BC%9D%E5%90%8C%E6%AD%A5%E7%BE%A4%E6%99%96Obsidian%E5%BA%93/&quot; title=&quot;苹果全平台无缝同步群晖Obsidian库&quot;&gt;苹果全平台无缝同步群晖Obsidian库&lt;/a&gt;），但这个方案有一个致命缺点就是需要一个 Mac 作为中继，同步群晖和 iCloud。无法做到任意设备的实时同步。&lt;/p&gt;
-&lt;p&gt;这篇文章分享一个可以实时同步的方案顺便分享一些不错的 obsidian 第三方插件。&lt;/p&gt;
+&lt;p&gt;[!abstract] 之前分享过以 macOS 为中心，使用群晖 Drive 和 iCloud 同步群晖和苹果生态中的 obsidian 库（详见 &lt;a href=&quot;/2019/05/24/Apple%E5%85%A8%E5%B9%B3%E5%8F%B0%E6%97%A0%E7%BC%9D%E5%90%8C%E6%AD%A5%E7%BE%A4%E6%99%96Obsidian%E5%BA%93/&quot; title=&quot;苹果全平台无缝同步群晖Obsidian库&quot;&gt;苹果全平台无缝同步群晖Obsidian库&lt;/a&gt;），但这个方案有一个致命缺点就是需要一个 Mac 作为中继，同步群晖和 iCloud。无法做到任意设备的实时同步。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[!Help] 这篇文章分享一个可以实时同步的方案顺便分享一些不错的 obsidian 第三方插件。&lt;/p&gt;
 &lt;/blockquote&gt;</summary>
     
     
