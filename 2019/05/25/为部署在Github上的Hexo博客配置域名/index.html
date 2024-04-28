@@ -89,7 +89,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">440</span>
+            <span class="post-count">448</span>
         </span>
     </span>
 
@@ -122,24 +122,22 @@
 <span id="more"></span>
 
 <p>打开<strong>控制面板</strong></p>
-<p><img src="https://img-blog.csdnimg.cn/img_convert/1eb14fcffa6e2d4f653973e99ca35362.png" alt="image-20240319002803003"></p>
+<p><img src="/../images/2019_05_25_%E4%B8%BA%E9%83%A8%E7%BD%B2%E5%9C%A8Github%E4%B8%8A%E7%9A%84Hexo%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE%E5%9F%9F%E5%90%8D/image-20240428210042566.png"></p>
 <p>接着<strong>打开DNS配置页面</strong></p>
-<p><img src="https://img-blog.csdnimg.cn/img_convert/73ed9a296534279f450c78fea5f2f904.png" alt="image-20240319002924980"></p>
+<p><img src="/../images/2019_05_25_%E4%B8%BA%E9%83%A8%E7%BD%B2%E5%9C%A8Github%E4%B8%8A%E7%9A%84Hexo%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE%E5%9F%9F%E5%90%8D/image-20240428210031684.png"></p>
 <p>接着<strong>添加以下几条解析</strong></p>
-<p><img src="https://img-blog.csdnimg.cn/img_convert/ae6bb469b68d19139b83f2a941799cf0.png" alt="image-20240319004434777"></p>
+<p><img src="/../images/2019_05_25_%E4%B8%BA%E9%83%A8%E7%BD%B2%E5%9C%A8Github%E4%B8%8A%E7%9A%84Hexo%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE%E5%9F%9F%E5%90%8D/image-20240428210020252.png"></p>
 <p>上面几条IP地址是从<a href="">Github官网</a>上得来的，具体可以查看这个地址<a target="_blank" rel="noopener" href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site#configuring-an-apex-domain">Managing a custom domain for your GitHub Pages site - GitHub Docs</a></p>
 <p>至此，域名注册服务商上的github pages域名解析我们就完成了！</p>
-<h4 id="三、配置Hexo项目"><a href="#三、配置Hexo项目" class="headerlink" title="三、配置Hexo项目"></a>三、配置Hexo项目</h4><p>在你的hexo项目的<strong>source</strong>文件夹里添加一个<strong>CNAME</strong>文件（不带任何后缀的文件）</p>
-<p><img src="https://img-blog.csdnimg.cn/img_convert/61763055c831a5eedafa731be332428c.png" alt="image-20240319004806404"></p>
-<p>里面的内容是你的<strong>域名</strong></p>
-<p><img src="https://img-blog.csdnimg.cn/img_convert/f13d3b5afb56cbeec1b397ba4c1206e4.png" alt="image-20240319004719353"></p>
-<p>然后打开我们hexo项目的配置文件 <strong>_config.yml</strong> ，找到<strong>url配置项</strong>，替换成我们的域名就可以了</p>
-<p><img src="https://img-blog.csdnimg.cn/img_convert/d4774e1488d6ed0213edc6206acad50c.png" alt="image-20240319010130384"></p>
-<h4 id="四、配置Github-Pages"><a href="#四、配置Github-Pages" class="headerlink" title="四、配置Github Pages"></a>四、配置Github Pages</h4><p>打开我们的hexo项目在github上的仓库，进入设置页面</p>
-<p><img src="https://img-blog.csdnimg.cn/img_convert/9173faf326b7efd66bb7b4203ddd955e.png" alt="image-20240319005047573"></p>
-<p>找到<strong>Pages选项</strong>，填上我们的<strong>域名</strong>，勾选上<strong>强制打开HTTPS</strong></p>
-<p><img src="https://img-blog.csdnimg.cn/img_convert/af4bb0a2d96c70f3c190ba4b1ebeb0f8.png" alt="image-20240319005718608"></p>
-<p>等DNS检查通过，稍微等一会，就可以用域名打开我们的Hexo部署在Github上的项目啦！</p>
+<h4 id="三、配置Hexo项目"><a href="#三、配置Hexo项目" class="headerlink" title="三、配置Hexo项目"></a>三、配置Hexo项目</h4><ol>
+<li>在你的hexo项目的<strong>source</strong>文件夹根目录里添加一个<strong>CNAME</strong>文件（不带任何后缀的文件），CNAME里面的内容是你的<strong>域名</strong>。</li>
+<li>然后打开我们 hexo 项目的配置文件 <strong>_config.yml</strong> ，找到 <strong>url 配置项</strong> ，替换成我们的域名就可以了。</li>
+</ol>
+<h4 id="四、配置Github-Pages"><a href="#四、配置Github-Pages" class="headerlink" title="四、配置Github Pages"></a>四、配置Github Pages</h4><ol>
+<li>打开我们的hexo项目在github上的仓库，进入设置页面</li>
+<li>找到<strong>Pages选项</strong>，<code>Custom domain</code> 填上我们的<strong>域名</strong>，勾选上<strong>强制打开HTTPS</strong>。</li>
+<li>等DNS检查通过，稍微等一会，就可以用域名打开我们的Hexo部署在Github上的项目啦！</li>
+</ol>
 <p>原文链接： <a target="_blank" rel="noopener" href="https://www.laodengai.com/domain-name-on-github-20240319/">Hexo 项目在 Github 上配置域名 | 老登 AI (laodengai.com)</a></p>
  
       <!-- reward -->
