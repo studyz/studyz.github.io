@@ -275,7 +275,7 @@
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="一、前期准备"><a href="#一、前期准备" class="headerlink" title="一、前期准备"></a>一、前期准备</h2><h3 id="1-1-注册-账号-Gitee-GitHub"><a href="#1-1-注册-账号-Gitee-GitHub" class="headerlink" title="1.1 注册 账号 Gitee&#x2F;GitHub"></a>1.1 注册 账号 Gitee&#x2F;GitHub</h3><p>注册一个属于自己的 Github 或 Gitee 账号，</p>
 <p>Gitee在国内访问速度更快，但Gitee需要上传身份证照片若干张进行实名认证，懒得掏身份证，pass掉。</p>
 <span id="more"></span>
-<p><img src="/%E5%AE%9E%E5%90%8D%E9%AA%8C%E8%AF%81.png" alt="实名认证"></p>
+<p><img src="/2019/05/06/Git_Hexo/%E5%AE%9E%E5%90%8D%E9%AA%8C%E8%AF%81.png" alt="实名认证"></p>
 <p>本文采用 Github 演示。 </p>
 <h3 id="1-2-安装-Git"><a href="#1-2-安装-Git" class="headerlink" title="1.2 安装 Git"></a>1.2 安装 Git</h3><p>选择对应的系统平台，下载后，傻瓜式安装即可。 安装完成后，打开运行 –&gt; 输入命令，回车打开命令行窗口 输入以下Git指令</p>
 <figure class="highlight ada"><table><tr><td class="code"><pre><span class="line">git <span class="comment">--version</span></span><br></pre></td></tr></table></figure>
@@ -1465,7 +1465,6 @@
 <p><a href="https://github.com/antis0007/sd-webui-gelbooru-prompt">Gelbooru标签自动摘录插件 Gelbooru Prompt</a><br><a href="https://github.com/DominikDoom/a1111-sd-webui-tagcomplete/blob/main/README_ZH.md">Tag自动补全</a><br><a href="https://github.com/adieyal/sd-dynamic-prompts">Dynamic Prompts extension</a></p>
 <p><a href="https://civitai.com/images/572998?period=Year&sort=Newest&view=categories">autum,sushi+goodGirl,30step</a></p>
 <p><a href="https://civitai.com/images/572647?period=Year&sort=Newest&view=categories&tags=5133">https://civitai.com/images/572647?period=Year&sort=Newest&view=categories&tags=5133</a></p>
-<p>![[Pasted image 20230423175817.png]]</p>
 ]]></content>
       <categories>
         <category>技术</category>
@@ -2141,7 +2140,7 @@
 </blockquote>
 <h1 id="一、数据分析师的种类、职责与升级路线"><a href="#一、数据分析师的种类、职责与升级路线" class="headerlink" title="一、数据分析师的种类、职责与升级路线"></a>一、数据分析师的种类、职责与升级路线</h1><p>在国内数据分析师一般分为5大种类：<strong>数据产品、数据分析师、数据建模师、数据工程师与数据科</strong>学家，这5类人才的必备能力和成长路线我们来逐一介绍。</p>
 <span id="more"></span>
-<h3 id="1-1数据产品"><a href="#1-1数据产品" class="headerlink" title="1.1数据产品"></a>1.1数据产品</h3><p><img src="/../0001.png"></p>
+<h3 id="1-1数据产品"><a href="#1-1数据产品" class="headerlink" title="1.1数据产品"></a>1.1数据产品</h3><p><img src="/2023/09/10/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E6%89%80%E9%9C%80%E7%9A%84%E6%8A%80%E6%9C%AF%E4%B8%8E%E7%90%86%E8%AE%BA/0001.png"></p>
 <p>数据产品概览图</p>
 <p>在产品的基础上，增加数据思维。</p>
 <p>数据产品不仅懂得埋点原理，能够通过抓包等工具抓取数据并进行分析。同时还能够参与数据化产品的制作，如BI报表、CRM系统、AB test试验后台等。</p>
@@ -2161,7 +2160,7 @@
 <li>数据产品一般会对编程、数据处理、统计等专业知识方面较弱，建议加强数据分析能力，做个有技术、分析能力的产品。</li>
 <li>既然有产品属性，那就涉及到与技术无止境的扯皮之中，如何提升自己业务与沟通能力让自己更专业，同时使工作流程更加顺畅，这便是数据产品的王者能力。</li>
 </ol>
-<h3 id="1-2-数据分析师"><a href="#1-2-数据分析师" class="headerlink" title="1.2 数据分析师"></a>1.2 数据分析师</h3><p><img src="/../0002.png"></p>
+<h3 id="1-2-数据分析师"><a href="#1-2-数据分析师" class="headerlink" title="1.2 数据分析师"></a>1.2 数据分析师</h3><p><img src="/2023/09/10/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E6%89%80%E9%9C%80%E7%9A%84%E6%8A%80%E6%9C%AF%E4%B8%8E%E7%90%86%E8%AE%BA/0002.png"></p>
 <p>数据分析师概览图</p>
 <p>这就是我们常说的商业化数据分析师，主要负责01搭建可视化监控报表，利用数据挖掘和洞察业务，为需求部门提供数据支撑、分析报告、商业化模型等服务，这里面的key word是监控、挖掘、有价值和服务，在公司里担任领导的眼睛与大脑的角色。</p>
 <p><strong>1.2.1 成长路线：</strong> CGO、增长专家、数据咨询专家、数据分析总监、数据运营总监</p>
@@ -2179,7 +2178,7 @@
 <p><strong>（1）一定要重视可视化</strong></p>
 <p>为什么呢？</p>
 <p>因为数据分析师花90%的时间用在处理数据上，只贡献了10%的价值，而老板看到你的报告，却用了不到10%的时间便做出决策，贡献了90%的价值，所以说BI可视化尤为重要。下图给大家展示可视化的正反两个例子A和B：</p>
-<p><img src="/../0003.png"></p>
+<p><img src="/2023/09/10/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E6%89%80%E9%9C%80%E7%9A%84%E6%8A%80%E6%9C%AF%E4%B8%8E%E7%90%86%E8%AE%BA/0003.png"></p>
 <p>可视化对比图</p>
 <p>同样是数据分析师做出来的AB两张图，看了图A的老板点头肯定，看了图B的老板肯定想弄死你，正愁没人裁，有没有？</p>
 <p><strong>（2）分析师要有自己的业务思维能力</strong></p>
@@ -2193,7 +2192,7 @@
 <p><strong>（5）要养成大局观</strong></p>
 <p>作为数据分析师不能总局限于自己业务的那些数，也要抬头看看市场上大盘变化，以及竞品变化。</p>
 <p>分析格局的大小源自看待问题的高度，这一点非常重要，初期可以慢慢养成，这也是高阶分析师必备的能力。</p>
-<h3 id="1-3-数据建模师"><a href="#1-3-数据建模师" class="headerlink" title="1.3 数据建模师"></a>1.3 数据建模师</h3><p><img src="/../0004.png"></p>
+<h3 id="1-3-数据建模师"><a href="#1-3-数据建模师" class="headerlink" title="1.3 数据建模师"></a>1.3 数据建模师</h3><p><img src="/2023/09/10/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E6%89%80%E9%9C%80%E7%9A%84%E6%8A%80%E6%9C%AF%E4%B8%8E%E7%90%86%E8%AE%BA/0004.png"></p>
 <p>数据建模师概览图</p>
 <p>数据建模师也叫算法工程师，是数理统计知识、编程与业务思维集一身的模型大师，通过建立数学模型、利用算法实现增长，可以说是一家产品的灵魂工作者，你就说信息流产品的推荐算法核不核心、金融行业的反欺诈和信用评级厉不厉害，P2P的智能配标优不优秀。</p>
 <p><strong>1.3.1 成长路线：</strong> CTO、技术总监、资深算法工程师</p>
@@ -2217,7 +2216,7 @@
 <p>但熟不知你若会技术又有业务头脑，那总监的位置是不是在向你招手；你若懂业务、懂管理又会为人处世，拿下CTO这个位置是不是志在必得。</p>
 <p>当然也有喜欢钻研算法，不掺乎管理层的资深技术，所谓事了拂衣去，深藏功与名，说的就是这些人。</p>
 <p>不管怎么说，之所以能够有今天的成就，除了过硬的技术外，很好的沟通能力也是必不可少的。</p>
-<h3 id="1-4-数据工程师"><a href="#1-4-数据工程师" class="headerlink" title="1.4 数据工程师"></a>1.4 数据工程师</h3><p><img src="/../0005.png"></p>
+<h3 id="1-4-数据工程师"><a href="#1-4-数据工程师" class="headerlink" title="1.4 数据工程师"></a>1.4 数据工程师</h3><p><img src="/2023/09/10/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E6%89%80%E9%9C%80%E7%9A%84%E6%8A%80%E6%9C%AF%E4%B8%8E%E7%90%86%E8%AE%BA/0005.png"></p>
 <p>数据工程师概览图</p>
 <p>数据工程师的职能更偏向技术工程，主要的工作职责是搭建数据仓库、创建ETL、进行数据治理、数据安全等方面的工作、通过提升运行速度，优化数据结构，更好地服务于数据使用方，比如数据分析师、数据产品及数据建模师。</p>
 <p><strong>1.4.1 成长路线：</strong> CTO、技术总监、资深研发工程师</p>
@@ -2238,7 +2237,7 @@
 <p>这事故仅次于PDD那次红包事故了，当时我们没有推卸责任（毕竟绩效已经没了），迅速制定了数据异常预警，人工短信确认等机制，避免了类似事故发生。</p>
 <p>这次事故给我的教训就是，人无远虑必有近忧，错误是不可避免的，但如何提升专业水平，降低错误发生概率，提前预知错误，以避免资源的浪费。</p>
 <p><strong>（2）沟通、沟通还是沟通…</strong></p>
-<h3 id="1-5-数据科学家"><a href="#1-5-数据科学家" class="headerlink" title="1.5 数据科学家"></a>1.5 数据科学家</h3><p><img src="/../0006.png"></p>
+<h3 id="1-5-数据科学家"><a href="#1-5-数据科学家" class="headerlink" title="1.5 数据科学家"></a>1.5 数据科学家</h3><p><img src="/2023/09/10/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E6%89%80%E9%9C%80%E7%9A%84%E6%8A%80%E6%9C%AF%E4%B8%8E%E7%90%86%E8%AE%BA/0006.png"></p>
 <p>数据科学家概览图</p>
 <p>综合性人才，数据分析能力、统计学基础、业务能力、算法与沟通能力集聚一身的人才。市面上有很多不懂技术只会嘴炮的领导，也不缺不懂结合业务的技术大拿，但做到样样精通，实属不易。向下能够了解前沿技术并指导下属进行研究开发，向上能够很好的与领导沟通，让领导理解这么做的价值。</p>
 <ul>
@@ -2262,20 +2261,20 @@
 <p>不是每个人都有机会接触SAS，如果没机会也不要紧，这里推荐大家一定要学SPSS，可以理解为升级版的excel，也很简单；然后Python和R任选其一即可。</p>
 <h3 id="2-2-可视化"><a href="#2-2-可视化" class="headerlink" title="2.2 可视化"></a>2.2 可视化</h3><p>Excel、PPT、Tableau、Echarts、powerBI</p>
 <p>数据可视化的工具很多，除了Python、R、JAVA这类的之外，上面列的几种算是比较常见的BI可视化工具。先说Excel和PPT，没错它们也算可视化软件，如下图：</p>
-<p><img src="/../0007.png"></p>
+<p><img src="/2023/09/10/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E6%89%80%E9%9C%80%E7%9A%84%E6%8A%80%E6%9C%AF%E4%B8%8E%E7%90%86%E8%AE%BA/0007.png"></p>
 <p>Excel可视化</p>
 <p>这是用我用excel做出来的dashboard（看板），也还可以吧，应付一般老板那是够够的。但要想玩的洋一点，就得用例如tableau、powerBI等软件，毕竟老美都用tableau么，样式如下图所示：</p>
-<p><img src="/../0008.png"></p>
+<p><img src="/2023/09/10/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E6%89%80%E9%9C%80%E7%9A%84%E6%8A%80%E6%9C%AF%E4%B8%8E%E7%90%86%E8%AE%BA/0008.png"></p>
 <p>新增用户热力图</p>
 <p>不管是用什么工具，能够将抽象的数据用图形展示出来，便于老板观察和决策，那就是ok的，至于如何做的好看，那就是进阶的课题了。</p>
 <h3 id="2-3-统计学基础"><a href="#2-3-统计学基础" class="headerlink" title="2.3 统计学基础"></a>2.3 统计学基础</h3><p><strong>统计学基础在AB test、数学模型、抽样检验里常常会用到</strong>，有的时候你看到的数据并不是真实的，怎么去解释，我给大家列几个例子：</p>
 <p><strong>示例一 AB test的错觉：</strong></p>
-<p><img src="/../0009.png"></p>
+<p><img src="/2023/09/10/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E6%89%80%E9%9C%80%E7%9A%84%E6%8A%80%E6%9C%AF%E4%B8%8E%E7%90%86%E8%AE%BA/0009.png"></p>
 <p>AB test结果图</p>
 <p>看到这张图，很多人都会认为B比A的转化效果好对吧，但是这里有多大的可能是因为一些随机的因素导致这样的区别呢，这就要用到统计学的假设检验了。</p>
 <p>我们来假设B不会比A效果好，然后试图通过样本来推翻这个假设，如果样本足以推翻假设，那么我们就可以认为实验完成了，所见即所得；否则我们会认为B比A好只是偶然现象，这组AB test没有任何意义，需重新测试。</p>
 <p><strong>示例二 R平方值的重要性：</strong></p>
-<p><img src="/../0010.png"></p>
+<p><img src="/2023/09/10/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E6%89%80%E9%9C%80%E7%9A%84%E6%8A%80%E6%9C%AF%E4%B8%8E%E7%90%86%E8%AE%BA/0010.png"></p>
 <p>DAU预测图</p>
 <p>上图是一个简单的回归模型用来预测DAU，<strong>红色是指数回归，绿色是多项式回归，哪种模型更精准呢，这时候就要看R方。</strong></p>
 <p>R平方值是趋势线拟合程度的指标，取值范围在0到1之间，它的数值大小可以反映趋势线的估计值与对应的实际数据之间的拟合程度，拟合程度越接近1，趋势线的可靠性就越高。</p>
@@ -2283,14 +2282,14 @@
 <p>以上列举了2个统计学的小例子，在实际工作当中还会遇到很多统计学的知识，<strong>比如显著性、置信度、离散度等等，统计学会让我们的分析结果更加专业，更加严谨。</strong></p>
 <h3 id="2-4-建模能力"><a href="#2-4-建模能力" class="headerlink" title="2.4 建模能力"></a>2.4 建模能力</h3><p>根据不同的业务需求，会使用一些模型，下面简单的介绍集中常用模型供大家参考。</p>
 <p><strong>分类：</strong> 基于历史用户行为构建模型，套用到新用户身上，预测用户可能发生某种行为的概率，常用的分类模型有C5.0、决策树、随机森林、逻辑回归等，如下图运用逻辑回归，预测用户是否下单：</p>
-<p><img src="/../0011.png"></p>
+<p><img src="/2023/09/10/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E6%89%80%E9%9C%80%E7%9A%84%E6%8A%80%E6%9C%AF%E4%B8%8E%E7%90%86%E8%AE%BA/0011.png"></p>
 <p>模型概念图</p>
 <p><strong>聚类：</strong> 按照个体的特征将他们分类，让同一个类别内的个体之间具有较高的相似度，不同类别之间具有较大的差异性，常用于给用户打标签，如下图K-means聚类所示：</p>
-<p><img src="/../0012.png"></p>
+<p><img src="/2023/09/10/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E6%89%80%E9%9C%80%E7%9A%84%E6%8A%80%E6%9C%AF%E4%B8%8E%E7%90%86%E8%AE%BA/0012.png"></p>
 <p>聚类概念图</p>
 <p><strong>回归：</strong> 在③提到的指数回归和多项式回归就是典型的例子，常用于预测销量、人口等数据。</p>
 <p><strong>评估：</strong> 评估模型市面上分为2大类，回归和标准化模型，多用于对品牌投放、效果投放、会员积分的评估，如下图所示：</p>
-<p><img src="/../0013.png"></p>
+<p><img src="/2023/09/10/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E6%89%80%E9%9C%80%E7%9A%84%E6%8A%80%E6%9C%AF%E4%B8%8E%E7%90%86%E8%AE%BA/0013.png"></p>
 <p>渠道评估模型（AHP标准化模型）</p>
 <p>除了上述的4大类模型外，还有很多种类的模型，根据实际业务去选择对应的模型就ok了，在这里不过多赘述。</p>
 <h3 id="2-5-业务思维能力"><a href="#2-5-业务思维能力" class="headerlink" title="2.5 业务思维能力"></a>2.5 业务思维能力</h3><p>数据是冰冷的，若想开启真相的大门，业务思维便是我们的钥匙。</p>
@@ -2391,7 +2390,7 @@
 </ul>
 <p><strong>3）适合人群：</strong> 名校对口专业毕业，没办法人太多，某宝从国内top已经要求全球TOP了</p>
 <h1 id="数据分析行业必备能力"><a href="#数据分析行业必备能力" class="headerlink" title="数据分析行业必备能力"></a>数据分析行业必备能力</h1><p>了解了这些数据分析师的百态之后，该如何入门的问题相信也会得到解答，我们一起来探讨一下<strong>数据分析师所需要掌握的那些能力</strong>，我总结出了以下7点和大家分享。</p>
-<p><img src="/../0015.png"></p>
+<p><img src="/2023/09/10/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E6%89%80%E9%9C%80%E7%9A%84%E6%8A%80%E6%9C%AF%E4%B8%8E%E7%90%86%E8%AE%BA/0015.png"></p>
 <h3 id="1、基本工具应用的能力"><a href="#1、基本工具应用的能力" class="headerlink" title="1、基本工具应用的能力"></a>1、基本工具应用的能力</h3><p>Office的三件套是必备的，特别是（excel、PPT），但所有的excel、ppt功能都要学习吗？显然不是，很多人在这个上面浪费的时间太多太多了。</p>
 <ul>
 <li>对于<strong>excel</strong>来讲，基本的函数（加减乘除、条件筛选、匹配函数、透视表、图表）就足够了，VBA对基础业务人员来说可以放弃。</li>
@@ -2439,30 +2438,30 @@
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
 <p>NumPy是Python中用于数据分析、机器学习、科学计算的重要软件包。它极大地简化了向量和矩阵的操作及处理。python的不少数据处理软件包依赖于NumPy作为其基础架构的核心部分（例如scikit-learn、SciPy、pandas和tensorflow）。除了数据切片和数据切块的功能之外，掌握numpy也使得开发者在使用各数据处理库调试和处理复杂用例时更具优势。</p>
 </blockquote>
-<p><img src="/_posts/2023_10_23_%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0001.png"></p>
+<p><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0001.png"></p>
 <p>在本文中，将介绍NumPy的主要用法，以及它如何呈现不同类型的数据（表格，图像，文本等），这些经Numpy处理后的数据将成为机器学习模型的输入。</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br></pre></td></tr></table></figure>
 
 <h1 id="NumPy中的数组操作"><a href="#NumPy中的数组操作" class="headerlink" title="NumPy中的数组操作"></a>NumPy中的数组操作</h1><span id="more"></span>
-<h3 id="创建数组"><a href="#创建数组" class="headerlink" title="创建数组"></a>创建数组</h3><p>我们可以通过将python列表传入np.array()来创建一个NumPy数组（也就是强大的ndarray）。在下面的例子里，创建出的数组如右边所示，<br><img src="/_posts/2023_10_23_%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0002.png"></p>
+<h3 id="创建数组"><a href="#创建数组" class="headerlink" title="创建数组"></a>创建数组</h3><p>我们可以通过将python列表传入np.array()来创建一个NumPy数组（也就是强大的ndarray）。在下面的例子里，创建出的数组如右边所示，<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0002.png"></p>
 <p>通常情况下，我们希望NumPy为我们初始化数组的值，为此NumPy提供了诸如ones()，zeros()和random.random()之类的方法。我们只需传入元素个数即可：</p>
-<p><img src="/_posts/2023_10_23_%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0003.png"><br>一旦我们创建了数组，我们就可以用其做点有趣的应用了，文摘菌将在下文展开说明。</p>
+<p><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0003.png"><br>一旦我们创建了数组，我们就可以用其做点有趣的应用了，文摘菌将在下文展开说明。</p>
 <h3 id="数组的算术运算"><a href="#数组的算术运算" class="headerlink" title="数组的算术运算"></a>数组的算术运算</h3><p>让我们创建两个NumPy数组，分别称作data和ones：</p>
-<p><img src="/_posts/2023_10_23_%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0004.png"><br>若要计算两个数组的加法，只需简单地敲入data + ones，就可以实现对应位置上的数据相加的操作（即每行数据进行相加），这种操作比循环读取数组的方法代码实现更加简洁。<br><img src="/_posts/2023_10_23_%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0005.png"></p>
-<p>当然，在此基础上举一反三，也可以实现减法、乘法和除法等操作：<br><img src="/_posts/2023_10_23_%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0006.png"><br>许多情况下，我们希望进行数组和单个数值的操作（也称作向量和标量之间的操作）。比如：如果数组表示的是以英里为单位的距离，我们的目标是将其转换为公里数。可以简单的写作<code>data \* 1.6</code>：<br><img src="/_posts/2023_10_23_%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0007.png"></p>
+<p><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0004.png"><br>若要计算两个数组的加法，只需简单地敲入data + ones，就可以实现对应位置上的数据相加的操作（即每行数据进行相加），这种操作比循环读取数组的方法代码实现更加简洁。<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0005.png"></p>
+<p>当然，在此基础上举一反三，也可以实现减法、乘法和除法等操作：<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0006.png"><br>许多情况下，我们希望进行数组和单个数值的操作（也称作向量和标量之间的操作）。比如：如果数组表示的是以英里为单位的距离，我们的目标是将其转换为公里数。可以简单的写作<code>data \* 1.6</code>：<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0007.png"></p>
 <p>NumPy通过数组广播（broadcasting）知道这种操作需要和数组的每个元素相乘。</p>
 <h3 id="数组的切片操作"><a href="#数组的切片操作" class="headerlink" title="数组的切片操作"></a>数组的切片操作</h3><p>我们可以像python列表操作那样对NumPy数组进行索引和切片，如下图所示：  </p>
-<p><img src="/_posts/2023_10_23_%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0008.png"></p>
-<h3 id="聚合函数"><a href="#聚合函数" class="headerlink" title="聚合函数"></a>聚合函数</h3><p>NumPy为我们带来的便利还有聚合函数，聚合函数可以将数据进行压缩，统计数组中的一些特征值：<br><img src="/_posts/2023_10_23_%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0009.png"></p>
+<p><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0008.png"></p>
+<h3 id="聚合函数"><a href="#聚合函数" class="headerlink" title="聚合函数"></a>聚合函数</h3><p>NumPy为我们带来的便利还有聚合函数，聚合函数可以将数据进行压缩，统计数组中的一些特征值：<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0009.png"></p>
 <p>除了<code>min</code>，<code>max</code>和<code>sum</code>等函数，还有<code>mean（均值）</code>，<code>prod（数据乘法）</code>计算所有元素的乘积，std（标准差），等等。上面的所有例子都在一个维度上处理向量。除此之外，NumPy之美的一个关键之处是它能够将之前所看到的所有函数应用到任意维度上。</p>
 <h1 id="NumPy中的矩阵操作"><a href="#NumPy中的矩阵操作" class="headerlink" title="NumPy中的矩阵操作"></a>NumPy中的矩阵操作</h1><h3 id="创建矩阵"><a href="#创建矩阵" class="headerlink" title="创建矩阵"></a>创建矩阵</h3><p>我们可以通过将二维列表传给Numpy来创建矩阵。</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">np.array([[<span class="number">1</span>,<span class="number">2</span>],[<span class="number">3</span>,<span class="number">4</span>]])</span><br></pre></td></tr></table></figure>
 
-<p><img src="/_posts/2023_10_23_%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0010.png"><br>除此外，也可以使用上文提到的<code>ones()</code>、<code>zeros()</code>和<code>random.random()</code>来创建矩阵，只需传入一个元组来描述矩阵的维度：  </p>
-<p><img src="/_posts/2023_10_23_%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0011.png"></p>
+<p><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0010.png"><br>除此外，也可以使用上文提到的<code>ones()</code>、<code>zeros()</code>和<code>random.random()</code>来创建矩阵，只需传入一个元组来描述矩阵的维度：  </p>
+<p><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0011.png"></p>
 <h3 id="矩阵的算术运算"><a href="#矩阵的算术运算" class="headerlink" title="矩阵的算术运算"></a>矩阵的算术运算</h3><p>对于大小相同的两个矩阵，我们可以使用算术运算符（<code>+-\*/</code>）将其相加或者相乘。NumPy对这类运算采用对应位置（position-wise）操作处理：  </p>
-<p><img src="/_posts/2023_10_23_%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0012.png"><br>对于不同大小的矩阵，只有两个矩阵的维度同为1时（例如矩阵只有一列或一行），我们才能进行这些算术运算，在这种情况下，NumPy使用广播规则（broadcast）进行操作处理：<br><img src="/_posts/2023_10_23_%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0013.png"><br>与算术运算有很大区别是使用点积的矩阵乘法。NumPy提供了<code>dot()</code>方法，可用于矩阵之间进行点积运算：<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0014.png"></p>
-<p>上图的底部添加了矩阵尺寸，以强调运算的两个矩阵在列和行必须相等。可以将此操作图解为如下所示：<br><img src="/_posts/2023_10_23_%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0015.png"></p>
+<p><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0012.png"><br>对于不同大小的矩阵，只有两个矩阵的维度同为1时（例如矩阵只有一列或一行），我们才能进行这些算术运算，在这种情况下，NumPy使用广播规则（broadcast）进行操作处理：<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0013.png"><br>与算术运算有很大区别是使用点积的矩阵乘法。NumPy提供了<code>dot()</code>方法，可用于矩阵之间进行点积运算：<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0014.png"></p>
+<p>上图的底部添加了矩阵尺寸，以强调运算的两个矩阵在列和行必须相等。可以将此操作图解为如下所示：<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0015.png"></p>
 <h3 id="矩阵的切片和聚合"><a href="#矩阵的切片和聚合" class="headerlink" title="矩阵的切片和聚合"></a>矩阵的切片和聚合</h3><p>索引和切片功能在操作矩阵时变得更加有用。可以在不同维度上使用索引操作来对数据进行切片。  </p>
 <p><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0016.png"></p>
 <p>我们可以像聚合向量一样聚合矩阵：</p>
@@ -11307,16 +11306,19 @@
       </tags>
   </entry>
   <entry>
-    <title>Obsidian使用方案</title>
+    <title>关于Obsidian笔记软件的笔记</title>
     <url>/2024/04/28/16_04_29/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="同步方案"><a href="#同步方案" class="headerlink" title="同步方案"></a>同步方案</h2><blockquote>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
+<p>这篇文章分享关于 obsidian 的使用心得分享，并利用 obsidian 同步 markdown 文件进行 hexo 博客更新。持续更新中……</p>
+</blockquote>
+
+
+<h2 id="同步方案"><a href="#同步方案" class="headerlink" title="同步方案"></a>同步方案</h2><blockquote>
 <p>之前分享过以 macOS 为中心，使用群晖 Drive 和 iCloud 同步群晖和苹果生态中的 obsidian 库（详见 <a href="/2019/05/24/Apple%E5%85%A8%E5%B9%B3%E5%8F%B0%E6%97%A0%E7%BC%9D%E5%90%8C%E6%AD%A5%E7%BE%A4%E6%99%96Obsidian%E5%BA%93/" title="苹果全平台无缝同步群晖Obsidian库">苹果全平台无缝同步群晖Obsidian库</a>），但这个方案有一个致命缺点就是需要一个 Mac 作为中继，同步群晖和 iCloud。无法做到任意设备的实时同步。</p>
 </blockquote>
 <blockquote>
-<p>这篇文章分享一个可以实时同步的方案顺便分享一些不错的 obsidian 第三方插件。</p>
+<p>一个可以实时同步的方案顺便分享一些不错的 obsidian 第三方插件。</p>
 </blockquote>
-
-
 <span id="more"></span>
 
 <h3 id="Remotely-save"><a href="#Remotely-save" class="headerlink" title="Remotely save"></a><a href="https://github.com/remotely-save/remotely-save">Remotely save</a></h3><blockquote>
