@@ -11320,7 +11320,7 @@
 <h3 id="Remotely-save"><a href="#Remotely-save" class="headerlink" title="Remotely save"></a><a href="https://github.com/remotely-save/remotely-save">Remotely save</a></h3><blockquote>
 <p>一个非官方的 Obsidian 插件允许用户在本地设备和云服务之间同步笔记。支持 S 3、Dropbox、OneDrive、webdav。</p>
 </blockquote>
-<p>![[Screenshot 2024-04-28 at 17.16.35.png]]<br>按需求链接，这里以 webdav 为例，输入地址、用户名、密码进行连接。<br>![[Screenshot 2024-04-28 at 17.46.02 1.png]]<br>可以加密同步，我是为了同步到群晖，自动 git push 到 GitHub pages，所以就没有选择加密。<br>![[image-20240428180548964.png]]</p>
+<p>![[..&#x2F;images&#x2F;2024_04_28_16_04_29&#x2F;Screenshot 2024-04-28 at 17.16.35.png]]<br>按需求链接，这里以 webdav 为例，输入地址、用户名、密码进行连接。<br>![[..&#x2F;images&#x2F;2024_04_28_16_04_29&#x2F;Screenshot 2024-04-28 at 17.46.02 1.png]]<br>可以加密同步，我是为了同步到群晖，自动 git push 到 GitHub pages，所以就没有选择加密。<br>![[..&#x2F;images&#x2F;2024_04_28_16_04_29&#x2F;image-20240428180548964.png]]</p>
 <p>还有其他功能设置，可自行按需设置。</p>
 <h2 id="Obsidian-第三方插件"><a href="#Obsidian-第三方插件" class="headerlink" title="Obsidian 第三方插件"></a>Obsidian 第三方插件</h2><ul>
 <li>TBD</li>
