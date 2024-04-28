@@ -11308,4 +11308,30 @@
         <tag>分享</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Obsidian使用方案</title>
+    <url>/2024/04/28/16_04_29/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="同步方案"><a href="#同步方案" class="headerlink" title="同步方案"></a>同步方案</h2><blockquote>
+<p>之前分享过以 macOS 为中心，使用群晖 Drive 和 iCloud 同步群晖和苹果生态中的 obsidian 库（详见 <a href="/2019/05/24/Apple%E5%85%A8%E5%B9%B3%E5%8F%B0%E6%97%A0%E7%BC%9D%E5%90%8C%E6%AD%A5%E7%BE%A4%E6%99%96Obsidian%E5%BA%93/" title="苹果全平台无缝同步群晖Obsidian库">苹果全平台无缝同步群晖Obsidian库</a>），但这个方案有一个致命缺点就是需要一个 Mac 作为中继，同步群晖和 iCloud。无法做到任意设备的实时同步。</p>
+<p>这篇文章分享一个可以实时同步的方案顺便分享一些不错的 obsidian 第三方插件。</p>
+</blockquote>
+<span id="more"></span>
+
+<h3 id="Remotely-save"><a href="#Remotely-save" class="headerlink" title="Remotely save"></a><a href="https://github.com/remotely-save/remotely-save">Remotely save</a></h3><blockquote>
+<p>一个非官方的 Obsidian 插件允许用户在本地设备和云服务之间同步笔记。支持 S 3、Dropbox、OneDrive、webdav。</p>
+</blockquote>
+<p>![[Screenshot 2024-04-28 at 17.16.35.png]]<br>按需求链接，这里以 webdav 为例，输入地址、用户名、密码进行连接。<br>![[Screenshot 2024-04-28 at 17.46.02 1.png]]<br>可以加密同步，我是为了同步到群晖，自动 git push 到 GitHub pages，所以就没有选择加密。<br>![[image-20240428180548964.png]]</p>
+<p>还有其他功能设置，可自行按需设置。</p>
+<h2 id="Obsidian-第三方插件"><a href="#Obsidian-第三方插件" class="headerlink" title="Obsidian 第三方插件"></a>Obsidian 第三方插件</h2><ul>
+<li>TBD</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>笔记</tag>
+        <tag>Obsidian</tag>
+        <tag>插件</tag>
+        <tag>分享</tag>
+        <tag>webdav</tag>
+      </tags>
+  </entry>
 </search>
