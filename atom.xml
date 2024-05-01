@@ -6,7 +6,7 @@
   <link href="https://blog.jeremyang.top/atom.xml" rel="self"/>
   
   <link href="https://blog.jeremyang.top/"/>
-  <updated>2024-05-01T16:37:09.729Z</updated>
+  <updated>2024-05-01T16:42:56.359Z</updated>
   <id>https://blog.jeremyang.top/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://blog.jeremyang.top/2024/04/30/%E4%B8%8D%E8%A6%81%E5%9B%9E%E5%BA%94%E8%B4%9F%E8%83%BD%E9%87%8F/"/>
     <id>https://blog.jeremyang.top/2024/04/30/%E4%B8%8D%E8%A6%81%E5%9B%9E%E5%BA%94%E8%B4%9F%E8%83%BD%E9%87%8F/</id>
     <published>2024-04-30T14:48:00.000Z</published>
-    <updated>2024-05-01T16:37:09.729Z</updated>
+    <updated>2024-05-01T16:42:56.359Z</updated>
     
     
     <summary type="html">&lt;blockquote&gt;
@@ -30,7 +30,9 @@
     
     
     
-    <category term="[[&quot;生活&quot;,&quot;碎碎念&quot;]]" scheme="https://blog.jeremyang.top/categories/%E7%94%9F%E6%B4%BB-%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
+    <category term="生活" scheme="https://blog.jeremyang.top/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    <category term="碎碎念" scheme="https://blog.jeremyang.top/categories/%E7%94%9F%E6%B4%BB/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
     
     
     <category term="随笔" scheme="https://blog.jeremyang.top/tags/%E9%9A%8F%E7%AC%94/"/>
