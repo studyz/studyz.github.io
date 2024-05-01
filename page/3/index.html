@@ -154,6 +154,68 @@
     
     
     <article
+  id="post-机器学习笔记"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2023/05/04/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
+    >机器学习笔记</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2023/05/04/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="article-date">
+  <time datetime="2023-05-04T10:34:40.000Z" itemprop="datePublished">2023-05-04</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a> / <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">数据分析</a> / <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a>
+  </div>
+   
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="k-近邻算法-KNN"><a href="#k-近邻算法-KNN" class="headerlink" title="k-近邻算法(KNN)"></a><a target="_blank" rel="noopener" href="https://alv1.apachecn.org/#/docs/ml/2">k-近邻算法(KNN)</a></h1><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>KNN是一种基本的 #分类 和 #回归 方法。给一个训练数据集，对新的输入实例，在训练数据集中找到与之最接近（直线距离，欧式距离）的K个实例，这k个实例的多数分类，就是这个输入实例的分类。</p>
+<p>k值的取数决定KNN算法的准确性，太小会使模型变得复杂和过拟合，太大会使得模型变得简单。K值不宜过大过小，需要调试参数获取最好的结果。</p>
+<p>为避免：</p>
+<ol>
+<li>避免某些特征因数值范围过大，对模型产生过大的影响。比如身高在几百英寸，体重在几十公斤，如果不归一化，模型会倾向于选择影响更大的特征。</li>
+<li>避免某些特征因数值过小产生的数值精度问题。<br>需要进行 #特征归一化 处理，对特征的值进行放缩，使之落在一个特定的范围内，常见的范围是0到1之间或者-1到1之间。 
+      <a class="article-more-link" href="/2023/05/04/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
+        >阅读更多...</a
+      >
+       
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="tag">机器学习</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+   
+  
+</article>
+
+    
+    <article
   id="post-数据分析师常用的Prompt技巧"
   class="article article-type-post"
   itemscope
@@ -743,102 +805,6 @@
 <p>下面是一个示例，假设我们有一个名为”orders”的表，其中包含了订单信息：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT product_id, COUNT(*) as total_orders</span><br><span class="line">FROM orders</span><br><span class="line">GROUP BY product_id;</span><br></pre></td></tr></table></figure> 
       <a class="article-more-link" href="/2023/03/04/GroupBy/"
-        >阅读更多...</a
-      >
-       
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SQL/" rel="tag">SQL</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a></li></ul>
-
-    </footer>
-  </div>
-
-   
-   
-  
-</article>
-
-    
-    <article
-  id="post-SQL窗口函数_LEAD_LAG详解"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2023/03/04/SQL%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0_LEAD_LAG%E8%AF%A6%E8%A7%A3/"
-    >SQL窗口函数_LEAD_LAG详解</a> 
-</h2>
- 
-
-      
-    </header>
-     
-    <div class="article-meta">
-      <a href="/2023/03/04/SQL%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0_LEAD_LAG%E8%AF%A6%E8%A7%A3/" class="article-date">
-  <time datetime="2023-03-04T12:41:28.000Z" itemprop="datePublished">2023-03-04</time>
-</a> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a> / <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">数据分析</a> / <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/SQL/">SQL</a>
-  </div>
-   
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <p>当涉及到SQL窗口函数时，LEAD()和LAG()是两个非常有用的函数。它们允许我们在查询中访问当前行之前或之后的行的值。</p>
-<p>LEAD()函数返回当前行之后的指定行数的值，而LAG()函数返回当前行之前的指定行数的值。这两个函数在许多情况下都很有用，例如在分析时间序列数据或计算相邻行之间的差异时。</p>
-<p>让我们以一个简单的示例来说明LEAD()和LAG()函数的用法。假设我们有一个名为sales的表，其中包含了销售数据：</p>
-<p>sales表：</p>
-<table>
-<thead>
-<tr>
-<th>sale_id</th>
-<th>sale_date</th>
-<th>sale_amount</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td>2021-01-01</td>
-<td>1000</td>
-</tr>
-<tr>
-<td>2</td>
-<td>2021-01-02</td>
-<td>1500</td>
-</tr>
-<tr>
-<td>3</td>
-<td>2021-01-03</td>
-<td>2000</td>
-</tr>
-<tr>
-<td>4</td>
-<td>2021-01-04</td>
-<td>1200</td>
-</tr>
-<tr>
-<td>5</td>
-<td>2021-01-05</td>
-<td>1800</td>
-</tr>
-</tbody></table>
-<p>如果我们想要计算每天的销售额与前一天销售额的差异，我们可以使用LAG()函数：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">  sale_date,</span><br><span class="line">  sale_amount,</span><br><span class="line">  <span class="built_in">LAG</span>(sale_amount) <span class="keyword">OVER</span> (<span class="keyword">ORDER</span> <span class="keyword">BY</span> sale_date) <span class="keyword">AS</span> previous_day_sale_amount,</span><br><span class="line">  sale_amount <span class="operator">-</span> <span class="built_in">LAG</span>(sale_amount) <span class="keyword">OVER</span> (<span class="keyword">ORDER</span> <span class="keyword">BY</span> sale_date) <span class="keyword">AS</span> difference</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">  sales;</span><br></pre></td></tr></table></figure> 
-      <a class="article-more-link" href="/2023/03/04/SQL%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0_LEAD_LAG%E8%AF%A6%E8%A7%A3/"
         >阅读更多...</a
       >
        
