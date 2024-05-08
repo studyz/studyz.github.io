@@ -379,6 +379,25 @@
       </tags>
   </entry>
   <entry>
+    <title>在hexo博客中插入思维导图</title>
+    <url>/2019/05/24/%E5%9C%A8hexo%E5%8D%9A%E5%AE%A2%E4%B8%AD%E6%8F%92%E5%85%A5%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="https://github.com/maxchang3/hexo-markmap">hexo-markmap</a></p>
+<p><strong>使用示例</strong></p>
+<span id="more"></span>
+
+<figure class="highlight clean"><table><tr><td class="code"><pre><span class="line">&#123;% markmap <span class="number">400</span>px %&#125;</span><br><span class="line">  </span><br><span class="line"># Blog内容同步与自动更新流程  </span><br><span class="line">  </span><br><span class="line">## macOS  </span><br><span class="line">### 群晖Drive  </span><br><span class="line">- 同步Hexo的post目录到iCloud  </span><br><span class="line">  </span><br><span class="line">## iCloud  </span><br><span class="line">- 同步Hexo的post目录  </span><br><span class="line">- 跨苹果设备同步  </span><br><span class="line">  </span><br><span class="line">## 苹果设备  </span><br><span class="line">### 任意设备  </span><br><span class="line">- 撰写blog  </span><br><span class="line">- 通过iCloud同步到macOS  </span><br><span class="line">  </span><br><span class="line">## macOS（继续）  </span><br><span class="line">### 群晖Drive（继续）  </span><br><span class="line">- 将新blog内容同步至群晖  </span><br><span class="line">  </span><br><span class="line">## 群晖  </span><br><span class="line">- 将内容自动布置到GitHub  </span><br><span class="line">  </span><br><span class="line">## GitHub  </span><br><span class="line">- 自动更新blog网站</span><br><span class="line">&#123;% endmarkmap %&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>技术</category>
+        <category>博客</category>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>markdown</tag>
+        <tag>hexo</tag>
+        <tag>插件</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>为部署在Github上的Hexo博客配置域名</title>
     <url>/2019/05/25/%E4%B8%BA%E9%83%A8%E7%BD%B2%E5%9C%A8Github%E4%B8%8A%E7%9A%84Hexo%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE%E5%9F%9F%E5%90%8D/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="一、Hexo项目部署到Github"><a href="#一、Hexo项目部署到Github" class="headerlink" title="一、Hexo项目部署到Github"></a>一、<a href="https://so.csdn.net/so/search?q=Hexo&spm=1001.2101.3001.7020">Hexo</a>项目部署到Github</h4><p>首先要确保你的hexo项目已经部署到github上，如果不知道hexo项目如何部署到github上，请看另一篇文章↓</p>
@@ -417,6 +436,178 @@
         <tag>markdown</tag>
         <tag>hexo</tag>
         <tag>插件</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>鸡尾酒配方</title>
+    <url>/2020/05/04/%E9%B8%A1%E5%B0%BE%E9%85%92%E9%85%8D%E6%96%B9/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="茶酒"><a href="#茶酒" class="headerlink" title="茶酒"></a>茶酒</h2><ul>
+<li>茶：120ml</li>
+<li>酒：45ml</li>
+<li>糖浆：10ml</li>
+<li>柠檬：5ml</li>
+</ul>
+<h2 id="B52轰炸机"><a href="#B52轰炸机" class="headerlink" title="B52轰炸机"></a>B52轰炸机</h2><ul>
+<li>1&#x2F;3咖啡力娇酒</li>
+<li>1&#x2F;3百利甜</li>
+<li>1&#x2F;3君度<span id="more"></span></li>
+</ul>
+<h2 id="长岛冰茶"><a href="#长岛冰茶" class="headerlink" title="长岛冰茶"></a>长岛冰茶</h2><ul>
+<li>饮具：玻璃杯加冰</li>
+<li>黄柠汁：5ml</li>
+<li>伏特加：15ml</li>
+<li>龙舌兰：15ml</li>
+<li>金酒：15ml</li>
+<li>白朗姆：15ml</li>
+<li>可乐：填满</li>
+<li>装饰</li>
+</ul>
+<h2 id="自由古巴"><a href="#自由古巴" class="headerlink" title="自由古巴"></a>自由古巴</h2><ul>
+<li>绿柠：5ml</li>
+<li>白朗姆：45ml</li>
+<li>可乐：加满</li>
+<li>装饰</li>
+</ul>
+<h2 id="莫吉托"><a href="#莫吉托" class="headerlink" title="莫吉托"></a>莫吉托</h2><ul>
+<li>绿柠块：3块（挤压）</li>
+<li>薄荷：轻挤压</li>
+<li>薄荷糖浆：8ml</li>
+<li>白朗姆：45ml</li>
+<li>冰：满</li>
+<li>苏打水：加到杯子4&#x2F;5</li>
+<li>用勺子伸到杯底做提拉</li>
+<li>装饰：绿柠片，薄荷簇</li>
+</ul>
+<h2 id="教父"><a href="#教父" class="headerlink" title="教父"></a>教父</h2><ul>
+<li>饮具：传统杯 + 方冰</li>
+<li>金宾波本：50ml</li>
+<li>蒂萨诺：10ml</li>
+<li>用勺子搅匀</li>
+</ul>
+<h2 id="蓝色夏威夷"><a href="#蓝色夏威夷" class="headerlink" title="蓝色夏威夷"></a>蓝色夏威夷</h2><ul>
+<li>饮具：玻璃杯 + 冰</li>
+<li>白朗姆：40ml</li>
+<li>蓝橙：20ml</li>
+<li>马利宝：20ml</li>
+<li>菠萝汁：45ml</li>
+<li>雪碧：加满</li>
+<li>装饰</li>
+</ul>
+<h2 id="醉酒的梵高"><a href="#醉酒的梵高" class="headerlink" title="醉酒的梵高"></a>醉酒的梵高</h2><ul>
+<li>龙舌兰：40ml</li>
+<li>菠萝汁：45ml</li>
+<li>雪碧：加满</li>
+<li>蓝橙力娇：最后加入，不搅动</li>
+</ul>
+<h2 id="心橙大海"><a href="#心橙大海" class="headerlink" title="心橙大海"></a>心橙大海</h2><ul>
+<li>饮具：玻璃杯 + 冰</li>
+<li>伏特加：45ml</li>
+<li>橙汁：装满</li>
+</ul>
+<h2 id="金汤力"><a href="#金汤力" class="headerlink" title="金汤力"></a>金汤力</h2><ul>
+<li>饮具：玻璃杯 + 冰</li>
+<li>金酒：45ml</li>
+<li>汤力水：加满</li>
+<li>装饰</li>
+</ul>
+<h2 id="日出"><a href="#日出" class="headerlink" title="日出"></a>日出</h2><ul>
+<li>饮具：玻璃杯 + 冰</li>
+<li>龙舌兰：45ml</li>
+<li>橙汁：加满</li>
+<li>红色糖浆：适量调整着色区域</li>
+</ul>
+<h2 id="蓝色玛格丽特"><a href="#蓝色玛格丽特" class="headerlink" title="蓝色玛格丽特"></a>蓝色玛格丽特</h2><ul>
+<li>饮具：玻璃杯 + 盐边</li>
+<li>龙舌兰：30ml</li>
+<li>蓝橙力娇酒：15ml</li>
+<li>蔗糖：5ml</li>
+<li>黄柠檬：点缀</li>
+</ul>
+<h2 id="白色玛格丽特"><a href="#白色玛格丽特" class="headerlink" title="白色玛格丽特"></a>白色玛格丽特</h2><ul>
+<li>龙舌兰：30ml</li>
+<li>君度：15ml</li>
+<li>柠檬汁：几滴</li>
+<li>蔗糖：5ml</li>
+<li>加冰块摇匀</li>
+</ul>
+<h2 id="威士忌酸"><a href="#威士忌酸" class="headerlink" title="威士忌酸"></a>威士忌酸</h2><ul>
+<li>波本：45ml</li>
+<li>黄柠檬：半个</li>
+<li>蔗糖：10ml</li>
+<li>加冰块摇匀</li>
+</ul>
+<h2 id="前任"><a href="#前任" class="headerlink" title="前任"></a>前任</h2><ul>
+<li>饮具：玻璃杯 + 冰</li>
+<li>龙舌兰：45ml</li>
+<li>红柚糖浆：适量</li>
+<li>苏打水：加满</li>
+</ul>
+<h2 id="孟婆汤"><a href="#孟婆汤" class="headerlink" title="孟婆汤"></a>孟婆汤</h2><ul>
+<li>伏特加：30ml</li>
+<li>柠檬汁：15ml</li>
+<li>马力宝：15ml</li>
+<li>莫林绿薄荷糖浆：10ml</li>
+</ul>
+<h2 id="百香果莫吉托（无酒精）"><a href="#百香果莫吉托（无酒精）" class="headerlink" title="百香果莫吉托（无酒精）"></a>百香果莫吉托（无酒精）</h2><ul>
+<li>青柠汁：5ml</li>
+<li>冰：加满</li>
+<li>百香果糖浆：12ml</li>
+<li>薄荷糖浆：12ml</li>
+<li>气泡水：加满</li>
+<li>搅匀装饰</li>
+</ul>
+<h2 id="波斯猫（无酒精）"><a href="#波斯猫（无酒精）" class="headerlink" title="波斯猫（无酒精）"></a>波斯猫（无酒精）</h2><ul>
+<li>橙汁：60ml</li>
+<li>菠萝汁：40ml</li>
+<li>柠檬汁：半个</li>
+<li>红石榴糖浆：2勺</li>
+<li>蔗糖：1勺</li>
+<li>加冰块摇匀</li>
+</ul>
+<h2 id="蓝色多瑙河（无酒精）"><a href="#蓝色多瑙河（无酒精）" class="headerlink" title="蓝色多瑙河（无酒精）"></a>蓝色多瑙河（无酒精）</h2><ul>
+<li>柠檬汁：一点</li>
+<li>蓝柑糖浆：10ml</li>
+<li>蔗糖糖浆：5ml</li>
+<li>苏打水</li>
+</ul>
+<h2 id="柚恋柠檬（无酒精）"><a href="#柚恋柠檬（无酒精）" class="headerlink" title="柚恋柠檬（无酒精）"></a>柚恋柠檬（无酒精）</h2><ul>
+<li>柠檬汁：一点</li>
+<li>红柚糖浆：10ml</li>
+<li>蔗糖糖浆：5ml</li>
+<li>苏打水</li>
+</ul>
+<h2 id="清凉一夏（无酒精）"><a href="#清凉一夏（无酒精）" class="headerlink" title="清凉一夏（无酒精）"></a>清凉一夏（无酒精）</h2><ul>
+<li>饮具：威士忌杯🥃 + 方冰</li>
+<li>新鲜薄荷叶：4-5 片，拍醒</li>
+<li>可乐：加至8分满</li>
+</ul>
+<h2 id="甜蜜蜜"><a href="#甜蜜蜜" class="headerlink" title="甜蜜蜜"></a>甜蜜蜜</h2><p>60 ml 蜜茶<br>40 mlwhisky<br>5 ml 糖浆<br>1&#x2F;4 柠檬</p>
+<h2 id="威士忌可乐-Whisky-Coke"><a href="#威士忌可乐-Whisky-Coke" class="headerlink" title="威士忌可乐 Whisky Coke"></a>威士忌可乐 Whisky Coke</h2><p><span style="font-family:.PingFangSC-Regular;">威士忌</span> 45 ml<br>可乐 Cola Top</p>
+<h2 id="伏特加莱姆"><a href="#伏特加莱姆" class="headerlink" title="伏特加莱姆"></a>伏特加莱姆</h2><ul>
+<li>盐边</li>
+<li>伏特加 60 ml</li>
+<li>柠檬汁 30 ml</li>
+<li>糖水 10 ml</li>
+</ul>
+<h2 id="玛格丽特-Margarita"><a href="#玛格丽特-Margarita" class="headerlink" title="玛格丽特 Margarita"></a>玛格丽特 Margarita</h2><ul>
+<li>龙舌兰 45 ml</li>
+<li>君度橙 cointreau 15 ml</li>
+<li>柠檬汁 15 ml</li>
+<li>加冰摇一摇</li>
+<li>盐边</li>
+</ul>
+<h2 id="螺丝起子-Screwdriver"><a href="#螺丝起子-Screwdriver" class="headerlink" title="螺丝起子 Screwdriver"></a>螺丝起子 Screwdriver</h2><ul>
+<li>伏特加 45 ml</li>
+<li>橙汁</li>
+</ul>
+]]></content>
+      <categories>
+        <category>生活</category>
+        <category>鸡尾酒</category>
+      </categories>
+      <tags>
+        <tag>鸡尾酒</tag>
+        <tag>配方</tag>
       </tags>
   </entry>
   <entry>
@@ -474,22 +665,73 @@
       </tags>
   </entry>
   <entry>
-    <title>在hexo博客中插入思维导图</title>
-    <url>/2019/05/24/%E5%9C%A8hexo%E5%8D%9A%E5%AE%A2%E4%B8%AD%E6%8F%92%E5%85%A5%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="https://github.com/maxchang3/hexo-markmap">hexo-markmap</a></p>
-<p><strong>使用示例</strong></p>
+    <title>澳洲家中日常必备清单</title>
+    <url>/2022/05/19/%E6%BE%B3%E6%B4%B2%E5%AE%B6%E4%B8%AD%E6%97%A5%E5%B8%B8%E5%BF%85%E5%A4%87%E6%B8%85%E5%8D%95/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>1⃣️ CEPACAINE漱口水！ 治疗牙龈肿痛，口腔溃疡。澳洲医生推荐买的，超级有效！猫猫家必备的，再也没有牙口烦恼。 购买地址：Chemist有售 💰价格：$15.49 问题在口腔，吃啥啥不香，买它！喵～</p>
+<hr>
+<p>2⃣️ Quick EZE胃糖 腹胀、胃酸、胃痛。消化不良、吃颗糖就能缓解～ 主要是这糖咋还那么好吃！ 购买地址：Chemist 💰价格：$4.99 胃也需要轻轻安抚，买它！喵～</p>
 <span id="more"></span>
-
-<figure class="highlight clean"><table><tr><td class="code"><pre><span class="line">&#123;% markmap <span class="number">400</span>px %&#125;</span><br><span class="line">  </span><br><span class="line"># Blog内容同步与自动更新流程  </span><br><span class="line">  </span><br><span class="line">## macOS  </span><br><span class="line">### 群晖Drive  </span><br><span class="line">- 同步Hexo的post目录到iCloud  </span><br><span class="line">  </span><br><span class="line">## iCloud  </span><br><span class="line">- 同步Hexo的post目录  </span><br><span class="line">- 跨苹果设备同步  </span><br><span class="line">  </span><br><span class="line">## 苹果设备  </span><br><span class="line">### 任意设备  </span><br><span class="line">- 撰写blog  </span><br><span class="line">- 通过iCloud同步到macOS  </span><br><span class="line">  </span><br><span class="line">## macOS（继续）  </span><br><span class="line">### 群晖Drive（继续）  </span><br><span class="line">- 将新blog内容同步至群晖  </span><br><span class="line">  </span><br><span class="line">## 群晖  </span><br><span class="line">- 将内容自动布置到GitHub  </span><br><span class="line">  </span><br><span class="line">## GitHub  </span><br><span class="line">- 自动更新blog网站</span><br><span class="line">&#123;% endmarkmap %&#125;</span><br></pre></td></tr></table></figure>]]></content>
+<hr>
+<p>3⃣️ VICKS 通鼻喷剂 在澳洲总感觉鼻子不适，鼻炎老犯，尤其总是鼻塞。这个通鼻喷剂起效快，薄荷味柔和不刺激。 购买地址：Chemist 💰价格$11.99 杜绝张口呼吸，买它！喵～</p>
+<hr>
+<p>4⃣️ Refresh眼药水 在家学习、工作、打游戏、熬夜，眼睛干涩的话最使用用人工泪液成分的眼药水。无刺激，缓解眼睛疲劳，闺蜜们都在用。 购买地址：Chemist 💰价格$13.49 缓解就靠累上加泪。买它，喵～</p>
+<hr>
+<p>5⃣️ LeQure Detox Soap排毒香皂 这款味道超级淡，小众然鹅超棒！主要可以用来控油去杂质。背部长痘痘的宝宝们一定要试试。滋养加排毒，姐妹推荐的，用过也感觉很好。 购买地址：Chemist 💰价格：$5.99 永远不进毒圈，买它，喵～</p>
+<hr>
+<p>6⃣️ Naprogesic止痛片 姨妈期最好的止痛片咯，因为成分对胃损伤小，刺激小。而且止痛的效果起效更快，当地女生首选经期续命药。小蓝片好多朋友都在用。 购买地址：Chemist 💰价格：$7.99 连我姨妈都在用！买它，喵～</p>
+<hr>
+<p>7⃣️ Dettol 洗衣消毒液 家里养宠物的朋友洗衣服都会用这个帮忙杀菌！能灭杀99.9%的细菌。尤其是合租又共用洗衣机的话这个肯定要买！ 购买地址：Coles、 WWS有售 💰价格：$8.99 再也不怕室友用洗衣机洗袜子了，买它！喵～</p>
+<hr>
+<p>8⃣️ Mr muscle通道强力剂！ 水槽，浴室如果都便秘了，那主人可就更难受了。 超强清下水道秘方，家家必备的男人。尤其是掉头发比较多的女生经常会堵掉下水道。用它就可以畅通哦。 购买地址：Coles、WWS有售 💰价格：$13.7 搞定下水道，心情好到爆，买它！喵～</p>
+<hr>
+]]></content>
       <categories>
-        <category>技术</category>
-        <category>博客</category>
-        <category>hexo</category>
+        <category>生活</category>
+        <category>好物推荐</category>
       </categories>
       <tags>
-        <tag>markdown</tag>
-        <tag>hexo</tag>
-        <tag>插件</tag>
+        <tag>推荐</tag>
+        <tag>日常</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>SQL学习笔记</title>
+    <url>/2023/02/27/SQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="/_post/2024_02_28_%E6%8E%92%E5%BA%8F_DENSE_RANK.md">排序_DENSE_RANK</a></p>
+<h2 id="IFNULL"><a href="#IFNULL" class="headerlink" title="IFNULL"></a>IFNULL</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Write your MySQL query statement below</span><br><span class="line"></span><br><span class="line">select e.name, b.bonus</span><br><span class="line"></span><br><span class="line">from Employee e left join Bonus b</span><br><span class="line"></span><br><span class="line">on e.empId = b.empId</span><br><span class="line"></span><br><span class="line">where ifnull(bonus,0)&lt;1000</span><br><span class="line">## ifnul 就把值替换成0）</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+
+
+
+<h2 id="SQL-585"><a href="#SQL-585" class="headerlink" title="SQL 585"></a>SQL 585</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT ROUND(SUM(tiv_2016), 2) AS tiv_2016</span><br><span class="line"></span><br><span class="line">FROM Insurance</span><br><span class="line"></span><br><span class="line">WHERE tiv_2015 IN (</span><br><span class="line"></span><br><span class="line">SELECT tiv_2015</span><br><span class="line"></span><br><span class="line">FROM Insurance</span><br><span class="line"></span><br><span class="line">GROUP BY tiv_2015</span><br><span class="line"></span><br><span class="line">HAVING COUNT(*) &gt; 1</span><br><span class="line"></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">AND (lat, lon) NOT IN (</span><br><span class="line"></span><br><span class="line">SELECT lat, lon</span><br><span class="line"></span><br><span class="line">FROM Insurance</span><br><span class="line"></span><br><span class="line">GROUP BY lat, lon</span><br><span class="line"></span><br><span class="line">HAVING COUNT(*) &gt; 1</span><br><span class="line"></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="SQL-610"><a href="#SQL-610" class="headerlink" title="SQL 610"></a>SQL 610</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Write your MySQL query statement below</span><br><span class="line">select </span><br><span class="line">    *,</span><br><span class="line">    if(x+y&gt;z and x+z&gt;y and y+z&gt;x,&#x27;Yes&#x27;,&#x27;No&#x27;) as triangle</span><br><span class="line">from Triangle</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="SQL1633-ORDER-BY-2-DESC-1"><a href="#SQL1633-ORDER-BY-2-DESC-1" class="headerlink" title="SQL1633 ORDER BY 2 DESC, 1"></a>SQL1633 ORDER BY 2 DESC, 1</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ORDER BY 2 DESC, 1</span><br></pre></td></tr></table></figure>
+
+<p>这一行使用ORDER BY子句对结果进行排序。我们按照第二列（即percentage）的降序进行排序，如果百分比相同，则按照第一列（即contest_id）的升序进行排序。</p>
+<h2 id="SQL1179-CASE-WHEN"><a href="#SQL1179-CASE-WHEN" class="headerlink" title="SQL1179 CASE WHEN"></a>SQL1179 CASE WHEN</h2><p>CASE WHEN语句是SQL中用于根据条件进行条件判断和返回不同结果的表达式。它允许你根据满足特定条件的情况，选择不同的结果进行返回。</p>
+<p>CASE WHEN语句的基本语法如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CASE</span><br><span class="line">   WHEN condition1 THEN result1</span><br><span class="line">   WHEN condition2 THEN result2</span><br><span class="line">   ...</span><br><span class="line">   ELSE resultN</span><br><span class="line">END</span><br></pre></td></tr></table></figure>
+
+<p>首先，你提供一个或多个WHEN子句，每个子句后面跟着一个条件（condition）和一个对应的结果（result）。当满足某个条件时，相应的结果将被返回。ELSE子句是可选的，用于指定当没有任何条件满足时的默认结果。</p>
+<p>让我们通过一个简单的例子来说明CASE WHEN的使用。假设有一个名为”students”的表，其中包含学生的姓名和分数列。如果要将成绩分为优秀、良好和及格三个等级并进行显示，可以使用以下SQL语句：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT name,</span><br><span class="line">       CASE</span><br><span class="line">          WHEN score &gt;= 90 THEN &#x27;优秀&#x27;</span><br><span class="line">          WHEN score &gt;= 80 THEN &#x27;良好&#x27;</span><br><span class="line">          WHEN score &gt;= 60 THEN &#x27;及格&#x27;</span><br><span class="line">          ELSE &#x27;不及格&#x27;</span><br><span class="line">       END AS grade</span><br><span class="line">FROM students;</span><br></pre></td></tr></table></figure>
+
+<p>在这个例子中，对于每个学生，我们使用CASE WHEN语句根据他们的分数来判断他们的等级。如果分数大于等于90，那么他们被归类为”优秀”；如果分数大于等于80，但小于90，他们被归类为”良好”；如果分数大于等于60，但小于80，他们被归类为”及格”；否则，他们被归类为”不及格”。</p>
+<p>通过使用CASE WHEN语句，我们可以根据不同的条件返回不同的结果，从而实现灵活的数据处理和转换。</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>数据分析</category>
+        <category>SQL</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+        <tag>SQL</tag>
       </tags>
   </entry>
   <entry>
@@ -10898,182 +11140,6 @@
       </tags>
   </entry>
   <entry>
-    <title>鸡尾酒配方</title>
-    <url>/2020/05/04/%E9%B8%A1%E5%B0%BE%E9%85%92%E9%85%8D%E6%96%B9/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="鸡尾酒配方"><a href="#鸡尾酒配方" class="headerlink" title="鸡尾酒配方"></a>鸡尾酒配方</h1><h2 id="茶酒"><a href="#茶酒" class="headerlink" title="茶酒"></a>茶酒</h2><ul>
-<li>茶：120ml</li>
-<li>酒：45ml</li>
-<li>糖浆：10ml</li>
-<li>柠檬：5ml</li>
-</ul>
-<h2 id="B52轰炸机"><a href="#B52轰炸机" class="headerlink" title="B52轰炸机"></a>B52轰炸机</h2><ul>
-<li>1&#x2F;3咖啡力娇酒</li>
-<li>1&#x2F;3百利甜</li>
-<li>1&#x2F;3君度<span id="more"></span></li>
-</ul>
-<h2 id="长岛冰茶"><a href="#长岛冰茶" class="headerlink" title="长岛冰茶"></a>长岛冰茶</h2><ul>
-<li>饮具：玻璃杯加冰</li>
-<li>黄柠汁：5ml</li>
-<li>伏特加：15ml</li>
-<li>龙舌兰：15ml</li>
-<li>金酒：15ml</li>
-<li>白朗姆：15ml</li>
-<li>可乐：填满</li>
-<li>装饰</li>
-</ul>
-<h2 id="自由古巴"><a href="#自由古巴" class="headerlink" title="自由古巴"></a>自由古巴</h2><ul>
-<li>绿柠：5ml</li>
-<li>白朗姆：45ml</li>
-<li>可乐：加满</li>
-<li>装饰</li>
-</ul>
-<h2 id="莫吉托"><a href="#莫吉托" class="headerlink" title="莫吉托"></a>莫吉托</h2><ul>
-<li>绿柠块：3块（挤压）</li>
-<li>薄荷：轻挤压</li>
-<li>薄荷糖浆：8ml</li>
-<li>白朗姆：45ml</li>
-<li>冰：满</li>
-<li>苏打水：加到杯子4&#x2F;5</li>
-<li>用勺子伸到杯底做提拉</li>
-<li>装饰：绿柠片，薄荷簇</li>
-</ul>
-<h2 id="教父"><a href="#教父" class="headerlink" title="教父"></a>教父</h2><ul>
-<li>饮具：传统杯 + 方冰</li>
-<li>金宾波本：50ml</li>
-<li>蒂萨诺：10ml</li>
-<li>用勺子搅匀</li>
-</ul>
-<h2 id="蓝色夏威夷"><a href="#蓝色夏威夷" class="headerlink" title="蓝色夏威夷"></a>蓝色夏威夷</h2><ul>
-<li>饮具：玻璃杯 + 冰</li>
-<li>白朗姆：40ml</li>
-<li>蓝橙：20ml</li>
-<li>马利宝：20ml</li>
-<li>菠萝汁：45ml</li>
-<li>雪碧：加满</li>
-<li>装饰</li>
-</ul>
-<h2 id="醉酒的梵高"><a href="#醉酒的梵高" class="headerlink" title="醉酒的梵高"></a>醉酒的梵高</h2><ul>
-<li>龙舌兰：40ml</li>
-<li>菠萝汁：45ml</li>
-<li>雪碧：加满</li>
-<li>蓝橙力娇：最后加入，不搅动</li>
-</ul>
-<h2 id="心橙大海"><a href="#心橙大海" class="headerlink" title="心橙大海"></a>心橙大海</h2><ul>
-<li>饮具：玻璃杯 + 冰</li>
-<li>伏特加：45ml</li>
-<li>橙汁：装满</li>
-</ul>
-<h2 id="金汤力"><a href="#金汤力" class="headerlink" title="金汤力"></a>金汤力</h2><ul>
-<li>饮具：玻璃杯 + 冰</li>
-<li>金酒：45ml</li>
-<li>汤力水：加满</li>
-<li>装饰</li>
-</ul>
-<h2 id="日出"><a href="#日出" class="headerlink" title="日出"></a>日出</h2><ul>
-<li>饮具：玻璃杯 + 冰</li>
-<li>龙舌兰：45ml</li>
-<li>橙汁：加满</li>
-<li>红色糖浆：适量调整着色区域</li>
-</ul>
-<h2 id="蓝色玛格丽特"><a href="#蓝色玛格丽特" class="headerlink" title="蓝色玛格丽特"></a>蓝色玛格丽特</h2><ul>
-<li>饮具：玻璃杯 + 盐边</li>
-<li>龙舌兰：30ml</li>
-<li>蓝橙力娇酒：15ml</li>
-<li>蔗糖：5ml</li>
-<li>黄柠檬：点缀</li>
-</ul>
-<h2 id="白色玛格丽特"><a href="#白色玛格丽特" class="headerlink" title="白色玛格丽特"></a>白色玛格丽特</h2><ul>
-<li>龙舌兰：30ml</li>
-<li>君度：15ml</li>
-<li>柠檬汁：几滴</li>
-<li>蔗糖：5ml</li>
-<li>加冰块摇匀</li>
-</ul>
-<h2 id="威士忌酸"><a href="#威士忌酸" class="headerlink" title="威士忌酸"></a>威士忌酸</h2><ul>
-<li>波本：45ml</li>
-<li>黄柠檬：半个</li>
-<li>蔗糖：10ml</li>
-<li>加冰块摇匀</li>
-</ul>
-<h2 id="前任"><a href="#前任" class="headerlink" title="前任"></a>前任</h2><ul>
-<li>饮具：玻璃杯 + 冰</li>
-<li>龙舌兰：45ml</li>
-<li>红柚糖浆：适量</li>
-<li>苏打水：加满</li>
-</ul>
-<h2 id="孟婆汤"><a href="#孟婆汤" class="headerlink" title="孟婆汤"></a>孟婆汤</h2><ul>
-<li>伏特加：30ml</li>
-<li>柠檬汁：15ml</li>
-<li>马力宝：15ml</li>
-<li>莫林绿薄荷糖浆：10ml</li>
-</ul>
-<h2 id="百香果莫吉托（无酒精）"><a href="#百香果莫吉托（无酒精）" class="headerlink" title="百香果莫吉托（无酒精）"></a>百香果莫吉托（无酒精）</h2><ul>
-<li>青柠汁：5ml</li>
-<li>冰：加满</li>
-<li>百香果糖浆：12ml</li>
-<li>薄荷糖浆：12ml</li>
-<li>气泡水：加满</li>
-<li>搅匀装饰</li>
-</ul>
-<h2 id="波斯猫（无酒精）"><a href="#波斯猫（无酒精）" class="headerlink" title="波斯猫（无酒精）"></a>波斯猫（无酒精）</h2><ul>
-<li>橙汁：60ml</li>
-<li>菠萝汁：40ml</li>
-<li>柠檬汁：半个</li>
-<li>红石榴糖浆：2勺</li>
-<li>蔗糖：1勺</li>
-<li>加冰块摇匀</li>
-</ul>
-<h2 id="蓝色多瑙河（无酒精）"><a href="#蓝色多瑙河（无酒精）" class="headerlink" title="蓝色多瑙河（无酒精）"></a>蓝色多瑙河（无酒精）</h2><ul>
-<li>柠檬汁：一点</li>
-<li>蓝柑糖浆：10ml</li>
-<li>蔗糖糖浆：5ml</li>
-<li>苏打水</li>
-</ul>
-<h2 id="柚恋柠檬（无酒精）"><a href="#柚恋柠檬（无酒精）" class="headerlink" title="柚恋柠檬（无酒精）"></a>柚恋柠檬（无酒精）</h2><ul>
-<li>柠檬汁：一点</li>
-<li>红柚糖浆：10ml</li>
-<li>蔗糖糖浆：5ml</li>
-<li>苏打水</li>
-</ul>
-<h2 id="清凉一夏（无酒精）"><a href="#清凉一夏（无酒精）" class="headerlink" title="清凉一夏（无酒精）"></a>清凉一夏（无酒精）</h2><ul>
-<li>饮具：威士忌杯🥃 + 方冰</li>
-<li>新鲜薄荷叶：4-5 片，拍醒</li>
-<li>可乐：加至8分满</li>
-</ul>
-]]></content>
-      <categories>
-        <category>生活</category>
-        <category>鸡尾酒</category>
-      </categories>
-      <tags>
-        <tag>鸡尾酒</tag>
-        <tag>配方</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>阿里云盘第三方接口将需要额外付费</title>
-    <url>/2024/04/26/%E7%AC%AC%E4%B8%89%E6%96%B9%E9%98%BF%E9%87%8C%E4%BA%91%E6%8E%A5%E5%8F%A3%E6%94%B6%E8%B4%B9/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
-<p>网络消息称阿里云盘将于五月下旬推出 “三方应用权益包”，购买后可在第三方应用中享受高速下载通道、高清点播清晰度等权益，未购买的用户将无法享受这些权益。</p>
-</blockquote>
-<blockquote>
-<p>本文仅为预告,具体的权益内容和购买流程请以最终上线页面为准。</p>
-</blockquote>
-<span id="more"></span>
-
-<p>不氪金三方权益包，基于阿里云盘的播放方案就都只能看标清了，包括但不限于<strong>Infuse直连阿里云盘</strong>，<strong>alist挂载阿里云</strong>。看来又要回归20年前bt下载的时代了，硬盘价格估计又要应声上涨📈。</p>
-<p><img src="/2024/04/26/%E7%AC%AC%E4%B8%89%E6%96%B9%E9%98%BF%E9%87%8C%E4%BA%91%E6%8E%A5%E5%8F%A3%E6%94%B6%E8%B4%B9/1.webp" alt="image1"><br><img src="/2024/04/26/%E7%AC%AC%E4%B8%89%E6%96%B9%E9%98%BF%E9%87%8C%E4%BA%91%E6%8E%A5%E5%8F%A3%E6%94%B6%E8%B4%B9/2.webp" alt="image2"></p>
-]]></content>
-      <categories>
-        <category>生活</category>
-        <category>碎碎念</category>
-      </categories>
-      <tags>
-        <tag>随笔</tag>
-        <tag>分享</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>中国历代神州火箭信息</title>
     <url>/2024/04/25/%E7%A5%9E%E5%B7%9E%E5%8D%81%E5%85%AB/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>新闻看到神州十八的发射直播，趁机梳理一下常识。</p>
@@ -11238,6 +11304,42 @@
       </tags>
   </entry>
   <entry>
+    <title>阿里云盘第三方接口将需要额外付费</title>
+    <url>/2024/04/26/%E7%AC%AC%E4%B8%89%E6%96%B9%E9%98%BF%E9%87%8C%E4%BA%91%E6%8E%A5%E5%8F%A3%E6%94%B6%E8%B4%B9/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
+<p>网络消息称阿里云盘将于五月下旬推出 “三方应用权益包”，购买后可在第三方应用中享受高速下载通道、高清点播清晰度等权益，未购买的用户将无法享受这些权益。</p>
+</blockquote>
+<blockquote>
+<p>本文仅为预告,具体的权益内容和购买流程请以最终上线页面为准。</p>
+</blockquote>
+<span id="more"></span>
+
+<p>不氪金三方权益包，基于阿里云盘的播放方案就都只能看标清了，包括但不限于<strong>Infuse直连阿里云盘</strong>，<strong>alist挂载阿里云</strong>。看来又要回归20年前bt下载的时代了，硬盘价格估计又要应声上涨📈。</p>
+<p><img src="/2024/04/26/%E7%AC%AC%E4%B8%89%E6%96%B9%E9%98%BF%E9%87%8C%E4%BA%91%E6%8E%A5%E5%8F%A3%E6%94%B6%E8%B4%B9/1.webp" alt="image1"><br><img src="/2024/04/26/%E7%AC%AC%E4%B8%89%E6%96%B9%E9%98%BF%E9%87%8C%E4%BA%91%E6%8E%A5%E5%8F%A3%E6%94%B6%E8%B4%B9/2.webp" alt="image2"></p>
+]]></content>
+      <categories>
+        <category>生活</category>
+        <category>碎碎念</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+        <tag>分享</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>有意思的翻译PROMPT</title>
+    <url>/2024/04/29/%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84%E7%BF%BB%E8%AF%91PROMPT/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><img src="/2024/04/29/%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84%E7%BF%BB%E8%AF%91PROMPT/image-20240428223752145.jpeg"></p>
+<span id="more"></span>
+
+<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">你是一个英语翻译团队的领导. 你会安排团队成员进行如下翻译, 实现翻译的&quot;信达雅&quot;目标:  </span><br><span class="line">  </span><br><span class="line">第一轮翻译<span class="comment">--信,追求直译, 将英文翻译成中文, 力求准确  </span></span><br><span class="line">  </span><br><span class="line">第二轮翻译<span class="comment">--达,在第一轮翻译的基础上, 考虑文化, 语境, 语义, 思考文字背后想要表达的意思, 进行意译, 力求意境契合, 记得分开思考和翻译内容。  </span></span><br><span class="line">  </span><br><span class="line">第三轮翻译<span class="comment">--雅, 基于第二轮翻译理解的语境含义, 进一步思考其中的哲理, 然后使用中国&lt;诗经&gt;的语言风格针对哲理和语义进行翻译, 力求简明, 古意盎然  </span></span><br><span class="line">  </span><br><span class="line">例如:  </span><br><span class="line">- you need you. 哲理部分，可以引申到佛家所说的&quot;莫向外求&quot;, 儒家所说的&quot;反求诸己&quot;, 然后思考使用诗经语言风格进行重新表述.  </span><br><span class="line">  </span><br><span class="line">- <span class="keyword">nothing</span> <span class="keyword">for</span> <span class="keyword">nothing</span>. 哲理部分，可以引申到诗句“世上本无事，庸人自扰之”，也可引申到俗语“尘归尘，土归土”  </span><br><span class="line">  </span><br><span class="line">第四轮翻译<span class="comment">--初审: 完成三轮翻译后， 深吸一口气， 缓一缓， 思考一下第三轮翻译的结果，与其哲理的偏差在哪？ 不要扩展太多，务求精练深刻，精辟是第一要义。 据此思路进行改进。  </span></span><br><span class="line">  </span><br><span class="line">第五轮翻译<span class="comment">--终审: 最终，你将亲自进行审稿， 你会对比原文和最后的翻译结果， 先思考《诗经》的语言表达风格要点，再审阅初审翻译的结果是否满足, 并给出你的审校修改结论。  </span></span><br><span class="line">  </span><br><span class="line">注意: 思考部分,请使用 【思考】 开头，翻译结果请使用【翻译】开头。  </span><br><span class="line">  </span><br><span class="line">请严格遵守以上工作流程， 对以下文字进行翻译：</span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>Prompt</tag>
+        <tag>AI</tag>
+        <tag>翻译</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>什么是PARA</title>
     <url>/2024/04/29/whats_PARA/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>PARA 是一种组织知识的方法，全称为 “Progressive Authentication of Reliable Acumen”，中文可以译为“渐进式验证可靠洞察”。</p>
@@ -11318,7 +11420,7 @@
   </entry>
   <entry>
     <title>不要回应负能量</title>
-    <url>/2024/04/30/%E4%B8%8D%E8%A6%81%E5%9B%9E%E5%BA%94%E8%B4%9F%E8%83%BD%E9%87%8F/</url>
+    <url>/2024/04/30/%E4%B8%8D%E8%A6%81%E5%9B%9E%E5%BA%94%E8%B4%9F%E8%83%BD%E9%87%8F%20copy/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
 <p>今天看到一篇题为<a href="https://mp.weixin.qq.com/s/4kvdpRFxxsLSESVChZgUNA">人生建议，永远不要回应负能量</a>的公众号文章深有感触。<br>人生就是一个持续选择的过程，对于恶意的攻击，负能量的传播，我们都在一次次的做出自己选择，作者提醒我们，我们有权利可以对这种负能量的传播作出拒绝的选择。何权峰《格局》，添加到我的 2024 阅读清单。</p>
 </blockquote>
@@ -11339,86 +11441,69 @@
       </tags>
   </entry>
   <entry>
-    <title>澳洲家中日常必备清单</title>
-    <url>/2022/05/19/%E6%BE%B3%E6%B4%B2%E5%AE%B6%E4%B8%AD%E6%97%A5%E5%B8%B8%E5%BF%85%E5%A4%87%E6%B8%85%E5%8D%95/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>1⃣️ CEPACAINE漱口水！ 治疗牙龈肿痛，口腔溃疡。澳洲医生推荐买的，超级有效！猫猫家必备的，再也没有牙口烦恼。 购买地址：Chemist有售 💰价格：$15.49 问题在口腔，吃啥啥不香，买它！喵～</p>
-<hr>
-<p>2⃣️ Quick EZE胃糖 腹胀、胃酸、胃痛。消化不良、吃颗糖就能缓解～ 主要是这糖咋还那么好吃！ 购买地址：Chemist 💰价格：$4.99 胃也需要轻轻安抚，买它！喵～</p>
+    <title>第二大脑的基石CODE理论</title>
+    <url>/2024/05/08/%E7%AC%AC%E4%BA%8C%E5%A4%A7%E8%84%91%E7%9A%84%E5%9F%BA%E7%9F%B3CODE%E7%90%86%E8%AE%BA/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>从安卓的记事本，锤子便签，Evernote，onenote，GoogleKeep，Simplenote，Bear，GoodNotes，Notability，Apple Notes到近些年热门的Notion，Obsidian，各种各样的笔记类软件都使用过，寻觅某一款功能强大的笔记软件可以承载我对知识的渴望，搭建出一个符合个人需求的知识体系。但知识本来就浩如烟海，在移动互联的如今，知识更是触手可及，信息量史无前例的丰富。感觉看了很多的文章，了解到了非常多有意思的项目，但发现自己只是了解到皮毛，没有合适的学习方法，没有系统性的学习和记录，在无尽的信息面前，感受到的只有无比的空洞与彷徨。</p>
+<p>最近非常幸运的看到一本书，让我意识到，解决这个问题的根源，并不是某一款功能强大的笔记软件，而是一种适用广泛的方法论。</p>
 <span id="more"></span>
-<hr>
-<p>3⃣️ VICKS 通鼻喷剂 在澳洲总感觉鼻子不适，鼻炎老犯，尤其总是鼻塞。这个通鼻喷剂起效快，薄荷味柔和不刺激。 购买地址：Chemist 💰价格$11.99 杜绝张口呼吸，买它！喵～</p>
-<hr>
-<p>4⃣️ Refresh眼药水 在家学习、工作、打游戏、熬夜，眼睛干涩的话最使用用人工泪液成分的眼药水。无刺激，缓解眼睛疲劳，闺蜜们都在用。 购买地址：Chemist 💰价格$13.49 缓解就靠累上加泪。买它，喵～</p>
-<hr>
-<p>5⃣️ LeQure Detox Soap排毒香皂 这款味道超级淡，小众然鹅超棒！主要可以用来控油去杂质。背部长痘痘的宝宝们一定要试试。滋养加排毒，姐妹推荐的，用过也感觉很好。 购买地址：Chemist 💰价格：$5.99 永远不进毒圈，买它，喵～</p>
-<hr>
-<p>6⃣️ Naprogesic止痛片 姨妈期最好的止痛片咯，因为成分对胃损伤小，刺激小。而且止痛的效果起效更快，当地女生首选经期续命药。小蓝片好多朋友都在用。 购买地址：Chemist 💰价格：$7.99 连我姨妈都在用！买它，喵～</p>
-<hr>
-<p>7⃣️ Dettol 洗衣消毒液 家里养宠物的朋友洗衣服都会用这个帮忙杀菌！能灭杀99.9%的细菌。尤其是合租又共用洗衣机的话这个肯定要买！ 购买地址：Coles、 WWS有售 💰价格：$8.99 再也不怕室友用洗衣机洗袜子了，买它！喵～</p>
-<hr>
-<p>8⃣️ Mr muscle通道强力剂！ 水槽，浴室如果都便秘了，那主人可就更难受了。 超强清下水道秘方，家家必备的男人。尤其是掉头发比较多的女生经常会堵掉下水道。用它就可以畅通哦。 购买地址：Coles、WWS有售 💰价格：$13.7 搞定下水道，心情好到爆，买它！喵～</p>
-<hr>
+
+<p>《打造第二大脑》，作者Tiago Forte在书中提出的 “CODE”知识管理的理论方法似乎解答了这个让我深深忧虑的问题。<br><img src="/2024/05/08/%E7%AC%AC%E4%BA%8C%E5%A4%A7%E8%84%91%E7%9A%84%E5%9F%BA%E7%9F%B3CODE%E7%90%86%E8%AE%BA/bookCover.png"><br>“CODE法则”包含四个步骤：</p>
+<ul>
+<li>C for Capture - 收集：把引发共鸣的信息收集起来</li>
+<li>O for Organize- 整理：对收集的这些信息进行整理</li>
+<li>D for Distill - 提炼：提炼这些内容的精髓，筛选最有用的信息</li>
+<li>E for Express - 表达：和他人分享，在实践中去应用你的知识</li>
+</ul>
+<p>CODE法则具有广泛的适用性，不受信息复杂性的限制。无论你是校园中求知的学子，还是职场中追求卓越的专业人士，这套理论都能成为你高效管理知识的得力工具。在生活的不同阶段，面对多变的环境挑战，CODE理论能够帮助你系统地整合知识，让你所学得到最大化的应用。</p>
+<h2 id="C-for-Capture-收集"><a href="#C-for-Capture-收集" class="headerlink" title="C for Capture - 收集"></a>C for Capture - 收集</h2><p>在信息丰富的数字时代，我们常常会遇到激发我们兴趣或我们认为将来可能派上用场的信息和知识。我们的本能反应是将这些信息保存下来，这正对应了CODE法则中的“C”——捕捉(Capture)。捕捉信息几乎是一项无师自通的基本技能，无论是通过书签、截图、下载还是其他任何数字化的手段，我们都能轻松地将信息保存下来，以便日后参考。</p>
+<p>不知道大家是否和我一样，在不同的平台收藏各种各样的数字内容，文字、图片、视频还有语音，但常常收藏后就再也没有会看过，有时等我在收藏夹中发现是，这条信息甚至已经过期无法访问了。</p>
+<p>作者<code>Tiago Forte</code>给出的解决方案是：<strong>Keep What Resonates：只收集那些能让你产生共鸣的内容</strong> </p>
+<h2 id="O-for-Organize-整理"><a href="#O-for-Organize-整理" class="headerlink" title="O for Organize- 整理"></a>O for Organize- 整理</h2><p>面对众多平台上积累的丰富信息，每隔一段时间，我都会尝试将它们整理到我的笔记中，消解内化成我自己的知识。</p>
+<p>但面对复杂的，彼此相关度很低的信息，我总会感觉到巨大的整理压力。一个项目的素材，我可能会在其他领域复用，一个视频的内容它可能关联多个主题。每一条信息的整理，我都在纠结整理的方法和依据，以便今后可以快速的查询和使用。虽然数字化平台已经提供了快速检索的能力，但我总是在无法快速直接的找到我想要的信息。</p>
+<p>不知道多少人和我一样使用按主题分类，一种我们从学校保留下来的分类习惯。语文或者某个专业课的书本材料放在一起，上课我只需要拿上归类好的材料就可以。不同科目的材料基本不会有关联，不用担心材料&#x2F;信息在不同科目之间的复用。书本和知识都是按学期存放，一旦学期结束，考完试，之前的书本材料很少会重新用到。</p>
+<p>但主题这种分类方法显然不再适用于面对无限可能的人生。我并不知道这个收藏并感兴趣的信息的“考试”在什么时候，它可能在我收集后的第二天就会被用到，有可能在未来几年才会在我的某个项目中体现，又或者它可能完全不会被用到。</p>
+<p>作者<code>Tiago Forte</code>给出的解决方案是：</p>
+<p><strong>PARA分类系统</strong></p>
+<p>PARA系统指的是Projects&#x2F;项目 、Areas&#x2F;领域、Resources&#x2F;资源、Archives&#x2F;归档。</p>
+<p>聚焦于信息的用途和目的，根据实用性来获取及储存信息。</p>
+<ul>
+<li><strong>Projects &#x2F; 项目</strong>：当下正在进行中的任务，需要有明确的结果且有时间限制，比如一个视频，网页，方案，短期想达到的语言目标等；</li>
+<li><strong>Areas &#x2F; 领域</strong>：想要精通的领域，是你长期想要持续学习和精进的方向。比如摄影、Coding或者健身；</li>
+<li><strong>Resources &#x2F; 资源：</strong> 未来可参考的事物，收集那些用得上的资源，感兴趣的知识，业余的爱好等。</li>
+<li><strong>Archives &#x2F; 归档：</strong> 来自其他三类的归档。已完成的项目，不再感兴趣的领域，不再相关的资源等，可以都先放在这里，需要时可以重新启用。</li>
+</ul>
+<p>用这样的分类方式可以来分类任何来源、格式和用途的信息， 不再局限于时间的维度，是一个动态的管理信息的系统。</p>
+<h2 id="D-for-Distill-提炼"><a href="#D-for-Distill-提炼" class="headerlink" title="D for Distill - 提炼"></a>D for Distill - 提炼</h2><p>作者<code>Tiago Forte</code>提出使用<strong>渐进式总结法-The Progressive Summarization Technique</strong>对内容进行多次提炼，<strong>提炼信息的本质-Distill your notes down to their essence</strong>。</p>
+<p><strong>渐进式总结法-The Progressive Summarization Technique</strong></p>
+<blockquote>
+<ol>
+<li>摘录笔记-Capture notes </li>
+<li>加粗段落-Bolded passages</li>
+<li>高亮段落-Highlighted passages</li>
+<li>总结-Excutive summary</li>
+</ol>
+</blockquote>
+<p>渐进式总结法的目的是为提炼关键信息，提炼信息的本质，方便未来的自己可以快速查询和使用笔记。</p>
+<h2 id="E-for-Express-表达"><a href="#E-for-Express-表达" class="headerlink" title="E for Express - 表达"></a>E for Express - 表达</h2><blockquote>
+<p>”We only know what we make” - Giambattista Vico, Italian philosopher</p>
+</blockquote>
+<p>关于如何分享，作者<code>Tiago Forte</code>也给出了自己的宗旨：<br><code>尽早并频繁的分享自己的一些小想法，从而测试可行性并从他人获取反馈，而不是等到你完美的掌握了一切信息再去分享。</code></p>
+<p>通过将工作进行拆分，从以前的项目中重用这些模块，从而提高工作的效率和质量。</p>
+<p><strong>表达的三个阶段</strong></p>
+<ol>
+<li>**记忆 (Remembering)**：这一阶段，人们主要使用第二大脑作为记忆工具，将重要的事实和想法保存起来，以备将来需要时查阅。</li>
+<li>**连接 (Connecting)**：随着对第二大脑的使用逐渐熟悉，人们开始利用它来连接想法。可能会从过去项目中未被采用的材料或想法中发现新的关联，或者在不同的项目、领域和资源之间发现联系。</li>
+<li>**创造 (Creating)**：最后，人们开始利用第二大脑来完成项目和实现目标。他们发现自己的知识库中有足够的信息来开始新项目，从而减轻了需要从头开始研究的压力。</li>
+</ol>
+<p>创造性工作的本质在于对现有元素的重新组合和融合。第二大脑为我们提供了一个平台，使我们能够充分利用他人的作品，在创作时引用和融合已有的观点和思想，以提高工作效率和创造性工作的质量。</p>
 ]]></content>
       <categories>
         <category>生活</category>
-        <category>好物推荐</category>
+        <category>碎碎念</category>
       </categories>
       <tags>
-        <tag>推荐</tag>
-        <tag>日常</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>SQL学习笔记</title>
-    <url>/2023/02/27/SQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="/_post/2024_02_28_%E6%8E%92%E5%BA%8F_DENSE_RANK.md">排序_DENSE_RANK</a></p>
-<h2 id="IFNULL"><a href="#IFNULL" class="headerlink" title="IFNULL"></a>IFNULL</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Write your MySQL query statement below</span><br><span class="line"></span><br><span class="line">select e.name, b.bonus</span><br><span class="line"></span><br><span class="line">from Employee e left join Bonus b</span><br><span class="line"></span><br><span class="line">on e.empId = b.empId</span><br><span class="line"></span><br><span class="line">where ifnull(bonus,0)&lt;1000</span><br><span class="line">## ifnul 就把值替换成0）</span><br></pre></td></tr></table></figure>
-<span id="more"></span>
-
-
-
-<h2 id="SQL-585"><a href="#SQL-585" class="headerlink" title="SQL 585"></a>SQL 585</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT ROUND(SUM(tiv_2016), 2) AS tiv_2016</span><br><span class="line"></span><br><span class="line">FROM Insurance</span><br><span class="line"></span><br><span class="line">WHERE tiv_2015 IN (</span><br><span class="line"></span><br><span class="line">SELECT tiv_2015</span><br><span class="line"></span><br><span class="line">FROM Insurance</span><br><span class="line"></span><br><span class="line">GROUP BY tiv_2015</span><br><span class="line"></span><br><span class="line">HAVING COUNT(*) &gt; 1</span><br><span class="line"></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">AND (lat, lon) NOT IN (</span><br><span class="line"></span><br><span class="line">SELECT lat, lon</span><br><span class="line"></span><br><span class="line">FROM Insurance</span><br><span class="line"></span><br><span class="line">GROUP BY lat, lon</span><br><span class="line"></span><br><span class="line">HAVING COUNT(*) &gt; 1</span><br><span class="line"></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-
-
-<h2 id="SQL-610"><a href="#SQL-610" class="headerlink" title="SQL 610"></a>SQL 610</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Write your MySQL query statement below</span><br><span class="line">select </span><br><span class="line">    *,</span><br><span class="line">    if(x+y&gt;z and x+z&gt;y and y+z&gt;x,&#x27;Yes&#x27;,&#x27;No&#x27;) as triangle</span><br><span class="line">from Triangle</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="SQL1633-ORDER-BY-2-DESC-1"><a href="#SQL1633-ORDER-BY-2-DESC-1" class="headerlink" title="SQL1633 ORDER BY 2 DESC, 1"></a>SQL1633 ORDER BY 2 DESC, 1</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ORDER BY 2 DESC, 1</span><br></pre></td></tr></table></figure>
-
-<p>这一行使用ORDER BY子句对结果进行排序。我们按照第二列（即percentage）的降序进行排序，如果百分比相同，则按照第一列（即contest_id）的升序进行排序。</p>
-<h2 id="SQL1179-CASE-WHEN"><a href="#SQL1179-CASE-WHEN" class="headerlink" title="SQL1179 CASE WHEN"></a>SQL1179 CASE WHEN</h2><p>CASE WHEN语句是SQL中用于根据条件进行条件判断和返回不同结果的表达式。它允许你根据满足特定条件的情况，选择不同的结果进行返回。</p>
-<p>CASE WHEN语句的基本语法如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CASE</span><br><span class="line">   WHEN condition1 THEN result1</span><br><span class="line">   WHEN condition2 THEN result2</span><br><span class="line">   ...</span><br><span class="line">   ELSE resultN</span><br><span class="line">END</span><br></pre></td></tr></table></figure>
-
-<p>首先，你提供一个或多个WHEN子句，每个子句后面跟着一个条件（condition）和一个对应的结果（result）。当满足某个条件时，相应的结果将被返回。ELSE子句是可选的，用于指定当没有任何条件满足时的默认结果。</p>
-<p>让我们通过一个简单的例子来说明CASE WHEN的使用。假设有一个名为”students”的表，其中包含学生的姓名和分数列。如果要将成绩分为优秀、良好和及格三个等级并进行显示，可以使用以下SQL语句：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT name,</span><br><span class="line">       CASE</span><br><span class="line">          WHEN score &gt;= 90 THEN &#x27;优秀&#x27;</span><br><span class="line">          WHEN score &gt;= 80 THEN &#x27;良好&#x27;</span><br><span class="line">          WHEN score &gt;= 60 THEN &#x27;及格&#x27;</span><br><span class="line">          ELSE &#x27;不及格&#x27;</span><br><span class="line">       END AS grade</span><br><span class="line">FROM students;</span><br></pre></td></tr></table></figure>
-
-<p>在这个例子中，对于每个学生，我们使用CASE WHEN语句根据他们的分数来判断他们的等级。如果分数大于等于90，那么他们被归类为”优秀”；如果分数大于等于80，但小于90，他们被归类为”良好”；如果分数大于等于60，但小于80，他们被归类为”及格”；否则，他们被归类为”不及格”。</p>
-<p>通过使用CASE WHEN语句，我们可以根据不同的条件返回不同的结果，从而实现灵活的数据处理和转换。</p>
-]]></content>
-      <categories>
-        <category>技术</category>
-        <category>数据分析</category>
-        <category>SQL</category>
-      </categories>
-      <tags>
-        <tag>笔记</tag>
-        <tag>SQL</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>有意思的翻译PROMPT</title>
-    <url>/2024/04/29/%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84%E7%BF%BB%E8%AF%91PROMPT/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><img src="/2024/04/29/%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84%E7%BF%BB%E8%AF%91PROMPT/image-20240428223752145.jpeg"></p>
-<span id="more"></span>
-
-<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">你是一个英语翻译团队的领导. 你会安排团队成员进行如下翻译, 实现翻译的&quot;信达雅&quot;目标:  </span><br><span class="line">  </span><br><span class="line">第一轮翻译<span class="comment">--信,追求直译, 将英文翻译成中文, 力求准确  </span></span><br><span class="line">  </span><br><span class="line">第二轮翻译<span class="comment">--达,在第一轮翻译的基础上, 考虑文化, 语境, 语义, 思考文字背后想要表达的意思, 进行意译, 力求意境契合, 记得分开思考和翻译内容。  </span></span><br><span class="line">  </span><br><span class="line">第三轮翻译<span class="comment">--雅, 基于第二轮翻译理解的语境含义, 进一步思考其中的哲理, 然后使用中国&lt;诗经&gt;的语言风格针对哲理和语义进行翻译, 力求简明, 古意盎然  </span></span><br><span class="line">  </span><br><span class="line">例如:  </span><br><span class="line">- you need you. 哲理部分，可以引申到佛家所说的&quot;莫向外求&quot;, 儒家所说的&quot;反求诸己&quot;, 然后思考使用诗经语言风格进行重新表述.  </span><br><span class="line">  </span><br><span class="line">- <span class="keyword">nothing</span> <span class="keyword">for</span> <span class="keyword">nothing</span>. 哲理部分，可以引申到诗句“世上本无事，庸人自扰之”，也可引申到俗语“尘归尘，土归土”  </span><br><span class="line">  </span><br><span class="line">第四轮翻译<span class="comment">--初审: 完成三轮翻译后， 深吸一口气， 缓一缓， 思考一下第三轮翻译的结果，与其哲理的偏差在哪？ 不要扩展太多，务求精练深刻，精辟是第一要义。 据此思路进行改进。  </span></span><br><span class="line">  </span><br><span class="line">第五轮翻译<span class="comment">--终审: 最终，你将亲自进行审稿， 你会对比原文和最后的翻译结果， 先思考《诗经》的语言表达风格要点，再审阅初审翻译的结果是否满足, 并给出你的审校修改结论。  </span></span><br><span class="line">  </span><br><span class="line">注意: 思考部分,请使用 【思考】 开头，翻译结果请使用【翻译】开头。  </span><br><span class="line">  </span><br><span class="line">请严格遵守以上工作流程， 对以下文字进行翻译：</span><br></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>Prompt</tag>
-        <tag>AI</tag>
-        <tag>翻译</tag>
+        <tag>随笔</tag>
+        <tag>分享</tag>
       </tags>
   </entry>
 </search>
