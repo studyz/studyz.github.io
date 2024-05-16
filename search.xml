@@ -2668,65 +2668,6 @@
       </tags>
   </entry>
   <entry>
-    <title>TailScale实现远端访问群晖服务器</title>
-    <url>/2024/04/21/TailScale%E5%AE%9E%E7%8E%B0%E8%BF%9C%E7%AB%AF%E8%AE%BF%E9%97%AE%E6%95%B4%E6%AE%B5%E5%B1%80%E5%9F%9F%E7%BD%91/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
-<p><a href="https://tailscale.com/">Tailscale</a>是以<a href="https://www.wireguard.com/">Wireguard</a>的协议加密，所以安全性更高，而且是P2P连线，流量不经伺服器，延迟更低、私密性更高。</p>
-</blockquote>
-<ol>
-<li>安装及加入到<code>TailScale</code>网络</li>
-<li>透过设定其中1部<code>TailScale</code>的装置为网关「Subnet Router」，可以访问整个内网网段</li>
-</ol>
-<blockquote>
-<p>以群晖NAS为例</p>
-</blockquote>
-<h3 id="1-TailScale安装"><a href="#1-TailScale安装" class="headerlink" title="1. TailScale安装"></a>1. TailScale安装</h3><ol>
-<li>群晖套件中心添加spk套件源</li>
-<li>社群套件搜索TailScale安装后登陆，成功授权后可以查看分配到的IP地址</li>
-</ol>
-<span id="more"></span>
-<h3 id="2-IP-转发设置"><a href="#2-IP-转发设置" class="headerlink" title="2.  IP 转发设置"></a>2.  <strong>IP</strong> 转发设置</h3><blockquote>
-<p>因为不是每一部设备都可以安装到Tailscale ， 所以这样设定「Subnet Route」的好处是家里内网只要1部Linux装置接入到Tailscale 网络，其他所有的外网的Tailscale装置都可以透过这部Linux装置作为网关访问家里内网所有的设备，如: 印表机，路由器，伺服器等等。</p>
-</blockquote>
-<ul>
-<li>启用 <strong>群晖</strong> 上的 <strong>IP</strong> 转发(IP Forwarding)</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tailscale up --advertise-routes=192.168.1.0/24 --netfilter-mode=off</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>192.168.1.0&#x2F;24替换为自己的网段，可以是IPV4或者IPV6。</p>
-</blockquote>
-<ul>
-<li>登入到网页控制台 &gt; <code>Machines</code></li>
-</ul>
-<p><code>Enable All</code>允许转发所有</p>
-<p>基于安全特性，<code>Tailscale</code>每隔6个月需要重新授权装置，作为「Subnet Router」(子网路由网关)，建议停用。</p>
-<ul>
-<li>外网的<code>Tailscale</code>装置线路测试</li>
-</ul>
-<p>可以看到是经节点「Subnet Router」IP <code>100.101.41.50</code> 接入到内网 <code>192.168.1.0/24</code>，延迟也很理想。</p>
-<blockquote>
-<p>透过设定其中1部「TailScale」的装置为网关「Subnet Router」，可以访问整个内网网段**</p>
-</blockquote>
-<p>Links:</p>
-<ul>
-<li><a href="https://tailscale.com/download/">Download and InstallTailscale</a></li>
-<li><a href="https://tailscale.com/kb/1104/enable-ip-forwarding/">Enable IP forwarding on Linux · Tailscale</a></li>
-<li><a href="https://tailscale.com/kb/1019/subnets/">Subnet routers and traffic relay nodes · Tailscale</a></li>
-<li><a href="https://post.smzdm.com/p/ad2kw7xx/">TailScale 实现远端访问整段局域网(ZeroTier另一选择)</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>技术</category>
-        <category>网络</category>
-      </categories>
-      <tags>
-        <tag>群晖</tag>
-        <tag>网络</tag>
-        <tag>NAS</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>柯南动画剧集拆分前后对比目录</title>
     <url>/2024/04/22/%E6%9F%AF%E5%8D%97%E5%8A%A8%E7%94%BB%E7%9B%AE%E5%BD%95/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
@@ -11327,16 +11268,62 @@
       </tags>
   </entry>
   <entry>
-    <title>有意思的翻译PROMPT</title>
-    <url>/2024/04/29/%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84%E7%BF%BB%E8%AF%91PROMPT/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><img src="/2024/04/29/%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84%E7%BF%BB%E8%AF%91PROMPT/image-20240428223752145.jpeg"></p>
+    <title>TailScale实现远端访问群晖服务器</title>
+    <url>/2024/04/21/TailScale%E5%AE%9E%E7%8E%B0%E8%BF%9C%E7%AB%AF%E8%AE%BF%E9%97%AE%E6%95%B4%E6%AE%B5%E5%B1%80%E5%9F%9F%E7%BD%91/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
+<p><a href="https://tailscale.com/">Tailscale</a>是以<a href="https://www.wireguard.com/">Wireguard</a>的协议加密，所以安全性更高，而且是P2P连线，流量不经伺服器，延迟更低、私密性更高。</p>
+</blockquote>
+<ol>
+<li>安装及加入到<code>TailScale</code>网络</li>
+<li>透过设定其中1部<code>TailScale</code>的装置为网关「Subnet Router」，可以访问整个内网网段</li>
+</ol>
+<blockquote>
+<p>以群晖NAS为例</p>
+</blockquote>
+<h3 id="1-TailScale安装"><a href="#1-TailScale安装" class="headerlink" title="1. TailScale安装"></a>1. TailScale安装</h3><ol>
+<li>群晖套件中心添加spk套件源</li>
+<li>社群套件搜索TailScale安装后登陆，成功授权后可以查看分配到的IP地址</li>
+</ol>
 <span id="more"></span>
+<h3 id="2-IP-转发设置"><a href="#2-IP-转发设置" class="headerlink" title="2.  IP 转发设置"></a>2.  <strong>IP</strong> 转发设置</h3><blockquote>
+<p>因为不是每一部设备都可以安装到Tailscale ， 所以这样设定「Subnet Route」的好处是家里内网只要1部Linux装置接入到Tailscale 网络，其他所有的外网的Tailscale装置都可以透过这部Linux装置作为网关访问家里内网所有的设备，如: 印表机，路由器，伺服器等等。</p>
+</blockquote>
+<ul>
+<li>启用 <strong>群晖</strong> 上的 <strong>IP</strong> 转发(IP Forwarding)</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tailscale up --advertise-routes=192.168.1.0/24 --netfilter-mode=off</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">你是一个英语翻译团队的领导. 你会安排团队成员进行如下翻译, 实现翻译的&quot;信达雅&quot;目标:  </span><br><span class="line">  </span><br><span class="line">第一轮翻译<span class="comment">--信,追求直译, 将英文翻译成中文, 力求准确  </span></span><br><span class="line">  </span><br><span class="line">第二轮翻译<span class="comment">--达,在第一轮翻译的基础上, 考虑文化, 语境, 语义, 思考文字背后想要表达的意思, 进行意译, 力求意境契合, 记得分开思考和翻译内容。  </span></span><br><span class="line">  </span><br><span class="line">第三轮翻译<span class="comment">--雅, 基于第二轮翻译理解的语境含义, 进一步思考其中的哲理, 然后使用中国&lt;诗经&gt;的语言风格针对哲理和语义进行翻译, 力求简明, 古意盎然  </span></span><br><span class="line">  </span><br><span class="line">例如:  </span><br><span class="line">- you need you. 哲理部分，可以引申到佛家所说的&quot;莫向外求&quot;, 儒家所说的&quot;反求诸己&quot;, 然后思考使用诗经语言风格进行重新表述.  </span><br><span class="line">  </span><br><span class="line">- <span class="keyword">nothing</span> <span class="keyword">for</span> <span class="keyword">nothing</span>. 哲理部分，可以引申到诗句“世上本无事，庸人自扰之”，也可引申到俗语“尘归尘，土归土”  </span><br><span class="line">  </span><br><span class="line">第四轮翻译<span class="comment">--初审: 完成三轮翻译后， 深吸一口气， 缓一缓， 思考一下第三轮翻译的结果，与其哲理的偏差在哪？ 不要扩展太多，务求精练深刻，精辟是第一要义。 据此思路进行改进。  </span></span><br><span class="line">  </span><br><span class="line">第五轮翻译<span class="comment">--终审: 最终，你将亲自进行审稿， 你会对比原文和最后的翻译结果， 先思考《诗经》的语言表达风格要点，再审阅初审翻译的结果是否满足, 并给出你的审校修改结论。  </span></span><br><span class="line">  </span><br><span class="line">注意: 思考部分,请使用 【思考】 开头，翻译结果请使用【翻译】开头。  </span><br><span class="line">  </span><br><span class="line">请严格遵守以上工作流程， 对以下文字进行翻译：</span><br></pre></td></tr></table></figure>]]></content>
+<blockquote>
+<p>192.168.1.0&#x2F;24替换为自己的网段，可以是IPV4或者IPV6。</p>
+</blockquote>
+<ul>
+<li>登入到网页控制台 &gt; <code>Machines</code></li>
+</ul>
+<p><code>Enable All</code>允许转发所有</p>
+<p>基于安全特性，<code>Tailscale</code>每隔6个月需要重新授权装置，作为「Subnet Router」(子网路由网关)，建议停用。</p>
+<ul>
+<li>外网的<code>Tailscale</code>装置线路测试</li>
+</ul>
+<p>可以看到是经节点「Subnet Router」IP <code>100.101.41.50</code> 接入到内网 <code>192.168.1.0/24</code>，延迟也很理想。</p>
+<blockquote>
+<p>透过设定其中1部「TailScale」的装置为网关「Subnet Router」，可以访问整个内网网段**</p>
+</blockquote>
+<p>Links:</p>
+<ul>
+<li><a href="https://tailscale.com/download/">Download and InstallTailscale</a></li>
+<li><a href="https://tailscale.com/kb/1104/enable-ip-forwarding/">Enable IP forwarding on Linux · Tailscale</a></li>
+<li><a href="https://tailscale.com/kb/1019/subnets/">Subnet routers and traffic relay nodes · Tailscale</a></li>
+<li><a href="https://post.smzdm.com/p/ad2kw7xx/">TailScale 实现远端访问整段局域网(ZeroTier另一选择)</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>网络</category>
+      </categories>
       <tags>
-        <tag>Prompt</tag>
-        <tag>AI</tag>
-        <tag>翻译</tag>
+        <tag>群晖</tag>
+        <tag>网络</tag>
+        <tag>NAS</tag>
       </tags>
   </entry>
   <entry>
@@ -11358,6 +11345,28 @@
       <tags>
         <tag>方法论</tag>
         <tag>PARA</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>不要回应负能量</title>
+    <url>/2024/04/30/%E4%B8%8D%E8%A6%81%E5%9B%9E%E5%BA%94%E8%B4%9F%E8%83%BD%E9%87%8F%20copy/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
+<p>今天看到一篇题为<a href="https://mp.weixin.qq.com/s/4kvdpRFxxsLSESVChZgUNA">人生建议，永远不要回应负能量</a>的公众号文章深有感触。<br>人生就是一个持续选择的过程，对于恶意的攻击，负能量的传播，我们都在一次次的做出自己选择，作者提醒我们，我们有权利可以对这种负能量的传播作出拒绝的选择。何权峰《格局》，添加到我的 2024 阅读清单。</p>
+</blockquote>
+<span id="more"></span>
+
+<p>人的一生都在寻求生存和生活的意义，这是一种深植于我们内心深处的追求。在这个物欲横流的时代，信息爆炸的如今，我们常常被外界的诱惑和干扰所包围，很容易迷失自我，忽略自身的需求和想法。</p>
+<p>在现代社会中，人们往往过于依赖他人和社会的标准来衡量自己的生活质量和价值观。他们追求物质的满足和社会的认可，却忽略了自己内心的声音。他们追逐名利和地位，却忘记了自己真正的需求和追求。他们追求别人的期望和评价，却忽略了自己的感受和想法。</p>
+<p>然而，真正的生存和生活的意义并不在于外界的评价和认可，而在于我们对自己的认知和接纳。我们需要回归内心，去寻找自己真正的需求和想法。我们需要静下心来，去倾听自己内心的声音。我们需要勇气和决心，去追随自己内心的指引。</p>
+<p>只有当我们真正了解自己的需求和想法时，我们才能找到生存和生活的真正意义。只有当我们真正接纳自己并为之努力时，我们才能过上充实和满足的生活。只有当我们真正追求自己内心的声音时，我们才能找到属于自己的幸福和成功。</p>
+]]></content>
+      <categories>
+        <category>生活</category>
+        <category>碎碎念</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+        <tag>分享</tag>
       </tags>
   </entry>
   <entry>
@@ -11416,28 +11425,6 @@
         <tag>插件</tag>
         <tag>分享</tag>
         <tag>webdav</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>不要回应负能量</title>
-    <url>/2024/04/30/%E4%B8%8D%E8%A6%81%E5%9B%9E%E5%BA%94%E8%B4%9F%E8%83%BD%E9%87%8F%20copy/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
-<p>今天看到一篇题为<a href="https://mp.weixin.qq.com/s/4kvdpRFxxsLSESVChZgUNA">人生建议，永远不要回应负能量</a>的公众号文章深有感触。<br>人生就是一个持续选择的过程，对于恶意的攻击，负能量的传播，我们都在一次次的做出自己选择，作者提醒我们，我们有权利可以对这种负能量的传播作出拒绝的选择。何权峰《格局》，添加到我的 2024 阅读清单。</p>
-</blockquote>
-<span id="more"></span>
-
-<p>人的一生都在寻求生存和生活的意义，这是一种深植于我们内心深处的追求。在这个物欲横流的时代，信息爆炸的如今，我们常常被外界的诱惑和干扰所包围，很容易迷失自我，忽略自身的需求和想法。</p>
-<p>在现代社会中，人们往往过于依赖他人和社会的标准来衡量自己的生活质量和价值观。他们追求物质的满足和社会的认可，却忽略了自己内心的声音。他们追逐名利和地位，却忘记了自己真正的需求和追求。他们追求别人的期望和评价，却忽略了自己的感受和想法。</p>
-<p>然而，真正的生存和生活的意义并不在于外界的评价和认可，而在于我们对自己的认知和接纳。我们需要回归内心，去寻找自己真正的需求和想法。我们需要静下心来，去倾听自己内心的声音。我们需要勇气和决心，去追随自己内心的指引。</p>
-<p>只有当我们真正了解自己的需求和想法时，我们才能找到生存和生活的真正意义。只有当我们真正接纳自己并为之努力时，我们才能过上充实和满足的生活。只有当我们真正追求自己内心的声音时，我们才能找到属于自己的幸福和成功。</p>
-]]></content>
-      <categories>
-        <category>生活</category>
-        <category>碎碎念</category>
-      </categories>
-      <tags>
-        <tag>随笔</tag>
-        <tag>分享</tag>
       </tags>
   </entry>
   <entry>
@@ -11507,6 +11494,19 @@
       <tags>
         <tag>随笔</tag>
         <tag>分享</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>有意思的翻译PROMPT</title>
+    <url>/2024/04/29/%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84%E7%BF%BB%E8%AF%91PROMPT/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><img src="/2024/04/29/%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84%E7%BF%BB%E8%AF%91PROMPT/image-20240428223752145.jpeg"></p>
+<span id="more"></span>
+
+<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">你是一个英语翻译团队的领导. 你会安排团队成员进行如下翻译, 实现翻译的&quot;信达雅&quot;目标:  </span><br><span class="line">  </span><br><span class="line">第一轮翻译<span class="comment">--信,追求直译, 将英文翻译成中文, 力求准确  </span></span><br><span class="line">  </span><br><span class="line">第二轮翻译<span class="comment">--达,在第一轮翻译的基础上, 考虑文化, 语境, 语义, 思考文字背后想要表达的意思, 进行意译, 力求意境契合, 记得分开思考和翻译内容。  </span></span><br><span class="line">  </span><br><span class="line">第三轮翻译<span class="comment">--雅, 基于第二轮翻译理解的语境含义, 进一步思考其中的哲理, 然后使用中国&lt;诗经&gt;的语言风格针对哲理和语义进行翻译, 力求简明, 古意盎然  </span></span><br><span class="line">  </span><br><span class="line">例如:  </span><br><span class="line">- you need you. 哲理部分，可以引申到佛家所说的&quot;莫向外求&quot;, 儒家所说的&quot;反求诸己&quot;, 然后思考使用诗经语言风格进行重新表述.  </span><br><span class="line">  </span><br><span class="line">- <span class="keyword">nothing</span> <span class="keyword">for</span> <span class="keyword">nothing</span>. 哲理部分，可以引申到诗句“世上本无事，庸人自扰之”，也可引申到俗语“尘归尘，土归土”  </span><br><span class="line">  </span><br><span class="line">第四轮翻译<span class="comment">--初审: 完成三轮翻译后， 深吸一口气， 缓一缓， 思考一下第三轮翻译的结果，与其哲理的偏差在哪？ 不要扩展太多，务求精练深刻，精辟是第一要义。 据此思路进行改进。  </span></span><br><span class="line">  </span><br><span class="line">第五轮翻译<span class="comment">--终审: 最终，你将亲自进行审稿， 你会对比原文和最后的翻译结果， 先思考《诗经》的语言表达风格要点，再审阅初审翻译的结果是否满足, 并给出你的审校修改结论。  </span></span><br><span class="line">  </span><br><span class="line">注意: 思考部分,请使用 【思考】 开头，翻译结果请使用【翻译】开头。  </span><br><span class="line">  </span><br><span class="line">请严格遵守以上工作流程， 对以下文字进行翻译：</span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>Prompt</tag>
+        <tag>AI</tag>
+        <tag>翻译</tag>
       </tags>
   </entry>
 </search>
