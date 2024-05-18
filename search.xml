@@ -735,146 +735,6 @@
       </tags>
   </entry>
   <entry>
-    <title>排序_DENSE_RANK</title>
-    <url>/2023/02/28/%E6%8E%92%E5%BA%8F_DENSE_RANK/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="rank"><a href="#rank" class="headerlink" title="rank()"></a>rank()</h2><h2 id="dense-rank"><a href="#dense-rank" class="headerlink" title="dense_rank()"></a>dense_rank()</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">DENSE_RANK() OVER (PARTITION BY column1, column2... ORDER BY column3, column4...)</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>PARTITION BY子句是可选的，用于将数据分成不同的分组。如果不指定PARTITION BY子句，将对整个结果集进行排名。</li>
-<li>ORDER BY子句指定用于排序的列。可以根据一个或多个列进行排序，以确定排名的顺序。</li>
-</ul>
-<span id="more"></span>
-
-<h3 id="example"><a href="#example" class="headerlink" title="example"></a>example</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT name, salary, DENSE_RANK() OVER (ORDER BY salary DESC) AS dense_rank</span><br><span class="line">FROM employees;</span><br></pre></td></tr></table></figure>
-
-
-
-<p>当使用DENSE_RANK函数和PARTITION BY子句时，以下是示例查询的可能返回结果：</p>
-<p>示例1：对每个客户的订单金额进行排名</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT order_id, customer_id, order_amount,</span><br><span class="line">       DENSE_RANK() OVER (PARTITION BY customer_id ORDER BY order_amount DESC) AS dense_rank</span><br><span class="line">FROM orders;</span><br></pre></td></tr></table></figure>
-
-<table>
-<thead>
-<tr>
-<th>order_id</th>
-<th>customer_id</th>
-<th>order_amount</th>
-<th>dense_rank</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td>1001</td>
-<td>500</td>
-<td>1</td>
-</tr>
-<tr>
-<td>2</td>
-<td>1001</td>
-<td>500</td>
-<td>1</td>
-</tr>
-<tr>
-<td>3</td>
-<td>1001</td>
-<td>300</td>
-<td>2</td>
-</tr>
-<tr>
-<td>4</td>
-<td>1002</td>
-<td>700</td>
-<td>1</td>
-</tr>
-<tr>
-<td>5</td>
-<td>1002</td>
-<td>600</td>
-<td>2</td>
-</tr>
-<tr>
-<td>6</td>
-<td>1002</td>
-<td>600</td>
-<td>2</td>
-</tr>
-<tr>
-<td>7</td>
-<td>1002</td>
-<td>400</td>
-<td>3</td>
-</tr>
-</tbody></table>
-<p>在上述结果中，我们根据每个客户的订单金额进行了排名。客户ID为1001的客户有两个订单，订单金额都是500，因此它们被分配相同的密集排名1。客户ID为1001的第三个订单金额为300，所以它被分配密集排名2。对于客户ID为1002的客户，有一个订单金额为700，它被分配密集排名1，然后有两个订单金额为600，它们被分配密集排名2，最后一个订单金额为400，它被分配密集排名3。</p>
-<p>示例2：对每个班级的学生成绩进行排名</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT student_id, class_id, exam_score,</span><br><span class="line">       DENSE_RANK() OVER (PARTITION BY class_id ORDER BY exam_score DESC) AS dense_rank</span><br><span class="line">FROM students;</span><br></pre></td></tr></table></figure>
-
-<table>
-<thead>
-<tr>
-<th>student_id</th>
-<th>class_id</th>
-<th>exam_score</th>
-<th>dense_rank</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td>A</td>
-<td>95</td>
-<td>1</td>
-</tr>
-<tr>
-<td>2</td>
-<td>A</td>
-<td>90</td>
-<td>2</td>
-</tr>
-<tr>
-<td>3</td>
-<td>A</td>
-<td>85</td>
-<td>3</td>
-</tr>
-<tr>
-<td>4</td>
-<td>B</td>
-<td>92</td>
-<td>1</td>
-</tr>
-<tr>
-<td>5</td>
-<td>B</td>
-<td>88</td>
-<td>2</td>
-</tr>
-<tr>
-<td>6</td>
-<td>B</td>
-<td>88</td>
-<td>2</td>
-</tr>
-<tr>
-<td>7</td>
-<td>B</td>
-<td>80</td>
-<td>3</td>
-</tr>
-</tbody></table>
-<p>在上述结果中，我们根据每个班级的考试成绩进行了排名。班级ID为A的学生有三个学生，分别获得了95、90和85分，他们分别被分配密集排名1、2和3。班级ID为B的学生有四个学生，分别获得了92、88、88和80分，他们分别被分配密集排名1、2、2和3。</p>
-]]></content>
-      <categories>
-        <category>技术</category>
-        <category>数据分析</category>
-        <category>SQL</category>
-      </categories>
-      <tags>
-        <tag>笔记</tag>
-        <tag>SQL</tag>
-        <tag>排序</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>DATEDIFF_日期之差</title>
     <url>/2023/03/02/DATEDIFF_%E6%97%A5%E6%9C%9F%E4%B9%8B%E5%B7%AE/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>DATEDIFF是一个SQL函数，用于计算两个日期之间的差距。</p>
@@ -891,92 +751,6 @@
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT DATEDIFF(day, &#x27;2021-01-01&#x27;, &#x27;2021-01-10&#x27;) AS DayDifference;</span><br></pre></td></tr></table></figure>
 
 <p>上述查询将返回结果为9，表示从2021年1月1日到2021年1月10日之间相差了9天。</p>
-]]></content>
-      <categories>
-        <category>技术</category>
-        <category>数据分析</category>
-        <category>SQL</category>
-      </categories>
-      <tags>
-        <tag>笔记</tag>
-        <tag>SQL</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>GroupBy</title>
-    <url>/2023/03/04/GroupBy/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>当我们需要对数据进行分组并进行聚合计算时，可以使用GROUP BY子句。GROUP BY子句通常与聚合函数（如SUM、COUNT、AVG等）一起使用。</p>
-<p>通过GROUP BY子句，我们可以将数据按照指定的列进行分组，并对每个组进行聚合计算。这些聚合计算的结果将基于每个组的值。</p>
-<p>下面是一个示例，假设我们有一个名为”orders”的表，其中包含了订单信息：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT product_id, COUNT(*) as total_orders</span><br><span class="line">FROM orders</span><br><span class="line">GROUP BY product_id;</span><br></pre></td></tr></table></figure>
-<span id="more"></span>
-<p>在上述示例中，我们按照”product_id”列进行了分组，并计算了每个产品的订单总数。通过使用COUNT(*)函数，我们可以计算每个产品的订单数量。</p>
-<p>GROUP BY子句可以与多个列一起使用，以便更细致地分组数据。例如：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT category_id, product_id, COUNT(*) as total_orders</span><br><span class="line">FROM orders</span><br><span class="line">GROUP BY category_id, product_id;</span><br></pre></td></tr></table></figure>
-
-<p>在这个示例中，我们按照”category_id”和”product_id”两列进行了分组，并计算了每个产品在每个类别中的订单总数。</p>
-<p>需要注意的是，GROUP BY子句必须与SELECT语句一起使用，并且SELECT语句中的列必须是GROUP BY子句中的列或者是聚合函数的参数。这样才能确保查询的正确性。</p>
-]]></content>
-      <categories>
-        <category>技术</category>
-        <category>数据分析</category>
-        <category>SQL</category>
-      </categories>
-      <tags>
-        <tag>笔记</tag>
-        <tag>SQL</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>SQL窗口函数_LEAD_LAG详解</title>
-    <url>/2023/03/04/SQL%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0_LEAD_LAG%E8%AF%A6%E8%A7%A3/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>当涉及到SQL窗口函数时，LEAD()和LAG()是两个非常有用的函数。它们允许我们在查询中访问当前行之前或之后的行的值。</p>
-<p>LEAD()函数返回当前行之后的指定行数的值，而LAG()函数返回当前行之前的指定行数的值。这两个函数在许多情况下都很有用，例如在分析时间序列数据或计算相邻行之间的差异时。</p>
-<p>让我们以一个简单的示例来说明LEAD()和LAG()函数的用法。假设我们有一个名为sales的表，其中包含了销售数据：</p>
-<p>sales表：</p>
-<table>
-<thead>
-<tr>
-<th>sale_id</th>
-<th>sale_date</th>
-<th>sale_amount</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td>2021-01-01</td>
-<td>1000</td>
-</tr>
-<tr>
-<td>2</td>
-<td>2021-01-02</td>
-<td>1500</td>
-</tr>
-<tr>
-<td>3</td>
-<td>2021-01-03</td>
-<td>2000</td>
-</tr>
-<tr>
-<td>4</td>
-<td>2021-01-04</td>
-<td>1200</td>
-</tr>
-<tr>
-<td>5</td>
-<td>2021-01-05</td>
-<td>1800</td>
-</tr>
-</tbody></table>
-<p>如果我们想要计算每天的销售额与前一天销售额的差异，我们可以使用LAG()函数：</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">  sale_date,</span><br><span class="line">  sale_amount,</span><br><span class="line">  <span class="built_in">LAG</span>(sale_amount) <span class="keyword">OVER</span> (<span class="keyword">ORDER</span> <span class="keyword">BY</span> sale_date) <span class="keyword">AS</span> previous_day_sale_amount,</span><br><span class="line">  sale_amount <span class="operator">-</span> <span class="built_in">LAG</span>(sale_amount) <span class="keyword">OVER</span> (<span class="keyword">ORDER</span> <span class="keyword">BY</span> sale_date) <span class="keyword">AS</span> difference</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">  sales;</span><br></pre></td></tr></table></figure>
-<span id="more"></span>
-<p>上述查询中，我们使用了LAG()函数来获取前一天的销售额，并通过与当前销售额的差异计算了difference列的值。通过指定ORDER BY子句，我们可以按照日期的顺序进行计算。</p>
-<p>类似地，如果我们想要计算每天的销售额与后一天销售额的差异，我们可以使用LEAD()函数：</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">  sale_date,</span><br><span class="line">  sale_amount,</span><br><span class="line">  <span class="built_in">LEAD</span>(sale_amount) <span class="keyword">OVER</span> (<span class="keyword">ORDER</span> <span class="keyword">BY</span> sale_date) <span class="keyword">AS</span> next_day_sale_amount,</span><br><span class="line">  <span class="built_in">LEAD</span>(sale_amount) <span class="keyword">OVER</span> (<span class="keyword">ORDER</span> <span class="keyword">BY</span> sale_date) <span class="operator">-</span> sale_amount <span class="keyword">AS</span> difference</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">  sales;</span><br></pre></td></tr></table></figure>
-
-<p>这次，我们使用了LEAD()函数来获取后一天的销售额，并计算了差异。</p>
-<p>LEAD()和LAG()函数还支持更复杂的用法，比如指定分区（PARTITION BY）来在不同的组中进行计算，以及指定默认值以处理边界情况。它们可以极大地提升分析和比较相邻行的能力。</p>
 ]]></content>
       <categories>
         <category>技术</category>
@@ -1357,6 +1131,146 @@
         <tag>数据分析师</tag>
         <tag>统计</tag>
         <tag>方法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>排序_DENSE_RANK</title>
+    <url>/2023/02/28/%E6%8E%92%E5%BA%8F_DENSE_RANK/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="rank"><a href="#rank" class="headerlink" title="rank()"></a>rank()</h2><h2 id="dense-rank"><a href="#dense-rank" class="headerlink" title="dense_rank()"></a>dense_rank()</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">DENSE_RANK() OVER (PARTITION BY column1, column2... ORDER BY column3, column4...)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>PARTITION BY子句是可选的，用于将数据分成不同的分组。如果不指定PARTITION BY子句，将对整个结果集进行排名。</li>
+<li>ORDER BY子句指定用于排序的列。可以根据一个或多个列进行排序，以确定排名的顺序。</li>
+</ul>
+<span id="more"></span>
+
+<h3 id="example"><a href="#example" class="headerlink" title="example"></a>example</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT name, salary, DENSE_RANK() OVER (ORDER BY salary DESC) AS dense_rank</span><br><span class="line">FROM employees;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>当使用DENSE_RANK函数和PARTITION BY子句时，以下是示例查询的可能返回结果：</p>
+<p>示例1：对每个客户的订单金额进行排名</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT order_id, customer_id, order_amount,</span><br><span class="line">       DENSE_RANK() OVER (PARTITION BY customer_id ORDER BY order_amount DESC) AS dense_rank</span><br><span class="line">FROM orders;</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>order_id</th>
+<th>customer_id</th>
+<th>order_amount</th>
+<th>dense_rank</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>1001</td>
+<td>500</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1001</td>
+<td>500</td>
+<td>1</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1001</td>
+<td>300</td>
+<td>2</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1002</td>
+<td>700</td>
+<td>1</td>
+</tr>
+<tr>
+<td>5</td>
+<td>1002</td>
+<td>600</td>
+<td>2</td>
+</tr>
+<tr>
+<td>6</td>
+<td>1002</td>
+<td>600</td>
+<td>2</td>
+</tr>
+<tr>
+<td>7</td>
+<td>1002</td>
+<td>400</td>
+<td>3</td>
+</tr>
+</tbody></table>
+<p>在上述结果中，我们根据每个客户的订单金额进行了排名。客户ID为1001的客户有两个订单，订单金额都是500，因此它们被分配相同的密集排名1。客户ID为1001的第三个订单金额为300，所以它被分配密集排名2。对于客户ID为1002的客户，有一个订单金额为700，它被分配密集排名1，然后有两个订单金额为600，它们被分配密集排名2，最后一个订单金额为400，它被分配密集排名3。</p>
+<p>示例2：对每个班级的学生成绩进行排名</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT student_id, class_id, exam_score,</span><br><span class="line">       DENSE_RANK() OVER (PARTITION BY class_id ORDER BY exam_score DESC) AS dense_rank</span><br><span class="line">FROM students;</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>student_id</th>
+<th>class_id</th>
+<th>exam_score</th>
+<th>dense_rank</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>A</td>
+<td>95</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>A</td>
+<td>90</td>
+<td>2</td>
+</tr>
+<tr>
+<td>3</td>
+<td>A</td>
+<td>85</td>
+<td>3</td>
+</tr>
+<tr>
+<td>4</td>
+<td>B</td>
+<td>92</td>
+<td>1</td>
+</tr>
+<tr>
+<td>5</td>
+<td>B</td>
+<td>88</td>
+<td>2</td>
+</tr>
+<tr>
+<td>6</td>
+<td>B</td>
+<td>88</td>
+<td>2</td>
+</tr>
+<tr>
+<td>7</td>
+<td>B</td>
+<td>80</td>
+<td>3</td>
+</tr>
+</tbody></table>
+<p>在上述结果中，我们根据每个班级的考试成绩进行了排名。班级ID为A的学生有三个学生，分别获得了95、90和85分，他们分别被分配密集排名1、2和3。班级ID为B的学生有四个学生，分别获得了92、88、88和80分，他们分别被分配密集排名1、2、2和3。</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>数据分析</category>
+        <category>SQL</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+        <tag>SQL</tag>
+        <tag>排序</tag>
       </tags>
   </entry>
   <entry>
@@ -11416,6 +11330,92 @@
       <tags>
         <tag>随笔</tag>
         <tag>分享</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>GroupBy</title>
+    <url>/2023/03/04/GroupBy/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>当我们需要对数据进行分组并进行聚合计算时，可以使用GROUP BY子句。GROUP BY子句通常与聚合函数（如SUM、COUNT、AVG等）一起使用。</p>
+<p>通过GROUP BY子句，我们可以将数据按照指定的列进行分组，并对每个组进行聚合计算。这些聚合计算的结果将基于每个组的值。</p>
+<p>下面是一个示例，假设我们有一个名为”orders”的表，其中包含了订单信息：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT product_id, COUNT(*) as total_orders</span><br><span class="line">FROM orders</span><br><span class="line">GROUP BY product_id;</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+<p>在上述示例中，我们按照”product_id”列进行了分组，并计算了每个产品的订单总数。通过使用COUNT(*)函数，我们可以计算每个产品的订单数量。</p>
+<p>GROUP BY子句可以与多个列一起使用，以便更细致地分组数据。例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT category_id, product_id, COUNT(*) as total_orders</span><br><span class="line">FROM orders</span><br><span class="line">GROUP BY category_id, product_id;</span><br></pre></td></tr></table></figure>
+
+<p>在这个示例中，我们按照”category_id”和”product_id”两列进行了分组，并计算了每个产品在每个类别中的订单总数。</p>
+<p>需要注意的是，GROUP BY子句必须与SELECT语句一起使用，并且SELECT语句中的列必须是GROUP BY子句中的列或者是聚合函数的参数。这样才能确保查询的正确性。</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>数据分析</category>
+        <category>SQL</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+        <tag>SQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>SQL窗口函数_LEAD_LAG详解</title>
+    <url>/2023/03/04/SQL%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0_LEAD_LAG%E8%AF%A6%E8%A7%A3/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>当涉及到SQL窗口函数时，LEAD()和LAG()是两个非常有用的函数。它们允许我们在查询中访问当前行之前或之后的行的值。</p>
+<p>LEAD()函数返回当前行之后的指定行数的值，而LAG()函数返回当前行之前的指定行数的值。这两个函数在许多情况下都很有用，例如在分析时间序列数据或计算相邻行之间的差异时。</p>
+<p>让我们以一个简单的示例来说明LEAD()和LAG()函数的用法。假设我们有一个名为sales的表，其中包含了销售数据：</p>
+<p>sales表：</p>
+<table>
+<thead>
+<tr>
+<th>sale_id</th>
+<th>sale_date</th>
+<th>sale_amount</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>2021-01-01</td>
+<td>1000</td>
+</tr>
+<tr>
+<td>2</td>
+<td>2021-01-02</td>
+<td>1500</td>
+</tr>
+<tr>
+<td>3</td>
+<td>2021-01-03</td>
+<td>2000</td>
+</tr>
+<tr>
+<td>4</td>
+<td>2021-01-04</td>
+<td>1200</td>
+</tr>
+<tr>
+<td>5</td>
+<td>2021-01-05</td>
+<td>1800</td>
+</tr>
+</tbody></table>
+<p>如果我们想要计算每天的销售额与前一天销售额的差异，我们可以使用LAG()函数：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">  sale_date,</span><br><span class="line">  sale_amount,</span><br><span class="line">  <span class="built_in">LAG</span>(sale_amount) <span class="keyword">OVER</span> (<span class="keyword">ORDER</span> <span class="keyword">BY</span> sale_date) <span class="keyword">AS</span> previous_day_sale_amount,</span><br><span class="line">  sale_amount <span class="operator">-</span> <span class="built_in">LAG</span>(sale_amount) <span class="keyword">OVER</span> (<span class="keyword">ORDER</span> <span class="keyword">BY</span> sale_date) <span class="keyword">AS</span> difference</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">  sales;</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+<p>上述查询中，我们使用了LAG()函数来获取前一天的销售额，并通过与当前销售额的差异计算了difference列的值。通过指定ORDER BY子句，我们可以按照日期的顺序进行计算。</p>
+<p>类似地，如果我们想要计算每天的销售额与后一天销售额的差异，我们可以使用LEAD()函数：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">  sale_date,</span><br><span class="line">  sale_amount,</span><br><span class="line">  <span class="built_in">LEAD</span>(sale_amount) <span class="keyword">OVER</span> (<span class="keyword">ORDER</span> <span class="keyword">BY</span> sale_date) <span class="keyword">AS</span> next_day_sale_amount,</span><br><span class="line">  <span class="built_in">LEAD</span>(sale_amount) <span class="keyword">OVER</span> (<span class="keyword">ORDER</span> <span class="keyword">BY</span> sale_date) <span class="operator">-</span> sale_amount <span class="keyword">AS</span> difference</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">  sales;</span><br></pre></td></tr></table></figure>
+
+<p>这次，我们使用了LEAD()函数来获取后一天的销售额，并计算了差异。</p>
+<p>LEAD()和LAG()函数还支持更复杂的用法，比如指定分区（PARTITION BY）来在不同的组中进行计算，以及指定默认值以处理边界情况。它们可以极大地提升分析和比较相邻行的能力。</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>数据分析</category>
+        <category>SQL</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+        <tag>SQL</tag>
       </tags>
   </entry>
   <entry>
