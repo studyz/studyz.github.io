@@ -1,6 +1,335 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Hexo Hello World</title>
+    <url>/2019/05/01/hello_world/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Here-Cheatsheet">Markdown</a> 使用<a href="https://github.com/younghz/Markdown">Markdown 基本语法</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
+<h1 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h1><hr>
+<h3 id="hexo-快速、简洁且高效的博客框架"><a href="#hexo-快速、简洁且高效的博客框架" class="headerlink" title="hexo 快速、简洁且高效的博客框架"></a><a href="https://hexo.io/zh-cn/">hexo 快速、简洁且高效的博客框架</a></h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br><span class="line">hexo init blog</span><br><span class="line">cd blog</span><br><span class="line">npm install</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+
+<h3 id="init"><a href="#init" class="headerlink" title="init"></a>init</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">hexo init [folder]</span></span><br></pre></td></tr></table></figure>
+
+<p>新建一个网站。如果没有设置 <code>folder</code> ，Hexo 默认在目前的文件夹建立网站。</p>
+<span id="more"></span>
+<p>本命令相当于执行了以下几步：</p>
+<ol>
+<li>Git clone <a href="https://github.com/hexojs/hexo-starter">hexo-starter</a> 和 <a href="https://github.com/hexojs/hexo-theme-landscape">hexo-theme-landscape</a> 主题到当前目录或指定目录。</li>
+<li>使用 <a href="https://classic.yarnpkg.com/lang/en/">Yarn 1</a>、<a href="https://pnpm.io/zh/">pnpm</a> 或 <a href="https://docs.npmjs.com/cli/install">npm</a> 包管理器下载依赖（如有已安装多个，则列在前面的优先）。npm 默认随 <a href="https://hexo.io/zh-cn/docs/index.html#%E5%AE%89%E8%A3%85-Node-js">Node.js</a> 安装。</li>
+</ol>
+<h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new post <span class="string">&quot;PostName&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br><span class="line"><span class="comment"># 该命令可以简写为</span></span><br><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">hexo generate</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">该命令可以简写为</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">hexo g</span></span><br></pre></td></tr></table></figure>
+
+<p>生成静态文件。</p>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>-d</code>, <code>--deploy</code></td>
+<td>文件生成后立即部署网站</td>
+</tr>
+<tr>
+<td><code>-w</code>, <code>--watch</code></td>
+<td>监视文件变动</td>
+</tr>
+<tr>
+<td><code>-b</code>, <code>--bail</code></td>
+<td>生成过程中如果发生任何未处理的异常则抛出异常</td>
+</tr>
+<tr>
+<td><code>-f</code>, <code>--force</code></td>
+<td>强制重新生成文件  <br>Hexo 引入了差分机制，如果 <code>public</code> 目录存在，那么 <code>hexo g</code> 只会重新生成改动的文件。  <br>使用该参数的效果接近 <code>hexo clean &amp;&amp; hexo generate</code></td>
+</tr>
+<tr>
+<td><code>-c</code>, <code>--concurrency</code></td>
+<td>最大同时生成文件的数量，默认无限制</td>
+</tr>
+</tbody></table>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br><span class="line"><span class="comment"># 该命令可以简写为</span></span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<h3 id="version"><a href="#version" class="headerlink" title="version"></a>version</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">hexo version</span></span><br></pre></td></tr></table></figure>
+
+<p>显示 Hexo 版本。</p>
+<h1 id="Plugins"><a href="#Plugins" class="headerlink" title="Plugins"></a>Plugins</h1><hr>
+<ol>
+<li><a href="https://github.com/maxchang3/hexo-markmap">hexo思维导图：hexo-markmap</a></li>
+<li><a href="https://github.com/kuole-o/hexo-tag-map?tab=readme-ov-file">Hexo 文章插入交互式地图：hexo-tag-map</a></li>
+</ol>
+<link rel="stylesheet" href="//unpkg.com/hexo-tag-map/lib/leaflet@1.7.1.css"><script data-pjax src="//unpkg.com/hexo-tag-map/lib/leaflet@1.7.1.js"></script><script data-pjax src="//unpkg.com/hexo-tag-map/lib/leaflet.ChineseTmsProviders@1.0.4.js"></script><div class="map-box" style="margin: 0.8rem 0 1.6rem 0;"><div id="gaodeMap-119.296623-26.081958" style="max-width:100%; height:360px;display: block;margin:0 auto;z-index:1;border-radius: 5px;"></div></div><script type="text/javascript">var normalm=L.tileLayer.chinaProvider('GaoDe.Normal.Map',{maxZoom:20,minZoom:1,attribution:'高德地图'});var imgm=L.tileLayer.chinaProvider('GaoDe.Satellite.Map',{maxZoom:20,minZoom:1,attribution:'高德地图'});var imga=L.tileLayer.chinaProvider('GaoDe.Satellite.Annotion',{maxZoom:20,minZoom:1,attribution:'高德地图'});var normal=L.layerGroup([normalm]),image=L.layerGroup([imgm,imga]);var baseLayers={"高德地图":normal,"高德卫星地图":imgm,"高德卫星标注":image};var mymap=L.map('gaodeMap-119.296623-26.081958',{center:[26.081958,119.296623],zoom:16,layers:[normal],zoomControl:false});L.control.layers(baseLayers,null).addTo(mymap);L.control.zoom({zoomInTitle:'放大',zoomOutTitle:'缩小'}).addTo(mymap);var marker = L.marker(['26.081958','119.296623']).addTo(mymap);marker.bindPopup("这里是福州三坊七巷，three lanes and seven alleys").openPopup();</script>
+
+
+<p><a href="https://lbs.amap.com/tools/picker">高德地图坐标拾取系统</a></p>
+<table>
+<thead>
+<tr>
+<th align="right">地图名</th>
+<th align="right">标签值&lt;必填&gt;</th>
+<th align="right">经度(-180~180)</th>
+<th align="right">纬度(-90~90)</th>
+<th align="right">文本</th>
+<th align="right">缩放等级(默认14)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="right">混合地图</td>
+<td align="right">map</td>
+<td align="right">坐标经度</td>
+<td align="right">坐标纬度</td>
+<td align="right">文本</td>
+<td align="right">取值3~18</td>
+</tr>
+<tr>
+<td align="right">谷歌地图</td>
+<td align="right">googleMap</td>
+<td align="right">坐标经度</td>
+<td align="right">坐标纬度</td>
+<td align="right">文本</td>
+<td align="right">取值1~20</td>
+</tr>
+<tr>
+<td align="right">高德地图</td>
+<td align="right">gaodeMap</td>
+<td align="right">坐标经度</td>
+<td align="right">坐标纬度</td>
+<td align="right">文本</td>
+<td align="right">取值3~18</td>
+</tr>
+<tr>
+<td align="right">百度地图</td>
+<td align="right">baiduMap</td>
+<td align="right">坐标经度</td>
+<td align="right">坐标纬度</td>
+<td align="right">文本</td>
+<td align="right">取值4~18</td>
+</tr>
+<tr>
+<td align="right">Geoq地图</td>
+<td align="right">geoqMap</td>
+<td align="right">坐标经度</td>
+<td align="right">坐标纬度</td>
+<td align="right">文本</td>
+<td align="right">取值1~18</td>
+</tr>
+<tr>
+<td align="right">openstreet地图</td>
+<td align="right">openstreetMap</td>
+<td align="right">坐标经度</td>
+<td align="right">坐标纬度</td>
+<td align="right">文本</td>
+<td align="right">取值1~18</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="right">地图名</th>
+<th align="right">宽(默认100%) &#x2F; 高(默认360px)</th>
+<th align="right">默认图层(默认1)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="right">混合地图</td>
+<td align="right">百分数或具体值(100%或360px)</td>
+<td align="right">取值1~7</td>
+</tr>
+<tr>
+<td align="right">谷歌地图</td>
+<td align="right">百分数或具体值(100%或360px)</td>
+<td align="right">取值1~3</td>
+</tr>
+<tr>
+<td align="right">高德地图</td>
+<td align="right">百分数或具体值(100%或360px)</td>
+<td align="right">取值1~3</td>
+</tr>
+<tr>
+<td align="right">百度地图</td>
+<td align="right">百分数或具体值(100%或360px)</td>
+<td align="right">取值1~2</td>
+</tr>
+<tr>
+<td align="right">Geoq地图</td>
+<td align="right">百分数或具体值(100%或360px)</td>
+<td align="right">取值1~5</td>
+</tr>
+<tr>
+<td align="right">openstreet地图</td>
+<td align="right">百分数或具体值(100%或360px)</td>
+<td align="right">不支持此参数</td>
+</tr>
+</tbody></table>
+<ol>
+<li>参数之间，用<strong>英文逗号</strong>相隔</li>
+<li>参数必须按上述事例顺序输入，不得为空</li>
+<li><strong>同一个页面，同一组经纬度值，只能插入一个相同标签值的地图</strong>(若有需要，可以将第二个地图上，经度或纬度末尾删除一两个数)</li>
+<li>参数取值必须在上述范围内</li>
+<li>默认图层：即地图叠加层的值，默认常规地图还是卫星地图，可按地图显示顺序取值</li>
+<li><strong>缩放等级，数字越大，地图比例尺越小，显示的越精细</strong></li>
+<li>除<strong>标签值</strong>外，其他参数选填，但 <strong>每个参数的左边的参数必填</strong></li>
+<li>谷歌地图需要外网才能加载查看</li>
+</ol>
+<h1 id="Notes"><a href="#Notes" class="headerlink" title="Notes"></a>Notes</h1><hr>
+<h3 id="本地图片的调用"><a href="#本地图片的调用" class="headerlink" title="本地图片的调用"></a>本地图片的调用</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">my version</span></span><br><span class="line">hexo: 7.2.0</span><br><span class="line">hexo-cli: 4.3.2</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><p>手动新建<br>首先是在 _posts 文件夹下建立一个<code>本地图片的调用.md</code>，再建立一个同名的文件夹 <code>本地图片的调用</code>。</p>
+</li>
+<li><p>hexo代码新建<br>使用<code>hexo new post 本地图片的调用</code>，可以生成md文件的同时生成一个同名文件夹用于存储网页资源。</p>
+</li>
+</ol>
+<p>这篇文章要引用的图片就放在该文件夹下。比如我就在该目录下放一个图片<code>1.png</code>。</p>
+<p><img src="/2019/05/01/hello_world/1.png"></p>
+<p>然后在博文 MarkDown 文件里引用该图片：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">这里是图片注释</span>](<span class="link">../images/2019_05_01_hello_world/1.png</span>)</span><br></pre></td></tr></table></figure>
+
+<p><strong>为什么引用的时候不用加文件夹的路径呢？</strong></p>
+<p>这是因为 hexo 在渲染的时候，会把<code>本地图片的调用.md</code> 渲染为<code>public</code>下的 <code>本地图片的调用.html</code>网页文件，而把对应文件夹下的静态资源，比如图片 <code>1.png</code>也拷贝到<code>public</code>下!</p>
+<p>需要注意的是，在<code>hexo/source/_posts</code>目录下的图片文件名不能重复。</p>
+<h3 id="skip-render"><a href="#skip-render" class="headerlink" title="skip render"></a>skip render</h3><p>修改hexo根目录下_config.yml文件，</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">skip_render:</span></span><br><span class="line">	<span class="bullet">-</span> <span class="string">&#x27;_posts/templates/**&#x27;</span></span><br><span class="line">	<span class="bullet">-</span> <span class="string">&#x27;_posts/draft/**&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>目录结构：<br><code>- hexo/source/_posts/templates/</code> 保存post模版，供Obsidian快速开始Post编写。<br><code>- hexo/source/_posts/draft/</code> 保存未编辑完成，或不想共享的文章内容。</p>
+<p>设置跳过渲染之后，最好使用<code>hexo clean</code>清除以前的编译结果，保证配置生效。再使用<code>hexo g</code>查看。</p>
+<h3 id="自动generate"><a href="#自动generate" class="headerlink" title="自动generate"></a>自动generate</h3><p>定时or设置条件运行命令<code>docker exec -it hexo bash -c &quot;hexo clean &amp;&amp; hexo g&quot;</code>来自动编译。</p>
+<p><strong>踩坑：</strong> 直接在群晖的<code>控制面板</code> - <code>任务计划</code>中添加自定义脚本<code>docker exec -it hexo bash -c &quot;hexo clean &amp;&amp; hexo g&quot;</code>会报错<code>the input device is not a TTY</code>.</p>
+<p>tty一词源于Teletypes,或teletypewriters。这个的意思是说后台linux执行的时候没有终端设备。我们一般执行docker里的命令时候都喜欢加上-it 这个参数，这里的-t 就是表示伪tty。所以，如果我们docker执行后台运行的任务或者程序直接去除 -t 这个参数就不会出现这个报错了。</p>
+<p><strong>所以要用 <code>docker exec hexo bash -c &quot;hexo clean &amp;&amp; hexo g&quot;</code></strong></p>
+<p><strong>待改进：</strong> 设置了每天generate一次。如果设置成有变动就generate就更好了，暂时没想到办法。</p>
+<h3 id="视频嵌入"><a href="#视频嵌入" class="headerlink" title="视频嵌入"></a>视频嵌入</h3><p>现在视频基本上都会分享到各大平台，所以暂时主要以嵌入网络视频展示。<br>研究了几款插件，基本上都是年久失修，使用不易，最终还是选择了<code>iframe</code>嵌入。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">%%bilibili视频嵌入%%</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;position: relative; width: 100%; height: 0; padding-bottom: 75%;&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">src</span>=<span class="string">&quot;//player.bilibili.com/player.html?aid=244387247&amp;cid=229573649&amp;page=1&quot;</span> <span class="attr">scrolling</span>=<span class="string">&quot;no&quot;</span> <span class="attr">border</span>=<span class="string">&quot;0&quot;</span> <span class="attr">frameborder</span>=<span class="string">&quot;no&quot;</span> <span class="attr">framespacing</span>=<span class="string">&quot;0&quot;</span> <span class="attr">allowfullscreen</span>=<span class="string">&quot;true&quot;</span> <span class="attr">style</span>=<span class="string">&quot;position: absolute; width: 100%; height: 100%; Left: 0; top: 0;&quot;</span> &gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span>  </span><br></pre></td></tr></table></figure>
+
+<p><a href="https://github.com/stephenmkbrady/hexo-tag-html5">hexo-tag-html5video</a></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install --save hexo-tag-html5video</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% html5video &#x27;100%&#x27; &#x27;250px&#x27; &#x27;video/mp4&#x27; %&#125; </span><br><span class="line">&#123;% asset<span class="emphasis">_path &lt;视频路径&gt; %&#125; </span></span><br><span class="line"><span class="emphasis">&#123;% endhtml5video %&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="菜单导航配置"><a href="#菜单导航配置" class="headerlink" title="菜单导航配置"></a>菜单导航配置</h3><p>配置基本菜单导航的名称、路径url和图标icon.</p>
+<ol>
+<li>菜单导航名称可以是中文也可以是英文(如：<code>Index</code> 或 <code>主页</code>)</li>
+<li><code>External</code> 表示是否在新标签页打开连接</li>
+<li>导航地址可以是站内地址也可以是外网地址</li>
+</ol>
+<h3 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h3><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">hexo</span><br><span class="line"><span class="bullet">  -</span> node<span class="emphasis">_modules</span></span><br><span class="line"><span class="emphasis">  - scaffolds # 模板文件夹</span></span><br><span class="line"><span class="emphasis">    - draft.md # 草稿模板文件</span></span><br><span class="line"><span class="emphasis">    - page.md # 页面模板文件</span></span><br><span class="line"><span class="emphasis">    - post.md # 文章模板文件</span></span><br><span class="line"><span class="emphasis">  - source # 资源文件夹</span></span><br><span class="line"><span class="emphasis">    - _</span>drafts # 草稿文件夹</span><br><span class="line"><span class="bullet">    -</span> <span class="emphasis">_posts # post文件夹</span></span><br><span class="line"><span class="emphasis">    - images #图片文件夹</span></span><br><span class="line"><span class="emphasis">  - themes # 主题文件夹</span></span><br><span class="line"><span class="emphasis">    - ayer # 主题文件夹</span></span><br><span class="line"><span class="emphasis">      - _</span>config.yml # 主题配置文件</span><br><span class="line"><span class="bullet">      -</span> languages # 语言文件夹</span><br><span class="line"><span class="bullet">      -</span> layout # 布局文件夹</span><br><span class="line"><span class="bullet">      -</span> scripts # 脚本文件夹</span><br><span class="line"><span class="bullet">      -</span> source # 资源文件夹</span><br><span class="line"><span class="bullet">        -</span> css # 样式文件夹</span><br><span class="line"><span class="bullet">        -</span> fonts # 字体文件夹</span><br><span class="line"><span class="bullet">        -</span> images # 图片文件夹</span><br><span class="line"><span class="bullet">        -</span> js # 脚本文件夹</span><br><span class="line"><span class="bullet">  -</span> <span class="emphasis">_config.yml # 配置文件</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="本地图片的调用-1"><a href="#本地图片的调用-1" class="headerlink" title="本地图片的调用"></a>本地图片的调用</h3><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">这里是图片注释</span>](<span class="link">../images/2019_05_01_hello_world/1.png</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="DIY-hexo-new-post"><a href="#DIY-hexo-new-post" class="headerlink" title="DIY hexo new post"></a>DIY hexo new post</h3><p>修改hexo根目录下_config.yml文件，</p>
+<ol>
+<li>为新建post自动加上当前日期，避免title重复，造成的一系列问题。</li>
+</ol>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Writing</span></span><br><span class="line"><span class="comment"># new_post_name: title.md # default setting</span></span><br><span class="line"><span class="attr">new_post_name:</span> <span class="string">:year_:month_:day_:title.md</span> </span><br><span class="line"><span class="comment"># new posts name as year_month_day_postname</span></span><br><span class="line"><span class="attr">default_layout:</span> <span class="string">post</span></span><br><span class="line"><span class="attr">titlecase:</span> <span class="literal">false</span> <span class="comment"># Transform title into titlecase</span></span><br><span class="line"><span class="attr">external_link:</span></span><br><span class="line"><span class="attr">enable:</span> <span class="literal">true</span> <span class="comment"># Open external links in new tab</span></span><br><span class="line"><span class="attr">field:</span> <span class="string">site</span> <span class="comment"># Apply to the whole site</span></span><br><span class="line"><span class="attr">exclude:</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="attr">filename_case:</span> <span class="number">0</span></span><br><span class="line"><span class="attr">render_drafts:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>为了使_post文件夹尽可能的精简，便于网盘同步，只保留md文件，图片等资源放在<code>source</code>目录下<code>images</code>文件夹内。</li>
+</ol>
+<figure class="highlight sqf"><table><tr><td class="code"><pre><span class="line">post_asset_folder: <span class="literal">false</span> </span><br><span class="line"># 改成<span class="literal">true</span>，则在<span class="variable">_post</span>新建下新建md文件的同时新建一个同名的文件夹用于存储当前页面的一些资源。</span><br></pre></td></tr></table></figure>
+
+<h3 id="引用文章"><a href="#引用文章" class="headerlink" title="引用文章"></a><a href="https://hexo.io/zh-cn/docs/tag-plugins#%E5%BC%95%E7%94%A8%E6%96%87%E7%AB%A0">引用文章</a></h3><p>引用其他文章的链接。</p>
+<figure class="highlight django"><table><tr><td class="code"><pre><span class="line"><span class="template-tag">&#123;% <span class="name">post_path</span> filename %&#125;</span><span class="language-xml">  </span></span><br><span class="line"><span class="language-xml"></span><span class="template-tag">&#123;% <span class="name">post_link</span> filename [title] [escape] %&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>在使用此标签时可以忽略文章文件所在的路径或者文章的永久链接信息、如语言、日期。</p>
+<p>例如，在文章中使用 <code>&#123;% post_link how-to-bake-a-cake %&#125;</code> 时，只需有一个名为 <code>how-to-bake-a-cake.md</code> 的文章文件即可。即使这个文件位于站点文件夹的 <code>source/posts/2015-02-my-family-holiday</code> 目录下、或者文章的永久链接是 <code>2018/en/how-to-bake-a-cake</code>，都没有影响。</p>
+<p>默认链接文字是文章的标题，你也可以自定义要显示的文本。</p>
+<p>默认对文章的标题和自定义标题里的特殊字符进行转义。可以使用 <code>escape</code> 选项，禁止对特殊字符进行转义。</p>
+<p>例如：</p>
+<p><strong>链接使用文章的标题</strong></p>
+<p><code>&#123;% post_link hexo-3-8-released %&#125;</code></p>
+<p><strong>链接使用自定义文字</strong></p>
+<p><code>&#123;% post_link hexo-3-8-released '通往文章的链接' %&#125;</code></p>
+<p><strong>对标题的特殊字符进行转义</strong></p>
+<figure class="highlight crmsh"><table><tr><td class="code"><pre><span class="line">&#123;% post_link hexo-<span class="number">4</span>-released &#x27;How to use <span class="tag">&lt;b&gt;</span> <span class="keyword">tag</span> <span class="title">in</span> title&#x27; %&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="动态自定义附件文件夹名称"><a href="#动态自定义附件文件夹名称" class="headerlink" title="动态自定义附件文件夹名称"></a>动态自定义附件文件夹名称</h3><p>插件 <strong>Custom Attachment Location</strong> ，安装后进行附件文件夹的设置:</p>
+<figure class="highlight xl"><table><tr><td class="code"><pre><span class="line">C<span class="function"><span class="title">ustom</span> Attachment Location --&gt;</span> L<span class="function"><span class="title">ocation</span> <span class="keyword">for</span> New Attachments --&gt;</span> ./$&#123;filename&#125;.assets （这样设置是为了与 Typora 兼容，正常显示 Typora 中创建的笔记的图片附件）</span><br></pre></td></tr></table></figure>
+
+<h1 id="post在首页全文展示问题"><a href="#post在首页全文展示问题" class="headerlink" title="post在首页全文展示问题"></a>post在首页全文展示问题</h1><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"># 主题config文件 ~/hexo/themes/ayer/_config.yml</span><br><span class="line"># 文章太长，截断按钮文字(在需要截断的行增加此标记：<span class="comment">&lt;!--more--&gt;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<p>More info:<br><a href="https://post.smzdm.com/p/agqol9zm/">晨聊 篇十七：markdown也变脸，obsidian + hexo 在群晖NAS上的双剑合璧</a></p>
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>博客</category>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>markdown</tag>
+        <tag>hexo</tag>
+        <tag>笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>群晖Git部署Hexo</title>
+    <url>/2019/05/06/Git_Hexo/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="一、前期准备"><a href="#一、前期准备" class="headerlink" title="一、前期准备"></a>一、前期准备</h2><h3 id="1-1-注册-账号-Gitee-GitHub"><a href="#1-1-注册-账号-Gitee-GitHub" class="headerlink" title="1.1 注册 账号 Gitee&#x2F;GitHub"></a>1.1 注册 账号 Gitee&#x2F;GitHub</h3><p>注册一个属于自己的 Github 或 Gitee 账号，</p>
+<p>Gitee在国内访问速度更快，但Gitee需要上传身份证照片若干张进行实名认证，懒得掏身份证，pass掉。</p>
+<span id="more"></span>
+<p><img src="/2019/05/06/Git_Hexo/%E5%AE%9E%E5%90%8D%E9%AA%8C%E8%AF%81.png" alt="实名认证"></p>
+<p>本文采用 Github 演示。 </p>
+<h3 id="1-2-安装-Git"><a href="#1-2-安装-Git" class="headerlink" title="1.2 安装 Git"></a>1.2 安装 Git</h3><p>选择对应的系统平台，下载后，傻瓜式安装即可。 安装完成后，打开运行 –&gt; 输入命令，回车打开命令行窗口 输入以下Git指令</p>
+<figure class="highlight ada"><table><tr><td class="code"><pre><span class="line">git <span class="comment">--version</span></span><br></pre></td></tr></table></figure>
+
+<p>出现版本号，即代表 git 安装成功</p>
+<h3 id="1-3-Git-和-Github-建立联系"><a href="#1-3-Git-和-Github-建立联系" class="headerlink" title="1.3 Git 和 Github 建立联系"></a>1.3 Git 和 Github 建立联系</h3><p>任意目录下，打开 git bash 命令行，输入以下命令生成公钥：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C 邮箱</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">为了管理多个密钥，你可以在生成密钥时为每个密钥指定不同的文件名</span></span><br><span class="line">ssh-keygen -t rsa -C &quot;your_email@example.com&quot; -f ~/.ssh/id_rsa_example_com</span><br></pre></td></tr></table></figure>
+
+
+<p>回车出现 （y&#x2F;n）, 输入 y , 连续点击回车，即可生成。</p>
+<p>在<code>~/.ssh</code> 目录，找到 <code>id_rsa_example_com.pub</code> 文件，<code>cat ~/.ssh/id_rsa_example_com.pub</code>获取公钥。</p>
+<p>到GitHub找到 <code>设置</code> 并打开，找到左侧栏 <code>Access</code>下找到<code>SSH and GPG keys</code>，点击<code>New SSH keys</code>，添加 <code>Title</code> 和 <code>Key</code></p>
+<p>云端仓库创建完成的 gitee，更改远程仓库 URL 为 SSH</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">chmod 600 ~/.ssh/id_rsa_*</span><br><span class="line">chown your_username:users ~/.ssh/id_rsa_*</span><br></pre></td></tr></table></figure>
+
+
+<p><strong>输入以下指令，进行全局配置：</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;你的用户名&quot;</span><br><span class="line">git config --global user.email &quot;你的邮箱&quot;</span><br></pre></td></tr></table></figure>
+
+<p>查看config文件是否存在，不存在新建<code>touch config</code>,<br> config文件内容如下：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">Host github.com</span><br><span class="line">    User git</span><br><span class="line">    IdentityFile ~/.ssh/id_rsa_example_com</span><br><span class="line">    PreferredAuthentications publickey</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">测试连接</span></span><br><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+
+
+
+<p>将纳入版本库的文件，提交到 gitee 远程仓库：</p>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">add</span> .</span><br><span class="line">git commit -m <span class="string">&#x27;first commit&#x27;</span></span><br><span class="line">git remote <span class="built_in">add</span> origin 你的仓库地址</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
+
+<p>此时，提交完成，打开浏览器，输入你的仓库地址，刷新即可看到文件。</p>
+<ol>
+<li><code>hexo clean</code>: 这个命令用于清理缓存文件和已生成的静态文件。它删除了<code>public</code>文件夹中的内容以及<code>.hexo</code>文件夹中的缓存文件。这是在部署博客之前的一个好习惯，因为它确保了生成的静态文件是最新的，避免了由于旧的缓存或文件导致的潜在问题。</li>
+<li><code>hexo deploy</code>: 这个命令用于将博客部署到服务器上。在执行这个命令之前，Hexo会生成所有的静态文件，并根据<code>_config.yml</code>文件中的<code>deploy</code>部分配置将它们上传到指定的服务器。这通常涉及到将文件推送到GitHub Pages、FTP服务器或其他静态网站托管服务。</li>
+</ol>
+<figure class="highlight 1c"><table><tr><td class="code"><pre><span class="line">$ hexo clean <span class="meta">&amp;&amp; hexo deploy</span></span><br></pre></td></tr></table></figure>
+
+<p>在NAS上定时执行<code>hexo clean &amp;&amp; hexo deploy</code>，实现自动更新内容。</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>博客</category>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>笔记</tag>
+        <tag>技术</tag>
+        <tag>ssh</tag>
+        <tag>GitHub</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>苹果全平台无缝同步群晖Obsidian库</title>
     <url>/2019/05/24/Apple%E5%85%A8%E5%B9%B3%E5%8F%B0%E6%97%A0%E7%BC%9D%E5%90%8C%E6%AD%A5%E7%BE%A4%E6%99%96Obsidian%E5%BA%93/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><strong>前提介绍：</strong></p>
@@ -336,274 +665,73 @@
       </tags>
   </entry>
   <entry>
-    <title>Hexo Hello World</title>
-    <url>/2019/05/01/hello_world/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Here-Cheatsheet">Markdown</a> 使用<a href="https://github.com/younghz/Markdown">Markdown 基本语法</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
-<h1 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h1><hr>
-<h3 id="hexo-快速、简洁且高效的博客框架"><a href="#hexo-快速、简洁且高效的博客框架" class="headerlink" title="hexo 快速、简洁且高效的博客框架"></a><a href="https://hexo.io/zh-cn/">hexo 快速、简洁且高效的博客框架</a></h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br><span class="line">hexo init blog</span><br><span class="line">cd blog</span><br><span class="line">npm install</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
-
-<h3 id="init"><a href="#init" class="headerlink" title="init"></a>init</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">hexo init [folder]</span></span><br></pre></td></tr></table></figure>
-
-<p>新建一个网站。如果没有设置 <code>folder</code> ，Hexo 默认在目前的文件夹建立网站。</p>
+    <title>澳洲家中日常必备清单</title>
+    <url>/2022/05/19/%E6%BE%B3%E6%B4%B2%E5%AE%B6%E4%B8%AD%E6%97%A5%E5%B8%B8%E5%BF%85%E5%A4%87%E6%B8%85%E5%8D%95/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>1⃣️ CEPACAINE漱口水！ 治疗牙龈肿痛，口腔溃疡。澳洲医生推荐买的，超级有效！猫猫家必备的，再也没有牙口烦恼。 购买地址：Chemist有售 💰价格：$15.49 问题在口腔，吃啥啥不香，买它！喵～</p>
+<hr>
+<p>2⃣️ Quick EZE胃糖 腹胀、胃酸、胃痛。消化不良、吃颗糖就能缓解～ 主要是这糖咋还那么好吃！ 购买地址：Chemist 💰价格：$4.99 胃也需要轻轻安抚，买它！喵～</p>
 <span id="more"></span>
-<p>本命令相当于执行了以下几步：</p>
-<ol>
-<li>Git clone <a href="https://github.com/hexojs/hexo-starter">hexo-starter</a> 和 <a href="https://github.com/hexojs/hexo-theme-landscape">hexo-theme-landscape</a> 主题到当前目录或指定目录。</li>
-<li>使用 <a href="https://classic.yarnpkg.com/lang/en/">Yarn 1</a>、<a href="https://pnpm.io/zh/">pnpm</a> 或 <a href="https://docs.npmjs.com/cli/install">npm</a> 包管理器下载依赖（如有已安装多个，则列在前面的优先）。npm 默认随 <a href="https://hexo.io/zh-cn/docs/index.html#%E5%AE%89%E8%A3%85-Node-js">Node.js</a> 安装。</li>
-</ol>
-<h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new post <span class="string">&quot;PostName&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br><span class="line"><span class="comment"># 该命令可以简写为</span></span><br><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">hexo generate</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">该命令可以简写为</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">hexo g</span></span><br></pre></td></tr></table></figure>
-
-<p>生成静态文件。</p>
-<table>
-<thead>
-<tr>
-<th>选项</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>-d</code>, <code>--deploy</code></td>
-<td>文件生成后立即部署网站</td>
-</tr>
-<tr>
-<td><code>-w</code>, <code>--watch</code></td>
-<td>监视文件变动</td>
-</tr>
-<tr>
-<td><code>-b</code>, <code>--bail</code></td>
-<td>生成过程中如果发生任何未处理的异常则抛出异常</td>
-</tr>
-<tr>
-<td><code>-f</code>, <code>--force</code></td>
-<td>强制重新生成文件  <br>Hexo 引入了差分机制，如果 <code>public</code> 目录存在，那么 <code>hexo g</code> 只会重新生成改动的文件。  <br>使用该参数的效果接近 <code>hexo clean &amp;&amp; hexo generate</code></td>
-</tr>
-<tr>
-<td><code>-c</code>, <code>--concurrency</code></td>
-<td>最大同时生成文件的数量，默认无限制</td>
-</tr>
-</tbody></table>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br><span class="line"><span class="comment"># 该命令可以简写为</span></span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-<h3 id="version"><a href="#version" class="headerlink" title="version"></a>version</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">hexo version</span></span><br></pre></td></tr></table></figure>
-
-<p>显示 Hexo 版本。</p>
-<h1 id="Plugins"><a href="#Plugins" class="headerlink" title="Plugins"></a>Plugins</h1><hr>
-<ol>
-<li><a href="https://github.com/maxchang3/hexo-markmap">hexo思维导图：hexo-markmap</a></li>
-<li><a href="https://github.com/kuole-o/hexo-tag-map?tab=readme-ov-file">Hexo 文章插入交互式地图：hexo-tag-map</a></li>
-</ol>
-<link rel="stylesheet" href="//unpkg.com/hexo-tag-map/lib/leaflet@1.7.1.css"><script data-pjax src="//unpkg.com/hexo-tag-map/lib/leaflet@1.7.1.js"></script><script data-pjax src="//unpkg.com/hexo-tag-map/lib/leaflet.ChineseTmsProviders@1.0.4.js"></script><div class="map-box" style="margin: 0.8rem 0 1.6rem 0;"><div id="gaodeMap-119.296623-26.081958" style="max-width:100%; height:360px;display: block;margin:0 auto;z-index:1;border-radius: 5px;"></div></div><script type="text/javascript">var normalm=L.tileLayer.chinaProvider('GaoDe.Normal.Map',{maxZoom:20,minZoom:1,attribution:'高德地图'});var imgm=L.tileLayer.chinaProvider('GaoDe.Satellite.Map',{maxZoom:20,minZoom:1,attribution:'高德地图'});var imga=L.tileLayer.chinaProvider('GaoDe.Satellite.Annotion',{maxZoom:20,minZoom:1,attribution:'高德地图'});var normal=L.layerGroup([normalm]),image=L.layerGroup([imgm,imga]);var baseLayers={"高德地图":normal,"高德卫星地图":imgm,"高德卫星标注":image};var mymap=L.map('gaodeMap-119.296623-26.081958',{center:[26.081958,119.296623],zoom:16,layers:[normal],zoomControl:false});L.control.layers(baseLayers,null).addTo(mymap);L.control.zoom({zoomInTitle:'放大',zoomOutTitle:'缩小'}).addTo(mymap);var marker = L.marker(['26.081958','119.296623']).addTo(mymap);marker.bindPopup("这里是福州三坊七巷，three lanes and seven alleys").openPopup();</script>
-
-
-<p><a href="https://lbs.amap.com/tools/picker">高德地图坐标拾取系统</a></p>
-<table>
-<thead>
-<tr>
-<th align="right">地图名</th>
-<th align="right">标签值&lt;必填&gt;</th>
-<th align="right">经度(-180~180)</th>
-<th align="right">纬度(-90~90)</th>
-<th align="right">文本</th>
-<th align="right">缩放等级(默认14)</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="right">混合地图</td>
-<td align="right">map</td>
-<td align="right">坐标经度</td>
-<td align="right">坐标纬度</td>
-<td align="right">文本</td>
-<td align="right">取值3~18</td>
-</tr>
-<tr>
-<td align="right">谷歌地图</td>
-<td align="right">googleMap</td>
-<td align="right">坐标经度</td>
-<td align="right">坐标纬度</td>
-<td align="right">文本</td>
-<td align="right">取值1~20</td>
-</tr>
-<tr>
-<td align="right">高德地图</td>
-<td align="right">gaodeMap</td>
-<td align="right">坐标经度</td>
-<td align="right">坐标纬度</td>
-<td align="right">文本</td>
-<td align="right">取值3~18</td>
-</tr>
-<tr>
-<td align="right">百度地图</td>
-<td align="right">baiduMap</td>
-<td align="right">坐标经度</td>
-<td align="right">坐标纬度</td>
-<td align="right">文本</td>
-<td align="right">取值4~18</td>
-</tr>
-<tr>
-<td align="right">Geoq地图</td>
-<td align="right">geoqMap</td>
-<td align="right">坐标经度</td>
-<td align="right">坐标纬度</td>
-<td align="right">文本</td>
-<td align="right">取值1~18</td>
-</tr>
-<tr>
-<td align="right">openstreet地图</td>
-<td align="right">openstreetMap</td>
-<td align="right">坐标经度</td>
-<td align="right">坐标纬度</td>
-<td align="right">文本</td>
-<td align="right">取值1~18</td>
-</tr>
-</tbody></table>
-<table>
-<thead>
-<tr>
-<th align="right">地图名</th>
-<th align="right">宽(默认100%) &#x2F; 高(默认360px)</th>
-<th align="right">默认图层(默认1)</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="right">混合地图</td>
-<td align="right">百分数或具体值(100%或360px)</td>
-<td align="right">取值1~7</td>
-</tr>
-<tr>
-<td align="right">谷歌地图</td>
-<td align="right">百分数或具体值(100%或360px)</td>
-<td align="right">取值1~3</td>
-</tr>
-<tr>
-<td align="right">高德地图</td>
-<td align="right">百分数或具体值(100%或360px)</td>
-<td align="right">取值1~3</td>
-</tr>
-<tr>
-<td align="right">百度地图</td>
-<td align="right">百分数或具体值(100%或360px)</td>
-<td align="right">取值1~2</td>
-</tr>
-<tr>
-<td align="right">Geoq地图</td>
-<td align="right">百分数或具体值(100%或360px)</td>
-<td align="right">取值1~5</td>
-</tr>
-<tr>
-<td align="right">openstreet地图</td>
-<td align="right">百分数或具体值(100%或360px)</td>
-<td align="right">不支持此参数</td>
-</tr>
-</tbody></table>
-<ol>
-<li>参数之间，用<strong>英文逗号</strong>相隔</li>
-<li>参数必须按上述事例顺序输入，不得为空</li>
-<li><strong>同一个页面，同一组经纬度值，只能插入一个相同标签值的地图</strong>(若有需要，可以将第二个地图上，经度或纬度末尾删除一两个数)</li>
-<li>参数取值必须在上述范围内</li>
-<li>默认图层：即地图叠加层的值，默认常规地图还是卫星地图，可按地图显示顺序取值</li>
-<li><strong>缩放等级，数字越大，地图比例尺越小，显示的越精细</strong></li>
-<li>除<strong>标签值</strong>外，其他参数选填，但 <strong>每个参数的左边的参数必填</strong></li>
-<li>谷歌地图需要外网才能加载查看</li>
-</ol>
-<h1 id="Notes"><a href="#Notes" class="headerlink" title="Notes"></a>Notes</h1><hr>
-<h3 id="本地图片的调用"><a href="#本地图片的调用" class="headerlink" title="本地图片的调用"></a>本地图片的调用</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">my version</span></span><br><span class="line">hexo: 7.2.0</span><br><span class="line">hexo-cli: 4.3.2</span><br></pre></td></tr></table></figure>
-
-<ol>
-<li><p>手动新建<br>首先是在 _posts 文件夹下建立一个<code>本地图片的调用.md</code>，再建立一个同名的文件夹 <code>本地图片的调用</code>。</p>
-</li>
-<li><p>hexo代码新建<br>使用<code>hexo new post 本地图片的调用</code>，可以生成md文件的同时生成一个同名文件夹用于存储网页资源。</p>
-</li>
-</ol>
-<p>这篇文章要引用的图片就放在该文件夹下。比如我就在该目录下放一个图片<code>1.png</code>。</p>
-<p><img src="/2019/05/01/hello_world/1.png"></p>
-<p>然后在博文 MarkDown 文件里引用该图片：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">这里是图片注释</span>](<span class="link">../images/2019_05_01_hello_world/1.png</span>)</span><br></pre></td></tr></table></figure>
-
-<p><strong>为什么引用的时候不用加文件夹的路径呢？</strong></p>
-<p>这是因为 hexo 在渲染的时候，会把<code>本地图片的调用.md</code> 渲染为<code>public</code>下的 <code>本地图片的调用.html</code>网页文件，而把对应文件夹下的静态资源，比如图片 <code>1.png</code>也拷贝到<code>public</code>下!</p>
-<p>需要注意的是，在<code>hexo/source/_posts</code>目录下的图片文件名不能重复。</p>
-<h3 id="skip-render"><a href="#skip-render" class="headerlink" title="skip render"></a>skip render</h3><p>修改hexo根目录下_config.yml文件，</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">skip_render:</span></span><br><span class="line">	<span class="bullet">-</span> <span class="string">&#x27;_posts/templates/**&#x27;</span></span><br><span class="line">	<span class="bullet">-</span> <span class="string">&#x27;_posts/draft/**&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<p>目录结构：<br><code>- hexo/source/_posts/templates/</code> 保存post模版，供Obsidian快速开始Post编写。<br><code>- hexo/source/_posts/draft/</code> 保存未编辑完成，或不想共享的文章内容。</p>
-<p>设置跳过渲染之后，最好使用<code>hexo clean</code>清除以前的编译结果，保证配置生效。再使用<code>hexo g</code>查看。</p>
-<h3 id="自动generate"><a href="#自动generate" class="headerlink" title="自动generate"></a>自动generate</h3><p>定时or设置条件运行命令<code>docker exec -it hexo bash -c &quot;hexo clean &amp;&amp; hexo g&quot;</code>来自动编译。</p>
-<p><strong>踩坑：</strong> 直接在群晖的<code>控制面板</code> - <code>任务计划</code>中添加自定义脚本<code>docker exec -it hexo bash -c &quot;hexo clean &amp;&amp; hexo g&quot;</code>会报错<code>the input device is not a TTY</code>.</p>
-<p>tty一词源于Teletypes,或teletypewriters。这个的意思是说后台linux执行的时候没有终端设备。我们一般执行docker里的命令时候都喜欢加上-it 这个参数，这里的-t 就是表示伪tty。所以，如果我们docker执行后台运行的任务或者程序直接去除 -t 这个参数就不会出现这个报错了。</p>
-<p><strong>所以要用 <code>docker exec hexo bash -c &quot;hexo clean &amp;&amp; hexo g&quot;</code></strong></p>
-<p><strong>待改进：</strong> 设置了每天generate一次。如果设置成有变动就generate就更好了，暂时没想到办法。</p>
-<h3 id="视频嵌入"><a href="#视频嵌入" class="headerlink" title="视频嵌入"></a>视频嵌入</h3><p>现在视频基本上都会分享到各大平台，所以暂时主要以嵌入网络视频展示。<br>研究了几款插件，基本上都是年久失修，使用不易，最终还是选择了<code>iframe</code>嵌入。</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">%%bilibili视频嵌入%%</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;position: relative; width: 100%; height: 0; padding-bottom: 75%;&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">src</span>=<span class="string">&quot;//player.bilibili.com/player.html?aid=244387247&amp;cid=229573649&amp;page=1&quot;</span> <span class="attr">scrolling</span>=<span class="string">&quot;no&quot;</span> <span class="attr">border</span>=<span class="string">&quot;0&quot;</span> <span class="attr">frameborder</span>=<span class="string">&quot;no&quot;</span> <span class="attr">framespacing</span>=<span class="string">&quot;0&quot;</span> <span class="attr">allowfullscreen</span>=<span class="string">&quot;true&quot;</span> <span class="attr">style</span>=<span class="string">&quot;position: absolute; width: 100%; height: 100%; Left: 0; top: 0;&quot;</span> &gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span>  </span><br></pre></td></tr></table></figure>
-
-<p><a href="https://github.com/stephenmkbrady/hexo-tag-html5">hexo-tag-html5video</a></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install --save hexo-tag-html5video</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% html5video &#x27;100%&#x27; &#x27;250px&#x27; &#x27;video/mp4&#x27; %&#125; </span><br><span class="line">&#123;% asset<span class="emphasis">_path &lt;视频路径&gt; %&#125; </span></span><br><span class="line"><span class="emphasis">&#123;% endhtml5video %&#125;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="菜单导航配置"><a href="#菜单导航配置" class="headerlink" title="菜单导航配置"></a>菜单导航配置</h3><p>配置基本菜单导航的名称、路径url和图标icon.</p>
-<ol>
-<li>菜单导航名称可以是中文也可以是英文(如：<code>Index</code> 或 <code>主页</code>)</li>
-<li><code>External</code> 表示是否在新标签页打开连接</li>
-<li>导航地址可以是站内地址也可以是外网地址</li>
-</ol>
-<h3 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h3><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">hexo</span><br><span class="line"><span class="bullet">  -</span> node<span class="emphasis">_modules</span></span><br><span class="line"><span class="emphasis">  - scaffolds # 模板文件夹</span></span><br><span class="line"><span class="emphasis">    - draft.md # 草稿模板文件</span></span><br><span class="line"><span class="emphasis">    - page.md # 页面模板文件</span></span><br><span class="line"><span class="emphasis">    - post.md # 文章模板文件</span></span><br><span class="line"><span class="emphasis">  - source # 资源文件夹</span></span><br><span class="line"><span class="emphasis">    - _</span>drafts # 草稿文件夹</span><br><span class="line"><span class="bullet">    -</span> <span class="emphasis">_posts # post文件夹</span></span><br><span class="line"><span class="emphasis">    - images #图片文件夹</span></span><br><span class="line"><span class="emphasis">  - themes # 主题文件夹</span></span><br><span class="line"><span class="emphasis">    - ayer # 主题文件夹</span></span><br><span class="line"><span class="emphasis">      - _</span>config.yml # 主题配置文件</span><br><span class="line"><span class="bullet">      -</span> languages # 语言文件夹</span><br><span class="line"><span class="bullet">      -</span> layout # 布局文件夹</span><br><span class="line"><span class="bullet">      -</span> scripts # 脚本文件夹</span><br><span class="line"><span class="bullet">      -</span> source # 资源文件夹</span><br><span class="line"><span class="bullet">        -</span> css # 样式文件夹</span><br><span class="line"><span class="bullet">        -</span> fonts # 字体文件夹</span><br><span class="line"><span class="bullet">        -</span> images # 图片文件夹</span><br><span class="line"><span class="bullet">        -</span> js # 脚本文件夹</span><br><span class="line"><span class="bullet">  -</span> <span class="emphasis">_config.yml # 配置文件</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="本地图片的调用-1"><a href="#本地图片的调用-1" class="headerlink" title="本地图片的调用"></a>本地图片的调用</h3><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">这里是图片注释</span>](<span class="link">../images/2019_05_01_hello_world/1.png</span>)</span><br></pre></td></tr></table></figure>
-
-<h3 id="DIY-hexo-new-post"><a href="#DIY-hexo-new-post" class="headerlink" title="DIY hexo new post"></a>DIY hexo new post</h3><p>修改hexo根目录下_config.yml文件，</p>
-<ol>
-<li>为新建post自动加上当前日期，避免title重复，造成的一系列问题。</li>
-</ol>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Writing</span></span><br><span class="line"><span class="comment"># new_post_name: title.md # default setting</span></span><br><span class="line"><span class="attr">new_post_name:</span> <span class="string">:year_:month_:day_:title.md</span> </span><br><span class="line"><span class="comment"># new posts name as year_month_day_postname</span></span><br><span class="line"><span class="attr">default_layout:</span> <span class="string">post</span></span><br><span class="line"><span class="attr">titlecase:</span> <span class="literal">false</span> <span class="comment"># Transform title into titlecase</span></span><br><span class="line"><span class="attr">external_link:</span></span><br><span class="line"><span class="attr">enable:</span> <span class="literal">true</span> <span class="comment"># Open external links in new tab</span></span><br><span class="line"><span class="attr">field:</span> <span class="string">site</span> <span class="comment"># Apply to the whole site</span></span><br><span class="line"><span class="attr">exclude:</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="attr">filename_case:</span> <span class="number">0</span></span><br><span class="line"><span class="attr">render_drafts:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>为了使_post文件夹尽可能的精简，便于网盘同步，只保留md文件，图片等资源放在<code>source</code>目录下<code>images</code>文件夹内。</li>
-</ol>
-<figure class="highlight sqf"><table><tr><td class="code"><pre><span class="line">post_asset_folder: <span class="literal">false</span> </span><br><span class="line"># 改成<span class="literal">true</span>，则在<span class="variable">_post</span>新建下新建md文件的同时新建一个同名的文件夹用于存储当前页面的一些资源。</span><br></pre></td></tr></table></figure>
-
-<h3 id="引用文章"><a href="#引用文章" class="headerlink" title="引用文章"></a><a href="https://hexo.io/zh-cn/docs/tag-plugins#%E5%BC%95%E7%94%A8%E6%96%87%E7%AB%A0">引用文章</a></h3><p>引用其他文章的链接。</p>
-<figure class="highlight django"><table><tr><td class="code"><pre><span class="line"><span class="template-tag">&#123;% <span class="name">post_path</span> filename %&#125;</span><span class="language-xml">  </span></span><br><span class="line"><span class="language-xml"></span><span class="template-tag">&#123;% <span class="name">post_link</span> filename [title] [escape] %&#125;</span></span><br></pre></td></tr></table></figure>
-
-<p>在使用此标签时可以忽略文章文件所在的路径或者文章的永久链接信息、如语言、日期。</p>
-<p>例如，在文章中使用 <code>&#123;% post_link how-to-bake-a-cake %&#125;</code> 时，只需有一个名为 <code>how-to-bake-a-cake.md</code> 的文章文件即可。即使这个文件位于站点文件夹的 <code>source/posts/2015-02-my-family-holiday</code> 目录下、或者文章的永久链接是 <code>2018/en/how-to-bake-a-cake</code>，都没有影响。</p>
-<p>默认链接文字是文章的标题，你也可以自定义要显示的文本。</p>
-<p>默认对文章的标题和自定义标题里的特殊字符进行转义。可以使用 <code>escape</code> 选项，禁止对特殊字符进行转义。</p>
-<p>例如：</p>
-<p><strong>链接使用文章的标题</strong></p>
-<p><code>&#123;% post_link hexo-3-8-released %&#125;</code></p>
-<p><strong>链接使用自定义文字</strong></p>
-<p><code>&#123;% post_link hexo-3-8-released '通往文章的链接' %&#125;</code></p>
-<p><strong>对标题的特殊字符进行转义</strong></p>
-<figure class="highlight crmsh"><table><tr><td class="code"><pre><span class="line">&#123;% post_link hexo-<span class="number">4</span>-released &#x27;How to use <span class="tag">&lt;b&gt;</span> <span class="keyword">tag</span> <span class="title">in</span> title&#x27; %&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="动态自定义附件文件夹名称"><a href="#动态自定义附件文件夹名称" class="headerlink" title="动态自定义附件文件夹名称"></a>动态自定义附件文件夹名称</h3><p>插件 <strong>Custom Attachment Location</strong> ，安装后进行附件文件夹的设置:</p>
-<figure class="highlight xl"><table><tr><td class="code"><pre><span class="line">C<span class="function"><span class="title">ustom</span> Attachment Location --&gt;</span> L<span class="function"><span class="title">ocation</span> <span class="keyword">for</span> New Attachments --&gt;</span> ./$&#123;filename&#125;.assets （这样设置是为了与 Typora 兼容，正常显示 Typora 中创建的笔记的图片附件）</span><br></pre></td></tr></table></figure>
-
-<h1 id="post在首页全文展示问题"><a href="#post在首页全文展示问题" class="headerlink" title="post在首页全文展示问题"></a>post在首页全文展示问题</h1><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"># 主题config文件 ~/hexo/themes/ayer/_config.yml</span><br><span class="line"># 文章太长，截断按钮文字(在需要截断的行增加此标记：<span class="comment">&lt;!--more--&gt;</span>)</span><br></pre></td></tr></table></figure>
+<hr>
+<p>3⃣️ VICKS 通鼻喷剂 在澳洲总感觉鼻子不适，鼻炎老犯，尤其总是鼻塞。这个通鼻喷剂起效快，薄荷味柔和不刺激。 购买地址：Chemist 💰价格$11.99 杜绝张口呼吸，买它！喵～</p>
+<hr>
+<p>4⃣️ Refresh眼药水 在家学习、工作、打游戏、熬夜，眼睛干涩的话最使用用人工泪液成分的眼药水。无刺激，缓解眼睛疲劳，闺蜜们都在用。 购买地址：Chemist 💰价格$13.49 缓解就靠累上加泪。买它，喵～</p>
+<hr>
+<p>5⃣️ LeQure Detox Soap排毒香皂 这款味道超级淡，小众然鹅超棒！主要可以用来控油去杂质。背部长痘痘的宝宝们一定要试试。滋养加排毒，姐妹推荐的，用过也感觉很好。 购买地址：Chemist 💰价格：$5.99 永远不进毒圈，买它，喵～</p>
+<hr>
+<p>6⃣️ Naprogesic止痛片 姨妈期最好的止痛片咯，因为成分对胃损伤小，刺激小。而且止痛的效果起效更快，当地女生首选经期续命药。小蓝片好多朋友都在用。 购买地址：Chemist 💰价格：$7.99 连我姨妈都在用！买它，喵～</p>
+<hr>
+<p>7⃣️ Dettol 洗衣消毒液 家里养宠物的朋友洗衣服都会用这个帮忙杀菌！能灭杀99.9%的细菌。尤其是合租又共用洗衣机的话这个肯定要买！ 购买地址：Coles、 WWS有售 💰价格：$8.99 再也不怕室友用洗衣机洗袜子了，买它！喵～</p>
+<hr>
+<p>8⃣️ Mr muscle通道强力剂！ 水槽，浴室如果都便秘了，那主人可就更难受了。 超强清下水道秘方，家家必备的男人。尤其是掉头发比较多的女生经常会堵掉下水道。用它就可以畅通哦。 购买地址：Coles、WWS有售 💰价格：$13.7 搞定下水道，心情好到爆，买它！喵～</p>
+<hr>
+]]></content>
+      <categories>
+        <category>生活</category>
+        <category>好物推荐</category>
+      </categories>
+      <tags>
+        <tag>推荐</tag>
+        <tag>日常</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>SQL学习笔记</title>
+    <url>/2023/02/27/SQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="/_post/2024_02_28_%E6%8E%92%E5%BA%8F_DENSE_RANK.md">排序_DENSE_RANK</a></p>
+<h2 id="IFNULL"><a href="#IFNULL" class="headerlink" title="IFNULL"></a>IFNULL</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Write your MySQL query statement below</span><br><span class="line"></span><br><span class="line">select e.name, b.bonus</span><br><span class="line"></span><br><span class="line">from Employee e left join Bonus b</span><br><span class="line"></span><br><span class="line">on e.empId = b.empId</span><br><span class="line"></span><br><span class="line">where ifnull(bonus,0)&lt;1000</span><br><span class="line">## ifnul 就把值替换成0）</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
 
 
 
+<h2 id="SQL-585"><a href="#SQL-585" class="headerlink" title="SQL 585"></a>SQL 585</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT ROUND(SUM(tiv_2016), 2) AS tiv_2016</span><br><span class="line"></span><br><span class="line">FROM Insurance</span><br><span class="line"></span><br><span class="line">WHERE tiv_2015 IN (</span><br><span class="line"></span><br><span class="line">SELECT tiv_2015</span><br><span class="line"></span><br><span class="line">FROM Insurance</span><br><span class="line"></span><br><span class="line">GROUP BY tiv_2015</span><br><span class="line"></span><br><span class="line">HAVING COUNT(*) &gt; 1</span><br><span class="line"></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">AND (lat, lon) NOT IN (</span><br><span class="line"></span><br><span class="line">SELECT lat, lon</span><br><span class="line"></span><br><span class="line">FROM Insurance</span><br><span class="line"></span><br><span class="line">GROUP BY lat, lon</span><br><span class="line"></span><br><span class="line">HAVING COUNT(*) &gt; 1</span><br><span class="line"></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
 
-<p>More info:<br><a href="https://post.smzdm.com/p/agqol9zm/">晨聊 篇十七：markdown也变脸，obsidian + hexo 在群晖NAS上的双剑合璧</a></p>
+
+<h2 id="SQL-610"><a href="#SQL-610" class="headerlink" title="SQL 610"></a>SQL 610</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Write your MySQL query statement below</span><br><span class="line">select </span><br><span class="line">    *,</span><br><span class="line">    if(x+y&gt;z and x+z&gt;y and y+z&gt;x,&#x27;Yes&#x27;,&#x27;No&#x27;) as triangle</span><br><span class="line">from Triangle</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="SQL1633-ORDER-BY-2-DESC-1"><a href="#SQL1633-ORDER-BY-2-DESC-1" class="headerlink" title="SQL1633 ORDER BY 2 DESC, 1"></a>SQL1633 ORDER BY 2 DESC, 1</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ORDER BY 2 DESC, 1</span><br></pre></td></tr></table></figure>
+
+<p>这一行使用ORDER BY子句对结果进行排序。我们按照第二列（即percentage）的降序进行排序，如果百分比相同，则按照第一列（即contest_id）的升序进行排序。</p>
+<h2 id="SQL1179-CASE-WHEN"><a href="#SQL1179-CASE-WHEN" class="headerlink" title="SQL1179 CASE WHEN"></a>SQL1179 CASE WHEN</h2><p>CASE WHEN语句是SQL中用于根据条件进行条件判断和返回不同结果的表达式。它允许你根据满足特定条件的情况，选择不同的结果进行返回。</p>
+<p>CASE WHEN语句的基本语法如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CASE</span><br><span class="line">   WHEN condition1 THEN result1</span><br><span class="line">   WHEN condition2 THEN result2</span><br><span class="line">   ...</span><br><span class="line">   ELSE resultN</span><br><span class="line">END</span><br></pre></td></tr></table></figure>
+
+<p>首先，你提供一个或多个WHEN子句，每个子句后面跟着一个条件（condition）和一个对应的结果（result）。当满足某个条件时，相应的结果将被返回。ELSE子句是可选的，用于指定当没有任何条件满足时的默认结果。</p>
+<p>让我们通过一个简单的例子来说明CASE WHEN的使用。假设有一个名为”students”的表，其中包含学生的姓名和分数列。如果要将成绩分为优秀、良好和及格三个等级并进行显示，可以使用以下SQL语句：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT name,</span><br><span class="line">       CASE</span><br><span class="line">          WHEN score &gt;= 90 THEN &#x27;优秀&#x27;</span><br><span class="line">          WHEN score &gt;= 80 THEN &#x27;良好&#x27;</span><br><span class="line">          WHEN score &gt;= 60 THEN &#x27;及格&#x27;</span><br><span class="line">          ELSE &#x27;不及格&#x27;</span><br><span class="line">       END AS grade</span><br><span class="line">FROM students;</span><br></pre></td></tr></table></figure>
+
+<p>在这个例子中，对于每个学生，我们使用CASE WHEN语句根据他们的分数来判断他们的等级。如果分数大于等于90，那么他们被归类为”优秀”；如果分数大于等于80，但小于90，他们被归类为”良好”；如果分数大于等于60，但小于80，他们被归类为”及格”；否则，他们被归类为”不及格”。</p>
+<p>通过使用CASE WHEN语句，我们可以根据不同的条件返回不同的结果，从而实现灵活的数据处理和转换。</p>
 ]]></content>
       <categories>
         <category>技术</category>
-        <category>博客</category>
-        <category>hexo</category>
+        <category>数据分析</category>
+        <category>SQL</category>
       </categories>
       <tags>
-        <tag>markdown</tag>
-        <tag>hexo</tag>
         <tag>笔记</tag>
+        <tag>SQL</tag>
       </tags>
   </entry>
   <entry>
@@ -800,64 +928,6 @@
       </tags>
   </entry>
   <entry>
-    <title>群晖Git部署Hexo</title>
-    <url>/2019/05/06/Git_Hexo/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="一、前期准备"><a href="#一、前期准备" class="headerlink" title="一、前期准备"></a>一、前期准备</h2><h3 id="1-1-注册-账号-Gitee-GitHub"><a href="#1-1-注册-账号-Gitee-GitHub" class="headerlink" title="1.1 注册 账号 Gitee&#x2F;GitHub"></a>1.1 注册 账号 Gitee&#x2F;GitHub</h3><p>注册一个属于自己的 Github 或 Gitee 账号，</p>
-<p>Gitee在国内访问速度更快，但Gitee需要上传身份证照片若干张进行实名认证，懒得掏身份证，pass掉。</p>
-<span id="more"></span>
-<p><img src="/2019/05/06/Git_Hexo/%E5%AE%9E%E5%90%8D%E9%AA%8C%E8%AF%81.png" alt="实名认证"></p>
-<p>本文采用 Github 演示。 </p>
-<h3 id="1-2-安装-Git"><a href="#1-2-安装-Git" class="headerlink" title="1.2 安装 Git"></a>1.2 安装 Git</h3><p>选择对应的系统平台，下载后，傻瓜式安装即可。 安装完成后，打开运行 –&gt; 输入命令，回车打开命令行窗口 输入以下Git指令</p>
-<figure class="highlight ada"><table><tr><td class="code"><pre><span class="line">git <span class="comment">--version</span></span><br></pre></td></tr></table></figure>
-
-<p>出现版本号，即代表 git 安装成功</p>
-<h3 id="1-3-Git-和-Github-建立联系"><a href="#1-3-Git-和-Github-建立联系" class="headerlink" title="1.3 Git 和 Github 建立联系"></a>1.3 Git 和 Github 建立联系</h3><p>任意目录下，打开 git bash 命令行，输入以下命令生成公钥：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C 邮箱</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">为了管理多个密钥，你可以在生成密钥时为每个密钥指定不同的文件名</span></span><br><span class="line">ssh-keygen -t rsa -C &quot;your_email@example.com&quot; -f ~/.ssh/id_rsa_example_com</span><br></pre></td></tr></table></figure>
-
-
-<p>回车出现 （y&#x2F;n）, 输入 y , 连续点击回车，即可生成。</p>
-<p>在<code>~/.ssh</code> 目录，找到 <code>id_rsa_example_com.pub</code> 文件，<code>cat ~/.ssh/id_rsa_example_com.pub</code>获取公钥。</p>
-<p>到GitHub找到 <code>设置</code> 并打开，找到左侧栏 <code>Access</code>下找到<code>SSH and GPG keys</code>，点击<code>New SSH keys</code>，添加 <code>Title</code> 和 <code>Key</code></p>
-<p>云端仓库创建完成的 gitee，更改远程仓库 URL 为 SSH</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">chmod 600 ~/.ssh/id_rsa_*</span><br><span class="line">chown your_username:users ~/.ssh/id_rsa_*</span><br></pre></td></tr></table></figure>
-
-
-<p><strong>输入以下指令，进行全局配置：</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;你的用户名&quot;</span><br><span class="line">git config --global user.email &quot;你的邮箱&quot;</span><br></pre></td></tr></table></figure>
-
-<p>查看config文件是否存在，不存在新建<code>touch config</code>,<br> config文件内容如下：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">Host github.com</span><br><span class="line">    User git</span><br><span class="line">    IdentityFile ~/.ssh/id_rsa_example_com</span><br><span class="line">    PreferredAuthentications publickey</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">测试连接</span></span><br><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
-
-
-
-<p>将纳入版本库的文件，提交到 gitee 远程仓库：</p>
-<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">add</span> .</span><br><span class="line">git commit -m <span class="string">&#x27;first commit&#x27;</span></span><br><span class="line">git remote <span class="built_in">add</span> origin 你的仓库地址</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
-
-<p>此时，提交完成，打开浏览器，输入你的仓库地址，刷新即可看到文件。</p>
-<ol>
-<li><code>hexo clean</code>: 这个命令用于清理缓存文件和已生成的静态文件。它删除了<code>public</code>文件夹中的内容以及<code>.hexo</code>文件夹中的缓存文件。这是在部署博客之前的一个好习惯，因为它确保了生成的静态文件是最新的，避免了由于旧的缓存或文件导致的潜在问题。</li>
-<li><code>hexo deploy</code>: 这个命令用于将博客部署到服务器上。在执行这个命令之前，Hexo会生成所有的静态文件，并根据<code>_config.yml</code>文件中的<code>deploy</code>部分配置将它们上传到指定的服务器。这通常涉及到将文件推送到GitHub Pages、FTP服务器或其他静态网站托管服务。</li>
-</ol>
-<figure class="highlight 1c"><table><tr><td class="code"><pre><span class="line">$ hexo clean <span class="meta">&amp;&amp; hexo deploy</span></span><br></pre></td></tr></table></figure>
-
-<p>在NAS上定时执行<code>hexo clean &amp;&amp; hexo deploy</code>，实现自动更新内容。</p>
-]]></content>
-      <categories>
-        <category>技术</category>
-        <category>博客</category>
-        <category>hexo</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-        <tag>笔记</tag>
-        <tag>技术</tag>
-        <tag>ssh</tag>
-        <tag>GitHub</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>SQL窗口函数_LEAD_LAG详解</title>
     <url>/2023/03/04/SQL%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0_LEAD_LAG%E8%AF%A6%E8%A7%A3/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>当涉及到SQL窗口函数时，LEAD()和LAG()是两个非常有用的函数。它们允许我们在查询中访问当前行之前或之后的行的值。</p>
@@ -919,243 +989,6 @@
       </tags>
   </entry>
   <entry>
-    <title>澳洲家中日常必备清单</title>
-    <url>/2022/05/19/%E6%BE%B3%E6%B4%B2%E5%AE%B6%E4%B8%AD%E6%97%A5%E5%B8%B8%E5%BF%85%E5%A4%87%E6%B8%85%E5%8D%95/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>1⃣️ CEPACAINE漱口水！ 治疗牙龈肿痛，口腔溃疡。澳洲医生推荐买的，超级有效！猫猫家必备的，再也没有牙口烦恼。 购买地址：Chemist有售 💰价格：$15.49 问题在口腔，吃啥啥不香，买它！喵～</p>
-<hr>
-<p>2⃣️ Quick EZE胃糖 腹胀、胃酸、胃痛。消化不良、吃颗糖就能缓解～ 主要是这糖咋还那么好吃！ 购买地址：Chemist 💰价格：$4.99 胃也需要轻轻安抚，买它！喵～</p>
-<span id="more"></span>
-<hr>
-<p>3⃣️ VICKS 通鼻喷剂 在澳洲总感觉鼻子不适，鼻炎老犯，尤其总是鼻塞。这个通鼻喷剂起效快，薄荷味柔和不刺激。 购买地址：Chemist 💰价格$11.99 杜绝张口呼吸，买它！喵～</p>
-<hr>
-<p>4⃣️ Refresh眼药水 在家学习、工作、打游戏、熬夜，眼睛干涩的话最使用用人工泪液成分的眼药水。无刺激，缓解眼睛疲劳，闺蜜们都在用。 购买地址：Chemist 💰价格$13.49 缓解就靠累上加泪。买它，喵～</p>
-<hr>
-<p>5⃣️ LeQure Detox Soap排毒香皂 这款味道超级淡，小众然鹅超棒！主要可以用来控油去杂质。背部长痘痘的宝宝们一定要试试。滋养加排毒，姐妹推荐的，用过也感觉很好。 购买地址：Chemist 💰价格：$5.99 永远不进毒圈，买它，喵～</p>
-<hr>
-<p>6⃣️ Naprogesic止痛片 姨妈期最好的止痛片咯，因为成分对胃损伤小，刺激小。而且止痛的效果起效更快，当地女生首选经期续命药。小蓝片好多朋友都在用。 购买地址：Chemist 💰价格：$7.99 连我姨妈都在用！买它，喵～</p>
-<hr>
-<p>7⃣️ Dettol 洗衣消毒液 家里养宠物的朋友洗衣服都会用这个帮忙杀菌！能灭杀99.9%的细菌。尤其是合租又共用洗衣机的话这个肯定要买！ 购买地址：Coles、 WWS有售 💰价格：$8.99 再也不怕室友用洗衣机洗袜子了，买它！喵～</p>
-<hr>
-<p>8⃣️ Mr muscle通道强力剂！ 水槽，浴室如果都便秘了，那主人可就更难受了。 超强清下水道秘方，家家必备的男人。尤其是掉头发比较多的女生经常会堵掉下水道。用它就可以畅通哦。 购买地址：Coles、WWS有售 💰价格：$13.7 搞定下水道，心情好到爆，买它！喵～</p>
-<hr>
-]]></content>
-      <categories>
-        <category>生活</category>
-        <category>好物推荐</category>
-      </categories>
-      <tags>
-        <tag>推荐</tag>
-        <tag>日常</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>SQL学习笔记</title>
-    <url>/2023/02/27/SQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="/_post/2024_02_28_%E6%8E%92%E5%BA%8F_DENSE_RANK.md">排序_DENSE_RANK</a></p>
-<h2 id="IFNULL"><a href="#IFNULL" class="headerlink" title="IFNULL"></a>IFNULL</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Write your MySQL query statement below</span><br><span class="line"></span><br><span class="line">select e.name, b.bonus</span><br><span class="line"></span><br><span class="line">from Employee e left join Bonus b</span><br><span class="line"></span><br><span class="line">on e.empId = b.empId</span><br><span class="line"></span><br><span class="line">where ifnull(bonus,0)&lt;1000</span><br><span class="line">## ifnul 就把值替换成0）</span><br></pre></td></tr></table></figure>
-<span id="more"></span>
-
-
-
-<h2 id="SQL-585"><a href="#SQL-585" class="headerlink" title="SQL 585"></a>SQL 585</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT ROUND(SUM(tiv_2016), 2) AS tiv_2016</span><br><span class="line"></span><br><span class="line">FROM Insurance</span><br><span class="line"></span><br><span class="line">WHERE tiv_2015 IN (</span><br><span class="line"></span><br><span class="line">SELECT tiv_2015</span><br><span class="line"></span><br><span class="line">FROM Insurance</span><br><span class="line"></span><br><span class="line">GROUP BY tiv_2015</span><br><span class="line"></span><br><span class="line">HAVING COUNT(*) &gt; 1</span><br><span class="line"></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">AND (lat, lon) NOT IN (</span><br><span class="line"></span><br><span class="line">SELECT lat, lon</span><br><span class="line"></span><br><span class="line">FROM Insurance</span><br><span class="line"></span><br><span class="line">GROUP BY lat, lon</span><br><span class="line"></span><br><span class="line">HAVING COUNT(*) &gt; 1</span><br><span class="line"></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-
-
-<h2 id="SQL-610"><a href="#SQL-610" class="headerlink" title="SQL 610"></a>SQL 610</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Write your MySQL query statement below</span><br><span class="line">select </span><br><span class="line">    *,</span><br><span class="line">    if(x+y&gt;z and x+z&gt;y and y+z&gt;x,&#x27;Yes&#x27;,&#x27;No&#x27;) as triangle</span><br><span class="line">from Triangle</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="SQL1633-ORDER-BY-2-DESC-1"><a href="#SQL1633-ORDER-BY-2-DESC-1" class="headerlink" title="SQL1633 ORDER BY 2 DESC, 1"></a>SQL1633 ORDER BY 2 DESC, 1</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ORDER BY 2 DESC, 1</span><br></pre></td></tr></table></figure>
-
-<p>这一行使用ORDER BY子句对结果进行排序。我们按照第二列（即percentage）的降序进行排序，如果百分比相同，则按照第一列（即contest_id）的升序进行排序。</p>
-<h2 id="SQL1179-CASE-WHEN"><a href="#SQL1179-CASE-WHEN" class="headerlink" title="SQL1179 CASE WHEN"></a>SQL1179 CASE WHEN</h2><p>CASE WHEN语句是SQL中用于根据条件进行条件判断和返回不同结果的表达式。它允许你根据满足特定条件的情况，选择不同的结果进行返回。</p>
-<p>CASE WHEN语句的基本语法如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CASE</span><br><span class="line">   WHEN condition1 THEN result1</span><br><span class="line">   WHEN condition2 THEN result2</span><br><span class="line">   ...</span><br><span class="line">   ELSE resultN</span><br><span class="line">END</span><br></pre></td></tr></table></figure>
-
-<p>首先，你提供一个或多个WHEN子句，每个子句后面跟着一个条件（condition）和一个对应的结果（result）。当满足某个条件时，相应的结果将被返回。ELSE子句是可选的，用于指定当没有任何条件满足时的默认结果。</p>
-<p>让我们通过一个简单的例子来说明CASE WHEN的使用。假设有一个名为”students”的表，其中包含学生的姓名和分数列。如果要将成绩分为优秀、良好和及格三个等级并进行显示，可以使用以下SQL语句：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT name,</span><br><span class="line">       CASE</span><br><span class="line">          WHEN score &gt;= 90 THEN &#x27;优秀&#x27;</span><br><span class="line">          WHEN score &gt;= 80 THEN &#x27;良好&#x27;</span><br><span class="line">          WHEN score &gt;= 60 THEN &#x27;及格&#x27;</span><br><span class="line">          ELSE &#x27;不及格&#x27;</span><br><span class="line">       END AS grade</span><br><span class="line">FROM students;</span><br></pre></td></tr></table></figure>
-
-<p>在这个例子中，对于每个学生，我们使用CASE WHEN语句根据他们的分数来判断他们的等级。如果分数大于等于90，那么他们被归类为”优秀”；如果分数大于等于80，但小于90，他们被归类为”良好”；如果分数大于等于60，但小于80，他们被归类为”及格”；否则，他们被归类为”不及格”。</p>
-<p>通过使用CASE WHEN语句，我们可以根据不同的条件返回不同的结果，从而实现灵活的数据处理和转换。</p>
-]]></content>
-      <categories>
-        <category>技术</category>
-        <category>数据分析</category>
-        <category>SQL</category>
-      </categories>
-      <tags>
-        <tag>笔记</tag>
-        <tag>SQL</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hadoop、Spark、Flink简单概要</title>
-    <url>/2023/03/28/Hadoop%E3%80%81Spark%E3%80%81Flink%E7%AE%80%E5%8D%95%E6%A6%82%E8%A6%81/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="https://zhuanlan.zhihu.com/p/526462792">Hadoop用于离线复杂大数据处理</a></p>
-<p>Spark 用于离线快速的大数据处理</p>
-<p>Flink 用于在线实时的大数据处理</p>
-<h1 id="1-数据处理"><a href="#1-数据处理" class="headerlink" title="1-数据处理"></a>1-数据处理</h1><p>Hadoop：为批处理而构建的Hadoop，它一次性在输入中获取大量数据集，对其进行处理并产生结果。批处理在处理大量数据时非常有效。由于数据的大小和系统的计算能力，输出会出现延迟。</p>
-<p>Spark：Spark也是 Hadoop生态系统的一部分。它本质上也是一个批处理系统，但它也支持流处理。</p>
-<p>Flink：Flink为流式处理和批处理提供了单一的运行时。</p>
-<span id="more"></span>
-<h1 id="2-流引擎"><a href="#2-流引擎" class="headerlink" title="2-流引擎"></a>2-流引擎</h1><p>Hadoop：Map-reduce是面向批处理的工具。它一次性在输入中获取大量数据集，对其进行处理并产生结果。</p>
-<p>Spark：Apache Spark Streaming以微批处理的形式处理数据流。每个批次都包含在批次期间到达的事件集合。但对于我们需要处理大量实时数据流并实时提供结果的用例来说，这还不够。</p>
-<p>Flink：Apache Flink是真正的流媒体引擎。它使用流来处理工作负载：流式处理、SQL、微批处理和批处理。批处理是一组有限的流数据。</p>
-<h1 id="3-数据流"><a href="#3-数据流" class="headerlink" title="3-数据流"></a>3-数据流</h1><p>Hadoop：MapReduce计算数据流没有任何循环。这是一个阶段链，在每个阶段，您都使用前一阶段的输出向前推进，并为下一阶段产生输入。</p>
-<p>Spark：虽然机器学习算法是一个循环数据流，但 Spark将其表示为（DAG）有向无环图。</p>
-<p>Flink：Flink采用了与其他方法不同的方法。它在运行时支持受控循环依赖图。这有助于以非常有效的方式表示机器学习算法。</p>
-<h1 id="4-计算模型"><a href="#4-计算模型" class="headerlink" title="4-计算模型"></a>4-计算模型</h1><p>Hadoop：MapReduce采用了面向批处理的模型，批处理正在处理静态数据，一次需要大量数据，对其进行处理，然后写出输出。</p>
-<p>Spark：Spark采用了微批处理。微批次本质上是一种“收集然后处理”的计算模型。</p>
-<p>Flink：Flink采用了连续流、基于算子的流模型。连续流算子在数据到达时对其进行处理，而不会延迟收集数据或处理数据。</p>
-<h1 id="5-性能"><a href="#5-性能" class="headerlink" title="5-性能"></a>5-性能</h1><p>Hadoop：Apache Hadoop仅支持批处理。它不处理流数据，因此与Hadoop、Spark和Flink相比，性能更慢。</p>
-<p>Spark：虽然Spark有优秀的社区背景，并且现在被认为是最成熟的社区，但它的流处理效率并不比Flink高，因为它使用的是微批处理。</p>
-<p>Flink：与任何其他数据处理系统相比，Flink的性能非常出色。比较Hadoop、Spark和Flink时可以看出，Flink使用原生闭环迭代运算符，这使得机器学习和图形处理更快。</p>
-<h1 id="6-内存管理"><a href="#6-内存管理" class="headerlink" title="6-内存管理"></a>6-内存管理</h1><p>Hadoop：提供可配置的内存管理，可以动态或静态地执行此操作。</p>
-<p>Spark：提供可配置的内存管理，Spark 1.6 的最新版本已经朝着自动化内存管理的方向发展。</p>
-<p>Flink：提供了自动内存管理，有自己的内存管理系统。</p>
-<h1 id="7-容错"><a href="#7-容错" class="headerlink" title="7-容错"></a>7-容错</h1><p>Hadoop：MapReduce具有高度容错性。如果Hadoop出现任何故障，则无需从头开始重新启动应用程序。</p>
-<p>Spark：Apache Spark Streaming恢复丢失的工作，无需额外的代码或配置。</p>
-<p>Flink：Apache Flink遵循的容错机制是基于Chandy-Lamport分布式快照。该机制是轻量级的，导致在保持高吞吐率的同时提供强大的一致性保证。</p>
-<h1 id="8-可扩展性"><a href="#8-可扩展性" class="headerlink" title="8-可扩展性"></a>8-可扩展性</h1><p>Hadoop：MapReduce具有很强的可扩展性潜力，并已在数万个节点上用于生产。</p>
-<p>Spark：它具有高度可扩展性，我们可以在集群中不断添加 n 个节点，一个已知的大型 Spark集群有8000个节点。</p>
-<p>Flink：Flink也具有很高的可扩展性，我们可以在集群中不断添加 n 个节点，一个已知的大型 Flink 集群有数千个节点。</p>
-<h1 id="9-迭代处理"><a href="#9-迭代处理" class="headerlink" title="9-迭代处理"></a>9-迭代处理</h1><p>Hadoop：不支持迭代处理。</p>
-<p>Spark：它批量迭代其数据。在Spark中，每次迭代都必须单独安排和执行。</p>
-<p>Flink：它通过使用其流式架构来迭代数据。可以指示Flink只处理实际发生变化的部分数据，从而显着提高作业的性能。</p>
-<h1 id="10-语言支持"><a href="#10-语言支持" class="headerlink" title="10-语言支持"></a>10-语言支持</h1><p>Hadoop：主要支持Java，其他支持的语言有c、c++、ruby、groovy、Perl、Python。</p>
-<p>Spark：支持Java、Scala、Python和R。Spark是在Scala中实现的，供其他语言的API，如Java、Python和 R。</p>
-<p>Flink：支持 Java、Scala、Python和R。Flink 是用 Java实现的，同时也提供了Scala API。</p>
-<h1 id="11-优化"><a href="#11-优化" class="headerlink" title="11-优化"></a>11-优化</h1><p>Hadoop：在 MapReduce 中，作业必须手动优化。有几种方法可以优化MapReduce作业：正确配置集群、使用组合器、使用LZO压缩、适当调整 MapReduce任务的数量以及为数据使用最合适和最紧凑的可写类型。</p>
-<p>Spark：在Spark中，作业必须手动优化。有一个新的可扩展优化器 Catalyst，它基于Scala中的函数式编程结构。 Catalyst 的可扩展设计有两个目的：第一，易于添加新的优化技术。其次，使外部开发人员能够扩展优化器催化剂。</p>
-<p>Flink：Apache Flink带有一个独立于实际编程接口的优化器。 Flink优化器的工作方式类似于关系数据库优化器，但将这些优化应用于Flink程序，而不是 SQL查询。</p>
-<h1 id="12-延迟"><a href="#12-延迟" class="headerlink" title="12-延迟"></a>12-延迟</h1><p>Hadoop：Hadoop的MapReduce框架相对较慢，因为它旨在支持不同的格式、结构和海量数据。这就是为什么 Hadoop的延迟比Spark和Flink都高。</p>
-<p>Spark：Spark是另一个批处理系统，但它比Hadoop MapReduce相对快，因为它通过RDD将大部分输入数据缓存在内存中，并将中间数据保存在内存中，最终在完成或需要时将数据写入磁盘。</p>
-<p>Flink：Flink的数据流运行时只需少量配置，即可实现低延迟和高吞吐量。</p>
-<h1 id="14-可视化"><a href="#14-可视化" class="headerlink" title="14-可视化"></a>14-可视化</h1><p>Hadoop：在Hadoop中，数据可视化工具是zoomdata，它可以直接连接到HDFS以及SQL-on-Hadoop技术，如 Impala、Hive、Spark SQL、Presto等。</p>
-<p>Spark：它提供了一个用于提交和执行作业的Web界面，在该界面上可以可视化生成的执行计划。 Flink和Spark都集成到Apache zeppelin中，它提供数据分析、摄取以及发现、可视化和协作。</p>
-<p>Flink：它还提供了一个用于提交和执行作业的Web界面，生成的执行计划可以在这个界面上进行可视化。</p>
-<h1 id="15-恢复"><a href="#15-恢复" class="headerlink" title="15-恢复"></a>15-恢复</h1><p>Hadoop：MapReduce自然地对系统故障或故障具有弹性。它是高度容错的系统。</p>
-<p>Spark：Apache Spark RDD允许通过重新计算DAG来恢复故障节点上的分区，同时还通过检查点支持与Hadoop更相似的恢复方式，以减少RDD的依赖关系。</p>
-<p>Flink：支持checkpointing机制，将程序存储在数据源和数据接收器中，窗口的状态，以及用户自定义的状态，在失败后恢复流式作业。</p>
-<h1 id="16-安全性"><a href="#16-安全性" class="headerlink" title="16-安全性"></a>16-安全性</h1><p>Hadoop：它支持Kerberos身份验证，管理起来有些麻烦。但是，第三方供应商已使组织能够利用Active Directory Kerberos和LDAP进行身份验证。</p>
-<p>Spark：Apache Spark的安全性有点稀疏，目前仅支持通过共享密钥（密码身份验证）进行身份验证。 当你在HDFS上运行Spark，它可以使用HDFS ACL和文件级权限。此外，Spark可以在 YARN上运行以使用Kerberos身份验证。</p>
-<p>Flink：Flink通过Hadoop &#x2F; Kerberos基础设施支持用户身份验证。如果在YARN上运行Flink，Flink会获取提交程序的用户的Kerberos令牌，并使用该令牌在YARN、HDFS和HBase上进行身份验证。Flink即将推出的连接器，流程序可以通过 SSL将自己验证为流代理。</p>
-<h1 id="17-成本"><a href="#17-成本" class="headerlink" title="17-成本"></a>17-成本</h1><p>Hadoop：MapReduce通常可以在比某些替代方案更便宜的硬件上运行，因为它不会尝试将所有内容都存储在内存中。</p>
-<p>Spark：由于Spark需要大量RAM才能在内存中运行，因此在集群中增加它会逐渐增加其成本。</p>
-<p>Flink：Apache Flink也需要大量的RAM在内存中运行，所以它的成本会逐渐增加。</p>
-<h1 id="18-兼容性"><a href="#18-兼容性" class="headerlink" title="18-兼容性"></a>18-兼容性</h1><p>Hadoop：Apache Hadoop MapReduce 和 Apache Spark相互兼容，Spark通过JDBC和ODBC共享MapReduce 对数据源、文件格式和商业智能工具的所有兼容性。</p>
-<p>Spark：Apache Spark和Hadoop相互兼容。 Spark与Hadoop数据兼容。它可以通过YARN或Spark的独立模式在 Hadoop集群中运行，并且可以处理HDFS、HBase、Cassandra、Hive和任何Hadoop InputFormat中的数据。</p>
-<p>Flink：Apache Flink是一个可扩展的数据分析框架，完全兼容Hadoop。它提供了一个Hadoop Compatibility包来包装针对Hadoop的MapReduce接口实现的函数，并将它们嵌入到Flink程序中。</p>
-<h1 id="20-使用感"><a href="#20-使用感" class="headerlink" title="20-使用感"></a>20-使用感</h1><p>Hadoop：MapReduce 开发人员需要手动编写每个操作的代码，这让编程工作变得非常困难。</p>
-<p>Spark：很容易编程，因为它有大量的高级操作符。</p>
-<p>Flink：也有高级算子，易于操作。</p>
-<h1 id="21-交互模式"><a href="#21-交互模式" class="headerlink" title="21-交互模式"></a>21-交互模式</h1><p>Hadoop：MapReduce 没有交互模式。</p>
-<p>Spark：Spark 有一个交互式Shell，可以学习如何充分利用Spark。这是一个用 Scala编写的Spark应用程序，提供一个具有自动完成功能的命令行环境，您可以在其中运行临时查询并熟悉 Spark的功能。</p>
-<p>Flink：它带有一个集成的交互式Scala Shell。它可以在本地设置和集群设置中使用。</p>
-<h1 id="22-实时分析"><a href="#22-实时分析" class="headerlink" title="22-实时分析"></a>22-实时分析</h1><p>Hadoop：MapReduce 在实时数据处理方面失败了，因为它旨在对大量数据执行批处理。</p>
-<p>Spark：它可以处理实时数据，即以每秒数百万个事件的速率来自实时事件流的数据。</p>
-<p>Flink：主要用于实时数据分析，虽然也提供了快速的批量数据处理。</p>
-<h1 id="23-调度器"><a href="#23-调度器" class="headerlink" title="23-调度器"></a>23-调度器</h1><p>Hadoop：Hadoop中的调度程序成为可插拔组件。多用户工作负载有两个调度器：公平调度器和容量调度器。为了调度复杂的流程，MapReduce需要像Oozie这样的外部作业调度程序。</p>
-<p>Spark：由于内存计算，Spark能充当自己的流调度程序。</p>
-<p>Flink：Flink可以使用YARN Scheduler，Flink也有自己的 Scheduler。</p>
-<h1 id="24-SQL支持"><a href="#24-SQL支持" class="headerlink" title="24-SQL支持"></a>24-SQL支持</h1><p>Hadoop：它使用户能够使用 Apache Hive运行SQL查询。</p>
-<p>Spark：它使用户能够使用Spark-SQL运行SQL查询。Spark提供了类似Hives的查询语言和类似DSL的Dataframe 来查询结构化数据。</p>
-<p>Flink：在Flink中，Table API是一种类似SQL的表达式语言，支持DSL等数据帧，目前仍处于测试阶段。有计划添加SQL接口，但不确定何时会进入框架。</p>
-<h1 id="25-缓存"><a href="#25-缓存" class="headerlink" title="25-缓存"></a>25-缓存</h1><p>Hadoop：MapReduce 无法将数据缓存在内存中以满足未来需求。</p>
-<p>Spark：它可以将数据缓存在内存中以进行进一步的迭代，从而提高其性能。</p>
-<p>Flink：它可以将数据缓存在内存中以供进一步迭代以提高其性能。</p>
-<h1 id="26-硬件要求"><a href="#26-硬件要求" class="headerlink" title="26-硬件要求"></a>26-硬件要求</h1><p>Hadoop：MapReduce在商品硬件上运行良好。</p>
-<p>Spark：Apache Spark需要中高级硬件。由于Spark将数据缓存在内存中以供进一步迭代，从而提高其性能。</p>
-<p>Flink：Apache Flink也需要中高级硬件。 Flink还可以将数据缓存在内存中以进行进一步的迭代，从而提高其性能。</p>
-<h1 id="27-机器学习"><a href="#27-机器学习" class="headerlink" title="27-机器学习"></a>27-机器学习</h1><p>Hadoop：需要像Apache Mahout这样的机器学习工具。</p>
-<p>Spark：有自己的一套机器学习MLlib。在内存缓存和其他实现细节中，它确实是实现ML算法的强大平台。</p>
-<p>Flink：有FlinkML，它是Flink的机器学习库。它支持运行时受控的循环依赖图。与DAG表示相比，这使得它们以非常有效的方式表示ML算法。</p>
-<h1 id="28-部署"><a href="#28-部署" class="headerlink" title="28-部署"></a>28-部署</h1><p>Hadoop：在独立模式下，Hadoop 被配置为在单节点、非分布式模式下运行。在伪分布式模式下，Hadoop以伪分布式模式运行。因此，不同之处在于每个Hadoop守护程序以伪分布式模式在单独的Java进程中运行。而在本地模式下，每个Hadoop守护程序都作为单个Java进程运行。在完全分布式模式下，所有守护进程在单独的节点中执行，形成一个多节点集群。</p>
-<p>Spark：还提供了一种简单的独立部署模式，可以在Mesos或YARN集群管理器上运行。它可以手动启动，通过手动启动 master和worker或使用我们提供的启动脚本。也可以在单台机器上运行这些守护进程进行测试。</p>
-<p>Flink：还提供了在YARN集群管理器上运行的独立部署模式。</p>
-<h1 id="29-消除重复"><a href="#29-消除重复" class="headerlink" title="29-消除重复"></a>29-消除重复</h1><p>Hadoop：Hadoop中没有重复消除。</p>
-<p>Spark：Spark还对每条记录进行一次准确的处理，因此消除了重复。</p>
-<p>Flink：Flink只处理一次记录，因此消除了重复，流应用程序可以在计算期间保持自定义状态。Flink的检查点机制确保在出现故障时状态的语义恰好只有一次。</p>
-<h1 id="30-Window标准"><a href="#30-Window标准" class="headerlink" title="30-Window标准"></a>30-Window标准</h1><p>一个数据流需要被分成许多逻辑流，每个逻辑流都可以应用一个窗口操作符。</p>
-<p>Hadoop：不支持流式传输，因此不需要窗口条件。</p>
-<p>Spark：具有基于时间的窗口标准。</p>
-<p>Flink：具有基于记录的或任何自定义的用户定义的Flink Window标准。  </p>
-]]></content>
-      <categories>
-        <category>技术</category>
-        <category>数据分析</category>
-        <category>数据库</category>
-        <category>笔记</category>
-      </categories>
-      <tags>
-        <tag>笔记</tag>
-        <tag>数据库</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>统计分析的八种方法</title>
-    <url>/2023/03/30/%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E7%9A%84%E5%85%AB%E7%A7%8D%E6%96%B9%E6%B3%95/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="一、指标对比分析法"><a href="#一、指标对比分析法" class="headerlink" title="一、指标对比分析法"></a>一、指标对比分析法</h1><p>指标对比分析法，又称比较分析法，是统计分析中最常用的方法。是通过有关的指标对比来反映事物数量上差异和变化的方法。有比较才能鉴别。单独看一些指标，只能说明总体的某些数量特征，得不出什么结论性的认识；一经过比较，如与国外、外单位比，与历史数据比，与计划相比，就可以对规模大小、水平高低、速度快慢作出判断和评价。</p>
-<p>指标分析对比分析方法可分为静态比较和动态比较分析。静态比较是同一时间条件下不同总体指标比较，如不同部门、不同地区、不同国家的比较，也叫横向比较；动态比较是同一总体条件不同时期指标数值的比较，也叫纵向比较。这两种方法既可单独使用，也可结合使用。进行对比分析时，可以单独使用总量指标或相对指标或平均指标，也可将它们结合起来进行对比。比较的结果可用相对数，如百分数、倍数、系数等，也可用相差的绝对数和相关的百分点（每1％为一个百分点）来表示，即将对比的指标相减。</p>
-<span id="more"></span>
-<h1 id="二、分组分析法"><a href="#二、分组分析法" class="headerlink" title="二、分组分析法"></a>二、分组分析法</h1><p>指标对比分析法是总体上的对比，但组成统计总体的各单位具有多种特征，这就使得在同一总体范围内的各单位之间产生了许多差别，统计分析不仅要对总体数量特征和数量关系进行分析，还要深入总体的内部进行分组分析。分组分析法就是根据统计分析的目的要求，把所研究的总体按照一个或者几个标志划分为若干个部分，加以整理，进行观察、分析，以揭示其内在的联系和规律性。</p>
-<p>统计分组法的关键问题在于正确选择分组标值和划分各组界限。</p>
-<h1 id="三、时间数列及动态分析法"><a href="#三、时间数列及动态分析法" class="headerlink" title="三、时间数列及动态分析法"></a>三、时间数列及动态分析法</h1><p>时间数列。是将同一指标在时间上变化和发展的一系列数值，按时间先后顺序排列，就形成时间数列，又称动态数列。它能反映社会经济现象的发展变动情况，通过时间数列的编制和分析，可以找出动态变化规律，为预测未来的发展趋势提供依据。时间数列可分为绝对数时间数列、相对数时间数列、平均数时间数列。</p>
-<p>时间数列速度指标。根据绝对数时间数列可以计算的速度指标：有发展速度、增长速度、平均发展速度、平均增长速度。</p>
-<p>动态分析法。在统计分析中，如果只有孤立的一个时期指标值，是很难作出判断的。如果编制了时间数列，就可以进行动态分析，反映其发展水平和速度的变化规律。</p>
-<p>进行动态分析，要注意数列中各个指标具有的可比性。总体范围、指标计算方法、计算价格和计量单位，都应该前后一致。时间间隔一般也要一致，但也可以根据研究目的，采取不同的间隔期，如按历史时期分。为了消除时间间隔期不同而产生的指标数值不可比，可采用年平均数和年平均发展速度来编制动态数列。此外在统计上，许多综合指标是采用价值形态来反映实物总量，如国内生产总值、工业总产值、社会商品零售总额等计算不同年份的发展速度时，必须消除价格变动因素的影响，才能正确的反映实物量的变化。也就是说必须用可比价格（如用不变价或用价格指数调整）计算不同年份相同产品的价值，然后才能进行对比。</p>
-<p>为了观察我国经济发展的波动轨迹，可将各年国内生产总值的发展速度编制时间数列，并据以绘制成曲线图，令人得到直观认识。</p>
-<h1 id="四、指数分析法"><a href="#四、指数分析法" class="headerlink" title="四、指数分析法"></a>四、指数分析法</h1><p>指数是指反映社会经济现象变动情况的相对数。有广义和狭义之分。根据指数所研究的范围不同可以有个体指数、类指数与总指数之分。</p>
-<p>指数的作用：一是可以综合反映复杂的社会经济现象的总体数量变动的方向和程度；二是可以分析某种社会经济现象的总变动受各因素变动影响的程度，这是一种因素分析法。操作方法是：通过指数体系中的数量关系，假定其他因素不变，来观察某一因素的变动对总变动的影响。</p>
-<p>用指数进行因素分析。因素分析就是将研究对象分解为各个因素，把研究对象的总体看成是各因素变动共同的结果，通过对各个因素的分析，对研究对象总变动中各项因素的影响程度进行测定。因素分析按其所研究的对象的统计指标不同可分为对总量指标的变动的因素分析，对平均指标变动的因素分析。</p>
-<h1 id="五、平衡分析法"><a href="#五、平衡分析法" class="headerlink" title="五、平衡分析法"></a>五、平衡分析法</h1><p>平衡分析是研究社会经济现象数量变化对等关系的一种方法。它把对立统一的双方按其构成要素一一排列起来，给人以整体的概念，以便于全局来观察它们之间的平衡关系。平衡关系广泛存在于经济生活中，大至全国宏观经济运行，小至个人经济收支。平衡种类繁多，如财政平衡表、劳动力平衡表、能源平衡表、国际收支平衡表、投入产出平衡表，等等。平衡分析的作用：一是从数量对等关系上反映社会经济现象的平衡状况，分析各种比例关系相适应状况；二是揭示不平衡的因素和发展潜力；三是利用平衡关系可以从各项已知指标中推算未知的个别指标。</p>
-<h1 id="六、综合评价分析"><a href="#六、综合评价分析" class="headerlink" title="六、综合评价分析"></a>六、综合评价分析</h1><p>社会经济分析现象往往是错综复杂的，社会经济运行状况是多种因素综合作用的结果，而且各个因素的变动方向和变动程度是不同的。如对宏观经济运行的评价，涉及生活、分配、流通、消费各个方面；对企业经济效益的评价，涉及人、财、物合理利用和市场销售状况。如果只用单一指标，就难以作出恰当的评价。</p>
-<p>进行综合评价包括四个步骤：</p>
-<p>（一）确定评价指标体系，这是综合评价的基础和依据。要注意指标体系的全面性和系统性。</p>
-<p>（二）搜集数据，并对不同计量单位的指标数值进行同度量处理。可采用相对化处理、函数化处理、标准化处理等方法。</p>
-<p>（三）确定各指标的权数，以保证评价的科学性。根据各个指标所处的地位和对总体影响程度不同，需要对不同指标赋予不同的权数。</p>
-<p>（四）对指标进行汇总，计算综合分值，并据此作出综合评价。</p>
-<h1 id="七、景气分析经济波动是客观存在的，是任何国家都难以完全避免的"><a href="#七、景气分析经济波动是客观存在的，是任何国家都难以完全避免的" class="headerlink" title="七、景气分析经济波动是客观存在的，是任何国家都难以完全避免的"></a>七、景气分析经济波动是客观存在的，是任何国家都难以完全避免的</h1><p>如何避免大的经济波动，保持经济的稳定发展，一直是各国政府和经济之专家在宏观调控和决策中面临的重要课题，景气分析正是适应这一要求而产生和发展的。景气分析是一种综合评价分析，可分为宏观经济景气分析和企业景气调查分析。</p>
-<p>宏观经济景气分析。是国家统计局20世纪80年代后期开始着手建立监测指标体系和评价方法，经过十多年时间和不断完善，已形成制度，定期提供景气分析报告，对宏观经济运行状态起到晴雨表和报警器的作用，便于国务院和有关部门及时采取宏观调控措施。以经常性的小调整，防止经济的大起大落。</p>
-<p>企业景气调查分析。是全国的大中型各类企业中，采取抽样调查的方法，通过问卷的形式，让企业负责人回答有关情况判断和预期。内容分为两类：一是对宏观经济总体的判断和预期；一是对企业经营状况的判断和预期，如产品订单、原材料购进、价格、存货、就业、市场需求、固定资产投资等。</p>
-<h1 id="八、预测分析宏观经济决策和微观经济决策"><a href="#八、预测分析宏观经济决策和微观经济决策" class="headerlink" title="八、预测分析宏观经济决策和微观经济决策"></a>八、预测分析宏观经济决策和微观经济决策</h1><p>不仅需要了解经济运行中已经发生了的实际情况，而且更需要预见未来将发生的情况。根据已知的过去和现在推测未来，就是预测分析。</p>
-<p>统计预测属于定量预测，是以数据分析为主，在预测中结合定性分析。统计预测的方法大致可分为两类：一类是主要根据指标时间数列自身变化与时间的依存关系进行预测，属于时间数列分析；另一类是根据指标之间相互影响的因果关系进行预测，属于回归分析。</p>
-<p>预测分析的方法有回归分析法、滑动平均法、指数平滑法、周期（季节）变化分析和随机变化分析等。比较复杂的预测分析需要建立计量经济模型，求解模型中的参数又有许多方法。</p>
-]]></content>
-      <categories>
-        <category>技术</category>
-        <category>数据分析</category>
-        <category>方法论</category>
-      </categories>
-      <tags>
-        <tag>数据分析师</tag>
-        <tag>统计</tag>
-        <tag>方法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>免费商用字体收集</title>
-    <url>/2022/07/01/%E5%85%8D%E8%B4%B9%E5%95%86%E7%94%A8%E5%AD%97%E4%BD%93%E6%94%B6%E9%9B%86/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="德拉黑体"><a href="#德拉黑体" class="headerlink" title="德拉黑体"></a><a href="https://github.com/syakuzen/DelaGothic/blob/master/fonts/ttf/DelaGothicOne-Regular.ttf">德拉黑体</a></h2><blockquote>
-<p>3.0&#x2F;5.0</p>
-</blockquote>
-<p>德拉黑体(日文名：デラゴシック，英文名：DelaGothic)德拉黑体是一款粗笔画、扁平的日系黑体字型。但是大部分文字以繁体显示，对于简体汉字的收录并不全面。</p>
-<h3 id="标小智无界黑（德拉黑体补简）"><a href="#标小智无界黑（德拉黑体补简）" class="headerlink" title="标小智无界黑（德拉黑体补简）"></a>标小智无界黑（德拉黑体补简）</h3><p>标小智无界黑是基于德拉黑体进行简体字补充的字体。如果喜欢德拉黑体的，这款字体的简体中文再也不会缺字！</p>
-<h2 id="阿里巴巴普惠体3-0"><a href="#阿里巴巴普惠体3-0" class="headerlink" title="阿里巴巴普惠体3.0"></a><a href="https://www.alibabafonts.com/#/home">阿里巴巴普惠体3.0</a></h2><blockquote>
-<p>5.0&#x2F;5.0</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>资源</category>
-        <category>字体</category>
-      </categories>
-      <tags>
-        <tag>资源</tag>
-        <tag>字体</tag>
-        <tag>免费</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Pandas基本操作</title>
     <url>/2023/03/15/Pandas%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="查看数据"><a href="#查看数据" class="headerlink" title="查看数据"></a>查看数据</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 查看头部 head(n)</span></span><br><span class="line">df.head()  <span class="comment">#默认查看前5条记录 </span></span><br><span class="line">df.head(<span class="number">8</span>)  <span class="comment">#指定查看前8条记录</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">## 查看尾部 tail(n)</span></span><br><span class="line">df.tail()  <span class="comment">#默认查看后面5条记录 </span></span><br><span class="line">df.tail(<span class="number">4</span>)  <span class="comment">#指定查看后面4条记录</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 随机查看样本 sample(n)</span></span><br><span class="line">df.sample()  <span class="comment">#随机查看一条记录 </span></span><br><span class="line">df.sample(<span class="number">4</span>)  <span class="comment">#随机查看4条记录</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 查看统计摘要</span></span><br><span class="line">df.describe()  <span class="comment">#返回所有数字列的统计摘要</span></span><br></pre></td></tr></table></figure>
@@ -1170,46 +1003,6 @@
       <tags>
         <tag>笔记</tag>
         <tag>python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>lora训练</title>
-    <url>/2023/04/19/lora%E8%AE%AD%E7%BB%83/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="https://github.com/camenduru/stable-diffusion-webui-colab">https://github.com/camenduru/stable-diffusion-webui-colab</a></p>
-<p><a href="https://github.com/camenduru/stable-diffusion-webui-colab/tree/drive">https://github.com/camenduru/stable-diffusion-webui-colab/tree/drive</a></p>
-<p><a href="https://github.com/bmaltais/kohya_ss">kohya_ss Files:</a>  </p>
-<p><a href="https://colab.research.google.com/drive/1vvi6lGdbEIbyuhM2Yg1R99dynuOkWh9Y#scrollTo=_u3q60di584x">在Google Colab上训练LORA模型,保存到谷歌云盘| 免费16GB GPU |KOHYA LORA | Dreambooth扩展 | Stable Diffusion</a></p>
-<span id="more"></span>
-<p><a href="https://github.com/Linaqruf/kohya-trainer">https://github.com/Linaqruf/kohya-trainer</a></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/bmaltais/kohya_ss.git</span><br><span class="line"></span><br><span class="line">cd kohya_ss</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">May need to <span class="built_in">chmod</span> +x ./setup.sh <span class="keyword">if</span> you<span class="string">&#x27;re on a machine with stricter security.</span></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="string">There are additional options if needed for a runpod environment.</span></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="string">Call &#x27;</span>setup.sh -h<span class="string">&#x27; or &#x27;</span>setup.sh --<span class="built_in">help</span><span class="string">&#x27; for more information.</span></span></span><br><span class="line">./setup.sh</span><br></pre></td></tr></table></figure>
-
-<p><a href="https://github.com/antis0007/sd-webui-gelbooru-prompt">Gelbooru标签自动摘录插件 Gelbooru Prompt</a><br><a href="https://github.com/DominikDoom/a1111-sd-webui-tagcomplete/blob/main/README_ZH.md">Tag自动补全</a><br><a href="https://github.com/adieyal/sd-dynamic-prompts">Dynamic Prompts extension</a></p>
-<p><a href="https://civitai.com/images/572998?period=Year&sort=Newest&view=categories">autum,sushi+goodGirl,30step</a></p>
-<p><a href="https://civitai.com/images/572647?period=Year&sort=Newest&view=categories&tags=5133">https://civitai.com/images/572647?period=Year&sort=Newest&view=categories&tags=5133</a></p>
-]]></content>
-      <categories>
-        <category>技术</category>
-        <category>人工智能</category>
-        <category>lora</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Python一些文章</title>
-    <url>/2023/04/23/Python%E4%B8%80%E4%BA%9B%E6%96%87%E7%AB%A0/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="https://pythontutor.com/">Visualize code in Python, JavaScript, C, C++, and Java: pythontutor</a><br><a href="https://visualgo.net/">visualising data structures and algorithms through animation:Python动画算法</a></p>
-<hr>
-<p><a href="https://www.programcreek.com/python">Python Code Examples: Python代码例子</a><br><a href="https://mp.weixin.qq.com/s/0b_bG83S-LEpQOtaWZXv3A">Python网站开发库大全整理完了</a><br><a href="https://mp.weixin.qq.com/s/5bYBrDs90JWMj1A25K4WkQ">14个VSCode插件，让你写代码如同神一般</a><br><a href="https://mp.weixin.qq.com/s/B1q3n--GrK9ybtUcw9eC-Q">Python中关于进度条的6个实用技巧</a><br><a href="https://mp.weixin.qq.com/s/lRicXgAoUYAYO_WpFdQo6A">45个Git经典操作场景，专治不会合代码</a><br><a href="https://mp.weixin.qq.com/s/9qtNkNs6qcJqqEFS15jw-w">进阶版的Pandas神器：Polars</a><br><a href="https://mp.weixin.qq.com/s/qbSoq05Aaw-YPmdbYrgUdg">Sklearn模块中不为人知又超级好用的API函数</a><br><a href="https://mp.weixin.qq.com/s/ndmIgNGN6eBsoF4Y1CeaFg">Python列表解析式到底该怎么用？</a><br><a href="https://mp.weixin.qq.com/s/ScoUXRyeJGo1g0LaiLoxSw">20个短小精悍的pandas骚操作</a><br><a href="https://mp.weixin.qq.com/s/LoFWiuCteDPgO4P3CAHqHw">数据分析打工人的Pandas75个高频操作（收藏查询用~）</a><br><a href="https://mp.weixin.qq.com/s/DnLJbvVUhTx87-S24FXd8w">一文详解Python-Conda包管理工具</a><br><a href="https://mp.weixin.qq.com/s/YYS2Oq9UvryHKEvJ5MONXA">这些10种Numpy高级操作你都会吗？</a></p>
-]]></content>
-      <categories>
-        <category>技术</category>
-        <category>数据分析</category>
-        <category>python</category>
-        <category>网站</category>
-      </categories>
-      <tags>
-        <tag>笔记</tag>
-        <tag>python</tag>
-        <tag>网站</tag>
       </tags>
   </entry>
   <entry>
@@ -1419,6 +1212,367 @@
       <tags>
         <tag>python</tag>
         <tag>网站</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hadoop、Spark、Flink简单概要</title>
+    <url>/2023/03/28/Hadoop%E3%80%81Spark%E3%80%81Flink%E7%AE%80%E5%8D%95%E6%A6%82%E8%A6%81/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="https://zhuanlan.zhihu.com/p/526462792">Hadoop用于离线复杂大数据处理</a></p>
+<p>Spark 用于离线快速的大数据处理</p>
+<p>Flink 用于在线实时的大数据处理</p>
+<h1 id="1-数据处理"><a href="#1-数据处理" class="headerlink" title="1-数据处理"></a>1-数据处理</h1><p>Hadoop：为批处理而构建的Hadoop，它一次性在输入中获取大量数据集，对其进行处理并产生结果。批处理在处理大量数据时非常有效。由于数据的大小和系统的计算能力，输出会出现延迟。</p>
+<p>Spark：Spark也是 Hadoop生态系统的一部分。它本质上也是一个批处理系统，但它也支持流处理。</p>
+<p>Flink：Flink为流式处理和批处理提供了单一的运行时。</p>
+<span id="more"></span>
+<h1 id="2-流引擎"><a href="#2-流引擎" class="headerlink" title="2-流引擎"></a>2-流引擎</h1><p>Hadoop：Map-reduce是面向批处理的工具。它一次性在输入中获取大量数据集，对其进行处理并产生结果。</p>
+<p>Spark：Apache Spark Streaming以微批处理的形式处理数据流。每个批次都包含在批次期间到达的事件集合。但对于我们需要处理大量实时数据流并实时提供结果的用例来说，这还不够。</p>
+<p>Flink：Apache Flink是真正的流媒体引擎。它使用流来处理工作负载：流式处理、SQL、微批处理和批处理。批处理是一组有限的流数据。</p>
+<h1 id="3-数据流"><a href="#3-数据流" class="headerlink" title="3-数据流"></a>3-数据流</h1><p>Hadoop：MapReduce计算数据流没有任何循环。这是一个阶段链，在每个阶段，您都使用前一阶段的输出向前推进，并为下一阶段产生输入。</p>
+<p>Spark：虽然机器学习算法是一个循环数据流，但 Spark将其表示为（DAG）有向无环图。</p>
+<p>Flink：Flink采用了与其他方法不同的方法。它在运行时支持受控循环依赖图。这有助于以非常有效的方式表示机器学习算法。</p>
+<h1 id="4-计算模型"><a href="#4-计算模型" class="headerlink" title="4-计算模型"></a>4-计算模型</h1><p>Hadoop：MapReduce采用了面向批处理的模型，批处理正在处理静态数据，一次需要大量数据，对其进行处理，然后写出输出。</p>
+<p>Spark：Spark采用了微批处理。微批次本质上是一种“收集然后处理”的计算模型。</p>
+<p>Flink：Flink采用了连续流、基于算子的流模型。连续流算子在数据到达时对其进行处理，而不会延迟收集数据或处理数据。</p>
+<h1 id="5-性能"><a href="#5-性能" class="headerlink" title="5-性能"></a>5-性能</h1><p>Hadoop：Apache Hadoop仅支持批处理。它不处理流数据，因此与Hadoop、Spark和Flink相比，性能更慢。</p>
+<p>Spark：虽然Spark有优秀的社区背景，并且现在被认为是最成熟的社区，但它的流处理效率并不比Flink高，因为它使用的是微批处理。</p>
+<p>Flink：与任何其他数据处理系统相比，Flink的性能非常出色。比较Hadoop、Spark和Flink时可以看出，Flink使用原生闭环迭代运算符，这使得机器学习和图形处理更快。</p>
+<h1 id="6-内存管理"><a href="#6-内存管理" class="headerlink" title="6-内存管理"></a>6-内存管理</h1><p>Hadoop：提供可配置的内存管理，可以动态或静态地执行此操作。</p>
+<p>Spark：提供可配置的内存管理，Spark 1.6 的最新版本已经朝着自动化内存管理的方向发展。</p>
+<p>Flink：提供了自动内存管理，有自己的内存管理系统。</p>
+<h1 id="7-容错"><a href="#7-容错" class="headerlink" title="7-容错"></a>7-容错</h1><p>Hadoop：MapReduce具有高度容错性。如果Hadoop出现任何故障，则无需从头开始重新启动应用程序。</p>
+<p>Spark：Apache Spark Streaming恢复丢失的工作，无需额外的代码或配置。</p>
+<p>Flink：Apache Flink遵循的容错机制是基于Chandy-Lamport分布式快照。该机制是轻量级的，导致在保持高吞吐率的同时提供强大的一致性保证。</p>
+<h1 id="8-可扩展性"><a href="#8-可扩展性" class="headerlink" title="8-可扩展性"></a>8-可扩展性</h1><p>Hadoop：MapReduce具有很强的可扩展性潜力，并已在数万个节点上用于生产。</p>
+<p>Spark：它具有高度可扩展性，我们可以在集群中不断添加 n 个节点，一个已知的大型 Spark集群有8000个节点。</p>
+<p>Flink：Flink也具有很高的可扩展性，我们可以在集群中不断添加 n 个节点，一个已知的大型 Flink 集群有数千个节点。</p>
+<h1 id="9-迭代处理"><a href="#9-迭代处理" class="headerlink" title="9-迭代处理"></a>9-迭代处理</h1><p>Hadoop：不支持迭代处理。</p>
+<p>Spark：它批量迭代其数据。在Spark中，每次迭代都必须单独安排和执行。</p>
+<p>Flink：它通过使用其流式架构来迭代数据。可以指示Flink只处理实际发生变化的部分数据，从而显着提高作业的性能。</p>
+<h1 id="10-语言支持"><a href="#10-语言支持" class="headerlink" title="10-语言支持"></a>10-语言支持</h1><p>Hadoop：主要支持Java，其他支持的语言有c、c++、ruby、groovy、Perl、Python。</p>
+<p>Spark：支持Java、Scala、Python和R。Spark是在Scala中实现的，供其他语言的API，如Java、Python和 R。</p>
+<p>Flink：支持 Java、Scala、Python和R。Flink 是用 Java实现的，同时也提供了Scala API。</p>
+<h1 id="11-优化"><a href="#11-优化" class="headerlink" title="11-优化"></a>11-优化</h1><p>Hadoop：在 MapReduce 中，作业必须手动优化。有几种方法可以优化MapReduce作业：正确配置集群、使用组合器、使用LZO压缩、适当调整 MapReduce任务的数量以及为数据使用最合适和最紧凑的可写类型。</p>
+<p>Spark：在Spark中，作业必须手动优化。有一个新的可扩展优化器 Catalyst，它基于Scala中的函数式编程结构。 Catalyst 的可扩展设计有两个目的：第一，易于添加新的优化技术。其次，使外部开发人员能够扩展优化器催化剂。</p>
+<p>Flink：Apache Flink带有一个独立于实际编程接口的优化器。 Flink优化器的工作方式类似于关系数据库优化器，但将这些优化应用于Flink程序，而不是 SQL查询。</p>
+<h1 id="12-延迟"><a href="#12-延迟" class="headerlink" title="12-延迟"></a>12-延迟</h1><p>Hadoop：Hadoop的MapReduce框架相对较慢，因为它旨在支持不同的格式、结构和海量数据。这就是为什么 Hadoop的延迟比Spark和Flink都高。</p>
+<p>Spark：Spark是另一个批处理系统，但它比Hadoop MapReduce相对快，因为它通过RDD将大部分输入数据缓存在内存中，并将中间数据保存在内存中，最终在完成或需要时将数据写入磁盘。</p>
+<p>Flink：Flink的数据流运行时只需少量配置，即可实现低延迟和高吞吐量。</p>
+<h1 id="14-可视化"><a href="#14-可视化" class="headerlink" title="14-可视化"></a>14-可视化</h1><p>Hadoop：在Hadoop中，数据可视化工具是zoomdata，它可以直接连接到HDFS以及SQL-on-Hadoop技术，如 Impala、Hive、Spark SQL、Presto等。</p>
+<p>Spark：它提供了一个用于提交和执行作业的Web界面，在该界面上可以可视化生成的执行计划。 Flink和Spark都集成到Apache zeppelin中，它提供数据分析、摄取以及发现、可视化和协作。</p>
+<p>Flink：它还提供了一个用于提交和执行作业的Web界面，生成的执行计划可以在这个界面上进行可视化。</p>
+<h1 id="15-恢复"><a href="#15-恢复" class="headerlink" title="15-恢复"></a>15-恢复</h1><p>Hadoop：MapReduce自然地对系统故障或故障具有弹性。它是高度容错的系统。</p>
+<p>Spark：Apache Spark RDD允许通过重新计算DAG来恢复故障节点上的分区，同时还通过检查点支持与Hadoop更相似的恢复方式，以减少RDD的依赖关系。</p>
+<p>Flink：支持checkpointing机制，将程序存储在数据源和数据接收器中，窗口的状态，以及用户自定义的状态，在失败后恢复流式作业。</p>
+<h1 id="16-安全性"><a href="#16-安全性" class="headerlink" title="16-安全性"></a>16-安全性</h1><p>Hadoop：它支持Kerberos身份验证，管理起来有些麻烦。但是，第三方供应商已使组织能够利用Active Directory Kerberos和LDAP进行身份验证。</p>
+<p>Spark：Apache Spark的安全性有点稀疏，目前仅支持通过共享密钥（密码身份验证）进行身份验证。 当你在HDFS上运行Spark，它可以使用HDFS ACL和文件级权限。此外，Spark可以在 YARN上运行以使用Kerberos身份验证。</p>
+<p>Flink：Flink通过Hadoop &#x2F; Kerberos基础设施支持用户身份验证。如果在YARN上运行Flink，Flink会获取提交程序的用户的Kerberos令牌，并使用该令牌在YARN、HDFS和HBase上进行身份验证。Flink即将推出的连接器，流程序可以通过 SSL将自己验证为流代理。</p>
+<h1 id="17-成本"><a href="#17-成本" class="headerlink" title="17-成本"></a>17-成本</h1><p>Hadoop：MapReduce通常可以在比某些替代方案更便宜的硬件上运行，因为它不会尝试将所有内容都存储在内存中。</p>
+<p>Spark：由于Spark需要大量RAM才能在内存中运行，因此在集群中增加它会逐渐增加其成本。</p>
+<p>Flink：Apache Flink也需要大量的RAM在内存中运行，所以它的成本会逐渐增加。</p>
+<h1 id="18-兼容性"><a href="#18-兼容性" class="headerlink" title="18-兼容性"></a>18-兼容性</h1><p>Hadoop：Apache Hadoop MapReduce 和 Apache Spark相互兼容，Spark通过JDBC和ODBC共享MapReduce 对数据源、文件格式和商业智能工具的所有兼容性。</p>
+<p>Spark：Apache Spark和Hadoop相互兼容。 Spark与Hadoop数据兼容。它可以通过YARN或Spark的独立模式在 Hadoop集群中运行，并且可以处理HDFS、HBase、Cassandra、Hive和任何Hadoop InputFormat中的数据。</p>
+<p>Flink：Apache Flink是一个可扩展的数据分析框架，完全兼容Hadoop。它提供了一个Hadoop Compatibility包来包装针对Hadoop的MapReduce接口实现的函数，并将它们嵌入到Flink程序中。</p>
+<h1 id="20-使用感"><a href="#20-使用感" class="headerlink" title="20-使用感"></a>20-使用感</h1><p>Hadoop：MapReduce 开发人员需要手动编写每个操作的代码，这让编程工作变得非常困难。</p>
+<p>Spark：很容易编程，因为它有大量的高级操作符。</p>
+<p>Flink：也有高级算子，易于操作。</p>
+<h1 id="21-交互模式"><a href="#21-交互模式" class="headerlink" title="21-交互模式"></a>21-交互模式</h1><p>Hadoop：MapReduce 没有交互模式。</p>
+<p>Spark：Spark 有一个交互式Shell，可以学习如何充分利用Spark。这是一个用 Scala编写的Spark应用程序，提供一个具有自动完成功能的命令行环境，您可以在其中运行临时查询并熟悉 Spark的功能。</p>
+<p>Flink：它带有一个集成的交互式Scala Shell。它可以在本地设置和集群设置中使用。</p>
+<h1 id="22-实时分析"><a href="#22-实时分析" class="headerlink" title="22-实时分析"></a>22-实时分析</h1><p>Hadoop：MapReduce 在实时数据处理方面失败了，因为它旨在对大量数据执行批处理。</p>
+<p>Spark：它可以处理实时数据，即以每秒数百万个事件的速率来自实时事件流的数据。</p>
+<p>Flink：主要用于实时数据分析，虽然也提供了快速的批量数据处理。</p>
+<h1 id="23-调度器"><a href="#23-调度器" class="headerlink" title="23-调度器"></a>23-调度器</h1><p>Hadoop：Hadoop中的调度程序成为可插拔组件。多用户工作负载有两个调度器：公平调度器和容量调度器。为了调度复杂的流程，MapReduce需要像Oozie这样的外部作业调度程序。</p>
+<p>Spark：由于内存计算，Spark能充当自己的流调度程序。</p>
+<p>Flink：Flink可以使用YARN Scheduler，Flink也有自己的 Scheduler。</p>
+<h1 id="24-SQL支持"><a href="#24-SQL支持" class="headerlink" title="24-SQL支持"></a>24-SQL支持</h1><p>Hadoop：它使用户能够使用 Apache Hive运行SQL查询。</p>
+<p>Spark：它使用户能够使用Spark-SQL运行SQL查询。Spark提供了类似Hives的查询语言和类似DSL的Dataframe 来查询结构化数据。</p>
+<p>Flink：在Flink中，Table API是一种类似SQL的表达式语言，支持DSL等数据帧，目前仍处于测试阶段。有计划添加SQL接口，但不确定何时会进入框架。</p>
+<h1 id="25-缓存"><a href="#25-缓存" class="headerlink" title="25-缓存"></a>25-缓存</h1><p>Hadoop：MapReduce 无法将数据缓存在内存中以满足未来需求。</p>
+<p>Spark：它可以将数据缓存在内存中以进行进一步的迭代，从而提高其性能。</p>
+<p>Flink：它可以将数据缓存在内存中以供进一步迭代以提高其性能。</p>
+<h1 id="26-硬件要求"><a href="#26-硬件要求" class="headerlink" title="26-硬件要求"></a>26-硬件要求</h1><p>Hadoop：MapReduce在商品硬件上运行良好。</p>
+<p>Spark：Apache Spark需要中高级硬件。由于Spark将数据缓存在内存中以供进一步迭代，从而提高其性能。</p>
+<p>Flink：Apache Flink也需要中高级硬件。 Flink还可以将数据缓存在内存中以进行进一步的迭代，从而提高其性能。</p>
+<h1 id="27-机器学习"><a href="#27-机器学习" class="headerlink" title="27-机器学习"></a>27-机器学习</h1><p>Hadoop：需要像Apache Mahout这样的机器学习工具。</p>
+<p>Spark：有自己的一套机器学习MLlib。在内存缓存和其他实现细节中，它确实是实现ML算法的强大平台。</p>
+<p>Flink：有FlinkML，它是Flink的机器学习库。它支持运行时受控的循环依赖图。与DAG表示相比，这使得它们以非常有效的方式表示ML算法。</p>
+<h1 id="28-部署"><a href="#28-部署" class="headerlink" title="28-部署"></a>28-部署</h1><p>Hadoop：在独立模式下，Hadoop 被配置为在单节点、非分布式模式下运行。在伪分布式模式下，Hadoop以伪分布式模式运行。因此，不同之处在于每个Hadoop守护程序以伪分布式模式在单独的Java进程中运行。而在本地模式下，每个Hadoop守护程序都作为单个Java进程运行。在完全分布式模式下，所有守护进程在单独的节点中执行，形成一个多节点集群。</p>
+<p>Spark：还提供了一种简单的独立部署模式，可以在Mesos或YARN集群管理器上运行。它可以手动启动，通过手动启动 master和worker或使用我们提供的启动脚本。也可以在单台机器上运行这些守护进程进行测试。</p>
+<p>Flink：还提供了在YARN集群管理器上运行的独立部署模式。</p>
+<h1 id="29-消除重复"><a href="#29-消除重复" class="headerlink" title="29-消除重复"></a>29-消除重复</h1><p>Hadoop：Hadoop中没有重复消除。</p>
+<p>Spark：Spark还对每条记录进行一次准确的处理，因此消除了重复。</p>
+<p>Flink：Flink只处理一次记录，因此消除了重复，流应用程序可以在计算期间保持自定义状态。Flink的检查点机制确保在出现故障时状态的语义恰好只有一次。</p>
+<h1 id="30-Window标准"><a href="#30-Window标准" class="headerlink" title="30-Window标准"></a>30-Window标准</h1><p>一个数据流需要被分成许多逻辑流，每个逻辑流都可以应用一个窗口操作符。</p>
+<p>Hadoop：不支持流式传输，因此不需要窗口条件。</p>
+<p>Spark：具有基于时间的窗口标准。</p>
+<p>Flink：具有基于记录的或任何自定义的用户定义的Flink Window标准。  </p>
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>数据分析</category>
+        <category>数据库</category>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+        <tag>数据库</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>统计分析的八种方法</title>
+    <url>/2023/03/30/%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E7%9A%84%E5%85%AB%E7%A7%8D%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="一、指标对比分析法"><a href="#一、指标对比分析法" class="headerlink" title="一、指标对比分析法"></a>一、指标对比分析法</h1><p>指标对比分析法，又称比较分析法，是统计分析中最常用的方法。是通过有关的指标对比来反映事物数量上差异和变化的方法。有比较才能鉴别。单独看一些指标，只能说明总体的某些数量特征，得不出什么结论性的认识；一经过比较，如与国外、外单位比，与历史数据比，与计划相比，就可以对规模大小、水平高低、速度快慢作出判断和评价。</p>
+<p>指标分析对比分析方法可分为静态比较和动态比较分析。静态比较是同一时间条件下不同总体指标比较，如不同部门、不同地区、不同国家的比较，也叫横向比较；动态比较是同一总体条件不同时期指标数值的比较，也叫纵向比较。这两种方法既可单独使用，也可结合使用。进行对比分析时，可以单独使用总量指标或相对指标或平均指标，也可将它们结合起来进行对比。比较的结果可用相对数，如百分数、倍数、系数等，也可用相差的绝对数和相关的百分点（每1％为一个百分点）来表示，即将对比的指标相减。</p>
+<span id="more"></span>
+<h1 id="二、分组分析法"><a href="#二、分组分析法" class="headerlink" title="二、分组分析法"></a>二、分组分析法</h1><p>指标对比分析法是总体上的对比，但组成统计总体的各单位具有多种特征，这就使得在同一总体范围内的各单位之间产生了许多差别，统计分析不仅要对总体数量特征和数量关系进行分析，还要深入总体的内部进行分组分析。分组分析法就是根据统计分析的目的要求，把所研究的总体按照一个或者几个标志划分为若干个部分，加以整理，进行观察、分析，以揭示其内在的联系和规律性。</p>
+<p>统计分组法的关键问题在于正确选择分组标值和划分各组界限。</p>
+<h1 id="三、时间数列及动态分析法"><a href="#三、时间数列及动态分析法" class="headerlink" title="三、时间数列及动态分析法"></a>三、时间数列及动态分析法</h1><p>时间数列。是将同一指标在时间上变化和发展的一系列数值，按时间先后顺序排列，就形成时间数列，又称动态数列。它能反映社会经济现象的发展变动情况，通过时间数列的编制和分析，可以找出动态变化规律，为预测未来的发展趋势提供依据。时间数列可分为绝对数时间数列、相对数时间数列、平均数时间数列。</p>
+<p>时间数列速度指标。根据绝对数时间数列可以计算的速度指标：有发展速度、增长速度、平均发展速度、平均增长速度。</p>
+<p>动态分析法。在统计分析中，如果只有孤立的一个时期指标值，是很难作出判断的。如果编制了时间数列，就可以进行动态分析，反映其发展水平和速度的变化规律。</p>
+<p>进行动态分析，要注意数列中各个指标具有的可比性。总体范围、指标计算方法、计算价格和计量单位，都应该前后一致。时间间隔一般也要一致，但也可以根据研究目的，采取不同的间隔期，如按历史时期分。为了消除时间间隔期不同而产生的指标数值不可比，可采用年平均数和年平均发展速度来编制动态数列。此外在统计上，许多综合指标是采用价值形态来反映实物总量，如国内生产总值、工业总产值、社会商品零售总额等计算不同年份的发展速度时，必须消除价格变动因素的影响，才能正确的反映实物量的变化。也就是说必须用可比价格（如用不变价或用价格指数调整）计算不同年份相同产品的价值，然后才能进行对比。</p>
+<p>为了观察我国经济发展的波动轨迹，可将各年国内生产总值的发展速度编制时间数列，并据以绘制成曲线图，令人得到直观认识。</p>
+<h1 id="四、指数分析法"><a href="#四、指数分析法" class="headerlink" title="四、指数分析法"></a>四、指数分析法</h1><p>指数是指反映社会经济现象变动情况的相对数。有广义和狭义之分。根据指数所研究的范围不同可以有个体指数、类指数与总指数之分。</p>
+<p>指数的作用：一是可以综合反映复杂的社会经济现象的总体数量变动的方向和程度；二是可以分析某种社会经济现象的总变动受各因素变动影响的程度，这是一种因素分析法。操作方法是：通过指数体系中的数量关系，假定其他因素不变，来观察某一因素的变动对总变动的影响。</p>
+<p>用指数进行因素分析。因素分析就是将研究对象分解为各个因素，把研究对象的总体看成是各因素变动共同的结果，通过对各个因素的分析，对研究对象总变动中各项因素的影响程度进行测定。因素分析按其所研究的对象的统计指标不同可分为对总量指标的变动的因素分析，对平均指标变动的因素分析。</p>
+<h1 id="五、平衡分析法"><a href="#五、平衡分析法" class="headerlink" title="五、平衡分析法"></a>五、平衡分析法</h1><p>平衡分析是研究社会经济现象数量变化对等关系的一种方法。它把对立统一的双方按其构成要素一一排列起来，给人以整体的概念，以便于全局来观察它们之间的平衡关系。平衡关系广泛存在于经济生活中，大至全国宏观经济运行，小至个人经济收支。平衡种类繁多，如财政平衡表、劳动力平衡表、能源平衡表、国际收支平衡表、投入产出平衡表，等等。平衡分析的作用：一是从数量对等关系上反映社会经济现象的平衡状况，分析各种比例关系相适应状况；二是揭示不平衡的因素和发展潜力；三是利用平衡关系可以从各项已知指标中推算未知的个别指标。</p>
+<h1 id="六、综合评价分析"><a href="#六、综合评价分析" class="headerlink" title="六、综合评价分析"></a>六、综合评价分析</h1><p>社会经济分析现象往往是错综复杂的，社会经济运行状况是多种因素综合作用的结果，而且各个因素的变动方向和变动程度是不同的。如对宏观经济运行的评价，涉及生活、分配、流通、消费各个方面；对企业经济效益的评价，涉及人、财、物合理利用和市场销售状况。如果只用单一指标，就难以作出恰当的评价。</p>
+<p>进行综合评价包括四个步骤：</p>
+<p>（一）确定评价指标体系，这是综合评价的基础和依据。要注意指标体系的全面性和系统性。</p>
+<p>（二）搜集数据，并对不同计量单位的指标数值进行同度量处理。可采用相对化处理、函数化处理、标准化处理等方法。</p>
+<p>（三）确定各指标的权数，以保证评价的科学性。根据各个指标所处的地位和对总体影响程度不同，需要对不同指标赋予不同的权数。</p>
+<p>（四）对指标进行汇总，计算综合分值，并据此作出综合评价。</p>
+<h1 id="七、景气分析经济波动是客观存在的，是任何国家都难以完全避免的"><a href="#七、景气分析经济波动是客观存在的，是任何国家都难以完全避免的" class="headerlink" title="七、景气分析经济波动是客观存在的，是任何国家都难以完全避免的"></a>七、景气分析经济波动是客观存在的，是任何国家都难以完全避免的</h1><p>如何避免大的经济波动，保持经济的稳定发展，一直是各国政府和经济之专家在宏观调控和决策中面临的重要课题，景气分析正是适应这一要求而产生和发展的。景气分析是一种综合评价分析，可分为宏观经济景气分析和企业景气调查分析。</p>
+<p>宏观经济景气分析。是国家统计局20世纪80年代后期开始着手建立监测指标体系和评价方法，经过十多年时间和不断完善，已形成制度，定期提供景气分析报告，对宏观经济运行状态起到晴雨表和报警器的作用，便于国务院和有关部门及时采取宏观调控措施。以经常性的小调整，防止经济的大起大落。</p>
+<p>企业景气调查分析。是全国的大中型各类企业中，采取抽样调查的方法，通过问卷的形式，让企业负责人回答有关情况判断和预期。内容分为两类：一是对宏观经济总体的判断和预期；一是对企业经营状况的判断和预期，如产品订单、原材料购进、价格、存货、就业、市场需求、固定资产投资等。</p>
+<h1 id="八、预测分析宏观经济决策和微观经济决策"><a href="#八、预测分析宏观经济决策和微观经济决策" class="headerlink" title="八、预测分析宏观经济决策和微观经济决策"></a>八、预测分析宏观经济决策和微观经济决策</h1><p>不仅需要了解经济运行中已经发生了的实际情况，而且更需要预见未来将发生的情况。根据已知的过去和现在推测未来，就是预测分析。</p>
+<p>统计预测属于定量预测，是以数据分析为主，在预测中结合定性分析。统计预测的方法大致可分为两类：一类是主要根据指标时间数列自身变化与时间的依存关系进行预测，属于时间数列分析；另一类是根据指标之间相互影响的因果关系进行预测，属于回归分析。</p>
+<p>预测分析的方法有回归分析法、滑动平均法、指数平滑法、周期（季节）变化分析和随机变化分析等。比较复杂的预测分析需要建立计量经济模型，求解模型中的参数又有许多方法。</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>数据分析</category>
+        <category>方法论</category>
+      </categories>
+      <tags>
+        <tag>数据分析师</tag>
+        <tag>统计</tag>
+        <tag>方法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>免费商用字体收集</title>
+    <url>/2022/07/01/%E5%85%8D%E8%B4%B9%E5%95%86%E7%94%A8%E5%AD%97%E4%BD%93%E6%94%B6%E9%9B%86/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="德拉黑体"><a href="#德拉黑体" class="headerlink" title="德拉黑体"></a><a href="https://github.com/syakuzen/DelaGothic/blob/master/fonts/ttf/DelaGothicOne-Regular.ttf">德拉黑体</a></h2><blockquote>
+<p>3.0&#x2F;5.0</p>
+</blockquote>
+<p>德拉黑体(日文名：デラゴシック，英文名：DelaGothic)德拉黑体是一款粗笔画、扁平的日系黑体字型。但是大部分文字以繁体显示，对于简体汉字的收录并不全面。</p>
+<h3 id="标小智无界黑（德拉黑体补简）"><a href="#标小智无界黑（德拉黑体补简）" class="headerlink" title="标小智无界黑（德拉黑体补简）"></a>标小智无界黑（德拉黑体补简）</h3><p>标小智无界黑是基于德拉黑体进行简体字补充的字体。如果喜欢德拉黑体的，这款字体的简体中文再也不会缺字！</p>
+<h2 id="阿里巴巴普惠体3-0"><a href="#阿里巴巴普惠体3-0" class="headerlink" title="阿里巴巴普惠体3.0"></a><a href="https://www.alibabafonts.com/#/home">阿里巴巴普惠体3.0</a></h2><blockquote>
+<p>5.0&#x2F;5.0</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>资源</category>
+        <category>字体</category>
+      </categories>
+      <tags>
+        <tag>资源</tag>
+        <tag>字体</tag>
+        <tag>免费</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ChatGPT Prompt</title>
+    <url>/2023/08/12/ChatGPT_Prompt/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="English-Vesion"><a href="#English-Vesion" class="headerlink" title="English Vesion"></a>English Vesion</h2><details>
+  <summary>English Version</summary>
+  <p> 
+
+<ol>
+<li><p>Brainstorm 10 content ideas related to [topic] that [your audience] would find interesting and beneficial.</p>
+</li>
+<li><p>Write a fun bedtime story for [whomever you want], with them as a main character.</p>
+</li>
+<li><p>Write an article about [topic]. Consider diverse perspectives and write it in a [preferred tone] tone.</p>
+</li>
+<li><p>Summarize [LinkedIn profile url] and list the top 5 pain points they likely face in their current role.</p>
+</li>
+<li><p>Create social media content for 7 days that is focused on [topic] and that will engage [target audience].</p>
+</li>
+</ol>
+<p>  Instructions: Create social media content that is appropriate for the chosen topic and target audience. Content should be varied. Content should also include calls to action that encourage users to engage with the content, such as likes, shares, and comments.</p>
+<ol start="6">
+<li><p>I enjoy [list a few interests or hobbies]. What are some completely unrelated activities that I might find interesting?</p>
+</li>
+<li><p>Write 10 [subject lines &#x2F; headlines &#x2F; social media threads &#x2F; ad headlines &#x2F; etc.] with a curiosity gap that discuss [topic].</p>
+</li>
+<li><p>Pretend you are [role], come up with 10 ideas of how to do [task or problem]. Compare each of these ideas and list the pros and cons of each idea.</p>
+</li>
+<li><p>Summarize in table format the features, benefits, and pain solved for this product: [url to product features page].</p>
+</li>
+<li><p>Create a list of [10] frequently asked questions about [keyword] and provide answers for each one of them considering the SERP and rich result guidelines.</p>
+</li>
+<li><p>Create 5 social media posts promoting this blog post: [blog post URL].</p>
+</li>
+<li><p>Create a step by step guide to instruct how to [topic].</p>
+  </p>
+</details>
+<span id="more"></span></li>
+</ol>
+<h2 id="中文版本"><a href="#中文版本" class="headerlink" title="中文版本"></a>中文版本</h2><details>
+  <summary>中文版本</summary>
+  <p> 
+  
+<ol>
+<li><p>脑筋急转弯10个与[topic]相关的内容想法，让[your audience]感兴趣和受益。</p>
+</li>
+<li><p>为[whomever you want]编写一个fun的睡前故事，ta是故事的主要角色。</p>
+</li>
+<li><p>编写一个关于[topic]的的文章，考虑多种角度，使用[preferred tone]的口调。</p>
+</li>
+<li><p>总结[LinkedIn profile url]并 listing the top 5 pain points they likely face in their current role.</p>
+</li>
+<li><p>创建7天social media content，聚焦于[topic]，让[target audience]参与。</p>
+</li>
+</ol>
+<p>  Instructions: 创建social media content，符合choosen topic and target audience。Content should be varied. Content should also include calls to action that encourage users to engage with the content, such as likes, shares, and comments.</p>
+<ol start="6">
+<li><p>我享受[list a few interests or hobbies]。哪些是不完全related的activity？</p>
+</li>
+<li><p>写10个与curiosity gap相关的[topic] theme的subject lines &#x2F; headlines &#x2F; social media threads &#x2F; ad headlines &#x2F; etc.</p>
+</li>
+<li><p>假设你是[role]，列出10个做[task or problem]的方法。比较每个方法并list the pros and cons of each idea.</p>
+</li>
+<li><p>用表格格式 summarize the features, benefits, and pain solved for this product: [url to product features page].</p>
+</li>
+<li><p>创建一个包含常见问题及回答的列表，关于[keyword]。</p>
+</li>
+<li><p>创建5个social media posts promoting this blog post: [blog post URL]。</p>
+</li>
+<li><p>创建一个step by step guide to instruct how to [topic]。</p>
+</li>
+</ol>
+  </p>
+</details>
+
+
+
+
+
+
+
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>人工智能</category>
+        <category>Prompt</category>
+      </categories>
+      <tags>
+        <tag>Prompt</tag>
+        <tag>GPT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>lora训练</title>
+    <url>/2023/04/19/lora%E8%AE%AD%E7%BB%83/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="https://github.com/camenduru/stable-diffusion-webui-colab">https://github.com/camenduru/stable-diffusion-webui-colab</a></p>
+<p><a href="https://github.com/camenduru/stable-diffusion-webui-colab/tree/drive">https://github.com/camenduru/stable-diffusion-webui-colab/tree/drive</a></p>
+<p><a href="https://github.com/bmaltais/kohya_ss">kohya_ss Files:</a>  </p>
+<p><a href="https://colab.research.google.com/drive/1vvi6lGdbEIbyuhM2Yg1R99dynuOkWh9Y#scrollTo=_u3q60di584x">在Google Colab上训练LORA模型,保存到谷歌云盘| 免费16GB GPU |KOHYA LORA | Dreambooth扩展 | Stable Diffusion</a></p>
+<span id="more"></span>
+<p><a href="https://github.com/Linaqruf/kohya-trainer">https://github.com/Linaqruf/kohya-trainer</a></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/bmaltais/kohya_ss.git</span><br><span class="line"></span><br><span class="line">cd kohya_ss</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">May need to <span class="built_in">chmod</span> +x ./setup.sh <span class="keyword">if</span> you<span class="string">&#x27;re on a machine with stricter security.</span></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="string">There are additional options if needed for a runpod environment.</span></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="string">Call &#x27;</span>setup.sh -h<span class="string">&#x27; or &#x27;</span>setup.sh --<span class="built_in">help</span><span class="string">&#x27; for more information.</span></span></span><br><span class="line">./setup.sh</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://github.com/antis0007/sd-webui-gelbooru-prompt">Gelbooru标签自动摘录插件 Gelbooru Prompt</a><br><a href="https://github.com/DominikDoom/a1111-sd-webui-tagcomplete/blob/main/README_ZH.md">Tag自动补全</a><br><a href="https://github.com/adieyal/sd-dynamic-prompts">Dynamic Prompts extension</a></p>
+<p><a href="https://civitai.com/images/572998?period=Year&sort=Newest&view=categories">autum,sushi+goodGirl,30step</a></p>
+<p><a href="https://civitai.com/images/572647?period=Year&sort=Newest&view=categories&tags=5133">https://civitai.com/images/572647?period=Year&sort=Newest&view=categories&tags=5133</a></p>
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>人工智能</category>
+        <category>lora</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Python一些文章</title>
+    <url>/2023/04/23/Python%E4%B8%80%E4%BA%9B%E6%96%87%E7%AB%A0/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="https://pythontutor.com/">Visualize code in Python, JavaScript, C, C++, and Java: pythontutor</a><br><a href="https://visualgo.net/">visualising data structures and algorithms through animation:Python动画算法</a></p>
+<hr>
+<p><a href="https://www.programcreek.com/python">Python Code Examples: Python代码例子</a><br><a href="https://mp.weixin.qq.com/s/0b_bG83S-LEpQOtaWZXv3A">Python网站开发库大全整理完了</a><br><a href="https://mp.weixin.qq.com/s/5bYBrDs90JWMj1A25K4WkQ">14个VSCode插件，让你写代码如同神一般</a><br><a href="https://mp.weixin.qq.com/s/B1q3n--GrK9ybtUcw9eC-Q">Python中关于进度条的6个实用技巧</a><br><a href="https://mp.weixin.qq.com/s/lRicXgAoUYAYO_WpFdQo6A">45个Git经典操作场景，专治不会合代码</a><br><a href="https://mp.weixin.qq.com/s/9qtNkNs6qcJqqEFS15jw-w">进阶版的Pandas神器：Polars</a><br><a href="https://mp.weixin.qq.com/s/qbSoq05Aaw-YPmdbYrgUdg">Sklearn模块中不为人知又超级好用的API函数</a><br><a href="https://mp.weixin.qq.com/s/ndmIgNGN6eBsoF4Y1CeaFg">Python列表解析式到底该怎么用？</a><br><a href="https://mp.weixin.qq.com/s/ScoUXRyeJGo1g0LaiLoxSw">20个短小精悍的pandas骚操作</a><br><a href="https://mp.weixin.qq.com/s/LoFWiuCteDPgO4P3CAHqHw">数据分析打工人的Pandas75个高频操作（收藏查询用~）</a><br><a href="https://mp.weixin.qq.com/s/DnLJbvVUhTx87-S24FXd8w">一文详解Python-Conda包管理工具</a><br><a href="https://mp.weixin.qq.com/s/YYS2Oq9UvryHKEvJ5MONXA">这些10种Numpy高级操作你都会吗？</a></p>
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>数据分析</category>
+        <category>python</category>
+        <category>网站</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+        <tag>python</tag>
+        <tag>网站</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数据分析师常用的Prompt技巧1/2</title>
+    <url>/2023/04/23/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E5%B8%B8%E7%94%A8%E7%9A%84Prompt%E6%8A%80%E5%B7%A7/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>Prompt在数据分析中的作用非常重要，特别是在使用ChatGPT辅助数据分析工作时。Prompt可以被看作是向模型提供的任务说明或问题，它能够引导模型按照我们期望的方式进行工作。</p>
+<p>一个好的prompt可以明确指示模型执行具体的任务，例如进行数据清洗、数据可视化、统计分析等，并能够提供足够的上下文信息帮助模型理解任务的需求和目标。通过使用优秀的prompt，我们可以更高效地利用AI技术来协助我们的数据分析工作，大幅提升工作效率，同时也能帮助我们更深入地理解数据，从而得出更有价值的洞见。因此，学习如何编写有效的prompt是进行数据分析工作的重要技能。</p>
+<p>下面将通过数据分析工作中的几个常见任务来分别给出示例，演示如何正确、高效使用Prompt。</p>
+<h3 id="1-形成分析思路"><a href="#1-形成分析思路" class="headerlink" title="1. 形成分析思路"></a>1. 形成分析思路</h3><p>❌【普通人的prompt】:</p>
+<p><code>我需要找出销量最高的产品。</code></p>
+<p> ✅【数据分析师本的prompt】 :</p>
+<p><code>我有一个含&#39;product_id&#39;，&#39;order_id&#39;，&#39;purchase_date&#39;和&#39;sales_volume&#39;等字段的销售数据库。我想找出在过去一年内销量最高的十种产品。请帮我构建一个数据分析思路来进行这项工作。</code></p>
+<p>【两个版本的差异】: 较好版本的prompt明确了所需的数据库字段、时间范围以及具体的分析目标，使模型有更多的信息可以生成具体的分析思路。</p>
+<h3 id="2-构建指标体系"><a href="#2-构建指标体系" class="headerlink" title="2. 构建指标体系"></a>2. 构建指标体系</h3><p>❌【普通人的prompt】: </p>
+<p><code>我需要一些电商指标。</code> </p>
+<p> ✅【数据分析师本的prompt】:</p>
+<p><code>我正在为一家电商网站构建一个业务指标体系，包括了用户行为、销售绩效、市场营销效果等方面的指标。请帮我列出每个方面下可能包含的几个关键指标。</code> </p>
+<p>【两个版本的差异】: 较好版本的prompt明确了需要电商的哪几个方面的指标，使模型可以根据这些方向提供更具体的指标。</p>
+<h3 id="3-数据清洗"><a href="#3-数据清洗" class="headerlink" title="3. 数据清洗"></a>3. 数据清洗</h3><p>❌【普通人的prompt】: </p>
+<p><code>我需要进行数据清洗。</code></p>
+<p> ✅【数据分析师本的prompt】: </p>
+<p><code>我有一份包含用户年龄、性别、购买记录等信息的数据，但我注意到其中有些年龄数据存在负数，有些购买记录数据为空。请帮我规划一下数据清洗的流程，包括如何处理这些异常数据，以及我应该注意哪些可能的数据质量问题。</code></p>
+<p>【两个版本的差异】: 较好版本的prompt详细描述了数据的具体情况和存在的问题，使模型可以给出更具体的数据清洗策略和注意事项。</p>
+<h3 id="4-完成SQL代码"><a href="#4-完成SQL代码" class="headerlink" title="4. 完成SQL代码"></a>4. 完成SQL代码</h3><p>❌【普通人的prompt】: </p>
+<p><code>我需要查询用户的购买信息。</code> </p>
+<p> ✅【数据分析师本的prompt】: </p>
+<p><code>我有一个&#39;orders&#39;表，包含&#39;user_id&#39;, &#39;product_id&#39;, &#39;purchase_date&#39;, &#39;amount&#39;等字段。我想查询出在过去30天内购买金额超过500的用户的列表，并按照购买金额降序排序。请帮我写出对应的SQL代码。</code> </p>
+<p>【两个版本的差异】: 较好版本的prompt提供了明确的表字段、查询条件以及排序要求，使模型可以生成更精确的SQL代码。</p>
+<h3 id="5-SQL性能优化"><a href="#5-SQL性能优化" class="headerlink" title="5. SQL性能优化"></a>5. SQL性能优化</h3><p>❌【普通人的prompt】: </p>
+<p><code>我需要优化我的SQL查询。</code> </p>
+<p> ✅【数据分析师本的prompt】:</p>
+<p><code>我正在运行一个查询，它包含多个联接和子查询，并且查询时间很长。我在&#39;user&#39;表和&#39;order&#39;表之间进行了联接，然后在结果中进行了聚合操作。请帮我提供一些优化此查询性能的策略或建议。</code> </p>
+<p>【两个版本的差异】: 较好版本的prompt详细描述了查询的具体情况，使模型可以给出更具体的优化建议。</p>
+<h3 id="6-统计学分析"><a href="#6-统计学分析" class="headerlink" title="6. 统计学分析"></a>6. 统计学分析</h3><p>❌【普通人的prompt】:</p>
+<p><code>我需要进行一些统计分析。</code> </p>
+<p> ✅【数据分析师本的prompt】: </p>
+<p><code>我想对我们网站的用户年龄进行描述性统计分析，包括计算年龄的平均值、中位数、分位数、最小值、最大值以及标准差。并希望能理解年龄和用户购买金额之间的关系，需要进行相关性分析。请帮我设计一个分析流程。</code> </p>
+<p>【两个版本的差异】: 较好版本的prompt提供了具体的统计分析需求和数据内容，使模型能够生成更具体和有针对性的分析建议。</p>
+<h3 id="7-数据可视化"><a href="#7-数据可视化" class="headerlink" title="7. 数据可视化"></a>7. 数据可视化</h3><p>❌【普通人的prompt】:</p>
+<p><code>我需要进行数据可视化。</code></p>
+<p> ✅【数据分析师本的prompt】:</p>
+<p><code>我正在分析一个包含用户购买行为数据的数据集，我想对用户的购买金额分布和购买金额与购买次数的关系进行可视化展示。请帮我选择合适的可视化图表类型，以及如何设计图表以使信息展示得更清晰易懂。</code></p>
+<p>【两个版本的差异】:较好版本的prompt提供了具体的可视化目标和数据情况，使模型可以给出更具体的可视化建议。</p>
+<h3 id="8-AB-Test-结果分析"><a href="#8-AB-Test-结果分析" class="headerlink" title="8. AB Test 结果分析"></a>8. AB Test 结果分析</h3><p>❌【普通人的prompt】:</p>
+<p><code>我需要进行AB测试的显著性检验。</code></p>
+<p> ✅【数据分析师本的prompt】:</p>
+<p><code>我进行了一次AB测试，A组有500人，其中有200人完成了购买行为；B组有550人，其中有250人完成了购买行为。我想知道B组的转化率是否显著高于A组，需要进行显著性检验。请帮我设计一个检验流程，包括使用哪种统计检验方法，如何进行计算，以及如何解读结果。</code></p>
+<p>【两个版本的差异】:较好版本的prompt提供了具体的AB测试数据和目标，使模型可以生成更具体和有针对性的显著性检验方法和步骤。</p>
+<h3 id="9-完成分析报告"><a href="#9-完成分析报告" class="headerlink" title="9. 完成分析报告"></a>9. 完成分析报告</h3><p>❌【普通人的prompt】:</p>
+<p><code>我需要写一个分析报告。</code> </p>
+<p> ✅【数据分析师本的prompt】:</p>
+<p><code>我已经完成了对用户年龄和购买行为的关系的分析，发现年龄和购买金额之间存在中等程度的正相关性。请帮我撰写一个分析报告来呈现这个发现，包括报告的背景、方法、结果和讨论等部分。</code> </p>
+<p>【两个版本的差异】:较好版本的prompt提供了具体的分析结果以及报告的结构要求，使模型可以生成结构清晰、内容完整的分析报告。</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>人工智能</category>
+        <category>Prompt</category>
+      </categories>
+      <tags>
+        <tag>Prompt</tag>
+        <tag>GPT</tag>
+        <tag>数据分析</tag>
       </tags>
   </entry>
   <entry>
@@ -1796,85 +1950,11 @@
       </tags>
   </entry>
   <entry>
-    <title>ChatGPT Prompt</title>
-    <url>/2023/08/12/ChatGPT_Prompt/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="English-Vesion"><a href="#English-Vesion" class="headerlink" title="English Vesion"></a>English Vesion</h2><details>
-  <summary>English Version</summary>
-  <p> 
-
-<ol>
-<li><p>Brainstorm 10 content ideas related to [topic] that [your audience] would find interesting and beneficial.</p>
-</li>
-<li><p>Write a fun bedtime story for [whomever you want], with them as a main character.</p>
-</li>
-<li><p>Write an article about [topic]. Consider diverse perspectives and write it in a [preferred tone] tone.</p>
-</li>
-<li><p>Summarize [LinkedIn profile url] and list the top 5 pain points they likely face in their current role.</p>
-</li>
-<li><p>Create social media content for 7 days that is focused on [topic] and that will engage [target audience].</p>
-</li>
-</ol>
-<p>  Instructions: Create social media content that is appropriate for the chosen topic and target audience. Content should be varied. Content should also include calls to action that encourage users to engage with the content, such as likes, shares, and comments.</p>
-<ol start="6">
-<li><p>I enjoy [list a few interests or hobbies]. What are some completely unrelated activities that I might find interesting?</p>
-</li>
-<li><p>Write 10 [subject lines &#x2F; headlines &#x2F; social media threads &#x2F; ad headlines &#x2F; etc.] with a curiosity gap that discuss [topic].</p>
-</li>
-<li><p>Pretend you are [role], come up with 10 ideas of how to do [task or problem]. Compare each of these ideas and list the pros and cons of each idea.</p>
-</li>
-<li><p>Summarize in table format the features, benefits, and pain solved for this product: [url to product features page].</p>
-</li>
-<li><p>Create a list of [10] frequently asked questions about [keyword] and provide answers for each one of them considering the SERP and rich result guidelines.</p>
-</li>
-<li><p>Create 5 social media posts promoting this blog post: [blog post URL].</p>
-</li>
-<li><p>Create a step by step guide to instruct how to [topic].</p>
-  </p>
-</details>
-<span id="more"></span></li>
-</ol>
-<h2 id="中文版本"><a href="#中文版本" class="headerlink" title="中文版本"></a>中文版本</h2><details>
-  <summary>中文版本</summary>
-  <p> 
-  
-<ol>
-<li><p>脑筋急转弯10个与[topic]相关的内容想法，让[your audience]感兴趣和受益。</p>
-</li>
-<li><p>为[whomever you want]编写一个fun的睡前故事，ta是故事的主要角色。</p>
-</li>
-<li><p>编写一个关于[topic]的的文章，考虑多种角度，使用[preferred tone]的口调。</p>
-</li>
-<li><p>总结[LinkedIn profile url]并 listing the top 5 pain points they likely face in their current role.</p>
-</li>
-<li><p>创建7天social media content，聚焦于[topic]，让[target audience]参与。</p>
-</li>
-</ol>
-<p>  Instructions: 创建social media content，符合choosen topic and target audience。Content should be varied. Content should also include calls to action that encourage users to engage with the content, such as likes, shares, and comments.</p>
-<ol start="6">
-<li><p>我享受[list a few interests or hobbies]。哪些是不完全related的activity？</p>
-</li>
-<li><p>写10个与curiosity gap相关的[topic] theme的subject lines &#x2F; headlines &#x2F; social media threads &#x2F; ad headlines &#x2F; etc.</p>
-</li>
-<li><p>假设你是[role]，列出10个做[task or problem]的方法。比较每个方法并list the pros and cons of each idea.</p>
-</li>
-<li><p>用表格格式 summarize the features, benefits, and pain solved for this product: [url to product features page].</p>
-</li>
-<li><p>创建一个包含常见问题及回答的列表，关于[keyword]。</p>
-</li>
-<li><p>创建5个social media posts promoting this blog post: [blog post URL]。</p>
-</li>
-<li><p>创建一个step by step guide to instruct how to [topic]。</p>
-</li>
-</ol>
-  </p>
-</details>
-
-
-
-
-
-
-
+    <title>AI创建视频脚本提示词</title>
+    <url>/2023/06/23/How%20to%20use%20ChatGPT%20to%20create%20Awesome%20Video%20Scripts/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="English-Version"><a href="#English-Version" class="headerlink" title="English Version"></a>English Version</h2><p>Step 1: <code>Find Videos that are already successful.</code><br>Step 2: <code>Copy the transcript from the video</code><br>Step 3: Can you make 10 YouTube video titles based on this video script? make these titles more thought-provoking and more clickable and add curiosity.reply in chinese<br>Step 4: Can you write me a short video script for this video titles? reply in chinese<br>Step 5: Can you write me a description for this video title? reply in chinese<br>Step 6: Can you write me a youtube video shooting script based on this video description? reply in chinese</p>
+<span id="more"></span>
+<h2 id="中文翻译"><a href="#中文翻译" class="headerlink" title="中文翻译"></a>中文翻译</h2><p>Step 1: <code>寻找已有成功的视频。</code><br>Step 2: <code>复制视频的脚本。</code><br>Step 3: 能否为这个视频脚本生成10个YouTube视频标题？这些标题应该更加发人深思，并且更加吸引人，同时添加好奇心。回复中文<br>Step 4: 能否为这些视频标题编写一个短的视频脚本？回复中文<br>Step 5: 能否为这些视频标题编写一个描述？回复中文<br>Step 6: 能否为这个视频描述编写一个YouTube视频射击脚本？回复中文</p>
 ]]></content>
       <categories>
         <category>技术</category>
@@ -1882,8 +1962,9 @@
         <category>Prompt</category>
       </categories>
       <tags>
-        <tag>Prompt</tag>
         <tag>GPT</tag>
+        <tag>AI</tag>
+        <tag>视频创作</tag>
       </tags>
   </entry>
   <entry>
@@ -2067,8 +2148,8 @@
         <category>智能影音</category>
       </categories>
       <tags>
-        <tag>数码</tag>
         <tag>笔记</tag>
+        <tag>数码</tag>
         <tag>Apple</tag>
       </tags>
   </entry>
@@ -11246,66 +11327,16 @@
       </tags>
   </entry>
   <entry>
-    <title>数据分析师常用的Prompt技巧1/2</title>
-    <url>/2023/04/23/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E5%B8%B8%E7%94%A8%E7%9A%84Prompt%E6%8A%80%E5%B7%A7/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>Prompt在数据分析中的作用非常重要，特别是在使用ChatGPT辅助数据分析工作时。Prompt可以被看作是向模型提供的任务说明或问题，它能够引导模型按照我们期望的方式进行工作。</p>
-<p>一个好的prompt可以明确指示模型执行具体的任务，例如进行数据清洗、数据可视化、统计分析等，并能够提供足够的上下文信息帮助模型理解任务的需求和目标。通过使用优秀的prompt，我们可以更高效地利用AI技术来协助我们的数据分析工作，大幅提升工作效率，同时也能帮助我们更深入地理解数据，从而得出更有价值的洞见。因此，学习如何编写有效的prompt是进行数据分析工作的重要技能。</p>
-<p>下面将通过数据分析工作中的几个常见任务来分别给出示例，演示如何正确、高效使用Prompt。</p>
-<h3 id="1-形成分析思路"><a href="#1-形成分析思路" class="headerlink" title="1. 形成分析思路"></a>1. 形成分析思路</h3><p>❌【普通人的prompt】:</p>
-<p><code>我需要找出销量最高的产品。</code></p>
-<p> ✅【数据分析师本的prompt】 :</p>
-<p><code>我有一个含&#39;product_id&#39;，&#39;order_id&#39;，&#39;purchase_date&#39;和&#39;sales_volume&#39;等字段的销售数据库。我想找出在过去一年内销量最高的十种产品。请帮我构建一个数据分析思路来进行这项工作。</code></p>
-<p>【两个版本的差异】: 较好版本的prompt明确了所需的数据库字段、时间范围以及具体的分析目标，使模型有更多的信息可以生成具体的分析思路。</p>
-<h3 id="2-构建指标体系"><a href="#2-构建指标体系" class="headerlink" title="2. 构建指标体系"></a>2. 构建指标体系</h3><p>❌【普通人的prompt】: </p>
-<p><code>我需要一些电商指标。</code> </p>
-<p> ✅【数据分析师本的prompt】:</p>
-<p><code>我正在为一家电商网站构建一个业务指标体系，包括了用户行为、销售绩效、市场营销效果等方面的指标。请帮我列出每个方面下可能包含的几个关键指标。</code> </p>
-<p>【两个版本的差异】: 较好版本的prompt明确了需要电商的哪几个方面的指标，使模型可以根据这些方向提供更具体的指标。</p>
-<h3 id="3-数据清洗"><a href="#3-数据清洗" class="headerlink" title="3. 数据清洗"></a>3. 数据清洗</h3><p>❌【普通人的prompt】: </p>
-<p><code>我需要进行数据清洗。</code></p>
-<p> ✅【数据分析师本的prompt】: </p>
-<p><code>我有一份包含用户年龄、性别、购买记录等信息的数据，但我注意到其中有些年龄数据存在负数，有些购买记录数据为空。请帮我规划一下数据清洗的流程，包括如何处理这些异常数据，以及我应该注意哪些可能的数据质量问题。</code></p>
-<p>【两个版本的差异】: 较好版本的prompt详细描述了数据的具体情况和存在的问题，使模型可以给出更具体的数据清洗策略和注意事项。</p>
-<h3 id="4-完成SQL代码"><a href="#4-完成SQL代码" class="headerlink" title="4. 完成SQL代码"></a>4. 完成SQL代码</h3><p>❌【普通人的prompt】: </p>
-<p><code>我需要查询用户的购买信息。</code> </p>
-<p> ✅【数据分析师本的prompt】: </p>
-<p><code>我有一个&#39;orders&#39;表，包含&#39;user_id&#39;, &#39;product_id&#39;, &#39;purchase_date&#39;, &#39;amount&#39;等字段。我想查询出在过去30天内购买金额超过500的用户的列表，并按照购买金额降序排序。请帮我写出对应的SQL代码。</code> </p>
-<p>【两个版本的差异】: 较好版本的prompt提供了明确的表字段、查询条件以及排序要求，使模型可以生成更精确的SQL代码。</p>
-<h3 id="5-SQL性能优化"><a href="#5-SQL性能优化" class="headerlink" title="5. SQL性能优化"></a>5. SQL性能优化</h3><p>❌【普通人的prompt】: </p>
-<p><code>我需要优化我的SQL查询。</code> </p>
-<p> ✅【数据分析师本的prompt】:</p>
-<p><code>我正在运行一个查询，它包含多个联接和子查询，并且查询时间很长。我在&#39;user&#39;表和&#39;order&#39;表之间进行了联接，然后在结果中进行了聚合操作。请帮我提供一些优化此查询性能的策略或建议。</code> </p>
-<p>【两个版本的差异】: 较好版本的prompt详细描述了查询的具体情况，使模型可以给出更具体的优化建议。</p>
-<h3 id="6-统计学分析"><a href="#6-统计学分析" class="headerlink" title="6. 统计学分析"></a>6. 统计学分析</h3><p>❌【普通人的prompt】:</p>
-<p><code>我需要进行一些统计分析。</code> </p>
-<p> ✅【数据分析师本的prompt】: </p>
-<p><code>我想对我们网站的用户年龄进行描述性统计分析，包括计算年龄的平均值、中位数、分位数、最小值、最大值以及标准差。并希望能理解年龄和用户购买金额之间的关系，需要进行相关性分析。请帮我设计一个分析流程。</code> </p>
-<p>【两个版本的差异】: 较好版本的prompt提供了具体的统计分析需求和数据内容，使模型能够生成更具体和有针对性的分析建议。</p>
-<h3 id="7-数据可视化"><a href="#7-数据可视化" class="headerlink" title="7. 数据可视化"></a>7. 数据可视化</h3><p>❌【普通人的prompt】:</p>
-<p><code>我需要进行数据可视化。</code></p>
-<p> ✅【数据分析师本的prompt】:</p>
-<p><code>我正在分析一个包含用户购买行为数据的数据集，我想对用户的购买金额分布和购买金额与购买次数的关系进行可视化展示。请帮我选择合适的可视化图表类型，以及如何设计图表以使信息展示得更清晰易懂。</code></p>
-<p>【两个版本的差异】:较好版本的prompt提供了具体的可视化目标和数据情况，使模型可以给出更具体的可视化建议。</p>
-<h3 id="8-AB-Test-结果分析"><a href="#8-AB-Test-结果分析" class="headerlink" title="8. AB Test 结果分析"></a>8. AB Test 结果分析</h3><p>❌【普通人的prompt】:</p>
-<p><code>我需要进行AB测试的显著性检验。</code></p>
-<p> ✅【数据分析师本的prompt】:</p>
-<p><code>我进行了一次AB测试，A组有500人，其中有200人完成了购买行为；B组有550人，其中有250人完成了购买行为。我想知道B组的转化率是否显著高于A组，需要进行显著性检验。请帮我设计一个检验流程，包括使用哪种统计检验方法，如何进行计算，以及如何解读结果。</code></p>
-<p>【两个版本的差异】:较好版本的prompt提供了具体的AB测试数据和目标，使模型可以生成更具体和有针对性的显著性检验方法和步骤。</p>
-<h3 id="9-完成分析报告"><a href="#9-完成分析报告" class="headerlink" title="9. 完成分析报告"></a>9. 完成分析报告</h3><p>❌【普通人的prompt】:</p>
-<p><code>我需要写一个分析报告。</code> </p>
-<p> ✅【数据分析师本的prompt】:</p>
-<p><code>我已经完成了对用户年龄和购买行为的关系的分析，发现年龄和购买金额之间存在中等程度的正相关性。请帮我撰写一个分析报告来呈现这个发现，包括报告的背景、方法、结果和讨论等部分。</code> </p>
-<p>【两个版本的差异】:较好版本的prompt提供了具体的分析结果以及报告的结构要求，使模型可以生成结构清晰、内容完整的分析报告。</p>
-]]></content>
-      <categories>
-        <category>技术</category>
-        <category>人工智能</category>
-        <category>Prompt</category>
-      </categories>
+    <title>有意思的翻译PROMPT</title>
+    <url>/2024/04/29/%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84%E7%BF%BB%E8%AF%91PROMPT/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><img src="/2024/04/29/%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84%E7%BF%BB%E8%AF%91PROMPT/image-20240428223752145.jpeg"></p>
+<span id="more"></span>
+
+<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">你是一个英语翻译团队的领导. 你会安排团队成员进行如下翻译, 实现翻译的&quot;信达雅&quot;目标:  </span><br><span class="line">  </span><br><span class="line">第一轮翻译<span class="comment">--信,追求直译, 将英文翻译成中文, 力求准确  </span></span><br><span class="line">  </span><br><span class="line">第二轮翻译<span class="comment">--达,在第一轮翻译的基础上, 考虑文化, 语境, 语义, 思考文字背后想要表达的意思, 进行意译, 力求意境契合, 记得分开思考和翻译内容。  </span></span><br><span class="line">  </span><br><span class="line">第三轮翻译<span class="comment">--雅, 基于第二轮翻译理解的语境含义, 进一步思考其中的哲理, 然后使用中国&lt;诗经&gt;的语言风格针对哲理和语义进行翻译, 力求简明, 古意盎然  </span></span><br><span class="line">  </span><br><span class="line">例如:  </span><br><span class="line">- you need you. 哲理部分，可以引申到佛家所说的&quot;莫向外求&quot;, 儒家所说的&quot;反求诸己&quot;, 然后思考使用诗经语言风格进行重新表述.  </span><br><span class="line">  </span><br><span class="line">- <span class="keyword">nothing</span> <span class="keyword">for</span> <span class="keyword">nothing</span>. 哲理部分，可以引申到诗句“世上本无事，庸人自扰之”，也可引申到俗语“尘归尘，土归土”  </span><br><span class="line">  </span><br><span class="line">第四轮翻译<span class="comment">--初审: 完成三轮翻译后， 深吸一口气， 缓一缓， 思考一下第三轮翻译的结果，与其哲理的偏差在哪？ 不要扩展太多，务求精练深刻，精辟是第一要义。 据此思路进行改进。  </span></span><br><span class="line">  </span><br><span class="line">第五轮翻译<span class="comment">--终审: 最终，你将亲自进行审稿， 你会对比原文和最后的翻译结果， 先思考《诗经》的语言表达风格要点，再审阅初审翻译的结果是否满足, 并给出你的审校修改结论。  </span></span><br><span class="line">  </span><br><span class="line">注意: 思考部分,请使用 【思考】 开头，翻译结果请使用【翻译】开头。  </span><br><span class="line">  </span><br><span class="line">请严格遵守以上工作流程， 对以下文字进行翻译：</span><br></pre></td></tr></table></figure>]]></content>
       <tags>
         <tag>Prompt</tag>
-        <tag>GPT</tag>
-        <tag>数据分析</tag>
+        <tag>AI</tag>
+        <tag>翻译</tag>
       </tags>
   </entry>
   <entry>
@@ -11380,9 +11411,9 @@
         <category>obsidian</category>
       </categories>
       <tags>
+        <tag>笔记</tag>
         <tag>Obsidian</tag>
         <tag>插件</tag>
-        <tag>笔记</tag>
         <tag>分享</tag>
         <tag>webdav</tag>
       </tags>
@@ -11407,37 +11438,6 @@
       <tags>
         <tag>随笔</tag>
         <tag>分享</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>AI创建视频脚本提示词</title>
-    <url>/2023/06/23/How%20to%20use%20ChatGPT%20to%20create%20Awesome%20Video%20Scripts/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="English-Version"><a href="#English-Version" class="headerlink" title="English Version"></a>English Version</h2><p>Step 1: <code>Find Videos that are already successful.</code><br>Step 2: <code>Copy the transcript from the video</code><br>Step 3: Can you make 10 YouTube video titles based on this video script? make these titles more thought-provoking and more clickable and add curiosity.reply in chinese<br>Step 4: Can you write me a short video script for this video titles? reply in chinese<br>Step 5: Can you write me a description for this video title? reply in chinese<br>Step 6: Can you write me a youtube video shooting script based on this video description? reply in chinese</p>
-<span id="more"></span>
-<h2 id="中文翻译"><a href="#中文翻译" class="headerlink" title="中文翻译"></a>中文翻译</h2><p>Step 1: <code>寻找已有成功的视频。</code><br>Step 2: <code>复制视频的脚本。</code><br>Step 3: 能否为这个视频脚本生成10个YouTube视频标题？这些标题应该更加发人深思，并且更加吸引人，同时添加好奇心。回复中文<br>Step 4: 能否为这些视频标题编写一个短的视频脚本？回复中文<br>Step 5: 能否为这些视频标题编写一个描述？回复中文<br>Step 6: 能否为这个视频描述编写一个YouTube视频射击脚本？回复中文</p>
-]]></content>
-      <categories>
-        <category>技术</category>
-        <category>人工智能</category>
-        <category>Prompt</category>
-      </categories>
-      <tags>
-        <tag>GPT</tag>
-        <tag>AI</tag>
-        <tag>视频创作</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>有意思的翻译PROMPT</title>
-    <url>/2024/04/29/%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84%E7%BF%BB%E8%AF%91PROMPT/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><img src="/2024/04/29/%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84%E7%BF%BB%E8%AF%91PROMPT/image-20240428223752145.jpeg"></p>
-<span id="more"></span>
-
-<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">你是一个英语翻译团队的领导. 你会安排团队成员进行如下翻译, 实现翻译的&quot;信达雅&quot;目标:  </span><br><span class="line">  </span><br><span class="line">第一轮翻译<span class="comment">--信,追求直译, 将英文翻译成中文, 力求准确  </span></span><br><span class="line">  </span><br><span class="line">第二轮翻译<span class="comment">--达,在第一轮翻译的基础上, 考虑文化, 语境, 语义, 思考文字背后想要表达的意思, 进行意译, 力求意境契合, 记得分开思考和翻译内容。  </span></span><br><span class="line">  </span><br><span class="line">第三轮翻译<span class="comment">--雅, 基于第二轮翻译理解的语境含义, 进一步思考其中的哲理, 然后使用中国&lt;诗经&gt;的语言风格针对哲理和语义进行翻译, 力求简明, 古意盎然  </span></span><br><span class="line">  </span><br><span class="line">例如:  </span><br><span class="line">- you need you. 哲理部分，可以引申到佛家所说的&quot;莫向外求&quot;, 儒家所说的&quot;反求诸己&quot;, 然后思考使用诗经语言风格进行重新表述.  </span><br><span class="line">  </span><br><span class="line">- <span class="keyword">nothing</span> <span class="keyword">for</span> <span class="keyword">nothing</span>. 哲理部分，可以引申到诗句“世上本无事，庸人自扰之”，也可引申到俗语“尘归尘，土归土”  </span><br><span class="line">  </span><br><span class="line">第四轮翻译<span class="comment">--初审: 完成三轮翻译后， 深吸一口气， 缓一缓， 思考一下第三轮翻译的结果，与其哲理的偏差在哪？ 不要扩展太多，务求精练深刻，精辟是第一要义。 据此思路进行改进。  </span></span><br><span class="line">  </span><br><span class="line">第五轮翻译<span class="comment">--终审: 最终，你将亲自进行审稿， 你会对比原文和最后的翻译结果， 先思考《诗经》的语言表达风格要点，再审阅初审翻译的结果是否满足, 并给出你的审校修改结论。  </span></span><br><span class="line">  </span><br><span class="line">注意: 思考部分,请使用 【思考】 开头，翻译结果请使用【翻译】开头。  </span><br><span class="line">  </span><br><span class="line">请严格遵守以上工作流程， 对以下文字进行翻译：</span><br></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>Prompt</tag>
-        <tag>AI</tag>
-        <tag>翻译</tag>
       </tags>
   </entry>
   <entry>
