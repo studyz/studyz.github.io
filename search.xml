@@ -398,6 +398,47 @@
       </tags>
   </entry>
   <entry>
+    <title>为部署在Github上的Hexo博客配置域名</title>
+    <url>/2019/05/25/%E4%B8%BA%E9%83%A8%E7%BD%B2%E5%9C%A8Github%E4%B8%8A%E7%9A%84Hexo%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE%E5%9F%9F%E5%90%8D/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="一、Hexo项目部署到Github"><a href="#一、Hexo项目部署到Github" class="headerlink" title="一、Hexo项目部署到Github"></a>一、<a href="https://so.csdn.net/so/search?q=Hexo&spm=1001.2101.3001.7020">Hexo</a>项目部署到Github</h4><p>首先要确保你的hexo项目已经部署到github上，如果不知道hexo项目如何部署到github上，请看另一篇文章↓</p>
+<a href="/2019/05/06/Git_Hexo/" title="群晖Git部署Hexo">群晖Git部署Hexo</a>
+
+<p>如果你的<strong>hexo项目已经搭建好</strong>，可直接跳转到<strong>第五步，看部署到Github</strong>的步骤。</p>
+<h4 id="二、解析域名到GitHub-Pages"><a href="#二、解析域名到GitHub-Pages" class="headerlink" title="二、解析域名到GitHub Pages"></a>二、解析域名到GitHub Pages</h4><h5 id="1：首先购买或注册一个域名"><a href="#1：首先购买或注册一个域名" class="headerlink" title="1：首先购买或注册一个域名"></a>1：首先购买或注册一个域名</h5><p>购买域名的渠道有很多，可以国内，也可以国外，本人是在国外的GoDaddy平台上买的（好处是管理比较方便，不用备案啥的了…），问题多的话我再写一篇具体申请的blog。</p>
+<h5 id="2：解析域名到Github"><a href="#2：解析域名到Github" class="headerlink" title="2：解析域名到Github"></a>2：解析域名到Github</h5><p>首先登录你域名注册商的控制面板，这里以GoDaddy为例</p>
+<span id="more"></span>
+
+<p>打开<strong>控制面板</strong></p>
+<p><img src="/2019/05/25/%E4%B8%BA%E9%83%A8%E7%BD%B2%E5%9C%A8Github%E4%B8%8A%E7%9A%84Hexo%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE%E5%9F%9F%E5%90%8D/image-20240428210042566.png"></p>
+<p>接着<strong>打开DNS配置页面</strong></p>
+<p><img src="/2019/05/25/%E4%B8%BA%E9%83%A8%E7%BD%B2%E5%9C%A8Github%E4%B8%8A%E7%9A%84Hexo%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE%E5%9F%9F%E5%90%8D/image-20240428210031684.png"></p>
+<p>接着<strong>添加以下几条解析</strong></p>
+<p><img src="/2019/05/25/%E4%B8%BA%E9%83%A8%E7%BD%B2%E5%9C%A8Github%E4%B8%8A%E7%9A%84Hexo%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE%E5%9F%9F%E5%90%8D/image-20240428210020252.png"></p>
+<p>上面几条IP地址是从<a href="">Github官网</a>上得来的，具体可以查看这个地址<a href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site#configuring-an-apex-domain">Managing a custom domain for your GitHub Pages site - GitHub Docs</a></p>
+<p>至此，域名注册服务商上的github pages域名解析我们就完成了！</p>
+<h4 id="三、配置Hexo项目"><a href="#三、配置Hexo项目" class="headerlink" title="三、配置Hexo项目"></a>三、配置Hexo项目</h4><ol>
+<li>在你的hexo项目的<strong>source</strong>文件夹根目录里添加一个<strong>CNAME</strong>文件（不带任何后缀的文件），CNAME里面的内容是你的<strong>域名</strong>。</li>
+<li>然后打开我们 hexo 项目的配置文件 <strong>_config.yml</strong> ，找到 <strong>url 配置项</strong> ，替换成我们的域名就可以了。</li>
+</ol>
+<h4 id="四、配置Github-Pages"><a href="#四、配置Github-Pages" class="headerlink" title="四、配置Github Pages"></a>四、配置Github Pages</h4><ol>
+<li>打开我们的hexo项目在github上的仓库，进入设置页面</li>
+<li>找到<strong>Pages选项</strong>，<code>Custom domain</code> 填上我们的<strong>域名</strong>，勾选上<strong>强制打开HTTPS</strong>。</li>
+<li>等DNS检查通过，稍微等一会，就可以用域名打开我们的Hexo部署在Github上的项目啦！</li>
+</ol>
+<p>原文链接： <a href="https://www.laodengai.com/domain-name-on-github-20240319/">Hexo 项目在 Github 上配置域名 | 老登 AI (laodengai.com)</a></p>
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>博客</category>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>markdown</tag>
+        <tag>hexo</tag>
+        <tag>插件</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>鸡尾酒配方</title>
     <url>/2020/05/04/%E9%B8%A1%E5%B0%BE%E9%85%92%E9%85%8D%E6%96%B9/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="茶酒"><a href="#茶酒" class="headerlink" title="茶酒"></a>茶酒</h2><ul>
@@ -1174,6 +1215,47 @@
       </tags>
   </entry>
   <entry>
+    <title>统计分析的八种方法</title>
+    <url>/2023/03/30/%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E7%9A%84%E5%85%AB%E7%A7%8D%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="一、指标对比分析法"><a href="#一、指标对比分析法" class="headerlink" title="一、指标对比分析法"></a>一、指标对比分析法</h1><p>指标对比分析法，又称比较分析法，是统计分析中最常用的方法。是通过有关的指标对比来反映事物数量上差异和变化的方法。有比较才能鉴别。单独看一些指标，只能说明总体的某些数量特征，得不出什么结论性的认识；一经过比较，如与国外、外单位比，与历史数据比，与计划相比，就可以对规模大小、水平高低、速度快慢作出判断和评价。</p>
+<p>指标分析对比分析方法可分为静态比较和动态比较分析。静态比较是同一时间条件下不同总体指标比较，如不同部门、不同地区、不同国家的比较，也叫横向比较；动态比较是同一总体条件不同时期指标数值的比较，也叫纵向比较。这两种方法既可单独使用，也可结合使用。进行对比分析时，可以单独使用总量指标或相对指标或平均指标，也可将它们结合起来进行对比。比较的结果可用相对数，如百分数、倍数、系数等，也可用相差的绝对数和相关的百分点（每1％为一个百分点）来表示，即将对比的指标相减。</p>
+<span id="more"></span>
+<h1 id="二、分组分析法"><a href="#二、分组分析法" class="headerlink" title="二、分组分析法"></a>二、分组分析法</h1><p>指标对比分析法是总体上的对比，但组成统计总体的各单位具有多种特征，这就使得在同一总体范围内的各单位之间产生了许多差别，统计分析不仅要对总体数量特征和数量关系进行分析，还要深入总体的内部进行分组分析。分组分析法就是根据统计分析的目的要求，把所研究的总体按照一个或者几个标志划分为若干个部分，加以整理，进行观察、分析，以揭示其内在的联系和规律性。</p>
+<p>统计分组法的关键问题在于正确选择分组标值和划分各组界限。</p>
+<h1 id="三、时间数列及动态分析法"><a href="#三、时间数列及动态分析法" class="headerlink" title="三、时间数列及动态分析法"></a>三、时间数列及动态分析法</h1><p>时间数列。是将同一指标在时间上变化和发展的一系列数值，按时间先后顺序排列，就形成时间数列，又称动态数列。它能反映社会经济现象的发展变动情况，通过时间数列的编制和分析，可以找出动态变化规律，为预测未来的发展趋势提供依据。时间数列可分为绝对数时间数列、相对数时间数列、平均数时间数列。</p>
+<p>时间数列速度指标。根据绝对数时间数列可以计算的速度指标：有发展速度、增长速度、平均发展速度、平均增长速度。</p>
+<p>动态分析法。在统计分析中，如果只有孤立的一个时期指标值，是很难作出判断的。如果编制了时间数列，就可以进行动态分析，反映其发展水平和速度的变化规律。</p>
+<p>进行动态分析，要注意数列中各个指标具有的可比性。总体范围、指标计算方法、计算价格和计量单位，都应该前后一致。时间间隔一般也要一致，但也可以根据研究目的，采取不同的间隔期，如按历史时期分。为了消除时间间隔期不同而产生的指标数值不可比，可采用年平均数和年平均发展速度来编制动态数列。此外在统计上，许多综合指标是采用价值形态来反映实物总量，如国内生产总值、工业总产值、社会商品零售总额等计算不同年份的发展速度时，必须消除价格变动因素的影响，才能正确的反映实物量的变化。也就是说必须用可比价格（如用不变价或用价格指数调整）计算不同年份相同产品的价值，然后才能进行对比。</p>
+<p>为了观察我国经济发展的波动轨迹，可将各年国内生产总值的发展速度编制时间数列，并据以绘制成曲线图，令人得到直观认识。</p>
+<h1 id="四、指数分析法"><a href="#四、指数分析法" class="headerlink" title="四、指数分析法"></a>四、指数分析法</h1><p>指数是指反映社会经济现象变动情况的相对数。有广义和狭义之分。根据指数所研究的范围不同可以有个体指数、类指数与总指数之分。</p>
+<p>指数的作用：一是可以综合反映复杂的社会经济现象的总体数量变动的方向和程度；二是可以分析某种社会经济现象的总变动受各因素变动影响的程度，这是一种因素分析法。操作方法是：通过指数体系中的数量关系，假定其他因素不变，来观察某一因素的变动对总变动的影响。</p>
+<p>用指数进行因素分析。因素分析就是将研究对象分解为各个因素，把研究对象的总体看成是各因素变动共同的结果，通过对各个因素的分析，对研究对象总变动中各项因素的影响程度进行测定。因素分析按其所研究的对象的统计指标不同可分为对总量指标的变动的因素分析，对平均指标变动的因素分析。</p>
+<h1 id="五、平衡分析法"><a href="#五、平衡分析法" class="headerlink" title="五、平衡分析法"></a>五、平衡分析法</h1><p>平衡分析是研究社会经济现象数量变化对等关系的一种方法。它把对立统一的双方按其构成要素一一排列起来，给人以整体的概念，以便于全局来观察它们之间的平衡关系。平衡关系广泛存在于经济生活中，大至全国宏观经济运行，小至个人经济收支。平衡种类繁多，如财政平衡表、劳动力平衡表、能源平衡表、国际收支平衡表、投入产出平衡表，等等。平衡分析的作用：一是从数量对等关系上反映社会经济现象的平衡状况，分析各种比例关系相适应状况；二是揭示不平衡的因素和发展潜力；三是利用平衡关系可以从各项已知指标中推算未知的个别指标。</p>
+<h1 id="六、综合评价分析"><a href="#六、综合评价分析" class="headerlink" title="六、综合评价分析"></a>六、综合评价分析</h1><p>社会经济分析现象往往是错综复杂的，社会经济运行状况是多种因素综合作用的结果，而且各个因素的变动方向和变动程度是不同的。如对宏观经济运行的评价，涉及生活、分配、流通、消费各个方面；对企业经济效益的评价，涉及人、财、物合理利用和市场销售状况。如果只用单一指标，就难以作出恰当的评价。</p>
+<p>进行综合评价包括四个步骤：</p>
+<p>（一）确定评价指标体系，这是综合评价的基础和依据。要注意指标体系的全面性和系统性。</p>
+<p>（二）搜集数据，并对不同计量单位的指标数值进行同度量处理。可采用相对化处理、函数化处理、标准化处理等方法。</p>
+<p>（三）确定各指标的权数，以保证评价的科学性。根据各个指标所处的地位和对总体影响程度不同，需要对不同指标赋予不同的权数。</p>
+<p>（四）对指标进行汇总，计算综合分值，并据此作出综合评价。</p>
+<h1 id="七、景气分析经济波动是客观存在的，是任何国家都难以完全避免的"><a href="#七、景气分析经济波动是客观存在的，是任何国家都难以完全避免的" class="headerlink" title="七、景气分析经济波动是客观存在的，是任何国家都难以完全避免的"></a>七、景气分析经济波动是客观存在的，是任何国家都难以完全避免的</h1><p>如何避免大的经济波动，保持经济的稳定发展，一直是各国政府和经济之专家在宏观调控和决策中面临的重要课题，景气分析正是适应这一要求而产生和发展的。景气分析是一种综合评价分析，可分为宏观经济景气分析和企业景气调查分析。</p>
+<p>宏观经济景气分析。是国家统计局20世纪80年代后期开始着手建立监测指标体系和评价方法，经过十多年时间和不断完善，已形成制度，定期提供景气分析报告，对宏观经济运行状态起到晴雨表和报警器的作用，便于国务院和有关部门及时采取宏观调控措施。以经常性的小调整，防止经济的大起大落。</p>
+<p>企业景气调查分析。是全国的大中型各类企业中，采取抽样调查的方法，通过问卷的形式，让企业负责人回答有关情况判断和预期。内容分为两类：一是对宏观经济总体的判断和预期；一是对企业经营状况的判断和预期，如产品订单、原材料购进、价格、存货、就业、市场需求、固定资产投资等。</p>
+<h1 id="八、预测分析宏观经济决策和微观经济决策"><a href="#八、预测分析宏观经济决策和微观经济决策" class="headerlink" title="八、预测分析宏观经济决策和微观经济决策"></a>八、预测分析宏观经济决策和微观经济决策</h1><p>不仅需要了解经济运行中已经发生了的实际情况，而且更需要预见未来将发生的情况。根据已知的过去和现在推测未来，就是预测分析。</p>
+<p>统计预测属于定量预测，是以数据分析为主，在预测中结合定性分析。统计预测的方法大致可分为两类：一类是主要根据指标时间数列自身变化与时间的依存关系进行预测，属于时间数列分析；另一类是根据指标之间相互影响的因果关系进行预测，属于回归分析。</p>
+<p>预测分析的方法有回归分析法、滑动平均法、指数平滑法、周期（季节）变化分析和随机变化分析等。比较复杂的预测分析需要建立计量经济模型，求解模型中的参数又有许多方法。</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>数据分析</category>
+        <category>方法论</category>
+      </categories>
+      <tags>
+        <tag>数据分析师</tag>
+        <tag>统计</tag>
+        <tag>方法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hadoop、Spark、Flink简单概要</title>
     <url>/2023/03/28/Hadoop%E3%80%81Spark%E3%80%81Flink%E7%AE%80%E5%8D%95%E6%A6%82%E8%A6%81/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="https://zhuanlan.zhihu.com/p/526462792">Hadoop用于离线复杂大数据处理</a></p>
@@ -1275,47 +1357,6 @@
       <tags>
         <tag>笔记</tag>
         <tag>数据库</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>统计分析的八种方法</title>
-    <url>/2023/03/30/%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E7%9A%84%E5%85%AB%E7%A7%8D%E6%96%B9%E6%B3%95/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="一、指标对比分析法"><a href="#一、指标对比分析法" class="headerlink" title="一、指标对比分析法"></a>一、指标对比分析法</h1><p>指标对比分析法，又称比较分析法，是统计分析中最常用的方法。是通过有关的指标对比来反映事物数量上差异和变化的方法。有比较才能鉴别。单独看一些指标，只能说明总体的某些数量特征，得不出什么结论性的认识；一经过比较，如与国外、外单位比，与历史数据比，与计划相比，就可以对规模大小、水平高低、速度快慢作出判断和评价。</p>
-<p>指标分析对比分析方法可分为静态比较和动态比较分析。静态比较是同一时间条件下不同总体指标比较，如不同部门、不同地区、不同国家的比较，也叫横向比较；动态比较是同一总体条件不同时期指标数值的比较，也叫纵向比较。这两种方法既可单独使用，也可结合使用。进行对比分析时，可以单独使用总量指标或相对指标或平均指标，也可将它们结合起来进行对比。比较的结果可用相对数，如百分数、倍数、系数等，也可用相差的绝对数和相关的百分点（每1％为一个百分点）来表示，即将对比的指标相减。</p>
-<span id="more"></span>
-<h1 id="二、分组分析法"><a href="#二、分组分析法" class="headerlink" title="二、分组分析法"></a>二、分组分析法</h1><p>指标对比分析法是总体上的对比，但组成统计总体的各单位具有多种特征，这就使得在同一总体范围内的各单位之间产生了许多差别，统计分析不仅要对总体数量特征和数量关系进行分析，还要深入总体的内部进行分组分析。分组分析法就是根据统计分析的目的要求，把所研究的总体按照一个或者几个标志划分为若干个部分，加以整理，进行观察、分析，以揭示其内在的联系和规律性。</p>
-<p>统计分组法的关键问题在于正确选择分组标值和划分各组界限。</p>
-<h1 id="三、时间数列及动态分析法"><a href="#三、时间数列及动态分析法" class="headerlink" title="三、时间数列及动态分析法"></a>三、时间数列及动态分析法</h1><p>时间数列。是将同一指标在时间上变化和发展的一系列数值，按时间先后顺序排列，就形成时间数列，又称动态数列。它能反映社会经济现象的发展变动情况，通过时间数列的编制和分析，可以找出动态变化规律，为预测未来的发展趋势提供依据。时间数列可分为绝对数时间数列、相对数时间数列、平均数时间数列。</p>
-<p>时间数列速度指标。根据绝对数时间数列可以计算的速度指标：有发展速度、增长速度、平均发展速度、平均增长速度。</p>
-<p>动态分析法。在统计分析中，如果只有孤立的一个时期指标值，是很难作出判断的。如果编制了时间数列，就可以进行动态分析，反映其发展水平和速度的变化规律。</p>
-<p>进行动态分析，要注意数列中各个指标具有的可比性。总体范围、指标计算方法、计算价格和计量单位，都应该前后一致。时间间隔一般也要一致，但也可以根据研究目的，采取不同的间隔期，如按历史时期分。为了消除时间间隔期不同而产生的指标数值不可比，可采用年平均数和年平均发展速度来编制动态数列。此外在统计上，许多综合指标是采用价值形态来反映实物总量，如国内生产总值、工业总产值、社会商品零售总额等计算不同年份的发展速度时，必须消除价格变动因素的影响，才能正确的反映实物量的变化。也就是说必须用可比价格（如用不变价或用价格指数调整）计算不同年份相同产品的价值，然后才能进行对比。</p>
-<p>为了观察我国经济发展的波动轨迹，可将各年国内生产总值的发展速度编制时间数列，并据以绘制成曲线图，令人得到直观认识。</p>
-<h1 id="四、指数分析法"><a href="#四、指数分析法" class="headerlink" title="四、指数分析法"></a>四、指数分析法</h1><p>指数是指反映社会经济现象变动情况的相对数。有广义和狭义之分。根据指数所研究的范围不同可以有个体指数、类指数与总指数之分。</p>
-<p>指数的作用：一是可以综合反映复杂的社会经济现象的总体数量变动的方向和程度；二是可以分析某种社会经济现象的总变动受各因素变动影响的程度，这是一种因素分析法。操作方法是：通过指数体系中的数量关系，假定其他因素不变，来观察某一因素的变动对总变动的影响。</p>
-<p>用指数进行因素分析。因素分析就是将研究对象分解为各个因素，把研究对象的总体看成是各因素变动共同的结果，通过对各个因素的分析，对研究对象总变动中各项因素的影响程度进行测定。因素分析按其所研究的对象的统计指标不同可分为对总量指标的变动的因素分析，对平均指标变动的因素分析。</p>
-<h1 id="五、平衡分析法"><a href="#五、平衡分析法" class="headerlink" title="五、平衡分析法"></a>五、平衡分析法</h1><p>平衡分析是研究社会经济现象数量变化对等关系的一种方法。它把对立统一的双方按其构成要素一一排列起来，给人以整体的概念，以便于全局来观察它们之间的平衡关系。平衡关系广泛存在于经济生活中，大至全国宏观经济运行，小至个人经济收支。平衡种类繁多，如财政平衡表、劳动力平衡表、能源平衡表、国际收支平衡表、投入产出平衡表，等等。平衡分析的作用：一是从数量对等关系上反映社会经济现象的平衡状况，分析各种比例关系相适应状况；二是揭示不平衡的因素和发展潜力；三是利用平衡关系可以从各项已知指标中推算未知的个别指标。</p>
-<h1 id="六、综合评价分析"><a href="#六、综合评价分析" class="headerlink" title="六、综合评价分析"></a>六、综合评价分析</h1><p>社会经济分析现象往往是错综复杂的，社会经济运行状况是多种因素综合作用的结果，而且各个因素的变动方向和变动程度是不同的。如对宏观经济运行的评价，涉及生活、分配、流通、消费各个方面；对企业经济效益的评价，涉及人、财、物合理利用和市场销售状况。如果只用单一指标，就难以作出恰当的评价。</p>
-<p>进行综合评价包括四个步骤：</p>
-<p>（一）确定评价指标体系，这是综合评价的基础和依据。要注意指标体系的全面性和系统性。</p>
-<p>（二）搜集数据，并对不同计量单位的指标数值进行同度量处理。可采用相对化处理、函数化处理、标准化处理等方法。</p>
-<p>（三）确定各指标的权数，以保证评价的科学性。根据各个指标所处的地位和对总体影响程度不同，需要对不同指标赋予不同的权数。</p>
-<p>（四）对指标进行汇总，计算综合分值，并据此作出综合评价。</p>
-<h1 id="七、景气分析经济波动是客观存在的，是任何国家都难以完全避免的"><a href="#七、景气分析经济波动是客观存在的，是任何国家都难以完全避免的" class="headerlink" title="七、景气分析经济波动是客观存在的，是任何国家都难以完全避免的"></a>七、景气分析经济波动是客观存在的，是任何国家都难以完全避免的</h1><p>如何避免大的经济波动，保持经济的稳定发展，一直是各国政府和经济之专家在宏观调控和决策中面临的重要课题，景气分析正是适应这一要求而产生和发展的。景气分析是一种综合评价分析，可分为宏观经济景气分析和企业景气调查分析。</p>
-<p>宏观经济景气分析。是国家统计局20世纪80年代后期开始着手建立监测指标体系和评价方法，经过十多年时间和不断完善，已形成制度，定期提供景气分析报告，对宏观经济运行状态起到晴雨表和报警器的作用，便于国务院和有关部门及时采取宏观调控措施。以经常性的小调整，防止经济的大起大落。</p>
-<p>企业景气调查分析。是全国的大中型各类企业中，采取抽样调查的方法，通过问卷的形式，让企业负责人回答有关情况判断和预期。内容分为两类：一是对宏观经济总体的判断和预期；一是对企业经营状况的判断和预期，如产品订单、原材料购进、价格、存货、就业、市场需求、固定资产投资等。</p>
-<h1 id="八、预测分析宏观经济决策和微观经济决策"><a href="#八、预测分析宏观经济决策和微观经济决策" class="headerlink" title="八、预测分析宏观经济决策和微观经济决策"></a>八、预测分析宏观经济决策和微观经济决策</h1><p>不仅需要了解经济运行中已经发生了的实际情况，而且更需要预见未来将发生的情况。根据已知的过去和现在推测未来，就是预测分析。</p>
-<p>统计预测属于定量预测，是以数据分析为主，在预测中结合定性分析。统计预测的方法大致可分为两类：一类是主要根据指标时间数列自身变化与时间的依存关系进行预测，属于时间数列分析；另一类是根据指标之间相互影响的因果关系进行预测，属于回归分析。</p>
-<p>预测分析的方法有回归分析法、滑动平均法、指数平滑法、周期（季节）变化分析和随机变化分析等。比较复杂的预测分析需要建立计量经济模型，求解模型中的参数又有许多方法。</p>
-]]></content>
-      <categories>
-        <category>技术</category>
-        <category>数据分析</category>
-        <category>方法论</category>
-      </categories>
-      <tags>
-        <tag>数据分析师</tag>
-        <tag>统计</tag>
-        <tag>方法</tag>
       </tags>
   </entry>
   <entry>
@@ -2683,170 +2724,6 @@
         <tag>群晖</tag>
         <tag>网络</tag>
         <tag>NAS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>中国历代神州火箭信息</title>
-    <url>/2024/04/25/%E7%A5%9E%E5%B7%9E%E5%8D%81%E5%85%AB/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>新闻看到神州十八的发射直播，趁机梳理一下常识。</p>
-<p><strong>4次任务</strong>：</p>
-<ul>
-<li>景海鹏（神舟七号、神舟九号、神舟十一号、神舟十六号）</li>
-</ul>
-<p><strong>3次任务</strong>：</p>
-<ul>
-<li>聂海胜（神舟六号、神舟十号、神舟十二号）</li>
-</ul>
-<p><strong>2次任务</strong>：</p>
-<ul>
-<li>费俊龙（神舟六号、神舟十五号）</li>
-<li>刘伯明（神舟七号、神舟十二号）</li>
-<li>刘洋（神舟九号、神舟十四号）</li>
-<li>王亚平（神舟十号、神舟十三号）</li>
-<li>陈冬（神舟十一号、神舟十四号）</li>
-<li>汤洪波（神舟十二号、神舟十七号）</li>
-<li>叶光富（神舟十三号、神舟十八号）</li>
-</ul>
-<p><strong>1次任务</strong>：</p>
-<ul>
-<li>杨利伟（神舟五号）</li>
-<li>刘旺（神舟九号）</li>
-<li>张晓光（神舟十号）</li>
-<li>朱杨柱（神舟十六号）</li>
-<li>桂海潮（神舟十六号）</li>
-<li>唐胜杰（神舟十七号）</li>
-<li>江新林（神舟十七号）</li>
-<li>李聪（神舟十八号）</li>
-<li>李广苏（神舟十八号）</li>
-</ul>
-<span id="more"></span>
-
-<table>
-<thead>
-<tr>
-<th align="center">序号</th>
-<th align="center">飞船名称</th>
-<th align="center">发射时间</th>
-<th align="center">宇航员</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">1</td>
-<td align="center">神舟一号</td>
-<td align="center">1999年11月20日</td>
-<td align="center">无</td>
-</tr>
-<tr>
-<td align="center">2</td>
-<td align="center">神舟二号</td>
-<td align="center">2001年1月10日</td>
-<td align="center">无</td>
-</tr>
-<tr>
-<td align="center">3</td>
-<td align="center">神舟三号</td>
-<td align="center">2002年3月25日</td>
-<td align="center">无</td>
-</tr>
-<tr>
-<td align="center">4</td>
-<td align="center">神舟四号</td>
-<td align="center">2002年12月30日</td>
-<td align="center">无</td>
-</tr>
-<tr>
-<td align="center">5</td>
-<td align="center">神舟五号</td>
-<td align="center">2003年10月15日</td>
-<td align="center">杨利伟</td>
-</tr>
-<tr>
-<td align="center">6</td>
-<td align="center">神舟六号</td>
-<td align="center">2005年10月12日</td>
-<td align="center">费俊龙、聂海胜</td>
-</tr>
-<tr>
-<td align="center">7</td>
-<td align="center">神舟七号</td>
-<td align="center">2008年9月25日</td>
-<td align="center">翟志刚、刘伯明、景海鹏</td>
-</tr>
-<tr>
-<td align="center">8</td>
-<td align="center">神舟八号</td>
-<td align="center">2011年11月1日</td>
-<td align="center">无</td>
-</tr>
-<tr>
-<td align="center">9</td>
-<td align="center">神舟九号</td>
-<td align="center">2012年6月16日</td>
-<td align="center">景海鹏、刘旺、刘洋</td>
-</tr>
-<tr>
-<td align="center">10</td>
-<td align="center">神舟十号</td>
-<td align="center">2013年6月11日</td>
-<td align="center">聂海胜、张晓光、王亚平</td>
-</tr>
-<tr>
-<td align="center">11</td>
-<td align="center">神舟十一号</td>
-<td align="center">2016年10月17日</td>
-<td align="center">景海鹏、陈冬</td>
-</tr>
-<tr>
-<td align="center">12</td>
-<td align="center">神舟十二号</td>
-<td align="center">2021年6月17日</td>
-<td align="center">聂海胜、刘伯明、汤洪波</td>
-</tr>
-<tr>
-<td align="center">13</td>
-<td align="center">神舟十三号</td>
-<td align="center">2021年10月16日</td>
-<td align="center">翟志刚、王亚平、叶光富</td>
-</tr>
-<tr>
-<td align="center">14</td>
-<td align="center">神舟十四号</td>
-<td align="center">2022年6月5日</td>
-<td align="center">陈冬、刘洋、蔡旭哲</td>
-</tr>
-<tr>
-<td align="center">15</td>
-<td align="center">神舟十五号</td>
-<td align="center">2022年11月29日</td>
-<td align="center">费俊龙、邓清明、张陆</td>
-</tr>
-<tr>
-<td align="center">16</td>
-<td align="center">神舟十六号</td>
-<td align="center">2023年5月30日</td>
-<td align="center">景海鹏、朱杨柱、桂海潮</td>
-</tr>
-<tr>
-<td align="center">17</td>
-<td align="center">神舟十七号</td>
-<td align="center">2023年10月6日</td>
-<td align="center">汤洪波、唐胜杰、江新林</td>
-</tr>
-<tr>
-<td align="center">18</td>
-<td align="center">神舟十八号</td>
-<td align="center">2024年4月25日</td>
-<td align="center">叶光富、李聪、李广苏</td>
-</tr>
-</tbody></table>
-]]></content>
-      <categories>
-        <category>生活</category>
-        <category>碎碎念</category>
-      </categories>
-      <tags>
-        <tag>随笔</tag>
-        <tag>分享</tag>
       </tags>
   </entry>
   <entry>
@@ -11263,6 +11140,170 @@
       </tags>
   </entry>
   <entry>
+    <title>中国历代神州火箭信息</title>
+    <url>/2024/04/25/%E7%A5%9E%E5%B7%9E%E5%8D%81%E5%85%AB/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>新闻看到神州十八的发射直播，趁机梳理一下常识。</p>
+<p><strong>4次任务</strong>：</p>
+<ul>
+<li>景海鹏（神舟七号、神舟九号、神舟十一号、神舟十六号）</li>
+</ul>
+<p><strong>3次任务</strong>：</p>
+<ul>
+<li>聂海胜（神舟六号、神舟十号、神舟十二号）</li>
+</ul>
+<p><strong>2次任务</strong>：</p>
+<ul>
+<li>费俊龙（神舟六号、神舟十五号）</li>
+<li>刘伯明（神舟七号、神舟十二号）</li>
+<li>刘洋（神舟九号、神舟十四号）</li>
+<li>王亚平（神舟十号、神舟十三号）</li>
+<li>陈冬（神舟十一号、神舟十四号）</li>
+<li>汤洪波（神舟十二号、神舟十七号）</li>
+<li>叶光富（神舟十三号、神舟十八号）</li>
+</ul>
+<p><strong>1次任务</strong>：</p>
+<ul>
+<li>杨利伟（神舟五号）</li>
+<li>刘旺（神舟九号）</li>
+<li>张晓光（神舟十号）</li>
+<li>朱杨柱（神舟十六号）</li>
+<li>桂海潮（神舟十六号）</li>
+<li>唐胜杰（神舟十七号）</li>
+<li>江新林（神舟十七号）</li>
+<li>李聪（神舟十八号）</li>
+<li>李广苏（神舟十八号）</li>
+</ul>
+<span id="more"></span>
+
+<table>
+<thead>
+<tr>
+<th align="center">序号</th>
+<th align="center">飞船名称</th>
+<th align="center">发射时间</th>
+<th align="center">宇航员</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1</td>
+<td align="center">神舟一号</td>
+<td align="center">1999年11月20日</td>
+<td align="center">无</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">神舟二号</td>
+<td align="center">2001年1月10日</td>
+<td align="center">无</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center">神舟三号</td>
+<td align="center">2002年3月25日</td>
+<td align="center">无</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="center">神舟四号</td>
+<td align="center">2002年12月30日</td>
+<td align="center">无</td>
+</tr>
+<tr>
+<td align="center">5</td>
+<td align="center">神舟五号</td>
+<td align="center">2003年10月15日</td>
+<td align="center">杨利伟</td>
+</tr>
+<tr>
+<td align="center">6</td>
+<td align="center">神舟六号</td>
+<td align="center">2005年10月12日</td>
+<td align="center">费俊龙、聂海胜</td>
+</tr>
+<tr>
+<td align="center">7</td>
+<td align="center">神舟七号</td>
+<td align="center">2008年9月25日</td>
+<td align="center">翟志刚、刘伯明、景海鹏</td>
+</tr>
+<tr>
+<td align="center">8</td>
+<td align="center">神舟八号</td>
+<td align="center">2011年11月1日</td>
+<td align="center">无</td>
+</tr>
+<tr>
+<td align="center">9</td>
+<td align="center">神舟九号</td>
+<td align="center">2012年6月16日</td>
+<td align="center">景海鹏、刘旺、刘洋</td>
+</tr>
+<tr>
+<td align="center">10</td>
+<td align="center">神舟十号</td>
+<td align="center">2013年6月11日</td>
+<td align="center">聂海胜、张晓光、王亚平</td>
+</tr>
+<tr>
+<td align="center">11</td>
+<td align="center">神舟十一号</td>
+<td align="center">2016年10月17日</td>
+<td align="center">景海鹏、陈冬</td>
+</tr>
+<tr>
+<td align="center">12</td>
+<td align="center">神舟十二号</td>
+<td align="center">2021年6月17日</td>
+<td align="center">聂海胜、刘伯明、汤洪波</td>
+</tr>
+<tr>
+<td align="center">13</td>
+<td align="center">神舟十三号</td>
+<td align="center">2021年10月16日</td>
+<td align="center">翟志刚、王亚平、叶光富</td>
+</tr>
+<tr>
+<td align="center">14</td>
+<td align="center">神舟十四号</td>
+<td align="center">2022年6月5日</td>
+<td align="center">陈冬、刘洋、蔡旭哲</td>
+</tr>
+<tr>
+<td align="center">15</td>
+<td align="center">神舟十五号</td>
+<td align="center">2022年11月29日</td>
+<td align="center">费俊龙、邓清明、张陆</td>
+</tr>
+<tr>
+<td align="center">16</td>
+<td align="center">神舟十六号</td>
+<td align="center">2023年5月30日</td>
+<td align="center">景海鹏、朱杨柱、桂海潮</td>
+</tr>
+<tr>
+<td align="center">17</td>
+<td align="center">神舟十七号</td>
+<td align="center">2023年10月6日</td>
+<td align="center">汤洪波、唐胜杰、江新林</td>
+</tr>
+<tr>
+<td align="center">18</td>
+<td align="center">神舟十八号</td>
+<td align="center">2024年4月25日</td>
+<td align="center">叶光富、李聪、李广苏</td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>生活</category>
+        <category>碎碎念</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+        <tag>分享</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>阿里云盘第三方接口将需要额外付费</title>
     <url>/2024/04/26/%E7%AC%AC%E4%B8%89%E6%96%B9%E9%98%BF%E9%87%8C%E4%BA%91%E6%8E%A5%E5%8F%A3%E6%94%B6%E8%B4%B9/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
@@ -11466,47 +11507,6 @@
       <tags>
         <tag>随笔</tag>
         <tag>分享</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>为部署在Github上的Hexo博客配置域名</title>
-    <url>/2019/05/25/%E4%B8%BA%E9%83%A8%E7%BD%B2%E5%9C%A8Github%E4%B8%8A%E7%9A%84Hexo%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE%E5%9F%9F%E5%90%8D/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="一、Hexo项目部署到Github"><a href="#一、Hexo项目部署到Github" class="headerlink" title="一、Hexo项目部署到Github"></a>一、<a href="https://so.csdn.net/so/search?q=Hexo&spm=1001.2101.3001.7020">Hexo</a>项目部署到Github</h4><p>首先要确保你的hexo项目已经部署到github上，如果不知道hexo项目如何部署到github上，请看另一篇文章↓</p>
-<a href="/2019/05/06/Git_Hexo/" title="群晖Git部署Hexo">群晖Git部署Hexo</a>
-
-<p>如果你的<strong>hexo项目已经搭建好</strong>，可直接跳转到<strong>第五步，看部署到Github</strong>的步骤。</p>
-<h4 id="二、解析域名到GitHub-Pages"><a href="#二、解析域名到GitHub-Pages" class="headerlink" title="二、解析域名到GitHub Pages"></a>二、解析域名到GitHub Pages</h4><h5 id="1：首先购买或注册一个域名"><a href="#1：首先购买或注册一个域名" class="headerlink" title="1：首先购买或注册一个域名"></a>1：首先购买或注册一个域名</h5><p>购买域名的渠道有很多，可以国内，也可以国外，本人是在国外的GoDaddy平台上买的（好处是管理比较方便，不用备案啥的了…），问题多的话我再写一篇具体申请的blog。</p>
-<h5 id="2：解析域名到Github"><a href="#2：解析域名到Github" class="headerlink" title="2：解析域名到Github"></a>2：解析域名到Github</h5><p>首先登录你域名注册商的控制面板，这里以GoDaddy为例</p>
-<span id="more"></span>
-
-<p>打开<strong>控制面板</strong></p>
-<p><img src="/2019/05/25/%E4%B8%BA%E9%83%A8%E7%BD%B2%E5%9C%A8Github%E4%B8%8A%E7%9A%84Hexo%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE%E5%9F%9F%E5%90%8D/image-20240428210042566.png"></p>
-<p>接着<strong>打开DNS配置页面</strong></p>
-<p><img src="/2019/05/25/%E4%B8%BA%E9%83%A8%E7%BD%B2%E5%9C%A8Github%E4%B8%8A%E7%9A%84Hexo%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE%E5%9F%9F%E5%90%8D/image-20240428210031684.png"></p>
-<p>接着<strong>添加以下几条解析</strong></p>
-<p><img src="/2019/05/25/%E4%B8%BA%E9%83%A8%E7%BD%B2%E5%9C%A8Github%E4%B8%8A%E7%9A%84Hexo%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE%E5%9F%9F%E5%90%8D/image-20240428210020252.png"></p>
-<p>上面几条IP地址是从<a href="">Github官网</a>上得来的，具体可以查看这个地址<a href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site#configuring-an-apex-domain">Managing a custom domain for your GitHub Pages site - GitHub Docs</a></p>
-<p>至此，域名注册服务商上的github pages域名解析我们就完成了！</p>
-<h4 id="三、配置Hexo项目"><a href="#三、配置Hexo项目" class="headerlink" title="三、配置Hexo项目"></a>三、配置Hexo项目</h4><ol>
-<li>在你的hexo项目的<strong>source</strong>文件夹根目录里添加一个<strong>CNAME</strong>文件（不带任何后缀的文件），CNAME里面的内容是你的<strong>域名</strong>。</li>
-<li>然后打开我们 hexo 项目的配置文件 <strong>_config.yml</strong> ，找到 <strong>url 配置项</strong> ，替换成我们的域名就可以了。</li>
-</ol>
-<h4 id="四、配置Github-Pages"><a href="#四、配置Github-Pages" class="headerlink" title="四、配置Github Pages"></a>四、配置Github Pages</h4><ol>
-<li>打开我们的hexo项目在github上的仓库，进入设置页面</li>
-<li>找到<strong>Pages选项</strong>，<code>Custom domain</code> 填上我们的<strong>域名</strong>，勾选上<strong>强制打开HTTPS</strong>。</li>
-<li>等DNS检查通过，稍微等一会，就可以用域名打开我们的Hexo部署在Github上的项目啦！</li>
-</ol>
-<p>原文链接： <a href="https://www.laodengai.com/domain-name-on-github-20240319/">Hexo 项目在 Github 上配置域名 | 老登 AI (laodengai.com)</a></p>
-]]></content>
-      <categories>
-        <category>技术</category>
-        <category>博客</category>
-        <category>hexo</category>
-      </categories>
-      <tags>
-        <tag>markdown</tag>
-        <tag>hexo</tag>
-        <tag>插件</tag>
       </tags>
   </entry>
 </search>
