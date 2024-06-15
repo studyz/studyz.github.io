@@ -98,9 +98,9 @@
     
     
     
-    <category term="AI" scheme="https://blog.jeremyang.top/tags/AI/"/>
-    
     <category term="Prompt" scheme="https://blog.jeremyang.top/tags/Prompt/"/>
+    
+    <category term="AI" scheme="https://blog.jeremyang.top/tags/AI/"/>
     
     <category term="翻译" scheme="https://blog.jeremyang.top/tags/%E7%BF%BB%E8%AF%91/"/>
     
@@ -523,9 +523,9 @@
     <category term="Prompt" scheme="https://blog.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/Prompt/"/>
     
     
-    <category term="GPT" scheme="https://blog.jeremyang.top/tags/GPT/"/>
-    
     <category term="Prompt" scheme="https://blog.jeremyang.top/tags/Prompt/"/>
+    
+    <category term="GPT" scheme="https://blog.jeremyang.top/tags/GPT/"/>
     
   </entry>
   
