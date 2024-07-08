@@ -1382,137 +1382,6 @@
       </tags>
   </entry>
   <entry>
-    <title>ChatGPT Prompt</title>
-    <url>/2023/08/12/ChatGPT_Prompt/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="English-Vesion"><a href="#English-Vesion" class="headerlink" title="English Vesion"></a>English Vesion</h2><details>
-  <summary>English Version</summary>
-  <p> 
-
-<ol>
-<li><p>Brainstorm 10 content ideas related to [topic] that [your audience] would find interesting and beneficial.</p>
-</li>
-<li><p>Write a fun bedtime story for [whomever you want], with them as a main character.</p>
-</li>
-<li><p>Write an article about [topic]. Consider diverse perspectives and write it in a [preferred tone] tone.</p>
-</li>
-<li><p>Summarize [LinkedIn profile url] and list the top 5 pain points they likely face in their current role.</p>
-</li>
-<li><p>Create social media content for 7 days that is focused on [topic] and that will engage [target audience].</p>
-</li>
-</ol>
-<p>  Instructions: Create social media content that is appropriate for the chosen topic and target audience. Content should be varied. Content should also include calls to action that encourage users to engage with the content, such as likes, shares, and comments.</p>
-<ol start="6">
-<li><p>I enjoy [list a few interests or hobbies]. What are some completely unrelated activities that I might find interesting?</p>
-</li>
-<li><p>Write 10 [subject lines &#x2F; headlines &#x2F; social media threads &#x2F; ad headlines &#x2F; etc.] with a curiosity gap that discuss [topic].</p>
-</li>
-<li><p>Pretend you are [role], come up with 10 ideas of how to do [task or problem]. Compare each of these ideas and list the pros and cons of each idea.</p>
-</li>
-<li><p>Summarize in table format the features, benefits, and pain solved for this product: [url to product features page].</p>
-</li>
-<li><p>Create a list of [10] frequently asked questions about [keyword] and provide answers for each one of them considering the SERP and rich result guidelines.</p>
-</li>
-<li><p>Create 5 social media posts promoting this blog post: [blog post URL].</p>
-</li>
-<li><p>Create a step by step guide to instruct how to [topic].</p>
-  </p>
-</details>
-<span id="more"></span></li>
-</ol>
-<h2 id="中文版本"><a href="#中文版本" class="headerlink" title="中文版本"></a>中文版本</h2><details>
-  <summary>中文版本</summary>
-  <p> 
-  
-<ol>
-<li><p>脑筋急转弯10个与[topic]相关的内容想法，让[your audience]感兴趣和受益。</p>
-</li>
-<li><p>为[whomever you want]编写一个fun的睡前故事，ta是故事的主要角色。</p>
-</li>
-<li><p>编写一个关于[topic]的的文章，考虑多种角度，使用[preferred tone]的口调。</p>
-</li>
-<li><p>总结[LinkedIn profile url]并 listing the top 5 pain points they likely face in their current role.</p>
-</li>
-<li><p>创建7天social media content，聚焦于[topic]，让[target audience]参与。</p>
-</li>
-</ol>
-<p>  Instructions: 创建social media content，符合choosen topic and target audience。Content should be varied. Content should also include calls to action that encourage users to engage with the content, such as likes, shares, and comments.</p>
-<ol start="6">
-<li><p>我享受[list a few interests or hobbies]。哪些是不完全related的activity？</p>
-</li>
-<li><p>写10个与curiosity gap相关的[topic] theme的subject lines &#x2F; headlines &#x2F; social media threads &#x2F; ad headlines &#x2F; etc.</p>
-</li>
-<li><p>假设你是[role]，列出10个做[task or problem]的方法。比较每个方法并list the pros and cons of each idea.</p>
-</li>
-<li><p>用表格格式 summarize the features, benefits, and pain solved for this product: [url to product features page].</p>
-</li>
-<li><p>创建一个包含常见问题及回答的列表，关于[keyword]。</p>
-</li>
-<li><p>创建5个social media posts promoting this blog post: [blog post URL]。</p>
-</li>
-<li><p>创建一个step by step guide to instruct how to [topic]。</p>
-</li>
-</ol>
-  </p>
-</details>
-
-
-
-
-
-
-
-]]></content>
-      <categories>
-        <category>技术</category>
-        <category>人工智能</category>
-        <category>Prompt</category>
-      </categories>
-      <tags>
-        <tag>Prompt</tag>
-        <tag>GPT</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>lora训练</title>
-    <url>/2023/04/19/lora%E8%AE%AD%E7%BB%83/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="https://github.com/camenduru/stable-diffusion-webui-colab">https://github.com/camenduru/stable-diffusion-webui-colab</a></p>
-<p><a href="https://github.com/camenduru/stable-diffusion-webui-colab/tree/drive">https://github.com/camenduru/stable-diffusion-webui-colab/tree/drive</a></p>
-<p><a href="https://github.com/bmaltais/kohya_ss">kohya_ss Files:</a>  </p>
-<p><a href="https://colab.research.google.com/drive/1vvi6lGdbEIbyuhM2Yg1R99dynuOkWh9Y#scrollTo=_u3q60di584x">在Google Colab上训练LORA模型,保存到谷歌云盘| 免费16GB GPU |KOHYA LORA | Dreambooth扩展 | Stable Diffusion</a></p>
-<span id="more"></span>
-<p><a href="https://github.com/Linaqruf/kohya-trainer">https://github.com/Linaqruf/kohya-trainer</a></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/bmaltais/kohya_ss.git</span><br><span class="line"></span><br><span class="line">cd kohya_ss</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">May need to <span class="built_in">chmod</span> +x ./setup.sh <span class="keyword">if</span> you<span class="string">&#x27;re on a machine with stricter security.</span></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="string">There are additional options if needed for a runpod environment.</span></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="string">Call &#x27;</span>setup.sh -h<span class="string">&#x27; or &#x27;</span>setup.sh --<span class="built_in">help</span><span class="string">&#x27; for more information.</span></span></span><br><span class="line">./setup.sh</span><br></pre></td></tr></table></figure>
-
-<p><a href="https://github.com/antis0007/sd-webui-gelbooru-prompt">Gelbooru标签自动摘录插件 Gelbooru Prompt</a><br><a href="https://github.com/DominikDoom/a1111-sd-webui-tagcomplete/blob/main/README_ZH.md">Tag自动补全</a><br><a href="https://github.com/adieyal/sd-dynamic-prompts">Dynamic Prompts extension</a></p>
-<p><a href="https://civitai.com/images/572998?period=Year&sort=Newest&view=categories">autum,sushi+goodGirl,30step</a></p>
-<p><a href="https://civitai.com/images/572647?period=Year&sort=Newest&view=categories&tags=5133">https://civitai.com/images/572647?period=Year&sort=Newest&view=categories&tags=5133</a></p>
-]]></content>
-      <categories>
-        <category>技术</category>
-        <category>人工智能</category>
-        <category>lora</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Python一些文章</title>
-    <url>/2023/04/23/Python%E4%B8%80%E4%BA%9B%E6%96%87%E7%AB%A0/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="https://pythontutor.com/">Visualize code in Python, JavaScript, C, C++, and Java: pythontutor</a><br><a href="https://visualgo.net/">visualising data structures and algorithms through animation:Python动画算法</a></p>
-<hr>
-<p><a href="https://www.programcreek.com/python">Python Code Examples: Python代码例子</a><br><a href="https://mp.weixin.qq.com/s/0b_bG83S-LEpQOtaWZXv3A">Python网站开发库大全整理完了</a><br><a href="https://mp.weixin.qq.com/s/5bYBrDs90JWMj1A25K4WkQ">14个VSCode插件，让你写代码如同神一般</a><br><a href="https://mp.weixin.qq.com/s/B1q3n--GrK9ybtUcw9eC-Q">Python中关于进度条的6个实用技巧</a><br><a href="https://mp.weixin.qq.com/s/lRicXgAoUYAYO_WpFdQo6A">45个Git经典操作场景，专治不会合代码</a><br><a href="https://mp.weixin.qq.com/s/9qtNkNs6qcJqqEFS15jw-w">进阶版的Pandas神器：Polars</a><br><a href="https://mp.weixin.qq.com/s/qbSoq05Aaw-YPmdbYrgUdg">Sklearn模块中不为人知又超级好用的API函数</a><br><a href="https://mp.weixin.qq.com/s/ndmIgNGN6eBsoF4Y1CeaFg">Python列表解析式到底该怎么用？</a><br><a href="https://mp.weixin.qq.com/s/ScoUXRyeJGo1g0LaiLoxSw">20个短小精悍的pandas骚操作</a><br><a href="https://mp.weixin.qq.com/s/LoFWiuCteDPgO4P3CAHqHw">数据分析打工人的Pandas75个高频操作（收藏查询用~）</a><br><a href="https://mp.weixin.qq.com/s/DnLJbvVUhTx87-S24FXd8w">一文详解Python-Conda包管理工具</a><br><a href="https://mp.weixin.qq.com/s/YYS2Oq9UvryHKEvJ5MONXA">这些10种Numpy高级操作你都会吗？</a></p>
-]]></content>
-      <categories>
-        <category>技术</category>
-        <category>数据分析</category>
-        <category>python</category>
-        <category>网站</category>
-      </categories>
-      <tags>
-        <tag>笔记</tag>
-        <tag>python</tag>
-        <tag>网站</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>数据分析师常用的Prompt技巧1/2</title>
     <url>/2023/04/23/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E5%B8%B8%E7%94%A8%E7%9A%84Prompt%E6%8A%80%E5%B7%A7/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>Prompt在数据分析中的作用非常重要，特别是在使用ChatGPT辅助数据分析工作时。Prompt可以被看作是向模型提供的任务说明或问题，它能够引导模型按照我们期望的方式进行工作。</p>
@@ -11327,37 +11196,134 @@
       </tags>
   </entry>
   <entry>
-    <title>有意思的翻译PROMPT</title>
-    <url>/2024/04/29/%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84%E7%BF%BB%E8%AF%91PROMPT/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><img src="/2024/04/29/%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84%E7%BF%BB%E8%AF%91PROMPT/image-20240428223752145.jpeg"></p>
+    <title>lora训练</title>
+    <url>/2023/04/19/lora%E8%AE%AD%E7%BB%83/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="https://github.com/camenduru/stable-diffusion-webui-colab">https://github.com/camenduru/stable-diffusion-webui-colab</a></p>
+<p><a href="https://github.com/camenduru/stable-diffusion-webui-colab/tree/drive">https://github.com/camenduru/stable-diffusion-webui-colab/tree/drive</a></p>
+<p><a href="https://github.com/bmaltais/kohya_ss">kohya_ss Files:</a>  </p>
+<p><a href="https://colab.research.google.com/drive/1vvi6lGdbEIbyuhM2Yg1R99dynuOkWh9Y#scrollTo=_u3q60di584x">在Google Colab上训练LORA模型,保存到谷歌云盘| 免费16GB GPU |KOHYA LORA | Dreambooth扩展 | Stable Diffusion</a></p>
 <span id="more"></span>
+<p><a href="https://github.com/Linaqruf/kohya-trainer">https://github.com/Linaqruf/kohya-trainer</a></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/bmaltais/kohya_ss.git</span><br><span class="line"></span><br><span class="line">cd kohya_ss</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">May need to <span class="built_in">chmod</span> +x ./setup.sh <span class="keyword">if</span> you<span class="string">&#x27;re on a machine with stricter security.</span></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="string">There are additional options if needed for a runpod environment.</span></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="string">Call &#x27;</span>setup.sh -h<span class="string">&#x27; or &#x27;</span>setup.sh --<span class="built_in">help</span><span class="string">&#x27; for more information.</span></span></span><br><span class="line">./setup.sh</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">你是一个英语翻译团队的领导. 你会安排团队成员进行如下翻译, 实现翻译的&quot;信达雅&quot;目标:  </span><br><span class="line">  </span><br><span class="line">第一轮翻译<span class="comment">--信,追求直译, 将英文翻译成中文, 力求准确  </span></span><br><span class="line">  </span><br><span class="line">第二轮翻译<span class="comment">--达,在第一轮翻译的基础上, 考虑文化, 语境, 语义, 思考文字背后想要表达的意思, 进行意译, 力求意境契合, 记得分开思考和翻译内容。  </span></span><br><span class="line">  </span><br><span class="line">第三轮翻译<span class="comment">--雅, 基于第二轮翻译理解的语境含义, 进一步思考其中的哲理, 然后使用中国&lt;诗经&gt;的语言风格针对哲理和语义进行翻译, 力求简明, 古意盎然  </span></span><br><span class="line">  </span><br><span class="line">例如:  </span><br><span class="line">- you need you. 哲理部分，可以引申到佛家所说的&quot;莫向外求&quot;, 儒家所说的&quot;反求诸己&quot;, 然后思考使用诗经语言风格进行重新表述.  </span><br><span class="line">  </span><br><span class="line">- <span class="keyword">nothing</span> <span class="keyword">for</span> <span class="keyword">nothing</span>. 哲理部分，可以引申到诗句“世上本无事，庸人自扰之”，也可引申到俗语“尘归尘，土归土”  </span><br><span class="line">  </span><br><span class="line">第四轮翻译<span class="comment">--初审: 完成三轮翻译后， 深吸一口气， 缓一缓， 思考一下第三轮翻译的结果，与其哲理的偏差在哪？ 不要扩展太多，务求精练深刻，精辟是第一要义。 据此思路进行改进。  </span></span><br><span class="line">  </span><br><span class="line">第五轮翻译<span class="comment">--终审: 最终，你将亲自进行审稿， 你会对比原文和最后的翻译结果， 先思考《诗经》的语言表达风格要点，再审阅初审翻译的结果是否满足, 并给出你的审校修改结论。  </span></span><br><span class="line">  </span><br><span class="line">注意: 思考部分,请使用 【思考】 开头，翻译结果请使用【翻译】开头。  </span><br><span class="line">  </span><br><span class="line">请严格遵守以上工作流程， 对以下文字进行翻译：</span><br></pre></td></tr></table></figure>]]></content>
+<p><a href="https://github.com/antis0007/sd-webui-gelbooru-prompt">Gelbooru标签自动摘录插件 Gelbooru Prompt</a><br><a href="https://github.com/DominikDoom/a1111-sd-webui-tagcomplete/blob/main/README_ZH.md">Tag自动补全</a><br><a href="https://github.com/adieyal/sd-dynamic-prompts">Dynamic Prompts extension</a></p>
+<p><a href="https://civitai.com/images/572998?period=Year&sort=Newest&view=categories">autum,sushi+goodGirl,30step</a></p>
+<p><a href="https://civitai.com/images/572647?period=Year&sort=Newest&view=categories&tags=5133">https://civitai.com/images/572647?period=Year&sort=Newest&view=categories&tags=5133</a></p>
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>人工智能</category>
+        <category>lora</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Python一些文章</title>
+    <url>/2023/04/23/Python%E4%B8%80%E4%BA%9B%E6%96%87%E7%AB%A0/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="https://pythontutor.com/">Visualize code in Python, JavaScript, C, C++, and Java: pythontutor</a><br><a href="https://visualgo.net/">visualising data structures and algorithms through animation:Python动画算法</a></p>
+<hr>
+<p><a href="https://www.programcreek.com/python">Python Code Examples: Python代码例子</a><br><a href="https://mp.weixin.qq.com/s/0b_bG83S-LEpQOtaWZXv3A">Python网站开发库大全整理完了</a><br><a href="https://mp.weixin.qq.com/s/5bYBrDs90JWMj1A25K4WkQ">14个VSCode插件，让你写代码如同神一般</a><br><a href="https://mp.weixin.qq.com/s/B1q3n--GrK9ybtUcw9eC-Q">Python中关于进度条的6个实用技巧</a><br><a href="https://mp.weixin.qq.com/s/lRicXgAoUYAYO_WpFdQo6A">45个Git经典操作场景，专治不会合代码</a><br><a href="https://mp.weixin.qq.com/s/9qtNkNs6qcJqqEFS15jw-w">进阶版的Pandas神器：Polars</a><br><a href="https://mp.weixin.qq.com/s/qbSoq05Aaw-YPmdbYrgUdg">Sklearn模块中不为人知又超级好用的API函数</a><br><a href="https://mp.weixin.qq.com/s/ndmIgNGN6eBsoF4Y1CeaFg">Python列表解析式到底该怎么用？</a><br><a href="https://mp.weixin.qq.com/s/ScoUXRyeJGo1g0LaiLoxSw">20个短小精悍的pandas骚操作</a><br><a href="https://mp.weixin.qq.com/s/LoFWiuCteDPgO4P3CAHqHw">数据分析打工人的Pandas75个高频操作（收藏查询用~）</a><br><a href="https://mp.weixin.qq.com/s/DnLJbvVUhTx87-S24FXd8w">一文详解Python-Conda包管理工具</a><br><a href="https://mp.weixin.qq.com/s/YYS2Oq9UvryHKEvJ5MONXA">这些10种Numpy高级操作你都会吗？</a></p>
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>数据分析</category>
+        <category>python</category>
+        <category>网站</category>
+      </categories>
       <tags>
-        <tag>Prompt</tag>
-        <tag>AI</tag>
-        <tag>翻译</tag>
+        <tag>笔记</tag>
+        <tag>python</tag>
+        <tag>网站</tag>
       </tags>
   </entry>
   <entry>
-    <title>什么是PARA</title>
-    <url>/2024/04/29/whats_PARA/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>PARA 是一种组织知识的方法，全称为 “Progressive Authentication of Reliable Acumen”，中文可以译为“渐进式验证可靠洞察”。</p>
-<p>它是由 Tiago Forte 提出的，主要用于管理笔记和信息，以提高知识工作的效率。</p>
-<span id="more"></span>
+    <title>ChatGPT Prompt</title>
+    <url>/2023/08/12/ChatGPT_Prompt/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="English-Vesion"><a href="#English-Vesion" class="headerlink" title="English Vesion"></a>English Vesion</h2><details>
+  <summary>English Version</summary>
+  <p> 
 
-<p>PARA 主要包含四个层级，每个层级都有其特定的功能和目的：</p>
 <ol>
-<li><strong>项目（Projects）</strong>：这是 PARA 结构中的最高层级，代表着你正在进行的各种项目或目标。每个项目都应该是独立的，有明确的开始和结束。</li>
-<li><strong>领域（Areas））：</strong>这个层级代表你感兴趣或需要管理的不同领域或主题，如工作、健康、学习等。领域通常是持久的，不会像项目那样有明确的结束。</li>
-<li><strong>资源（Resources）</strong>：资源是指那些可以跨项目和领域重复使用的具体信息或知识，如文章、教程、工具等。这个层级的目的是为了积累和整理那些可能有用的信息。</li>
-<li><strong>行动（Actions）</strong>：这是最低的层级，包括了具体的行动项或待办事项。这些通常是短期任务，需要被执行或跟踪。</li>
+<li><p>Brainstorm 10 content ideas related to [topic] that [your audience] would find interesting and beneficial.</p>
+</li>
+<li><p>Write a fun bedtime story for [whomever you want], with them as a main character.</p>
+</li>
+<li><p>Write an article about [topic]. Consider diverse perspectives and write it in a [preferred tone] tone.</p>
+</li>
+<li><p>Summarize [LinkedIn profile url] and list the top 5 pain points they likely face in their current role.</p>
+</li>
+<li><p>Create social media content for 7 days that is focused on [topic] and that will engage [target audience].</p>
+</li>
 </ol>
-<p>PARA 方法的一个关键特点是灵活性和可定制性，它允许用户根据自己的需要调整和组织信息。这种方法特别适合那些需要处理大量信息并希望提高工作效率的人。通过使用 PARA，用户可以更有效地管理他们的知识和任务，从而提高生产力。</p>
+<p>  Instructions: Create social media content that is appropriate for the chosen topic and target audience. Content should be varied. Content should also include calls to action that encourage users to engage with the content, such as likes, shares, and comments.</p>
+<ol start="6">
+<li><p>I enjoy [list a few interests or hobbies]. What are some completely unrelated activities that I might find interesting?</p>
+</li>
+<li><p>Write 10 [subject lines &#x2F; headlines &#x2F; social media threads &#x2F; ad headlines &#x2F; etc.] with a curiosity gap that discuss [topic].</p>
+</li>
+<li><p>Pretend you are [role], come up with 10 ideas of how to do [task or problem]. Compare each of these ideas and list the pros and cons of each idea.</p>
+</li>
+<li><p>Summarize in table format the features, benefits, and pain solved for this product: [url to product features page].</p>
+</li>
+<li><p>Create a list of [10] frequently asked questions about [keyword] and provide answers for each one of them considering the SERP and rich result guidelines.</p>
+</li>
+<li><p>Create 5 social media posts promoting this blog post: [blog post URL].</p>
+</li>
+<li><p>Create a step by step guide to instruct how to [topic].</p>
+  </p>
+</details>
+<span id="more"></span></li>
+</ol>
+<h2 id="中文版本"><a href="#中文版本" class="headerlink" title="中文版本"></a>中文版本</h2><details>
+  <summary>中文版本</summary>
+  <p> 
+  
+<ol>
+<li><p>脑筋急转弯10个与[topic]相关的内容想法，让[your audience]感兴趣和受益。</p>
+</li>
+<li><p>为[whomever you want]编写一个fun的睡前故事，ta是故事的主要角色。</p>
+</li>
+<li><p>编写一个关于[topic]的的文章，考虑多种角度，使用[preferred tone]的口调。</p>
+</li>
+<li><p>总结[LinkedIn profile url]并 listing the top 5 pain points they likely face in their current role.</p>
+</li>
+<li><p>创建7天social media content，聚焦于[topic]，让[target audience]参与。</p>
+</li>
+</ol>
+<p>  Instructions: 创建social media content，符合choosen topic and target audience。Content should be varied. Content should also include calls to action that encourage users to engage with the content, such as likes, shares, and comments.</p>
+<ol start="6">
+<li><p>我享受[list a few interests or hobbies]。哪些是不完全related的activity？</p>
+</li>
+<li><p>写10个与curiosity gap相关的[topic] theme的subject lines &#x2F; headlines &#x2F; social media threads &#x2F; ad headlines &#x2F; etc.</p>
+</li>
+<li><p>假设你是[role]，列出10个做[task or problem]的方法。比较每个方法并list the pros and cons of each idea.</p>
+</li>
+<li><p>用表格格式 summarize the features, benefits, and pain solved for this product: [url to product features page].</p>
+</li>
+<li><p>创建一个包含常见问题及回答的列表，关于[keyword]。</p>
+</li>
+<li><p>创建5个social media posts promoting this blog post: [blog post URL]。</p>
+</li>
+<li><p>创建一个step by step guide to instruct how to [topic]。</p>
+</li>
+</ol>
+  </p>
+</details>
+
+
+
+
+
+
+
 ]]></content>
+      <categories>
+        <category>技术</category>
+        <category>人工智能</category>
+        <category>Prompt</category>
+      </categories>
       <tags>
-        <tag>方法论</tag>
-        <tag>PARA</tag>
+        <tag>Prompt</tag>
+        <tag>GPT</tag>
       </tags>
   </entry>
   <entry>
@@ -11507,6 +11473,40 @@
       <tags>
         <tag>随笔</tag>
         <tag>分享</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>有意思的翻译PROMPT</title>
+    <url>/2024/04/29/%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84%E7%BF%BB%E8%AF%91PROMPT/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><img src="/2024/04/29/%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84%E7%BF%BB%E8%AF%91PROMPT/image-20240428223752145.jpeg"></p>
+<span id="more"></span>
+
+<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">你是一个英语翻译团队的领导. 你会安排团队成员进行如下翻译, 实现翻译的&quot;信达雅&quot;目标:  </span><br><span class="line">  </span><br><span class="line">第一轮翻译<span class="comment">--信,追求直译, 将英文翻译成中文, 力求准确  </span></span><br><span class="line">  </span><br><span class="line">第二轮翻译<span class="comment">--达,在第一轮翻译的基础上, 考虑文化, 语境, 语义, 思考文字背后想要表达的意思, 进行意译, 力求意境契合, 记得分开思考和翻译内容。  </span></span><br><span class="line">  </span><br><span class="line">第三轮翻译<span class="comment">--雅, 基于第二轮翻译理解的语境含义, 进一步思考其中的哲理, 然后使用中国&lt;诗经&gt;的语言风格针对哲理和语义进行翻译, 力求简明, 古意盎然  </span></span><br><span class="line">  </span><br><span class="line">例如:  </span><br><span class="line">- you need you. 哲理部分，可以引申到佛家所说的&quot;莫向外求&quot;, 儒家所说的&quot;反求诸己&quot;, 然后思考使用诗经语言风格进行重新表述.  </span><br><span class="line">  </span><br><span class="line">- <span class="keyword">nothing</span> <span class="keyword">for</span> <span class="keyword">nothing</span>. 哲理部分，可以引申到诗句“世上本无事，庸人自扰之”，也可引申到俗语“尘归尘，土归土”  </span><br><span class="line">  </span><br><span class="line">第四轮翻译<span class="comment">--初审: 完成三轮翻译后， 深吸一口气， 缓一缓， 思考一下第三轮翻译的结果，与其哲理的偏差在哪？ 不要扩展太多，务求精练深刻，精辟是第一要义。 据此思路进行改进。  </span></span><br><span class="line">  </span><br><span class="line">第五轮翻译<span class="comment">--终审: 最终，你将亲自进行审稿， 你会对比原文和最后的翻译结果， 先思考《诗经》的语言表达风格要点，再审阅初审翻译的结果是否满足, 并给出你的审校修改结论。  </span></span><br><span class="line">  </span><br><span class="line">注意: 思考部分,请使用 【思考】 开头，翻译结果请使用【翻译】开头。  </span><br><span class="line">  </span><br><span class="line">请严格遵守以上工作流程， 对以下文字进行翻译：</span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>Prompt</tag>
+        <tag>AI</tag>
+        <tag>翻译</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>什么是PARA</title>
+    <url>/2024/04/29/whats_PARA/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>PARA 是一种组织知识的方法，全称为 “Progressive Authentication of Reliable Acumen”，中文可以译为“渐进式验证可靠洞察”。</p>
+<p>它是由 Tiago Forte 提出的，主要用于管理笔记和信息，以提高知识工作的效率。</p>
+<span id="more"></span>
+
+<p>PARA 主要包含四个层级，每个层级都有其特定的功能和目的：</p>
+<ol>
+<li><strong>项目（Projects）</strong>：这是 PARA 结构中的最高层级，代表着你正在进行的各种项目或目标。每个项目都应该是独立的，有明确的开始和结束。</li>
+<li><strong>领域（Areas））：</strong>这个层级代表你感兴趣或需要管理的不同领域或主题，如工作、健康、学习等。领域通常是持久的，不会像项目那样有明确的结束。</li>
+<li><strong>资源（Resources）</strong>：资源是指那些可以跨项目和领域重复使用的具体信息或知识，如文章、教程、工具等。这个层级的目的是为了积累和整理那些可能有用的信息。</li>
+<li><strong>行动（Actions）</strong>：这是最低的层级，包括了具体的行动项或待办事项。这些通常是短期任务，需要被执行或跟踪。</li>
+</ol>
+<p>PARA 方法的一个关键特点是灵活性和可定制性，它允许用户根据自己的需要调整和组织信息。这种方法特别适合那些需要处理大量信息并希望提高工作效率的人。通过使用 PARA，用户可以更有效地管理他们的知识和任务，从而提高生产力。</p>
+]]></content>
+      <tags>
+        <tag>方法论</tag>
+        <tag>PARA</tag>
       </tags>
   </entry>
 </search>
