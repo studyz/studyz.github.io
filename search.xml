@@ -272,25 +272,6 @@
       </tags>
   </entry>
   <entry>
-    <title>在hexo博客中插入思维导图</title>
-    <url>/2019/05/24/%E5%9C%A8hexo%E5%8D%9A%E5%AE%A2%E4%B8%AD%E6%8F%92%E5%85%A5%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="https://github.com/maxchang3/hexo-markmap">hexo-markmap</a></p>
-<p><strong>使用示例</strong></p>
-<span id="more"></span>
-
-<figure class="highlight clean"><table><tr><td class="code"><pre><span class="line">&#123;% markmap <span class="number">400</span>px %&#125;</span><br><span class="line">  </span><br><span class="line"># Blog内容同步与自动更新流程  </span><br><span class="line">  </span><br><span class="line">## macOS  </span><br><span class="line">### 群晖Drive  </span><br><span class="line">- 同步Hexo的post目录到iCloud  </span><br><span class="line">  </span><br><span class="line">## iCloud  </span><br><span class="line">- 同步Hexo的post目录  </span><br><span class="line">- 跨苹果设备同步  </span><br><span class="line">  </span><br><span class="line">## 苹果设备  </span><br><span class="line">### 任意设备  </span><br><span class="line">- 撰写blog  </span><br><span class="line">- 通过iCloud同步到macOS  </span><br><span class="line">  </span><br><span class="line">## macOS（继续）  </span><br><span class="line">### 群晖Drive（继续）  </span><br><span class="line">- 将新blog内容同步至群晖  </span><br><span class="line">  </span><br><span class="line">## 群晖  </span><br><span class="line">- 将内容自动布置到GitHub  </span><br><span class="line">  </span><br><span class="line">## GitHub  </span><br><span class="line">- 自动更新blog网站</span><br><span class="line">&#123;% endmarkmap %&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>技术</category>
-        <category>博客</category>
-        <category>hexo</category>
-      </categories>
-      <tags>
-        <tag>markdown</tag>
-        <tag>hexo</tag>
-        <tag>插件</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>群晖Git部署Hexo</title>
     <url>/2019/05/06/Git_Hexo/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="一、前期准备"><a href="#一、前期准备" class="headerlink" title="一、前期准备"></a>一、前期准备</h2><h3 id="1-1-注册-账号-Gitee-GitHub"><a href="#1-1-注册-账号-Gitee-GitHub" class="headerlink" title="1.1 注册 账号 Gitee&#x2F;GitHub"></a>1.1 注册 账号 Gitee&#x2F;GitHub</h3><p>注册一个属于自己的 Github 或 Gitee 账号，</p>
@@ -398,6 +379,25 @@
       </tags>
   </entry>
   <entry>
+    <title>在hexo博客中插入思维导图</title>
+    <url>/2019/05/24/%E5%9C%A8hexo%E5%8D%9A%E5%AE%A2%E4%B8%AD%E6%8F%92%E5%85%A5%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="https://github.com/maxchang3/hexo-markmap">hexo-markmap</a></p>
+<p><strong>使用示例</strong></p>
+<span id="more"></span>
+
+<figure class="highlight clean"><table><tr><td class="code"><pre><span class="line">&#123;% markmap <span class="number">400</span>px %&#125;</span><br><span class="line">  </span><br><span class="line"># Blog内容同步与自动更新流程  </span><br><span class="line">  </span><br><span class="line">## macOS  </span><br><span class="line">### 群晖Drive  </span><br><span class="line">- 同步Hexo的post目录到iCloud  </span><br><span class="line">  </span><br><span class="line">## iCloud  </span><br><span class="line">- 同步Hexo的post目录  </span><br><span class="line">- 跨苹果设备同步  </span><br><span class="line">  </span><br><span class="line">## 苹果设备  </span><br><span class="line">### 任意设备  </span><br><span class="line">- 撰写blog  </span><br><span class="line">- 通过iCloud同步到macOS  </span><br><span class="line">  </span><br><span class="line">## macOS（继续）  </span><br><span class="line">### 群晖Drive（继续）  </span><br><span class="line">- 将新blog内容同步至群晖  </span><br><span class="line">  </span><br><span class="line">## 群晖  </span><br><span class="line">- 将内容自动布置到GitHub  </span><br><span class="line">  </span><br><span class="line">## GitHub  </span><br><span class="line">- 自动更新blog网站</span><br><span class="line">&#123;% endmarkmap %&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>技术</category>
+        <category>博客</category>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>markdown</tag>
+        <tag>hexo</tag>
+        <tag>插件</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>为部署在Github上的Hexo博客配置域名</title>
     <url>/2019/05/25/%E4%B8%BA%E9%83%A8%E7%BD%B2%E5%9C%A8Github%E4%B8%8A%E7%9A%84Hexo%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE%E5%9F%9F%E5%90%8D/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="一、Hexo项目部署到Github"><a href="#一、Hexo项目部署到Github" class="headerlink" title="一、Hexo项目部署到Github"></a>一、<a href="https://so.csdn.net/so/search?q=Hexo&spm=1001.2101.3001.7020">Hexo</a>项目部署到Github</h4><p>首先要确保你的hexo项目已经部署到github上，如果不知道hexo项目如何部署到github上，请看另一篇文章↓</p>
@@ -436,6 +436,232 @@
         <tag>markdown</tag>
         <tag>hexo</tag>
         <tag>插件</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>鸡尾酒配方</title>
+    <url>/2020/05/04/%E9%B8%A1%E5%B0%BE%E9%85%92%E9%85%8D%E6%96%B9/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="茶酒"><a href="#茶酒" class="headerlink" title="茶酒"></a>茶酒</h2><ul>
+<li>茶：120ml</li>
+<li>酒：45ml</li>
+<li>糖浆：10ml</li>
+<li>柠檬：5ml</li>
+</ul>
+<h2 id="B52轰炸机"><a href="#B52轰炸机" class="headerlink" title="B52轰炸机"></a>B52轰炸机</h2><ul>
+<li>1&#x2F;3咖啡力娇酒</li>
+<li>1&#x2F;3百利甜</li>
+<li>1&#x2F;3君度<span id="more"></span></li>
+</ul>
+<h2 id="长岛冰茶"><a href="#长岛冰茶" class="headerlink" title="长岛冰茶"></a>长岛冰茶</h2><ul>
+<li>饮具：玻璃杯加冰</li>
+<li>黄柠汁：5ml</li>
+<li>伏特加：15ml</li>
+<li>龙舌兰：15ml</li>
+<li>金酒：15ml</li>
+<li>白朗姆：15ml</li>
+<li>可乐：填满</li>
+<li>装饰</li>
+</ul>
+<h2 id="自由古巴"><a href="#自由古巴" class="headerlink" title="自由古巴"></a>自由古巴</h2><ul>
+<li>绿柠：5ml</li>
+<li>白朗姆：45ml</li>
+<li>可乐：加满</li>
+<li>装饰</li>
+</ul>
+<h2 id="莫吉托"><a href="#莫吉托" class="headerlink" title="莫吉托"></a>莫吉托</h2><ul>
+<li>绿柠块：3块（挤压）</li>
+<li>薄荷：轻挤压</li>
+<li>薄荷糖浆：8ml</li>
+<li>白朗姆：45ml</li>
+<li>冰：满</li>
+<li>苏打水：加到杯子4&#x2F;5</li>
+<li>用勺子伸到杯底做提拉</li>
+<li>装饰：绿柠片，薄荷簇</li>
+</ul>
+<h2 id="教父"><a href="#教父" class="headerlink" title="教父"></a>教父</h2><ul>
+<li>饮具：传统杯 + 方冰</li>
+<li>金宾波本：50ml</li>
+<li>蒂萨诺：10ml</li>
+<li>用勺子搅匀</li>
+</ul>
+<h2 id="蓝色夏威夷"><a href="#蓝色夏威夷" class="headerlink" title="蓝色夏威夷"></a>蓝色夏威夷</h2><ul>
+<li>饮具：玻璃杯 + 冰</li>
+<li>白朗姆：40ml</li>
+<li>蓝橙：20ml</li>
+<li>马利宝：20ml</li>
+<li>菠萝汁：45ml</li>
+<li>雪碧：加满</li>
+<li>装饰</li>
+</ul>
+<h2 id="醉酒的梵高"><a href="#醉酒的梵高" class="headerlink" title="醉酒的梵高"></a>醉酒的梵高</h2><ul>
+<li>龙舌兰：40ml</li>
+<li>菠萝汁：45ml</li>
+<li>雪碧：加满</li>
+<li>蓝橙力娇：最后加入，不搅动</li>
+</ul>
+<h2 id="心橙大海"><a href="#心橙大海" class="headerlink" title="心橙大海"></a>心橙大海</h2><ul>
+<li>饮具：玻璃杯 + 冰</li>
+<li>伏特加：45ml</li>
+<li>橙汁：装满</li>
+</ul>
+<h2 id="金汤力"><a href="#金汤力" class="headerlink" title="金汤力"></a>金汤力</h2><ul>
+<li>饮具：玻璃杯 + 冰</li>
+<li>金酒：45ml</li>
+<li>汤力水：加满</li>
+<li>装饰</li>
+</ul>
+<h2 id="日出"><a href="#日出" class="headerlink" title="日出"></a>日出</h2><ul>
+<li>饮具：玻璃杯 + 冰</li>
+<li>龙舌兰：45ml</li>
+<li>橙汁：加满</li>
+<li>红色糖浆：适量调整着色区域</li>
+</ul>
+<h2 id="蓝色玛格丽特"><a href="#蓝色玛格丽特" class="headerlink" title="蓝色玛格丽特"></a>蓝色玛格丽特</h2><ul>
+<li>饮具：玻璃杯 + 盐边</li>
+<li>龙舌兰：30ml</li>
+<li>蓝橙力娇酒：15ml</li>
+<li>蔗糖：5ml</li>
+<li>黄柠檬：点缀</li>
+</ul>
+<h2 id="白色玛格丽特"><a href="#白色玛格丽特" class="headerlink" title="白色玛格丽特"></a>白色玛格丽特</h2><ul>
+<li>龙舌兰：30ml</li>
+<li>君度：15ml</li>
+<li>柠檬汁：几滴</li>
+<li>蔗糖：5ml</li>
+<li>加冰块摇匀</li>
+</ul>
+<h2 id="威士忌酸"><a href="#威士忌酸" class="headerlink" title="威士忌酸"></a>威士忌酸</h2><ul>
+<li>波本：45ml</li>
+<li>黄柠檬：半个</li>
+<li>蔗糖：10ml</li>
+<li>加冰块摇匀</li>
+</ul>
+<h2 id="前任"><a href="#前任" class="headerlink" title="前任"></a>前任</h2><ul>
+<li>饮具：玻璃杯 + 冰</li>
+<li>龙舌兰：45ml</li>
+<li>红柚糖浆：适量</li>
+<li>苏打水：加满</li>
+</ul>
+<h2 id="孟婆汤"><a href="#孟婆汤" class="headerlink" title="孟婆汤"></a>孟婆汤</h2><ul>
+<li>伏特加：30ml</li>
+<li>柠檬汁：15ml</li>
+<li>马力宝：15ml</li>
+<li>莫林绿薄荷糖浆：10ml</li>
+</ul>
+<h2 id="百香果莫吉托（无酒精）"><a href="#百香果莫吉托（无酒精）" class="headerlink" title="百香果莫吉托（无酒精）"></a>百香果莫吉托（无酒精）</h2><ul>
+<li>青柠汁：5ml</li>
+<li>冰：加满</li>
+<li>百香果糖浆：12ml</li>
+<li>薄荷糖浆：12ml</li>
+<li>气泡水：加满</li>
+<li>搅匀装饰</li>
+</ul>
+<h2 id="波斯猫（无酒精）"><a href="#波斯猫（无酒精）" class="headerlink" title="波斯猫（无酒精）"></a>波斯猫（无酒精）</h2><ul>
+<li>橙汁：60ml</li>
+<li>菠萝汁：40ml</li>
+<li>柠檬汁：半个</li>
+<li>红石榴糖浆：2勺</li>
+<li>蔗糖：1勺</li>
+<li>加冰块摇匀</li>
+</ul>
+<h2 id="蓝色多瑙河（无酒精）"><a href="#蓝色多瑙河（无酒精）" class="headerlink" title="蓝色多瑙河（无酒精）"></a>蓝色多瑙河（无酒精）</h2><ul>
+<li>柠檬汁：一点</li>
+<li>蓝柑糖浆：10ml</li>
+<li>蔗糖糖浆：5ml</li>
+<li>苏打水</li>
+</ul>
+<h2 id="柚恋柠檬（无酒精）"><a href="#柚恋柠檬（无酒精）" class="headerlink" title="柚恋柠檬（无酒精）"></a>柚恋柠檬（无酒精）</h2><ul>
+<li>柠檬汁：一点</li>
+<li>红柚糖浆：10ml</li>
+<li>蔗糖糖浆：5ml</li>
+<li>苏打水</li>
+</ul>
+<h2 id="清凉一夏（无酒精）"><a href="#清凉一夏（无酒精）" class="headerlink" title="清凉一夏（无酒精）"></a>清凉一夏（无酒精）</h2><ul>
+<li>饮具：威士忌杯🥃 + 方冰</li>
+<li>新鲜薄荷叶：4-5 片，拍醒</li>
+<li>可乐：加至8分满</li>
+</ul>
+<h2 id="甜蜜蜜"><a href="#甜蜜蜜" class="headerlink" title="甜蜜蜜"></a>甜蜜蜜</h2><p>60 ml 蜜茶<br>40 mlwhisky<br>5 ml 糖浆<br>1&#x2F;4 柠檬</p>
+<h2 id="威士忌可乐-Whisky-Coke"><a href="#威士忌可乐-Whisky-Coke" class="headerlink" title="威士忌可乐 Whisky Coke"></a>威士忌可乐 Whisky Coke</h2><p><span style="font-family:.PingFangSC-Regular;">威士忌</span> 45 ml<br>可乐 Cola Top</p>
+<h2 id="伏特加莱姆"><a href="#伏特加莱姆" class="headerlink" title="伏特加莱姆"></a>伏特加莱姆</h2><ul>
+<li>盐边</li>
+<li>伏特加 60 ml</li>
+<li>柠檬汁 30 ml</li>
+<li>糖水 10 ml</li>
+</ul>
+<h2 id="玛格丽特-Margarita"><a href="#玛格丽特-Margarita" class="headerlink" title="玛格丽特 Margarita"></a>玛格丽特 Margarita</h2><ul>
+<li>龙舌兰 45 ml</li>
+<li>君度橙 cointreau 15 ml</li>
+<li>柠檬汁 15 ml</li>
+<li>加冰摇一摇</li>
+<li>盐边</li>
+</ul>
+<h2 id="螺丝起子-Screwdriver"><a href="#螺丝起子-Screwdriver" class="headerlink" title="螺丝起子 Screwdriver"></a>螺丝起子 Screwdriver</h2><ul>
+<li>伏特加 45 ml</li>
+<li>橙汁</li>
+</ul>
+]]></content>
+      <categories>
+        <category>生活</category>
+        <category>鸡尾酒</category>
+      </categories>
+      <tags>
+        <tag>鸡尾酒</tag>
+        <tag>配方</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>GoPro Hero最实用的四个必备配件:打造完美生态</title>
+    <url>/2022/03/15/GoproHero/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><hr>
+<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">
+<iframe src="//player.bilibili.com/player.html?aid=244387247&bvid=BV1Av411174q&cid=229573649&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; Left: 0; top: 0;" ></iframe></div> 
+]]></content>
+      <categories>
+        <category>数码</category>
+        <category>相机</category>
+      </categories>
+      <tags>
+        <tag>数码</tag>
+        <tag>相机</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>菜谱</title>
+    <url>/2022/04/19/%E8%8F%9C%E8%B0%B1/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="空气炸锅鸡排"><a href="#空气炸锅鸡排" class="headerlink" title="空气炸锅鸡排"></a>空气炸锅鸡排</h1><ul>
+<li>温度：200度</li>
+<li>时间：8分钟 + 4分钟</li>
+</ul>
+<h1 id="空气炸锅健身食品"><a href="#空气炸锅健身食品" class="headerlink" title="空气炸锅健身食品"></a>空气炸锅健身食品</h1><ul>
+<li>鸡胸肉（黑胡椒、13香、橄榄油）</li>
+<li>地瓜（切块、橄榄油）</li>
+<li>温度：180度</li>
+<li>时间：15分钟</li>
+</ul>
+<span id="more"></span>
+<p><a href="https://www.youtube.com/watch?v=D8O7myqk0Bw">健身食品制作视频</a></p>
+<h1 id="阳春面调料"><a href="#阳春面调料" class="headerlink" title="阳春面调料"></a>阳春面调料</h1><ul>
+<li>生抽、陈醋、盐、香油或猪油、葱花</li>
+</ul>
+<h1 id="爆炒香辣鱿鱼"><a href="#爆炒香辣鱿鱼" class="headerlink" title="爆炒香辣鱿鱼"></a>爆炒香辣鱿鱼</h1><p>食材：</p>
+<ul>
+<li>鱿鱼须、葱、姜、洋葱、料酒、豆瓣酱、生抽、老抽、蚝油、白糖、盐、熟芝麻</li>
+</ul>
+<p>做法：</p>
+<ol>
+<li>鱿鱼洗净切好备用，冷水下锅，加入姜片、葱段、1勺料酒，焯水捞出备用</li>
+<li>锅中油热，倒入洋葱丝，炒出香味，加入1勺豆瓣酱炒出红油，倒入焯好水的鱿鱼须，翻炒上色</li>
+<li>加入1勺生抽、半勺老抽、1勺蚝油、适量白糖、少许盐、1勺熟芝麻，翻炒均匀，撒上葱花即可</li>
+</ol>
+]]></content>
+      <categories>
+        <category>生活</category>
+        <category>菜谱</category>
+      </categories>
+      <tags>
+        <tag>菜谱</tag>
+        <tag>下酒菜</tag>
       </tags>
   </entry>
   <entry>
@@ -1156,175 +1382,94 @@
       </tags>
   </entry>
   <entry>
-    <title>鸡尾酒配方</title>
-    <url>/2020/05/04/%E9%B8%A1%E5%B0%BE%E9%85%92%E9%85%8D%E6%96%B9/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="茶酒"><a href="#茶酒" class="headerlink" title="茶酒"></a>茶酒</h2><ul>
-<li>茶：120ml</li>
-<li>酒：45ml</li>
-<li>糖浆：10ml</li>
-<li>柠檬：5ml</li>
-</ul>
-<h2 id="B52轰炸机"><a href="#B52轰炸机" class="headerlink" title="B52轰炸机"></a>B52轰炸机</h2><ul>
-<li>1&#x2F;3咖啡力娇酒</li>
-<li>1&#x2F;3百利甜</li>
-<li>1&#x2F;3君度<span id="more"></span></li>
-</ul>
-<h2 id="长岛冰茶"><a href="#长岛冰茶" class="headerlink" title="长岛冰茶"></a>长岛冰茶</h2><ul>
-<li>饮具：玻璃杯加冰</li>
-<li>黄柠汁：5ml</li>
-<li>伏特加：15ml</li>
-<li>龙舌兰：15ml</li>
-<li>金酒：15ml</li>
-<li>白朗姆：15ml</li>
-<li>可乐：填满</li>
-<li>装饰</li>
-</ul>
-<h2 id="自由古巴"><a href="#自由古巴" class="headerlink" title="自由古巴"></a>自由古巴</h2><ul>
-<li>绿柠：5ml</li>
-<li>白朗姆：45ml</li>
-<li>可乐：加满</li>
-<li>装饰</li>
-</ul>
-<h2 id="莫吉托"><a href="#莫吉托" class="headerlink" title="莫吉托"></a>莫吉托</h2><ul>
-<li>绿柠块：3块（挤压）</li>
-<li>薄荷：轻挤压</li>
-<li>薄荷糖浆：8ml</li>
-<li>白朗姆：45ml</li>
-<li>冰：满</li>
-<li>苏打水：加到杯子4&#x2F;5</li>
-<li>用勺子伸到杯底做提拉</li>
-<li>装饰：绿柠片，薄荷簇</li>
-</ul>
-<h2 id="教父"><a href="#教父" class="headerlink" title="教父"></a>教父</h2><ul>
-<li>饮具：传统杯 + 方冰</li>
-<li>金宾波本：50ml</li>
-<li>蒂萨诺：10ml</li>
-<li>用勺子搅匀</li>
-</ul>
-<h2 id="蓝色夏威夷"><a href="#蓝色夏威夷" class="headerlink" title="蓝色夏威夷"></a>蓝色夏威夷</h2><ul>
-<li>饮具：玻璃杯 + 冰</li>
-<li>白朗姆：40ml</li>
-<li>蓝橙：20ml</li>
-<li>马利宝：20ml</li>
-<li>菠萝汁：45ml</li>
-<li>雪碧：加满</li>
-<li>装饰</li>
-</ul>
-<h2 id="醉酒的梵高"><a href="#醉酒的梵高" class="headerlink" title="醉酒的梵高"></a>醉酒的梵高</h2><ul>
-<li>龙舌兰：40ml</li>
-<li>菠萝汁：45ml</li>
-<li>雪碧：加满</li>
-<li>蓝橙力娇：最后加入，不搅动</li>
-</ul>
-<h2 id="心橙大海"><a href="#心橙大海" class="headerlink" title="心橙大海"></a>心橙大海</h2><ul>
-<li>饮具：玻璃杯 + 冰</li>
-<li>伏特加：45ml</li>
-<li>橙汁：装满</li>
-</ul>
-<h2 id="金汤力"><a href="#金汤力" class="headerlink" title="金汤力"></a>金汤力</h2><ul>
-<li>饮具：玻璃杯 + 冰</li>
-<li>金酒：45ml</li>
-<li>汤力水：加满</li>
-<li>装饰</li>
-</ul>
-<h2 id="日出"><a href="#日出" class="headerlink" title="日出"></a>日出</h2><ul>
-<li>饮具：玻璃杯 + 冰</li>
-<li>龙舌兰：45ml</li>
-<li>橙汁：加满</li>
-<li>红色糖浆：适量调整着色区域</li>
-</ul>
-<h2 id="蓝色玛格丽特"><a href="#蓝色玛格丽特" class="headerlink" title="蓝色玛格丽特"></a>蓝色玛格丽特</h2><ul>
-<li>饮具：玻璃杯 + 盐边</li>
-<li>龙舌兰：30ml</li>
-<li>蓝橙力娇酒：15ml</li>
-<li>蔗糖：5ml</li>
-<li>黄柠檬：点缀</li>
-</ul>
-<h2 id="白色玛格丽特"><a href="#白色玛格丽特" class="headerlink" title="白色玛格丽特"></a>白色玛格丽特</h2><ul>
-<li>龙舌兰：30ml</li>
-<li>君度：15ml</li>
-<li>柠檬汁：几滴</li>
-<li>蔗糖：5ml</li>
-<li>加冰块摇匀</li>
-</ul>
-<h2 id="威士忌酸"><a href="#威士忌酸" class="headerlink" title="威士忌酸"></a>威士忌酸</h2><ul>
-<li>波本：45ml</li>
-<li>黄柠檬：半个</li>
-<li>蔗糖：10ml</li>
-<li>加冰块摇匀</li>
-</ul>
-<h2 id="前任"><a href="#前任" class="headerlink" title="前任"></a>前任</h2><ul>
-<li>饮具：玻璃杯 + 冰</li>
-<li>龙舌兰：45ml</li>
-<li>红柚糖浆：适量</li>
-<li>苏打水：加满</li>
-</ul>
-<h2 id="孟婆汤"><a href="#孟婆汤" class="headerlink" title="孟婆汤"></a>孟婆汤</h2><ul>
-<li>伏特加：30ml</li>
-<li>柠檬汁：15ml</li>
-<li>马力宝：15ml</li>
-<li>莫林绿薄荷糖浆：10ml</li>
-</ul>
-<h2 id="百香果莫吉托（无酒精）"><a href="#百香果莫吉托（无酒精）" class="headerlink" title="百香果莫吉托（无酒精）"></a>百香果莫吉托（无酒精）</h2><ul>
-<li>青柠汁：5ml</li>
-<li>冰：加满</li>
-<li>百香果糖浆：12ml</li>
-<li>薄荷糖浆：12ml</li>
-<li>气泡水：加满</li>
-<li>搅匀装饰</li>
-</ul>
-<h2 id="波斯猫（无酒精）"><a href="#波斯猫（无酒精）" class="headerlink" title="波斯猫（无酒精）"></a>波斯猫（无酒精）</h2><ul>
-<li>橙汁：60ml</li>
-<li>菠萝汁：40ml</li>
-<li>柠檬汁：半个</li>
-<li>红石榴糖浆：2勺</li>
-<li>蔗糖：1勺</li>
-<li>加冰块摇匀</li>
-</ul>
-<h2 id="蓝色多瑙河（无酒精）"><a href="#蓝色多瑙河（无酒精）" class="headerlink" title="蓝色多瑙河（无酒精）"></a>蓝色多瑙河（无酒精）</h2><ul>
-<li>柠檬汁：一点</li>
-<li>蓝柑糖浆：10ml</li>
-<li>蔗糖糖浆：5ml</li>
-<li>苏打水</li>
-</ul>
-<h2 id="柚恋柠檬（无酒精）"><a href="#柚恋柠檬（无酒精）" class="headerlink" title="柚恋柠檬（无酒精）"></a>柚恋柠檬（无酒精）</h2><ul>
-<li>柠檬汁：一点</li>
-<li>红柚糖浆：10ml</li>
-<li>蔗糖糖浆：5ml</li>
-<li>苏打水</li>
-</ul>
-<h2 id="清凉一夏（无酒精）"><a href="#清凉一夏（无酒精）" class="headerlink" title="清凉一夏（无酒精）"></a>清凉一夏（无酒精）</h2><ul>
-<li>饮具：威士忌杯🥃 + 方冰</li>
-<li>新鲜薄荷叶：4-5 片，拍醒</li>
-<li>可乐：加至8分满</li>
-</ul>
-<h2 id="甜蜜蜜"><a href="#甜蜜蜜" class="headerlink" title="甜蜜蜜"></a>甜蜜蜜</h2><p>60 ml 蜜茶<br>40 mlwhisky<br>5 ml 糖浆<br>1&#x2F;4 柠檬</p>
-<h2 id="威士忌可乐-Whisky-Coke"><a href="#威士忌可乐-Whisky-Coke" class="headerlink" title="威士忌可乐 Whisky Coke"></a>威士忌可乐 Whisky Coke</h2><p><span style="font-family:.PingFangSC-Regular;">威士忌</span> 45 ml<br>可乐 Cola Top</p>
-<h2 id="伏特加莱姆"><a href="#伏特加莱姆" class="headerlink" title="伏特加莱姆"></a>伏特加莱姆</h2><ul>
-<li>盐边</li>
-<li>伏特加 60 ml</li>
-<li>柠檬汁 30 ml</li>
-<li>糖水 10 ml</li>
-</ul>
-<h2 id="玛格丽特-Margarita"><a href="#玛格丽特-Margarita" class="headerlink" title="玛格丽特 Margarita"></a>玛格丽特 Margarita</h2><ul>
-<li>龙舌兰 45 ml</li>
-<li>君度橙 cointreau 15 ml</li>
-<li>柠檬汁 15 ml</li>
-<li>加冰摇一摇</li>
-<li>盐边</li>
-</ul>
-<h2 id="螺丝起子-Screwdriver"><a href="#螺丝起子-Screwdriver" class="headerlink" title="螺丝起子 Screwdriver"></a>螺丝起子 Screwdriver</h2><ul>
-<li>伏特加 45 ml</li>
-<li>橙汁</li>
-</ul>
+    <title>ChatGPT Prompt</title>
+    <url>/2023/08/12/ChatGPT_Prompt/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="English-Vesion"><a href="#English-Vesion" class="headerlink" title="English Vesion"></a>English Vesion</h2><details>
+  <summary>English Version</summary>
+  <p> 
+
+<ol>
+<li><p>Brainstorm 10 content ideas related to [topic] that [your audience] would find interesting and beneficial.</p>
+</li>
+<li><p>Write a fun bedtime story for [whomever you want], with them as a main character.</p>
+</li>
+<li><p>Write an article about [topic]. Consider diverse perspectives and write it in a [preferred tone] tone.</p>
+</li>
+<li><p>Summarize [LinkedIn profile url] and list the top 5 pain points they likely face in their current role.</p>
+</li>
+<li><p>Create social media content for 7 days that is focused on [topic] and that will engage [target audience].</p>
+</li>
+</ol>
+<p>  Instructions: Create social media content that is appropriate for the chosen topic and target audience. Content should be varied. Content should also include calls to action that encourage users to engage with the content, such as likes, shares, and comments.</p>
+<ol start="6">
+<li><p>I enjoy [list a few interests or hobbies]. What are some completely unrelated activities that I might find interesting?</p>
+</li>
+<li><p>Write 10 [subject lines &#x2F; headlines &#x2F; social media threads &#x2F; ad headlines &#x2F; etc.] with a curiosity gap that discuss [topic].</p>
+</li>
+<li><p>Pretend you are [role], come up with 10 ideas of how to do [task or problem]. Compare each of these ideas and list the pros and cons of each idea.</p>
+</li>
+<li><p>Summarize in table format the features, benefits, and pain solved for this product: [url to product features page].</p>
+</li>
+<li><p>Create a list of [10] frequently asked questions about [keyword] and provide answers for each one of them considering the SERP and rich result guidelines.</p>
+</li>
+<li><p>Create 5 social media posts promoting this blog post: [blog post URL].</p>
+</li>
+<li><p>Create a step by step guide to instruct how to [topic].</p>
+  </p>
+</details>
+<span id="more"></span></li>
+</ol>
+<h2 id="中文版本"><a href="#中文版本" class="headerlink" title="中文版本"></a>中文版本</h2><details>
+  <summary>中文版本</summary>
+  <p> 
+  
+<ol>
+<li><p>脑筋急转弯10个与[topic]相关的内容想法，让[your audience]感兴趣和受益。</p>
+</li>
+<li><p>为[whomever you want]编写一个fun的睡前故事，ta是故事的主要角色。</p>
+</li>
+<li><p>编写一个关于[topic]的的文章，考虑多种角度，使用[preferred tone]的口调。</p>
+</li>
+<li><p>总结[LinkedIn profile url]并 listing the top 5 pain points they likely face in their current role.</p>
+</li>
+<li><p>创建7天social media content，聚焦于[topic]，让[target audience]参与。</p>
+</li>
+</ol>
+<p>  Instructions: 创建social media content，符合choosen topic and target audience。Content should be varied. Content should also include calls to action that encourage users to engage with the content, such as likes, shares, and comments.</p>
+<ol start="6">
+<li><p>我享受[list a few interests or hobbies]。哪些是不完全related的activity？</p>
+</li>
+<li><p>写10个与curiosity gap相关的[topic] theme的subject lines &#x2F; headlines &#x2F; social media threads &#x2F; ad headlines &#x2F; etc.</p>
+</li>
+<li><p>假设你是[role]，列出10个做[task or problem]的方法。比较每个方法并list the pros and cons of each idea.</p>
+</li>
+<li><p>用表格格式 summarize the features, benefits, and pain solved for this product: [url to product features page].</p>
+</li>
+<li><p>创建一个包含常见问题及回答的列表，关于[keyword]。</p>
+</li>
+<li><p>创建5个social media posts promoting this blog post: [blog post URL]。</p>
+</li>
+<li><p>创建一个step by step guide to instruct how to [topic]。</p>
+</li>
+</ol>
+  </p>
+</details>
+
+
+
+
+
+
+
 ]]></content>
       <categories>
-        <category>生活</category>
-        <category>鸡尾酒</category>
+        <category>技术</category>
+        <category>人工智能</category>
+        <category>Prompt</category>
       </categories>
       <tags>
-        <tag>鸡尾酒</tag>
-        <tag>配方</tag>
+        <tag>Prompt</tag>
+        <tag>GPT</tag>
       </tags>
   </entry>
   <entry>
@@ -1431,19 +1576,58 @@
       </tags>
   </entry>
   <entry>
-    <title>GoPro Hero最实用的四个必备配件:打造完美生态</title>
-    <url>/2022/03/15/GoproHero/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><hr>
-<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">
-<iframe src="//player.bilibili.com/player.html?aid=244387247&bvid=BV1Av411174q&cid=229573649&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; Left: 0; top: 0;" ></iframe></div> 
+    <title>数据分析师常用的Prompt技巧2/2</title>
+    <url>/2023/04/24/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E5%B8%B8%E7%94%A8%E7%9A%84Prompt%E6%8A%80%E5%B7%A7/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="01-什么是探索性分析EDA"><a href="#01-什么是探索性分析EDA" class="headerlink" title="01 什么是探索性分析EDA?"></a>01 什么是探索性分析EDA?</h3><p>探索性数据分析（EDA）是在数据分析初始阶段进行数据了解和探索的过程。通过EDA，我们可以全面了解数据概貌，明确分析方式，并找出异常的可能因素。探索性数据分析在数据分析中非常重要。</p>
+<p>EDA包括三个重要部分，分别是：</p>
+<ul>
+<li><p>数据可视化：这部分的EDA涉及到将原始数据转化为图表和可视化图形等视觉信息。</p>
+</li>
+<li><p>假设检验：它被用来分析两个或两个以上的变量之间是否存在统计学上的显著差异。这可以用来支持或反驳数据相关的理论。</p>
+</li>
+<li><p>总结统计：它包括计算基本统计量，如平均数、中位数和标准差。总结统计有助于理解数据的分布并发现任何异常值。</p>
+</li>
+</ul>
+<p>ChatGPT是一个进行EDA的高效的工具，因为它可以简化上面这些过程。我们可以用这个基于AI的聊天机器人完成EDA任务。我们接下探讨如何使用ChatGPT进行探索性数据分析。</p>
+<h3 id="02-ChatGPT-for-EDA数据可视化"><a href="#02-ChatGPT-for-EDA数据可视化" class="headerlink" title="02 ChatGPT for EDA数据可视化"></a>02 ChatGPT for EDA数据可视化</h3><p>ChatGPT在探索性数据分析中可以提供非常强的数据可视化能力。这里，需要指出的是，ChatGPT本身无法进行动态的数据可视化任务。然而，它可以帮助我们进行数据可视化。</p>
+<p>我们可以使用ChatGPT来清洗数据，排除任何不一致或异常。除此之外，这个聊天机器人还可以帮助我们删除重复记录等。</p>
+<p>此外，我们还可以学习如何使用ChatGPT来协助处理复杂的数据可视化。例如，我们可以使用ChatGPT来帮助我们使用诸如Python、R或SQL这样的编程语言来创建图表和图形。这个聊天机器人会为我们提供代码和所有必要的步骤，以完成数据可视化的任务，并做出数据驱动的决策。</p>
+<h3 id="03-ChatGPT-for-EDA数据预测"><a href="#03-ChatGPT-for-EDA数据预测" class="headerlink" title="03 ChatGPT for EDA数据预测"></a>03 ChatGPT for EDA数据预测</h3><p>预测分析是EDA的另一个重要方面。我们通常基于大量数据集，采用机器学习的方式来找出数据之间的规律并预测可能的结果。现在，ChatGPT可以帮我们确定应该使用哪种机器学习模型，以便我们更准确、高效地分析数据。</p>
+<p>这个聊天机器人被训练得能够处理不同的模型。例如，你可以使用分类模型来对数据进行分类，并为不同的变量赋予预定义的值。我们需要做的就是向聊天机器人描述目标变量，并明确想要使用的模型（在这个情况下，是分类模型）。ChatGPT会对数据进行分类，并根据模式进行预测。</p>
+<p>我们也可以要求聊天机器人根据不同的参数对用户进行划分，比如：</p>
+<p><code>使用以下数据集，并将用户分为&lt;输入类别&gt;&lt;插入数据集&gt;</code></p>
+<p>或者你可以使用一些额外的提示prompts来根据某些行为创建用户画像：</p>
+<p><code>根据&lt;画像特征&gt;，将用户划分为不同的群体</code></p>
+<p>通过这种方式，你可以使用ChatGPT进行一些常见的分类或者回归等预测，帮助我们更高效的找到数据间的规律和模式。</p>
+<h3 id="04-给出有效EDA的建议"><a href="#04-给出有效EDA的建议" class="headerlink" title="04 给出有效EDA的建议"></a>04 给出有效EDA的建议</h3><p>如果我们以正确的方式使用ChatGPT，可以帮助我们在探索性数据分析中获取很多信息。这个聊天机器人可以通过为你推荐正确的行动方向来消除数据分析过程中的难题。</p>
+<p>ChatGPT对于探索性数据分析过程可以帮助你的方式包括：</p>
+<p>它可以为你提供解决数据质量问题的实用方法。</p>
+<p>它可以是选择正确的分析工具和革命性技术的全面指导。</p>
+<p>它可以推荐模型构建和分析的相关特性。</p>
+<p>它可以让你理解哪些变量对于EDA来说是重要的。这样，数据科学家就会知道哪些变量可能更有可能产生影响</p>
+<p>它还可以为数据转换提供建议。例如，ChatGPT可以在处理缺失数据、归一化和缩放方面提供有用的建议。你可以使用简单的ChatGPT提示来让聊天机器人为你推荐EDA的最佳实践，</p>
+<p>比如：<code>使用这个数据库&lt;输入数据库&gt;，并分析&lt;输入时间段&gt;中行业&lt;输入行业名称&gt;的趋势，针对&lt;定义段落/客户人口统计/分析景观&gt;</code></p>
+<h3 id="05-ChatGPT-for-EDA情感分析"><a href="#05-ChatGPT-for-EDA情感分析" class="headerlink" title="05 ChatGPT for EDA情感分析"></a>05 ChatGPT for EDA情感分析</h3><p>ChatGPT的最大潜力在于进行情感分析。聊天机器人配备了先进的语言模型，使其具有自然语言处理能力。情感和探索性数据分析之间存在强烈的联系。</p>
+<p>作为一名数据分析师，我们可以分析巨大的数据集，并研究它们的情感。准确的语言模型可以给我们提供大量的数据。让我们看看情感分析和探索性数据分析之间的联系：</p>
+<p>文本分类：在这里，通过情感分析将文本数据分类为几种情感。文本情感分析允许EDA找到与数据中的情绪语气相关的模式和趋势。常用于分析客户评论、社交媒体帖子或与商品或服务相关的评价。</p>
+<p>观点挖掘：在EDA过程中，情感分析可以用来从文本中提取观点。数据分析师可以洞察人们的态度或偏好。它可以进一步用来确定人们表达的主要观点。通过对这些信息的进一步分析，可以了解不同人在不同维度上的情感表现。</p>
+<h3 id="06-ChatGPT-for-统计分析和建模"><a href="#06-ChatGPT-for-统计分析和建模" class="headerlink" title="06 ChatGPT for 统计分析和建模"></a>06 ChatGPT for 统计分析和建模</h3><p>使用统计分析数据并开发可以用于进行预测模型的过程被称为统计分析和建模。数据描述、汇总和解释都可以通过统计分析来完成。统计分析工具可以用来预测未来的值，发现模式，并从收集数据的人口中得出结论。这样，统计建模就成为了从数据中得出结论的强大技术。</p>
+<p>这个AI驱动的模型的分析软件可以收集预测、趋势，以及对收集的数据给出结论。许多不同的行业，如商业、医疗保健和社会科学，都使用统计分析和建模。</p>
+<p>数据分析师可以用以下方式进行统计分析和建模：</p>
+<p>EDA指导：ChatGPT可以在数据中寻找哪些变量相关或者更重要，以此给出建议来帮助完成EDA。它可能会提供有用的关键信息，以便找出趋势、模式或异常值。</p>
+<p>模型选择：在选择可接受的模型时，ChatGPT可以提供建议。为了提高模型性能，它可能会对模型选择、超参数调整和过程验证提供建议。</p>
+<p>模型预测：这个AI模型可以预测结果，并进行验证。它可以分析结果，评估模型的性能，并找出提高预测准确性的方法。</p>
+<h3 id="07-总结"><a href="#07-总结" class="headerlink" title="07 总结"></a>07 总结</h3><p>如果你是一名数据分析师，我们要开始考虑如何使用ChatGPT在探索性数据分析工作中发挥它的作用了。它可以在数据分析中帮助我们快速、高效、准确的完成EDA的工作，同时它还能给我们一些创新的、隐藏的洞察和建议，可以预见，在不久的将来，ChatGPT一定会重塑甚并颠覆数据分析的技能栈和分析工作内容，所以学会使用它，才能让AI为我们打工。</p>
 ]]></content>
       <categories>
-        <category>数码</category>
-        <category>相机</category>
+        <category>技术</category>
+        <category>人工智能</category>
+        <category>Prompt</category>
       </categories>
       <tags>
-        <tag>数码</tag>
-        <tag>相机</tag>
+        <tag>Prompt</tag>
+        <tag>GPT</tag>
+        <tag>数据分析</tag>
       </tags>
   </entry>
   <entry>
@@ -1563,97 +1747,6 @@
       <tags>
         <tag>笔记</tag>
         <tag>python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ChatGPT Prompt</title>
-    <url>/2023/08/12/ChatGPT_Prompt/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="English-Vesion"><a href="#English-Vesion" class="headerlink" title="English Vesion"></a>English Vesion</h2><details>
-  <summary>English Version</summary>
-  <p> 
-
-<ol>
-<li><p>Brainstorm 10 content ideas related to [topic] that [your audience] would find interesting and beneficial.</p>
-</li>
-<li><p>Write a fun bedtime story for [whomever you want], with them as a main character.</p>
-</li>
-<li><p>Write an article about [topic]. Consider diverse perspectives and write it in a [preferred tone] tone.</p>
-</li>
-<li><p>Summarize [LinkedIn profile url] and list the top 5 pain points they likely face in their current role.</p>
-</li>
-<li><p>Create social media content for 7 days that is focused on [topic] and that will engage [target audience].</p>
-</li>
-</ol>
-<p>  Instructions: Create social media content that is appropriate for the chosen topic and target audience. Content should be varied. Content should also include calls to action that encourage users to engage with the content, such as likes, shares, and comments.</p>
-<ol start="6">
-<li><p>I enjoy [list a few interests or hobbies]. What are some completely unrelated activities that I might find interesting?</p>
-</li>
-<li><p>Write 10 [subject lines &#x2F; headlines &#x2F; social media threads &#x2F; ad headlines &#x2F; etc.] with a curiosity gap that discuss [topic].</p>
-</li>
-<li><p>Pretend you are [role], come up with 10 ideas of how to do [task or problem]. Compare each of these ideas and list the pros and cons of each idea.</p>
-</li>
-<li><p>Summarize in table format the features, benefits, and pain solved for this product: [url to product features page].</p>
-</li>
-<li><p>Create a list of [10] frequently asked questions about [keyword] and provide answers for each one of them considering the SERP and rich result guidelines.</p>
-</li>
-<li><p>Create 5 social media posts promoting this blog post: [blog post URL].</p>
-</li>
-<li><p>Create a step by step guide to instruct how to [topic].</p>
-  </p>
-</details>
-<span id="more"></span></li>
-</ol>
-<h2 id="中文版本"><a href="#中文版本" class="headerlink" title="中文版本"></a>中文版本</h2><details>
-  <summary>中文版本</summary>
-  <p> 
-  
-<ol>
-<li><p>脑筋急转弯10个与[topic]相关的内容想法，让[your audience]感兴趣和受益。</p>
-</li>
-<li><p>为[whomever you want]编写一个fun的睡前故事，ta是故事的主要角色。</p>
-</li>
-<li><p>编写一个关于[topic]的的文章，考虑多种角度，使用[preferred tone]的口调。</p>
-</li>
-<li><p>总结[LinkedIn profile url]并 listing the top 5 pain points they likely face in their current role.</p>
-</li>
-<li><p>创建7天social media content，聚焦于[topic]，让[target audience]参与。</p>
-</li>
-</ol>
-<p>  Instructions: 创建social media content，符合choosen topic and target audience。Content should be varied. Content should also include calls to action that encourage users to engage with the content, such as likes, shares, and comments.</p>
-<ol start="6">
-<li><p>我享受[list a few interests or hobbies]。哪些是不完全related的activity？</p>
-</li>
-<li><p>写10个与curiosity gap相关的[topic] theme的subject lines &#x2F; headlines &#x2F; social media threads &#x2F; ad headlines &#x2F; etc.</p>
-</li>
-<li><p>假设你是[role]，列出10个做[task or problem]的方法。比较每个方法并list the pros and cons of each idea.</p>
-</li>
-<li><p>用表格格式 summarize the features, benefits, and pain solved for this product: [url to product features page].</p>
-</li>
-<li><p>创建一个包含常见问题及回答的列表，关于[keyword]。</p>
-</li>
-<li><p>创建5个social media posts promoting this blog post: [blog post URL]。</p>
-</li>
-<li><p>创建一个step by step guide to instruct how to [topic]。</p>
-</li>
-</ol>
-  </p>
-</details>
-
-
-
-
-
-
-
-]]></content>
-      <categories>
-        <category>技术</category>
-        <category>人工智能</category>
-        <category>Prompt</category>
-      </categories>
-      <tags>
-        <tag>Prompt</tag>
-        <tag>GPT</tag>
       </tags>
   </entry>
   <entry>
@@ -2061,99 +2154,6 @@
       </tags>
   </entry>
   <entry>
-    <title>菜谱</title>
-    <url>/2022/04/19/%E8%8F%9C%E8%B0%B1/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="空气炸锅鸡排"><a href="#空气炸锅鸡排" class="headerlink" title="空气炸锅鸡排"></a>空气炸锅鸡排</h1><ul>
-<li>温度：200度</li>
-<li>时间：8分钟 + 4分钟</li>
-</ul>
-<h1 id="空气炸锅健身食品"><a href="#空气炸锅健身食品" class="headerlink" title="空气炸锅健身食品"></a>空气炸锅健身食品</h1><ul>
-<li>鸡胸肉（黑胡椒、13香、橄榄油）</li>
-<li>地瓜（切块、橄榄油）</li>
-<li>温度：180度</li>
-<li>时间：15分钟</li>
-</ul>
-<span id="more"></span>
-<p><a href="https://www.youtube.com/watch?v=D8O7myqk0Bw">健身食品制作视频</a></p>
-<h1 id="阳春面调料"><a href="#阳春面调料" class="headerlink" title="阳春面调料"></a>阳春面调料</h1><ul>
-<li>生抽、陈醋、盐、香油或猪油、葱花</li>
-</ul>
-<h1 id="爆炒香辣鱿鱼"><a href="#爆炒香辣鱿鱼" class="headerlink" title="爆炒香辣鱿鱼"></a>爆炒香辣鱿鱼</h1><p>食材：</p>
-<ul>
-<li>鱿鱼须、葱、姜、洋葱、料酒、豆瓣酱、生抽、老抽、蚝油、白糖、盐、熟芝麻</li>
-</ul>
-<p>做法：</p>
-<ol>
-<li>鱿鱼洗净切好备用，冷水下锅，加入姜片、葱段、1勺料酒，焯水捞出备用</li>
-<li>锅中油热，倒入洋葱丝，炒出香味，加入1勺豆瓣酱炒出红油，倒入焯好水的鱿鱼须，翻炒上色</li>
-<li>加入1勺生抽、半勺老抽、1勺蚝油、适量白糖、少许盐、1勺熟芝麻，翻炒均匀，撒上葱花即可</li>
-</ol>
-]]></content>
-      <categories>
-        <category>生活</category>
-        <category>菜谱</category>
-      </categories>
-      <tags>
-        <tag>菜谱</tag>
-        <tag>下酒菜</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>数据分析师常用的Prompt技巧2/2</title>
-    <url>/2023/04/24/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E5%B8%B8%E7%94%A8%E7%9A%84Prompt%E6%8A%80%E5%B7%A7/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="01-什么是探索性分析EDA"><a href="#01-什么是探索性分析EDA" class="headerlink" title="01 什么是探索性分析EDA?"></a>01 什么是探索性分析EDA?</h3><p>探索性数据分析（EDA）是在数据分析初始阶段进行数据了解和探索的过程。通过EDA，我们可以全面了解数据概貌，明确分析方式，并找出异常的可能因素。探索性数据分析在数据分析中非常重要。</p>
-<p>EDA包括三个重要部分，分别是：</p>
-<ul>
-<li><p>数据可视化：这部分的EDA涉及到将原始数据转化为图表和可视化图形等视觉信息。</p>
-</li>
-<li><p>假设检验：它被用来分析两个或两个以上的变量之间是否存在统计学上的显著差异。这可以用来支持或反驳数据相关的理论。</p>
-</li>
-<li><p>总结统计：它包括计算基本统计量，如平均数、中位数和标准差。总结统计有助于理解数据的分布并发现任何异常值。</p>
-</li>
-</ul>
-<p>ChatGPT是一个进行EDA的高效的工具，因为它可以简化上面这些过程。我们可以用这个基于AI的聊天机器人完成EDA任务。我们接下探讨如何使用ChatGPT进行探索性数据分析。</p>
-<h3 id="02-ChatGPT-for-EDA数据可视化"><a href="#02-ChatGPT-for-EDA数据可视化" class="headerlink" title="02 ChatGPT for EDA数据可视化"></a>02 ChatGPT for EDA数据可视化</h3><p>ChatGPT在探索性数据分析中可以提供非常强的数据可视化能力。这里，需要指出的是，ChatGPT本身无法进行动态的数据可视化任务。然而，它可以帮助我们进行数据可视化。</p>
-<p>我们可以使用ChatGPT来清洗数据，排除任何不一致或异常。除此之外，这个聊天机器人还可以帮助我们删除重复记录等。</p>
-<p>此外，我们还可以学习如何使用ChatGPT来协助处理复杂的数据可视化。例如，我们可以使用ChatGPT来帮助我们使用诸如Python、R或SQL这样的编程语言来创建图表和图形。这个聊天机器人会为我们提供代码和所有必要的步骤，以完成数据可视化的任务，并做出数据驱动的决策。</p>
-<h3 id="03-ChatGPT-for-EDA数据预测"><a href="#03-ChatGPT-for-EDA数据预测" class="headerlink" title="03 ChatGPT for EDA数据预测"></a>03 ChatGPT for EDA数据预测</h3><p>预测分析是EDA的另一个重要方面。我们通常基于大量数据集，采用机器学习的方式来找出数据之间的规律并预测可能的结果。现在，ChatGPT可以帮我们确定应该使用哪种机器学习模型，以便我们更准确、高效地分析数据。</p>
-<p>这个聊天机器人被训练得能够处理不同的模型。例如，你可以使用分类模型来对数据进行分类，并为不同的变量赋予预定义的值。我们需要做的就是向聊天机器人描述目标变量，并明确想要使用的模型（在这个情况下，是分类模型）。ChatGPT会对数据进行分类，并根据模式进行预测。</p>
-<p>我们也可以要求聊天机器人根据不同的参数对用户进行划分，比如：</p>
-<p><code>使用以下数据集，并将用户分为&lt;输入类别&gt;&lt;插入数据集&gt;</code></p>
-<p>或者你可以使用一些额外的提示prompts来根据某些行为创建用户画像：</p>
-<p><code>根据&lt;画像特征&gt;，将用户划分为不同的群体</code></p>
-<p>通过这种方式，你可以使用ChatGPT进行一些常见的分类或者回归等预测，帮助我们更高效的找到数据间的规律和模式。</p>
-<h3 id="04-给出有效EDA的建议"><a href="#04-给出有效EDA的建议" class="headerlink" title="04 给出有效EDA的建议"></a>04 给出有效EDA的建议</h3><p>如果我们以正确的方式使用ChatGPT，可以帮助我们在探索性数据分析中获取很多信息。这个聊天机器人可以通过为你推荐正确的行动方向来消除数据分析过程中的难题。</p>
-<p>ChatGPT对于探索性数据分析过程可以帮助你的方式包括：</p>
-<p>它可以为你提供解决数据质量问题的实用方法。</p>
-<p>它可以是选择正确的分析工具和革命性技术的全面指导。</p>
-<p>它可以推荐模型构建和分析的相关特性。</p>
-<p>它可以让你理解哪些变量对于EDA来说是重要的。这样，数据科学家就会知道哪些变量可能更有可能产生影响</p>
-<p>它还可以为数据转换提供建议。例如，ChatGPT可以在处理缺失数据、归一化和缩放方面提供有用的建议。你可以使用简单的ChatGPT提示来让聊天机器人为你推荐EDA的最佳实践，</p>
-<p>比如：<code>使用这个数据库&lt;输入数据库&gt;，并分析&lt;输入时间段&gt;中行业&lt;输入行业名称&gt;的趋势，针对&lt;定义段落/客户人口统计/分析景观&gt;</code></p>
-<h3 id="05-ChatGPT-for-EDA情感分析"><a href="#05-ChatGPT-for-EDA情感分析" class="headerlink" title="05 ChatGPT for EDA情感分析"></a>05 ChatGPT for EDA情感分析</h3><p>ChatGPT的最大潜力在于进行情感分析。聊天机器人配备了先进的语言模型，使其具有自然语言处理能力。情感和探索性数据分析之间存在强烈的联系。</p>
-<p>作为一名数据分析师，我们可以分析巨大的数据集，并研究它们的情感。准确的语言模型可以给我们提供大量的数据。让我们看看情感分析和探索性数据分析之间的联系：</p>
-<p>文本分类：在这里，通过情感分析将文本数据分类为几种情感。文本情感分析允许EDA找到与数据中的情绪语气相关的模式和趋势。常用于分析客户评论、社交媒体帖子或与商品或服务相关的评价。</p>
-<p>观点挖掘：在EDA过程中，情感分析可以用来从文本中提取观点。数据分析师可以洞察人们的态度或偏好。它可以进一步用来确定人们表达的主要观点。通过对这些信息的进一步分析，可以了解不同人在不同维度上的情感表现。</p>
-<h3 id="06-ChatGPT-for-统计分析和建模"><a href="#06-ChatGPT-for-统计分析和建模" class="headerlink" title="06 ChatGPT for 统计分析和建模"></a>06 ChatGPT for 统计分析和建模</h3><p>使用统计分析数据并开发可以用于进行预测模型的过程被称为统计分析和建模。数据描述、汇总和解释都可以通过统计分析来完成。统计分析工具可以用来预测未来的值，发现模式，并从收集数据的人口中得出结论。这样，统计建模就成为了从数据中得出结论的强大技术。</p>
-<p>这个AI驱动的模型的分析软件可以收集预测、趋势，以及对收集的数据给出结论。许多不同的行业，如商业、医疗保健和社会科学，都使用统计分析和建模。</p>
-<p>数据分析师可以用以下方式进行统计分析和建模：</p>
-<p>EDA指导：ChatGPT可以在数据中寻找哪些变量相关或者更重要，以此给出建议来帮助完成EDA。它可能会提供有用的关键信息，以便找出趋势、模式或异常值。</p>
-<p>模型选择：在选择可接受的模型时，ChatGPT可以提供建议。为了提高模型性能，它可能会对模型选择、超参数调整和过程验证提供建议。</p>
-<p>模型预测：这个AI模型可以预测结果，并进行验证。它可以分析结果，评估模型的性能，并找出提高预测准确性的方法。</p>
-<h3 id="07-总结"><a href="#07-总结" class="headerlink" title="07 总结"></a>07 总结</h3><p>如果你是一名数据分析师，我们要开始考虑如何使用ChatGPT在探索性数据分析工作中发挥它的作用了。它可以在数据分析中帮助我们快速、高效、准确的完成EDA的工作，同时它还能给我们一些创新的、隐藏的洞察和建议，可以预见，在不久的将来，ChatGPT一定会重塑甚并颠覆数据分析的技能栈和分析工作内容，所以学会使用它，才能让AI为我们打工。</p>
-]]></content>
-      <categories>
-        <category>技术</category>
-        <category>人工智能</category>
-        <category>Prompt</category>
-      </categories>
-      <tags>
-        <tag>Prompt</tag>
-        <tag>GPT</tag>
-        <tag>数据分析</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>数据分析师所需的技术与理论</title>
     <url>/2023/09/10/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E6%89%80%E9%9C%80%E7%9A%84%E6%8A%80%E6%9C%AF%E4%B8%8E%E7%90%86%E8%AE%BA/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
@@ -2531,6 +2531,43 @@
         <tag>笔记</tag>
         <tag>python</tag>
         <tag>numpy</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>我的极简生活经验</title>
+    <url>/2024/01/22/%E6%88%91%E7%9A%84%E6%9E%81%E7%AE%80%E7%94%9F%E6%B4%BB%E7%BB%8F%E9%AA%8C/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="我的极简生活经验：恰到好处的生活艺术"><a href="#我的极简生活经验：恰到好处的生活艺术" class="headerlink" title="我的极简生活经验：恰到好处的生活艺术"></a>我的极简生活经验：恰到好处的生活艺术</h1><p>今天我想和大家分享一下我对极简主义的理解。我非常喜欢这种生活方式，但并不是说每个人都需要极简。有些人喜欢收藏，有些人喜欢购物，买很多东西，只要能让自己舒心，任何生活方式都是好的。但如果你也喜欢简单的生活方式，或者有点儿强迫症，那么这些小建议可能适合你。</p>
+<p>首先，极简主义并不意味着把大部分东西都扔掉，或者在空无一物的环境中生活。极简主义是选择对你重要的东西，而不在于数量多少。同时，也没有必要每个地方都极简。比如说你喜欢读书和收藏，完全可以精挑细选地去置办。极简生活更多的是减少生活中不必要的元素，让你更多地专注在真正重要的事物上。</p>
+<p>经常性的整理是开始的第一步。一般来说，整理包括扔东西、卖二手、收纳起来。不要总觉得留着以后能用上，如果近一年都没用过，基本上以后也用不上。</p>
+<span id="more"></span>
+<ul>
+<li>扔东西：可以先从冰箱和厨房开始，把过期的、好久没有动过的东西扔掉。接着收拾各种抽屉和柜子，比如已经坏掉的物件、没有用的配件、廉价的充电线、没用的说明书、之前的票据、快递盒子和购物袋子等。一般来说，这些都是随手放进去，觉得以后会用的，但实际上过了很久也没有用到的东西。</li>
+<li>卖二手：接下来你会发现有不少东西其实扔掉有些可惜，但是自己又不怎么用了。对于不太值钱但是还有些用的东西，比如再也不看的书、两年都没有穿的旧衣服，可以去支付宝或其他App看看有没有上门回收捐赠的服务。对于还值点钱的，但是因为消费冲动而买的东西，可以擦干净、拍照发到闲鱼上，卖给下一个冲动消费的人。这样可以帮你回一些本。一般来说，比如几乎半年都不用的耳机、二手电脑、手表、小电器这一类很好出手，留下你一直在用而且很好用的那个就好，重复功能的东西只留一件。</li>
+<li>收纳起来：如果收纳空间有限，可以买几个收纳箱和真空收纳袋。这样你的存放物体的体积缩小一半，放到看不到的地方。比如不是这个季节的衣服、被子，都可以用收纳袋抽干收起来。对于不太方便用袋子装的，可以用盒子装起来放到柜子里，让它整齐和知晓位置，让每一个物品都有它特定的空间位置，用完返回原处，下次找起来会很方便。</li>
+</ul>
+<p>上面整理的这一步，会花费你一些周末时间。但是当整理完成，打扫干净区域后，一般都会让你心情舒畅，感觉很爽。</p>
+<p>接着第二步，慢慢培养自己的消费观。这里一般有几个建议：只买好的、不被消费主义、有目的的购买、不要囤东西。</p>
+<ul>
+<li>只买好的：很多时候东西多的一个很大原因，就是买了很多自己觉得用得上的东西，或者是买的时候有些纠结，但是最后还是买了的那些东西，基本上放柜子里也不想用，还后悔。对于必须品而言，一般建议购买力所能及范围内更好的那一个，比如说手机、电脑、衣服、鞋子、耳机这一类，品质好，价格稍贵，但是会让你很长时间不会纠结要不要换一个更好的，同时也让你生活品质其实会更好。这里还可以新入了一件，可以尽快把之前那件按照第一步方法给整理掉。</li>
+<li>不被消费主义：越来越觉得，现在生活中大部分必须品都已经很满足了。很多时候消费都是属于仪式感下的消费，比如说看到小红书推荐、抖音里面的好东西、得物上的潮流东西，会很容易被当时那个环境下误导下单。因为做电商的开发应该都知道，那一个个小功能其实都是一个大的产品业务团队同学天天想方设法迭代用来提高转化率用的，想方设法让你购买。</li>
+<li>有目的的购买：很容易出现在逛超市、逛山姆的时候，进去前就想着随便逛逛，结果你会发现出来后买了几百块东西，仔细一想，不少是属于可以买可不买的。其实可以在出发前，先想想这次要买的东西，列一个很简单的清单，就不会剁手买一些自认为需要的东西。而且这种有目的的挑选方式会让你更舒服。这里同样适合去逛街的时候，先想好要买的东西和品牌。</li>
+<li>不要囤东西：囤东西本意是为了省钱和省心，当时很多时候买一箱箱的纸、洗衣液、沐浴露用一两年反而会让你烦心，甚至还会出现为了尽快用完，double使用的方式，其实反而浪费了，还占用了你家里很多东西来放这些很多。很多时候，这些东西没有那么紧急，需要下单到到家其实很快的。这里还有一个东西也是容易囤的，那就是实体书了。这里可以先看电子书，再买纸质书，搬家的时候这东西很重的。</li>
+</ul>
+<p>减少网络中的被动消息：上面从出和入两步控制住了你生活中的物件，其实还有一块是虚拟生活中的东西，其实也可以极简起来。这里说的是手机、电脑、知识这几块接收，信息的过载很多时候也让人过得不顺畅，尽量减少被动信息的接收，需要的信息主动寻找。</p>
+<ul>
+<li>App处理：我一般做法是3个月不用的App删除掉，用的时候再装，用完又卸载或者直接用小程序，这样手机App基本上控制在2屏，完全可以满足生活所需。第二个是，控制所有App的消息，我一般只开启银行交易、支付宝交易、微信、工作软件的消息通知，其他的App的消息我都在设置里面去掉了，屏幕上没有小红点，同时很多App里面也可以设置去掉一些营销通知。第三个是，不装新闻软件、不装抖音快手，差不多一年多没有装了，感觉不太需要这种看着有用的新闻消息。这里对于电脑上的软件也是一样。</li>
+<li>资料整理：删除没有用的短消息，其实大部分都没有用，我平时一般是除了亲人信息，其他的定期全删除。然后第二个就是删除没有用的图片和视频，这里可以删除很多东西。第三个是删除没有用的微信聊天消息，之前不知道怎么加上的人也可以删除掉，让你常用的工具都是清爽的。这里对于电脑上的东西也是一样。</li>
+<li>主动接受消息：刚刚这些东西用于处理被动的消息接受，尽可能减少算法灌东西给你。更多的可以订阅RSS接收消息，关注喜欢的博主接收消息，不喜欢的直接屏蔽或者mute就好了。同时，免打扰模式在你需要专注的时候可以开启起来，也即减少你不想看到的消息有很多你自己可以做的事情。</li>
+</ul>
+<p>差不多碎碎念完了，归根结底最重要的就是勤收拾、买好不买多、主动接收这几块。这种极简生活的方式很多时候可以影响一个人的三观，包括他的生活、工作方式、他的喜好性格。最后，同样也希望你快乐，过得幸福。</p>
+]]></content>
+      <categories>
+        <category>生活</category>
+        <category>碎碎念</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+        <tag>分享</tag>
       </tags>
   </entry>
   <entry>
@@ -11290,6 +11327,40 @@
       </tags>
   </entry>
   <entry>
+    <title>有意思的翻译PROMPT</title>
+    <url>/2024/04/29/%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84%E7%BF%BB%E8%AF%91PROMPT/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><img src="/2024/04/29/%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84%E7%BF%BB%E8%AF%91PROMPT/image-20240428223752145.jpeg"></p>
+<span id="more"></span>
+
+<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">你是一个英语翻译团队的领导. 你会安排团队成员进行如下翻译, 实现翻译的&quot;信达雅&quot;目标:  </span><br><span class="line">  </span><br><span class="line">第一轮翻译<span class="comment">--信,追求直译, 将英文翻译成中文, 力求准确  </span></span><br><span class="line">  </span><br><span class="line">第二轮翻译<span class="comment">--达,在第一轮翻译的基础上, 考虑文化, 语境, 语义, 思考文字背后想要表达的意思, 进行意译, 力求意境契合, 记得分开思考和翻译内容。  </span></span><br><span class="line">  </span><br><span class="line">第三轮翻译<span class="comment">--雅, 基于第二轮翻译理解的语境含义, 进一步思考其中的哲理, 然后使用中国&lt;诗经&gt;的语言风格针对哲理和语义进行翻译, 力求简明, 古意盎然  </span></span><br><span class="line">  </span><br><span class="line">例如:  </span><br><span class="line">- you need you. 哲理部分，可以引申到佛家所说的&quot;莫向外求&quot;, 儒家所说的&quot;反求诸己&quot;, 然后思考使用诗经语言风格进行重新表述.  </span><br><span class="line">  </span><br><span class="line">- <span class="keyword">nothing</span> <span class="keyword">for</span> <span class="keyword">nothing</span>. 哲理部分，可以引申到诗句“世上本无事，庸人自扰之”，也可引申到俗语“尘归尘，土归土”  </span><br><span class="line">  </span><br><span class="line">第四轮翻译<span class="comment">--初审: 完成三轮翻译后， 深吸一口气， 缓一缓， 思考一下第三轮翻译的结果，与其哲理的偏差在哪？ 不要扩展太多，务求精练深刻，精辟是第一要义。 据此思路进行改进。  </span></span><br><span class="line">  </span><br><span class="line">第五轮翻译<span class="comment">--终审: 最终，你将亲自进行审稿， 你会对比原文和最后的翻译结果， 先思考《诗经》的语言表达风格要点，再审阅初审翻译的结果是否满足, 并给出你的审校修改结论。  </span></span><br><span class="line">  </span><br><span class="line">注意: 思考部分,请使用 【思考】 开头，翻译结果请使用【翻译】开头。  </span><br><span class="line">  </span><br><span class="line">请严格遵守以上工作流程， 对以下文字进行翻译：</span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>Prompt</tag>
+        <tag>AI</tag>
+        <tag>翻译</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>什么是PARA</title>
+    <url>/2024/04/29/whats_PARA/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>PARA 是一种组织知识的方法，全称为 “Progressive Authentication of Reliable Acumen”，中文可以译为“渐进式验证可靠洞察”。</p>
+<p>它是由 Tiago Forte 提出的，主要用于管理笔记和信息，以提高知识工作的效率。</p>
+<span id="more"></span>
+
+<p>PARA 主要包含四个层级，每个层级都有其特定的功能和目的：</p>
+<ol>
+<li><strong>项目（Projects）</strong>：这是 PARA 结构中的最高层级，代表着你正在进行的各种项目或目标。每个项目都应该是独立的，有明确的开始和结束。</li>
+<li><strong>领域（Areas））：</strong>这个层级代表你感兴趣或需要管理的不同领域或主题，如工作、健康、学习等。领域通常是持久的，不会像项目那样有明确的结束。</li>
+<li><strong>资源（Resources）</strong>：资源是指那些可以跨项目和领域重复使用的具体信息或知识，如文章、教程、工具等。这个层级的目的是为了积累和整理那些可能有用的信息。</li>
+<li><strong>行动（Actions）</strong>：这是最低的层级，包括了具体的行动项或待办事项。这些通常是短期任务，需要被执行或跟踪。</li>
+</ol>
+<p>PARA 方法的一个关键特点是灵活性和可定制性，它允许用户根据自己的需要调整和组织信息。这种方法特别适合那些需要处理大量信息并希望提高工作效率的人。通过使用 PARA，用户可以更有效地管理他们的知识和任务，从而提高生产力。</p>
+]]></content>
+      <tags>
+        <tag>方法论</tag>
+        <tag>PARA</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>关于Obsidian笔记软件的笔记</title>
     <url>/2024/04/28/%E5%85%B3%E4%BA%8EObsidian%E7%AC%94%E8%AE%B0%E8%BD%AF%E4%BB%B6%E7%9A%84%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
@@ -11341,47 +11412,10 @@
       </categories>
       <tags>
         <tag>笔记</tag>
-        <tag>插件</tag>
         <tag>Obsidian</tag>
+        <tag>插件</tag>
         <tag>分享</tag>
         <tag>webdav</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>我的极简生活经验</title>
-    <url>/2024/01/22/%E6%88%91%E7%9A%84%E6%9E%81%E7%AE%80%E7%94%9F%E6%B4%BB%E7%BB%8F%E9%AA%8C/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="我的极简生活经验：恰到好处的生活艺术"><a href="#我的极简生活经验：恰到好处的生活艺术" class="headerlink" title="我的极简生活经验：恰到好处的生活艺术"></a>我的极简生活经验：恰到好处的生活艺术</h1><p>今天我想和大家分享一下我对极简主义的理解。我非常喜欢这种生活方式，但并不是说每个人都需要极简。有些人喜欢收藏，有些人喜欢购物，买很多东西，只要能让自己舒心，任何生活方式都是好的。但如果你也喜欢简单的生活方式，或者有点儿强迫症，那么这些小建议可能适合你。</p>
-<p>首先，极简主义并不意味着把大部分东西都扔掉，或者在空无一物的环境中生活。极简主义是选择对你重要的东西，而不在于数量多少。同时，也没有必要每个地方都极简。比如说你喜欢读书和收藏，完全可以精挑细选地去置办。极简生活更多的是减少生活中不必要的元素，让你更多地专注在真正重要的事物上。</p>
-<p>经常性的整理是开始的第一步。一般来说，整理包括扔东西、卖二手、收纳起来。不要总觉得留着以后能用上，如果近一年都没用过，基本上以后也用不上。</p>
-<span id="more"></span>
-<ul>
-<li>扔东西：可以先从冰箱和厨房开始，把过期的、好久没有动过的东西扔掉。接着收拾各种抽屉和柜子，比如已经坏掉的物件、没有用的配件、廉价的充电线、没用的说明书、之前的票据、快递盒子和购物袋子等。一般来说，这些都是随手放进去，觉得以后会用的，但实际上过了很久也没有用到的东西。</li>
-<li>卖二手：接下来你会发现有不少东西其实扔掉有些可惜，但是自己又不怎么用了。对于不太值钱但是还有些用的东西，比如再也不看的书、两年都没有穿的旧衣服，可以去支付宝或其他App看看有没有上门回收捐赠的服务。对于还值点钱的，但是因为消费冲动而买的东西，可以擦干净、拍照发到闲鱼上，卖给下一个冲动消费的人。这样可以帮你回一些本。一般来说，比如几乎半年都不用的耳机、二手电脑、手表、小电器这一类很好出手，留下你一直在用而且很好用的那个就好，重复功能的东西只留一件。</li>
-<li>收纳起来：如果收纳空间有限，可以买几个收纳箱和真空收纳袋。这样你的存放物体的体积缩小一半，放到看不到的地方。比如不是这个季节的衣服、被子，都可以用收纳袋抽干收起来。对于不太方便用袋子装的，可以用盒子装起来放到柜子里，让它整齐和知晓位置，让每一个物品都有它特定的空间位置，用完返回原处，下次找起来会很方便。</li>
-</ul>
-<p>上面整理的这一步，会花费你一些周末时间。但是当整理完成，打扫干净区域后，一般都会让你心情舒畅，感觉很爽。</p>
-<p>接着第二步，慢慢培养自己的消费观。这里一般有几个建议：只买好的、不被消费主义、有目的的购买、不要囤东西。</p>
-<ul>
-<li>只买好的：很多时候东西多的一个很大原因，就是买了很多自己觉得用得上的东西，或者是买的时候有些纠结，但是最后还是买了的那些东西，基本上放柜子里也不想用，还后悔。对于必须品而言，一般建议购买力所能及范围内更好的那一个，比如说手机、电脑、衣服、鞋子、耳机这一类，品质好，价格稍贵，但是会让你很长时间不会纠结要不要换一个更好的，同时也让你生活品质其实会更好。这里还可以新入了一件，可以尽快把之前那件按照第一步方法给整理掉。</li>
-<li>不被消费主义：越来越觉得，现在生活中大部分必须品都已经很满足了。很多时候消费都是属于仪式感下的消费，比如说看到小红书推荐、抖音里面的好东西、得物上的潮流东西，会很容易被当时那个环境下误导下单。因为做电商的开发应该都知道，那一个个小功能其实都是一个大的产品业务团队同学天天想方设法迭代用来提高转化率用的，想方设法让你购买。</li>
-<li>有目的的购买：很容易出现在逛超市、逛山姆的时候，进去前就想着随便逛逛，结果你会发现出来后买了几百块东西，仔细一想，不少是属于可以买可不买的。其实可以在出发前，先想想这次要买的东西，列一个很简单的清单，就不会剁手买一些自认为需要的东西。而且这种有目的的挑选方式会让你更舒服。这里同样适合去逛街的时候，先想好要买的东西和品牌。</li>
-<li>不要囤东西：囤东西本意是为了省钱和省心，当时很多时候买一箱箱的纸、洗衣液、沐浴露用一两年反而会让你烦心，甚至还会出现为了尽快用完，double使用的方式，其实反而浪费了，还占用了你家里很多东西来放这些很多。很多时候，这些东西没有那么紧急，需要下单到到家其实很快的。这里还有一个东西也是容易囤的，那就是实体书了。这里可以先看电子书，再买纸质书，搬家的时候这东西很重的。</li>
-</ul>
-<p>减少网络中的被动消息：上面从出和入两步控制住了你生活中的物件，其实还有一块是虚拟生活中的东西，其实也可以极简起来。这里说的是手机、电脑、知识这几块接收，信息的过载很多时候也让人过得不顺畅，尽量减少被动信息的接收，需要的信息主动寻找。</p>
-<ul>
-<li>App处理：我一般做法是3个月不用的App删除掉，用的时候再装，用完又卸载或者直接用小程序，这样手机App基本上控制在2屏，完全可以满足生活所需。第二个是，控制所有App的消息，我一般只开启银行交易、支付宝交易、微信、工作软件的消息通知，其他的App的消息我都在设置里面去掉了，屏幕上没有小红点，同时很多App里面也可以设置去掉一些营销通知。第三个是，不装新闻软件、不装抖音快手，差不多一年多没有装了，感觉不太需要这种看着有用的新闻消息。这里对于电脑上的软件也是一样。</li>
-<li>资料整理：删除没有用的短消息，其实大部分都没有用，我平时一般是除了亲人信息，其他的定期全删除。然后第二个就是删除没有用的图片和视频，这里可以删除很多东西。第三个是删除没有用的微信聊天消息，之前不知道怎么加上的人也可以删除掉，让你常用的工具都是清爽的。这里对于电脑上的东西也是一样。</li>
-<li>主动接受消息：刚刚这些东西用于处理被动的消息接受，尽可能减少算法灌东西给你。更多的可以订阅RSS接收消息，关注喜欢的博主接收消息，不喜欢的直接屏蔽或者mute就好了。同时，免打扰模式在你需要专注的时候可以开启起来，也即减少你不想看到的消息有很多你自己可以做的事情。</li>
-</ul>
-<p>差不多碎碎念完了，归根结底最重要的就是勤收拾、买好不买多、主动接收这几块。这种极简生活的方式很多时候可以影响一个人的三观，包括他的生活、工作方式、他的喜好性格。最后，同样也希望你快乐，过得幸福。</p>
-]]></content>
-      <categories>
-        <category>生活</category>
-        <category>碎碎念</category>
-      </categories>
-      <tags>
-        <tag>随笔</tag>
-        <tag>分享</tag>
       </tags>
   </entry>
   <entry>
@@ -11473,40 +11507,6 @@
       <tags>
         <tag>随笔</tag>
         <tag>分享</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>有意思的翻译PROMPT</title>
-    <url>/2024/04/29/%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84%E7%BF%BB%E8%AF%91PROMPT/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><img src="/2024/04/29/%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84%E7%BF%BB%E8%AF%91PROMPT/image-20240428223752145.jpeg"></p>
-<span id="more"></span>
-
-<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">你是一个英语翻译团队的领导. 你会安排团队成员进行如下翻译, 实现翻译的&quot;信达雅&quot;目标:  </span><br><span class="line">  </span><br><span class="line">第一轮翻译<span class="comment">--信,追求直译, 将英文翻译成中文, 力求准确  </span></span><br><span class="line">  </span><br><span class="line">第二轮翻译<span class="comment">--达,在第一轮翻译的基础上, 考虑文化, 语境, 语义, 思考文字背后想要表达的意思, 进行意译, 力求意境契合, 记得分开思考和翻译内容。  </span></span><br><span class="line">  </span><br><span class="line">第三轮翻译<span class="comment">--雅, 基于第二轮翻译理解的语境含义, 进一步思考其中的哲理, 然后使用中国&lt;诗经&gt;的语言风格针对哲理和语义进行翻译, 力求简明, 古意盎然  </span></span><br><span class="line">  </span><br><span class="line">例如:  </span><br><span class="line">- you need you. 哲理部分，可以引申到佛家所说的&quot;莫向外求&quot;, 儒家所说的&quot;反求诸己&quot;, 然后思考使用诗经语言风格进行重新表述.  </span><br><span class="line">  </span><br><span class="line">- <span class="keyword">nothing</span> <span class="keyword">for</span> <span class="keyword">nothing</span>. 哲理部分，可以引申到诗句“世上本无事，庸人自扰之”，也可引申到俗语“尘归尘，土归土”  </span><br><span class="line">  </span><br><span class="line">第四轮翻译<span class="comment">--初审: 完成三轮翻译后， 深吸一口气， 缓一缓， 思考一下第三轮翻译的结果，与其哲理的偏差在哪？ 不要扩展太多，务求精练深刻，精辟是第一要义。 据此思路进行改进。  </span></span><br><span class="line">  </span><br><span class="line">第五轮翻译<span class="comment">--终审: 最终，你将亲自进行审稿， 你会对比原文和最后的翻译结果， 先思考《诗经》的语言表达风格要点，再审阅初审翻译的结果是否满足, 并给出你的审校修改结论。  </span></span><br><span class="line">  </span><br><span class="line">注意: 思考部分,请使用 【思考】 开头，翻译结果请使用【翻译】开头。  </span><br><span class="line">  </span><br><span class="line">请严格遵守以上工作流程， 对以下文字进行翻译：</span><br></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>Prompt</tag>
-        <tag>AI</tag>
-        <tag>翻译</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>什么是PARA</title>
-    <url>/2024/04/29/whats_PARA/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>PARA 是一种组织知识的方法，全称为 “Progressive Authentication of Reliable Acumen”，中文可以译为“渐进式验证可靠洞察”。</p>
-<p>它是由 Tiago Forte 提出的，主要用于管理笔记和信息，以提高知识工作的效率。</p>
-<span id="more"></span>
-
-<p>PARA 主要包含四个层级，每个层级都有其特定的功能和目的：</p>
-<ol>
-<li><strong>项目（Projects）</strong>：这是 PARA 结构中的最高层级，代表着你正在进行的各种项目或目标。每个项目都应该是独立的，有明确的开始和结束。</li>
-<li><strong>领域（Areas））：</strong>这个层级代表你感兴趣或需要管理的不同领域或主题，如工作、健康、学习等。领域通常是持久的，不会像项目那样有明确的结束。</li>
-<li><strong>资源（Resources）</strong>：资源是指那些可以跨项目和领域重复使用的具体信息或知识，如文章、教程、工具等。这个层级的目的是为了积累和整理那些可能有用的信息。</li>
-<li><strong>行动（Actions）</strong>：这是最低的层级，包括了具体的行动项或待办事项。这些通常是短期任务，需要被执行或跟踪。</li>
-</ol>
-<p>PARA 方法的一个关键特点是灵活性和可定制性，它允许用户根据自己的需要调整和组织信息。这种方法特别适合那些需要处理大量信息并希望提高工作效率的人。通过使用 PARA，用户可以更有效地管理他们的知识和任务，从而提高生产力。</p>
-]]></content>
-      <tags>
-        <tag>方法论</tag>
-        <tag>PARA</tag>
       </tags>
   </entry>
 </search>
