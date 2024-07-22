@@ -11056,6 +11056,189 @@
       </tags>
   </entry>
   <entry>
+    <title>有意思的翻译PROMPT</title>
+    <url>/2024/04/29/%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84%E7%BF%BB%E8%AF%91PROMPT/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><img src="/2024/04/29/%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84%E7%BF%BB%E8%AF%91PROMPT/image-20240428223752145.jpeg"></p>
+<span id="more"></span>
+
+<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">你是一个英语翻译团队的领导. 你会安排团队成员进行如下翻译, 实现翻译的&quot;信达雅&quot;目标:  </span><br><span class="line">  </span><br><span class="line">第一轮翻译<span class="comment">--信,追求直译, 将英文翻译成中文, 力求准确  </span></span><br><span class="line">  </span><br><span class="line">第二轮翻译<span class="comment">--达,在第一轮翻译的基础上, 考虑文化, 语境, 语义, 思考文字背后想要表达的意思, 进行意译, 力求意境契合, 记得分开思考和翻译内容。  </span></span><br><span class="line">  </span><br><span class="line">第三轮翻译<span class="comment">--雅, 基于第二轮翻译理解的语境含义, 进一步思考其中的哲理, 然后使用中国&lt;诗经&gt;的语言风格针对哲理和语义进行翻译, 力求简明, 古意盎然  </span></span><br><span class="line">  </span><br><span class="line">例如:  </span><br><span class="line">- you need you. 哲理部分，可以引申到佛家所说的&quot;莫向外求&quot;, 儒家所说的&quot;反求诸己&quot;, 然后思考使用诗经语言风格进行重新表述.  </span><br><span class="line">  </span><br><span class="line">- <span class="keyword">nothing</span> <span class="keyword">for</span> <span class="keyword">nothing</span>. 哲理部分，可以引申到诗句“世上本无事，庸人自扰之”，也可引申到俗语“尘归尘，土归土”  </span><br><span class="line">  </span><br><span class="line">第四轮翻译<span class="comment">--初审: 完成三轮翻译后， 深吸一口气， 缓一缓， 思考一下第三轮翻译的结果，与其哲理的偏差在哪？ 不要扩展太多，务求精练深刻，精辟是第一要义。 据此思路进行改进。  </span></span><br><span class="line">  </span><br><span class="line">第五轮翻译<span class="comment">--终审: 最终，你将亲自进行审稿， 你会对比原文和最后的翻译结果， 先思考《诗经》的语言表达风格要点，再审阅初审翻译的结果是否满足, 并给出你的审校修改结论。  </span></span><br><span class="line">  </span><br><span class="line">注意: 思考部分,请使用 【思考】 开头，翻译结果请使用【翻译】开头。  </span><br><span class="line">  </span><br><span class="line">请严格遵守以上工作流程， 对以下文字进行翻译：</span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>Prompt</tag>
+        <tag>AI</tag>
+        <tag>翻译</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>什么是PARA</title>
+    <url>/2024/04/29/whats_PARA/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>PARA 是一种组织知识的方法，全称为 “Progressive Authentication of Reliable Acumen”，中文可以译为“渐进式验证可靠洞察”。</p>
+<p>它是由 Tiago Forte 提出的，主要用于管理笔记和信息，以提高知识工作的效率。</p>
+<span id="more"></span>
+
+<p>PARA 主要包含四个层级，每个层级都有其特定的功能和目的：</p>
+<ol>
+<li><strong>项目（Projects）</strong>：这是 PARA 结构中的最高层级，代表着你正在进行的各种项目或目标。每个项目都应该是独立的，有明确的开始和结束。</li>
+<li><strong>领域（Areas））：</strong>这个层级代表你感兴趣或需要管理的不同领域或主题，如工作、健康、学习等。领域通常是持久的，不会像项目那样有明确的结束。</li>
+<li><strong>资源（Resources）</strong>：资源是指那些可以跨项目和领域重复使用的具体信息或知识，如文章、教程、工具等。这个层级的目的是为了积累和整理那些可能有用的信息。</li>
+<li><strong>行动（Actions）</strong>：这是最低的层级，包括了具体的行动项或待办事项。这些通常是短期任务，需要被执行或跟踪。</li>
+</ol>
+<p>PARA 方法的一个关键特点是灵活性和可定制性，它允许用户根据自己的需要调整和组织信息。这种方法特别适合那些需要处理大量信息并希望提高工作效率的人。通过使用 PARA，用户可以更有效地管理他们的知识和任务，从而提高生产力。</p>
+]]></content>
+      <tags>
+        <tag>方法论</tag>
+        <tag>PARA</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于Obsidian笔记软件的笔记</title>
+    <url>/2024/04/28/%E5%85%B3%E4%BA%8EObsidian%E7%AC%94%E8%AE%B0%E8%BD%AF%E4%BB%B6%E7%9A%84%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
+<p>这篇文章分享关于 obsidian 的使用心得分享，并利用 obsidian 同步 markdown 文件进行 hexo 博客更新。持续更新中……</p>
+</blockquote>
+<h2 id="同步方案"><a href="#同步方案" class="headerlink" title="同步方案"></a>同步方案</h2><blockquote>
+<p>之前分享过以 macOS 为中心，使用群晖 Drive 和 iCloud 同步群晖和苹果生态中的 obsidian 库（详见 <a href="/2019/05/24/Apple%E5%85%A8%E5%B9%B3%E5%8F%B0%E6%97%A0%E7%BC%9D%E5%90%8C%E6%AD%A5%E7%BE%A4%E6%99%96Obsidian%E5%BA%93/" title="苹果全平台无缝同步群晖Obsidian库">苹果全平台无缝同步群晖Obsidian库</a>），但这个方案有一个致命缺点就是需要一个 Mac 作为中继，同步群晖和 iCloud。无法做到任意设备的实时同步。</p>
+</blockquote>
+<blockquote>
+<p>一个可以实时同步的方案顺便分享一些不错的 obsidian 第三方插件。</p>
+</blockquote>
+<span id="more"></span>
+
+<h3 id="Remotely-save"><a href="#Remotely-save" class="headerlink" title="Remotely save"></a><a href="https://github.com/remotely-save/remotely-save">Remotely save</a></h3><blockquote>
+<p>一个非官方的 Obsidian 插件允许用户在本地设备和云服务之间同步笔记。支持 S 3、Dropbox、OneDrive、webdav。</p>
+</blockquote>
+<p><img src="/2024/04/28/%E5%85%B3%E4%BA%8EObsidian%E7%AC%94%E8%AE%B0%E8%BD%AF%E4%BB%B6%E7%9A%84%E7%AC%94%E8%AE%B0/image-20240428171635.png"></p>
+<p>按需求链接，这里以 webdav 为例，输入地址、用户名、密码进行连接。<br><img src="/2024/04/28/%E5%85%B3%E4%BA%8EObsidian%E7%AC%94%E8%AE%B0%E8%BD%AF%E4%BB%B6%E7%9A%84%E7%AC%94%E8%AE%B0/image-20240428174602.png"></p>
+<p>可以加密同步，我是为了同步到群晖，自动 git push 到 GitHub pages，所以就没有选择加密。<br><img src="/2024/04/28/%E5%85%B3%E4%BA%8EObsidian%E7%AC%94%E8%AE%B0%E8%BD%AF%E4%BB%B6%E7%9A%84%E7%AC%94%E8%AE%B0/image-20240428180548964.png"></p>
+<p>还有其他功能设置，可自行按需设置。</p>
+<h2 id="Obsidian-第三方插件"><a href="#Obsidian-第三方插件" class="headerlink" title="Obsidian 第三方插件"></a>Obsidian 第三方插件</h2><h3 id="Completr-自动联想补全插件"><a href="#Completr-自动联想补全插件" class="headerlink" title="Completr 自动联想补全插件"></a>Completr 自动联想补全插件</h3><blockquote>
+<p>[!summary] 插件提供了 LaTex，Frontmatter，callout 的自动联想补全功能，还提供了扫描当前文件所有文字作为联想备选文字的功能。另外，你还可以自己提供放了文字的文件作为联想的数据。</p>
+</blockquote>
+<ul>
+<li><p>输入 <code>&gt;[</code> 就会出现所有 ob 提供的 callout，点击确认即可自动补全。<br><img src="/2024/04/28/%E5%85%B3%E4%BA%8EObsidian%E7%AC%94%E8%AE%B0%E8%BD%AF%E4%BB%B6%E7%9A%84%E7%AC%94%E8%AE%B0/image-20240428190857.png"></p>
+</li>
+<li><p>提供字库作为联想备用文字<br><img src="/2024/04/28/%E5%85%B3%E4%BA%8EObsidian%E7%AC%94%E8%AE%B0%E8%BD%AF%E4%BB%B6%E7%9A%84%E7%AC%94%E8%AE%B0/image-20240428190944.png"></p>
+</li>
+<li><p>自动补全 LaTex<br><img src="/2024/04/28/%E5%85%B3%E4%BA%8EObsidian%E7%AC%94%E8%AE%B0%E8%BD%AF%E4%BB%B6%E7%9A%84%E7%AC%94%E8%AE%B0/image-20240428190956.png"></p>
+</li>
+</ul>
+<h4 id="简单配置"><a href="#简单配置" class="headerlink" title="简单配置"></a><strong>简单配置</strong></h4><p>默认无法扫描到中文，如果需要中文联想，需要在设置的第一项 Word character regex 的开头插入：<code>\u4e00-\u9fa5</code>，这样就可以扫描到中文了</p>
+<p>不要去掉原来的 <code>a-zA-ZöäüÖÄÜß</code>，那是用来匹配字母的。结果为 <code>\u4e00-\u9fa5a-zA-ZöäüÖÄÜß</code>；</p>
+<p>插件提供的可以修改的设置有:</p>
+<ol>
+<li>最小开始联想的字符；</li>
+<li>替换的方式（是否忽略大小写，是直接替换还是结尾补全等）</li>
+<li>是否启用 LaTex 补全（以及是否需要在代码块中提供补全，是否忽略大小写等）</li>
+<li>是否启用 Frontmatter 补全（以及是否忽略大小写，是否添加后缀）</li>
+<li>是否需要扫描文件作为补全的字库（以及是否包括当前文件）</li>
+<li>是否需要我们自己提供文件作为字库；</li>
+<li>是否启用 Callout 补全功能；</li>
+</ol>
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>博客</category>
+        <category>obsidian</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+        <tag>Obsidian</tag>
+        <tag>插件</tag>
+        <tag>分享</tag>
+        <tag>webdav</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>不要回应负能量</title>
+    <url>/2024/04/30/%E4%B8%8D%E8%A6%81%E5%9B%9E%E5%BA%94%E8%B4%9F%E8%83%BD%E9%87%8F%20copy/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
+<p>今天看到一篇题为<a href="https://mp.weixin.qq.com/s/4kvdpRFxxsLSESVChZgUNA">人生建议，永远不要回应负能量</a>的公众号文章深有感触。<br>人生就是一个持续选择的过程，对于恶意的攻击，负能量的传播，我们都在一次次的做出自己选择，作者提醒我们，我们有权利可以对这种负能量的传播作出拒绝的选择。何权峰《格局》，添加到我的 2024 阅读清单。</p>
+</blockquote>
+<span id="more"></span>
+
+<p>人的一生都在寻求生存和生活的意义，这是一种深植于我们内心深处的追求。在这个物欲横流的时代，信息爆炸的如今，我们常常被外界的诱惑和干扰所包围，很容易迷失自我，忽略自身的需求和想法。</p>
+<p>在现代社会中，人们往往过于依赖他人和社会的标准来衡量自己的生活质量和价值观。他们追求物质的满足和社会的认可，却忽略了自己内心的声音。他们追逐名利和地位，却忘记了自己真正的需求和追求。他们追求别人的期望和评价，却忽略了自己的感受和想法。</p>
+<p>然而，真正的生存和生活的意义并不在于外界的评价和认可，而在于我们对自己的认知和接纳。我们需要回归内心，去寻找自己真正的需求和想法。我们需要静下心来，去倾听自己内心的声音。我们需要勇气和决心，去追随自己内心的指引。</p>
+<p>只有当我们真正了解自己的需求和想法时，我们才能找到生存和生活的真正意义。只有当我们真正接纳自己并为之努力时，我们才能过上充实和满足的生活。只有当我们真正追求自己内心的声音时，我们才能找到属于自己的幸福和成功。</p>
+]]></content>
+      <categories>
+        <category>生活</category>
+        <category>碎碎念</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+        <tag>分享</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>第二大脑的基石CODE理论</title>
+    <url>/2024/05/08/%E7%AC%AC%E4%BA%8C%E5%A4%A7%E8%84%91%E7%9A%84%E5%9F%BA%E7%9F%B3CODE%E7%90%86%E8%AE%BA/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>从安卓的记事本，锤子便签，Evernote，onenote，GoogleKeep，Simplenote，Bear，GoodNotes，Notability，Apple Notes到近些年热门的Notion，Obsidian，各种各样的笔记类软件都使用过，寻觅某一款功能强大的笔记软件可以承载我对知识的渴望，搭建出一个符合个人需求的知识体系。但知识本来就浩如烟海，在移动互联的如今，知识更是触手可及，信息量史无前例的丰富。感觉看了很多的文章，了解到了非常多有意思的项目，但发现自己只是了解到皮毛，没有合适的学习方法，没有系统性的学习和记录，在无尽的信息面前，感受到的只有无比的空洞与彷徨。</p>
+<p>最近非常幸运的看到一本书，让我意识到，解决这个问题的根源，并不是某一款功能强大的笔记软件，而是一种适用广泛的方法论。</p>
+<span id="more"></span>
+
+<p>《打造第二大脑》，作者Tiago Forte在书中提出的 “CODE”知识管理的理论方法似乎解答了这个让我深深忧虑的问题。</p>
+<img src="/_posts/2024_05_08_第二大脑的基石CODE理论/bookCover.png" width="400" height="600">
+
+<p>“CODE法则”包含四个步骤：</p>
+<ul>
+<li>C for Capture - 收集：把引发共鸣的信息收集起来</li>
+<li>O for Organize- 整理：对收集的这些信息进行整理</li>
+<li>D for Distill - 提炼：提炼这些内容的精髓，筛选最有用的信息</li>
+<li>E for Express - 表达：和他人分享，在实践中去应用你的知识</li>
+</ul>
+<p>CODE法则具有广泛的适用性，不受信息复杂性的限制。无论你是校园中求知的学子，还是职场中追求卓越的专业人士，这套理论都能成为你高效管理知识的得力工具。在生活的不同阶段，面对多变的环境挑战，CODE理论能够帮助你系统地整合知识，让你所学得到最大化的应用。</p>
+<h2 id="C-for-Capture-收集"><a href="#C-for-Capture-收集" class="headerlink" title="C for Capture - 收集"></a>C for Capture - 收集</h2><p>在信息丰富的数字时代，我们常常会遇到激发我们兴趣或我们认为将来可能派上用场的信息和知识。我们的本能反应是将这些信息保存下来，这正对应了CODE法则中的“C”——捕捉(Capture)。捕捉信息几乎是一项无师自通的基本技能，无论是通过书签、截图、下载还是其他任何数字化的手段，我们都能轻松地将信息保存下来，以便日后参考。</p>
+<p>不知道大家是否和我一样，在不同的平台收藏各种各样的数字内容，文字、图片、视频还有语音，但常常收藏后就再也没有会看过，有时等我在收藏夹中发现是，这条信息甚至已经过期无法访问了。</p>
+<p>作者<code>Tiago Forte</code>给出的解决方案是：<strong>Keep What Resonates：只收集那些能让你产生共鸣的内容</strong> </p>
+<h2 id="O-for-Organize-整理"><a href="#O-for-Organize-整理" class="headerlink" title="O for Organize- 整理"></a>O for Organize- 整理</h2><p>面对众多平台上积累的丰富信息，每隔一段时间，我都会尝试将它们整理到我的笔记中，消解内化成我自己的知识。</p>
+<p>但面对复杂的，彼此相关度很低的信息，我总会感觉到巨大的整理压力。一个项目的素材，我可能会在其他领域复用，一个视频的内容它可能关联多个主题。每一条信息的整理，我都在纠结整理的方法和依据，以便今后可以快速的查询和使用。虽然数字化平台已经提供了快速检索的能力，但我总是在无法快速直接的找到我想要的信息。</p>
+<p>不知道多少人和我一样使用按主题分类，一种我们从学校保留下来的分类习惯。语文或者某个专业课的书本材料放在一起，上课我只需要拿上归类好的材料就可以。不同科目的材料基本不会有关联，不用担心材料&#x2F;信息在不同科目之间的复用。书本和知识都是按学期存放，一旦学期结束，考完试，之前的书本材料很少会重新用到。</p>
+<p>但主题这种分类方法显然不再适用于面对无限可能的人生。我并不知道这个收藏并感兴趣的信息的“考试”在什么时候，它可能在我收集后的第二天就会被用到，有可能在未来几年才会在我的某个项目中体现，又或者它可能完全不会被用到。</p>
+<p>作者<code>Tiago Forte</code>给出的解决方案是：</p>
+<p><strong>PARA分类系统</strong></p>
+<p>PARA系统指的是Projects&#x2F;项目 、Areas&#x2F;领域、Resources&#x2F;资源、Archives&#x2F;归档。</p>
+<p>聚焦于信息的用途和目的，根据实用性来获取及储存信息。</p>
+<ul>
+<li><strong>Projects &#x2F; 项目</strong>：当下正在进行中的任务，需要有明确的结果且有时间限制，比如一个视频，网页，方案，短期想达到的语言目标等；</li>
+<li><strong>Areas &#x2F; 领域</strong>：想要精通的领域，是你长期想要持续学习和精进的方向。比如摄影、Coding或者健身；</li>
+<li><strong>Resources &#x2F; 资源：</strong> 未来可参考的事物，收集那些用得上的资源，感兴趣的知识，业余的爱好等。</li>
+<li><strong>Archives &#x2F; 归档：</strong> 来自其他三类的归档。已完成的项目，不再感兴趣的领域，不再相关的资源等，可以都先放在这里，需要时可以重新启用。</li>
+</ul>
+<p>用这样的分类方式可以来分类任何来源、格式和用途的信息， 不再局限于时间的维度，是一个动态的管理信息的系统。</p>
+<h2 id="D-for-Distill-提炼"><a href="#D-for-Distill-提炼" class="headerlink" title="D for Distill - 提炼"></a>D for Distill - 提炼</h2><p>作者<code>Tiago Forte</code>提出使用<strong>渐进式总结法-The Progressive Summarization Technique</strong>对内容进行多次提炼，<strong>提炼信息的本质-Distill your notes down to their essence</strong>。</p>
+<p><strong>渐进式总结法-The Progressive Summarization Technique</strong></p>
+<blockquote>
+<ol>
+<li>摘录笔记-Capture notes </li>
+<li>加粗段落-Bolded passages</li>
+<li>高亮段落-Highlighted passages</li>
+<li>总结-Excutive summary</li>
+</ol>
+</blockquote>
+<p>渐进式总结法的目的是为提炼关键信息，提炼信息的本质，方便未来的自己可以快速查询和使用笔记。</p>
+<h2 id="E-for-Express-表达"><a href="#E-for-Express-表达" class="headerlink" title="E for Express - 表达"></a>E for Express - 表达</h2><blockquote>
+<p>”We only know what we make” - Giambattista Vico, Italian philosopher</p>
+</blockquote>
+<p>关于如何分享，作者<code>Tiago Forte</code>也给出了自己的宗旨：<br><code>尽早并频繁的分享自己的一些小想法，从而测试可行性并从他人获取反馈，而不是等到你完美的掌握了一切信息再去分享。</code></p>
+<p>通过将工作进行拆分，从以前的项目中重用这些模块，从而提高工作的效率和质量。</p>
+<p><strong>表达的三个阶段</strong></p>
+<ol>
+<li>**记忆 (Remembering)**：这一阶段，人们主要使用第二大脑作为记忆工具，将重要的事实和想法保存起来，以备将来需要时查阅。</li>
+<li>**连接 (Connecting)**：随着对第二大脑的使用逐渐熟悉，人们开始利用它来连接想法。可能会从过去项目中未被采用的材料或想法中发现新的关联，或者在不同的项目、领域和资源之间发现联系。</li>
+<li>**创造 (Creating)**：最后，人们开始利用第二大脑来完成项目和实现目标。他们发现自己的知识库中有足够的信息来开始新项目，从而减轻了需要从头开始研究的压力。</li>
+</ol>
+<p>创造性工作的本质在于对现有元素的重新组合和融合。第二大脑为我们提供了一个平台，使我们能够充分利用他人的作品，在创作时引用和融合已有的观点和思想，以提高工作效率和创造性工作的质量。</p>
+]]></content>
+      <categories>
+        <category>生活</category>
+        <category>碎碎念</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+        <tag>分享</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo Hello World</title>
     <url>/2019/05/01/hello_world/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
@@ -11324,189 +11507,6 @@
         <tag>hexo</tag>
         <tag>笔记</tag>
         <tag>markdown</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>有意思的翻译PROMPT</title>
-    <url>/2024/04/29/%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84%E7%BF%BB%E8%AF%91PROMPT/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><img src="/2024/04/29/%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84%E7%BF%BB%E8%AF%91PROMPT/image-20240428223752145.jpeg"></p>
-<span id="more"></span>
-
-<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">你是一个英语翻译团队的领导. 你会安排团队成员进行如下翻译, 实现翻译的&quot;信达雅&quot;目标:  </span><br><span class="line">  </span><br><span class="line">第一轮翻译<span class="comment">--信,追求直译, 将英文翻译成中文, 力求准确  </span></span><br><span class="line">  </span><br><span class="line">第二轮翻译<span class="comment">--达,在第一轮翻译的基础上, 考虑文化, 语境, 语义, 思考文字背后想要表达的意思, 进行意译, 力求意境契合, 记得分开思考和翻译内容。  </span></span><br><span class="line">  </span><br><span class="line">第三轮翻译<span class="comment">--雅, 基于第二轮翻译理解的语境含义, 进一步思考其中的哲理, 然后使用中国&lt;诗经&gt;的语言风格针对哲理和语义进行翻译, 力求简明, 古意盎然  </span></span><br><span class="line">  </span><br><span class="line">例如:  </span><br><span class="line">- you need you. 哲理部分，可以引申到佛家所说的&quot;莫向外求&quot;, 儒家所说的&quot;反求诸己&quot;, 然后思考使用诗经语言风格进行重新表述.  </span><br><span class="line">  </span><br><span class="line">- <span class="keyword">nothing</span> <span class="keyword">for</span> <span class="keyword">nothing</span>. 哲理部分，可以引申到诗句“世上本无事，庸人自扰之”，也可引申到俗语“尘归尘，土归土”  </span><br><span class="line">  </span><br><span class="line">第四轮翻译<span class="comment">--初审: 完成三轮翻译后， 深吸一口气， 缓一缓， 思考一下第三轮翻译的结果，与其哲理的偏差在哪？ 不要扩展太多，务求精练深刻，精辟是第一要义。 据此思路进行改进。  </span></span><br><span class="line">  </span><br><span class="line">第五轮翻译<span class="comment">--终审: 最终，你将亲自进行审稿， 你会对比原文和最后的翻译结果， 先思考《诗经》的语言表达风格要点，再审阅初审翻译的结果是否满足, 并给出你的审校修改结论。  </span></span><br><span class="line">  </span><br><span class="line">注意: 思考部分,请使用 【思考】 开头，翻译结果请使用【翻译】开头。  </span><br><span class="line">  </span><br><span class="line">请严格遵守以上工作流程， 对以下文字进行翻译：</span><br></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>Prompt</tag>
-        <tag>AI</tag>
-        <tag>翻译</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>不要回应负能量</title>
-    <url>/2024/04/30/%E4%B8%8D%E8%A6%81%E5%9B%9E%E5%BA%94%E8%B4%9F%E8%83%BD%E9%87%8F%20copy/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
-<p>今天看到一篇题为<a href="https://mp.weixin.qq.com/s/4kvdpRFxxsLSESVChZgUNA">人生建议，永远不要回应负能量</a>的公众号文章深有感触。<br>人生就是一个持续选择的过程，对于恶意的攻击，负能量的传播，我们都在一次次的做出自己选择，作者提醒我们，我们有权利可以对这种负能量的传播作出拒绝的选择。何权峰《格局》，添加到我的 2024 阅读清单。</p>
-</blockquote>
-<span id="more"></span>
-
-<p>人的一生都在寻求生存和生活的意义，这是一种深植于我们内心深处的追求。在这个物欲横流的时代，信息爆炸的如今，我们常常被外界的诱惑和干扰所包围，很容易迷失自我，忽略自身的需求和想法。</p>
-<p>在现代社会中，人们往往过于依赖他人和社会的标准来衡量自己的生活质量和价值观。他们追求物质的满足和社会的认可，却忽略了自己内心的声音。他们追逐名利和地位，却忘记了自己真正的需求和追求。他们追求别人的期望和评价，却忽略了自己的感受和想法。</p>
-<p>然而，真正的生存和生活的意义并不在于外界的评价和认可，而在于我们对自己的认知和接纳。我们需要回归内心，去寻找自己真正的需求和想法。我们需要静下心来，去倾听自己内心的声音。我们需要勇气和决心，去追随自己内心的指引。</p>
-<p>只有当我们真正了解自己的需求和想法时，我们才能找到生存和生活的真正意义。只有当我们真正接纳自己并为之努力时，我们才能过上充实和满足的生活。只有当我们真正追求自己内心的声音时，我们才能找到属于自己的幸福和成功。</p>
-]]></content>
-      <categories>
-        <category>生活</category>
-        <category>碎碎念</category>
-      </categories>
-      <tags>
-        <tag>随笔</tag>
-        <tag>分享</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>什么是PARA</title>
-    <url>/2024/04/29/whats_PARA/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>PARA 是一种组织知识的方法，全称为 “Progressive Authentication of Reliable Acumen”，中文可以译为“渐进式验证可靠洞察”。</p>
-<p>它是由 Tiago Forte 提出的，主要用于管理笔记和信息，以提高知识工作的效率。</p>
-<span id="more"></span>
-
-<p>PARA 主要包含四个层级，每个层级都有其特定的功能和目的：</p>
-<ol>
-<li><strong>项目（Projects）</strong>：这是 PARA 结构中的最高层级，代表着你正在进行的各种项目或目标。每个项目都应该是独立的，有明确的开始和结束。</li>
-<li><strong>领域（Areas））：</strong>这个层级代表你感兴趣或需要管理的不同领域或主题，如工作、健康、学习等。领域通常是持久的，不会像项目那样有明确的结束。</li>
-<li><strong>资源（Resources）</strong>：资源是指那些可以跨项目和领域重复使用的具体信息或知识，如文章、教程、工具等。这个层级的目的是为了积累和整理那些可能有用的信息。</li>
-<li><strong>行动（Actions）</strong>：这是最低的层级，包括了具体的行动项或待办事项。这些通常是短期任务，需要被执行或跟踪。</li>
-</ol>
-<p>PARA 方法的一个关键特点是灵活性和可定制性，它允许用户根据自己的需要调整和组织信息。这种方法特别适合那些需要处理大量信息并希望提高工作效率的人。通过使用 PARA，用户可以更有效地管理他们的知识和任务，从而提高生产力。</p>
-]]></content>
-      <tags>
-        <tag>方法论</tag>
-        <tag>PARA</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>关于Obsidian笔记软件的笔记</title>
-    <url>/2024/04/28/%E5%85%B3%E4%BA%8EObsidian%E7%AC%94%E8%AE%B0%E8%BD%AF%E4%BB%B6%E7%9A%84%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
-<p>这篇文章分享关于 obsidian 的使用心得分享，并利用 obsidian 同步 markdown 文件进行 hexo 博客更新。持续更新中……</p>
-</blockquote>
-<h2 id="同步方案"><a href="#同步方案" class="headerlink" title="同步方案"></a>同步方案</h2><blockquote>
-<p>之前分享过以 macOS 为中心，使用群晖 Drive 和 iCloud 同步群晖和苹果生态中的 obsidian 库（详见 <a href="/2019/05/24/Apple%E5%85%A8%E5%B9%B3%E5%8F%B0%E6%97%A0%E7%BC%9D%E5%90%8C%E6%AD%A5%E7%BE%A4%E6%99%96Obsidian%E5%BA%93/" title="苹果全平台无缝同步群晖Obsidian库">苹果全平台无缝同步群晖Obsidian库</a>），但这个方案有一个致命缺点就是需要一个 Mac 作为中继，同步群晖和 iCloud。无法做到任意设备的实时同步。</p>
-</blockquote>
-<blockquote>
-<p>一个可以实时同步的方案顺便分享一些不错的 obsidian 第三方插件。</p>
-</blockquote>
-<span id="more"></span>
-
-<h3 id="Remotely-save"><a href="#Remotely-save" class="headerlink" title="Remotely save"></a><a href="https://github.com/remotely-save/remotely-save">Remotely save</a></h3><blockquote>
-<p>一个非官方的 Obsidian 插件允许用户在本地设备和云服务之间同步笔记。支持 S 3、Dropbox、OneDrive、webdav。</p>
-</blockquote>
-<p><img src="/2024/04/28/%E5%85%B3%E4%BA%8EObsidian%E7%AC%94%E8%AE%B0%E8%BD%AF%E4%BB%B6%E7%9A%84%E7%AC%94%E8%AE%B0/image-20240428171635.png"></p>
-<p>按需求链接，这里以 webdav 为例，输入地址、用户名、密码进行连接。<br><img src="/2024/04/28/%E5%85%B3%E4%BA%8EObsidian%E7%AC%94%E8%AE%B0%E8%BD%AF%E4%BB%B6%E7%9A%84%E7%AC%94%E8%AE%B0/image-20240428174602.png"></p>
-<p>可以加密同步，我是为了同步到群晖，自动 git push 到 GitHub pages，所以就没有选择加密。<br><img src="/2024/04/28/%E5%85%B3%E4%BA%8EObsidian%E7%AC%94%E8%AE%B0%E8%BD%AF%E4%BB%B6%E7%9A%84%E7%AC%94%E8%AE%B0/image-20240428180548964.png"></p>
-<p>还有其他功能设置，可自行按需设置。</p>
-<h2 id="Obsidian-第三方插件"><a href="#Obsidian-第三方插件" class="headerlink" title="Obsidian 第三方插件"></a>Obsidian 第三方插件</h2><h3 id="Completr-自动联想补全插件"><a href="#Completr-自动联想补全插件" class="headerlink" title="Completr 自动联想补全插件"></a>Completr 自动联想补全插件</h3><blockquote>
-<p>[!summary] 插件提供了 LaTex，Frontmatter，callout 的自动联想补全功能，还提供了扫描当前文件所有文字作为联想备选文字的功能。另外，你还可以自己提供放了文字的文件作为联想的数据。</p>
-</blockquote>
-<ul>
-<li><p>输入 <code>&gt;[</code> 就会出现所有 ob 提供的 callout，点击确认即可自动补全。<br><img src="/2024/04/28/%E5%85%B3%E4%BA%8EObsidian%E7%AC%94%E8%AE%B0%E8%BD%AF%E4%BB%B6%E7%9A%84%E7%AC%94%E8%AE%B0/image-20240428190857.png"></p>
-</li>
-<li><p>提供字库作为联想备用文字<br><img src="/2024/04/28/%E5%85%B3%E4%BA%8EObsidian%E7%AC%94%E8%AE%B0%E8%BD%AF%E4%BB%B6%E7%9A%84%E7%AC%94%E8%AE%B0/image-20240428190944.png"></p>
-</li>
-<li><p>自动补全 LaTex<br><img src="/2024/04/28/%E5%85%B3%E4%BA%8EObsidian%E7%AC%94%E8%AE%B0%E8%BD%AF%E4%BB%B6%E7%9A%84%E7%AC%94%E8%AE%B0/image-20240428190956.png"></p>
-</li>
-</ul>
-<h4 id="简单配置"><a href="#简单配置" class="headerlink" title="简单配置"></a><strong>简单配置</strong></h4><p>默认无法扫描到中文，如果需要中文联想，需要在设置的第一项 Word character regex 的开头插入：<code>\u4e00-\u9fa5</code>，这样就可以扫描到中文了</p>
-<p>不要去掉原来的 <code>a-zA-ZöäüÖÄÜß</code>，那是用来匹配字母的。结果为 <code>\u4e00-\u9fa5a-zA-ZöäüÖÄÜß</code>；</p>
-<p>插件提供的可以修改的设置有:</p>
-<ol>
-<li>最小开始联想的字符；</li>
-<li>替换的方式（是否忽略大小写，是直接替换还是结尾补全等）</li>
-<li>是否启用 LaTex 补全（以及是否需要在代码块中提供补全，是否忽略大小写等）</li>
-<li>是否启用 Frontmatter 补全（以及是否忽略大小写，是否添加后缀）</li>
-<li>是否需要扫描文件作为补全的字库（以及是否包括当前文件）</li>
-<li>是否需要我们自己提供文件作为字库；</li>
-<li>是否启用 Callout 补全功能；</li>
-</ol>
-]]></content>
-      <categories>
-        <category>技术</category>
-        <category>博客</category>
-        <category>obsidian</category>
-      </categories>
-      <tags>
-        <tag>笔记</tag>
-        <tag>Obsidian</tag>
-        <tag>插件</tag>
-        <tag>分享</tag>
-        <tag>webdav</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>第二大脑的基石CODE理论</title>
-    <url>/2024/05/08/%E7%AC%AC%E4%BA%8C%E5%A4%A7%E8%84%91%E7%9A%84%E5%9F%BA%E7%9F%B3CODE%E7%90%86%E8%AE%BA/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>从安卓的记事本，锤子便签，Evernote，onenote，GoogleKeep，Simplenote，Bear，GoodNotes，Notability，Apple Notes到近些年热门的Notion，Obsidian，各种各样的笔记类软件都使用过，寻觅某一款功能强大的笔记软件可以承载我对知识的渴望，搭建出一个符合个人需求的知识体系。但知识本来就浩如烟海，在移动互联的如今，知识更是触手可及，信息量史无前例的丰富。感觉看了很多的文章，了解到了非常多有意思的项目，但发现自己只是了解到皮毛，没有合适的学习方法，没有系统性的学习和记录，在无尽的信息面前，感受到的只有无比的空洞与彷徨。</p>
-<p>最近非常幸运的看到一本书，让我意识到，解决这个问题的根源，并不是某一款功能强大的笔记软件，而是一种适用广泛的方法论。</p>
-<span id="more"></span>
-
-<p>《打造第二大脑》，作者Tiago Forte在书中提出的 “CODE”知识管理的理论方法似乎解答了这个让我深深忧虑的问题。</p>
-<img src="/_posts/2024_05_08_第二大脑的基石CODE理论/bookCover.png" width="400" height="600">
-
-<p>“CODE法则”包含四个步骤：</p>
-<ul>
-<li>C for Capture - 收集：把引发共鸣的信息收集起来</li>
-<li>O for Organize- 整理：对收集的这些信息进行整理</li>
-<li>D for Distill - 提炼：提炼这些内容的精髓，筛选最有用的信息</li>
-<li>E for Express - 表达：和他人分享，在实践中去应用你的知识</li>
-</ul>
-<p>CODE法则具有广泛的适用性，不受信息复杂性的限制。无论你是校园中求知的学子，还是职场中追求卓越的专业人士，这套理论都能成为你高效管理知识的得力工具。在生活的不同阶段，面对多变的环境挑战，CODE理论能够帮助你系统地整合知识，让你所学得到最大化的应用。</p>
-<h2 id="C-for-Capture-收集"><a href="#C-for-Capture-收集" class="headerlink" title="C for Capture - 收集"></a>C for Capture - 收集</h2><p>在信息丰富的数字时代，我们常常会遇到激发我们兴趣或我们认为将来可能派上用场的信息和知识。我们的本能反应是将这些信息保存下来，这正对应了CODE法则中的“C”——捕捉(Capture)。捕捉信息几乎是一项无师自通的基本技能，无论是通过书签、截图、下载还是其他任何数字化的手段，我们都能轻松地将信息保存下来，以便日后参考。</p>
-<p>不知道大家是否和我一样，在不同的平台收藏各种各样的数字内容，文字、图片、视频还有语音，但常常收藏后就再也没有会看过，有时等我在收藏夹中发现是，这条信息甚至已经过期无法访问了。</p>
-<p>作者<code>Tiago Forte</code>给出的解决方案是：<strong>Keep What Resonates：只收集那些能让你产生共鸣的内容</strong> </p>
-<h2 id="O-for-Organize-整理"><a href="#O-for-Organize-整理" class="headerlink" title="O for Organize- 整理"></a>O for Organize- 整理</h2><p>面对众多平台上积累的丰富信息，每隔一段时间，我都会尝试将它们整理到我的笔记中，消解内化成我自己的知识。</p>
-<p>但面对复杂的，彼此相关度很低的信息，我总会感觉到巨大的整理压力。一个项目的素材，我可能会在其他领域复用，一个视频的内容它可能关联多个主题。每一条信息的整理，我都在纠结整理的方法和依据，以便今后可以快速的查询和使用。虽然数字化平台已经提供了快速检索的能力，但我总是在无法快速直接的找到我想要的信息。</p>
-<p>不知道多少人和我一样使用按主题分类，一种我们从学校保留下来的分类习惯。语文或者某个专业课的书本材料放在一起，上课我只需要拿上归类好的材料就可以。不同科目的材料基本不会有关联，不用担心材料&#x2F;信息在不同科目之间的复用。书本和知识都是按学期存放，一旦学期结束，考完试，之前的书本材料很少会重新用到。</p>
-<p>但主题这种分类方法显然不再适用于面对无限可能的人生。我并不知道这个收藏并感兴趣的信息的“考试”在什么时候，它可能在我收集后的第二天就会被用到，有可能在未来几年才会在我的某个项目中体现，又或者它可能完全不会被用到。</p>
-<p>作者<code>Tiago Forte</code>给出的解决方案是：</p>
-<p><strong>PARA分类系统</strong></p>
-<p>PARA系统指的是Projects&#x2F;项目 、Areas&#x2F;领域、Resources&#x2F;资源、Archives&#x2F;归档。</p>
-<p>聚焦于信息的用途和目的，根据实用性来获取及储存信息。</p>
-<ul>
-<li><strong>Projects &#x2F; 项目</strong>：当下正在进行中的任务，需要有明确的结果且有时间限制，比如一个视频，网页，方案，短期想达到的语言目标等；</li>
-<li><strong>Areas &#x2F; 领域</strong>：想要精通的领域，是你长期想要持续学习和精进的方向。比如摄影、Coding或者健身；</li>
-<li><strong>Resources &#x2F; 资源：</strong> 未来可参考的事物，收集那些用得上的资源，感兴趣的知识，业余的爱好等。</li>
-<li><strong>Archives &#x2F; 归档：</strong> 来自其他三类的归档。已完成的项目，不再感兴趣的领域，不再相关的资源等，可以都先放在这里，需要时可以重新启用。</li>
-</ul>
-<p>用这样的分类方式可以来分类任何来源、格式和用途的信息， 不再局限于时间的维度，是一个动态的管理信息的系统。</p>
-<h2 id="D-for-Distill-提炼"><a href="#D-for-Distill-提炼" class="headerlink" title="D for Distill - 提炼"></a>D for Distill - 提炼</h2><p>作者<code>Tiago Forte</code>提出使用<strong>渐进式总结法-The Progressive Summarization Technique</strong>对内容进行多次提炼，<strong>提炼信息的本质-Distill your notes down to their essence</strong>。</p>
-<p><strong>渐进式总结法-The Progressive Summarization Technique</strong></p>
-<blockquote>
-<ol>
-<li>摘录笔记-Capture notes </li>
-<li>加粗段落-Bolded passages</li>
-<li>高亮段落-Highlighted passages</li>
-<li>总结-Excutive summary</li>
-</ol>
-</blockquote>
-<p>渐进式总结法的目的是为提炼关键信息，提炼信息的本质，方便未来的自己可以快速查询和使用笔记。</p>
-<h2 id="E-for-Express-表达"><a href="#E-for-Express-表达" class="headerlink" title="E for Express - 表达"></a>E for Express - 表达</h2><blockquote>
-<p>”We only know what we make” - Giambattista Vico, Italian philosopher</p>
-</blockquote>
-<p>关于如何分享，作者<code>Tiago Forte</code>也给出了自己的宗旨：<br><code>尽早并频繁的分享自己的一些小想法，从而测试可行性并从他人获取反馈，而不是等到你完美的掌握了一切信息再去分享。</code></p>
-<p>通过将工作进行拆分，从以前的项目中重用这些模块，从而提高工作的效率和质量。</p>
-<p><strong>表达的三个阶段</strong></p>
-<ol>
-<li>**记忆 (Remembering)**：这一阶段，人们主要使用第二大脑作为记忆工具，将重要的事实和想法保存起来，以备将来需要时查阅。</li>
-<li>**连接 (Connecting)**：随着对第二大脑的使用逐渐熟悉，人们开始利用它来连接想法。可能会从过去项目中未被采用的材料或想法中发现新的关联，或者在不同的项目、领域和资源之间发现联系。</li>
-<li>**创造 (Creating)**：最后，人们开始利用第二大脑来完成项目和实现目标。他们发现自己的知识库中有足够的信息来开始新项目，从而减轻了需要从头开始研究的压力。</li>
-</ol>
-<p>创造性工作的本质在于对现有元素的重新组合和融合。第二大脑为我们提供了一个平台，使我们能够充分利用他人的作品，在创作时引用和融合已有的观点和思想，以提高工作效率和创造性工作的质量。</p>
-]]></content>
-      <categories>
-        <category>生活</category>
-        <category>碎碎念</category>
-      </categories>
-      <tags>
-        <tag>随笔</tag>
-        <tag>分享</tag>
       </tags>
   </entry>
 </search>
