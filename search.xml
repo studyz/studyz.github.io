@@ -1,42 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>苹果全平台无缝同步群晖Obsidian库</title>
-    <url>/2019/05/24/Apple%E5%85%A8%E5%B9%B3%E5%8F%B0%E6%97%A0%E7%BC%9D%E5%90%8C%E6%AD%A5%E7%BE%A4%E6%99%96Obsidian%E5%BA%93/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><strong>前提介绍：</strong></p>
-<blockquote>
-<p><a href="https://obsidian.md/">Obsidian</a>是一款基于Markdown的笔记软件，以其强大的链接和标签功能、本地化存储及丰富的插件生态，为用户提供高效的知识管理和创作体验。 </p>
-</blockquote>
-<blockquote>
-<p><a href="https://www.synology.cn/zh-cn">群晖NAS</a>是一种基于网络连接的存储设备，它提供集中管理和共享文件的平台，支持多种功能，如数据备份、多媒体服务器等，方便用户随时随地访问和管理数据。</p>
-</blockquote>
-<h2 id="本文的目的"><a href="#本文的目的" class="headerlink" title="本文的目的"></a>本文的目的</h2><p><a href="https://obsidian.md/">Obsidian</a>作为一款优秀的markdown笔记软件，非常适合搭配hexo撰写blog。</p>
-<p>通过macOS上群晖Drive将hexo的post目录同步到iCloud，实现macOS和群晖drive的同步，然后通过iCloud在不同苹果设备上同步hexo的post目录，实现任意苹果设备撰写blog都可以在macOS通过群晖drive将新blog内容同步至群晖，再由群晖将内容自动布置到GitHub，实现blog网站的自动更新。</p>
+    <title>群晖Git部署Hexo</title>
+    <url>/2019/05/06/Git_Hexo/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="一、前期准备"><a href="#一、前期准备" class="headerlink" title="一、前期准备"></a>一、前期准备</h2><h3 id="1-1-注册-账号-Gitee-GitHub"><a href="#1-1-注册-账号-Gitee-GitHub" class="headerlink" title="1.1 注册 账号 Gitee&#x2F;GitHub"></a>1.1 注册 账号 Gitee&#x2F;GitHub</h3><p>注册一个属于自己的 Github 或 Gitee 账号，</p>
+<p>Gitee在国内访问速度更快，但Gitee需要上传身份证照片若干张进行实名认证，懒得掏身份证，pass掉。</p>
 <span id="more"></span>
+<p><img src="/2019/05/06/Git_Hexo/%E5%AE%9E%E5%90%8D%E9%AA%8C%E8%AF%81.png" alt="实名认证"></p>
+<p>本文采用 Github 演示。 </p>
+<h3 id="1-2-安装-Git"><a href="#1-2-安装-Git" class="headerlink" title="1.2 安装 Git"></a>1.2 安装 Git</h3><p>选择对应的系统平台，下载后，傻瓜式安装即可。 安装完成后，打开运行 –&gt; 输入命令，回车打开命令行窗口 输入以下Git指令</p>
+<figure class="highlight ada"><table><tr><td class="code"><pre><span class="line">git <span class="comment">--version</span></span><br></pre></td></tr></table></figure>
+
+<p>出现版本号，即代表 git 安装成功</p>
+<h3 id="1-3-Git-和-Github-建立联系"><a href="#1-3-Git-和-Github-建立联系" class="headerlink" title="1.3 Git 和 Github 建立联系"></a>1.3 Git 和 Github 建立联系</h3><p>任意目录下，打开 git bash 命令行，输入以下命令生成公钥：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C 邮箱</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">为了管理多个密钥，你可以在生成密钥时为每个密钥指定不同的文件名</span></span><br><span class="line">ssh-keygen -t rsa -C &quot;your_email@example.com&quot; -f ~/.ssh/id_rsa_example_com</span><br></pre></td></tr></table></figure>
 
 
-<div class="markmap-container" style="height:400px">
-  <svg data="{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:1,&quot;p&quot;:{&quot;lines&quot;:[1,2]},&quot;v&quot;:&quot;Blog内容同步与自动更新流程&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:2,&quot;p&quot;:{&quot;lines&quot;:[3,4]},&quot;v&quot;:&quot;macOS&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[4,5]},&quot;v&quot;:&quot;群晖Drive&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:5,&quot;p&quot;:{&quot;lines&quot;:[5,6]},&quot;v&quot;:&quot;同步Hexo的post目录到iCloud&quot;}]}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:2,&quot;p&quot;:{&quot;lines&quot;:[7,8]},&quot;v&quot;:&quot;iCloud&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:4,&quot;p&quot;:{&quot;lines&quot;:[8,9]},&quot;v&quot;:&quot;同步Hexo的post目录&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:4,&quot;p&quot;:{&quot;lines&quot;:[9,10]},&quot;v&quot;:&quot;跨苹果设备同步&quot;}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:2,&quot;p&quot;:{&quot;lines&quot;:[11,12]},&quot;v&quot;:&quot;苹果设备&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[12,13]},&quot;v&quot;:&quot;任意设备&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:5,&quot;p&quot;:{&quot;lines&quot;:[13,14]},&quot;v&quot;:&quot;撰写blog&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:5,&quot;p&quot;:{&quot;lines&quot;:[14,15]},&quot;v&quot;:&quot;通过iCloud同步到macOS&quot;}]}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:2,&quot;p&quot;:{&quot;lines&quot;:[16,17]},&quot;v&quot;:&quot;macOS（继续）&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[17,18]},&quot;v&quot;:&quot;群晖Drive（继续）&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:5,&quot;p&quot;:{&quot;lines&quot;:[18,19]},&quot;v&quot;:&quot;将新blog内容同步至群晖&quot;}]}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:2,&quot;p&quot;:{&quot;lines&quot;:[20,21]},&quot;v&quot;:&quot;群晖&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:4,&quot;p&quot;:{&quot;lines&quot;:[21,22]},&quot;v&quot;:&quot;将内容自动布置到GitHub&quot;}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:2,&quot;p&quot;:{&quot;lines&quot;:[23,24]},&quot;v&quot;:&quot;GitHub&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:4,&quot;p&quot;:{&quot;lines&quot;:[24,25]},&quot;v&quot;:&quot;自动更新blog网站&quot;}]}]}"></svg>
-</div>
+<p>回车出现 （y&#x2F;n）, 输入 y , 连续点击回车，即可生成。</p>
+<p>在<code>~/.ssh</code> 目录，找到 <code>id_rsa_example_com.pub</code> 文件，<code>cat ~/.ssh/id_rsa_example_com.pub</code>获取公钥。</p>
+<p>到GitHub找到 <code>设置</code> 并打开，找到左侧栏 <code>Access</code>下找到<code>SSH and GPG keys</code>，点击<code>New SSH keys</code>，添加 <code>Title</code> 和 <code>Key</code></p>
+<p>云端仓库创建完成的 gitee，更改远程仓库 URL 为 SSH</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">chmod 600 ~/.ssh/id_rsa_*</span><br><span class="line">chown your_username:users ~/.ssh/id_rsa_*</span><br></pre></td></tr></table></figure>
+
+
+<p><strong>输入以下指令，进行全局配置：</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;你的用户名&quot;</span><br><span class="line">git config --global user.email &quot;你的邮箱&quot;</span><br></pre></td></tr></table></figure>
+
+<p>查看config文件是否存在，不存在新建<code>touch config</code>,<br> config文件内容如下：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">Host github.com</span><br><span class="line">    User git</span><br><span class="line">    IdentityFile ~/.ssh/id_rsa_example_com</span><br><span class="line">    PreferredAuthentications publickey</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">测试连接</span></span><br><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
 
 
 
-<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><blockquote>
-<p>iPadOS和iOS端Obsidian只能识别打开iCloud Drive中Obsidian目录下的库，但macOS端的群晖Drive同步目录找不到iCloud目录，也就无法从iCloud同步至群晖。</p>
-</blockquote>
-<h2 id="解决步骤"><a href="#解决步骤" class="headerlink" title="解决步骤"></a>解决步骤</h2><h3 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h3><p>全部苹果设备开启 iCloud 同步，在 iOS&#x2F;iPadOS 下打开 obsidian 新建库，会自动生成一个<code>welcome.md</code>文件。</p>
-<h3 id="第二步"><a href="#第二步" class="headerlink" title="第二步"></a>第二步</h3><p>打开 macOS 访达，左侧打开 iCloud 云盘，点 obsidian 图标文件下载到本地管理（云箭头表示还在云上）。</p>
-<h3 id="第三步"><a href="#第三步" class="headerlink" title="第三步"></a>第三步</h3><p>显示 Mac 隐藏文件的两种方法：</p>
+<p>将纳入版本库的文件，提交到 gitee 远程仓库：</p>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">add</span> .</span><br><span class="line">git commit -m <span class="string">&#x27;first commit&#x27;</span></span><br><span class="line">git remote <span class="built_in">add</span> origin 你的仓库地址</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
+
+<p>此时，提交完成，打开浏览器，输入你的仓库地址，刷新即可看到文件。</p>
 <ol>
-<li>mac 终端中输入入命令：<code>defaults write com.apple.finder AppleShowAllFiles -bool true; killall Finder</code>  。</li>
-<li>快捷键组合：<code>⌘+⇧+。</code></li>
+<li><code>hexo clean</code>: 这个命令用于清理缓存文件和已生成的静态文件。它删除了<code>public</code>文件夹中的内容以及<code>.hexo</code>文件夹中的缓存文件。这是在部署博客之前的一个好习惯，因为它确保了生成的静态文件是最新的，避免了由于旧的缓存或文件导致的潜在问题。</li>
+<li><code>hexo deploy</code>: 这个命令用于将博客部署到服务器上。在执行这个命令之前，Hexo会生成所有的静态文件，并根据<code>_config.yml</code>文件中的<code>deploy</code>部分配置将它们上传到指定的服务器。这通常涉及到将文件推送到GitHub Pages、FTP服务器或其他静态网站托管服务。</li>
 </ol>
-<p>隐藏文件显示后，找到自己用户名下的资源库，在上方菜单栏<code>显示</code>-<code>查看显示选项</code>（<code>⌘+J</code>）中勾选<code>显示资源库文件夹</code>，这样就可以在群晖Drive同步软件中定位到 iCloud 内的文件夹。</p>
-<h3 id="第四步"><a href="#第四步" class="headerlink" title="第四步"></a>第四步</h3><p>macOS 打开群晖的配套同步软件<code>群晖 Drive Client</code>设置，创建选定<code>mac</code>用户名下<code>library</code>中的<code>moblie documents</code>文件，翻到iCloud前缀的obsidian文件夹，同步之前 iOS 中新建的库即可。</p>
-<h3 id="第五步"><a href="#第五步" class="headerlink" title="第五步"></a>第五步</h3><p>macOS 中iCloud下 Obsidian 打开库文件夹，在网络 nas 中即可找到此 iOS&#x2F;iPadOS 新建的库。</p>
-<p>完成之后，关闭显示 Mac 隐藏文件：<code>defaults write com.apple.finder AppleShowAllFiles -boolean false ; killall Finder</code></p>
-<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><p>实测多设备下修改输入，几乎都是秒刷到账，唯一要担心的是删的太快，如果在一处误删掉某内容，很快会被同步覆盖。不过群晖drive 中可以看同步日志，应问题不大。</p>
-<p>目前还没有遇上同步问题，仅提供解决方案，数据无价，请自行斟酌＼（＾ ＾）／</p>
+<figure class="highlight 1c"><table><tr><td class="code"><pre><span class="line">$ hexo clean <span class="meta">&amp;&amp; hexo deploy</span></span><br></pre></td></tr></table></figure>
+
+<p>在NAS上定时执行<code>hexo clean &amp;&amp; hexo deploy</code>，实现自动更新内容。</p>
 ]]></content>
       <categories>
         <category>技术</category>
@@ -44,9 +51,11 @@
         <category>hexo</category>
       </categories>
       <tags>
-        <tag>markdown</tag>
         <tag>hexo</tag>
-        <tag>Obsidian</tag>
+        <tag>笔记</tag>
+        <tag>技术</tag>
+        <tag>ssh</tag>
+        <tag>GitHub</tag>
       </tags>
   </entry>
   <entry>
@@ -315,9 +324,58 @@
         <category>hexo</category>
       </categories>
       <tags>
-        <tag>markdown</tag>
         <tag>hexo</tag>
         <tag>笔记</tag>
+        <tag>markdown</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>苹果全平台无缝同步群晖Obsidian库</title>
+    <url>/2019/05/24/Apple%E5%85%A8%E5%B9%B3%E5%8F%B0%E6%97%A0%E7%BC%9D%E5%90%8C%E6%AD%A5%E7%BE%A4%E6%99%96Obsidian%E5%BA%93/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><strong>前提介绍：</strong></p>
+<blockquote>
+<p><a href="https://obsidian.md/">Obsidian</a>是一款基于Markdown的笔记软件，以其强大的链接和标签功能、本地化存储及丰富的插件生态，为用户提供高效的知识管理和创作体验。 </p>
+</blockquote>
+<blockquote>
+<p><a href="https://www.synology.cn/zh-cn">群晖NAS</a>是一种基于网络连接的存储设备，它提供集中管理和共享文件的平台，支持多种功能，如数据备份、多媒体服务器等，方便用户随时随地访问和管理数据。</p>
+</blockquote>
+<h2 id="本文的目的"><a href="#本文的目的" class="headerlink" title="本文的目的"></a>本文的目的</h2><p><a href="https://obsidian.md/">Obsidian</a>作为一款优秀的markdown笔记软件，非常适合搭配hexo撰写blog。</p>
+<p>通过macOS上群晖Drive将hexo的post目录同步到iCloud，实现macOS和群晖drive的同步，然后通过iCloud在不同苹果设备上同步hexo的post目录，实现任意苹果设备撰写blog都可以在macOS通过群晖drive将新blog内容同步至群晖，再由群晖将内容自动布置到GitHub，实现blog网站的自动更新。</p>
+<span id="more"></span>
+
+
+<div class="markmap-container" style="height:400px">
+  <svg data="{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:1,&quot;p&quot;:{&quot;lines&quot;:[1,2]},&quot;v&quot;:&quot;Blog内容同步与自动更新流程&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:2,&quot;p&quot;:{&quot;lines&quot;:[3,4]},&quot;v&quot;:&quot;macOS&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[4,5]},&quot;v&quot;:&quot;群晖Drive&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:5,&quot;p&quot;:{&quot;lines&quot;:[5,6]},&quot;v&quot;:&quot;同步Hexo的post目录到iCloud&quot;}]}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:2,&quot;p&quot;:{&quot;lines&quot;:[7,8]},&quot;v&quot;:&quot;iCloud&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:4,&quot;p&quot;:{&quot;lines&quot;:[8,9]},&quot;v&quot;:&quot;同步Hexo的post目录&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:4,&quot;p&quot;:{&quot;lines&quot;:[9,10]},&quot;v&quot;:&quot;跨苹果设备同步&quot;}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:2,&quot;p&quot;:{&quot;lines&quot;:[11,12]},&quot;v&quot;:&quot;苹果设备&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[12,13]},&quot;v&quot;:&quot;任意设备&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:5,&quot;p&quot;:{&quot;lines&quot;:[13,14]},&quot;v&quot;:&quot;撰写blog&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:5,&quot;p&quot;:{&quot;lines&quot;:[14,15]},&quot;v&quot;:&quot;通过iCloud同步到macOS&quot;}]}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:2,&quot;p&quot;:{&quot;lines&quot;:[16,17]},&quot;v&quot;:&quot;macOS（继续）&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[17,18]},&quot;v&quot;:&quot;群晖Drive（继续）&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:5,&quot;p&quot;:{&quot;lines&quot;:[18,19]},&quot;v&quot;:&quot;将新blog内容同步至群晖&quot;}]}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:2,&quot;p&quot;:{&quot;lines&quot;:[20,21]},&quot;v&quot;:&quot;群晖&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:4,&quot;p&quot;:{&quot;lines&quot;:[21,22]},&quot;v&quot;:&quot;将内容自动布置到GitHub&quot;}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:2,&quot;p&quot;:{&quot;lines&quot;:[23,24]},&quot;v&quot;:&quot;GitHub&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:4,&quot;p&quot;:{&quot;lines&quot;:[24,25]},&quot;v&quot;:&quot;自动更新blog网站&quot;}]}]}"></svg>
+</div>
+
+
+
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><blockquote>
+<p>iPadOS和iOS端Obsidian只能识别打开iCloud Drive中Obsidian目录下的库，但macOS端的群晖Drive同步目录找不到iCloud目录，也就无法从iCloud同步至群晖。</p>
+</blockquote>
+<h2 id="解决步骤"><a href="#解决步骤" class="headerlink" title="解决步骤"></a>解决步骤</h2><h3 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h3><p>全部苹果设备开启 iCloud 同步，在 iOS&#x2F;iPadOS 下打开 obsidian 新建库，会自动生成一个<code>welcome.md</code>文件。</p>
+<h3 id="第二步"><a href="#第二步" class="headerlink" title="第二步"></a>第二步</h3><p>打开 macOS 访达，左侧打开 iCloud 云盘，点 obsidian 图标文件下载到本地管理（云箭头表示还在云上）。</p>
+<h3 id="第三步"><a href="#第三步" class="headerlink" title="第三步"></a>第三步</h3><p>显示 Mac 隐藏文件的两种方法：</p>
+<ol>
+<li>mac 终端中输入入命令：<code>defaults write com.apple.finder AppleShowAllFiles -bool true; killall Finder</code>  。</li>
+<li>快捷键组合：<code>⌘+⇧+。</code></li>
+</ol>
+<p>隐藏文件显示后，找到自己用户名下的资源库，在上方菜单栏<code>显示</code>-<code>查看显示选项</code>（<code>⌘+J</code>）中勾选<code>显示资源库文件夹</code>，这样就可以在群晖Drive同步软件中定位到 iCloud 内的文件夹。</p>
+<h3 id="第四步"><a href="#第四步" class="headerlink" title="第四步"></a>第四步</h3><p>macOS 打开群晖的配套同步软件<code>群晖 Drive Client</code>设置，创建选定<code>mac</code>用户名下<code>library</code>中的<code>moblie documents</code>文件，翻到iCloud前缀的obsidian文件夹，同步之前 iOS 中新建的库即可。</p>
+<h3 id="第五步"><a href="#第五步" class="headerlink" title="第五步"></a>第五步</h3><p>macOS 中iCloud下 Obsidian 打开库文件夹，在网络 nas 中即可找到此 iOS&#x2F;iPadOS 新建的库。</p>
+<p>完成之后，关闭显示 Mac 隐藏文件：<code>defaults write com.apple.finder AppleShowAllFiles -boolean false ; killall Finder</code></p>
+<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><p>实测多设备下修改输入，几乎都是秒刷到账，唯一要担心的是删的太快，如果在一处误删掉某内容，很快会被同步覆盖。不过群晖drive 中可以看同步日志，应问题不大。</p>
+<p>目前还没有遇上同步问题，仅提供解决方案，数据无价，请自行斟酌＼（＾ ＾）／</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>博客</category>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>markdown</tag>
+        <tag>Obsidian</tag>
       </tags>
   </entry>
   <entry>
@@ -356,27 +414,8 @@
         <category>hexo</category>
       </categories>
       <tags>
-        <tag>markdown</tag>
         <tag>hexo</tag>
-        <tag>插件</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>在hexo博客中插入思维导图</title>
-    <url>/2019/05/24/%E5%9C%A8hexo%E5%8D%9A%E5%AE%A2%E4%B8%AD%E6%8F%92%E5%85%A5%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="https://github.com/maxchang3/hexo-markmap">hexo-markmap</a></p>
-<p><strong>使用示例</strong></p>
-<span id="more"></span>
-
-<figure class="highlight clean"><table><tr><td class="code"><pre><span class="line">&#123;% markmap <span class="number">400</span>px %&#125;</span><br><span class="line">  </span><br><span class="line"># Blog内容同步与自动更新流程  </span><br><span class="line">  </span><br><span class="line">## macOS  </span><br><span class="line">### 群晖Drive  </span><br><span class="line">- 同步Hexo的post目录到iCloud  </span><br><span class="line">  </span><br><span class="line">## iCloud  </span><br><span class="line">- 同步Hexo的post目录  </span><br><span class="line">- 跨苹果设备同步  </span><br><span class="line">  </span><br><span class="line">## 苹果设备  </span><br><span class="line">### 任意设备  </span><br><span class="line">- 撰写blog  </span><br><span class="line">- 通过iCloud同步到macOS  </span><br><span class="line">  </span><br><span class="line">## macOS（继续）  </span><br><span class="line">### 群晖Drive（继续）  </span><br><span class="line">- 将新blog内容同步至群晖  </span><br><span class="line">  </span><br><span class="line">## 群晖  </span><br><span class="line">- 将内容自动布置到GitHub  </span><br><span class="line">  </span><br><span class="line">## GitHub  </span><br><span class="line">- 自动更新blog网站</span><br><span class="line">&#123;% endmarkmap %&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>技术</category>
-        <category>博客</category>
-        <category>hexo</category>
-      </categories>
-      <tags>
         <tag>markdown</tag>
-        <tag>hexo</tag>
         <tag>插件</tag>
       </tags>
   </entry>
@@ -569,64 +608,6 @@
       </tags>
   </entry>
   <entry>
-    <title>群晖Git部署Hexo</title>
-    <url>/2019/05/06/Git_Hexo/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="一、前期准备"><a href="#一、前期准备" class="headerlink" title="一、前期准备"></a>一、前期准备</h2><h3 id="1-1-注册-账号-Gitee-GitHub"><a href="#1-1-注册-账号-Gitee-GitHub" class="headerlink" title="1.1 注册 账号 Gitee&#x2F;GitHub"></a>1.1 注册 账号 Gitee&#x2F;GitHub</h3><p>注册一个属于自己的 Github 或 Gitee 账号，</p>
-<p>Gitee在国内访问速度更快，但Gitee需要上传身份证照片若干张进行实名认证，懒得掏身份证，pass掉。</p>
-<span id="more"></span>
-<p><img src="/2019/05/06/Git_Hexo/%E5%AE%9E%E5%90%8D%E9%AA%8C%E8%AF%81.png" alt="实名认证"></p>
-<p>本文采用 Github 演示。 </p>
-<h3 id="1-2-安装-Git"><a href="#1-2-安装-Git" class="headerlink" title="1.2 安装 Git"></a>1.2 安装 Git</h3><p>选择对应的系统平台，下载后，傻瓜式安装即可。 安装完成后，打开运行 –&gt; 输入命令，回车打开命令行窗口 输入以下Git指令</p>
-<figure class="highlight ada"><table><tr><td class="code"><pre><span class="line">git <span class="comment">--version</span></span><br></pre></td></tr></table></figure>
-
-<p>出现版本号，即代表 git 安装成功</p>
-<h3 id="1-3-Git-和-Github-建立联系"><a href="#1-3-Git-和-Github-建立联系" class="headerlink" title="1.3 Git 和 Github 建立联系"></a>1.3 Git 和 Github 建立联系</h3><p>任意目录下，打开 git bash 命令行，输入以下命令生成公钥：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C 邮箱</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">为了管理多个密钥，你可以在生成密钥时为每个密钥指定不同的文件名</span></span><br><span class="line">ssh-keygen -t rsa -C &quot;your_email@example.com&quot; -f ~/.ssh/id_rsa_example_com</span><br></pre></td></tr></table></figure>
-
-
-<p>回车出现 （y&#x2F;n）, 输入 y , 连续点击回车，即可生成。</p>
-<p>在<code>~/.ssh</code> 目录，找到 <code>id_rsa_example_com.pub</code> 文件，<code>cat ~/.ssh/id_rsa_example_com.pub</code>获取公钥。</p>
-<p>到GitHub找到 <code>设置</code> 并打开，找到左侧栏 <code>Access</code>下找到<code>SSH and GPG keys</code>，点击<code>New SSH keys</code>，添加 <code>Title</code> 和 <code>Key</code></p>
-<p>云端仓库创建完成的 gitee，更改远程仓库 URL 为 SSH</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">chmod 600 ~/.ssh/id_rsa_*</span><br><span class="line">chown your_username:users ~/.ssh/id_rsa_*</span><br></pre></td></tr></table></figure>
-
-
-<p><strong>输入以下指令，进行全局配置：</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;你的用户名&quot;</span><br><span class="line">git config --global user.email &quot;你的邮箱&quot;</span><br></pre></td></tr></table></figure>
-
-<p>查看config文件是否存在，不存在新建<code>touch config</code>,<br> config文件内容如下：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">Host github.com</span><br><span class="line">    User git</span><br><span class="line">    IdentityFile ~/.ssh/id_rsa_example_com</span><br><span class="line">    PreferredAuthentications publickey</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">测试连接</span></span><br><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
-
-
-
-<p>将纳入版本库的文件，提交到 gitee 远程仓库：</p>
-<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">add</span> .</span><br><span class="line">git commit -m <span class="string">&#x27;first commit&#x27;</span></span><br><span class="line">git remote <span class="built_in">add</span> origin 你的仓库地址</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
-
-<p>此时，提交完成，打开浏览器，输入你的仓库地址，刷新即可看到文件。</p>
-<ol>
-<li><code>hexo clean</code>: 这个命令用于清理缓存文件和已生成的静态文件。它删除了<code>public</code>文件夹中的内容以及<code>.hexo</code>文件夹中的缓存文件。这是在部署博客之前的一个好习惯，因为它确保了生成的静态文件是最新的，避免了由于旧的缓存或文件导致的潜在问题。</li>
-<li><code>hexo deploy</code>: 这个命令用于将博客部署到服务器上。在执行这个命令之前，Hexo会生成所有的静态文件，并根据<code>_config.yml</code>文件中的<code>deploy</code>部分配置将它们上传到指定的服务器。这通常涉及到将文件推送到GitHub Pages、FTP服务器或其他静态网站托管服务。</li>
-</ol>
-<figure class="highlight 1c"><table><tr><td class="code"><pre><span class="line">$ hexo clean <span class="meta">&amp;&amp; hexo deploy</span></span><br></pre></td></tr></table></figure>
-
-<p>在NAS上定时执行<code>hexo clean &amp;&amp; hexo deploy</code>，实现自动更新内容。</p>
-]]></content>
-      <categories>
-        <category>技术</category>
-        <category>博客</category>
-        <category>hexo</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-        <tag>笔记</tag>
-        <tag>技术</tag>
-        <tag>ssh</tag>
-        <tag>GitHub</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>菜谱</title>
     <url>/2022/04/19/%E8%8F%9C%E8%B0%B1/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="空气炸锅鸡排"><a href="#空气炸锅鸡排" class="headerlink" title="空气炸锅鸡排"></a>空气炸锅鸡排</h1><ul>
@@ -692,6 +673,214 @@
       <tags>
         <tag>推荐</tag>
         <tag>日常</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>SQL学习笔记</title>
+    <url>/2023/02/27/SQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="/_post/2024_02_28_%E6%8E%92%E5%BA%8F_DENSE_RANK.md">排序_DENSE_RANK</a></p>
+<h2 id="IFNULL"><a href="#IFNULL" class="headerlink" title="IFNULL"></a>IFNULL</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Write your MySQL query statement below</span><br><span class="line"></span><br><span class="line">select e.name, b.bonus</span><br><span class="line"></span><br><span class="line">from Employee e left join Bonus b</span><br><span class="line"></span><br><span class="line">on e.empId = b.empId</span><br><span class="line"></span><br><span class="line">where ifnull(bonus,0)&lt;1000</span><br><span class="line">## ifnul 就把值替换成0）</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+
+
+
+<h2 id="SQL-585"><a href="#SQL-585" class="headerlink" title="SQL 585"></a>SQL 585</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT ROUND(SUM(tiv_2016), 2) AS tiv_2016</span><br><span class="line"></span><br><span class="line">FROM Insurance</span><br><span class="line"></span><br><span class="line">WHERE tiv_2015 IN (</span><br><span class="line"></span><br><span class="line">SELECT tiv_2015</span><br><span class="line"></span><br><span class="line">FROM Insurance</span><br><span class="line"></span><br><span class="line">GROUP BY tiv_2015</span><br><span class="line"></span><br><span class="line">HAVING COUNT(*) &gt; 1</span><br><span class="line"></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">AND (lat, lon) NOT IN (</span><br><span class="line"></span><br><span class="line">SELECT lat, lon</span><br><span class="line"></span><br><span class="line">FROM Insurance</span><br><span class="line"></span><br><span class="line">GROUP BY lat, lon</span><br><span class="line"></span><br><span class="line">HAVING COUNT(*) &gt; 1</span><br><span class="line"></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="SQL-610"><a href="#SQL-610" class="headerlink" title="SQL 610"></a>SQL 610</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Write your MySQL query statement below</span><br><span class="line">select </span><br><span class="line">    *,</span><br><span class="line">    if(x+y&gt;z and x+z&gt;y and y+z&gt;x,&#x27;Yes&#x27;,&#x27;No&#x27;) as triangle</span><br><span class="line">from Triangle</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="SQL1633-ORDER-BY-2-DESC-1"><a href="#SQL1633-ORDER-BY-2-DESC-1" class="headerlink" title="SQL1633 ORDER BY 2 DESC, 1"></a>SQL1633 ORDER BY 2 DESC, 1</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ORDER BY 2 DESC, 1</span><br></pre></td></tr></table></figure>
+
+<p>这一行使用ORDER BY子句对结果进行排序。我们按照第二列（即percentage）的降序进行排序，如果百分比相同，则按照第一列（即contest_id）的升序进行排序。</p>
+<h2 id="SQL1179-CASE-WHEN"><a href="#SQL1179-CASE-WHEN" class="headerlink" title="SQL1179 CASE WHEN"></a>SQL1179 CASE WHEN</h2><p>CASE WHEN语句是SQL中用于根据条件进行条件判断和返回不同结果的表达式。它允许你根据满足特定条件的情况，选择不同的结果进行返回。</p>
+<p>CASE WHEN语句的基本语法如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CASE</span><br><span class="line">   WHEN condition1 THEN result1</span><br><span class="line">   WHEN condition2 THEN result2</span><br><span class="line">   ...</span><br><span class="line">   ELSE resultN</span><br><span class="line">END</span><br></pre></td></tr></table></figure>
+
+<p>首先，你提供一个或多个WHEN子句，每个子句后面跟着一个条件（condition）和一个对应的结果（result）。当满足某个条件时，相应的结果将被返回。ELSE子句是可选的，用于指定当没有任何条件满足时的默认结果。</p>
+<p>让我们通过一个简单的例子来说明CASE WHEN的使用。假设有一个名为”students”的表，其中包含学生的姓名和分数列。如果要将成绩分为优秀、良好和及格三个等级并进行显示，可以使用以下SQL语句：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT name,</span><br><span class="line">       CASE</span><br><span class="line">          WHEN score &gt;= 90 THEN &#x27;优秀&#x27;</span><br><span class="line">          WHEN score &gt;= 80 THEN &#x27;良好&#x27;</span><br><span class="line">          WHEN score &gt;= 60 THEN &#x27;及格&#x27;</span><br><span class="line">          ELSE &#x27;不及格&#x27;</span><br><span class="line">       END AS grade</span><br><span class="line">FROM students;</span><br></pre></td></tr></table></figure>
+
+<p>在这个例子中，对于每个学生，我们使用CASE WHEN语句根据他们的分数来判断他们的等级。如果分数大于等于90，那么他们被归类为”优秀”；如果分数大于等于80，但小于90，他们被归类为”良好”；如果分数大于等于60，但小于80，他们被归类为”及格”；否则，他们被归类为”不及格”。</p>
+<p>通过使用CASE WHEN语句，我们可以根据不同的条件返回不同的结果，从而实现灵活的数据处理和转换。</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>数据分析</category>
+        <category>SQL</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+        <tag>SQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>排序_DENSE_RANK</title>
+    <url>/2023/02/28/%E6%8E%92%E5%BA%8F_DENSE_RANK/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="rank"><a href="#rank" class="headerlink" title="rank()"></a>rank()</h2><h2 id="dense-rank"><a href="#dense-rank" class="headerlink" title="dense_rank()"></a>dense_rank()</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">DENSE_RANK() OVER (PARTITION BY column1, column2... ORDER BY column3, column4...)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>PARTITION BY子句是可选的，用于将数据分成不同的分组。如果不指定PARTITION BY子句，将对整个结果集进行排名。</li>
+<li>ORDER BY子句指定用于排序的列。可以根据一个或多个列进行排序，以确定排名的顺序。</li>
+</ul>
+<span id="more"></span>
+
+<h3 id="example"><a href="#example" class="headerlink" title="example"></a>example</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT name, salary, DENSE_RANK() OVER (ORDER BY salary DESC) AS dense_rank</span><br><span class="line">FROM employees;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>当使用DENSE_RANK函数和PARTITION BY子句时，以下是示例查询的可能返回结果：</p>
+<p>示例1：对每个客户的订单金额进行排名</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT order_id, customer_id, order_amount,</span><br><span class="line">       DENSE_RANK() OVER (PARTITION BY customer_id ORDER BY order_amount DESC) AS dense_rank</span><br><span class="line">FROM orders;</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>order_id</th>
+<th>customer_id</th>
+<th>order_amount</th>
+<th>dense_rank</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>1001</td>
+<td>500</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1001</td>
+<td>500</td>
+<td>1</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1001</td>
+<td>300</td>
+<td>2</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1002</td>
+<td>700</td>
+<td>1</td>
+</tr>
+<tr>
+<td>5</td>
+<td>1002</td>
+<td>600</td>
+<td>2</td>
+</tr>
+<tr>
+<td>6</td>
+<td>1002</td>
+<td>600</td>
+<td>2</td>
+</tr>
+<tr>
+<td>7</td>
+<td>1002</td>
+<td>400</td>
+<td>3</td>
+</tr>
+</tbody></table>
+<p>在上述结果中，我们根据每个客户的订单金额进行了排名。客户ID为1001的客户有两个订单，订单金额都是500，因此它们被分配相同的密集排名1。客户ID为1001的第三个订单金额为300，所以它被分配密集排名2。对于客户ID为1002的客户，有一个订单金额为700，它被分配密集排名1，然后有两个订单金额为600，它们被分配密集排名2，最后一个订单金额为400，它被分配密集排名3。</p>
+<p>示例2：对每个班级的学生成绩进行排名</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT student_id, class_id, exam_score,</span><br><span class="line">       DENSE_RANK() OVER (PARTITION BY class_id ORDER BY exam_score DESC) AS dense_rank</span><br><span class="line">FROM students;</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>student_id</th>
+<th>class_id</th>
+<th>exam_score</th>
+<th>dense_rank</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>A</td>
+<td>95</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>A</td>
+<td>90</td>
+<td>2</td>
+</tr>
+<tr>
+<td>3</td>
+<td>A</td>
+<td>85</td>
+<td>3</td>
+</tr>
+<tr>
+<td>4</td>
+<td>B</td>
+<td>92</td>
+<td>1</td>
+</tr>
+<tr>
+<td>5</td>
+<td>B</td>
+<td>88</td>
+<td>2</td>
+</tr>
+<tr>
+<td>6</td>
+<td>B</td>
+<td>88</td>
+<td>2</td>
+</tr>
+<tr>
+<td>7</td>
+<td>B</td>
+<td>80</td>
+<td>3</td>
+</tr>
+</tbody></table>
+<p>在上述结果中，我们根据每个班级的考试成绩进行了排名。班级ID为A的学生有三个学生，分别获得了95、90和85分，他们分别被分配密集排名1、2和3。班级ID为B的学生有四个学生，分别获得了92、88、88和80分，他们分别被分配密集排名1、2、2和3。</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>数据分析</category>
+        <category>SQL</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+        <tag>SQL</tag>
+        <tag>排序</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>DATEDIFF_日期之差</title>
+    <url>/2023/03/02/DATEDIFF_%E6%97%A5%E6%9C%9F%E4%B9%8B%E5%B7%AE/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>DATEDIFF是一个SQL函数，用于计算两个日期之间的差距。</p>
+<p>DATEDIFF函数的语法如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">DATEDIFF(datepart, startdate, enddate)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>datepart</code>参数是用于指定日期部分的字符串，表示希望计算的差距类型。常见的datepart包括：年(year)、季度(quarter)、月(month)、周(week)、天(day)、小时(hour)、分钟(minute)、秒(second)等。</li>
+<li><code>startdate</code>参数是起始日期。</li>
+<li><code>enddate</code>参数是结束日期。</li>
+</ul>
+<p>DATEDIFF函数会根据指定的datepart，计算出enddate与startdate之间的差距，并以整数形式返回差距值。</p>
+<p>以下是一个示例，演示如何使用DATEDIFF函数计算两个日期之间的天数差距：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT DATEDIFF(day, &#x27;2021-01-01&#x27;, &#x27;2021-01-10&#x27;) AS DayDifference;</span><br></pre></td></tr></table></figure>
+
+<p>上述查询将返回结果为9，表示从2021年1月1日到2021年1月10日之间相差了9天。</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>数据分析</category>
+        <category>SQL</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+        <tag>SQL</tag>
       </tags>
   </entry>
   <entry>
@@ -11203,8 +11392,8 @@
         <category>obsidian</category>
       </categories>
       <tags>
-        <tag>Obsidian</tag>
         <tag>笔记</tag>
+        <tag>Obsidian</tag>
         <tag>插件</tag>
         <tag>分享</tag>
         <tag>webdav</tag>
@@ -11302,211 +11491,22 @@
       </tags>
   </entry>
   <entry>
-    <title>SQL学习笔记</title>
-    <url>/2023/02/27/SQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="/_post/2024_02_28_%E6%8E%92%E5%BA%8F_DENSE_RANK.md">排序_DENSE_RANK</a></p>
-<h2 id="IFNULL"><a href="#IFNULL" class="headerlink" title="IFNULL"></a>IFNULL</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Write your MySQL query statement below</span><br><span class="line"></span><br><span class="line">select e.name, b.bonus</span><br><span class="line"></span><br><span class="line">from Employee e left join Bonus b</span><br><span class="line"></span><br><span class="line">on e.empId = b.empId</span><br><span class="line"></span><br><span class="line">where ifnull(bonus,0)&lt;1000</span><br><span class="line">## ifnul 就把值替换成0）</span><br></pre></td></tr></table></figure>
+    <title>在hexo博客中插入思维导图</title>
+    <url>/2019/05/24/%E5%9C%A8hexo%E5%8D%9A%E5%AE%A2%E4%B8%AD%E6%8F%92%E5%85%A5%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="https://github.com/maxchang3/hexo-markmap">hexo-markmap</a></p>
+<p><strong>使用示例</strong></p>
 <span id="more"></span>
 
-
-
-<h2 id="SQL-585"><a href="#SQL-585" class="headerlink" title="SQL 585"></a>SQL 585</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT ROUND(SUM(tiv_2016), 2) AS tiv_2016</span><br><span class="line"></span><br><span class="line">FROM Insurance</span><br><span class="line"></span><br><span class="line">WHERE tiv_2015 IN (</span><br><span class="line"></span><br><span class="line">SELECT tiv_2015</span><br><span class="line"></span><br><span class="line">FROM Insurance</span><br><span class="line"></span><br><span class="line">GROUP BY tiv_2015</span><br><span class="line"></span><br><span class="line">HAVING COUNT(*) &gt; 1</span><br><span class="line"></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">AND (lat, lon) NOT IN (</span><br><span class="line"></span><br><span class="line">SELECT lat, lon</span><br><span class="line"></span><br><span class="line">FROM Insurance</span><br><span class="line"></span><br><span class="line">GROUP BY lat, lon</span><br><span class="line"></span><br><span class="line">HAVING COUNT(*) &gt; 1</span><br><span class="line"></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-
-
-<h2 id="SQL-610"><a href="#SQL-610" class="headerlink" title="SQL 610"></a>SQL 610</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Write your MySQL query statement below</span><br><span class="line">select </span><br><span class="line">    *,</span><br><span class="line">    if(x+y&gt;z and x+z&gt;y and y+z&gt;x,&#x27;Yes&#x27;,&#x27;No&#x27;) as triangle</span><br><span class="line">from Triangle</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="SQL1633-ORDER-BY-2-DESC-1"><a href="#SQL1633-ORDER-BY-2-DESC-1" class="headerlink" title="SQL1633 ORDER BY 2 DESC, 1"></a>SQL1633 ORDER BY 2 DESC, 1</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ORDER BY 2 DESC, 1</span><br></pre></td></tr></table></figure>
-
-<p>这一行使用ORDER BY子句对结果进行排序。我们按照第二列（即percentage）的降序进行排序，如果百分比相同，则按照第一列（即contest_id）的升序进行排序。</p>
-<h2 id="SQL1179-CASE-WHEN"><a href="#SQL1179-CASE-WHEN" class="headerlink" title="SQL1179 CASE WHEN"></a>SQL1179 CASE WHEN</h2><p>CASE WHEN语句是SQL中用于根据条件进行条件判断和返回不同结果的表达式。它允许你根据满足特定条件的情况，选择不同的结果进行返回。</p>
-<p>CASE WHEN语句的基本语法如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CASE</span><br><span class="line">   WHEN condition1 THEN result1</span><br><span class="line">   WHEN condition2 THEN result2</span><br><span class="line">   ...</span><br><span class="line">   ELSE resultN</span><br><span class="line">END</span><br></pre></td></tr></table></figure>
-
-<p>首先，你提供一个或多个WHEN子句，每个子句后面跟着一个条件（condition）和一个对应的结果（result）。当满足某个条件时，相应的结果将被返回。ELSE子句是可选的，用于指定当没有任何条件满足时的默认结果。</p>
-<p>让我们通过一个简单的例子来说明CASE WHEN的使用。假设有一个名为”students”的表，其中包含学生的姓名和分数列。如果要将成绩分为优秀、良好和及格三个等级并进行显示，可以使用以下SQL语句：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT name,</span><br><span class="line">       CASE</span><br><span class="line">          WHEN score &gt;= 90 THEN &#x27;优秀&#x27;</span><br><span class="line">          WHEN score &gt;= 80 THEN &#x27;良好&#x27;</span><br><span class="line">          WHEN score &gt;= 60 THEN &#x27;及格&#x27;</span><br><span class="line">          ELSE &#x27;不及格&#x27;</span><br><span class="line">       END AS grade</span><br><span class="line">FROM students;</span><br></pre></td></tr></table></figure>
-
-<p>在这个例子中，对于每个学生，我们使用CASE WHEN语句根据他们的分数来判断他们的等级。如果分数大于等于90，那么他们被归类为”优秀”；如果分数大于等于80，但小于90，他们被归类为”良好”；如果分数大于等于60，但小于80，他们被归类为”及格”；否则，他们被归类为”不及格”。</p>
-<p>通过使用CASE WHEN语句，我们可以根据不同的条件返回不同的结果，从而实现灵活的数据处理和转换。</p>
-]]></content>
+<figure class="highlight clean"><table><tr><td class="code"><pre><span class="line">&#123;% markmap <span class="number">400</span>px %&#125;</span><br><span class="line">  </span><br><span class="line"># Blog内容同步与自动更新流程  </span><br><span class="line">  </span><br><span class="line">## macOS  </span><br><span class="line">### 群晖Drive  </span><br><span class="line">- 同步Hexo的post目录到iCloud  </span><br><span class="line">  </span><br><span class="line">## iCloud  </span><br><span class="line">- 同步Hexo的post目录  </span><br><span class="line">- 跨苹果设备同步  </span><br><span class="line">  </span><br><span class="line">## 苹果设备  </span><br><span class="line">### 任意设备  </span><br><span class="line">- 撰写blog  </span><br><span class="line">- 通过iCloud同步到macOS  </span><br><span class="line">  </span><br><span class="line">## macOS（继续）  </span><br><span class="line">### 群晖Drive（继续）  </span><br><span class="line">- 将新blog内容同步至群晖  </span><br><span class="line">  </span><br><span class="line">## 群晖  </span><br><span class="line">- 将内容自动布置到GitHub  </span><br><span class="line">  </span><br><span class="line">## GitHub  </span><br><span class="line">- 自动更新blog网站</span><br><span class="line">&#123;% endmarkmap %&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>技术</category>
-        <category>数据分析</category>
-        <category>SQL</category>
+        <category>博客</category>
+        <category>hexo</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
-        <tag>SQL</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>排序_DENSE_RANK</title>
-    <url>/2023/02/28/%E6%8E%92%E5%BA%8F_DENSE_RANK/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="rank"><a href="#rank" class="headerlink" title="rank()"></a>rank()</h2><h2 id="dense-rank"><a href="#dense-rank" class="headerlink" title="dense_rank()"></a>dense_rank()</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">DENSE_RANK() OVER (PARTITION BY column1, column2... ORDER BY column3, column4...)</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>PARTITION BY子句是可选的，用于将数据分成不同的分组。如果不指定PARTITION BY子句，将对整个结果集进行排名。</li>
-<li>ORDER BY子句指定用于排序的列。可以根据一个或多个列进行排序，以确定排名的顺序。</li>
-</ul>
-<span id="more"></span>
-
-<h3 id="example"><a href="#example" class="headerlink" title="example"></a>example</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT name, salary, DENSE_RANK() OVER (ORDER BY salary DESC) AS dense_rank</span><br><span class="line">FROM employees;</span><br></pre></td></tr></table></figure>
-
-
-
-<p>当使用DENSE_RANK函数和PARTITION BY子句时，以下是示例查询的可能返回结果：</p>
-<p>示例1：对每个客户的订单金额进行排名</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT order_id, customer_id, order_amount,</span><br><span class="line">       DENSE_RANK() OVER (PARTITION BY customer_id ORDER BY order_amount DESC) AS dense_rank</span><br><span class="line">FROM orders;</span><br></pre></td></tr></table></figure>
-
-<table>
-<thead>
-<tr>
-<th>order_id</th>
-<th>customer_id</th>
-<th>order_amount</th>
-<th>dense_rank</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td>1001</td>
-<td>500</td>
-<td>1</td>
-</tr>
-<tr>
-<td>2</td>
-<td>1001</td>
-<td>500</td>
-<td>1</td>
-</tr>
-<tr>
-<td>3</td>
-<td>1001</td>
-<td>300</td>
-<td>2</td>
-</tr>
-<tr>
-<td>4</td>
-<td>1002</td>
-<td>700</td>
-<td>1</td>
-</tr>
-<tr>
-<td>5</td>
-<td>1002</td>
-<td>600</td>
-<td>2</td>
-</tr>
-<tr>
-<td>6</td>
-<td>1002</td>
-<td>600</td>
-<td>2</td>
-</tr>
-<tr>
-<td>7</td>
-<td>1002</td>
-<td>400</td>
-<td>3</td>
-</tr>
-</tbody></table>
-<p>在上述结果中，我们根据每个客户的订单金额进行了排名。客户ID为1001的客户有两个订单，订单金额都是500，因此它们被分配相同的密集排名1。客户ID为1001的第三个订单金额为300，所以它被分配密集排名2。对于客户ID为1002的客户，有一个订单金额为700，它被分配密集排名1，然后有两个订单金额为600，它们被分配密集排名2，最后一个订单金额为400，它被分配密集排名3。</p>
-<p>示例2：对每个班级的学生成绩进行排名</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT student_id, class_id, exam_score,</span><br><span class="line">       DENSE_RANK() OVER (PARTITION BY class_id ORDER BY exam_score DESC) AS dense_rank</span><br><span class="line">FROM students;</span><br></pre></td></tr></table></figure>
-
-<table>
-<thead>
-<tr>
-<th>student_id</th>
-<th>class_id</th>
-<th>exam_score</th>
-<th>dense_rank</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td>A</td>
-<td>95</td>
-<td>1</td>
-</tr>
-<tr>
-<td>2</td>
-<td>A</td>
-<td>90</td>
-<td>2</td>
-</tr>
-<tr>
-<td>3</td>
-<td>A</td>
-<td>85</td>
-<td>3</td>
-</tr>
-<tr>
-<td>4</td>
-<td>B</td>
-<td>92</td>
-<td>1</td>
-</tr>
-<tr>
-<td>5</td>
-<td>B</td>
-<td>88</td>
-<td>2</td>
-</tr>
-<tr>
-<td>6</td>
-<td>B</td>
-<td>88</td>
-<td>2</td>
-</tr>
-<tr>
-<td>7</td>
-<td>B</td>
-<td>80</td>
-<td>3</td>
-</tr>
-</tbody></table>
-<p>在上述结果中，我们根据每个班级的考试成绩进行了排名。班级ID为A的学生有三个学生，分别获得了95、90和85分，他们分别被分配密集排名1、2和3。班级ID为B的学生有四个学生，分别获得了92、88、88和80分，他们分别被分配密集排名1、2、2和3。</p>
-]]></content>
-      <categories>
-        <category>技术</category>
-        <category>数据分析</category>
-        <category>SQL</category>
-      </categories>
-      <tags>
-        <tag>笔记</tag>
-        <tag>SQL</tag>
-        <tag>排序</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>DATEDIFF_日期之差</title>
-    <url>/2023/03/02/DATEDIFF_%E6%97%A5%E6%9C%9F%E4%B9%8B%E5%B7%AE/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>DATEDIFF是一个SQL函数，用于计算两个日期之间的差距。</p>
-<p>DATEDIFF函数的语法如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">DATEDIFF(datepart, startdate, enddate)</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><code>datepart</code>参数是用于指定日期部分的字符串，表示希望计算的差距类型。常见的datepart包括：年(year)、季度(quarter)、月(month)、周(week)、天(day)、小时(hour)、分钟(minute)、秒(second)等。</li>
-<li><code>startdate</code>参数是起始日期。</li>
-<li><code>enddate</code>参数是结束日期。</li>
-</ul>
-<p>DATEDIFF函数会根据指定的datepart，计算出enddate与startdate之间的差距，并以整数形式返回差距值。</p>
-<p>以下是一个示例，演示如何使用DATEDIFF函数计算两个日期之间的天数差距：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT DATEDIFF(day, &#x27;2021-01-01&#x27;, &#x27;2021-01-10&#x27;) AS DayDifference;</span><br></pre></td></tr></table></figure>
-
-<p>上述查询将返回结果为9，表示从2021年1月1日到2021年1月10日之间相差了9天。</p>
-]]></content>
-      <categories>
-        <category>技术</category>
-        <category>数据分析</category>
-        <category>SQL</category>
-      </categories>
-      <tags>
-        <tag>笔记</tag>
-        <tag>SQL</tag>
+        <tag>hexo</tag>
+        <tag>markdown</tag>
+        <tag>插件</tag>
       </tags>
   </entry>
 </search>
