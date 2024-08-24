@@ -379,66 +379,6 @@
       </tags>
   </entry>
   <entry>
-    <title>在hexo博客中插入思维导图</title>
-    <url>/2019/05/24/%E5%9C%A8hexo%E5%8D%9A%E5%AE%A2%E4%B8%AD%E6%8F%92%E5%85%A5%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="https://github.com/maxchang3/hexo-markmap">hexo-markmap</a></p>
-<p><strong>使用示例</strong></p>
-<span id="more"></span>
-
-<figure class="highlight clean"><table><tr><td class="code"><pre><span class="line">&#123;% markmap <span class="number">400</span>px %&#125;</span><br><span class="line">  </span><br><span class="line"># Blog内容同步与自动更新流程  </span><br><span class="line">  </span><br><span class="line">## macOS  </span><br><span class="line">### 群晖Drive  </span><br><span class="line">- 同步Hexo的post目录到iCloud  </span><br><span class="line">  </span><br><span class="line">## iCloud  </span><br><span class="line">- 同步Hexo的post目录  </span><br><span class="line">- 跨苹果设备同步  </span><br><span class="line">  </span><br><span class="line">## 苹果设备  </span><br><span class="line">### 任意设备  </span><br><span class="line">- 撰写blog  </span><br><span class="line">- 通过iCloud同步到macOS  </span><br><span class="line">  </span><br><span class="line">## macOS（继续）  </span><br><span class="line">### 群晖Drive（继续）  </span><br><span class="line">- 将新blog内容同步至群晖  </span><br><span class="line">  </span><br><span class="line">## 群晖  </span><br><span class="line">- 将内容自动布置到GitHub  </span><br><span class="line">  </span><br><span class="line">## GitHub  </span><br><span class="line">- 自动更新blog网站</span><br><span class="line">&#123;% endmarkmap %&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>技术</category>
-        <category>博客</category>
-        <category>hexo</category>
-      </categories>
-      <tags>
-        <tag>markdown</tag>
-        <tag>hexo</tag>
-        <tag>插件</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>为部署在Github上的Hexo博客配置域名</title>
-    <url>/2019/05/25/%E4%B8%BA%E9%83%A8%E7%BD%B2%E5%9C%A8Github%E4%B8%8A%E7%9A%84Hexo%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE%E5%9F%9F%E5%90%8D/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="一、Hexo项目部署到Github"><a href="#一、Hexo项目部署到Github" class="headerlink" title="一、Hexo项目部署到Github"></a>一、<a href="https://so.csdn.net/so/search?q=Hexo&spm=1001.2101.3001.7020">Hexo</a>项目部署到Github</h4><p>首先要确保你的hexo项目已经部署到github上，如果不知道hexo项目如何部署到github上，请看另一篇文章↓</p>
-<a href="/2019/05/06/Git_Hexo/" title="群晖Git部署Hexo">群晖Git部署Hexo</a>
-
-<p>如果你的<strong>hexo项目已经搭建好</strong>，可直接跳转到<strong>第五步，看部署到Github</strong>的步骤。</p>
-<h4 id="二、解析域名到GitHub-Pages"><a href="#二、解析域名到GitHub-Pages" class="headerlink" title="二、解析域名到GitHub Pages"></a>二、解析域名到GitHub Pages</h4><h5 id="1：首先购买或注册一个域名"><a href="#1：首先购买或注册一个域名" class="headerlink" title="1：首先购买或注册一个域名"></a>1：首先购买或注册一个域名</h5><p>购买域名的渠道有很多，可以国内，也可以国外，本人是在国外的GoDaddy平台上买的（好处是管理比较方便，不用备案啥的了…），问题多的话我再写一篇具体申请的blog。</p>
-<h5 id="2：解析域名到Github"><a href="#2：解析域名到Github" class="headerlink" title="2：解析域名到Github"></a>2：解析域名到Github</h5><p>首先登录你域名注册商的控制面板，这里以GoDaddy为例</p>
-<span id="more"></span>
-
-<p>打开<strong>控制面板</strong></p>
-<p><img src="/2019/05/25/%E4%B8%BA%E9%83%A8%E7%BD%B2%E5%9C%A8Github%E4%B8%8A%E7%9A%84Hexo%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE%E5%9F%9F%E5%90%8D/image-20240428210042566.png"></p>
-<p>接着<strong>打开DNS配置页面</strong></p>
-<p><img src="/2019/05/25/%E4%B8%BA%E9%83%A8%E7%BD%B2%E5%9C%A8Github%E4%B8%8A%E7%9A%84Hexo%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE%E5%9F%9F%E5%90%8D/image-20240428210031684.png"></p>
-<p>接着<strong>添加以下几条解析</strong></p>
-<p><img src="/2019/05/25/%E4%B8%BA%E9%83%A8%E7%BD%B2%E5%9C%A8Github%E4%B8%8A%E7%9A%84Hexo%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE%E5%9F%9F%E5%90%8D/image-20240428210020252.png"></p>
-<p>上面几条IP地址是从<a href="">Github官网</a>上得来的，具体可以查看这个地址<a href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site#configuring-an-apex-domain">Managing a custom domain for your GitHub Pages site - GitHub Docs</a></p>
-<p>至此，域名注册服务商上的github pages域名解析我们就完成了！</p>
-<h4 id="三、配置Hexo项目"><a href="#三、配置Hexo项目" class="headerlink" title="三、配置Hexo项目"></a>三、配置Hexo项目</h4><ol>
-<li>在你的hexo项目的<strong>source</strong>文件夹根目录里添加一个<strong>CNAME</strong>文件（不带任何后缀的文件），CNAME里面的内容是你的<strong>域名</strong>。</li>
-<li>然后打开我们 hexo 项目的配置文件 <strong>_config.yml</strong> ，找到 <strong>url 配置项</strong> ，替换成我们的域名就可以了。</li>
-</ol>
-<h4 id="四、配置Github-Pages"><a href="#四、配置Github-Pages" class="headerlink" title="四、配置Github Pages"></a>四、配置Github Pages</h4><ol>
-<li>打开我们的hexo项目在github上的仓库，进入设置页面</li>
-<li>找到<strong>Pages选项</strong>，<code>Custom domain</code> 填上我们的<strong>域名</strong>，勾选上<strong>强制打开HTTPS</strong>。</li>
-<li>等DNS检查通过，稍微等一会，就可以用域名打开我们的Hexo部署在Github上的项目啦！</li>
-</ol>
-<p>原文链接： <a href="https://www.laodengai.com/domain-name-on-github-20240319/">Hexo 项目在 Github 上配置域名 | 老登 AI (laodengai.com)</a></p>
-]]></content>
-      <categories>
-        <category>技术</category>
-        <category>博客</category>
-        <category>hexo</category>
-      </categories>
-      <tags>
-        <tag>markdown</tag>
-        <tag>hexo</tag>
-        <tag>插件</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>鸡尾酒配方</title>
     <url>/2020/05/04/%E9%B8%A1%E5%B0%BE%E9%85%92%E9%85%8D%E6%96%B9/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="茶酒"><a href="#茶酒" class="headerlink" title="茶酒"></a>茶酒</h2><ul>
@@ -1750,68 +1690,22 @@
       </tags>
   </entry>
   <entry>
-    <title>机器学习笔记</title>
-    <url>/2023/05/04/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="k-近邻算法-KNN"><a href="#k-近邻算法-KNN" class="headerlink" title="k-近邻算法(KNN)"></a><a href="https://alv1.apachecn.org/#/docs/ml/2">k-近邻算法(KNN)</a></h1><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>KNN是一种基本的 #分类 和 #回归 方法。给一个训练数据集，对新的输入实例，在训练数据集中找到与之最接近（直线距离，欧式距离）的K个实例，这k个实例的多数分类，就是这个输入实例的分类。</p>
-<p>k值的取数决定KNN算法的准确性，太小会使模型变得复杂和过拟合，太大会使得模型变得简单。K值不宜过大过小，需要调试参数获取最好的结果。</p>
-<p>为避免：</p>
-<ol>
-<li>避免某些特征因数值范围过大，对模型产生过大的影响。比如身高在几百英寸，体重在几十公斤，如果不归一化，模型会倾向于选择影响更大的特征。</li>
-<li>避免某些特征因数值过小产生的数值精度问题。<br>需要进行 #特征归一化 处理，对特征的值进行放缩，使之落在一个特定的范围内，常见的范围是0到1之间或者-1到1之间。<span id="more"></span></li>
-</ol>
-<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><ol>
-<li>简单易实现，无需训练。</li>
-<li>可以处理非线性数据。</li>
-<li>对异常值不敏感。</li>
-</ol>
-<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><ol>
-<li>随着训练样本增加，计算成本会增加。</li>
-<li>K值的选择会影响结果。</li>
-<li>无法给出具有解释性的模型。</li>
-</ol>
-<h1 id="决策树-Decision-Tree"><a href="#决策树-Decision-Tree" class="headerlink" title="决策树(Decision Tree)"></a><a href="https://alv1.apachecn.org/#/docs/ml/3">决策树(Decision Tree)</a></h1><p>定义：</p>
-<h1 id="降维技术"><a href="#降维技术" class="headerlink" title="降维技术"></a><a href="https://alv1.apachecn.org/#/docs/ml/13?id=%e9%99%8d%e7%bb%b4%e6%8a%80%e6%9c%af">降维技术</a></h1><p>目的：</p>
-<ol>
-<li>使得数据集更容易使用</li>
-<li>降低很多算法的计算开销</li>
-<li>去除噪音</li>
-<li>使得结果易懂</li>
-</ol>
-<h2 id="3种降维算法"><a href="#3种降维算法" class="headerlink" title="3种降维算法"></a>3种降维算法</h2><h3 id="1-独立成分分析-Independ-Component-Analysis-ICA"><a href="#1-独立成分分析-Independ-Component-Analysis-ICA" class="headerlink" title="1. 独立成分分析(Independ Component Analysis, ICA)"></a>1. 独立成分分析(Independ Component Analysis, ICA)</h3><blockquote>
-<p>通俗理解: ICA 认为观测信号是若干个独立信号的线性组合，ICA 要做的是一个解混过程。</p>
-</blockquote>
-<h3 id="2-因子分析-Factor-Analysis"><a href="#2-因子分析-Factor-Analysis" class="headerlink" title="2. 因子分析(Factor Analysis)"></a>2. 因子分析(Factor Analysis)</h3><blockquote>
-<p>通俗理解: 将多个实测变量转换为少数几个综合指标。它反映一种降维的思想，通过降维将相关性高的变量聚在一起，从而减少需要分析的变量的数量，而减少问题分析的复杂性。</p>
-</blockquote>
-<h3 id="3-主成分分析-Principal-Component-Analysis-PCA"><a href="#3-主成分分析-Principal-Component-Analysis-PCA" class="headerlink" title="3. 主成分分析(Principal Component Analysis, PCA)"></a>3. 主成分分析(Principal Component Analysis, PCA)</h3><p>通俗理解：就是找出一个最主要的特征，然后进行分析。</p>
-<blockquote>
-<p>PCA 工作原理</p>
-</blockquote>
-<ol>
-<li>找出第一个主成分的方向，也就是数据 <code>方差最大</code> 的方向。</li>
-<li>找出第二个主成分的方向，也就是数据 <code>方差次大</code> 的方向，并且该方向与第一个主成分方向 <code>正交(orthogonal 如果是二维空间就叫垂直)</code>。</li>
-<li>通过这种方式计算出所有的主成分方向。</li>
-<li>通过数据集的协方差矩阵及其特征值分析，我们就可以得到这些主成分的值。</li>
-<li>一旦得到了协方差矩阵的特征值和特征向量，我们就可以保留最大的 N 个特征。这些特征向量也给出了 N 个最重要特征的真实结构，我们就可以通过将数据乘上这 N 个特征向量 从而将它转换到新的空间上。</li>
-</ol>
-<p>为什么正交？</p>
-<ol>
-<li>正交是为了数据有效性损失最小</li>
-<li>正交的一个原因是特征值的特征向量是正交的</li>
-</ol>
-<blockquote>
-<p>PCA 优缺点</p>
-</blockquote>
-<p>优点：降低数据的复杂性，识别最重要的多个特征。<br>缺点：不一定需要，且可能损失有用信息。<br>适用数据类型：数值型数据。</p>
-]]></content>
+    <title>在hexo博客中插入思维导图</title>
+    <url>/2019/05/24/%E5%9C%A8hexo%E5%8D%9A%E5%AE%A2%E4%B8%AD%E6%8F%92%E5%85%A5%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="https://github.com/maxchang3/hexo-markmap">hexo-markmap</a></p>
+<p><strong>使用示例</strong></p>
+<span id="more"></span>
+
+<figure class="highlight clean"><table><tr><td class="code"><pre><span class="line">&#123;% markmap <span class="number">400</span>px %&#125;</span><br><span class="line">  </span><br><span class="line"># Blog内容同步与自动更新流程  </span><br><span class="line">  </span><br><span class="line">## macOS  </span><br><span class="line">### 群晖Drive  </span><br><span class="line">- 同步Hexo的post目录到iCloud  </span><br><span class="line">  </span><br><span class="line">## iCloud  </span><br><span class="line">- 同步Hexo的post目录  </span><br><span class="line">- 跨苹果设备同步  </span><br><span class="line">  </span><br><span class="line">## 苹果设备  </span><br><span class="line">### 任意设备  </span><br><span class="line">- 撰写blog  </span><br><span class="line">- 通过iCloud同步到macOS  </span><br><span class="line">  </span><br><span class="line">## macOS（继续）  </span><br><span class="line">### 群晖Drive（继续）  </span><br><span class="line">- 将新blog内容同步至群晖  </span><br><span class="line">  </span><br><span class="line">## 群晖  </span><br><span class="line">- 将内容自动布置到GitHub  </span><br><span class="line">  </span><br><span class="line">## GitHub  </span><br><span class="line">- 自动更新blog网站</span><br><span class="line">&#123;% endmarkmap %&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>技术</category>
-        <category>数据分析</category>
-        <category>机器学习</category>
+        <category>博客</category>
+        <category>hexo</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
-        <tag>机器学习</tag>
+        <tag>markdown</tag>
+        <tag>hexo</tag>
+        <tag>插件</tag>
       </tags>
   </entry>
   <entry>
@@ -2454,6 +2348,71 @@
       </tags>
   </entry>
   <entry>
+    <title>机器学习笔记</title>
+    <url>/2023/05/04/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="k-近邻算法-KNN"><a href="#k-近邻算法-KNN" class="headerlink" title="k-近邻算法(KNN)"></a><a href="https://alv1.apachecn.org/#/docs/ml/2">k-近邻算法(KNN)</a></h1><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>KNN是一种基本的 #分类 和 #回归 方法。给一个训练数据集，对新的输入实例，在训练数据集中找到与之最接近（直线距离，欧式距离）的K个实例，这k个实例的多数分类，就是这个输入实例的分类。</p>
+<p>k值的取数决定KNN算法的准确性，太小会使模型变得复杂和过拟合，太大会使得模型变得简单。K值不宜过大过小，需要调试参数获取最好的结果。</p>
+<p>为避免：</p>
+<ol>
+<li>避免某些特征因数值范围过大，对模型产生过大的影响。比如身高在几百英寸，体重在几十公斤，如果不归一化，模型会倾向于选择影响更大的特征。</li>
+<li>避免某些特征因数值过小产生的数值精度问题。<br>需要进行 #特征归一化 处理，对特征的值进行放缩，使之落在一个特定的范围内，常见的范围是0到1之间或者-1到1之间。<span id="more"></span></li>
+</ol>
+<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><ol>
+<li>简单易实现，无需训练。</li>
+<li>可以处理非线性数据。</li>
+<li>对异常值不敏感。</li>
+</ol>
+<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><ol>
+<li>随着训练样本增加，计算成本会增加。</li>
+<li>K值的选择会影响结果。</li>
+<li>无法给出具有解释性的模型。</li>
+</ol>
+<h1 id="决策树-Decision-Tree"><a href="#决策树-Decision-Tree" class="headerlink" title="决策树(Decision Tree)"></a><a href="https://alv1.apachecn.org/#/docs/ml/3">决策树(Decision Tree)</a></h1><p>定义：</p>
+<h1 id="降维技术"><a href="#降维技术" class="headerlink" title="降维技术"></a><a href="https://alv1.apachecn.org/#/docs/ml/13?id=%e9%99%8d%e7%bb%b4%e6%8a%80%e6%9c%af">降维技术</a></h1><p>目的：</p>
+<ol>
+<li>使得数据集更容易使用</li>
+<li>降低很多算法的计算开销</li>
+<li>去除噪音</li>
+<li>使得结果易懂</li>
+</ol>
+<h2 id="3种降维算法"><a href="#3种降维算法" class="headerlink" title="3种降维算法"></a>3种降维算法</h2><h3 id="1-独立成分分析-Independ-Component-Analysis-ICA"><a href="#1-独立成分分析-Independ-Component-Analysis-ICA" class="headerlink" title="1. 独立成分分析(Independ Component Analysis, ICA)"></a>1. 独立成分分析(Independ Component Analysis, ICA)</h3><blockquote>
+<p>通俗理解: ICA 认为观测信号是若干个独立信号的线性组合，ICA 要做的是一个解混过程。</p>
+</blockquote>
+<h3 id="2-因子分析-Factor-Analysis"><a href="#2-因子分析-Factor-Analysis" class="headerlink" title="2. 因子分析(Factor Analysis)"></a>2. 因子分析(Factor Analysis)</h3><blockquote>
+<p>通俗理解: 将多个实测变量转换为少数几个综合指标。它反映一种降维的思想，通过降维将相关性高的变量聚在一起，从而减少需要分析的变量的数量，而减少问题分析的复杂性。</p>
+</blockquote>
+<h3 id="3-主成分分析-Principal-Component-Analysis-PCA"><a href="#3-主成分分析-Principal-Component-Analysis-PCA" class="headerlink" title="3. 主成分分析(Principal Component Analysis, PCA)"></a>3. 主成分分析(Principal Component Analysis, PCA)</h3><p>通俗理解：就是找出一个最主要的特征，然后进行分析。</p>
+<blockquote>
+<p>PCA 工作原理</p>
+</blockquote>
+<ol>
+<li>找出第一个主成分的方向，也就是数据 <code>方差最大</code> 的方向。</li>
+<li>找出第二个主成分的方向，也就是数据 <code>方差次大</code> 的方向，并且该方向与第一个主成分方向 <code>正交(orthogonal 如果是二维空间就叫垂直)</code>。</li>
+<li>通过这种方式计算出所有的主成分方向。</li>
+<li>通过数据集的协方差矩阵及其特征值分析，我们就可以得到这些主成分的值。</li>
+<li>一旦得到了协方差矩阵的特征值和特征向量，我们就可以保留最大的 N 个特征。这些特征向量也给出了 N 个最重要特征的真实结构，我们就可以通过将数据乘上这 N 个特征向量 从而将它转换到新的空间上。</li>
+</ol>
+<p>为什么正交？</p>
+<ol>
+<li>正交是为了数据有效性损失最小</li>
+<li>正交的一个原因是特征值的特征向量是正交的</li>
+</ol>
+<blockquote>
+<p>PCA 优缺点</p>
+</blockquote>
+<p>优点：降低数据的复杂性，识别最重要的多个特征。<br>缺点：不一定需要，且可能损失有用信息。<br>适用数据类型：数值型数据。</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>数据分析</category>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+        <tag>机器学习</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>这可能是我见过最好的 NumPy 图解教程！</title>
     <url>/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
@@ -2531,43 +2490,6 @@
         <tag>笔记</tag>
         <tag>python</tag>
         <tag>numpy</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>我的极简生活经验</title>
-    <url>/2024/01/22/%E6%88%91%E7%9A%84%E6%9E%81%E7%AE%80%E7%94%9F%E6%B4%BB%E7%BB%8F%E9%AA%8C/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="我的极简生活经验：恰到好处的生活艺术"><a href="#我的极简生活经验：恰到好处的生活艺术" class="headerlink" title="我的极简生活经验：恰到好处的生活艺术"></a>我的极简生活经验：恰到好处的生活艺术</h1><p>今天我想和大家分享一下我对极简主义的理解。我非常喜欢这种生活方式，但并不是说每个人都需要极简。有些人喜欢收藏，有些人喜欢购物，买很多东西，只要能让自己舒心，任何生活方式都是好的。但如果你也喜欢简单的生活方式，或者有点儿强迫症，那么这些小建议可能适合你。</p>
-<p>首先，极简主义并不意味着把大部分东西都扔掉，或者在空无一物的环境中生活。极简主义是选择对你重要的东西，而不在于数量多少。同时，也没有必要每个地方都极简。比如说你喜欢读书和收藏，完全可以精挑细选地去置办。极简生活更多的是减少生活中不必要的元素，让你更多地专注在真正重要的事物上。</p>
-<p>经常性的整理是开始的第一步。一般来说，整理包括扔东西、卖二手、收纳起来。不要总觉得留着以后能用上，如果近一年都没用过，基本上以后也用不上。</p>
-<span id="more"></span>
-<ul>
-<li>扔东西：可以先从冰箱和厨房开始，把过期的、好久没有动过的东西扔掉。接着收拾各种抽屉和柜子，比如已经坏掉的物件、没有用的配件、廉价的充电线、没用的说明书、之前的票据、快递盒子和购物袋子等。一般来说，这些都是随手放进去，觉得以后会用的，但实际上过了很久也没有用到的东西。</li>
-<li>卖二手：接下来你会发现有不少东西其实扔掉有些可惜，但是自己又不怎么用了。对于不太值钱但是还有些用的东西，比如再也不看的书、两年都没有穿的旧衣服，可以去支付宝或其他App看看有没有上门回收捐赠的服务。对于还值点钱的，但是因为消费冲动而买的东西，可以擦干净、拍照发到闲鱼上，卖给下一个冲动消费的人。这样可以帮你回一些本。一般来说，比如几乎半年都不用的耳机、二手电脑、手表、小电器这一类很好出手，留下你一直在用而且很好用的那个就好，重复功能的东西只留一件。</li>
-<li>收纳起来：如果收纳空间有限，可以买几个收纳箱和真空收纳袋。这样你的存放物体的体积缩小一半，放到看不到的地方。比如不是这个季节的衣服、被子，都可以用收纳袋抽干收起来。对于不太方便用袋子装的，可以用盒子装起来放到柜子里，让它整齐和知晓位置，让每一个物品都有它特定的空间位置，用完返回原处，下次找起来会很方便。</li>
-</ul>
-<p>上面整理的这一步，会花费你一些周末时间。但是当整理完成，打扫干净区域后，一般都会让你心情舒畅，感觉很爽。</p>
-<p>接着第二步，慢慢培养自己的消费观。这里一般有几个建议：只买好的、不被消费主义、有目的的购买、不要囤东西。</p>
-<ul>
-<li>只买好的：很多时候东西多的一个很大原因，就是买了很多自己觉得用得上的东西，或者是买的时候有些纠结，但是最后还是买了的那些东西，基本上放柜子里也不想用，还后悔。对于必须品而言，一般建议购买力所能及范围内更好的那一个，比如说手机、电脑、衣服、鞋子、耳机这一类，品质好，价格稍贵，但是会让你很长时间不会纠结要不要换一个更好的，同时也让你生活品质其实会更好。这里还可以新入了一件，可以尽快把之前那件按照第一步方法给整理掉。</li>
-<li>不被消费主义：越来越觉得，现在生活中大部分必须品都已经很满足了。很多时候消费都是属于仪式感下的消费，比如说看到小红书推荐、抖音里面的好东西、得物上的潮流东西，会很容易被当时那个环境下误导下单。因为做电商的开发应该都知道，那一个个小功能其实都是一个大的产品业务团队同学天天想方设法迭代用来提高转化率用的，想方设法让你购买。</li>
-<li>有目的的购买：很容易出现在逛超市、逛山姆的时候，进去前就想着随便逛逛，结果你会发现出来后买了几百块东西，仔细一想，不少是属于可以买可不买的。其实可以在出发前，先想想这次要买的东西，列一个很简单的清单，就不会剁手买一些自认为需要的东西。而且这种有目的的挑选方式会让你更舒服。这里同样适合去逛街的时候，先想好要买的东西和品牌。</li>
-<li>不要囤东西：囤东西本意是为了省钱和省心，当时很多时候买一箱箱的纸、洗衣液、沐浴露用一两年反而会让你烦心，甚至还会出现为了尽快用完，double使用的方式，其实反而浪费了，还占用了你家里很多东西来放这些很多。很多时候，这些东西没有那么紧急，需要下单到到家其实很快的。这里还有一个东西也是容易囤的，那就是实体书了。这里可以先看电子书，再买纸质书，搬家的时候这东西很重的。</li>
-</ul>
-<p>减少网络中的被动消息：上面从出和入两步控制住了你生活中的物件，其实还有一块是虚拟生活中的东西，其实也可以极简起来。这里说的是手机、电脑、知识这几块接收，信息的过载很多时候也让人过得不顺畅，尽量减少被动信息的接收，需要的信息主动寻找。</p>
-<ul>
-<li>App处理：我一般做法是3个月不用的App删除掉，用的时候再装，用完又卸载或者直接用小程序，这样手机App基本上控制在2屏，完全可以满足生活所需。第二个是，控制所有App的消息，我一般只开启银行交易、支付宝交易、微信、工作软件的消息通知，其他的App的消息我都在设置里面去掉了，屏幕上没有小红点，同时很多App里面也可以设置去掉一些营销通知。第三个是，不装新闻软件、不装抖音快手，差不多一年多没有装了，感觉不太需要这种看着有用的新闻消息。这里对于电脑上的软件也是一样。</li>
-<li>资料整理：删除没有用的短消息，其实大部分都没有用，我平时一般是除了亲人信息，其他的定期全删除。然后第二个就是删除没有用的图片和视频，这里可以删除很多东西。第三个是删除没有用的微信聊天消息，之前不知道怎么加上的人也可以删除掉，让你常用的工具都是清爽的。这里对于电脑上的东西也是一样。</li>
-<li>主动接受消息：刚刚这些东西用于处理被动的消息接受，尽可能减少算法灌东西给你。更多的可以订阅RSS接收消息，关注喜欢的博主接收消息，不喜欢的直接屏蔽或者mute就好了。同时，免打扰模式在你需要专注的时候可以开启起来，也即减少你不想看到的消息有很多你自己可以做的事情。</li>
-</ul>
-<p>差不多碎碎念完了，归根结底最重要的就是勤收拾、买好不买多、主动接收这几块。这种极简生活的方式很多时候可以影响一个人的三观，包括他的生活、工作方式、他的喜好性格。最后，同样也希望你快乐，过得幸福。</p>
-]]></content>
-      <categories>
-        <category>生活</category>
-        <category>碎碎念</category>
-      </categories>
-      <tags>
-        <tag>随笔</tag>
-        <tag>分享</tag>
       </tags>
   </entry>
   <entry>
@@ -11361,6 +11283,153 @@
       </tags>
   </entry>
   <entry>
+    <title>为部署在Github上的Hexo博客配置域名</title>
+    <url>/2019/05/25/%E4%B8%BA%E9%83%A8%E7%BD%B2%E5%9C%A8Github%E4%B8%8A%E7%9A%84Hexo%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE%E5%9F%9F%E5%90%8D/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="一、Hexo项目部署到Github"><a href="#一、Hexo项目部署到Github" class="headerlink" title="一、Hexo项目部署到Github"></a>一、<a href="https://so.csdn.net/so/search?q=Hexo&spm=1001.2101.3001.7020">Hexo</a>项目部署到Github</h4><p>首先要确保你的hexo项目已经部署到github上，如果不知道hexo项目如何部署到github上，请看另一篇文章↓</p>
+<a href="/2019/05/06/Git_Hexo/" title="群晖Git部署Hexo">群晖Git部署Hexo</a>
+
+<p>如果你的<strong>hexo项目已经搭建好</strong>，可直接跳转到<strong>第五步，看部署到Github</strong>的步骤。</p>
+<h4 id="二、解析域名到GitHub-Pages"><a href="#二、解析域名到GitHub-Pages" class="headerlink" title="二、解析域名到GitHub Pages"></a>二、解析域名到GitHub Pages</h4><h5 id="1：首先购买或注册一个域名"><a href="#1：首先购买或注册一个域名" class="headerlink" title="1：首先购买或注册一个域名"></a>1：首先购买或注册一个域名</h5><p>购买域名的渠道有很多，可以国内，也可以国外，本人是在国外的GoDaddy平台上买的（好处是管理比较方便，不用备案啥的了…），问题多的话我再写一篇具体申请的blog。</p>
+<h5 id="2：解析域名到Github"><a href="#2：解析域名到Github" class="headerlink" title="2：解析域名到Github"></a>2：解析域名到Github</h5><p>首先登录你域名注册商的控制面板，这里以GoDaddy为例</p>
+<span id="more"></span>
+
+<p>打开<strong>控制面板</strong></p>
+<p><img src="/2019/05/25/%E4%B8%BA%E9%83%A8%E7%BD%B2%E5%9C%A8Github%E4%B8%8A%E7%9A%84Hexo%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE%E5%9F%9F%E5%90%8D/image-20240428210042566.png"></p>
+<p>接着<strong>打开DNS配置页面</strong></p>
+<p><img src="/2019/05/25/%E4%B8%BA%E9%83%A8%E7%BD%B2%E5%9C%A8Github%E4%B8%8A%E7%9A%84Hexo%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE%E5%9F%9F%E5%90%8D/image-20240428210031684.png"></p>
+<p>接着<strong>添加以下几条解析</strong></p>
+<p><img src="/2019/05/25/%E4%B8%BA%E9%83%A8%E7%BD%B2%E5%9C%A8Github%E4%B8%8A%E7%9A%84Hexo%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE%E5%9F%9F%E5%90%8D/image-20240428210020252.png"></p>
+<p>上面几条IP地址是从<a href="">Github官网</a>上得来的，具体可以查看这个地址<a href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site#configuring-an-apex-domain">Managing a custom domain for your GitHub Pages site - GitHub Docs</a></p>
+<p>至此，域名注册服务商上的github pages域名解析我们就完成了！</p>
+<h4 id="三、配置Hexo项目"><a href="#三、配置Hexo项目" class="headerlink" title="三、配置Hexo项目"></a>三、配置Hexo项目</h4><ol>
+<li>在你的hexo项目的<strong>source</strong>文件夹根目录里添加一个<strong>CNAME</strong>文件（不带任何后缀的文件），CNAME里面的内容是你的<strong>域名</strong>。</li>
+<li>然后打开我们 hexo 项目的配置文件 <strong>_config.yml</strong> ，找到 <strong>url 配置项</strong> ，替换成我们的域名就可以了。</li>
+</ol>
+<h4 id="四、配置Github-Pages"><a href="#四、配置Github-Pages" class="headerlink" title="四、配置Github Pages"></a>四、配置Github Pages</h4><ol>
+<li>打开我们的hexo项目在github上的仓库，进入设置页面</li>
+<li>找到<strong>Pages选项</strong>，<code>Custom domain</code> 填上我们的<strong>域名</strong>，勾选上<strong>强制打开HTTPS</strong>。</li>
+<li>等DNS检查通过，稍微等一会，就可以用域名打开我们的Hexo部署在Github上的项目啦！</li>
+</ol>
+<p>原文链接： <a href="https://www.laodengai.com/domain-name-on-github-20240319/">Hexo 项目在 Github 上配置域名 | 老登 AI (laodengai.com)</a></p>
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>博客</category>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>markdown</tag>
+        <tag>hexo</tag>
+        <tag>插件</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>第二大脑的基石CODE理论</title>
+    <url>/2024/05/08/%E7%AC%AC%E4%BA%8C%E5%A4%A7%E8%84%91%E7%9A%84%E5%9F%BA%E7%9F%B3CODE%E7%90%86%E8%AE%BA/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>从安卓的记事本，锤子便签，Evernote，onenote，GoogleKeep，Simplenote，Bear，GoodNotes，Notability，Apple Notes到近些年热门的Notion，Obsidian，各种各样的笔记类软件都使用过，寻觅某一款功能强大的笔记软件可以承载我对知识的渴望，搭建出一个符合个人需求的知识体系。但知识本来就浩如烟海，在移动互联的如今，知识更是触手可及，信息量史无前例的丰富。感觉看了很多的文章，了解到了非常多有意思的项目，但发现自己只是了解到皮毛，没有合适的学习方法，没有系统性的学习和记录，在无尽的信息面前，感受到的只有无比的空洞与彷徨。</p>
+<p>最近非常幸运的看到一本书，让我意识到，解决这个问题的根源，并不是某一款功能强大的笔记软件，而是一种适用广泛的方法论。</p>
+<span id="more"></span>
+
+<p>《打造第二大脑》，作者Tiago Forte在书中提出的 “CODE”知识管理的理论方法似乎解答了这个让我深深忧虑的问题。</p>
+<img src="/_posts/2024_05_08_第二大脑的基石CODE理论/bookCover.png" width="400" height="600">
+
+<p>“CODE法则”包含四个步骤：</p>
+<ul>
+<li>C for Capture - 收集：把引发共鸣的信息收集起来</li>
+<li>O for Organize- 整理：对收集的这些信息进行整理</li>
+<li>D for Distill - 提炼：提炼这些内容的精髓，筛选最有用的信息</li>
+<li>E for Express - 表达：和他人分享，在实践中去应用你的知识</li>
+</ul>
+<p>CODE法则具有广泛的适用性，不受信息复杂性的限制。无论你是校园中求知的学子，还是职场中追求卓越的专业人士，这套理论都能成为你高效管理知识的得力工具。在生活的不同阶段，面对多变的环境挑战，CODE理论能够帮助你系统地整合知识，让你所学得到最大化的应用。</p>
+<h2 id="C-for-Capture-收集"><a href="#C-for-Capture-收集" class="headerlink" title="C for Capture - 收集"></a>C for Capture - 收集</h2><p>在信息丰富的数字时代，我们常常会遇到激发我们兴趣或我们认为将来可能派上用场的信息和知识。我们的本能反应是将这些信息保存下来，这正对应了CODE法则中的“C”——捕捉(Capture)。捕捉信息几乎是一项无师自通的基本技能，无论是通过书签、截图、下载还是其他任何数字化的手段，我们都能轻松地将信息保存下来，以便日后参考。</p>
+<p>不知道大家是否和我一样，在不同的平台收藏各种各样的数字内容，文字、图片、视频还有语音，但常常收藏后就再也没有会看过，有时等我在收藏夹中发现是，这条信息甚至已经过期无法访问了。</p>
+<p>作者<code>Tiago Forte</code>给出的解决方案是：<strong>Keep What Resonates：只收集那些能让你产生共鸣的内容</strong> </p>
+<h2 id="O-for-Organize-整理"><a href="#O-for-Organize-整理" class="headerlink" title="O for Organize- 整理"></a>O for Organize- 整理</h2><p>面对众多平台上积累的丰富信息，每隔一段时间，我都会尝试将它们整理到我的笔记中，消解内化成我自己的知识。</p>
+<p>但面对复杂的，彼此相关度很低的信息，我总会感觉到巨大的整理压力。一个项目的素材，我可能会在其他领域复用，一个视频的内容它可能关联多个主题。每一条信息的整理，我都在纠结整理的方法和依据，以便今后可以快速的查询和使用。虽然数字化平台已经提供了快速检索的能力，但我总是在无法快速直接的找到我想要的信息。</p>
+<p>不知道多少人和我一样使用按主题分类，一种我们从学校保留下来的分类习惯。语文或者某个专业课的书本材料放在一起，上课我只需要拿上归类好的材料就可以。不同科目的材料基本不会有关联，不用担心材料&#x2F;信息在不同科目之间的复用。书本和知识都是按学期存放，一旦学期结束，考完试，之前的书本材料很少会重新用到。</p>
+<p>但主题这种分类方法显然不再适用于面对无限可能的人生。我并不知道这个收藏并感兴趣的信息的“考试”在什么时候，它可能在我收集后的第二天就会被用到，有可能在未来几年才会在我的某个项目中体现，又或者它可能完全不会被用到。</p>
+<p>作者<code>Tiago Forte</code>给出的解决方案是：</p>
+<p><strong>PARA分类系统</strong></p>
+<p>PARA系统指的是Projects&#x2F;项目 、Areas&#x2F;领域、Resources&#x2F;资源、Archives&#x2F;归档。</p>
+<p>聚焦于信息的用途和目的，根据实用性来获取及储存信息。</p>
+<ul>
+<li><strong>Projects &#x2F; 项目</strong>：当下正在进行中的任务，需要有明确的结果且有时间限制，比如一个视频，网页，方案，短期想达到的语言目标等；</li>
+<li><strong>Areas &#x2F; 领域</strong>：想要精通的领域，是你长期想要持续学习和精进的方向。比如摄影、Coding或者健身；</li>
+<li><strong>Resources &#x2F; 资源：</strong> 未来可参考的事物，收集那些用得上的资源，感兴趣的知识，业余的爱好等。</li>
+<li><strong>Archives &#x2F; 归档：</strong> 来自其他三类的归档。已完成的项目，不再感兴趣的领域，不再相关的资源等，可以都先放在这里，需要时可以重新启用。</li>
+</ul>
+<p>用这样的分类方式可以来分类任何来源、格式和用途的信息， 不再局限于时间的维度，是一个动态的管理信息的系统。</p>
+<h2 id="D-for-Distill-提炼"><a href="#D-for-Distill-提炼" class="headerlink" title="D for Distill - 提炼"></a>D for Distill - 提炼</h2><p>作者<code>Tiago Forte</code>提出使用<strong>渐进式总结法-The Progressive Summarization Technique</strong>对内容进行多次提炼，<strong>提炼信息的本质-Distill your notes down to their essence</strong>。</p>
+<p><strong>渐进式总结法-The Progressive Summarization Technique</strong></p>
+<blockquote>
+<ol>
+<li>摘录笔记-Capture notes </li>
+<li>加粗段落-Bolded passages</li>
+<li>高亮段落-Highlighted passages</li>
+<li>总结-Excutive summary</li>
+</ol>
+</blockquote>
+<p>渐进式总结法的目的是为提炼关键信息，提炼信息的本质，方便未来的自己可以快速查询和使用笔记。</p>
+<h2 id="E-for-Express-表达"><a href="#E-for-Express-表达" class="headerlink" title="E for Express - 表达"></a>E for Express - 表达</h2><blockquote>
+<p>”We only know what we make” - Giambattista Vico, Italian philosopher</p>
+</blockquote>
+<p>关于如何分享，作者<code>Tiago Forte</code>也给出了自己的宗旨：<br><code>尽早并频繁的分享自己的一些小想法，从而测试可行性并从他人获取反馈，而不是等到你完美的掌握了一切信息再去分享。</code></p>
+<p>通过将工作进行拆分，从以前的项目中重用这些模块，从而提高工作的效率和质量。</p>
+<p><strong>表达的三个阶段</strong></p>
+<ol>
+<li>**记忆 (Remembering)**：这一阶段，人们主要使用第二大脑作为记忆工具，将重要的事实和想法保存起来，以备将来需要时查阅。</li>
+<li>**连接 (Connecting)**：随着对第二大脑的使用逐渐熟悉，人们开始利用它来连接想法。可能会从过去项目中未被采用的材料或想法中发现新的关联，或者在不同的项目、领域和资源之间发现联系。</li>
+<li>**创造 (Creating)**：最后，人们开始利用第二大脑来完成项目和实现目标。他们发现自己的知识库中有足够的信息来开始新项目，从而减轻了需要从头开始研究的压力。</li>
+</ol>
+<p>创造性工作的本质在于对现有元素的重新组合和融合。第二大脑为我们提供了一个平台，使我们能够充分利用他人的作品，在创作时引用和融合已有的观点和思想，以提高工作效率和创造性工作的质量。</p>
+]]></content>
+      <categories>
+        <category>生活</category>
+        <category>碎碎念</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+        <tag>分享</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>我的极简生活经验</title>
+    <url>/2024/01/22/%E6%88%91%E7%9A%84%E6%9E%81%E7%AE%80%E7%94%9F%E6%B4%BB%E7%BB%8F%E9%AA%8C/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="我的极简生活经验：恰到好处的生活艺术"><a href="#我的极简生活经验：恰到好处的生活艺术" class="headerlink" title="我的极简生活经验：恰到好处的生活艺术"></a>我的极简生活经验：恰到好处的生活艺术</h1><p>今天我想和大家分享一下我对极简主义的理解。我非常喜欢这种生活方式，但并不是说每个人都需要极简。有些人喜欢收藏，有些人喜欢购物，买很多东西，只要能让自己舒心，任何生活方式都是好的。但如果你也喜欢简单的生活方式，或者有点儿强迫症，那么这些小建议可能适合你。</p>
+<p>首先，极简主义并不意味着把大部分东西都扔掉，或者在空无一物的环境中生活。极简主义是选择对你重要的东西，而不在于数量多少。同时，也没有必要每个地方都极简。比如说你喜欢读书和收藏，完全可以精挑细选地去置办。极简生活更多的是减少生活中不必要的元素，让你更多地专注在真正重要的事物上。</p>
+<p>经常性的整理是开始的第一步。一般来说，整理包括扔东西、卖二手、收纳起来。不要总觉得留着以后能用上，如果近一年都没用过，基本上以后也用不上。</p>
+<span id="more"></span>
+<ul>
+<li>扔东西：可以先从冰箱和厨房开始，把过期的、好久没有动过的东西扔掉。接着收拾各种抽屉和柜子，比如已经坏掉的物件、没有用的配件、廉价的充电线、没用的说明书、之前的票据、快递盒子和购物袋子等。一般来说，这些都是随手放进去，觉得以后会用的，但实际上过了很久也没有用到的东西。</li>
+<li>卖二手：接下来你会发现有不少东西其实扔掉有些可惜，但是自己又不怎么用了。对于不太值钱但是还有些用的东西，比如再也不看的书、两年都没有穿的旧衣服，可以去支付宝或其他App看看有没有上门回收捐赠的服务。对于还值点钱的，但是因为消费冲动而买的东西，可以擦干净、拍照发到闲鱼上，卖给下一个冲动消费的人。这样可以帮你回一些本。一般来说，比如几乎半年都不用的耳机、二手电脑、手表、小电器这一类很好出手，留下你一直在用而且很好用的那个就好，重复功能的东西只留一件。</li>
+<li>收纳起来：如果收纳空间有限，可以买几个收纳箱和真空收纳袋。这样你的存放物体的体积缩小一半，放到看不到的地方。比如不是这个季节的衣服、被子，都可以用收纳袋抽干收起来。对于不太方便用袋子装的，可以用盒子装起来放到柜子里，让它整齐和知晓位置，让每一个物品都有它特定的空间位置，用完返回原处，下次找起来会很方便。</li>
+</ul>
+<p>上面整理的这一步，会花费你一些周末时间。但是当整理完成，打扫干净区域后，一般都会让你心情舒畅，感觉很爽。</p>
+<p>接着第二步，慢慢培养自己的消费观。这里一般有几个建议：只买好的、不被消费主义、有目的的购买、不要囤东西。</p>
+<ul>
+<li>只买好的：很多时候东西多的一个很大原因，就是买了很多自己觉得用得上的东西，或者是买的时候有些纠结，但是最后还是买了的那些东西，基本上放柜子里也不想用，还后悔。对于必须品而言，一般建议购买力所能及范围内更好的那一个，比如说手机、电脑、衣服、鞋子、耳机这一类，品质好，价格稍贵，但是会让你很长时间不会纠结要不要换一个更好的，同时也让你生活品质其实会更好。这里还可以新入了一件，可以尽快把之前那件按照第一步方法给整理掉。</li>
+<li>不被消费主义：越来越觉得，现在生活中大部分必须品都已经很满足了。很多时候消费都是属于仪式感下的消费，比如说看到小红书推荐、抖音里面的好东西、得物上的潮流东西，会很容易被当时那个环境下误导下单。因为做电商的开发应该都知道，那一个个小功能其实都是一个大的产品业务团队同学天天想方设法迭代用来提高转化率用的，想方设法让你购买。</li>
+<li>有目的的购买：很容易出现在逛超市、逛山姆的时候，进去前就想着随便逛逛，结果你会发现出来后买了几百块东西，仔细一想，不少是属于可以买可不买的。其实可以在出发前，先想想这次要买的东西，列一个很简单的清单，就不会剁手买一些自认为需要的东西。而且这种有目的的挑选方式会让你更舒服。这里同样适合去逛街的时候，先想好要买的东西和品牌。</li>
+<li>不要囤东西：囤东西本意是为了省钱和省心，当时很多时候买一箱箱的纸、洗衣液、沐浴露用一两年反而会让你烦心，甚至还会出现为了尽快用完，double使用的方式，其实反而浪费了，还占用了你家里很多东西来放这些很多。很多时候，这些东西没有那么紧急，需要下单到到家其实很快的。这里还有一个东西也是容易囤的，那就是实体书了。这里可以先看电子书，再买纸质书，搬家的时候这东西很重的。</li>
+</ul>
+<p>减少网络中的被动消息：上面从出和入两步控制住了你生活中的物件，其实还有一块是虚拟生活中的东西，其实也可以极简起来。这里说的是手机、电脑、知识这几块接收，信息的过载很多时候也让人过得不顺畅，尽量减少被动信息的接收，需要的信息主动寻找。</p>
+<ul>
+<li>App处理：我一般做法是3个月不用的App删除掉，用的时候再装，用完又卸载或者直接用小程序，这样手机App基本上控制在2屏，完全可以满足生活所需。第二个是，控制所有App的消息，我一般只开启银行交易、支付宝交易、微信、工作软件的消息通知，其他的App的消息我都在设置里面去掉了，屏幕上没有小红点，同时很多App里面也可以设置去掉一些营销通知。第三个是，不装新闻软件、不装抖音快手，差不多一年多没有装了，感觉不太需要这种看着有用的新闻消息。这里对于电脑上的软件也是一样。</li>
+<li>资料整理：删除没有用的短消息，其实大部分都没有用，我平时一般是除了亲人信息，其他的定期全删除。然后第二个就是删除没有用的图片和视频，这里可以删除很多东西。第三个是删除没有用的微信聊天消息，之前不知道怎么加上的人也可以删除掉，让你常用的工具都是清爽的。这里对于电脑上的东西也是一样。</li>
+<li>主动接受消息：刚刚这些东西用于处理被动的消息接受，尽可能减少算法灌东西给你。更多的可以订阅RSS接收消息，关注喜欢的博主接收消息，不喜欢的直接屏蔽或者mute就好了。同时，免打扰模式在你需要专注的时候可以开启起来，也即减少你不想看到的消息有很多你自己可以做的事情。</li>
+</ul>
+<p>差不多碎碎念完了，归根结底最重要的就是勤收拾、买好不买多、主动接收这几块。这种极简生活的方式很多时候可以影响一个人的三观，包括他的生活、工作方式、他的喜好性格。最后，同样也希望你快乐，过得幸福。</p>
+]]></content>
+      <categories>
+        <category>生活</category>
+        <category>碎碎念</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+        <tag>分享</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>关于Obsidian笔记软件的笔记</title>
     <url>/2024/04/28/%E5%85%B3%E4%BA%8EObsidian%E7%AC%94%E8%AE%B0%E8%BD%AF%E4%BB%B6%E7%9A%84%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
@@ -11430,75 +11499,6 @@
 <p>在现代社会中，人们往往过于依赖他人和社会的标准来衡量自己的生活质量和价值观。他们追求物质的满足和社会的认可，却忽略了自己内心的声音。他们追逐名利和地位，却忘记了自己真正的需求和追求。他们追求别人的期望和评价，却忽略了自己的感受和想法。</p>
 <p>然而，真正的生存和生活的意义并不在于外界的评价和认可，而在于我们对自己的认知和接纳。我们需要回归内心，去寻找自己真正的需求和想法。我们需要静下心来，去倾听自己内心的声音。我们需要勇气和决心，去追随自己内心的指引。</p>
 <p>只有当我们真正了解自己的需求和想法时，我们才能找到生存和生活的真正意义。只有当我们真正接纳自己并为之努力时，我们才能过上充实和满足的生活。只有当我们真正追求自己内心的声音时，我们才能找到属于自己的幸福和成功。</p>
-]]></content>
-      <categories>
-        <category>生活</category>
-        <category>碎碎念</category>
-      </categories>
-      <tags>
-        <tag>随笔</tag>
-        <tag>分享</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>第二大脑的基石CODE理论</title>
-    <url>/2024/05/08/%E7%AC%AC%E4%BA%8C%E5%A4%A7%E8%84%91%E7%9A%84%E5%9F%BA%E7%9F%B3CODE%E7%90%86%E8%AE%BA/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>从安卓的记事本，锤子便签，Evernote，onenote，GoogleKeep，Simplenote，Bear，GoodNotes，Notability，Apple Notes到近些年热门的Notion，Obsidian，各种各样的笔记类软件都使用过，寻觅某一款功能强大的笔记软件可以承载我对知识的渴望，搭建出一个符合个人需求的知识体系。但知识本来就浩如烟海，在移动互联的如今，知识更是触手可及，信息量史无前例的丰富。感觉看了很多的文章，了解到了非常多有意思的项目，但发现自己只是了解到皮毛，没有合适的学习方法，没有系统性的学习和记录，在无尽的信息面前，感受到的只有无比的空洞与彷徨。</p>
-<p>最近非常幸运的看到一本书，让我意识到，解决这个问题的根源，并不是某一款功能强大的笔记软件，而是一种适用广泛的方法论。</p>
-<span id="more"></span>
-
-<p>《打造第二大脑》，作者Tiago Forte在书中提出的 “CODE”知识管理的理论方法似乎解答了这个让我深深忧虑的问题。</p>
-<img src="/_posts/2024_05_08_第二大脑的基石CODE理论/bookCover.png" width="400" height="600">
-
-<p>“CODE法则”包含四个步骤：</p>
-<ul>
-<li>C for Capture - 收集：把引发共鸣的信息收集起来</li>
-<li>O for Organize- 整理：对收集的这些信息进行整理</li>
-<li>D for Distill - 提炼：提炼这些内容的精髓，筛选最有用的信息</li>
-<li>E for Express - 表达：和他人分享，在实践中去应用你的知识</li>
-</ul>
-<p>CODE法则具有广泛的适用性，不受信息复杂性的限制。无论你是校园中求知的学子，还是职场中追求卓越的专业人士，这套理论都能成为你高效管理知识的得力工具。在生活的不同阶段，面对多变的环境挑战，CODE理论能够帮助你系统地整合知识，让你所学得到最大化的应用。</p>
-<h2 id="C-for-Capture-收集"><a href="#C-for-Capture-收集" class="headerlink" title="C for Capture - 收集"></a>C for Capture - 收集</h2><p>在信息丰富的数字时代，我们常常会遇到激发我们兴趣或我们认为将来可能派上用场的信息和知识。我们的本能反应是将这些信息保存下来，这正对应了CODE法则中的“C”——捕捉(Capture)。捕捉信息几乎是一项无师自通的基本技能，无论是通过书签、截图、下载还是其他任何数字化的手段，我们都能轻松地将信息保存下来，以便日后参考。</p>
-<p>不知道大家是否和我一样，在不同的平台收藏各种各样的数字内容，文字、图片、视频还有语音，但常常收藏后就再也没有会看过，有时等我在收藏夹中发现是，这条信息甚至已经过期无法访问了。</p>
-<p>作者<code>Tiago Forte</code>给出的解决方案是：<strong>Keep What Resonates：只收集那些能让你产生共鸣的内容</strong> </p>
-<h2 id="O-for-Organize-整理"><a href="#O-for-Organize-整理" class="headerlink" title="O for Organize- 整理"></a>O for Organize- 整理</h2><p>面对众多平台上积累的丰富信息，每隔一段时间，我都会尝试将它们整理到我的笔记中，消解内化成我自己的知识。</p>
-<p>但面对复杂的，彼此相关度很低的信息，我总会感觉到巨大的整理压力。一个项目的素材，我可能会在其他领域复用，一个视频的内容它可能关联多个主题。每一条信息的整理，我都在纠结整理的方法和依据，以便今后可以快速的查询和使用。虽然数字化平台已经提供了快速检索的能力，但我总是在无法快速直接的找到我想要的信息。</p>
-<p>不知道多少人和我一样使用按主题分类，一种我们从学校保留下来的分类习惯。语文或者某个专业课的书本材料放在一起，上课我只需要拿上归类好的材料就可以。不同科目的材料基本不会有关联，不用担心材料&#x2F;信息在不同科目之间的复用。书本和知识都是按学期存放，一旦学期结束，考完试，之前的书本材料很少会重新用到。</p>
-<p>但主题这种分类方法显然不再适用于面对无限可能的人生。我并不知道这个收藏并感兴趣的信息的“考试”在什么时候，它可能在我收集后的第二天就会被用到，有可能在未来几年才会在我的某个项目中体现，又或者它可能完全不会被用到。</p>
-<p>作者<code>Tiago Forte</code>给出的解决方案是：</p>
-<p><strong>PARA分类系统</strong></p>
-<p>PARA系统指的是Projects&#x2F;项目 、Areas&#x2F;领域、Resources&#x2F;资源、Archives&#x2F;归档。</p>
-<p>聚焦于信息的用途和目的，根据实用性来获取及储存信息。</p>
-<ul>
-<li><strong>Projects &#x2F; 项目</strong>：当下正在进行中的任务，需要有明确的结果且有时间限制，比如一个视频，网页，方案，短期想达到的语言目标等；</li>
-<li><strong>Areas &#x2F; 领域</strong>：想要精通的领域，是你长期想要持续学习和精进的方向。比如摄影、Coding或者健身；</li>
-<li><strong>Resources &#x2F; 资源：</strong> 未来可参考的事物，收集那些用得上的资源，感兴趣的知识，业余的爱好等。</li>
-<li><strong>Archives &#x2F; 归档：</strong> 来自其他三类的归档。已完成的项目，不再感兴趣的领域，不再相关的资源等，可以都先放在这里，需要时可以重新启用。</li>
-</ul>
-<p>用这样的分类方式可以来分类任何来源、格式和用途的信息， 不再局限于时间的维度，是一个动态的管理信息的系统。</p>
-<h2 id="D-for-Distill-提炼"><a href="#D-for-Distill-提炼" class="headerlink" title="D for Distill - 提炼"></a>D for Distill - 提炼</h2><p>作者<code>Tiago Forte</code>提出使用<strong>渐进式总结法-The Progressive Summarization Technique</strong>对内容进行多次提炼，<strong>提炼信息的本质-Distill your notes down to their essence</strong>。</p>
-<p><strong>渐进式总结法-The Progressive Summarization Technique</strong></p>
-<blockquote>
-<ol>
-<li>摘录笔记-Capture notes </li>
-<li>加粗段落-Bolded passages</li>
-<li>高亮段落-Highlighted passages</li>
-<li>总结-Excutive summary</li>
-</ol>
-</blockquote>
-<p>渐进式总结法的目的是为提炼关键信息，提炼信息的本质，方便未来的自己可以快速查询和使用笔记。</p>
-<h2 id="E-for-Express-表达"><a href="#E-for-Express-表达" class="headerlink" title="E for Express - 表达"></a>E for Express - 表达</h2><blockquote>
-<p>”We only know what we make” - Giambattista Vico, Italian philosopher</p>
-</blockquote>
-<p>关于如何分享，作者<code>Tiago Forte</code>也给出了自己的宗旨：<br><code>尽早并频繁的分享自己的一些小想法，从而测试可行性并从他人获取反馈，而不是等到你完美的掌握了一切信息再去分享。</code></p>
-<p>通过将工作进行拆分，从以前的项目中重用这些模块，从而提高工作的效率和质量。</p>
-<p><strong>表达的三个阶段</strong></p>
-<ol>
-<li>**记忆 (Remembering)**：这一阶段，人们主要使用第二大脑作为记忆工具，将重要的事实和想法保存起来，以备将来需要时查阅。</li>
-<li>**连接 (Connecting)**：随着对第二大脑的使用逐渐熟悉，人们开始利用它来连接想法。可能会从过去项目中未被采用的材料或想法中发现新的关联，或者在不同的项目、领域和资源之间发现联系。</li>
-<li>**创造 (Creating)**：最后，人们开始利用第二大脑来完成项目和实现目标。他们发现自己的知识库中有足够的信息来开始新项目，从而减轻了需要从头开始研究的压力。</li>
-</ol>
-<p>创造性工作的本质在于对现有元素的重新组合和融合。第二大脑为我们提供了一个平台，使我们能够充分利用他人的作品，在创作时引用和融合已有的观点和思想，以提高工作效率和创造性工作的质量。</p>
 ]]></content>
       <categories>
         <category>生活</category>
