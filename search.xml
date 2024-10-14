@@ -1,6 +1,277 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Hexo Hello World</title>
+    <url>/2019/05/01/hello_world/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Here-Cheatsheet">Markdown</a> 使用<a href="https://github.com/younghz/Markdown">Markdown 基本语法</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
+<h1 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h1><hr>
+<h3 id="hexo-快速、简洁且高效的博客框架"><a href="#hexo-快速、简洁且高效的博客框架" class="headerlink" title="hexo 快速、简洁且高效的博客框架"></a><a href="https://hexo.io/zh-cn/">hexo 快速、简洁且高效的博客框架</a></h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br><span class="line">hexo init blog</span><br><span class="line">cd blog</span><br><span class="line">npm install</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+
+<h3 id="init"><a href="#init" class="headerlink" title="init"></a>init</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">hexo init [folder]</span></span><br></pre></td></tr></table></figure>
+
+<p>新建一个网站。如果没有设置 <code>folder</code> ，Hexo 默认在目前的文件夹建立网站。</p>
+<span id="more"></span>
+<p>本命令相当于执行了以下几步：</p>
+<ol>
+<li>Git clone <a href="https://github.com/hexojs/hexo-starter">hexo-starter</a> 和 <a href="https://github.com/hexojs/hexo-theme-landscape">hexo-theme-landscape</a> 主题到当前目录或指定目录。</li>
+<li>使用 <a href="https://classic.yarnpkg.com/lang/en/">Yarn 1</a>、<a href="https://pnpm.io/zh/">pnpm</a> 或 <a href="https://docs.npmjs.com/cli/install">npm</a> 包管理器下载依赖（如有已安装多个，则列在前面的优先）。npm 默认随 <a href="https://hexo.io/zh-cn/docs/index.html#%E5%AE%89%E8%A3%85-Node-js">Node.js</a> 安装。</li>
+</ol>
+<h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new post <span class="string">&quot;PostName&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br><span class="line"><span class="comment"># 该命令可以简写为</span></span><br><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">hexo generate</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">该命令可以简写为</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">hexo g</span></span><br></pre></td></tr></table></figure>
+
+<p>生成静态文件。</p>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>-d</code>, <code>--deploy</code></td>
+<td>文件生成后立即部署网站</td>
+</tr>
+<tr>
+<td><code>-w</code>, <code>--watch</code></td>
+<td>监视文件变动</td>
+</tr>
+<tr>
+<td><code>-b</code>, <code>--bail</code></td>
+<td>生成过程中如果发生任何未处理的异常则抛出异常</td>
+</tr>
+<tr>
+<td><code>-f</code>, <code>--force</code></td>
+<td>强制重新生成文件  <br>Hexo 引入了差分机制，如果 <code>public</code> 目录存在，那么 <code>hexo g</code> 只会重新生成改动的文件。  <br>使用该参数的效果接近 <code>hexo clean &amp;&amp; hexo generate</code></td>
+</tr>
+<tr>
+<td><code>-c</code>, <code>--concurrency</code></td>
+<td>最大同时生成文件的数量，默认无限制</td>
+</tr>
+</tbody></table>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br><span class="line"><span class="comment"># 该命令可以简写为</span></span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<h3 id="version"><a href="#version" class="headerlink" title="version"></a>version</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">hexo version</span></span><br></pre></td></tr></table></figure>
+
+<p>显示 Hexo 版本。</p>
+<h1 id="Plugins"><a href="#Plugins" class="headerlink" title="Plugins"></a>Plugins</h1><hr>
+<ol>
+<li><a href="https://github.com/maxchang3/hexo-markmap">hexo思维导图：hexo-markmap</a></li>
+<li><a href="https://github.com/kuole-o/hexo-tag-map?tab=readme-ov-file">Hexo 文章插入交互式地图：hexo-tag-map</a></li>
+</ol>
+<link rel="stylesheet" href="//unpkg.com/hexo-tag-map/lib/leaflet@1.7.1.css"><script data-pjax src="//unpkg.com/hexo-tag-map/lib/leaflet@1.7.1.js"></script><script data-pjax src="//unpkg.com/hexo-tag-map/lib/leaflet.ChineseTmsProviders@1.0.4.js"></script><div class="map-box" style="margin: 0.8rem 0 1.6rem 0;"><div id="gaodeMap-119.296623-26.081958" style="max-width:100%; height:360px;display: block;margin:0 auto;z-index:1;border-radius: 5px;"></div></div><script type="text/javascript">var normalm=L.tileLayer.chinaProvider('GaoDe.Normal.Map',{maxZoom:20,minZoom:1,attribution:'高德地图'});var imgm=L.tileLayer.chinaProvider('GaoDe.Satellite.Map',{maxZoom:20,minZoom:1,attribution:'高德地图'});var imga=L.tileLayer.chinaProvider('GaoDe.Satellite.Annotion',{maxZoom:20,minZoom:1,attribution:'高德地图'});var normal=L.layerGroup([normalm]),image=L.layerGroup([imgm,imga]);var baseLayers={"高德地图":normal,"高德卫星地图":imgm,"高德卫星标注":image};var mymap=L.map('gaodeMap-119.296623-26.081958',{center:[26.081958,119.296623],zoom:16,layers:[normal],zoomControl:false});L.control.layers(baseLayers,null).addTo(mymap);L.control.zoom({zoomInTitle:'放大',zoomOutTitle:'缩小'}).addTo(mymap);var marker = L.marker(['26.081958','119.296623']).addTo(mymap);marker.bindPopup("这里是福州三坊七巷，three lanes and seven alleys").openPopup();</script>
+
+
+<p><a href="https://lbs.amap.com/tools/picker">高德地图坐标拾取系统</a></p>
+<table>
+<thead>
+<tr>
+<th align="right">地图名</th>
+<th align="right">标签值&lt;必填&gt;</th>
+<th align="right">经度(-180~180)</th>
+<th align="right">纬度(-90~90)</th>
+<th align="right">文本</th>
+<th align="right">缩放等级(默认14)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="right">混合地图</td>
+<td align="right">map</td>
+<td align="right">坐标经度</td>
+<td align="right">坐标纬度</td>
+<td align="right">文本</td>
+<td align="right">取值3~18</td>
+</tr>
+<tr>
+<td align="right">谷歌地图</td>
+<td align="right">googleMap</td>
+<td align="right">坐标经度</td>
+<td align="right">坐标纬度</td>
+<td align="right">文本</td>
+<td align="right">取值1~20</td>
+</tr>
+<tr>
+<td align="right">高德地图</td>
+<td align="right">gaodeMap</td>
+<td align="right">坐标经度</td>
+<td align="right">坐标纬度</td>
+<td align="right">文本</td>
+<td align="right">取值3~18</td>
+</tr>
+<tr>
+<td align="right">百度地图</td>
+<td align="right">baiduMap</td>
+<td align="right">坐标经度</td>
+<td align="right">坐标纬度</td>
+<td align="right">文本</td>
+<td align="right">取值4~18</td>
+</tr>
+<tr>
+<td align="right">Geoq地图</td>
+<td align="right">geoqMap</td>
+<td align="right">坐标经度</td>
+<td align="right">坐标纬度</td>
+<td align="right">文本</td>
+<td align="right">取值1~18</td>
+</tr>
+<tr>
+<td align="right">openstreet地图</td>
+<td align="right">openstreetMap</td>
+<td align="right">坐标经度</td>
+<td align="right">坐标纬度</td>
+<td align="right">文本</td>
+<td align="right">取值1~18</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="right">地图名</th>
+<th align="right">宽(默认100%) &#x2F; 高(默认360px)</th>
+<th align="right">默认图层(默认1)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="right">混合地图</td>
+<td align="right">百分数或具体值(100%或360px)</td>
+<td align="right">取值1~7</td>
+</tr>
+<tr>
+<td align="right">谷歌地图</td>
+<td align="right">百分数或具体值(100%或360px)</td>
+<td align="right">取值1~3</td>
+</tr>
+<tr>
+<td align="right">高德地图</td>
+<td align="right">百分数或具体值(100%或360px)</td>
+<td align="right">取值1~3</td>
+</tr>
+<tr>
+<td align="right">百度地图</td>
+<td align="right">百分数或具体值(100%或360px)</td>
+<td align="right">取值1~2</td>
+</tr>
+<tr>
+<td align="right">Geoq地图</td>
+<td align="right">百分数或具体值(100%或360px)</td>
+<td align="right">取值1~5</td>
+</tr>
+<tr>
+<td align="right">openstreet地图</td>
+<td align="right">百分数或具体值(100%或360px)</td>
+<td align="right">不支持此参数</td>
+</tr>
+</tbody></table>
+<ol>
+<li>参数之间，用<strong>英文逗号</strong>相隔</li>
+<li>参数必须按上述事例顺序输入，不得为空</li>
+<li><strong>同一个页面，同一组经纬度值，只能插入一个相同标签值的地图</strong>(若有需要，可以将第二个地图上，经度或纬度末尾删除一两个数)</li>
+<li>参数取值必须在上述范围内</li>
+<li>默认图层：即地图叠加层的值，默认常规地图还是卫星地图，可按地图显示顺序取值</li>
+<li><strong>缩放等级，数字越大，地图比例尺越小，显示的越精细</strong></li>
+<li>除<strong>标签值</strong>外，其他参数选填，但 <strong>每个参数的左边的参数必填</strong></li>
+<li>谷歌地图需要外网才能加载查看</li>
+</ol>
+<h1 id="Notes"><a href="#Notes" class="headerlink" title="Notes"></a>Notes</h1><hr>
+<h3 id="本地图片的调用"><a href="#本地图片的调用" class="headerlink" title="本地图片的调用"></a>本地图片的调用</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">my version</span></span><br><span class="line">hexo: 7.2.0</span><br><span class="line">hexo-cli: 4.3.2</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><p>手动新建<br>首先是在 _posts 文件夹下建立一个<code>本地图片的调用.md</code>，再建立一个同名的文件夹 <code>本地图片的调用</code>。</p>
+</li>
+<li><p>hexo代码新建<br>使用<code>hexo new post 本地图片的调用</code>，可以生成md文件的同时生成一个同名文件夹用于存储网页资源。</p>
+</li>
+</ol>
+<p>这篇文章要引用的图片就放在该文件夹下。比如我就在该目录下放一个图片<code>1.png</code>。</p>
+<p><img src="/2019/05/01/hello_world/1.png"></p>
+<p>然后在博文 MarkDown 文件里引用该图片：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">这里是图片注释</span>](<span class="link">../images/2019_05_01_hello_world/1.png</span>)</span><br></pre></td></tr></table></figure>
+
+<p><strong>为什么引用的时候不用加文件夹的路径呢？</strong></p>
+<p>这是因为 hexo 在渲染的时候，会把<code>本地图片的调用.md</code> 渲染为<code>public</code>下的 <code>本地图片的调用.html</code>网页文件，而把对应文件夹下的静态资源，比如图片 <code>1.png</code>也拷贝到<code>public</code>下!</p>
+<p>需要注意的是，在<code>hexo/source/_posts</code>目录下的图片文件名不能重复。</p>
+<h3 id="skip-render"><a href="#skip-render" class="headerlink" title="skip render"></a>skip render</h3><p>修改hexo根目录下_config.yml文件，</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">skip_render:</span></span><br><span class="line">	<span class="bullet">-</span> <span class="string">&#x27;_posts/templates/**&#x27;</span></span><br><span class="line">	<span class="bullet">-</span> <span class="string">&#x27;_posts/draft/**&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>目录结构：<br><code>- hexo/source/_posts/templates/</code> 保存post模版，供Obsidian快速开始Post编写。<br><code>- hexo/source/_posts/draft/</code> 保存未编辑完成，或不想共享的文章内容。</p>
+<p>设置跳过渲染之后，最好使用<code>hexo clean</code>清除以前的编译结果，保证配置生效。再使用<code>hexo g</code>查看。</p>
+<h3 id="自动generate"><a href="#自动generate" class="headerlink" title="自动generate"></a>自动generate</h3><p>定时or设置条件运行命令<code>docker exec -it hexo bash -c &quot;hexo clean &amp;&amp; hexo g&quot;</code>来自动编译。</p>
+<p><strong>踩坑：</strong> 直接在群晖的<code>控制面板</code> - <code>任务计划</code>中添加自定义脚本<code>docker exec -it hexo bash -c &quot;hexo clean &amp;&amp; hexo g&quot;</code>会报错<code>the input device is not a TTY</code>.</p>
+<p>tty一词源于Teletypes,或teletypewriters。这个的意思是说后台linux执行的时候没有终端设备。我们一般执行docker里的命令时候都喜欢加上-it 这个参数，这里的-t 就是表示伪tty。所以，如果我们docker执行后台运行的任务或者程序直接去除 -t 这个参数就不会出现这个报错了。</p>
+<p><strong>所以要用 <code>docker exec hexo bash -c &quot;hexo clean &amp;&amp; hexo g&quot;</code></strong></p>
+<p><strong>待改进：</strong> 设置了每天generate一次。如果设置成有变动就generate就更好了，暂时没想到办法。</p>
+<h3 id="视频嵌入"><a href="#视频嵌入" class="headerlink" title="视频嵌入"></a>视频嵌入</h3><p>现在视频基本上都会分享到各大平台，所以暂时主要以嵌入网络视频展示。<br>研究了几款插件，基本上都是年久失修，使用不易，最终还是选择了<code>iframe</code>嵌入。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">%%bilibili视频嵌入%%</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;position: relative; width: 100%; height: 0; padding-bottom: 75%;&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">src</span>=<span class="string">&quot;//player.bilibili.com/player.html?aid=244387247&amp;cid=229573649&amp;page=1&quot;</span> <span class="attr">scrolling</span>=<span class="string">&quot;no&quot;</span> <span class="attr">border</span>=<span class="string">&quot;0&quot;</span> <span class="attr">frameborder</span>=<span class="string">&quot;no&quot;</span> <span class="attr">framespacing</span>=<span class="string">&quot;0&quot;</span> <span class="attr">allowfullscreen</span>=<span class="string">&quot;true&quot;</span> <span class="attr">style</span>=<span class="string">&quot;position: absolute; width: 100%; height: 100%; Left: 0; top: 0;&quot;</span> &gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span>  </span><br></pre></td></tr></table></figure>
+
+<p><a href="https://github.com/stephenmkbrady/hexo-tag-html5">hexo-tag-html5video</a></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install --save hexo-tag-html5video</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% html5video &#x27;100%&#x27; &#x27;250px&#x27; &#x27;video/mp4&#x27; %&#125; </span><br><span class="line">&#123;% asset<span class="emphasis">_path &lt;视频路径&gt; %&#125; </span></span><br><span class="line"><span class="emphasis">&#123;% endhtml5video %&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="菜单导航配置"><a href="#菜单导航配置" class="headerlink" title="菜单导航配置"></a>菜单导航配置</h3><p>配置基本菜单导航的名称、路径url和图标icon.</p>
+<ol>
+<li>菜单导航名称可以是中文也可以是英文(如：<code>Index</code> 或 <code>主页</code>)</li>
+<li><code>External</code> 表示是否在新标签页打开连接</li>
+<li>导航地址可以是站内地址也可以是外网地址</li>
+</ol>
+<h3 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h3><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">hexo</span><br><span class="line"><span class="bullet">  -</span> node<span class="emphasis">_modules</span></span><br><span class="line"><span class="emphasis">  - scaffolds # 模板文件夹</span></span><br><span class="line"><span class="emphasis">    - draft.md # 草稿模板文件</span></span><br><span class="line"><span class="emphasis">    - page.md # 页面模板文件</span></span><br><span class="line"><span class="emphasis">    - post.md # 文章模板文件</span></span><br><span class="line"><span class="emphasis">  - source # 资源文件夹</span></span><br><span class="line"><span class="emphasis">    - _</span>drafts # 草稿文件夹</span><br><span class="line"><span class="bullet">    -</span> <span class="emphasis">_posts # post文件夹</span></span><br><span class="line"><span class="emphasis">    - images #图片文件夹</span></span><br><span class="line"><span class="emphasis">  - themes # 主题文件夹</span></span><br><span class="line"><span class="emphasis">    - ayer # 主题文件夹</span></span><br><span class="line"><span class="emphasis">      - _</span>config.yml # 主题配置文件</span><br><span class="line"><span class="bullet">      -</span> languages # 语言文件夹</span><br><span class="line"><span class="bullet">      -</span> layout # 布局文件夹</span><br><span class="line"><span class="bullet">      -</span> scripts # 脚本文件夹</span><br><span class="line"><span class="bullet">      -</span> source # 资源文件夹</span><br><span class="line"><span class="bullet">        -</span> css # 样式文件夹</span><br><span class="line"><span class="bullet">        -</span> fonts # 字体文件夹</span><br><span class="line"><span class="bullet">        -</span> images # 图片文件夹</span><br><span class="line"><span class="bullet">        -</span> js # 脚本文件夹</span><br><span class="line"><span class="bullet">  -</span> <span class="emphasis">_config.yml # 配置文件</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="本地图片的调用-1"><a href="#本地图片的调用-1" class="headerlink" title="本地图片的调用"></a>本地图片的调用</h3><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">这里是图片注释</span>](<span class="link">../images/2019_05_01_hello_world/1.png</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="DIY-hexo-new-post"><a href="#DIY-hexo-new-post" class="headerlink" title="DIY hexo new post"></a>DIY hexo new post</h3><p>修改hexo根目录下_config.yml文件，</p>
+<ol>
+<li>为新建post自动加上当前日期，避免title重复，造成的一系列问题。</li>
+</ol>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Writing</span></span><br><span class="line"><span class="comment"># new_post_name: title.md # default setting</span></span><br><span class="line"><span class="attr">new_post_name:</span> <span class="string">:year_:month_:day_:title.md</span> </span><br><span class="line"><span class="comment"># new posts name as year_month_day_postname</span></span><br><span class="line"><span class="attr">default_layout:</span> <span class="string">post</span></span><br><span class="line"><span class="attr">titlecase:</span> <span class="literal">false</span> <span class="comment"># Transform title into titlecase</span></span><br><span class="line"><span class="attr">external_link:</span></span><br><span class="line"><span class="attr">enable:</span> <span class="literal">true</span> <span class="comment"># Open external links in new tab</span></span><br><span class="line"><span class="attr">field:</span> <span class="string">site</span> <span class="comment"># Apply to the whole site</span></span><br><span class="line"><span class="attr">exclude:</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="attr">filename_case:</span> <span class="number">0</span></span><br><span class="line"><span class="attr">render_drafts:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>为了使_post文件夹尽可能的精简，便于网盘同步，只保留md文件，图片等资源放在<code>source</code>目录下<code>images</code>文件夹内。</li>
+</ol>
+<figure class="highlight sqf"><table><tr><td class="code"><pre><span class="line">post_asset_folder: <span class="literal">false</span> </span><br><span class="line"># 改成<span class="literal">true</span>，则在<span class="variable">_post</span>新建下新建md文件的同时新建一个同名的文件夹用于存储当前页面的一些资源。</span><br></pre></td></tr></table></figure>
+
+<h3 id="引用文章"><a href="#引用文章" class="headerlink" title="引用文章"></a><a href="https://hexo.io/zh-cn/docs/tag-plugins#%E5%BC%95%E7%94%A8%E6%96%87%E7%AB%A0">引用文章</a></h3><p>引用其他文章的链接。</p>
+<figure class="highlight django"><table><tr><td class="code"><pre><span class="line"><span class="template-tag">&#123;% <span class="name">post_path</span> filename %&#125;</span><span class="language-xml">  </span></span><br><span class="line"><span class="language-xml"></span><span class="template-tag">&#123;% <span class="name">post_link</span> filename [title] [escape] %&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>在使用此标签时可以忽略文章文件所在的路径或者文章的永久链接信息、如语言、日期。</p>
+<p>例如，在文章中使用 <code>&#123;% post_link how-to-bake-a-cake %&#125;</code> 时，只需有一个名为 <code>how-to-bake-a-cake.md</code> 的文章文件即可。即使这个文件位于站点文件夹的 <code>source/posts/2015-02-my-family-holiday</code> 目录下、或者文章的永久链接是 <code>2018/en/how-to-bake-a-cake</code>，都没有影响。</p>
+<p>默认链接文字是文章的标题，你也可以自定义要显示的文本。</p>
+<p>默认对文章的标题和自定义标题里的特殊字符进行转义。可以使用 <code>escape</code> 选项，禁止对特殊字符进行转义。</p>
+<p>例如：</p>
+<p><strong>链接使用文章的标题</strong></p>
+<p><code>&#123;% post_link hexo-3-8-released %&#125;</code></p>
+<p><strong>链接使用自定义文字</strong></p>
+<p><code>&#123;% post_link hexo-3-8-released '通往文章的链接' %&#125;</code></p>
+<p><strong>对标题的特殊字符进行转义</strong></p>
+<figure class="highlight crmsh"><table><tr><td class="code"><pre><span class="line">&#123;% post_link hexo-<span class="number">4</span>-released &#x27;How to use <span class="tag">&lt;b&gt;</span> <span class="keyword">tag</span> <span class="title">in</span> title&#x27; %&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="动态自定义附件文件夹名称"><a href="#动态自定义附件文件夹名称" class="headerlink" title="动态自定义附件文件夹名称"></a>动态自定义附件文件夹名称</h3><p>插件 <strong>Custom Attachment Location</strong> ，安装后进行附件文件夹的设置:</p>
+<figure class="highlight xl"><table><tr><td class="code"><pre><span class="line">C<span class="function"><span class="title">ustom</span> Attachment Location --&gt;</span> L<span class="function"><span class="title">ocation</span> <span class="keyword">for</span> New Attachments --&gt;</span> ./$&#123;filename&#125;.assets （这样设置是为了与 Typora 兼容，正常显示 Typora 中创建的笔记的图片附件）</span><br></pre></td></tr></table></figure>
+
+<h1 id="post在首页全文展示问题"><a href="#post在首页全文展示问题" class="headerlink" title="post在首页全文展示问题"></a>post在首页全文展示问题</h1><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"># 主题config文件 ~/hexo/themes/ayer/_config.yml</span><br><span class="line"># 文章太长，截断按钮文字(在需要截断的行增加此标记：<span class="comment">&lt;!--more--&gt;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<p>More info:<br><a href="https://post.smzdm.com/p/agqol9zm/">晨聊 篇十七：markdown也变脸，obsidian + hexo 在群晖NAS上的双剑合璧</a></p>
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>博客</category>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>markdown</tag>
+        <tag>hexo</tag>
+        <tag>笔记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>群晖Git部署Hexo</title>
     <url>/2019/05/06/Git_Hexo/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="一、前期准备"><a href="#一、前期准备" class="headerlink" title="一、前期准备"></a>一、前期准备</h2><h3 id="1-1-注册-账号-Gitee-GitHub"><a href="#1-1-注册-账号-Gitee-GitHub" class="headerlink" title="1.1 注册 账号 Gitee&#x2F;GitHub"></a>1.1 注册 账号 Gitee&#x2F;GitHub</h3><p>注册一个属于自己的 Github 或 Gitee 账号，</p>
@@ -102,8 +373,8 @@
         <category>hexo</category>
       </categories>
       <tags>
-        <tag>hexo</tag>
         <tag>markdown</tag>
+        <tag>hexo</tag>
         <tag>Obsidian</tag>
       </tags>
   </entry>
@@ -121,8 +392,8 @@
         <category>hexo</category>
       </categories>
       <tags>
-        <tag>hexo</tag>
         <tag>markdown</tag>
+        <tag>hexo</tag>
         <tag>插件</tag>
       </tags>
   </entry>
@@ -162,8 +433,8 @@
         <category>hexo</category>
       </categories>
       <tags>
-        <tag>hexo</tag>
         <tag>markdown</tag>
+        <tag>hexo</tag>
         <tag>插件</tag>
       </tags>
   </entry>
@@ -340,6 +611,22 @@
       </tags>
   </entry>
   <entry>
+    <title>GoPro Hero最实用的四个必备配件:打造完美生态</title>
+    <url>/2022/03/15/GoproHero/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><hr>
+<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">
+<iframe src="//player.bilibili.com/player.html?aid=244387247&bvid=BV1Av411174q&cid=229573649&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; Left: 0; top: 0;" ></iframe></div> 
+]]></content>
+      <categories>
+        <category>数码</category>
+        <category>相机</category>
+      </categories>
+      <tags>
+        <tag>数码</tag>
+        <tag>相机</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>菜谱</title>
     <url>/2022/04/19/%E8%8F%9C%E8%B0%B1/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="空气炸锅鸡排"><a href="#空气炸锅鸡排" class="headerlink" title="空气炸锅鸡排"></a>空气炸锅鸡排</h1><ul>
@@ -378,22 +665,6 @@
       </tags>
   </entry>
   <entry>
-    <title>GoPro Hero最实用的四个必备配件:打造完美生态</title>
-    <url>/2022/03/15/GoproHero/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><hr>
-<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">
-<iframe src="//player.bilibili.com/player.html?aid=244387247&bvid=BV1Av411174q&cid=229573649&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; Left: 0; top: 0;" ></iframe></div> 
-]]></content>
-      <categories>
-        <category>数码</category>
-        <category>相机</category>
-      </categories>
-      <tags>
-        <tag>数码</tag>
-        <tag>相机</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>澳洲家中日常必备清单</title>
     <url>/2022/05/19/%E6%BE%B3%E6%B4%B2%E5%AE%B6%E4%B8%AD%E6%97%A5%E5%B8%B8%E5%BF%85%E5%A4%87%E6%B8%85%E5%8D%95/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>1⃣️ CEPACAINE漱口水！ 治疗牙龈肿痛，口腔溃疡。澳洲医生推荐买的，超级有效！猫猫家必备的，再也没有牙口烦恼。 购买地址：Chemist有售 💰价格：$15.49 问题在口腔，吃啥啥不香，买它！喵～</p>
@@ -421,6 +692,186 @@
       <tags>
         <tag>推荐</tag>
         <tag>日常</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>SQL学习笔记</title>
+    <url>/2023/02/27/SQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="/_post/2024_02_28_%E6%8E%92%E5%BA%8F_DENSE_RANK.md">排序_DENSE_RANK</a></p>
+<h2 id="IFNULL"><a href="#IFNULL" class="headerlink" title="IFNULL"></a>IFNULL</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Write your MySQL query statement below</span><br><span class="line"></span><br><span class="line">select e.name, b.bonus</span><br><span class="line"></span><br><span class="line">from Employee e left join Bonus b</span><br><span class="line"></span><br><span class="line">on e.empId = b.empId</span><br><span class="line"></span><br><span class="line">where ifnull(bonus,0)&lt;1000</span><br><span class="line">## ifnul 就把值替换成0）</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+
+
+
+<h2 id="SQL-585"><a href="#SQL-585" class="headerlink" title="SQL 585"></a>SQL 585</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT ROUND(SUM(tiv_2016), 2) AS tiv_2016</span><br><span class="line"></span><br><span class="line">FROM Insurance</span><br><span class="line"></span><br><span class="line">WHERE tiv_2015 IN (</span><br><span class="line"></span><br><span class="line">SELECT tiv_2015</span><br><span class="line"></span><br><span class="line">FROM Insurance</span><br><span class="line"></span><br><span class="line">GROUP BY tiv_2015</span><br><span class="line"></span><br><span class="line">HAVING COUNT(*) &gt; 1</span><br><span class="line"></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">AND (lat, lon) NOT IN (</span><br><span class="line"></span><br><span class="line">SELECT lat, lon</span><br><span class="line"></span><br><span class="line">FROM Insurance</span><br><span class="line"></span><br><span class="line">GROUP BY lat, lon</span><br><span class="line"></span><br><span class="line">HAVING COUNT(*) &gt; 1</span><br><span class="line"></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="SQL-610"><a href="#SQL-610" class="headerlink" title="SQL 610"></a>SQL 610</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Write your MySQL query statement below</span><br><span class="line">select </span><br><span class="line">    *,</span><br><span class="line">    if(x+y&gt;z and x+z&gt;y and y+z&gt;x,&#x27;Yes&#x27;,&#x27;No&#x27;) as triangle</span><br><span class="line">from Triangle</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="SQL1633-ORDER-BY-2-DESC-1"><a href="#SQL1633-ORDER-BY-2-DESC-1" class="headerlink" title="SQL1633 ORDER BY 2 DESC, 1"></a>SQL1633 ORDER BY 2 DESC, 1</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ORDER BY 2 DESC, 1</span><br></pre></td></tr></table></figure>
+
+<p>这一行使用ORDER BY子句对结果进行排序。我们按照第二列（即percentage）的降序进行排序，如果百分比相同，则按照第一列（即contest_id）的升序进行排序。</p>
+<h2 id="SQL1179-CASE-WHEN"><a href="#SQL1179-CASE-WHEN" class="headerlink" title="SQL1179 CASE WHEN"></a>SQL1179 CASE WHEN</h2><p>CASE WHEN语句是SQL中用于根据条件进行条件判断和返回不同结果的表达式。它允许你根据满足特定条件的情况，选择不同的结果进行返回。</p>
+<p>CASE WHEN语句的基本语法如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CASE</span><br><span class="line">   WHEN condition1 THEN result1</span><br><span class="line">   WHEN condition2 THEN result2</span><br><span class="line">   ...</span><br><span class="line">   ELSE resultN</span><br><span class="line">END</span><br></pre></td></tr></table></figure>
+
+<p>首先，你提供一个或多个WHEN子句，每个子句后面跟着一个条件（condition）和一个对应的结果（result）。当满足某个条件时，相应的结果将被返回。ELSE子句是可选的，用于指定当没有任何条件满足时的默认结果。</p>
+<p>让我们通过一个简单的例子来说明CASE WHEN的使用。假设有一个名为”students”的表，其中包含学生的姓名和分数列。如果要将成绩分为优秀、良好和及格三个等级并进行显示，可以使用以下SQL语句：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT name,</span><br><span class="line">       CASE</span><br><span class="line">          WHEN score &gt;= 90 THEN &#x27;优秀&#x27;</span><br><span class="line">          WHEN score &gt;= 80 THEN &#x27;良好&#x27;</span><br><span class="line">          WHEN score &gt;= 60 THEN &#x27;及格&#x27;</span><br><span class="line">          ELSE &#x27;不及格&#x27;</span><br><span class="line">       END AS grade</span><br><span class="line">FROM students;</span><br></pre></td></tr></table></figure>
+
+<p>在这个例子中，对于每个学生，我们使用CASE WHEN语句根据他们的分数来判断他们的等级。如果分数大于等于90，那么他们被归类为”优秀”；如果分数大于等于80，但小于90，他们被归类为”良好”；如果分数大于等于60，但小于80，他们被归类为”及格”；否则，他们被归类为”不及格”。</p>
+<p>通过使用CASE WHEN语句，我们可以根据不同的条件返回不同的结果，从而实现灵活的数据处理和转换。</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>数据分析</category>
+        <category>SQL</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+        <tag>SQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>排序_DENSE_RANK</title>
+    <url>/2023/02/28/%E6%8E%92%E5%BA%8F_DENSE_RANK/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="rank"><a href="#rank" class="headerlink" title="rank()"></a>rank()</h2><h2 id="dense-rank"><a href="#dense-rank" class="headerlink" title="dense_rank()"></a>dense_rank()</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">DENSE_RANK() OVER (PARTITION BY column1, column2... ORDER BY column3, column4...)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>PARTITION BY子句是可选的，用于将数据分成不同的分组。如果不指定PARTITION BY子句，将对整个结果集进行排名。</li>
+<li>ORDER BY子句指定用于排序的列。可以根据一个或多个列进行排序，以确定排名的顺序。</li>
+</ul>
+<span id="more"></span>
+
+<h3 id="example"><a href="#example" class="headerlink" title="example"></a>example</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT name, salary, DENSE_RANK() OVER (ORDER BY salary DESC) AS dense_rank</span><br><span class="line">FROM employees;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>当使用DENSE_RANK函数和PARTITION BY子句时，以下是示例查询的可能返回结果：</p>
+<p>示例1：对每个客户的订单金额进行排名</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT order_id, customer_id, order_amount,</span><br><span class="line">       DENSE_RANK() OVER (PARTITION BY customer_id ORDER BY order_amount DESC) AS dense_rank</span><br><span class="line">FROM orders;</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>order_id</th>
+<th>customer_id</th>
+<th>order_amount</th>
+<th>dense_rank</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>1001</td>
+<td>500</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1001</td>
+<td>500</td>
+<td>1</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1001</td>
+<td>300</td>
+<td>2</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1002</td>
+<td>700</td>
+<td>1</td>
+</tr>
+<tr>
+<td>5</td>
+<td>1002</td>
+<td>600</td>
+<td>2</td>
+</tr>
+<tr>
+<td>6</td>
+<td>1002</td>
+<td>600</td>
+<td>2</td>
+</tr>
+<tr>
+<td>7</td>
+<td>1002</td>
+<td>400</td>
+<td>3</td>
+</tr>
+</tbody></table>
+<p>在上述结果中，我们根据每个客户的订单金额进行了排名。客户ID为1001的客户有两个订单，订单金额都是500，因此它们被分配相同的密集排名1。客户ID为1001的第三个订单金额为300，所以它被分配密集排名2。对于客户ID为1002的客户，有一个订单金额为700，它被分配密集排名1，然后有两个订单金额为600，它们被分配密集排名2，最后一个订单金额为400，它被分配密集排名3。</p>
+<p>示例2：对每个班级的学生成绩进行排名</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT student_id, class_id, exam_score,</span><br><span class="line">       DENSE_RANK() OVER (PARTITION BY class_id ORDER BY exam_score DESC) AS dense_rank</span><br><span class="line">FROM students;</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>student_id</th>
+<th>class_id</th>
+<th>exam_score</th>
+<th>dense_rank</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>A</td>
+<td>95</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>A</td>
+<td>90</td>
+<td>2</td>
+</tr>
+<tr>
+<td>3</td>
+<td>A</td>
+<td>85</td>
+<td>3</td>
+</tr>
+<tr>
+<td>4</td>
+<td>B</td>
+<td>92</td>
+<td>1</td>
+</tr>
+<tr>
+<td>5</td>
+<td>B</td>
+<td>88</td>
+<td>2</td>
+</tr>
+<tr>
+<td>6</td>
+<td>B</td>
+<td>88</td>
+<td>2</td>
+</tr>
+<tr>
+<td>7</td>
+<td>B</td>
+<td>80</td>
+<td>3</td>
+</tr>
+</tbody></table>
+<p>在上述结果中，我们根据每个班级的考试成绩进行了排名。班级ID为A的学生有三个学生，分别获得了95、90和85分，他们分别被分配密集排名1、2和3。班级ID为B的学生有四个学生，分别获得了92、88、88和80分，他们分别被分配密集排名1、2、2和3。</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>数据分析</category>
+        <category>SQL</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+        <tag>SQL</tag>
+        <tag>排序</tag>
       </tags>
   </entry>
   <entry>
@@ -11056,457 +11507,6 @@
       <tags>
         <tag>随笔</tag>
         <tag>分享</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo Hello World</title>
-    <url>/2019/05/01/hello_world/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Here-Cheatsheet">Markdown</a> 使用<a href="https://github.com/younghz/Markdown">Markdown 基本语法</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
-<h1 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h1><hr>
-<h3 id="hexo-快速、简洁且高效的博客框架"><a href="#hexo-快速、简洁且高效的博客框架" class="headerlink" title="hexo 快速、简洁且高效的博客框架"></a><a href="https://hexo.io/zh-cn/">hexo 快速、简洁且高效的博客框架</a></h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br><span class="line">hexo init blog</span><br><span class="line">cd blog</span><br><span class="line">npm install</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
-
-<h3 id="init"><a href="#init" class="headerlink" title="init"></a>init</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">hexo init [folder]</span></span><br></pre></td></tr></table></figure>
-
-<p>新建一个网站。如果没有设置 <code>folder</code> ，Hexo 默认在目前的文件夹建立网站。</p>
-<span id="more"></span>
-<p>本命令相当于执行了以下几步：</p>
-<ol>
-<li>Git clone <a href="https://github.com/hexojs/hexo-starter">hexo-starter</a> 和 <a href="https://github.com/hexojs/hexo-theme-landscape">hexo-theme-landscape</a> 主题到当前目录或指定目录。</li>
-<li>使用 <a href="https://classic.yarnpkg.com/lang/en/">Yarn 1</a>、<a href="https://pnpm.io/zh/">pnpm</a> 或 <a href="https://docs.npmjs.com/cli/install">npm</a> 包管理器下载依赖（如有已安装多个，则列在前面的优先）。npm 默认随 <a href="https://hexo.io/zh-cn/docs/index.html#%E5%AE%89%E8%A3%85-Node-js">Node.js</a> 安装。</li>
-</ol>
-<h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new post <span class="string">&quot;PostName&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br><span class="line"><span class="comment"># 该命令可以简写为</span></span><br><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">hexo generate</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">该命令可以简写为</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">hexo g</span></span><br></pre></td></tr></table></figure>
-
-<p>生成静态文件。</p>
-<table>
-<thead>
-<tr>
-<th>选项</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>-d</code>, <code>--deploy</code></td>
-<td>文件生成后立即部署网站</td>
-</tr>
-<tr>
-<td><code>-w</code>, <code>--watch</code></td>
-<td>监视文件变动</td>
-</tr>
-<tr>
-<td><code>-b</code>, <code>--bail</code></td>
-<td>生成过程中如果发生任何未处理的异常则抛出异常</td>
-</tr>
-<tr>
-<td><code>-f</code>, <code>--force</code></td>
-<td>强制重新生成文件  <br>Hexo 引入了差分机制，如果 <code>public</code> 目录存在，那么 <code>hexo g</code> 只会重新生成改动的文件。  <br>使用该参数的效果接近 <code>hexo clean &amp;&amp; hexo generate</code></td>
-</tr>
-<tr>
-<td><code>-c</code>, <code>--concurrency</code></td>
-<td>最大同时生成文件的数量，默认无限制</td>
-</tr>
-</tbody></table>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br><span class="line"><span class="comment"># 该命令可以简写为</span></span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-<h3 id="version"><a href="#version" class="headerlink" title="version"></a>version</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">hexo version</span></span><br></pre></td></tr></table></figure>
-
-<p>显示 Hexo 版本。</p>
-<h1 id="Plugins"><a href="#Plugins" class="headerlink" title="Plugins"></a>Plugins</h1><hr>
-<ol>
-<li><a href="https://github.com/maxchang3/hexo-markmap">hexo思维导图：hexo-markmap</a></li>
-<li><a href="https://github.com/kuole-o/hexo-tag-map?tab=readme-ov-file">Hexo 文章插入交互式地图：hexo-tag-map</a></li>
-</ol>
-<link rel="stylesheet" href="//unpkg.com/hexo-tag-map/lib/leaflet@1.7.1.css"><script data-pjax src="//unpkg.com/hexo-tag-map/lib/leaflet@1.7.1.js"></script><script data-pjax src="//unpkg.com/hexo-tag-map/lib/leaflet.ChineseTmsProviders@1.0.4.js"></script><div class="map-box" style="margin: 0.8rem 0 1.6rem 0;"><div id="gaodeMap-119.296623-26.081958" style="max-width:100%; height:360px;display: block;margin:0 auto;z-index:1;border-radius: 5px;"></div></div><script type="text/javascript">var normalm=L.tileLayer.chinaProvider('GaoDe.Normal.Map',{maxZoom:20,minZoom:1,attribution:'高德地图'});var imgm=L.tileLayer.chinaProvider('GaoDe.Satellite.Map',{maxZoom:20,minZoom:1,attribution:'高德地图'});var imga=L.tileLayer.chinaProvider('GaoDe.Satellite.Annotion',{maxZoom:20,minZoom:1,attribution:'高德地图'});var normal=L.layerGroup([normalm]),image=L.layerGroup([imgm,imga]);var baseLayers={"高德地图":normal,"高德卫星地图":imgm,"高德卫星标注":image};var mymap=L.map('gaodeMap-119.296623-26.081958',{center:[26.081958,119.296623],zoom:16,layers:[normal],zoomControl:false});L.control.layers(baseLayers,null).addTo(mymap);L.control.zoom({zoomInTitle:'放大',zoomOutTitle:'缩小'}).addTo(mymap);var marker = L.marker(['26.081958','119.296623']).addTo(mymap);marker.bindPopup("这里是福州三坊七巷，three lanes and seven alleys").openPopup();</script>
-
-
-<p><a href="https://lbs.amap.com/tools/picker">高德地图坐标拾取系统</a></p>
-<table>
-<thead>
-<tr>
-<th align="right">地图名</th>
-<th align="right">标签值&lt;必填&gt;</th>
-<th align="right">经度(-180~180)</th>
-<th align="right">纬度(-90~90)</th>
-<th align="right">文本</th>
-<th align="right">缩放等级(默认14)</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="right">混合地图</td>
-<td align="right">map</td>
-<td align="right">坐标经度</td>
-<td align="right">坐标纬度</td>
-<td align="right">文本</td>
-<td align="right">取值3~18</td>
-</tr>
-<tr>
-<td align="right">谷歌地图</td>
-<td align="right">googleMap</td>
-<td align="right">坐标经度</td>
-<td align="right">坐标纬度</td>
-<td align="right">文本</td>
-<td align="right">取值1~20</td>
-</tr>
-<tr>
-<td align="right">高德地图</td>
-<td align="right">gaodeMap</td>
-<td align="right">坐标经度</td>
-<td align="right">坐标纬度</td>
-<td align="right">文本</td>
-<td align="right">取值3~18</td>
-</tr>
-<tr>
-<td align="right">百度地图</td>
-<td align="right">baiduMap</td>
-<td align="right">坐标经度</td>
-<td align="right">坐标纬度</td>
-<td align="right">文本</td>
-<td align="right">取值4~18</td>
-</tr>
-<tr>
-<td align="right">Geoq地图</td>
-<td align="right">geoqMap</td>
-<td align="right">坐标经度</td>
-<td align="right">坐标纬度</td>
-<td align="right">文本</td>
-<td align="right">取值1~18</td>
-</tr>
-<tr>
-<td align="right">openstreet地图</td>
-<td align="right">openstreetMap</td>
-<td align="right">坐标经度</td>
-<td align="right">坐标纬度</td>
-<td align="right">文本</td>
-<td align="right">取值1~18</td>
-</tr>
-</tbody></table>
-<table>
-<thead>
-<tr>
-<th align="right">地图名</th>
-<th align="right">宽(默认100%) &#x2F; 高(默认360px)</th>
-<th align="right">默认图层(默认1)</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="right">混合地图</td>
-<td align="right">百分数或具体值(100%或360px)</td>
-<td align="right">取值1~7</td>
-</tr>
-<tr>
-<td align="right">谷歌地图</td>
-<td align="right">百分数或具体值(100%或360px)</td>
-<td align="right">取值1~3</td>
-</tr>
-<tr>
-<td align="right">高德地图</td>
-<td align="right">百分数或具体值(100%或360px)</td>
-<td align="right">取值1~3</td>
-</tr>
-<tr>
-<td align="right">百度地图</td>
-<td align="right">百分数或具体值(100%或360px)</td>
-<td align="right">取值1~2</td>
-</tr>
-<tr>
-<td align="right">Geoq地图</td>
-<td align="right">百分数或具体值(100%或360px)</td>
-<td align="right">取值1~5</td>
-</tr>
-<tr>
-<td align="right">openstreet地图</td>
-<td align="right">百分数或具体值(100%或360px)</td>
-<td align="right">不支持此参数</td>
-</tr>
-</tbody></table>
-<ol>
-<li>参数之间，用<strong>英文逗号</strong>相隔</li>
-<li>参数必须按上述事例顺序输入，不得为空</li>
-<li><strong>同一个页面，同一组经纬度值，只能插入一个相同标签值的地图</strong>(若有需要，可以将第二个地图上，经度或纬度末尾删除一两个数)</li>
-<li>参数取值必须在上述范围内</li>
-<li>默认图层：即地图叠加层的值，默认常规地图还是卫星地图，可按地图显示顺序取值</li>
-<li><strong>缩放等级，数字越大，地图比例尺越小，显示的越精细</strong></li>
-<li>除<strong>标签值</strong>外，其他参数选填，但 <strong>每个参数的左边的参数必填</strong></li>
-<li>谷歌地图需要外网才能加载查看</li>
-</ol>
-<h1 id="Notes"><a href="#Notes" class="headerlink" title="Notes"></a>Notes</h1><hr>
-<h3 id="本地图片的调用"><a href="#本地图片的调用" class="headerlink" title="本地图片的调用"></a>本地图片的调用</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">my version</span></span><br><span class="line">hexo: 7.2.0</span><br><span class="line">hexo-cli: 4.3.2</span><br></pre></td></tr></table></figure>
-
-<ol>
-<li><p>手动新建<br>首先是在 _posts 文件夹下建立一个<code>本地图片的调用.md</code>，再建立一个同名的文件夹 <code>本地图片的调用</code>。</p>
-</li>
-<li><p>hexo代码新建<br>使用<code>hexo new post 本地图片的调用</code>，可以生成md文件的同时生成一个同名文件夹用于存储网页资源。</p>
-</li>
-</ol>
-<p>这篇文章要引用的图片就放在该文件夹下。比如我就在该目录下放一个图片<code>1.png</code>。</p>
-<p><img src="/2019/05/01/hello_world/1.png"></p>
-<p>然后在博文 MarkDown 文件里引用该图片：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">这里是图片注释</span>](<span class="link">../images/2019_05_01_hello_world/1.png</span>)</span><br></pre></td></tr></table></figure>
-
-<p><strong>为什么引用的时候不用加文件夹的路径呢？</strong></p>
-<p>这是因为 hexo 在渲染的时候，会把<code>本地图片的调用.md</code> 渲染为<code>public</code>下的 <code>本地图片的调用.html</code>网页文件，而把对应文件夹下的静态资源，比如图片 <code>1.png</code>也拷贝到<code>public</code>下!</p>
-<p>需要注意的是，在<code>hexo/source/_posts</code>目录下的图片文件名不能重复。</p>
-<h3 id="skip-render"><a href="#skip-render" class="headerlink" title="skip render"></a>skip render</h3><p>修改hexo根目录下_config.yml文件，</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">skip_render:</span></span><br><span class="line">	<span class="bullet">-</span> <span class="string">&#x27;_posts/templates/**&#x27;</span></span><br><span class="line">	<span class="bullet">-</span> <span class="string">&#x27;_posts/draft/**&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<p>目录结构：<br><code>- hexo/source/_posts/templates/</code> 保存post模版，供Obsidian快速开始Post编写。<br><code>- hexo/source/_posts/draft/</code> 保存未编辑完成，或不想共享的文章内容。</p>
-<p>设置跳过渲染之后，最好使用<code>hexo clean</code>清除以前的编译结果，保证配置生效。再使用<code>hexo g</code>查看。</p>
-<h3 id="自动generate"><a href="#自动generate" class="headerlink" title="自动generate"></a>自动generate</h3><p>定时or设置条件运行命令<code>docker exec -it hexo bash -c &quot;hexo clean &amp;&amp; hexo g&quot;</code>来自动编译。</p>
-<p><strong>踩坑：</strong> 直接在群晖的<code>控制面板</code> - <code>任务计划</code>中添加自定义脚本<code>docker exec -it hexo bash -c &quot;hexo clean &amp;&amp; hexo g&quot;</code>会报错<code>the input device is not a TTY</code>.</p>
-<p>tty一词源于Teletypes,或teletypewriters。这个的意思是说后台linux执行的时候没有终端设备。我们一般执行docker里的命令时候都喜欢加上-it 这个参数，这里的-t 就是表示伪tty。所以，如果我们docker执行后台运行的任务或者程序直接去除 -t 这个参数就不会出现这个报错了。</p>
-<p><strong>所以要用 <code>docker exec hexo bash -c &quot;hexo clean &amp;&amp; hexo g&quot;</code></strong></p>
-<p><strong>待改进：</strong> 设置了每天generate一次。如果设置成有变动就generate就更好了，暂时没想到办法。</p>
-<h3 id="视频嵌入"><a href="#视频嵌入" class="headerlink" title="视频嵌入"></a>视频嵌入</h3><p>现在视频基本上都会分享到各大平台，所以暂时主要以嵌入网络视频展示。<br>研究了几款插件，基本上都是年久失修，使用不易，最终还是选择了<code>iframe</code>嵌入。</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">%%bilibili视频嵌入%%</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;position: relative; width: 100%; height: 0; padding-bottom: 75%;&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">src</span>=<span class="string">&quot;//player.bilibili.com/player.html?aid=244387247&amp;cid=229573649&amp;page=1&quot;</span> <span class="attr">scrolling</span>=<span class="string">&quot;no&quot;</span> <span class="attr">border</span>=<span class="string">&quot;0&quot;</span> <span class="attr">frameborder</span>=<span class="string">&quot;no&quot;</span> <span class="attr">framespacing</span>=<span class="string">&quot;0&quot;</span> <span class="attr">allowfullscreen</span>=<span class="string">&quot;true&quot;</span> <span class="attr">style</span>=<span class="string">&quot;position: absolute; width: 100%; height: 100%; Left: 0; top: 0;&quot;</span> &gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span>  </span><br></pre></td></tr></table></figure>
-
-<p><a href="https://github.com/stephenmkbrady/hexo-tag-html5">hexo-tag-html5video</a></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install --save hexo-tag-html5video</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% html5video &#x27;100%&#x27; &#x27;250px&#x27; &#x27;video/mp4&#x27; %&#125; </span><br><span class="line">&#123;% asset<span class="emphasis">_path &lt;视频路径&gt; %&#125; </span></span><br><span class="line"><span class="emphasis">&#123;% endhtml5video %&#125;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="菜单导航配置"><a href="#菜单导航配置" class="headerlink" title="菜单导航配置"></a>菜单导航配置</h3><p>配置基本菜单导航的名称、路径url和图标icon.</p>
-<ol>
-<li>菜单导航名称可以是中文也可以是英文(如：<code>Index</code> 或 <code>主页</code>)</li>
-<li><code>External</code> 表示是否在新标签页打开连接</li>
-<li>导航地址可以是站内地址也可以是外网地址</li>
-</ol>
-<h3 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h3><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">hexo</span><br><span class="line"><span class="bullet">  -</span> node<span class="emphasis">_modules</span></span><br><span class="line"><span class="emphasis">  - scaffolds # 模板文件夹</span></span><br><span class="line"><span class="emphasis">    - draft.md # 草稿模板文件</span></span><br><span class="line"><span class="emphasis">    - page.md # 页面模板文件</span></span><br><span class="line"><span class="emphasis">    - post.md # 文章模板文件</span></span><br><span class="line"><span class="emphasis">  - source # 资源文件夹</span></span><br><span class="line"><span class="emphasis">    - _</span>drafts # 草稿文件夹</span><br><span class="line"><span class="bullet">    -</span> <span class="emphasis">_posts # post文件夹</span></span><br><span class="line"><span class="emphasis">    - images #图片文件夹</span></span><br><span class="line"><span class="emphasis">  - themes # 主题文件夹</span></span><br><span class="line"><span class="emphasis">    - ayer # 主题文件夹</span></span><br><span class="line"><span class="emphasis">      - _</span>config.yml # 主题配置文件</span><br><span class="line"><span class="bullet">      -</span> languages # 语言文件夹</span><br><span class="line"><span class="bullet">      -</span> layout # 布局文件夹</span><br><span class="line"><span class="bullet">      -</span> scripts # 脚本文件夹</span><br><span class="line"><span class="bullet">      -</span> source # 资源文件夹</span><br><span class="line"><span class="bullet">        -</span> css # 样式文件夹</span><br><span class="line"><span class="bullet">        -</span> fonts # 字体文件夹</span><br><span class="line"><span class="bullet">        -</span> images # 图片文件夹</span><br><span class="line"><span class="bullet">        -</span> js # 脚本文件夹</span><br><span class="line"><span class="bullet">  -</span> <span class="emphasis">_config.yml # 配置文件</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="本地图片的调用-1"><a href="#本地图片的调用-1" class="headerlink" title="本地图片的调用"></a>本地图片的调用</h3><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">这里是图片注释</span>](<span class="link">../images/2019_05_01_hello_world/1.png</span>)</span><br></pre></td></tr></table></figure>
-
-<h3 id="DIY-hexo-new-post"><a href="#DIY-hexo-new-post" class="headerlink" title="DIY hexo new post"></a>DIY hexo new post</h3><p>修改hexo根目录下_config.yml文件，</p>
-<ol>
-<li>为新建post自动加上当前日期，避免title重复，造成的一系列问题。</li>
-</ol>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Writing</span></span><br><span class="line"><span class="comment"># new_post_name: title.md # default setting</span></span><br><span class="line"><span class="attr">new_post_name:</span> <span class="string">:year_:month_:day_:title.md</span> </span><br><span class="line"><span class="comment"># new posts name as year_month_day_postname</span></span><br><span class="line"><span class="attr">default_layout:</span> <span class="string">post</span></span><br><span class="line"><span class="attr">titlecase:</span> <span class="literal">false</span> <span class="comment"># Transform title into titlecase</span></span><br><span class="line"><span class="attr">external_link:</span></span><br><span class="line"><span class="attr">enable:</span> <span class="literal">true</span> <span class="comment"># Open external links in new tab</span></span><br><span class="line"><span class="attr">field:</span> <span class="string">site</span> <span class="comment"># Apply to the whole site</span></span><br><span class="line"><span class="attr">exclude:</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="attr">filename_case:</span> <span class="number">0</span></span><br><span class="line"><span class="attr">render_drafts:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>为了使_post文件夹尽可能的精简，便于网盘同步，只保留md文件，图片等资源放在<code>source</code>目录下<code>images</code>文件夹内。</li>
-</ol>
-<figure class="highlight sqf"><table><tr><td class="code"><pre><span class="line">post_asset_folder: <span class="literal">false</span> </span><br><span class="line"># 改成<span class="literal">true</span>，则在<span class="variable">_post</span>新建下新建md文件的同时新建一个同名的文件夹用于存储当前页面的一些资源。</span><br></pre></td></tr></table></figure>
-
-<h3 id="引用文章"><a href="#引用文章" class="headerlink" title="引用文章"></a><a href="https://hexo.io/zh-cn/docs/tag-plugins#%E5%BC%95%E7%94%A8%E6%96%87%E7%AB%A0">引用文章</a></h3><p>引用其他文章的链接。</p>
-<figure class="highlight django"><table><tr><td class="code"><pre><span class="line"><span class="template-tag">&#123;% <span class="name">post_path</span> filename %&#125;</span><span class="language-xml">  </span></span><br><span class="line"><span class="language-xml"></span><span class="template-tag">&#123;% <span class="name">post_link</span> filename [title] [escape] %&#125;</span></span><br></pre></td></tr></table></figure>
-
-<p>在使用此标签时可以忽略文章文件所在的路径或者文章的永久链接信息、如语言、日期。</p>
-<p>例如，在文章中使用 <code>&#123;% post_link how-to-bake-a-cake %&#125;</code> 时，只需有一个名为 <code>how-to-bake-a-cake.md</code> 的文章文件即可。即使这个文件位于站点文件夹的 <code>source/posts/2015-02-my-family-holiday</code> 目录下、或者文章的永久链接是 <code>2018/en/how-to-bake-a-cake</code>，都没有影响。</p>
-<p>默认链接文字是文章的标题，你也可以自定义要显示的文本。</p>
-<p>默认对文章的标题和自定义标题里的特殊字符进行转义。可以使用 <code>escape</code> 选项，禁止对特殊字符进行转义。</p>
-<p>例如：</p>
-<p><strong>链接使用文章的标题</strong></p>
-<p><code>&#123;% post_link hexo-3-8-released %&#125;</code></p>
-<p><strong>链接使用自定义文字</strong></p>
-<p><code>&#123;% post_link hexo-3-8-released '通往文章的链接' %&#125;</code></p>
-<p><strong>对标题的特殊字符进行转义</strong></p>
-<figure class="highlight crmsh"><table><tr><td class="code"><pre><span class="line">&#123;% post_link hexo-<span class="number">4</span>-released &#x27;How to use <span class="tag">&lt;b&gt;</span> <span class="keyword">tag</span> <span class="title">in</span> title&#x27; %&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="动态自定义附件文件夹名称"><a href="#动态自定义附件文件夹名称" class="headerlink" title="动态自定义附件文件夹名称"></a>动态自定义附件文件夹名称</h3><p>插件 <strong>Custom Attachment Location</strong> ，安装后进行附件文件夹的设置:</p>
-<figure class="highlight xl"><table><tr><td class="code"><pre><span class="line">C<span class="function"><span class="title">ustom</span> Attachment Location --&gt;</span> L<span class="function"><span class="title">ocation</span> <span class="keyword">for</span> New Attachments --&gt;</span> ./$&#123;filename&#125;.assets （这样设置是为了与 Typora 兼容，正常显示 Typora 中创建的笔记的图片附件）</span><br></pre></td></tr></table></figure>
-
-<h1 id="post在首页全文展示问题"><a href="#post在首页全文展示问题" class="headerlink" title="post在首页全文展示问题"></a>post在首页全文展示问题</h1><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"># 主题config文件 ~/hexo/themes/ayer/_config.yml</span><br><span class="line"># 文章太长，截断按钮文字(在需要截断的行增加此标记：<span class="comment">&lt;!--more--&gt;</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-
-<p>More info:<br><a href="https://post.smzdm.com/p/agqol9zm/">晨聊 篇十七：markdown也变脸，obsidian + hexo 在群晖NAS上的双剑合璧</a></p>
-]]></content>
-      <categories>
-        <category>技术</category>
-        <category>博客</category>
-        <category>hexo</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-        <tag>笔记</tag>
-        <tag>markdown</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>SQL学习笔记</title>
-    <url>/2023/02/27/SQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="/_post/2024_02_28_%E6%8E%92%E5%BA%8F_DENSE_RANK.md">排序_DENSE_RANK</a></p>
-<h2 id="IFNULL"><a href="#IFNULL" class="headerlink" title="IFNULL"></a>IFNULL</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Write your MySQL query statement below</span><br><span class="line"></span><br><span class="line">select e.name, b.bonus</span><br><span class="line"></span><br><span class="line">from Employee e left join Bonus b</span><br><span class="line"></span><br><span class="line">on e.empId = b.empId</span><br><span class="line"></span><br><span class="line">where ifnull(bonus,0)&lt;1000</span><br><span class="line">## ifnul 就把值替换成0）</span><br></pre></td></tr></table></figure>
-<span id="more"></span>
-
-
-
-<h2 id="SQL-585"><a href="#SQL-585" class="headerlink" title="SQL 585"></a>SQL 585</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT ROUND(SUM(tiv_2016), 2) AS tiv_2016</span><br><span class="line"></span><br><span class="line">FROM Insurance</span><br><span class="line"></span><br><span class="line">WHERE tiv_2015 IN (</span><br><span class="line"></span><br><span class="line">SELECT tiv_2015</span><br><span class="line"></span><br><span class="line">FROM Insurance</span><br><span class="line"></span><br><span class="line">GROUP BY tiv_2015</span><br><span class="line"></span><br><span class="line">HAVING COUNT(*) &gt; 1</span><br><span class="line"></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">AND (lat, lon) NOT IN (</span><br><span class="line"></span><br><span class="line">SELECT lat, lon</span><br><span class="line"></span><br><span class="line">FROM Insurance</span><br><span class="line"></span><br><span class="line">GROUP BY lat, lon</span><br><span class="line"></span><br><span class="line">HAVING COUNT(*) &gt; 1</span><br><span class="line"></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-
-
-<h2 id="SQL-610"><a href="#SQL-610" class="headerlink" title="SQL 610"></a>SQL 610</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Write your MySQL query statement below</span><br><span class="line">select </span><br><span class="line">    *,</span><br><span class="line">    if(x+y&gt;z and x+z&gt;y and y+z&gt;x,&#x27;Yes&#x27;,&#x27;No&#x27;) as triangle</span><br><span class="line">from Triangle</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="SQL1633-ORDER-BY-2-DESC-1"><a href="#SQL1633-ORDER-BY-2-DESC-1" class="headerlink" title="SQL1633 ORDER BY 2 DESC, 1"></a>SQL1633 ORDER BY 2 DESC, 1</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ORDER BY 2 DESC, 1</span><br></pre></td></tr></table></figure>
-
-<p>这一行使用ORDER BY子句对结果进行排序。我们按照第二列（即percentage）的降序进行排序，如果百分比相同，则按照第一列（即contest_id）的升序进行排序。</p>
-<h2 id="SQL1179-CASE-WHEN"><a href="#SQL1179-CASE-WHEN" class="headerlink" title="SQL1179 CASE WHEN"></a>SQL1179 CASE WHEN</h2><p>CASE WHEN语句是SQL中用于根据条件进行条件判断和返回不同结果的表达式。它允许你根据满足特定条件的情况，选择不同的结果进行返回。</p>
-<p>CASE WHEN语句的基本语法如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CASE</span><br><span class="line">   WHEN condition1 THEN result1</span><br><span class="line">   WHEN condition2 THEN result2</span><br><span class="line">   ...</span><br><span class="line">   ELSE resultN</span><br><span class="line">END</span><br></pre></td></tr></table></figure>
-
-<p>首先，你提供一个或多个WHEN子句，每个子句后面跟着一个条件（condition）和一个对应的结果（result）。当满足某个条件时，相应的结果将被返回。ELSE子句是可选的，用于指定当没有任何条件满足时的默认结果。</p>
-<p>让我们通过一个简单的例子来说明CASE WHEN的使用。假设有一个名为”students”的表，其中包含学生的姓名和分数列。如果要将成绩分为优秀、良好和及格三个等级并进行显示，可以使用以下SQL语句：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT name,</span><br><span class="line">       CASE</span><br><span class="line">          WHEN score &gt;= 90 THEN &#x27;优秀&#x27;</span><br><span class="line">          WHEN score &gt;= 80 THEN &#x27;良好&#x27;</span><br><span class="line">          WHEN score &gt;= 60 THEN &#x27;及格&#x27;</span><br><span class="line">          ELSE &#x27;不及格&#x27;</span><br><span class="line">       END AS grade</span><br><span class="line">FROM students;</span><br></pre></td></tr></table></figure>
-
-<p>在这个例子中，对于每个学生，我们使用CASE WHEN语句根据他们的分数来判断他们的等级。如果分数大于等于90，那么他们被归类为”优秀”；如果分数大于等于80，但小于90，他们被归类为”良好”；如果分数大于等于60，但小于80，他们被归类为”及格”；否则，他们被归类为”不及格”。</p>
-<p>通过使用CASE WHEN语句，我们可以根据不同的条件返回不同的结果，从而实现灵活的数据处理和转换。</p>
-]]></content>
-      <categories>
-        <category>技术</category>
-        <category>数据分析</category>
-        <category>SQL</category>
-      </categories>
-      <tags>
-        <tag>笔记</tag>
-        <tag>SQL</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>排序_DENSE_RANK</title>
-    <url>/2023/02/28/%E6%8E%92%E5%BA%8F_DENSE_RANK/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="rank"><a href="#rank" class="headerlink" title="rank()"></a>rank()</h2><h2 id="dense-rank"><a href="#dense-rank" class="headerlink" title="dense_rank()"></a>dense_rank()</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">DENSE_RANK() OVER (PARTITION BY column1, column2... ORDER BY column3, column4...)</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>PARTITION BY子句是可选的，用于将数据分成不同的分组。如果不指定PARTITION BY子句，将对整个结果集进行排名。</li>
-<li>ORDER BY子句指定用于排序的列。可以根据一个或多个列进行排序，以确定排名的顺序。</li>
-</ul>
-<span id="more"></span>
-
-<h3 id="example"><a href="#example" class="headerlink" title="example"></a>example</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT name, salary, DENSE_RANK() OVER (ORDER BY salary DESC) AS dense_rank</span><br><span class="line">FROM employees;</span><br></pre></td></tr></table></figure>
-
-
-
-<p>当使用DENSE_RANK函数和PARTITION BY子句时，以下是示例查询的可能返回结果：</p>
-<p>示例1：对每个客户的订单金额进行排名</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT order_id, customer_id, order_amount,</span><br><span class="line">       DENSE_RANK() OVER (PARTITION BY customer_id ORDER BY order_amount DESC) AS dense_rank</span><br><span class="line">FROM orders;</span><br></pre></td></tr></table></figure>
-
-<table>
-<thead>
-<tr>
-<th>order_id</th>
-<th>customer_id</th>
-<th>order_amount</th>
-<th>dense_rank</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td>1001</td>
-<td>500</td>
-<td>1</td>
-</tr>
-<tr>
-<td>2</td>
-<td>1001</td>
-<td>500</td>
-<td>1</td>
-</tr>
-<tr>
-<td>3</td>
-<td>1001</td>
-<td>300</td>
-<td>2</td>
-</tr>
-<tr>
-<td>4</td>
-<td>1002</td>
-<td>700</td>
-<td>1</td>
-</tr>
-<tr>
-<td>5</td>
-<td>1002</td>
-<td>600</td>
-<td>2</td>
-</tr>
-<tr>
-<td>6</td>
-<td>1002</td>
-<td>600</td>
-<td>2</td>
-</tr>
-<tr>
-<td>7</td>
-<td>1002</td>
-<td>400</td>
-<td>3</td>
-</tr>
-</tbody></table>
-<p>在上述结果中，我们根据每个客户的订单金额进行了排名。客户ID为1001的客户有两个订单，订单金额都是500，因此它们被分配相同的密集排名1。客户ID为1001的第三个订单金额为300，所以它被分配密集排名2。对于客户ID为1002的客户，有一个订单金额为700，它被分配密集排名1，然后有两个订单金额为600，它们被分配密集排名2，最后一个订单金额为400，它被分配密集排名3。</p>
-<p>示例2：对每个班级的学生成绩进行排名</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT student_id, class_id, exam_score,</span><br><span class="line">       DENSE_RANK() OVER (PARTITION BY class_id ORDER BY exam_score DESC) AS dense_rank</span><br><span class="line">FROM students;</span><br></pre></td></tr></table></figure>
-
-<table>
-<thead>
-<tr>
-<th>student_id</th>
-<th>class_id</th>
-<th>exam_score</th>
-<th>dense_rank</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td>A</td>
-<td>95</td>
-<td>1</td>
-</tr>
-<tr>
-<td>2</td>
-<td>A</td>
-<td>90</td>
-<td>2</td>
-</tr>
-<tr>
-<td>3</td>
-<td>A</td>
-<td>85</td>
-<td>3</td>
-</tr>
-<tr>
-<td>4</td>
-<td>B</td>
-<td>92</td>
-<td>1</td>
-</tr>
-<tr>
-<td>5</td>
-<td>B</td>
-<td>88</td>
-<td>2</td>
-</tr>
-<tr>
-<td>6</td>
-<td>B</td>
-<td>88</td>
-<td>2</td>
-</tr>
-<tr>
-<td>7</td>
-<td>B</td>
-<td>80</td>
-<td>3</td>
-</tr>
-</tbody></table>
-<p>在上述结果中，我们根据每个班级的考试成绩进行了排名。班级ID为A的学生有三个学生，分别获得了95、90和85分，他们分别被分配密集排名1、2和3。班级ID为B的学生有四个学生，分别获得了92、88、88和80分，他们分别被分配密集排名1、2、2和3。</p>
-]]></content>
-      <categories>
-        <category>技术</category>
-        <category>数据分析</category>
-        <category>SQL</category>
-      </categories>
-      <tags>
-        <tag>笔记</tag>
-        <tag>SQL</tag>
-        <tag>排序</tag>
       </tags>
   </entry>
 </search>
