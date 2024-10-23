@@ -1,55 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>苹果全平台无缝同步群晖Obsidian库</title>
-    <url>/2019/05/24/Apple%E5%85%A8%E5%B9%B3%E5%8F%B0%E6%97%A0%E7%BC%9D%E5%90%8C%E6%AD%A5%E7%BE%A4%E6%99%96Obsidian%E5%BA%93/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><strong>前提介绍：</strong></p>
-<blockquote>
-<p><a href="https://obsidian.md/">Obsidian</a>是一款基于Markdown的笔记软件，以其强大的链接和标签功能、本地化存储及丰富的插件生态，为用户提供高效的知识管理和创作体验。 </p>
-</blockquote>
-<blockquote>
-<p><a href="https://www.synology.cn/zh-cn">群晖NAS</a>是一种基于网络连接的存储设备，它提供集中管理和共享文件的平台，支持多种功能，如数据备份、多媒体服务器等，方便用户随时随地访问和管理数据。</p>
-</blockquote>
-<h2 id="本文的目的"><a href="#本文的目的" class="headerlink" title="本文的目的"></a>本文的目的</h2><p><a href="https://obsidian.md/">Obsidian</a>作为一款优秀的markdown笔记软件，非常适合搭配hexo撰写blog。</p>
-<p>通过macOS上群晖Drive将hexo的post目录同步到iCloud，实现macOS和群晖drive的同步，然后通过iCloud在不同苹果设备上同步hexo的post目录，实现任意苹果设备撰写blog都可以在macOS通过群晖drive将新blog内容同步至群晖，再由群晖将内容自动布置到GitHub，实现blog网站的自动更新。</p>
-<span id="more"></span>
-
-
-<div class="markmap-container" style="height:400px">
-  <svg data="{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:1,&quot;p&quot;:{&quot;lines&quot;:[1,2]},&quot;v&quot;:&quot;Blog内容同步与自动更新流程&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:2,&quot;p&quot;:{&quot;lines&quot;:[3,4]},&quot;v&quot;:&quot;macOS&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[4,5]},&quot;v&quot;:&quot;群晖Drive&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:5,&quot;p&quot;:{&quot;lines&quot;:[5,6]},&quot;v&quot;:&quot;同步Hexo的post目录到iCloud&quot;}]}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:2,&quot;p&quot;:{&quot;lines&quot;:[7,8]},&quot;v&quot;:&quot;iCloud&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:4,&quot;p&quot;:{&quot;lines&quot;:[8,9]},&quot;v&quot;:&quot;同步Hexo的post目录&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:4,&quot;p&quot;:{&quot;lines&quot;:[9,10]},&quot;v&quot;:&quot;跨苹果设备同步&quot;}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:2,&quot;p&quot;:{&quot;lines&quot;:[11,12]},&quot;v&quot;:&quot;苹果设备&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[12,13]},&quot;v&quot;:&quot;任意设备&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:5,&quot;p&quot;:{&quot;lines&quot;:[13,14]},&quot;v&quot;:&quot;撰写blog&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:5,&quot;p&quot;:{&quot;lines&quot;:[14,15]},&quot;v&quot;:&quot;通过iCloud同步到macOS&quot;}]}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:2,&quot;p&quot;:{&quot;lines&quot;:[16,17]},&quot;v&quot;:&quot;macOS（继续）&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[17,18]},&quot;v&quot;:&quot;群晖Drive（继续）&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:5,&quot;p&quot;:{&quot;lines&quot;:[18,19]},&quot;v&quot;:&quot;将新blog内容同步至群晖&quot;}]}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:2,&quot;p&quot;:{&quot;lines&quot;:[20,21]},&quot;v&quot;:&quot;群晖&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:4,&quot;p&quot;:{&quot;lines&quot;:[21,22]},&quot;v&quot;:&quot;将内容自动布置到GitHub&quot;}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:2,&quot;p&quot;:{&quot;lines&quot;:[23,24]},&quot;v&quot;:&quot;GitHub&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:4,&quot;p&quot;:{&quot;lines&quot;:[24,25]},&quot;v&quot;:&quot;自动更新blog网站&quot;}]}]}"></svg>
-</div>
-
-
-
-<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><blockquote>
-<p>iPadOS和iOS端Obsidian只能识别打开iCloud Drive中Obsidian目录下的库，但macOS端的群晖Drive同步目录找不到iCloud目录，也就无法从iCloud同步至群晖。</p>
-</blockquote>
-<h2 id="解决步骤"><a href="#解决步骤" class="headerlink" title="解决步骤"></a>解决步骤</h2><h3 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h3><p>全部苹果设备开启 iCloud 同步，在 iOS&#x2F;iPadOS 下打开 obsidian 新建库，会自动生成一个<code>welcome.md</code>文件。</p>
-<h3 id="第二步"><a href="#第二步" class="headerlink" title="第二步"></a>第二步</h3><p>打开 macOS 访达，左侧打开 iCloud 云盘，点 obsidian 图标文件下载到本地管理（云箭头表示还在云上）。</p>
-<h3 id="第三步"><a href="#第三步" class="headerlink" title="第三步"></a>第三步</h3><p>显示 Mac 隐藏文件的两种方法：</p>
-<ol>
-<li>mac 终端中输入入命令：<code>defaults write com.apple.finder AppleShowAllFiles -bool true; killall Finder</code>  。</li>
-<li>快捷键组合：<code>⌘+⇧+。</code></li>
-</ol>
-<p>隐藏文件显示后，找到自己用户名下的资源库，在上方菜单栏<code>显示</code>-<code>查看显示选项</code>（<code>⌘+J</code>）中勾选<code>显示资源库文件夹</code>，这样就可以在群晖Drive同步软件中定位到 iCloud 内的文件夹。</p>
-<h3 id="第四步"><a href="#第四步" class="headerlink" title="第四步"></a>第四步</h3><p>macOS 打开群晖的配套同步软件<code>群晖 Drive Client</code>设置，创建选定<code>mac</code>用户名下<code>library</code>中的<code>moblie documents</code>文件，翻到iCloud前缀的obsidian文件夹，同步之前 iOS 中新建的库即可。</p>
-<h3 id="第五步"><a href="#第五步" class="headerlink" title="第五步"></a>第五步</h3><p>macOS 中iCloud下 Obsidian 打开库文件夹，在网络 nas 中即可找到此 iOS&#x2F;iPadOS 新建的库。</p>
-<p>完成之后，关闭显示 Mac 隐藏文件：<code>defaults write com.apple.finder AppleShowAllFiles -boolean false ; killall Finder</code></p>
-<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><p>实测多设备下修改输入，几乎都是秒刷到账，唯一要担心的是删的太快，如果在一处误删掉某内容，很快会被同步覆盖。不过群晖drive 中可以看同步日志，应问题不大。</p>
-<p>目前还没有遇上同步问题，仅提供解决方案，数据无价，请自行斟酌＼（＾ ＾）／</p>
-]]></content>
-      <categories>
-        <category>技术</category>
-        <category>博客</category>
-        <category>hexo</category>
-      </categories>
-      <tags>
-        <tag>markdown</tag>
-        <tag>hexo</tag>
-        <tag>Obsidian</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hexo Hello World</title>
     <url>/2019/05/01/hello_world/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
@@ -420,6 +371,55 @@
       </tags>
   </entry>
   <entry>
+    <title>苹果全平台无缝同步群晖Obsidian库</title>
+    <url>/2019/05/24/Apple%E5%85%A8%E5%B9%B3%E5%8F%B0%E6%97%A0%E7%BC%9D%E5%90%8C%E6%AD%A5%E7%BE%A4%E6%99%96Obsidian%E5%BA%93/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><strong>前提介绍：</strong></p>
+<blockquote>
+<p><a href="https://obsidian.md/">Obsidian</a>是一款基于Markdown的笔记软件，以其强大的链接和标签功能、本地化存储及丰富的插件生态，为用户提供高效的知识管理和创作体验。 </p>
+</blockquote>
+<blockquote>
+<p><a href="https://www.synology.cn/zh-cn">群晖NAS</a>是一种基于网络连接的存储设备，它提供集中管理和共享文件的平台，支持多种功能，如数据备份、多媒体服务器等，方便用户随时随地访问和管理数据。</p>
+</blockquote>
+<h2 id="本文的目的"><a href="#本文的目的" class="headerlink" title="本文的目的"></a>本文的目的</h2><p><a href="https://obsidian.md/">Obsidian</a>作为一款优秀的markdown笔记软件，非常适合搭配hexo撰写blog。</p>
+<p>通过macOS上群晖Drive将hexo的post目录同步到iCloud，实现macOS和群晖drive的同步，然后通过iCloud在不同苹果设备上同步hexo的post目录，实现任意苹果设备撰写blog都可以在macOS通过群晖drive将新blog内容同步至群晖，再由群晖将内容自动布置到GitHub，实现blog网站的自动更新。</p>
+<span id="more"></span>
+
+
+<div class="markmap-container" style="height:400px">
+  <svg data="{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:1,&quot;p&quot;:{&quot;lines&quot;:[1,2]},&quot;v&quot;:&quot;Blog内容同步与自动更新流程&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:2,&quot;p&quot;:{&quot;lines&quot;:[3,4]},&quot;v&quot;:&quot;macOS&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[4,5]},&quot;v&quot;:&quot;群晖Drive&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:5,&quot;p&quot;:{&quot;lines&quot;:[5,6]},&quot;v&quot;:&quot;同步Hexo的post目录到iCloud&quot;}]}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:2,&quot;p&quot;:{&quot;lines&quot;:[7,8]},&quot;v&quot;:&quot;iCloud&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:4,&quot;p&quot;:{&quot;lines&quot;:[8,9]},&quot;v&quot;:&quot;同步Hexo的post目录&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:4,&quot;p&quot;:{&quot;lines&quot;:[9,10]},&quot;v&quot;:&quot;跨苹果设备同步&quot;}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:2,&quot;p&quot;:{&quot;lines&quot;:[11,12]},&quot;v&quot;:&quot;苹果设备&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[12,13]},&quot;v&quot;:&quot;任意设备&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:5,&quot;p&quot;:{&quot;lines&quot;:[13,14]},&quot;v&quot;:&quot;撰写blog&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:5,&quot;p&quot;:{&quot;lines&quot;:[14,15]},&quot;v&quot;:&quot;通过iCloud同步到macOS&quot;}]}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:2,&quot;p&quot;:{&quot;lines&quot;:[16,17]},&quot;v&quot;:&quot;macOS（继续）&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[17,18]},&quot;v&quot;:&quot;群晖Drive（继续）&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:5,&quot;p&quot;:{&quot;lines&quot;:[18,19]},&quot;v&quot;:&quot;将新blog内容同步至群晖&quot;}]}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:2,&quot;p&quot;:{&quot;lines&quot;:[20,21]},&quot;v&quot;:&quot;群晖&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:4,&quot;p&quot;:{&quot;lines&quot;:[21,22]},&quot;v&quot;:&quot;将内容自动布置到GitHub&quot;}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:2,&quot;p&quot;:{&quot;lines&quot;:[23,24]},&quot;v&quot;:&quot;GitHub&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:4,&quot;p&quot;:{&quot;lines&quot;:[24,25]},&quot;v&quot;:&quot;自动更新blog网站&quot;}]}]}"></svg>
+</div>
+
+
+
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><blockquote>
+<p>iPadOS和iOS端Obsidian只能识别打开iCloud Drive中Obsidian目录下的库，但macOS端的群晖Drive同步目录找不到iCloud目录，也就无法从iCloud同步至群晖。</p>
+</blockquote>
+<h2 id="解决步骤"><a href="#解决步骤" class="headerlink" title="解决步骤"></a>解决步骤</h2><h3 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h3><p>全部苹果设备开启 iCloud 同步，在 iOS&#x2F;iPadOS 下打开 obsidian 新建库，会自动生成一个<code>welcome.md</code>文件。</p>
+<h3 id="第二步"><a href="#第二步" class="headerlink" title="第二步"></a>第二步</h3><p>打开 macOS 访达，左侧打开 iCloud 云盘，点 obsidian 图标文件下载到本地管理（云箭头表示还在云上）。</p>
+<h3 id="第三步"><a href="#第三步" class="headerlink" title="第三步"></a>第三步</h3><p>显示 Mac 隐藏文件的两种方法：</p>
+<ol>
+<li>mac 终端中输入入命令：<code>defaults write com.apple.finder AppleShowAllFiles -bool true; killall Finder</code>  。</li>
+<li>快捷键组合：<code>⌘+⇧+。</code></li>
+</ol>
+<p>隐藏文件显示后，找到自己用户名下的资源库，在上方菜单栏<code>显示</code>-<code>查看显示选项</code>（<code>⌘+J</code>）中勾选<code>显示资源库文件夹</code>，这样就可以在群晖Drive同步软件中定位到 iCloud 内的文件夹。</p>
+<h3 id="第四步"><a href="#第四步" class="headerlink" title="第四步"></a>第四步</h3><p>macOS 打开群晖的配套同步软件<code>群晖 Drive Client</code>设置，创建选定<code>mac</code>用户名下<code>library</code>中的<code>moblie documents</code>文件，翻到iCloud前缀的obsidian文件夹，同步之前 iOS 中新建的库即可。</p>
+<h3 id="第五步"><a href="#第五步" class="headerlink" title="第五步"></a>第五步</h3><p>macOS 中iCloud下 Obsidian 打开库文件夹，在网络 nas 中即可找到此 iOS&#x2F;iPadOS 新建的库。</p>
+<p>完成之后，关闭显示 Mac 隐藏文件：<code>defaults write com.apple.finder AppleShowAllFiles -boolean false ; killall Finder</code></p>
+<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><p>实测多设备下修改输入，几乎都是秒刷到账，唯一要担心的是删的太快，如果在一处误删掉某内容，很快会被同步覆盖。不过群晖drive 中可以看同步日志，应问题不大。</p>
+<p>目前还没有遇上同步问题，仅提供解决方案，数据无价，请自行斟酌＼（＾ ＾）／</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>博客</category>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>markdown</tag>
+        <tag>hexo</tag>
+        <tag>Obsidian</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>GoPro Hero最实用的四个必备配件:打造完美生态</title>
     <url>/2022/03/15/GoproHero/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><hr>
@@ -436,41 +436,22 @@
       </tags>
   </entry>
   <entry>
-    <title>菜谱</title>
-    <url>/2022/04/19/%E8%8F%9C%E8%B0%B1/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="空气炸锅鸡排"><a href="#空气炸锅鸡排" class="headerlink" title="空气炸锅鸡排"></a>空气炸锅鸡排</h1><ul>
-<li>温度：200度</li>
-<li>时间：8分钟 + 4分钟</li>
-</ul>
-<h1 id="空气炸锅健身食品"><a href="#空气炸锅健身食品" class="headerlink" title="空气炸锅健身食品"></a>空气炸锅健身食品</h1><ul>
-<li>鸡胸肉（黑胡椒、13香、橄榄油）</li>
-<li>地瓜（切块、橄榄油）</li>
-<li>温度：180度</li>
-<li>时间：15分钟</li>
-</ul>
+    <title>在hexo博客中插入思维导图</title>
+    <url>/2019/05/24/%E5%9C%A8hexo%E5%8D%9A%E5%AE%A2%E4%B8%AD%E6%8F%92%E5%85%A5%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="https://github.com/maxchang3/hexo-markmap">hexo-markmap</a></p>
+<p><strong>使用示例</strong></p>
 <span id="more"></span>
-<p><a href="https://www.youtube.com/watch?v=D8O7myqk0Bw">健身食品制作视频</a></p>
-<h1 id="阳春面调料"><a href="#阳春面调料" class="headerlink" title="阳春面调料"></a>阳春面调料</h1><ul>
-<li>生抽、陈醋、盐、香油或猪油、葱花</li>
-</ul>
-<h1 id="爆炒香辣鱿鱼"><a href="#爆炒香辣鱿鱼" class="headerlink" title="爆炒香辣鱿鱼"></a>爆炒香辣鱿鱼</h1><p>食材：</p>
-<ul>
-<li>鱿鱼须、葱、姜、洋葱、料酒、豆瓣酱、生抽、老抽、蚝油、白糖、盐、熟芝麻</li>
-</ul>
-<p>做法：</p>
-<ol>
-<li>鱿鱼洗净切好备用，冷水下锅，加入姜片、葱段、1勺料酒，焯水捞出备用</li>
-<li>锅中油热，倒入洋葱丝，炒出香味，加入1勺豆瓣酱炒出红油，倒入焯好水的鱿鱼须，翻炒上色</li>
-<li>加入1勺生抽、半勺老抽、1勺蚝油、适量白糖、少许盐、1勺熟芝麻，翻炒均匀，撒上葱花即可</li>
-</ol>
-]]></content>
+
+<figure class="highlight clean"><table><tr><td class="code"><pre><span class="line">&#123;% markmap <span class="number">400</span>px %&#125;</span><br><span class="line">  </span><br><span class="line"># Blog内容同步与自动更新流程  </span><br><span class="line">  </span><br><span class="line">## macOS  </span><br><span class="line">### 群晖Drive  </span><br><span class="line">- 同步Hexo的post目录到iCloud  </span><br><span class="line">  </span><br><span class="line">## iCloud  </span><br><span class="line">- 同步Hexo的post目录  </span><br><span class="line">- 跨苹果设备同步  </span><br><span class="line">  </span><br><span class="line">## 苹果设备  </span><br><span class="line">### 任意设备  </span><br><span class="line">- 撰写blog  </span><br><span class="line">- 通过iCloud同步到macOS  </span><br><span class="line">  </span><br><span class="line">## macOS（继续）  </span><br><span class="line">### 群晖Drive（继续）  </span><br><span class="line">- 将新blog内容同步至群晖  </span><br><span class="line">  </span><br><span class="line">## 群晖  </span><br><span class="line">- 将内容自动布置到GitHub  </span><br><span class="line">  </span><br><span class="line">## GitHub  </span><br><span class="line">- 自动更新blog网站</span><br><span class="line">&#123;% endmarkmap %&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
-        <category>生活</category>
-        <category>菜谱</category>
+        <category>技术</category>
+        <category>博客</category>
+        <category>hexo</category>
       </categories>
       <tags>
-        <tag>菜谱</tag>
-        <tag>下酒菜</tag>
+        <tag>markdown</tag>
+        <tag>hexo</tag>
+        <tag>插件</tag>
       </tags>
   </entry>
   <entry>
@@ -1385,25 +1366,6 @@
       </tags>
   </entry>
   <entry>
-    <title>在hexo博客中插入思维导图</title>
-    <url>/2019/05/24/%E5%9C%A8hexo%E5%8D%9A%E5%AE%A2%E4%B8%AD%E6%8F%92%E5%85%A5%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="https://github.com/maxchang3/hexo-markmap">hexo-markmap</a></p>
-<p><strong>使用示例</strong></p>
-<span id="more"></span>
-
-<figure class="highlight clean"><table><tr><td class="code"><pre><span class="line">&#123;% markmap <span class="number">400</span>px %&#125;</span><br><span class="line">  </span><br><span class="line"># Blog内容同步与自动更新流程  </span><br><span class="line">  </span><br><span class="line">## macOS  </span><br><span class="line">### 群晖Drive  </span><br><span class="line">- 同步Hexo的post目录到iCloud  </span><br><span class="line">  </span><br><span class="line">## iCloud  </span><br><span class="line">- 同步Hexo的post目录  </span><br><span class="line">- 跨苹果设备同步  </span><br><span class="line">  </span><br><span class="line">## 苹果设备  </span><br><span class="line">### 任意设备  </span><br><span class="line">- 撰写blog  </span><br><span class="line">- 通过iCloud同步到macOS  </span><br><span class="line">  </span><br><span class="line">## macOS（继续）  </span><br><span class="line">### 群晖Drive（继续）  </span><br><span class="line">- 将新blog内容同步至群晖  </span><br><span class="line">  </span><br><span class="line">## 群晖  </span><br><span class="line">- 将内容自动布置到GitHub  </span><br><span class="line">  </span><br><span class="line">## GitHub  </span><br><span class="line">- 自动更新blog网站</span><br><span class="line">&#123;% endmarkmap %&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>技术</category>
-        <category>博客</category>
-        <category>hexo</category>
-      </categories>
-      <tags>
-        <tag>markdown</tag>
-        <tag>hexo</tag>
-        <tag>插件</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>数据分析师常用的Prompt技巧2/2</title>
     <url>/2023/04/24/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E5%B8%B8%E7%94%A8%E7%9A%84Prompt%E6%8A%80%E5%B7%A7/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="01-什么是探索性分析EDA"><a href="#01-什么是探索性分析EDA" class="headerlink" title="01 什么是探索性分析EDA?"></a>01 什么是探索性分析EDA?</h3><p>探索性数据分析（EDA）是在数据分析初始阶段进行数据了解和探索的过程。通过EDA，我们可以全面了解数据概貌，明确分析方式，并找出异常的可能因素。探索性数据分析在数据分析中非常重要。</p>
@@ -1456,71 +1418,6 @@
         <tag>Prompt</tag>
         <tag>GPT</tag>
         <tag>数据分析</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>机器学习笔记</title>
-    <url>/2023/05/04/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="k-近邻算法-KNN"><a href="#k-近邻算法-KNN" class="headerlink" title="k-近邻算法(KNN)"></a><a href="https://alv1.apachecn.org/#/docs/ml/2">k-近邻算法(KNN)</a></h1><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>KNN是一种基本的 #分类 和 #回归 方法。给一个训练数据集，对新的输入实例，在训练数据集中找到与之最接近（直线距离，欧式距离）的K个实例，这k个实例的多数分类，就是这个输入实例的分类。</p>
-<p>k值的取数决定KNN算法的准确性，太小会使模型变得复杂和过拟合，太大会使得模型变得简单。K值不宜过大过小，需要调试参数获取最好的结果。</p>
-<p>为避免：</p>
-<ol>
-<li>避免某些特征因数值范围过大，对模型产生过大的影响。比如身高在几百英寸，体重在几十公斤，如果不归一化，模型会倾向于选择影响更大的特征。</li>
-<li>避免某些特征因数值过小产生的数值精度问题。<br>需要进行 #特征归一化 处理，对特征的值进行放缩，使之落在一个特定的范围内，常见的范围是0到1之间或者-1到1之间。<span id="more"></span></li>
-</ol>
-<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><ol>
-<li>简单易实现，无需训练。</li>
-<li>可以处理非线性数据。</li>
-<li>对异常值不敏感。</li>
-</ol>
-<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><ol>
-<li>随着训练样本增加，计算成本会增加。</li>
-<li>K值的选择会影响结果。</li>
-<li>无法给出具有解释性的模型。</li>
-</ol>
-<h1 id="决策树-Decision-Tree"><a href="#决策树-Decision-Tree" class="headerlink" title="决策树(Decision Tree)"></a><a href="https://alv1.apachecn.org/#/docs/ml/3">决策树(Decision Tree)</a></h1><p>定义：</p>
-<h1 id="降维技术"><a href="#降维技术" class="headerlink" title="降维技术"></a><a href="https://alv1.apachecn.org/#/docs/ml/13?id=%e9%99%8d%e7%bb%b4%e6%8a%80%e6%9c%af">降维技术</a></h1><p>目的：</p>
-<ol>
-<li>使得数据集更容易使用</li>
-<li>降低很多算法的计算开销</li>
-<li>去除噪音</li>
-<li>使得结果易懂</li>
-</ol>
-<h2 id="3种降维算法"><a href="#3种降维算法" class="headerlink" title="3种降维算法"></a>3种降维算法</h2><h3 id="1-独立成分分析-Independ-Component-Analysis-ICA"><a href="#1-独立成分分析-Independ-Component-Analysis-ICA" class="headerlink" title="1. 独立成分分析(Independ Component Analysis, ICA)"></a>1. 独立成分分析(Independ Component Analysis, ICA)</h3><blockquote>
-<p>通俗理解: ICA 认为观测信号是若干个独立信号的线性组合，ICA 要做的是一个解混过程。</p>
-</blockquote>
-<h3 id="2-因子分析-Factor-Analysis"><a href="#2-因子分析-Factor-Analysis" class="headerlink" title="2. 因子分析(Factor Analysis)"></a>2. 因子分析(Factor Analysis)</h3><blockquote>
-<p>通俗理解: 将多个实测变量转换为少数几个综合指标。它反映一种降维的思想，通过降维将相关性高的变量聚在一起，从而减少需要分析的变量的数量，而减少问题分析的复杂性。</p>
-</blockquote>
-<h3 id="3-主成分分析-Principal-Component-Analysis-PCA"><a href="#3-主成分分析-Principal-Component-Analysis-PCA" class="headerlink" title="3. 主成分分析(Principal Component Analysis, PCA)"></a>3. 主成分分析(Principal Component Analysis, PCA)</h3><p>通俗理解：就是找出一个最主要的特征，然后进行分析。</p>
-<blockquote>
-<p>PCA 工作原理</p>
-</blockquote>
-<ol>
-<li>找出第一个主成分的方向，也就是数据 <code>方差最大</code> 的方向。</li>
-<li>找出第二个主成分的方向，也就是数据 <code>方差次大</code> 的方向，并且该方向与第一个主成分方向 <code>正交(orthogonal 如果是二维空间就叫垂直)</code>。</li>
-<li>通过这种方式计算出所有的主成分方向。</li>
-<li>通过数据集的协方差矩阵及其特征值分析，我们就可以得到这些主成分的值。</li>
-<li>一旦得到了协方差矩阵的特征值和特征向量，我们就可以保留最大的 N 个特征。这些特征向量也给出了 N 个最重要特征的真实结构，我们就可以通过将数据乘上这 N 个特征向量 从而将它转换到新的空间上。</li>
-</ol>
-<p>为什么正交？</p>
-<ol>
-<li>正交是为了数据有效性损失最小</li>
-<li>正交的一个原因是特征值的特征向量是正交的</li>
-</ol>
-<blockquote>
-<p>PCA 优缺点</p>
-</blockquote>
-<p>优点：降低数据的复杂性，识别最重要的多个特征。<br>缺点：不一定需要，且可能损失有用信息。<br>适用数据类型：数值型数据。</p>
-]]></content>
-      <categories>
-        <category>技术</category>
-        <category>数据分析</category>
-        <category>机器学习</category>
-      </categories>
-      <tags>
-        <tag>笔记</tag>
-        <tag>机器学习</tag>
       </tags>
   </entry>
   <entry>
@@ -1643,6 +1540,71 @@
       </tags>
   </entry>
   <entry>
+    <title>机器学习笔记</title>
+    <url>/2023/05/04/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="k-近邻算法-KNN"><a href="#k-近邻算法-KNN" class="headerlink" title="k-近邻算法(KNN)"></a><a href="https://alv1.apachecn.org/#/docs/ml/2">k-近邻算法(KNN)</a></h1><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>KNN是一种基本的 #分类 和 #回归 方法。给一个训练数据集，对新的输入实例，在训练数据集中找到与之最接近（直线距离，欧式距离）的K个实例，这k个实例的多数分类，就是这个输入实例的分类。</p>
+<p>k值的取数决定KNN算法的准确性，太小会使模型变得复杂和过拟合，太大会使得模型变得简单。K值不宜过大过小，需要调试参数获取最好的结果。</p>
+<p>为避免：</p>
+<ol>
+<li>避免某些特征因数值范围过大，对模型产生过大的影响。比如身高在几百英寸，体重在几十公斤，如果不归一化，模型会倾向于选择影响更大的特征。</li>
+<li>避免某些特征因数值过小产生的数值精度问题。<br>需要进行 #特征归一化 处理，对特征的值进行放缩，使之落在一个特定的范围内，常见的范围是0到1之间或者-1到1之间。<span id="more"></span></li>
+</ol>
+<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><ol>
+<li>简单易实现，无需训练。</li>
+<li>可以处理非线性数据。</li>
+<li>对异常值不敏感。</li>
+</ol>
+<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><ol>
+<li>随着训练样本增加，计算成本会增加。</li>
+<li>K值的选择会影响结果。</li>
+<li>无法给出具有解释性的模型。</li>
+</ol>
+<h1 id="决策树-Decision-Tree"><a href="#决策树-Decision-Tree" class="headerlink" title="决策树(Decision Tree)"></a><a href="https://alv1.apachecn.org/#/docs/ml/3">决策树(Decision Tree)</a></h1><p>定义：</p>
+<h1 id="降维技术"><a href="#降维技术" class="headerlink" title="降维技术"></a><a href="https://alv1.apachecn.org/#/docs/ml/13?id=%e9%99%8d%e7%bb%b4%e6%8a%80%e6%9c%af">降维技术</a></h1><p>目的：</p>
+<ol>
+<li>使得数据集更容易使用</li>
+<li>降低很多算法的计算开销</li>
+<li>去除噪音</li>
+<li>使得结果易懂</li>
+</ol>
+<h2 id="3种降维算法"><a href="#3种降维算法" class="headerlink" title="3种降维算法"></a>3种降维算法</h2><h3 id="1-独立成分分析-Independ-Component-Analysis-ICA"><a href="#1-独立成分分析-Independ-Component-Analysis-ICA" class="headerlink" title="1. 独立成分分析(Independ Component Analysis, ICA)"></a>1. 独立成分分析(Independ Component Analysis, ICA)</h3><blockquote>
+<p>通俗理解: ICA 认为观测信号是若干个独立信号的线性组合，ICA 要做的是一个解混过程。</p>
+</blockquote>
+<h3 id="2-因子分析-Factor-Analysis"><a href="#2-因子分析-Factor-Analysis" class="headerlink" title="2. 因子分析(Factor Analysis)"></a>2. 因子分析(Factor Analysis)</h3><blockquote>
+<p>通俗理解: 将多个实测变量转换为少数几个综合指标。它反映一种降维的思想，通过降维将相关性高的变量聚在一起，从而减少需要分析的变量的数量，而减少问题分析的复杂性。</p>
+</blockquote>
+<h3 id="3-主成分分析-Principal-Component-Analysis-PCA"><a href="#3-主成分分析-Principal-Component-Analysis-PCA" class="headerlink" title="3. 主成分分析(Principal Component Analysis, PCA)"></a>3. 主成分分析(Principal Component Analysis, PCA)</h3><p>通俗理解：就是找出一个最主要的特征，然后进行分析。</p>
+<blockquote>
+<p>PCA 工作原理</p>
+</blockquote>
+<ol>
+<li>找出第一个主成分的方向，也就是数据 <code>方差最大</code> 的方向。</li>
+<li>找出第二个主成分的方向，也就是数据 <code>方差次大</code> 的方向，并且该方向与第一个主成分方向 <code>正交(orthogonal 如果是二维空间就叫垂直)</code>。</li>
+<li>通过这种方式计算出所有的主成分方向。</li>
+<li>通过数据集的协方差矩阵及其特征值分析，我们就可以得到这些主成分的值。</li>
+<li>一旦得到了协方差矩阵的特征值和特征向量，我们就可以保留最大的 N 个特征。这些特征向量也给出了 N 个最重要特征的真实结构，我们就可以通过将数据乘上这 N 个特征向量 从而将它转换到新的空间上。</li>
+</ol>
+<p>为什么正交？</p>
+<ol>
+<li>正交是为了数据有效性损失最小</li>
+<li>正交的一个原因是特征值的特征向量是正交的</li>
+</ol>
+<blockquote>
+<p>PCA 优缺点</p>
+</blockquote>
+<p>优点：降低数据的复杂性，识别最重要的多个特征。<br>缺点：不一定需要，且可能损失有用信息。<br>适用数据类型：数值型数据。</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>数据分析</category>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+        <tag>机器学习</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>数据填补算法的选择主要依据</title>
     <url>/2022/05/05/%E6%95%B0%E6%8D%AE%E5%A1%AB%E8%A1%A5%E7%AE%97%E6%B3%95%E7%9A%84%E9%80%89%E6%8B%A9%E4%B8%BB%E8%A6%81%E4%BE%9D%E6%8D%AE/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>数据填补算法的选择主要依据以下几个因素:</p>
@@ -1682,54 +1644,41 @@
       </tags>
   </entry>
   <entry>
-    <title>数据分析师技术树</title>
-    <url>/2023/05/15/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="数据分析师"><a href="#数据分析师" class="headerlink" title="数据分析师"></a>数据分析师</h1><ol>
-<li><p>特点：独当一面、战斗力极强、对企业决策者有一定的影响</p>
-</li>
-<li><p>主要的工作：除了被动的常规分析外，还要能主动发现业务存在的问题，会用数据找事，梳理业务发展与指标体系之间的关系，从日常监督分析开始，更多的是专题性的分析，无中生有</p>
-</li>
-<li><p>需要掌握的：</p>
-<ul>
-<li>硬性技能：SQL、EXCEL、PPT、python\spss\R任选其一，tableau\FineBI\powerbi，也要懂一些市面上流行的数据产品</li>
-<li>软性技能：沟通能力、表达能力、逻辑思维强</li>
-<li>掌握的方法论：ABtest、AAARRR、SWOT、RFM、28原则、5W2H，用户及产品生命周期等</li>
-<li>掌握的统计学：常规统计指标（均值、中位数、分位数等)、回归、聚类、因子、决策树、逻辑回归、机器学习等，这些足够用了</li>
-<li>加分项：图表可视化、PPT展示、系统性思维、在行业有很多认识和沉淀</li>
-<li>要点：算法、技术、工具、业务混为一体，样样都要懂</li>
-<li>总结：这类目前市场上很紧缺，被称为稀缺动物</li>
+    <title>菜谱</title>
+    <url>/2022/04/19/%E8%8F%9C%E8%B0%B1/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="空气炸锅鸡排"><a href="#空气炸锅鸡排" class="headerlink" title="空气炸锅鸡排"></a>空气炸锅鸡排</h1><ul>
+<li>温度：200度</li>
+<li>时间：8分钟 + 4分钟</li>
 </ul>
-</li>
-</ol>
+<h1 id="空气炸锅健身食品"><a href="#空气炸锅健身食品" class="headerlink" title="空气炸锅健身食品"></a>空气炸锅健身食品</h1><ul>
+<li>鸡胸肉（黑胡椒、13香、橄榄油）</li>
+<li>地瓜（切块、橄榄油）</li>
+<li>温度：180度</li>
+<li>时间：15分钟</li>
+</ul>
 <span id="more"></span>
-<h1 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h1><h1 id="python"><a href="#python" class="headerlink" title="python"></a>python</h1><h1 id="tableau-FineBI-powerbi"><a href="#tableau-FineBI-powerbi" class="headerlink" title="tableau-FineBI-powerbi"></a>tableau-FineBI-powerbi</h1><h1 id="掌握的方法论"><a href="#掌握的方法论" class="headerlink" title="掌握的方法论"></a>掌握的方法论</h1><ol>
-<li>ABtest</li>
-<li>AAARRR</li>
-<li>SWOT</li>
-<li>RFM</li>
-<li>28原则</li>
-<li>5W2H</li>
-<li>用户及产品生命周期等</li>
+<p><a href="https://www.youtube.com/watch?v=D8O7myqk0Bw">健身食品制作视频</a></p>
+<h1 id="阳春面调料"><a href="#阳春面调料" class="headerlink" title="阳春面调料"></a>阳春面调料</h1><ul>
+<li>生抽、陈醋、盐、香油或猪油、葱花</li>
+</ul>
+<h1 id="爆炒香辣鱿鱼"><a href="#爆炒香辣鱿鱼" class="headerlink" title="爆炒香辣鱿鱼"></a>爆炒香辣鱿鱼</h1><p>食材：</p>
+<ul>
+<li>鱿鱼须、葱、姜、洋葱、料酒、豆瓣酱、生抽、老抽、蚝油、白糖、盐、熟芝麻</li>
+</ul>
+<p>做法：</p>
+<ol>
+<li>鱿鱼洗净切好备用，冷水下锅，加入姜片、葱段、1勺料酒，焯水捞出备用</li>
+<li>锅中油热，倒入洋葱丝，炒出香味，加入1勺豆瓣酱炒出红油，倒入焯好水的鱿鱼须，翻炒上色</li>
+<li>加入1勺生抽、半勺老抽、1勺蚝油、适量白糖、少许盐、1勺熟芝麻，翻炒均匀，撒上葱花即可</li>
 </ol>
-<h1 id="掌握的统计学"><a href="#掌握的统计学" class="headerlink" title="掌握的统计学"></a>掌握的统计学</h1><ol>
-<li>常规统计指标（均值、中位数、分位数等)</li>
-<li>回归</li>
-<li>聚类</li>
-<li>因子</li>
-<li>决策树</li>
-<li>逻辑回归</li>
-<li>机器学习</li>
-</ol>
-<p>? 热力图</p>
 ]]></content>
       <categories>
-        <category>技术</category>
-        <category>数据分析</category>
-        <category>方法论</category>
+        <category>生活</category>
+        <category>菜谱</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
-        <tag>数据分析师</tag>
+        <tag>菜谱</tag>
+        <tag>下酒菜</tag>
       </tags>
   </entry>
   <entry>
@@ -11239,9 +11188,9 @@
         <category>obsidian</category>
       </categories>
       <tags>
-        <tag>Obsidian</tag>
         <tag>笔记</tag>
         <tag>插件</tag>
+        <tag>Obsidian</tag>
         <tag>分享</tag>
         <tag>webdav</tag>
       </tags>
@@ -11258,75 +11207,6 @@
 <p>在现代社会中，人们往往过于依赖他人和社会的标准来衡量自己的生活质量和价值观。他们追求物质的满足和社会的认可，却忽略了自己内心的声音。他们追逐名利和地位，却忘记了自己真正的需求和追求。他们追求别人的期望和评价，却忽略了自己的感受和想法。</p>
 <p>然而，真正的生存和生活的意义并不在于外界的评价和认可，而在于我们对自己的认知和接纳。我们需要回归内心，去寻找自己真正的需求和想法。我们需要静下心来，去倾听自己内心的声音。我们需要勇气和决心，去追随自己内心的指引。</p>
 <p>只有当我们真正了解自己的需求和想法时，我们才能找到生存和生活的真正意义。只有当我们真正接纳自己并为之努力时，我们才能过上充实和满足的生活。只有当我们真正追求自己内心的声音时，我们才能找到属于自己的幸福和成功。</p>
-]]></content>
-      <categories>
-        <category>生活</category>
-        <category>碎碎念</category>
-      </categories>
-      <tags>
-        <tag>随笔</tag>
-        <tag>分享</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>第二大脑的基石CODE理论</title>
-    <url>/2024/05/08/%E7%AC%AC%E4%BA%8C%E5%A4%A7%E8%84%91%E7%9A%84%E5%9F%BA%E7%9F%B3CODE%E7%90%86%E8%AE%BA/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>从安卓的记事本，锤子便签，Evernote，onenote，GoogleKeep，Simplenote，Bear，GoodNotes，Notability，Apple Notes到近些年热门的Notion，Obsidian，各种各样的笔记类软件都使用过，寻觅某一款功能强大的笔记软件可以承载我对知识的渴望，搭建出一个符合个人需求的知识体系。但知识本来就浩如烟海，在移动互联的如今，知识更是触手可及，信息量史无前例的丰富。感觉看了很多的文章，了解到了非常多有意思的项目，但发现自己只是了解到皮毛，没有合适的学习方法，没有系统性的学习和记录，在无尽的信息面前，感受到的只有无比的空洞与彷徨。</p>
-<p>最近非常幸运的看到一本书，让我意识到，解决这个问题的根源，并不是某一款功能强大的笔记软件，而是一种适用广泛的方法论。</p>
-<span id="more"></span>
-
-<p>《打造第二大脑》，作者Tiago Forte在书中提出的 “CODE”知识管理的理论方法似乎解答了这个让我深深忧虑的问题。</p>
-<img src="/_posts/2024_05_08_第二大脑的基石CODE理论/bookCover.png" width="400" height="600">
-
-<p>“CODE法则”包含四个步骤：</p>
-<ul>
-<li>C for Capture - 收集：把引发共鸣的信息收集起来</li>
-<li>O for Organize- 整理：对收集的这些信息进行整理</li>
-<li>D for Distill - 提炼：提炼这些内容的精髓，筛选最有用的信息</li>
-<li>E for Express - 表达：和他人分享，在实践中去应用你的知识</li>
-</ul>
-<p>CODE法则具有广泛的适用性，不受信息复杂性的限制。无论你是校园中求知的学子，还是职场中追求卓越的专业人士，这套理论都能成为你高效管理知识的得力工具。在生活的不同阶段，面对多变的环境挑战，CODE理论能够帮助你系统地整合知识，让你所学得到最大化的应用。</p>
-<h2 id="C-for-Capture-收集"><a href="#C-for-Capture-收集" class="headerlink" title="C for Capture - 收集"></a>C for Capture - 收集</h2><p>在信息丰富的数字时代，我们常常会遇到激发我们兴趣或我们认为将来可能派上用场的信息和知识。我们的本能反应是将这些信息保存下来，这正对应了CODE法则中的“C”——捕捉(Capture)。捕捉信息几乎是一项无师自通的基本技能，无论是通过书签、截图、下载还是其他任何数字化的手段，我们都能轻松地将信息保存下来，以便日后参考。</p>
-<p>不知道大家是否和我一样，在不同的平台收藏各种各样的数字内容，文字、图片、视频还有语音，但常常收藏后就再也没有会看过，有时等我在收藏夹中发现是，这条信息甚至已经过期无法访问了。</p>
-<p>作者<code>Tiago Forte</code>给出的解决方案是：<strong>Keep What Resonates：只收集那些能让你产生共鸣的内容</strong> </p>
-<h2 id="O-for-Organize-整理"><a href="#O-for-Organize-整理" class="headerlink" title="O for Organize- 整理"></a>O for Organize- 整理</h2><p>面对众多平台上积累的丰富信息，每隔一段时间，我都会尝试将它们整理到我的笔记中，消解内化成我自己的知识。</p>
-<p>但面对复杂的，彼此相关度很低的信息，我总会感觉到巨大的整理压力。一个项目的素材，我可能会在其他领域复用，一个视频的内容它可能关联多个主题。每一条信息的整理，我都在纠结整理的方法和依据，以便今后可以快速的查询和使用。虽然数字化平台已经提供了快速检索的能力，但我总是在无法快速直接的找到我想要的信息。</p>
-<p>不知道多少人和我一样使用按主题分类，一种我们从学校保留下来的分类习惯。语文或者某个专业课的书本材料放在一起，上课我只需要拿上归类好的材料就可以。不同科目的材料基本不会有关联，不用担心材料&#x2F;信息在不同科目之间的复用。书本和知识都是按学期存放，一旦学期结束，考完试，之前的书本材料很少会重新用到。</p>
-<p>但主题这种分类方法显然不再适用于面对无限可能的人生。我并不知道这个收藏并感兴趣的信息的“考试”在什么时候，它可能在我收集后的第二天就会被用到，有可能在未来几年才会在我的某个项目中体现，又或者它可能完全不会被用到。</p>
-<p>作者<code>Tiago Forte</code>给出的解决方案是：</p>
-<p><strong>PARA分类系统</strong></p>
-<p>PARA系统指的是Projects&#x2F;项目 、Areas&#x2F;领域、Resources&#x2F;资源、Archives&#x2F;归档。</p>
-<p>聚焦于信息的用途和目的，根据实用性来获取及储存信息。</p>
-<ul>
-<li><strong>Projects &#x2F; 项目</strong>：当下正在进行中的任务，需要有明确的结果且有时间限制，比如一个视频，网页，方案，短期想达到的语言目标等；</li>
-<li><strong>Areas &#x2F; 领域</strong>：想要精通的领域，是你长期想要持续学习和精进的方向。比如摄影、Coding或者健身；</li>
-<li><strong>Resources &#x2F; 资源：</strong> 未来可参考的事物，收集那些用得上的资源，感兴趣的知识，业余的爱好等。</li>
-<li><strong>Archives &#x2F; 归档：</strong> 来自其他三类的归档。已完成的项目，不再感兴趣的领域，不再相关的资源等，可以都先放在这里，需要时可以重新启用。</li>
-</ul>
-<p>用这样的分类方式可以来分类任何来源、格式和用途的信息， 不再局限于时间的维度，是一个动态的管理信息的系统。</p>
-<h2 id="D-for-Distill-提炼"><a href="#D-for-Distill-提炼" class="headerlink" title="D for Distill - 提炼"></a>D for Distill - 提炼</h2><p>作者<code>Tiago Forte</code>提出使用<strong>渐进式总结法-The Progressive Summarization Technique</strong>对内容进行多次提炼，<strong>提炼信息的本质-Distill your notes down to their essence</strong>。</p>
-<p><strong>渐进式总结法-The Progressive Summarization Technique</strong></p>
-<blockquote>
-<ol>
-<li>摘录笔记-Capture notes </li>
-<li>加粗段落-Bolded passages</li>
-<li>高亮段落-Highlighted passages</li>
-<li>总结-Excutive summary</li>
-</ol>
-</blockquote>
-<p>渐进式总结法的目的是为提炼关键信息，提炼信息的本质，方便未来的自己可以快速查询和使用笔记。</p>
-<h2 id="E-for-Express-表达"><a href="#E-for-Express-表达" class="headerlink" title="E for Express - 表达"></a>E for Express - 表达</h2><blockquote>
-<p>”We only know what we make” - Giambattista Vico, Italian philosopher</p>
-</blockquote>
-<p>关于如何分享，作者<code>Tiago Forte</code>也给出了自己的宗旨：<br><code>尽早并频繁的分享自己的一些小想法，从而测试可行性并从他人获取反馈，而不是等到你完美的掌握了一切信息再去分享。</code></p>
-<p>通过将工作进行拆分，从以前的项目中重用这些模块，从而提高工作的效率和质量。</p>
-<p><strong>表达的三个阶段</strong></p>
-<ol>
-<li>**记忆 (Remembering)**：这一阶段，人们主要使用第二大脑作为记忆工具，将重要的事实和想法保存起来，以备将来需要时查阅。</li>
-<li>**连接 (Connecting)**：随着对第二大脑的使用逐渐熟悉，人们开始利用它来连接想法。可能会从过去项目中未被采用的材料或想法中发现新的关联，或者在不同的项目、领域和资源之间发现联系。</li>
-<li>**创造 (Creating)**：最后，人们开始利用第二大脑来完成项目和实现目标。他们发现自己的知识库中有足够的信息来开始新项目，从而减轻了需要从头开始研究的压力。</li>
-</ol>
-<p>创造性工作的本质在于对现有元素的重新组合和融合。第二大脑为我们提供了一个平台，使我们能够充分利用他人的作品，在创作时引用和融合已有的观点和思想，以提高工作效率和创造性工作的质量。</p>
 ]]></content>
       <categories>
         <category>生活</category>
@@ -11507,6 +11387,126 @@
       <tags>
         <tag>鸡尾酒</tag>
         <tag>配方</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>第二大脑的基石CODE理论</title>
+    <url>/2024/05/08/%E7%AC%AC%E4%BA%8C%E5%A4%A7%E8%84%91%E7%9A%84%E5%9F%BA%E7%9F%B3CODE%E7%90%86%E8%AE%BA/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>从安卓的记事本，锤子便签，Evernote，onenote，GoogleKeep，Simplenote，Bear，GoodNotes，Notability，Apple Notes到近些年热门的Notion，Obsidian，各种各样的笔记类软件都使用过，寻觅某一款功能强大的笔记软件可以承载我对知识的渴望，搭建出一个符合个人需求的知识体系。但知识本来就浩如烟海，在移动互联的如今，知识更是触手可及，信息量史无前例的丰富。感觉看了很多的文章，了解到了非常多有意思的项目，但发现自己只是了解到皮毛，没有合适的学习方法，没有系统性的学习和记录，在无尽的信息面前，感受到的只有无比的空洞与彷徨。</p>
+<p>最近非常幸运的看到一本书，让我意识到，解决这个问题的根源，并不是某一款功能强大的笔记软件，而是一种适用广泛的方法论。</p>
+<span id="more"></span>
+
+<p>《打造第二大脑》，作者Tiago Forte在书中提出的 “CODE”知识管理的理论方法似乎解答了这个让我深深忧虑的问题。</p>
+<img src="/_posts/2024_05_08_第二大脑的基石CODE理论/bookCover.png" width="400" height="600">
+
+<p>“CODE法则”包含四个步骤：</p>
+<ul>
+<li>C for Capture - 收集：把引发共鸣的信息收集起来</li>
+<li>O for Organize- 整理：对收集的这些信息进行整理</li>
+<li>D for Distill - 提炼：提炼这些内容的精髓，筛选最有用的信息</li>
+<li>E for Express - 表达：和他人分享，在实践中去应用你的知识</li>
+</ul>
+<p>CODE法则具有广泛的适用性，不受信息复杂性的限制。无论你是校园中求知的学子，还是职场中追求卓越的专业人士，这套理论都能成为你高效管理知识的得力工具。在生活的不同阶段，面对多变的环境挑战，CODE理论能够帮助你系统地整合知识，让你所学得到最大化的应用。</p>
+<h2 id="C-for-Capture-收集"><a href="#C-for-Capture-收集" class="headerlink" title="C for Capture - 收集"></a>C for Capture - 收集</h2><p>在信息丰富的数字时代，我们常常会遇到激发我们兴趣或我们认为将来可能派上用场的信息和知识。我们的本能反应是将这些信息保存下来，这正对应了CODE法则中的“C”——捕捉(Capture)。捕捉信息几乎是一项无师自通的基本技能，无论是通过书签、截图、下载还是其他任何数字化的手段，我们都能轻松地将信息保存下来，以便日后参考。</p>
+<p>不知道大家是否和我一样，在不同的平台收藏各种各样的数字内容，文字、图片、视频还有语音，但常常收藏后就再也没有会看过，有时等我在收藏夹中发现是，这条信息甚至已经过期无法访问了。</p>
+<p>作者<code>Tiago Forte</code>给出的解决方案是：<strong>Keep What Resonates：只收集那些能让你产生共鸣的内容</strong> </p>
+<h2 id="O-for-Organize-整理"><a href="#O-for-Organize-整理" class="headerlink" title="O for Organize- 整理"></a>O for Organize- 整理</h2><p>面对众多平台上积累的丰富信息，每隔一段时间，我都会尝试将它们整理到我的笔记中，消解内化成我自己的知识。</p>
+<p>但面对复杂的，彼此相关度很低的信息，我总会感觉到巨大的整理压力。一个项目的素材，我可能会在其他领域复用，一个视频的内容它可能关联多个主题。每一条信息的整理，我都在纠结整理的方法和依据，以便今后可以快速的查询和使用。虽然数字化平台已经提供了快速检索的能力，但我总是在无法快速直接的找到我想要的信息。</p>
+<p>不知道多少人和我一样使用按主题分类，一种我们从学校保留下来的分类习惯。语文或者某个专业课的书本材料放在一起，上课我只需要拿上归类好的材料就可以。不同科目的材料基本不会有关联，不用担心材料&#x2F;信息在不同科目之间的复用。书本和知识都是按学期存放，一旦学期结束，考完试，之前的书本材料很少会重新用到。</p>
+<p>但主题这种分类方法显然不再适用于面对无限可能的人生。我并不知道这个收藏并感兴趣的信息的“考试”在什么时候，它可能在我收集后的第二天就会被用到，有可能在未来几年才会在我的某个项目中体现，又或者它可能完全不会被用到。</p>
+<p>作者<code>Tiago Forte</code>给出的解决方案是：</p>
+<p><strong>PARA分类系统</strong></p>
+<p>PARA系统指的是Projects&#x2F;项目 、Areas&#x2F;领域、Resources&#x2F;资源、Archives&#x2F;归档。</p>
+<p>聚焦于信息的用途和目的，根据实用性来获取及储存信息。</p>
+<ul>
+<li><strong>Projects &#x2F; 项目</strong>：当下正在进行中的任务，需要有明确的结果且有时间限制，比如一个视频，网页，方案，短期想达到的语言目标等；</li>
+<li><strong>Areas &#x2F; 领域</strong>：想要精通的领域，是你长期想要持续学习和精进的方向。比如摄影、Coding或者健身；</li>
+<li><strong>Resources &#x2F; 资源：</strong> 未来可参考的事物，收集那些用得上的资源，感兴趣的知识，业余的爱好等。</li>
+<li><strong>Archives &#x2F; 归档：</strong> 来自其他三类的归档。已完成的项目，不再感兴趣的领域，不再相关的资源等，可以都先放在这里，需要时可以重新启用。</li>
+</ul>
+<p>用这样的分类方式可以来分类任何来源、格式和用途的信息， 不再局限于时间的维度，是一个动态的管理信息的系统。</p>
+<h2 id="D-for-Distill-提炼"><a href="#D-for-Distill-提炼" class="headerlink" title="D for Distill - 提炼"></a>D for Distill - 提炼</h2><p>作者<code>Tiago Forte</code>提出使用<strong>渐进式总结法-The Progressive Summarization Technique</strong>对内容进行多次提炼，<strong>提炼信息的本质-Distill your notes down to their essence</strong>。</p>
+<p><strong>渐进式总结法-The Progressive Summarization Technique</strong></p>
+<blockquote>
+<ol>
+<li>摘录笔记-Capture notes </li>
+<li>加粗段落-Bolded passages</li>
+<li>高亮段落-Highlighted passages</li>
+<li>总结-Excutive summary</li>
+</ol>
+</blockquote>
+<p>渐进式总结法的目的是为提炼关键信息，提炼信息的本质，方便未来的自己可以快速查询和使用笔记。</p>
+<h2 id="E-for-Express-表达"><a href="#E-for-Express-表达" class="headerlink" title="E for Express - 表达"></a>E for Express - 表达</h2><blockquote>
+<p>”We only know what we make” - Giambattista Vico, Italian philosopher</p>
+</blockquote>
+<p>关于如何分享，作者<code>Tiago Forte</code>也给出了自己的宗旨：<br><code>尽早并频繁的分享自己的一些小想法，从而测试可行性并从他人获取反馈，而不是等到你完美的掌握了一切信息再去分享。</code></p>
+<p>通过将工作进行拆分，从以前的项目中重用这些模块，从而提高工作的效率和质量。</p>
+<p><strong>表达的三个阶段</strong></p>
+<ol>
+<li>**记忆 (Remembering)**：这一阶段，人们主要使用第二大脑作为记忆工具，将重要的事实和想法保存起来，以备将来需要时查阅。</li>
+<li>**连接 (Connecting)**：随着对第二大脑的使用逐渐熟悉，人们开始利用它来连接想法。可能会从过去项目中未被采用的材料或想法中发现新的关联，或者在不同的项目、领域和资源之间发现联系。</li>
+<li>**创造 (Creating)**：最后，人们开始利用第二大脑来完成项目和实现目标。他们发现自己的知识库中有足够的信息来开始新项目，从而减轻了需要从头开始研究的压力。</li>
+</ol>
+<p>创造性工作的本质在于对现有元素的重新组合和融合。第二大脑为我们提供了一个平台，使我们能够充分利用他人的作品，在创作时引用和融合已有的观点和思想，以提高工作效率和创造性工作的质量。</p>
+]]></content>
+      <categories>
+        <category>生活</category>
+        <category>碎碎念</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+        <tag>分享</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数据分析师技术树</title>
+    <url>/2023/05/15/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="数据分析师"><a href="#数据分析师" class="headerlink" title="数据分析师"></a>数据分析师</h1><ol>
+<li><p>特点：独当一面、战斗力极强、对企业决策者有一定的影响</p>
+</li>
+<li><p>主要的工作：除了被动的常规分析外，还要能主动发现业务存在的问题，会用数据找事，梳理业务发展与指标体系之间的关系，从日常监督分析开始，更多的是专题性的分析，无中生有</p>
+</li>
+<li><p>需要掌握的：</p>
+<ul>
+<li>硬性技能：SQL、EXCEL、PPT、python\spss\R任选其一，tableau\FineBI\powerbi，也要懂一些市面上流行的数据产品</li>
+<li>软性技能：沟通能力、表达能力、逻辑思维强</li>
+<li>掌握的方法论：ABtest、AAARRR、SWOT、RFM、28原则、5W2H，用户及产品生命周期等</li>
+<li>掌握的统计学：常规统计指标（均值、中位数、分位数等)、回归、聚类、因子、决策树、逻辑回归、机器学习等，这些足够用了</li>
+<li>加分项：图表可视化、PPT展示、系统性思维、在行业有很多认识和沉淀</li>
+<li>要点：算法、技术、工具、业务混为一体，样样都要懂</li>
+<li>总结：这类目前市场上很紧缺，被称为稀缺动物</li>
+</ul>
+</li>
+</ol>
+<span id="more"></span>
+<h1 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h1><h1 id="python"><a href="#python" class="headerlink" title="python"></a>python</h1><h1 id="tableau-FineBI-powerbi"><a href="#tableau-FineBI-powerbi" class="headerlink" title="tableau-FineBI-powerbi"></a>tableau-FineBI-powerbi</h1><h1 id="掌握的方法论"><a href="#掌握的方法论" class="headerlink" title="掌握的方法论"></a>掌握的方法论</h1><ol>
+<li>ABtest</li>
+<li>AAARRR</li>
+<li>SWOT</li>
+<li>RFM</li>
+<li>28原则</li>
+<li>5W2H</li>
+<li>用户及产品生命周期等</li>
+</ol>
+<h1 id="掌握的统计学"><a href="#掌握的统计学" class="headerlink" title="掌握的统计学"></a>掌握的统计学</h1><ol>
+<li>常规统计指标（均值、中位数、分位数等)</li>
+<li>回归</li>
+<li>聚类</li>
+<li>因子</li>
+<li>决策树</li>
+<li>逻辑回归</li>
+<li>机器学习</li>
+</ol>
+<p>? 热力图</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>数据分析</category>
+        <category>方法论</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+        <tag>数据分析师</tag>
       </tags>
   </entry>
 </search>
