@@ -379,25 +379,6 @@
       </tags>
   </entry>
   <entry>
-    <title>在hexo博客中插入思维导图</title>
-    <url>/2019/05/24/%E5%9C%A8hexo%E5%8D%9A%E5%AE%A2%E4%B8%AD%E6%8F%92%E5%85%A5%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="https://github.com/maxchang3/hexo-markmap">hexo-markmap</a></p>
-<p><strong>使用示例</strong></p>
-<span id="more"></span>
-
-<figure class="highlight clean"><table><tr><td class="code"><pre><span class="line">&#123;% markmap <span class="number">400</span>px %&#125;</span><br><span class="line">  </span><br><span class="line"># Blog内容同步与自动更新流程  </span><br><span class="line">  </span><br><span class="line">## macOS  </span><br><span class="line">### 群晖Drive  </span><br><span class="line">- 同步Hexo的post目录到iCloud  </span><br><span class="line">  </span><br><span class="line">## iCloud  </span><br><span class="line">- 同步Hexo的post目录  </span><br><span class="line">- 跨苹果设备同步  </span><br><span class="line">  </span><br><span class="line">## 苹果设备  </span><br><span class="line">### 任意设备  </span><br><span class="line">- 撰写blog  </span><br><span class="line">- 通过iCloud同步到macOS  </span><br><span class="line">  </span><br><span class="line">## macOS（继续）  </span><br><span class="line">### 群晖Drive（继续）  </span><br><span class="line">- 将新blog内容同步至群晖  </span><br><span class="line">  </span><br><span class="line">## 群晖  </span><br><span class="line">- 将内容自动布置到GitHub  </span><br><span class="line">  </span><br><span class="line">## GitHub  </span><br><span class="line">- 自动更新blog网站</span><br><span class="line">&#123;% endmarkmap %&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>技术</category>
-        <category>博客</category>
-        <category>hexo</category>
-      </categories>
-      <tags>
-        <tag>markdown</tag>
-        <tag>hexo</tag>
-        <tag>插件</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>为部署在Github上的Hexo博客配置域名</title>
     <url>/2019/05/25/%E4%B8%BA%E9%83%A8%E7%BD%B2%E5%9C%A8Github%E4%B8%8A%E7%9A%84Hexo%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE%E5%9F%9F%E5%90%8D/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="一、Hexo项目部署到Github"><a href="#一、Hexo项目部署到Github" class="headerlink" title="一、Hexo项目部署到Github"></a>一、<a href="https://so.csdn.net/so/search?q=Hexo&spm=1001.2101.3001.7020">Hexo</a>项目部署到Github</h4><p>首先要确保你的hexo项目已经部署到github上，如果不知道hexo项目如何部署到github上，请看另一篇文章↓</p>
@@ -439,33 +420,60 @@
       </tags>
   </entry>
   <entry>
-    <title>澳洲家中日常必备清单</title>
-    <url>/2022/05/19/%E6%BE%B3%E6%B4%B2%E5%AE%B6%E4%B8%AD%E6%97%A5%E5%B8%B8%E5%BF%85%E5%A4%87%E6%B8%85%E5%8D%95/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>1⃣️ CEPACAINE漱口水！ 治疗牙龈肿痛，口腔溃疡。澳洲医生推荐买的，超级有效！猫猫家必备的，再也没有牙口烦恼。 购买地址：Chemist有售 💰价格：$15.49 问题在口腔，吃啥啥不香，买它！喵～</p>
-<hr>
-<p>2⃣️ Quick EZE胃糖 腹胀、胃酸、胃痛。消化不良、吃颗糖就能缓解～ 主要是这糖咋还那么好吃！ 购买地址：Chemist 💰价格：$4.99 胃也需要轻轻安抚，买它！喵～</p>
+    <title>在hexo博客中插入思维导图</title>
+    <url>/2019/05/24/%E5%9C%A8hexo%E5%8D%9A%E5%AE%A2%E4%B8%AD%E6%8F%92%E5%85%A5%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="https://github.com/maxchang3/hexo-markmap">hexo-markmap</a></p>
+<p><strong>使用示例</strong></p>
 <span id="more"></span>
-<hr>
-<p>3⃣️ VICKS 通鼻喷剂 在澳洲总感觉鼻子不适，鼻炎老犯，尤其总是鼻塞。这个通鼻喷剂起效快，薄荷味柔和不刺激。 购买地址：Chemist 💰价格$11.99 杜绝张口呼吸，买它！喵～</p>
-<hr>
-<p>4⃣️ Refresh眼药水 在家学习、工作、打游戏、熬夜，眼睛干涩的话最使用用人工泪液成分的眼药水。无刺激，缓解眼睛疲劳，闺蜜们都在用。 购买地址：Chemist 💰价格$13.49 缓解就靠累上加泪。买它，喵～</p>
-<hr>
-<p>5⃣️ LeQure Detox Soap排毒香皂 这款味道超级淡，小众然鹅超棒！主要可以用来控油去杂质。背部长痘痘的宝宝们一定要试试。滋养加排毒，姐妹推荐的，用过也感觉很好。 购买地址：Chemist 💰价格：$5.99 永远不进毒圈，买它，喵～</p>
-<hr>
-<p>6⃣️ Naprogesic止痛片 姨妈期最好的止痛片咯，因为成分对胃损伤小，刺激小。而且止痛的效果起效更快，当地女生首选经期续命药。小蓝片好多朋友都在用。 购买地址：Chemist 💰价格：$7.99 连我姨妈都在用！买它，喵～</p>
-<hr>
-<p>7⃣️ Dettol 洗衣消毒液 家里养宠物的朋友洗衣服都会用这个帮忙杀菌！能灭杀99.9%的细菌。尤其是合租又共用洗衣机的话这个肯定要买！ 购买地址：Coles、 WWS有售 💰价格：$8.99 再也不怕室友用洗衣机洗袜子了，买它！喵～</p>
-<hr>
-<p>8⃣️ Mr muscle通道强力剂！ 水槽，浴室如果都便秘了，那主人可就更难受了。 超强清下水道秘方，家家必备的男人。尤其是掉头发比较多的女生经常会堵掉下水道。用它就可以畅通哦。 购买地址：Coles、WWS有售 💰价格：$13.7 搞定下水道，心情好到爆，买它！喵～</p>
-<hr>
+
+<figure class="highlight clean"><table><tr><td class="code"><pre><span class="line">&#123;% markmap <span class="number">400</span>px %&#125;</span><br><span class="line">  </span><br><span class="line"># Blog内容同步与自动更新流程  </span><br><span class="line">  </span><br><span class="line">## macOS  </span><br><span class="line">### 群晖Drive  </span><br><span class="line">- 同步Hexo的post目录到iCloud  </span><br><span class="line">  </span><br><span class="line">## iCloud  </span><br><span class="line">- 同步Hexo的post目录  </span><br><span class="line">- 跨苹果设备同步  </span><br><span class="line">  </span><br><span class="line">## 苹果设备  </span><br><span class="line">### 任意设备  </span><br><span class="line">- 撰写blog  </span><br><span class="line">- 通过iCloud同步到macOS  </span><br><span class="line">  </span><br><span class="line">## macOS（继续）  </span><br><span class="line">### 群晖Drive（继续）  </span><br><span class="line">- 将新blog内容同步至群晖  </span><br><span class="line">  </span><br><span class="line">## 群晖  </span><br><span class="line">- 将内容自动布置到GitHub  </span><br><span class="line">  </span><br><span class="line">## GitHub  </span><br><span class="line">- 自动更新blog网站</span><br><span class="line">&#123;% endmarkmap %&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>技术</category>
+        <category>博客</category>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>markdown</tag>
+        <tag>hexo</tag>
+        <tag>插件</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>菜谱</title>
+    <url>/2022/04/19/%E8%8F%9C%E8%B0%B1/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="空气炸锅鸡排"><a href="#空气炸锅鸡排" class="headerlink" title="空气炸锅鸡排"></a>空气炸锅鸡排</h1><ul>
+<li>温度：200度</li>
+<li>时间：8分钟 + 4分钟</li>
+</ul>
+<h1 id="空气炸锅健身食品"><a href="#空气炸锅健身食品" class="headerlink" title="空气炸锅健身食品"></a>空气炸锅健身食品</h1><ul>
+<li>鸡胸肉（黑胡椒、13香、橄榄油）</li>
+<li>地瓜（切块、橄榄油）</li>
+<li>温度：180度</li>
+<li>时间：15分钟</li>
+</ul>
+<span id="more"></span>
+<p><a href="https://www.youtube.com/watch?v=D8O7myqk0Bw">健身食品制作视频</a></p>
+<h1 id="阳春面调料"><a href="#阳春面调料" class="headerlink" title="阳春面调料"></a>阳春面调料</h1><ul>
+<li>生抽、陈醋、盐、香油或猪油、葱花</li>
+</ul>
+<h1 id="爆炒香辣鱿鱼"><a href="#爆炒香辣鱿鱼" class="headerlink" title="爆炒香辣鱿鱼"></a>爆炒香辣鱿鱼</h1><p>食材：</p>
+<ul>
+<li>鱿鱼须、葱、姜、洋葱、料酒、豆瓣酱、生抽、老抽、蚝油、白糖、盐、熟芝麻</li>
+</ul>
+<p>做法：</p>
+<ol>
+<li>鱿鱼洗净切好备用，冷水下锅，加入姜片、葱段、1勺料酒，焯水捞出备用</li>
+<li>锅中油热，倒入洋葱丝，炒出香味，加入1勺豆瓣酱炒出红油，倒入焯好水的鱿鱼须，翻炒上色</li>
+<li>加入1勺生抽、半勺老抽、1勺蚝油、适量白糖、少许盐、1勺熟芝麻，翻炒均匀，撒上葱花即可</li>
+</ol>
 ]]></content>
       <categories>
         <category>生活</category>
-        <category>好物推荐</category>
+        <category>菜谱</category>
       </categories>
       <tags>
-        <tag>推荐</tag>
-        <tag>日常</tag>
+        <tag>菜谱</tag>
+        <tag>下酒菜</tag>
       </tags>
   </entry>
   <entry>
@@ -1405,122 +1413,191 @@
       </tags>
   </entry>
   <entry>
-    <title>Python代码笔记</title>
-    <url>/2022/04/28/Python%E4%BB%A3%E7%A0%81%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="iloc"><a href="#iloc" class="headerlink" title="iloc"></a>iloc</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">df.iloc[a,b]</span><br><span class="line"><span class="comment"># 其中df是DataFrame数据结构的数据，a是 #行索引，b是 #列索引。</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> pandas</span><br><span class="line">df = pandas.read_csv(<span class="string">&#x27;a.csv&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(df.iloc[<span class="number">0</span>:<span class="number">2</span>,<span class="number">2</span>]) <span class="comment">#数据结构是Series</span></span><br><span class="line"><span class="built_in">print</span>(df.iloc[<span class="number">0</span>:<span class="number">2</span>,<span class="number">2</span>].values) <span class="comment">#数据结构是ndarray</span></span><br><span class="line"><span class="comment">#Out1：0    87</span></span><br><span class="line"><span class="comment">#      1    95</span></span><br><span class="line"><span class="comment"># Name: 分数, dtype: int64</span></span><br><span class="line"><span class="comment">#Out2：[87 95]</span></span><br></pre></td></tr></table></figure>
-<span id="more"></span>
-<h3 id="解除列打印限制"><a href="#解除列打印限制" class="headerlink" title="解除列打印限制"></a>解除列打印限制</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置expand_frame_repr属性为False，即可在打印输出dataframe时不隐藏部分列</span></span><br><span class="line"></span><br><span class="line">pd.set_option(<span class="string">&#x27;expand_frame_repr&#x27;</span>, <span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
-
-<h3 id="Python-pandas-读取数据-read-excel"><a href="#Python-pandas-读取数据-read-excel" class="headerlink" title="Python&#x2F;pandas&#x2F;读取数据&#x2F;read_excel"></a>Python&#x2F;pandas&#x2F;读取数据&#x2F;read_excel</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">excel_dataframe = pd.read_excel(xlsx_file, sheet_name = worksheet_name, header=head_count, skipfooter=tail_count, dtype=<span class="string">&#x27;str&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-<h3 id="Python-pandas-读取数据-csv"><a href="#Python-pandas-读取数据-csv" class="headerlink" title="Python&#x2F;pandas&#x2F;读取数据&#x2F;csv"></a>Python&#x2F;pandas&#x2F;读取数据&#x2F;csv</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pd.read_csv(<span class="string">&quot;data.csv&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-<p>对于Windows的读取方法：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pd.read_csv(<span class="string">&#x27;my_data.csv&#x27;</span>, encoding=<span class="string">&#x27;ANSI&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-<p>Mac上修改为使用GB18030的编码来读取文件：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pd.read_csv(<span class="string">&#x27;my_data.csv&#x27;</span>, encoding=<span class="string">&quot;gb18030&quot;</span>, on_bad_lines=<span class="string">&quot;skip&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-<h3 id="Python-pandas-读取数据-csv-从多个csv文件中读取数据"><a href="#Python-pandas-读取数据-csv-从多个csv文件中读取数据" class="headerlink" title="Python&#x2F;pandas&#x2F;读取数据&#x2F;csv&#x2F;从多个csv文件中读取数据"></a>Python&#x2F;pandas&#x2F;读取数据&#x2F;csv&#x2F;从多个csv文件中读取数据</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> glob</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line">files = glob.glob(<span class="string">&quot;file_*.csv&quot;</span>)</span><br><span class="line"></span><br><span class="line">result = pd.concat([pd.read_csv(file) <span class="keyword">for</span> file <span class="keyword">in</span> files], ignore_index=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
-
-<h3 id="Python-读取数据-从PDF文件当中来读取数据"><a href="#Python-读取数据-从PDF文件当中来读取数据" class="headerlink" title="Python&#x2F;读取数据&#x2F;从PDF文件当中来读取数据"></a>Python&#x2F;读取数据&#x2F;从PDF文件当中来读取数据</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装tabula-py模块</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># %pip install tabula-py </span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> tabula <span class="keyword">import</span> read_pdf</span><br><span class="line"></span><br><span class="line">df = read_pdf(<span class="string">&#x27;test.pdf&#x27;</span>, pages=<span class="string">&#x27;all&#x27;</span>)</span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line"><span class="comment">### Python/pandas/读取数据/部分读取/指定列</span></span><br><span class="line"></span><br><span class="line">```python</span><br><span class="line">df = pd.read_csv(<span class="string">&quot;house_price.csv&quot;</span>, usecols=[<span class="string">&quot;Id&quot;</span>, <span class="string">&quot;SalePrice&quot;</span>])</span><br><span class="line"></span><br><span class="line">df.head()</span><br></pre></td></tr></table></figure>
-
-<h3 id="Python-pandas-读取数据-部分读取-指定行"><a href="#Python-pandas-读取数据-部分读取-指定行" class="headerlink" title="Python&#x2F;pandas&#x2F;读取数据&#x2F;部分读取&#x2F;指定行"></a>Python&#x2F;pandas&#x2F;读取数据&#x2F;部分读取&#x2F;指定行</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">df = pd.read_csv(<span class="string">&quot;Tesla.csv&quot;</span>, nrows=<span class="number">100</span>)</span><br><span class="line"></span><br><span class="line">df.shape</span><br></pre></td></tr></table></figure>
-
-<h3 id="Python-探索性数据分析"><a href="#Python-探索性数据分析" class="headerlink" title="Python&#x2F;探索性数据分析"></a>Python&#x2F;探索性数据分析</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装pandas-profilling模块</span></span><br><span class="line"><span class="comment"># %pip install pandas-profiling</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> pandas_profiling</span><br><span class="line"></span><br><span class="line">df = pd.read_csv(<span class="string">&quot;data.csv&quot;</span>)</span><br><span class="line"></span><br><span class="line">profile = df.profile_report(title=<span class="string">&quot;Pandas Profiling Report&quot;</span>)</span><br><span class="line"></span><br><span class="line">profile.to_file(output_file=<span class="string">&quot;output.html&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-<h3 id="Python-pandas-基于数据类型的操作-筛选数据"><a href="#Python-pandas-基于数据类型的操作-筛选数据" class="headerlink" title="Python&#x2F;pandas&#x2F;&#x2F;基于数据类型的操作&#x2F;筛选数据"></a>Python&#x2F;pandas&#x2F;&#x2F;基于数据类型的操作&#x2F;筛选数据</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">df.select_dtypes(include=<span class="string">&quot;number&quot;</span>)</span><br><span class="line"></span><br><span class="line">df.select_dtypes(include=[<span class="string">&quot;category&quot;</span>, <span class="string">&quot;datetime&quot;</span>])</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="Python-pandas-基于数据类型的操作-排除数据"><a href="#Python-pandas-基于数据类型的操作-排除数据" class="headerlink" title="Python&#x2F;pandas&#x2F;&#x2F;基于数据类型的操作&#x2F;排除数据"></a>Python&#x2F;pandas&#x2F;&#x2F;基于数据类型的操作&#x2F;排除数据</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">df.select_dtypes(exclude=<span class="string">&quot;object&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-<h3 id="Python-pandas-基于数据类型的操作-推断数据类型"><a href="#Python-pandas-基于数据类型的操作-推断数据类型" class="headerlink" title="Python&#x2F;pandas&#x2F;基于数据类型的操作&#x2F;推断数据类型"></a>Python&#x2F;pandas&#x2F;基于数据类型的操作&#x2F;推断数据类型</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">df.infer_objects().dtypes</span><br></pre></td></tr></table></figure>
-
-<h3 id="Python-pandas-基于数据类型的操作-手动进行数据类型的转换"><a href="#Python-pandas-基于数据类型的操作-手动进行数据类型的转换" class="headerlink" title="Python&#x2F;pandas&#x2F;基于数据类型的操作&#x2F;手动进行数据类型的转换"></a>Python&#x2F;pandas&#x2F;基于数据类型的操作&#x2F;手动进行数据类型的转换</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 针对整个数据集都有效</span></span><br><span class="line"></span><br><span class="line">df = df.apply(pd.to_numeric, errors=<span class="string">&quot;coerce&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将空值用零来填充</span></span><br><span class="line"></span><br><span class="line">pd.to_numeric(df.numeric_column, errors=<span class="string">&quot;coerce&quot;</span>).fillna(<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
-
-<h3 id="Python-pandas-基于数据类型的操作-一次性完成数据类型的转换"><a href="#Python-pandas-基于数据类型的操作-一次性完成数据类型的转换" class="headerlink" title="Python&#x2F;pandas&#x2F;基于数据类型的操作&#x2F;一次性完成数据类型的转换"></a>Python&#x2F;pandas&#x2F;基于数据类型的操作&#x2F;一次性完成数据类型的转换</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">df = df.astype(</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">    <span class="string">&quot;date&quot;</span>: <span class="string">&quot;datetime64[ns]&quot;</span>,</span><br><span class="line"></span><br><span class="line">    <span class="string">&quot;price&quot;</span>: <span class="string">&quot;int&quot;</span>,</span><br><span class="line"></span><br><span class="line">    <span class="string">&quot;is_weekend&quot;</span>: <span class="string">&quot;bool&quot;</span>,</span><br><span class="line"></span><br><span class="line">    <span class="string">&quot;status&quot;</span>: <span class="string">&quot;category&quot;</span>,</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-
-<h3 id="Python-pandas-列的操作-获取指定列"><a href="#Python-pandas-列的操作-获取指定列" class="headerlink" title="Python&#x2F;pandas&#x2F;列的操作&#x2F;获取指定列"></a>Python&#x2F;pandas&#x2F;列的操作&#x2F;获取指定列</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">df[<span class="string">&#x27;列表头&#x27;</span>]</span><br><span class="line"></span><br><span class="line">df[[[<span class="string">&#x27;列1&#x27;</span>,<span class="string">&#x27;列2&#x27;</span>]]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="Python-forLoop-enumerate"><a href="#Python-forLoop-enumerate" class="headerlink" title="Python&#x2F;forLoop&#x2F;enumerate"></a>Python&#x2F;forLoop&#x2F;enumerate</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> idx, element <span class="keyword">in</span> <span class="built_in">enumerate</span>(<span class="built_in">list</span>):</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(idx,element)</span><br></pre></td></tr></table></figure>
-
-
-<h3 id="Python-pandas-列的操作-重命名"><a href="#Python-pandas-列的操作-重命名" class="headerlink" title="Python&#x2F;pandas&#x2F;列的操作&#x2F;重命名"></a>Python&#x2F;pandas&#x2F;列的操作&#x2F;重命名</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">df = df.rename(&#123;<span class="string">&quot;PRICE&quot;</span>: <span class="string">&quot;price&quot;</span>, <span class="string">&quot;Date (mm/dd/yyyy)&quot;</span>: <span class="string">&quot;date&quot;</span>, <span class="string">&quot;STATUS&quot;</span>: <span class="string">&quot;status&quot;</span>&#125;, axis=<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
-
-
-<h3 id="Python-pandas-列的操作-添加前缀或者是后缀"><a href="#Python-pandas-列的操作-添加前缀或者是后缀" class="headerlink" title="Python&#x2F;pandas&#x2F;列的操作&#x2F;添加前缀或者是后缀"></a>Python&#x2F;pandas&#x2F;列的操作&#x2F;添加前缀或者是后缀</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">df.add_prefix(<span class="string">&quot;pre_&quot;</span>)</span><br><span class="line"></span><br><span class="line">df.add_suffix(<span class="string">&quot;_suf&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-
-<h3 id="Python-pandas-列的操作-新建一个列"><a href="#Python-pandas-列的操作-新建一个列" class="headerlink" title="Python&#x2F;pandas&#x2F;列的操作&#x2F;新建一个列"></a>Python&#x2F;pandas&#x2F;列的操作&#x2F;新建一个列</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 摄氏度与华氏度之间的数制转换</span></span><br><span class="line"></span><br><span class="line">df.assign(temp_f=<span class="keyword">lambda</span> x: x.temp_c * <span class="number">9</span> / <span class="number">5</span> + <span class="number">32</span>)</span><br></pre></td></tr></table></figure>
-
-
-<h3 id="Python-pandas-列的操作-新建一个列-从已有列复制部分"><a href="#Python-pandas-列的操作-新建一个列-从已有列复制部分" class="headerlink" title="Python&#x2F;pandas&#x2F;列的操作&#x2F;新建一个列&#x2F;从已有列复制部分"></a>Python&#x2F;pandas&#x2F;列的操作&#x2F;新建一个列&#x2F;从已有列复制部分</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">raw_df[<span class="string">&#x27;消耗日期&#x27;</span>] = raw_df[<span class="string">&quot;消耗时间&quot;</span>].<span class="built_in">map</span>(<span class="keyword">lambda</span> x:x.split(<span class="string">&#x27; &#x27;</span>)[<span class="number">0</span>])</span><br></pre></td></tr></table></figure>
-
-<h3 id="Python-pandas-列的操作-在指定的位置插入新的一列"><a href="#Python-pandas-列的操作-在指定的位置插入新的一列" class="headerlink" title="Python&#x2F;pandas&#x2F;列的操作&#x2F;在指定的位置插入新的一列"></a>Python&#x2F;pandas&#x2F;列的操作&#x2F;在指定的位置插入新的一列</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">random_col = np.random.randint(<span class="number">10</span>, size=<span class="built_in">len</span>(df))</span><br><span class="line"></span><br><span class="line">df.insert(<span class="number">3</span>, <span class="string">&#x27;random_col&#x27;</span>, random_col) <span class="comment"># 在第三列的地方插入</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="Python-pandas-列的操作-if-else逻辑判断"><a href="#Python-pandas-列的操作-if-else逻辑判断" class="headerlink" title="Python&#x2F;pandas&#x2F;列的操作&#x2F;if-else逻辑判断"></a>Python&#x2F;pandas&#x2F;列的操作&#x2F;if-else逻辑判断</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">df[<span class="string">&quot;price_high_low&quot;</span>] = np.where(df[<span class="string">&quot;price&quot;</span>] &gt; <span class="number">5</span>, <span class="string">&quot;high&quot;</span>, <span class="string">&quot;low&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-<h3 id="Python-pandas-列的操作-去掉某些列"><a href="#Python-pandas-列的操作-去掉某些列" class="headerlink" title="Python&#x2F;pandas&#x2F;列的操作&#x2F;去掉某些列"></a>Python&#x2F;pandas&#x2F;列的操作&#x2F;去掉某些列</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 删除列</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">del</span> sku_dataframe[<span class="string">&#x27;批次id&#x27;</span>]</span><br><span class="line"></span><br><span class="line">df.drop(<span class="string">&#x27;col1&#x27;</span>, axis=<span class="number">1</span>, inplace=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">df = df.drop([<span class="string">&#x27;col1&#x27;</span>,<span class="string">&#x27;col2&#x27;</span>], axis=<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">df.drop(df.columns[<span class="number">0</span>], inplace=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
-<h3 id="Python-pandas-字符串的操作-列名的操作"><a href="#Python-pandas-字符串的操作-列名的操作" class="headerlink" title="Python&#x2F;pandas&#x2F;字符串的操作&#x2F;列名的操作"></a>Python&#x2F;pandas&#x2F;字符串的操作&#x2F;列名的操作</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 对于列名的字符串操作</span></span><br><span class="line"></span><br><span class="line">df.columns = df.columns.<span class="built_in">str</span>.lower()</span><br><span class="line"></span><br><span class="line">df.columns = df.columns.<span class="built_in">str</span>.replace(<span class="string">&#x27; &#x27;</span>, <span class="string">&#x27;_&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-<h3 id="Python-pandas-字符串的操作-Contains-方法"><a href="#Python-pandas-字符串的操作-Contains-方法" class="headerlink" title="Python&#x2F;pandas&#x2F;字符串的操作&#x2F;Contains()方法"></a>Python&#x2F;pandas&#x2F;字符串的操作&#x2F;Contains()方法</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 是否包含了某些字符串</span></span><br><span class="line"></span><br><span class="line">df[<span class="string">&#x27;name&#x27;</span>].<span class="built_in">str</span>.contains(<span class="string">&quot;John&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">## 里面可以放置正则表达式</span></span><br><span class="line"></span><br><span class="line">df[<span class="string">&#x27;phone_num&#x27;</span>].<span class="built_in">str</span>.contains(<span class="string">&#x27;...-...-....&#x27;</span>, regex=<span class="literal">True</span>) <span class="comment"># regex</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="Python-pandas-字符串的操作-findall-方法"><a href="#Python-pandas-字符串的操作-findall-方法" class="headerlink" title="Python&#x2F;pandas&#x2F;字符串的操作&#x2F;findall()方法"></a>Python&#x2F;pandas&#x2F;字符串的操作&#x2F;findall()方法</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 正则表达式</span></span><br><span class="line"></span><br><span class="line">pattern = <span class="string">&#x27;([A-Z0-9._%+-]+)@([A-Z0-9.-]+)\\.([A-Z]&#123;1,9&#125;)&#x27;</span></span><br><span class="line"></span><br><span class="line">df[<span class="string">&#x27;email&#x27;</span>].<span class="built_in">str</span>.findall(pattern, flags=re.IGNORECASE)</span><br></pre></td></tr></table></figure>
-
-
-<h3 id="Python-pandas-缺失值-查看空值的比例"><a href="#Python-pandas-缺失值-查看空值的比例" class="headerlink" title="Python&#x2F;pandas&#x2F;缺失值&#x2F;查看空值的比例"></a>Python&#x2F;pandas&#x2F;缺失值&#x2F;查看空值的比例</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">missing_vals</span>(<span class="params">df</span>):</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;空值所占的百分比&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">missing = [</span><br><span class="line"></span><br><span class="line">(df.columns[idx], perc)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> idx, perc <span class="keyword">in</span> <span class="built_in">enumerate</span>(df.isna().mean() * <span class="number">100</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> perc &gt; <span class="number">0</span></span><br><span class="line"></span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="built_in">len</span>(missing) == <span class="number">0</span>:</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="string">&quot;没有空值数据的存在&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 排序</span></span><br><span class="line"></span><br><span class="line">missing.sort(key=<span class="keyword">lambda</span> x: x[<span class="number">1</span>], reverse=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;总共有 <span class="subst">&#123;<span class="built_in">len</span>(missing)&#125;</span> 个变量存在空值\n&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> tup <span class="keyword">in</span> missing:</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">str</span>.ljust(<span class="string">f&quot;<span class="subst">&#123;tup[<span class="number">0</span>]:&lt;<span class="number">20</span>&#125;</span> =&gt; <span class="subst">&#123;<span class="built_in">round</span>(tup[<span class="number">1</span>], <span class="number">3</span>)&#125;</span>%&quot;</span>, <span class="number">1</span>))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-<h3 id="Python-缺失值-空值的处理方式"><a href="#Python-缺失值-空值的处理方式" class="headerlink" title="Python&#x2F;缺失值&#x2F;空值的处理方式"></a>Python&#x2F;缺失值&#x2F;空值的处理方式</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 去除掉空值</span></span><br><span class="line"></span><br><span class="line">df.dropna(axis=<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">df.dropna(axis=<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 换成其他值来填充</span></span><br><span class="line"></span><br><span class="line">df.fillna(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">df.fillna(method=<span class="string">&quot;ffill&quot;</span>)</span><br><span class="line"></span><br><span class="line">df.fillna(method=<span class="string">&#x27;bfill&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 取代为其他的数值</span></span><br><span class="line"></span><br><span class="line">df.replace( -<span class="number">999</span>, np.nan)</span><br><span class="line"></span><br><span class="line">df.replace(<span class="string">&quot;?&quot;</span>, np.nan)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 推测其空值应该为其他什么数值</span></span><br><span class="line"></span><br><span class="line">ts.interpolate() <span class="comment"># time series</span></span><br><span class="line"></span><br><span class="line">df.interpolate() <span class="comment"># fill all consecutive values forward</span></span><br><span class="line"></span><br><span class="line">df.interpolate(limit=<span class="number">1</span>) <span class="comment"># fill one consecutive value forward</span></span><br><span class="line"></span><br><span class="line">df.interpolate(limit=<span class="number">1</span>, limit_direction=<span class="string">&quot;backward&quot;</span>)</span><br><span class="line"></span><br><span class="line">df.interpolate(limit_direction=<span class="string">&quot;both&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="Python-日期格式的数据处理-获取指定时间的数据"><a href="#Python-日期格式的数据处理-获取指定时间的数据" class="headerlink" title="Python&#x2F;日期格式的数据处理&#x2F;获取指定时间的数据"></a>Python&#x2F;日期格式的数据处理&#x2F;获取指定时间的数据</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># 从今天开始算，之后的N天或者N个礼拜或者N个小时</span></span><br><span class="line"></span><br><span class="line">date.today() + datetime.timedelta(hours=<span class="number">30</span>)</span><br><span class="line"></span><br><span class="line">date.today() + datetime.timedelta(days=<span class="number">30</span>)</span><br><span class="line"></span><br><span class="line">date.today() + datetime.timedelta(weeks=<span class="number">30</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 过去的一年</span></span><br><span class="line"></span><br><span class="line">date.today() - datetime.timedelta(days=<span class="number">365</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="Python-日期格式的数据处理-通过日期时间来获取数据"><a href="#Python-日期格式的数据处理-通过日期时间来获取数据" class="headerlink" title="Python&#x2F;日期格式的数据处理&#x2F;通过日期时间来获取数据"></a>Python&#x2F;日期格式的数据处理&#x2F;通过日期时间来获取数据</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">df[(df[<span class="string">&quot;Date&quot;</span>] &gt; <span class="string">&quot;2015-10-01&quot;</span>) &amp; (df[<span class="string">&quot;Date&quot;</span>] &lt; <span class="string">&quot;2018-01-05&quot;</span>)]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-<h3 id="Python-日期格式的数据处理-通过指定日期来获取数据"><a href="#Python-日期格式的数据处理-通过指定日期来获取数据" class="headerlink" title="Python&#x2F;日期格式的数据处理&#x2F;通过指定日期来获取数据"></a>Python&#x2F;日期格式的数据处理&#x2F;通过指定日期来获取数据</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 筛选出某一天的数据</span></span><br><span class="line"></span><br><span class="line">df[df[<span class="string">&quot;Date&quot;</span>].dt.strftime(<span class="string">&quot;%Y-%m-%d&quot;</span>) == <span class="string">&quot;2022-03-05&quot;</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 筛选出某一个月的数据</span></span><br><span class="line"></span><br><span class="line">df[df[<span class="string">&quot;Date&quot;</span>].dt.strftime(<span class="string">&quot;%m&quot;</span>) == <span class="string">&quot;12&quot;</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 筛选出每一年的数据</span></span><br><span class="line"></span><br><span class="line">df[df[<span class="string">&quot;Date&quot;</span>].dt.strftime(<span class="string">&quot;%Y&quot;</span>) == <span class="string">&quot;2020&quot;</span>]</span><br></pre></td></tr></table></figure>
-
-<h3 id="Python-将格式化数据集-保留指定位数"><a href="#Python-将格式化数据集-保留指定位数" class="headerlink" title="Python&#x2F;将格式化数据集&#x2F;保留指定位数"></a>Python&#x2F;将格式化数据集&#x2F;保留指定位数</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">format_dict = &#123;</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;Open&quot;</span>: <span class="string">&quot;$&#123;:.2f&#125;&quot;</span>,</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;Close&quot;</span>: <span class="string">&quot;$&#123;:.2f&#125;&quot;</span>,</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;Volume&quot;</span>: <span class="string">&quot;&#123;:,&#125;&quot;</span>,</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">df.style.<span class="built_in">format</span>(format_dict)</span><br></pre></td></tr></table></figure>
-
-
-<h3 id="Python-将格式化数据集-高亮显示数据"><a href="#Python-将格式化数据集-高亮显示数据" class="headerlink" title="Python&#x2F;将格式化数据集&#x2F;高亮显示数据"></a>Python&#x2F;将格式化数据集&#x2F;高亮显示数据</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">(</span><br><span class="line"></span><br><span class="line">df.style.<span class="built_in">format</span>(format_dict)</span><br><span class="line"></span><br><span class="line">.hide_index()</span><br><span class="line"></span><br><span class="line">.highlight_min([<span class="string">&quot;Open&quot;</span>], color=<span class="string">&quot;blue&quot;</span>)</span><br><span class="line"></span><br><span class="line">.highlight_max([<span class="string">&quot;Open&quot;</span>], color=<span class="string">&quot;red&quot;</span>)</span><br><span class="line"></span><br><span class="line">.background_gradient(subset=<span class="string">&quot;Close&quot;</span>, cmap=<span class="string">&quot;Greens&quot;</span>)</span><br><span class="line"></span><br><span class="line">.bar(<span class="string">&#x27;Volume&#x27;</span>, color=<span class="string">&#x27;lightblue&#x27;</span>, align=<span class="string">&#x27;zero&#x27;</span>)</span><br><span class="line"></span><br><span class="line">.set_caption(<span class="string">&#x27;Tesla Stock Prices in 2017&#x27;</span>)</span><br><span class="line"></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="Python-将格式化数据集-pandas-styler"><a href="#Python-将格式化数据集-pandas-styler" class="headerlink" title="Python&#x2F;将格式化数据集&#x2F;pandas-styler"></a>Python&#x2F;将格式化数据集&#x2F;pandas-styler</h3><p>pandas也可以像excel一样，设置表格的可视化条件格式，而且只需要一行代码即可（可能需要一丢丢的前端HTML和CSS基础知识）。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">diabetes.describe().T.drop(<span class="string">&quot;count&quot;</span>, axis=<span class="number">1</span>).style.highlight_max(color=<span class="string">&quot;darkred&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-<h3 id="Python-数据输出设置宽度"><a href="#Python-数据输出设置宽度" class="headerlink" title="Python&#x2F;数据输出设置宽度"></a>Python&#x2F;数据输出设置宽度</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">df = wechat_csv_reader(file_name,<span class="number">0</span>,<span class="number">10</span>)</span><br><span class="line"></span><br><span class="line">xlswriter = pd.ExcelWriter(<span class="string">&quot;test.xlsx&quot;</span>)</span><br><span class="line"></span><br><span class="line">df.to_excel(xlswriter,<span class="string">&#x27;核销明细&#x27;</span>,index=<span class="literal">False</span>)</span><br><span class="line"></span><br><span class="line">worksheet = xlswriter.sheets[<span class="string">&#x27;核销明细&#x27;</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">#指定B列宽度设置成12</span></span><br><span class="line"></span><br><span class="line">worksheet.set_column(<span class="string">&#x27;B:B&#x27;</span>, <span class="number">12</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#指定1-4列宽度设置成15</span></span><br><span class="line"></span><br><span class="line">worksheet.set_column(<span class="number">1</span>, <span class="number">4</span>, <span class="number">15</span>)</span><br><span class="line"></span><br><span class="line">xlswriter.save()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h3 id="Python-路径-pathlib"><a href="#Python-路径-pathlib" class="headerlink" title="Python&#x2F;路径&#x2F;pathlib"></a>Python&#x2F;路径&#x2F;pathlib</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> pathlib <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">Path.cwd() <span class="comment">#返回文件当前所在目录；</span></span><br><span class="line"></span><br><span class="line">Path.home()<span class="comment">#返回电脑用户的目录。</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 拼接出Windows桌面路径</span></span><br><span class="line"></span><br><span class="line">Path.joinpath(Path.home(), <span class="string">&quot;Desktop&quot;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="Python-pandas-列的操作-判断open这一列列是否有NaN"><a href="#Python-pandas-列的操作-判断open这一列列是否有NaN" class="headerlink" title="Python&#x2F;pandas&#x2F;列的操作&#x2F;判断open这一列列是否有NaN"></a>Python&#x2F;pandas&#x2F;列的操作&#x2F;判断open这一列列是否有NaN</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">df[<span class="string">&#x27;$open&#x27;</span>].isnull().<span class="built_in">any</span>() <span class="comment"># 判断open这一列列是否有 NaN</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="Python-pandas-列的操作-判断全部是否有NaN"><a href="#Python-pandas-列的操作-判断全部是否有NaN" class="headerlink" title="Python&#x2F;pandas&#x2F;列的操作&#x2F;判断全部是否有NaN"></a>Python&#x2F;pandas&#x2F;列的操作&#x2F;判断全部是否有NaN</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">df[<span class="string">&#x27;$open&#x27;</span>].isnull().<span class="built_in">all</span>() <span class="comment"># 判断open列是否全部为NaN</span></span><br><span class="line"></span><br><span class="line">df.isnull().<span class="built_in">all</span>() <span class="comment"># 判断某列是否全部为NaN</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">df.drop_duplicates()</span><br><span class="line"></span><br><span class="line"><span class="comment">#保留重复项</span></span><br><span class="line"></span><br><span class="line">df.drop_duplicates(keep=Flase)</span><br><span class="line"></span><br><span class="line"><span class="comment">#删除重复的项</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 空返回true，非空返回false</span></span><br><span class="line"></span><br><span class="line">df.empty</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">new_list = [<span class="string">&#x27;1&#x27;</span>+x <span class="keyword">for</span> x <span class="keyword">in</span> old_list]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">df.drop(df.tail(n).index) 从尾部去掉 n 行</span><br><span class="line"></span><br><span class="line">df.dorp(df.head(n).index) 从头去掉 n 行</span><br><span class="line"></span><br><span class="line">可以加上 inplace=<span class="literal">True</span> 直接修改原 dataFrame，不过函数返回是 <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 按列筛选</span></span><br><span class="line"></span><br><span class="line">new_df = raw_sum_df[raw_sum_df[<span class="string">&#x27;活动名称&#x27;</span>]==‘活动’]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 筛选在列表中存在的</span></span><br><span class="line"></span><br><span class="line">new_df = raw_sum_df[raw_sum_df[<span class="string">&#x27;活动名称&#x27;</span>].isin(voucher_name_list)]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 筛选在不在列表中存在的</span></span><br><span class="line"></span><br><span class="line">new_df = raw_sum_df[raw_sum_df[<span class="string">&#x27;活动名称&#x27;</span>].isin(voucher_name_list)]</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">In [9]: bool([0,0,0])</span><br><span class="line"></span><br><span class="line">Out[9]: True</span><br><span class="line"></span><br><span class="line">In [10]: bool([])</span><br><span class="line"></span><br><span class="line">Out[10]: False</span><br><span class="line"></span><br><span class="line">In [11]: bool([1,0,1])</span><br><span class="line"></span><br><span class="line">Out[11]: True</span><br></pre></td></tr></table></figure>
-
-
-<p>#######################</p>
-<h1 id="时间转换位时间戳"><a href="#时间转换位时间戳" class="headerlink" title="时间转换位时间戳"></a>时间转换位时间戳</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line">t = <span class="string">&quot;2017-11-24 17:30:00&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#将其转换为时间数组</span></span><br><span class="line"></span><br><span class="line">timeStruct = time.strptime(t, <span class="string">&quot;%Y-%m-%d %H:%M:%S&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#转换为时间戳:</span></span><br><span class="line"></span><br><span class="line">timeStamp = <span class="built_in">int</span>(time.mktime(timeStruct))</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(timeStamp)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果：</span></span><br><span class="line"></span><br><span class="line"><span class="number">1511515800</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#######################</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 时间戳转换为指定格式日期</span></span><br><span class="line"></span><br><span class="line">timeStamp = <span class="number">1511515800</span></span><br><span class="line"></span><br><span class="line">localTime = time.localtime(timeStamp)</span><br><span class="line"></span><br><span class="line">strTime = time.strftime(<span class="string">&quot;%Y-%m-%d %H:%M:%S&quot;</span>, localTime)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(strTime)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果：</span></span><br><span class="line"></span><br><span class="line"><span class="number">2017</span>-<span class="number">11</span>-<span class="number">24</span> <span class="number">17</span>:<span class="number">30</span>:<span class="number">00</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># str 转 time 类型</span></span><br><span class="line"></span><br><span class="line">date_time = time.strptime(date_time_str , <span class="string">&quot;%Y/%m/%d %H:%M:%S&quot;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> os <span class="keyword">import</span> path</span><br><span class="line"></span><br><span class="line">d = path.dirname(__file__)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获得d所在的目录,即d的父级目录</span></span><br><span class="line"></span><br><span class="line">parent_path = os.path.dirname(d)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获得parent_path所在的目录即parent_path的父级目录</span></span><br><span class="line"></span><br><span class="line">parent_path2 = os.path.dirname(parent_path)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取今天（现在时间）</span></span><br><span class="line"></span><br><span class="line">today = datetime.datetime.today()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 昨天</span></span><br><span class="line"></span><br><span class="line">yesterday = today - datetime.timedelta(days=<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 明天</span></span><br><span class="line"></span><br><span class="line">tomorrow = today + datetime.timedelta(days=<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取当前日期</span></span><br><span class="line"></span><br><span class="line">date = datetime.date.today()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取一秒后的时间</span></span><br><span class="line"></span><br><span class="line">s = today + datetime.timedelta(seconds=<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取一分钟后的时间</span></span><br><span class="line"></span><br><span class="line">m = today + datetime.timedelta(minutes=<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取一小时后的时间</span></span><br><span class="line"></span><br><span class="line">h = today + datetime.timedelta(hours=<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取一年后的时间</span></span><br><span class="line"></span><br><span class="line">y = today + datetime.timedelta(days=<span class="number">365</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#pandas str转datetime</span></span><br><span class="line"></span><br><span class="line">raw_df[<span class="string">&#x27;消耗时间&#x27;</span>] = pd.to_datetime(raw_df[<span class="string">&#x27;消耗时间&#x27;</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment">#datetime转date</span></span><br><span class="line"></span><br><span class="line">raw_df[<span class="string">&#x27;消耗日期&#x27;</span>] = raw_df[<span class="string">&#x27;消耗时间&#x27;</span>].dt.date</span><br><span class="line"></span><br><span class="line"><span class="comment">#datetime转time</span></span><br><span class="line"></span><br><span class="line">raw_df[<span class="string">&#x27;消耗日期&#x27;</span>] = raw_df[<span class="string">&#x27;消耗时间&#x27;</span>].dt.time</span><br><span class="line"></span><br><span class="line"><span class="comment">#datetime提取年、月、日</span></span><br><span class="line"></span><br><span class="line">raw_df[<span class="string">&#x27;消耗日期&#x27;</span>] = raw_df[<span class="string">&#x27;消耗时间&#x27;</span>].dt.year</span><br><span class="line"></span><br><span class="line">raw_df[<span class="string">&#x27;消耗日期&#x27;</span>] = raw_df[<span class="string">&#x27;消耗时间&#x27;</span>].dt.month</span><br><span class="line"></span><br><span class="line">raw_df[<span class="string">&#x27;消耗日期&#x27;</span>] = raw_df[<span class="string">&#x27;消耗时间&#x27;</span>].dt.day</span><br><span class="line"></span><br><span class="line"><span class="comment">#判断一周里的第几天，Monday=0, Sunday=6</span></span><br><span class="line"></span><br><span class="line">raw_df[<span class="string">&#x27;消耗日期&#x27;</span>] = raw_df[<span class="string">&#x27;消耗时间&#x27;</span>].dt.weekday</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-<p>#df 为dataframe对象，包含’word’, ‘count’两列数据</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># 方法一</span></span><br><span class="line">result_dic = df.groupby(<span class="string">&#x27;word&#x27;</span>)[<span class="string">&#x27;count&#x27;</span>].apply(<span class="built_in">list</span>).to_dict()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 对于同一个key对应多个value，则把同一key的value构成一个list</span></span><br><span class="line"></span><br><span class="line">result_dic = df.groupby(<span class="string">&#x27;word&#x27;</span>)[<span class="string">&#x27;count&#x27;</span>].apply(<span class="keyword">lambda</span> x:<span class="built_in">str</span>(x)).to_dict()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 对于同一个key对应一个value，直接使用value</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#结果</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#形如&#123;key:value&#125;的字典</span></span><br><span class="line"></span><br><span class="line"><span class="comment">####################### 方法二</span></span><br><span class="line"></span><br><span class="line">result_dic = df.set_index(<span class="string">&#x27;a&#x27;</span>).T.to_dict()</span><br><span class="line"></span><br><span class="line">result_dic = df[[<span class="string">&quot;a&quot;</span>, <span class="string">&quot;b&quot;</span>]].set_index(<span class="string">&quot;a&quot;</span>).to_dict()[<span class="string">&quot;b&quot;</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 形如&#123;key:&#123;&#x27;count&#x27;:value&#125;&#125;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># dataframe转array</span></span><br><span class="line"></span><br><span class="line">l = dataframe[<span class="string">&#x27;&#x27;</span>].values.tolist()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 字典转dataframe</span></span><br><span class="line"></span><br><span class="line">barcode_newDF = pd.DataFrame(barcode_newDF_dic)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除列</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">del</span> sku_dataframe[<span class="string">&#x27;批次id&#x27;</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重置index</span></span><br><span class="line"></span><br><span class="line">la = byid_df.reset_index(drop=<span class="literal">False</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 已有A列，增加空列</span></span><br><span class="line"></span><br><span class="line">df.reindex(columns=[‘A’,’B’,’C’] fill_value=‘’)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 取多列（new_df为DataFrame类型）</span></span><br><span class="line"></span><br><span class="line">new_df = df[[<span class="string">&#x27;column_name1&#x27;</span>, <span class="string">&#x27;column_name2&#x27;</span>]]</span><br><span class="line"></span><br><span class="line"><span class="comment">#返回df【列】的list</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">list</span>(voucher_setting_dataframe))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 选取特定列</span></span><br><span class="line"></span><br><span class="line">pick_cloums_list = [<span class="string">&quot;券批次号&quot;</span>, <span class="string">&quot;发券形式&quot;</span>, <span class="string">&quot;商品名称&quot;</span>, <span class="string">&quot;核销门槛&quot;</span>, <span class="string">&quot;单张优惠金额&quot;</span>, <span class="string">&quot;发券量&quot;</span>, <span class="string">&quot;已发券数&quot;</span>]</span><br><span class="line"></span><br><span class="line">dataframe = voucher_setting_dataframe[pick_cloums_list]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 清理dataframe中的“`”</span></span><br><span class="line"></span><br><span class="line">raw_sum_df = raw_sum_dataframe.replace(&#123;<span class="string">&quot;`&quot;</span>:<span class="string">&quot;&quot;</span>&#125;,regex=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#修改index</span></span><br><span class="line"></span><br><span class="line">DataFrame.index = [newName]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将DataFrame格式的数据转化成字典形式</span></span><br><span class="line"></span><br><span class="line">```python</span><br><span class="line">dict_country = df.set_index(<span class="string">&#x27;project&#x27;</span>).T.to_dict(<span class="string">&#x27;list&#x27;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 第一种:在读取数据的时候,指定数据类型</span></span><br><span class="line"></span><br><span class="line">data = pd.read_csv(<span class="string">&#x27;test.txt&#x27;</span>,sep = <span class="string">&#x27;|&#x27;</span>,dtype = <span class="string">&#x27;str&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#第二种:使用转换函数:</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 2.1:将所有数据转换为字符串</span></span><br><span class="line"></span><br><span class="line">dataframe=dataframe.astype(<span class="built_in">str</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#2.2:将某列转换为字符串</span></span><br><span class="line"></span><br><span class="line">data = data.astype(&#123;<span class="string">&#x27;outcome&#x27;</span>:<span class="string">&#x27;float&#x27;</span>,<span class="string">&#x27;age&#x27;</span>:<span class="string">&#x27;int&#x27;</span>&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">#第三种:使用dataframe的apply函数或者map函数</span></span><br><span class="line"></span><br><span class="line">data[<span class="string">&#x27;交易金额&#x27;</span>] = data.交易金额.<span class="built_in">map</span>(<span class="keyword">lambda</span> x:<span class="built_in">float</span>(x))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[wechat data structure](https://www.notion.so/wechat-data-structure-1a305743622043908c44c6be5dc1f999)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改指定多列的数据类型</span></span><br><span class="line"></span><br><span class="line">df[[<span class="string">&#x27;c3&#x27;</span>,<span class="string">&#x27;c5&#x27;</span>]] = df[[<span class="string">&#x27;c3&#x27;</span>,<span class="string">&#x27;c5&#x27;</span>]].apply(pd.to_numeric)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(df.dtypes)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改单列的数据类型</span></span><br><span class="line"></span><br><span class="line">df[<span class="string">&#x27;column_name&#x27;</span>] = df[<span class="string">&#x27;column_name&#x27;</span>].astype(np.<span class="built_in">str</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(df.dtypes)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建dataframe时，修改数据类型</span></span><br><span class="line"></span><br><span class="line">df = pd.DataFrame(data, dtype=<span class="string">&#x27;float&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(df.dtypes)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 读取时，修改数据类型</span></span><br><span class="line"></span><br><span class="line">df = pd.read_csv(<span class="string">&quot;somefile.csv&quot;</span>, dtype = &#123;<span class="string">&#x27;column_name&#x27;</span> : <span class="built_in">str</span>&#125;)</span><br><span class="line"></span><br><span class="line">df = pd.DataFrame(data, dtype=<span class="string">&#x27;float&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加列，填充0</span></span><br><span class="line"></span><br><span class="line">df.insert(<span class="number">1</span>,<span class="string">&#x27;c&#x27;</span>,value=<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 一列拆封</span></span><br><span class="line"></span><br><span class="line">combined_df[[<span class="string">&#x27;消耗日期&#x27;</span>, <span class="string">&quot;消耗时间&quot;</span>]] = combined_df[<span class="string">&quot;消耗时间&quot;</span>].<span class="built_in">str</span>.split(<span class="string">&#x27; &#x27;</span>, <span class="number">2</span>, expand = <span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 列改名</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">voucher_setting_df_1 = voucher_setting_df.rename(columns=&#123;<span class="string">&#x27;券批次号&#x27;</span>:<span class="string">&#x27;批次id&#x27;</span>,<span class="string">&#x27;券名称&#x27;</span>:<span class="string">&#x27;券名称&#x27;</span>&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 去除头尾的字符strip</span></span><br><span class="line">cleaned_df[<span class="string">&#x27;单品信息&#x27;</span>] = cleaned_df[<span class="string">&#x27;单品信息&#x27;</span>].<span class="built_in">str</span>.strip(<span class="string">&#x27;;&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip list #查看已安装的python模块</span><br><span class="line"></span><br><span class="line">pip freeze &gt;requirements.txt # 导出依赖库名称</span><br><span class="line"></span><br><span class="line">pip download -d packages -r requirements.txt #下载依赖库</span><br><span class="line"></span><br><span class="line">pip install --no-index --find-links=packages -r requirements.txt #将`packages`文件夹和`requirements.txt`文件拷贝至离线机器任意同级目录下，以管理员权限启动cmd命令窗口进入该目录，执行下述命令进行离线安装。</span><br></pre></td></tr></table></figure>
+    <title>鸡尾酒配方</title>
+    <url>/2020/05/04/%E9%B8%A1%E5%B0%BE%E9%85%92%E9%85%8D%E6%96%B9/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="茶酒"><a href="#茶酒" class="headerlink" title="茶酒"></a>茶酒</h2><ul>
+<li>茶：120ml</li>
+<li>酒：45ml</li>
+<li>糖浆：10ml</li>
+<li>柠檬：5ml</li>
+</ul>
+<h2 id="B52轰炸机"><a href="#B52轰炸机" class="headerlink" title="B52轰炸机"></a>B52轰炸机</h2><ul>
+<li>1&#x2F;3咖啡力娇酒</li>
+<li>1&#x2F;3百利甜</li>
+<li>1&#x2F;3君度<span id="more"></span></li>
+</ul>
+<h2 id="长岛冰茶"><a href="#长岛冰茶" class="headerlink" title="长岛冰茶"></a>长岛冰茶</h2><ul>
+<li>饮具：玻璃杯加冰</li>
+<li>黄柠汁：5ml</li>
+<li>伏特加：15ml</li>
+<li>龙舌兰：15ml</li>
+<li>金酒：15ml</li>
+<li>白朗姆：15ml</li>
+<li>可乐：填满</li>
+<li>装饰</li>
+</ul>
+<h2 id="自由古巴"><a href="#自由古巴" class="headerlink" title="自由古巴"></a>自由古巴</h2><ul>
+<li>绿柠：5ml</li>
+<li>白朗姆：45ml</li>
+<li>可乐：加满</li>
+<li>装饰</li>
+</ul>
+<h2 id="莫吉托"><a href="#莫吉托" class="headerlink" title="莫吉托"></a>莫吉托</h2><ul>
+<li>绿柠块：3块（挤压）</li>
+<li>薄荷：轻挤压</li>
+<li>薄荷糖浆：8ml</li>
+<li>白朗姆：45ml</li>
+<li>冰：满</li>
+<li>苏打水：加到杯子4&#x2F;5</li>
+<li>用勺子伸到杯底做提拉</li>
+<li>装饰：绿柠片，薄荷簇</li>
+</ul>
+<h2 id="教父"><a href="#教父" class="headerlink" title="教父"></a>教父</h2><ul>
+<li>饮具：传统杯 + 方冰</li>
+<li>金宾波本：50ml</li>
+<li>蒂萨诺：10ml</li>
+<li>用勺子搅匀</li>
+</ul>
+<h2 id="蓝色夏威夷"><a href="#蓝色夏威夷" class="headerlink" title="蓝色夏威夷"></a>蓝色夏威夷</h2><ul>
+<li>饮具：玻璃杯 + 冰</li>
+<li>白朗姆：40ml</li>
+<li>蓝橙：20ml</li>
+<li>马利宝：20ml</li>
+<li>菠萝汁：45ml</li>
+<li>雪碧：加满</li>
+<li>装饰</li>
+</ul>
+<h2 id="醉酒的梵高"><a href="#醉酒的梵高" class="headerlink" title="醉酒的梵高"></a>醉酒的梵高</h2><ul>
+<li>龙舌兰：40ml</li>
+<li>菠萝汁：45ml</li>
+<li>雪碧：加满</li>
+<li>蓝橙力娇：最后加入，不搅动</li>
+</ul>
+<h2 id="心橙大海"><a href="#心橙大海" class="headerlink" title="心橙大海"></a>心橙大海</h2><ul>
+<li>饮具：玻璃杯 + 冰</li>
+<li>伏特加：45ml</li>
+<li>橙汁：装满</li>
+</ul>
+<h2 id="金汤力"><a href="#金汤力" class="headerlink" title="金汤力"></a>金汤力</h2><ul>
+<li>饮具：玻璃杯 + 冰</li>
+<li>金酒：45ml</li>
+<li>汤力水：加满</li>
+<li>装饰</li>
+</ul>
+<h2 id="日出"><a href="#日出" class="headerlink" title="日出"></a>日出</h2><ul>
+<li>饮具：玻璃杯 + 冰</li>
+<li>龙舌兰：45ml</li>
+<li>橙汁：加满</li>
+<li>红色糖浆：适量调整着色区域</li>
+</ul>
+<h2 id="蓝色玛格丽特"><a href="#蓝色玛格丽特" class="headerlink" title="蓝色玛格丽特"></a>蓝色玛格丽特</h2><ul>
+<li>饮具：玻璃杯 + 盐边</li>
+<li>龙舌兰：30ml</li>
+<li>蓝橙力娇酒：15ml</li>
+<li>蔗糖：5ml</li>
+<li>黄柠檬：点缀</li>
+</ul>
+<h2 id="白色玛格丽特"><a href="#白色玛格丽特" class="headerlink" title="白色玛格丽特"></a>白色玛格丽特</h2><ul>
+<li>龙舌兰：30ml</li>
+<li>君度：15ml</li>
+<li>柠檬汁：几滴</li>
+<li>蔗糖：5ml</li>
+<li>加冰块摇匀</li>
+</ul>
+<h2 id="威士忌酸"><a href="#威士忌酸" class="headerlink" title="威士忌酸"></a>威士忌酸</h2><ul>
+<li>波本：45ml</li>
+<li>黄柠檬：半个</li>
+<li>蔗糖：10ml</li>
+<li>加冰块摇匀</li>
+</ul>
+<h2 id="前任"><a href="#前任" class="headerlink" title="前任"></a>前任</h2><ul>
+<li>饮具：玻璃杯 + 冰</li>
+<li>龙舌兰：45ml</li>
+<li>红柚糖浆：适量</li>
+<li>苏打水：加满</li>
+</ul>
+<h2 id="孟婆汤"><a href="#孟婆汤" class="headerlink" title="孟婆汤"></a>孟婆汤</h2><ul>
+<li>伏特加：30ml</li>
+<li>柠檬汁：15ml</li>
+<li>马力宝：15ml</li>
+<li>莫林绿薄荷糖浆：10ml</li>
+</ul>
+<h2 id="百香果莫吉托（无酒精）"><a href="#百香果莫吉托（无酒精）" class="headerlink" title="百香果莫吉托（无酒精）"></a>百香果莫吉托（无酒精）</h2><ul>
+<li>青柠汁：5ml</li>
+<li>冰：加满</li>
+<li>百香果糖浆：12ml</li>
+<li>薄荷糖浆：12ml</li>
+<li>气泡水：加满</li>
+<li>搅匀装饰</li>
+</ul>
+<h2 id="波斯猫（无酒精）"><a href="#波斯猫（无酒精）" class="headerlink" title="波斯猫（无酒精）"></a>波斯猫（无酒精）</h2><ul>
+<li>橙汁：60ml</li>
+<li>菠萝汁：40ml</li>
+<li>柠檬汁：半个</li>
+<li>红石榴糖浆：2勺</li>
+<li>蔗糖：1勺</li>
+<li>加冰块摇匀</li>
+</ul>
+<h2 id="蓝色多瑙河（无酒精）"><a href="#蓝色多瑙河（无酒精）" class="headerlink" title="蓝色多瑙河（无酒精）"></a>蓝色多瑙河（无酒精）</h2><ul>
+<li>柠檬汁：一点</li>
+<li>蓝柑糖浆：10ml</li>
+<li>蔗糖糖浆：5ml</li>
+<li>苏打水</li>
+</ul>
+<h2 id="柚恋柠檬（无酒精）"><a href="#柚恋柠檬（无酒精）" class="headerlink" title="柚恋柠檬（无酒精）"></a>柚恋柠檬（无酒精）</h2><ul>
+<li>柠檬汁：一点</li>
+<li>红柚糖浆：10ml</li>
+<li>蔗糖糖浆：5ml</li>
+<li>苏打水</li>
+</ul>
+<h2 id="清凉一夏（无酒精）"><a href="#清凉一夏（无酒精）" class="headerlink" title="清凉一夏（无酒精）"></a>清凉一夏（无酒精）</h2><ul>
+<li>饮具：威士忌杯🥃 + 方冰</li>
+<li>新鲜薄荷叶：4-5 片，拍醒</li>
+<li>可乐：加至8分满</li>
+</ul>
+<h2 id="甜蜜蜜"><a href="#甜蜜蜜" class="headerlink" title="甜蜜蜜"></a>甜蜜蜜</h2><p>60 ml 蜜茶<br>40 mlwhisky<br>5 ml 糖浆<br>1&#x2F;4 柠檬</p>
+<h2 id="威士忌可乐-Whisky-Coke"><a href="#威士忌可乐-Whisky-Coke" class="headerlink" title="威士忌可乐 Whisky Coke"></a>威士忌可乐 Whisky Coke</h2><p><span style="font-family:.PingFangSC-Regular;">威士忌</span> 45 ml<br>可乐 Cola Top</p>
+<h2 id="伏特加莱姆"><a href="#伏特加莱姆" class="headerlink" title="伏特加莱姆"></a>伏特加莱姆</h2><ul>
+<li>盐边</li>
+<li>伏特加 60 ml</li>
+<li>柠檬汁 30 ml</li>
+<li>糖水 10 ml</li>
+</ul>
+<h2 id="玛格丽特-Margarita"><a href="#玛格丽特-Margarita" class="headerlink" title="玛格丽特 Margarita"></a>玛格丽特 Margarita</h2><ul>
+<li>龙舌兰 45 ml</li>
+<li>君度橙 cointreau 15 ml</li>
+<li>柠檬汁 15 ml</li>
+<li>加冰摇一摇</li>
+<li>盐边</li>
+</ul>
+<h2 id="螺丝起子-Screwdriver"><a href="#螺丝起子-Screwdriver" class="headerlink" title="螺丝起子 Screwdriver"></a>螺丝起子 Screwdriver</h2><ul>
+<li>伏特加 45 ml</li>
+<li>橙汁</li>
+</ul>
 ]]></content>
       <categories>
-        <category>技术</category>
-        <category>数据分析</category>
-        <category>python</category>
-        <category>pandas</category>
+        <category>生活</category>
+        <category>鸡尾酒</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
-        <tag>python</tag>
+        <tag>鸡尾酒</tag>
+        <tag>配方</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>GoPro Hero最实用的四个必备配件:打造完美生态</title>
+    <url>/2022/03/15/GoproHero/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><hr>
+<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">
+<iframe src="//player.bilibili.com/player.html?aid=244387247&bvid=BV1Av411174q&cid=229573649&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; Left: 0; top: 0;" ></iframe></div> 
+]]></content>
+      <categories>
+        <category>数码</category>
+        <category>相机</category>
+      </categories>
+      <tags>
+        <tag>数码</tag>
+        <tag>相机</tag>
       </tags>
   </entry>
   <entry>
@@ -1589,45 +1666,6 @@
       </tags>
   </entry>
   <entry>
-    <title>数据填补算法的选择主要依据</title>
-    <url>/2022/05/05/%E6%95%B0%E6%8D%AE%E5%A1%AB%E8%A1%A5%E7%AE%97%E6%B3%95%E7%9A%84%E9%80%89%E6%8B%A9%E4%B8%BB%E8%A6%81%E4%BE%9D%E6%8D%AE/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>数据填补算法的选择主要依据以下几个因素:</p>
-<ol>
-<li><p>数据类型:数值型数据可以选择均值&#x2F;中位数填补,分类数据可以选择最频繁值填补。时间序列数据可以考虑插值法或回归预测填补。</p>
-</li>
-<li><p>缺失值占比:缺失值比例越大,删除行&#x2F;特征效果越差,需要更复杂的填补方法。缺失值比例小,简单填补法效果也不错。</p>
-</li>
-<li><p>数据分布:数据分布越复杂,简单填补法效果越差,需要根据数据分布选择合适的填补方法。</p>
-</li>
-<li><p>特征相关性:特征之间相关性越强,可以考虑矩阵填补,用其他特征预测当前特征缺失值。相关性弱需要独立填补。</p>
-</li>
-<li><p>填补对模型的影响:填补值的准确性会直接影响后续机器学习模型的效果,需要评估不同填补方法对模型效果的影响。<br>所以,在选择数据填补算法时,主要依据数据类型、缺失值占比、数据分布以及特征相关性进行初选,然后可以尝试不同算法,评估填补后的数据对机器学习模型效果的影响,选择一个综合效果最好的算法。</p>
-<span id="more"></span>
-<p>常见的选择思路如:</p>
-</li>
-<li><p>分类&#x2F;数值数据 &amp; 缺失值比例小:均值&#x2F;中位数&#x2F;最频繁值填补</p>
-</li>
-<li><p>数值数据 &amp; 数据分布复杂:KNN填补</p>
-</li>
-<li><p>特征相关性强:矩阵填补</p>
-</li>
-<li><p>时间序列数据:插值法或回归预测填补</p>
-</li>
-<li><p>缺失值比例大:需要尝试多种复杂方法,评估效果选择最佳方案<br>所以综上,数据填补算法的选择需要根据具体的数据集与情况综合判断,没有一个通用的选择顺序,需要尝试与评估不同方法的效果。</p>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>技术</category>
-        <category>数据分析</category>
-        <category>方法论</category>
-      </categories>
-      <tags>
-        <tag>数据分析师</tag>
-        <tag>数据分析</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>数据分析师技术树</title>
     <url>/2023/05/15/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="数据分析师"><a href="#数据分析师" class="headerlink" title="数据分析师"></a>数据分析师</h1><ol>
@@ -1676,6 +1714,45 @@
       <tags>
         <tag>笔记</tag>
         <tag>数据分析师</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数据填补算法的选择主要依据</title>
+    <url>/2022/05/05/%E6%95%B0%E6%8D%AE%E5%A1%AB%E8%A1%A5%E7%AE%97%E6%B3%95%E7%9A%84%E9%80%89%E6%8B%A9%E4%B8%BB%E8%A6%81%E4%BE%9D%E6%8D%AE/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>数据填补算法的选择主要依据以下几个因素:</p>
+<ol>
+<li><p>数据类型:数值型数据可以选择均值&#x2F;中位数填补,分类数据可以选择最频繁值填补。时间序列数据可以考虑插值法或回归预测填补。</p>
+</li>
+<li><p>缺失值占比:缺失值比例越大,删除行&#x2F;特征效果越差,需要更复杂的填补方法。缺失值比例小,简单填补法效果也不错。</p>
+</li>
+<li><p>数据分布:数据分布越复杂,简单填补法效果越差,需要根据数据分布选择合适的填补方法。</p>
+</li>
+<li><p>特征相关性:特征之间相关性越强,可以考虑矩阵填补,用其他特征预测当前特征缺失值。相关性弱需要独立填补。</p>
+</li>
+<li><p>填补对模型的影响:填补值的准确性会直接影响后续机器学习模型的效果,需要评估不同填补方法对模型效果的影响。<br>所以,在选择数据填补算法时,主要依据数据类型、缺失值占比、数据分布以及特征相关性进行初选,然后可以尝试不同算法,评估填补后的数据对机器学习模型效果的影响,选择一个综合效果最好的算法。</p>
+<span id="more"></span>
+<p>常见的选择思路如:</p>
+</li>
+<li><p>分类&#x2F;数值数据 &amp; 缺失值比例小:均值&#x2F;中位数&#x2F;最频繁值填补</p>
+</li>
+<li><p>数值数据 &amp; 数据分布复杂:KNN填补</p>
+</li>
+<li><p>特征相关性强:矩阵填补</p>
+</li>
+<li><p>时间序列数据:插值法或回归预测填补</p>
+</li>
+<li><p>缺失值比例大:需要尝试多种复杂方法,评估效果选择最佳方案<br>所以综上,数据填补算法的选择需要根据具体的数据集与情况综合判断,没有一个通用的选择顺序,需要尝试与评估不同方法的效果。</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>数据分析</category>
+        <category>方法论</category>
+      </categories>
+      <tags>
+        <tag>数据分析师</tag>
+        <tag>数据分析</tag>
       </tags>
   </entry>
   <entry>
@@ -1923,8 +2000,8 @@
       </categories>
       <tags>
         <tag>笔记</tag>
-        <tag>Apple</tag>
         <tag>数码</tag>
+        <tag>Apple</tag>
       </tags>
   </entry>
   <entry>
@@ -11101,6 +11178,155 @@
       </tags>
   </entry>
   <entry>
+    <title>Python代码笔记</title>
+    <url>/2022/04/28/Python%E4%BB%A3%E7%A0%81%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="iloc"><a href="#iloc" class="headerlink" title="iloc"></a>iloc</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">df.iloc[a,b]</span><br><span class="line"><span class="comment"># 其中df是DataFrame数据结构的数据，a是 #行索引，b是 #列索引。</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> pandas</span><br><span class="line">df = pandas.read_csv(<span class="string">&#x27;a.csv&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(df.iloc[<span class="number">0</span>:<span class="number">2</span>,<span class="number">2</span>]) <span class="comment">#数据结构是Series</span></span><br><span class="line"><span class="built_in">print</span>(df.iloc[<span class="number">0</span>:<span class="number">2</span>,<span class="number">2</span>].values) <span class="comment">#数据结构是ndarray</span></span><br><span class="line"><span class="comment">#Out1：0    87</span></span><br><span class="line"><span class="comment">#      1    95</span></span><br><span class="line"><span class="comment"># Name: 分数, dtype: int64</span></span><br><span class="line"><span class="comment">#Out2：[87 95]</span></span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+<h3 id="解除列打印限制"><a href="#解除列打印限制" class="headerlink" title="解除列打印限制"></a>解除列打印限制</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置expand_frame_repr属性为False，即可在打印输出dataframe时不隐藏部分列</span></span><br><span class="line"></span><br><span class="line">pd.set_option(<span class="string">&#x27;expand_frame_repr&#x27;</span>, <span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="Python-pandas-读取数据-read-excel"><a href="#Python-pandas-读取数据-read-excel" class="headerlink" title="Python&#x2F;pandas&#x2F;读取数据&#x2F;read_excel"></a>Python&#x2F;pandas&#x2F;读取数据&#x2F;read_excel</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">excel_dataframe = pd.read_excel(xlsx_file, sheet_name = worksheet_name, header=head_count, skipfooter=tail_count, dtype=<span class="string">&#x27;str&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="Python-pandas-读取数据-csv"><a href="#Python-pandas-读取数据-csv" class="headerlink" title="Python&#x2F;pandas&#x2F;读取数据&#x2F;csv"></a>Python&#x2F;pandas&#x2F;读取数据&#x2F;csv</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pd.read_csv(<span class="string">&quot;data.csv&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>对于Windows的读取方法：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pd.read_csv(<span class="string">&#x27;my_data.csv&#x27;</span>, encoding=<span class="string">&#x27;ANSI&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>Mac上修改为使用GB18030的编码来读取文件：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pd.read_csv(<span class="string">&#x27;my_data.csv&#x27;</span>, encoding=<span class="string">&quot;gb18030&quot;</span>, on_bad_lines=<span class="string">&quot;skip&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="Python-pandas-读取数据-csv-从多个csv文件中读取数据"><a href="#Python-pandas-读取数据-csv-从多个csv文件中读取数据" class="headerlink" title="Python&#x2F;pandas&#x2F;读取数据&#x2F;csv&#x2F;从多个csv文件中读取数据"></a>Python&#x2F;pandas&#x2F;读取数据&#x2F;csv&#x2F;从多个csv文件中读取数据</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> glob</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line">files = glob.glob(<span class="string">&quot;file_*.csv&quot;</span>)</span><br><span class="line"></span><br><span class="line">result = pd.concat([pd.read_csv(file) <span class="keyword">for</span> file <span class="keyword">in</span> files], ignore_index=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="Python-读取数据-从PDF文件当中来读取数据"><a href="#Python-读取数据-从PDF文件当中来读取数据" class="headerlink" title="Python&#x2F;读取数据&#x2F;从PDF文件当中来读取数据"></a>Python&#x2F;读取数据&#x2F;从PDF文件当中来读取数据</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装tabula-py模块</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># %pip install tabula-py </span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> tabula <span class="keyword">import</span> read_pdf</span><br><span class="line"></span><br><span class="line">df = read_pdf(<span class="string">&#x27;test.pdf&#x27;</span>, pages=<span class="string">&#x27;all&#x27;</span>)</span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line"><span class="comment">### Python/pandas/读取数据/部分读取/指定列</span></span><br><span class="line"></span><br><span class="line">```python</span><br><span class="line">df = pd.read_csv(<span class="string">&quot;house_price.csv&quot;</span>, usecols=[<span class="string">&quot;Id&quot;</span>, <span class="string">&quot;SalePrice&quot;</span>])</span><br><span class="line"></span><br><span class="line">df.head()</span><br></pre></td></tr></table></figure>
+
+<h3 id="Python-pandas-读取数据-部分读取-指定行"><a href="#Python-pandas-读取数据-部分读取-指定行" class="headerlink" title="Python&#x2F;pandas&#x2F;读取数据&#x2F;部分读取&#x2F;指定行"></a>Python&#x2F;pandas&#x2F;读取数据&#x2F;部分读取&#x2F;指定行</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">df = pd.read_csv(<span class="string">&quot;Tesla.csv&quot;</span>, nrows=<span class="number">100</span>)</span><br><span class="line"></span><br><span class="line">df.shape</span><br></pre></td></tr></table></figure>
+
+<h3 id="Python-探索性数据分析"><a href="#Python-探索性数据分析" class="headerlink" title="Python&#x2F;探索性数据分析"></a>Python&#x2F;探索性数据分析</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装pandas-profilling模块</span></span><br><span class="line"><span class="comment"># %pip install pandas-profiling</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> pandas_profiling</span><br><span class="line"></span><br><span class="line">df = pd.read_csv(<span class="string">&quot;data.csv&quot;</span>)</span><br><span class="line"></span><br><span class="line">profile = df.profile_report(title=<span class="string">&quot;Pandas Profiling Report&quot;</span>)</span><br><span class="line"></span><br><span class="line">profile.to_file(output_file=<span class="string">&quot;output.html&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="Python-pandas-基于数据类型的操作-筛选数据"><a href="#Python-pandas-基于数据类型的操作-筛选数据" class="headerlink" title="Python&#x2F;pandas&#x2F;&#x2F;基于数据类型的操作&#x2F;筛选数据"></a>Python&#x2F;pandas&#x2F;&#x2F;基于数据类型的操作&#x2F;筛选数据</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">df.select_dtypes(include=<span class="string">&quot;number&quot;</span>)</span><br><span class="line"></span><br><span class="line">df.select_dtypes(include=[<span class="string">&quot;category&quot;</span>, <span class="string">&quot;datetime&quot;</span>])</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="Python-pandas-基于数据类型的操作-排除数据"><a href="#Python-pandas-基于数据类型的操作-排除数据" class="headerlink" title="Python&#x2F;pandas&#x2F;&#x2F;基于数据类型的操作&#x2F;排除数据"></a>Python&#x2F;pandas&#x2F;&#x2F;基于数据类型的操作&#x2F;排除数据</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">df.select_dtypes(exclude=<span class="string">&quot;object&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="Python-pandas-基于数据类型的操作-推断数据类型"><a href="#Python-pandas-基于数据类型的操作-推断数据类型" class="headerlink" title="Python&#x2F;pandas&#x2F;基于数据类型的操作&#x2F;推断数据类型"></a>Python&#x2F;pandas&#x2F;基于数据类型的操作&#x2F;推断数据类型</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">df.infer_objects().dtypes</span><br></pre></td></tr></table></figure>
+
+<h3 id="Python-pandas-基于数据类型的操作-手动进行数据类型的转换"><a href="#Python-pandas-基于数据类型的操作-手动进行数据类型的转换" class="headerlink" title="Python&#x2F;pandas&#x2F;基于数据类型的操作&#x2F;手动进行数据类型的转换"></a>Python&#x2F;pandas&#x2F;基于数据类型的操作&#x2F;手动进行数据类型的转换</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 针对整个数据集都有效</span></span><br><span class="line"></span><br><span class="line">df = df.apply(pd.to_numeric, errors=<span class="string">&quot;coerce&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将空值用零来填充</span></span><br><span class="line"></span><br><span class="line">pd.to_numeric(df.numeric_column, errors=<span class="string">&quot;coerce&quot;</span>).fillna(<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="Python-pandas-基于数据类型的操作-一次性完成数据类型的转换"><a href="#Python-pandas-基于数据类型的操作-一次性完成数据类型的转换" class="headerlink" title="Python&#x2F;pandas&#x2F;基于数据类型的操作&#x2F;一次性完成数据类型的转换"></a>Python&#x2F;pandas&#x2F;基于数据类型的操作&#x2F;一次性完成数据类型的转换</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">df = df.astype(</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">    <span class="string">&quot;date&quot;</span>: <span class="string">&quot;datetime64[ns]&quot;</span>,</span><br><span class="line"></span><br><span class="line">    <span class="string">&quot;price&quot;</span>: <span class="string">&quot;int&quot;</span>,</span><br><span class="line"></span><br><span class="line">    <span class="string">&quot;is_weekend&quot;</span>: <span class="string">&quot;bool&quot;</span>,</span><br><span class="line"></span><br><span class="line">    <span class="string">&quot;status&quot;</span>: <span class="string">&quot;category&quot;</span>,</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<h3 id="Python-pandas-列的操作-获取指定列"><a href="#Python-pandas-列的操作-获取指定列" class="headerlink" title="Python&#x2F;pandas&#x2F;列的操作&#x2F;获取指定列"></a>Python&#x2F;pandas&#x2F;列的操作&#x2F;获取指定列</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">df[<span class="string">&#x27;列表头&#x27;</span>]</span><br><span class="line"></span><br><span class="line">df[[[<span class="string">&#x27;列1&#x27;</span>,<span class="string">&#x27;列2&#x27;</span>]]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="Python-forLoop-enumerate"><a href="#Python-forLoop-enumerate" class="headerlink" title="Python&#x2F;forLoop&#x2F;enumerate"></a>Python&#x2F;forLoop&#x2F;enumerate</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> idx, element <span class="keyword">in</span> <span class="built_in">enumerate</span>(<span class="built_in">list</span>):</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(idx,element)</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="Python-pandas-列的操作-重命名"><a href="#Python-pandas-列的操作-重命名" class="headerlink" title="Python&#x2F;pandas&#x2F;列的操作&#x2F;重命名"></a>Python&#x2F;pandas&#x2F;列的操作&#x2F;重命名</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">df = df.rename(&#123;<span class="string">&quot;PRICE&quot;</span>: <span class="string">&quot;price&quot;</span>, <span class="string">&quot;Date (mm/dd/yyyy)&quot;</span>: <span class="string">&quot;date&quot;</span>, <span class="string">&quot;STATUS&quot;</span>: <span class="string">&quot;status&quot;</span>&#125;, axis=<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="Python-pandas-列的操作-添加前缀或者是后缀"><a href="#Python-pandas-列的操作-添加前缀或者是后缀" class="headerlink" title="Python&#x2F;pandas&#x2F;列的操作&#x2F;添加前缀或者是后缀"></a>Python&#x2F;pandas&#x2F;列的操作&#x2F;添加前缀或者是后缀</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">df.add_prefix(<span class="string">&quot;pre_&quot;</span>)</span><br><span class="line"></span><br><span class="line">df.add_suffix(<span class="string">&quot;_suf&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="Python-pandas-列的操作-新建一个列"><a href="#Python-pandas-列的操作-新建一个列" class="headerlink" title="Python&#x2F;pandas&#x2F;列的操作&#x2F;新建一个列"></a>Python&#x2F;pandas&#x2F;列的操作&#x2F;新建一个列</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 摄氏度与华氏度之间的数制转换</span></span><br><span class="line"></span><br><span class="line">df.assign(temp_f=<span class="keyword">lambda</span> x: x.temp_c * <span class="number">9</span> / <span class="number">5</span> + <span class="number">32</span>)</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="Python-pandas-列的操作-新建一个列-从已有列复制部分"><a href="#Python-pandas-列的操作-新建一个列-从已有列复制部分" class="headerlink" title="Python&#x2F;pandas&#x2F;列的操作&#x2F;新建一个列&#x2F;从已有列复制部分"></a>Python&#x2F;pandas&#x2F;列的操作&#x2F;新建一个列&#x2F;从已有列复制部分</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">raw_df[<span class="string">&#x27;消耗日期&#x27;</span>] = raw_df[<span class="string">&quot;消耗时间&quot;</span>].<span class="built_in">map</span>(<span class="keyword">lambda</span> x:x.split(<span class="string">&#x27; &#x27;</span>)[<span class="number">0</span>])</span><br></pre></td></tr></table></figure>
+
+<h3 id="Python-pandas-列的操作-在指定的位置插入新的一列"><a href="#Python-pandas-列的操作-在指定的位置插入新的一列" class="headerlink" title="Python&#x2F;pandas&#x2F;列的操作&#x2F;在指定的位置插入新的一列"></a>Python&#x2F;pandas&#x2F;列的操作&#x2F;在指定的位置插入新的一列</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">random_col = np.random.randint(<span class="number">10</span>, size=<span class="built_in">len</span>(df))</span><br><span class="line"></span><br><span class="line">df.insert(<span class="number">3</span>, <span class="string">&#x27;random_col&#x27;</span>, random_col) <span class="comment"># 在第三列的地方插入</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Python-pandas-列的操作-if-else逻辑判断"><a href="#Python-pandas-列的操作-if-else逻辑判断" class="headerlink" title="Python&#x2F;pandas&#x2F;列的操作&#x2F;if-else逻辑判断"></a>Python&#x2F;pandas&#x2F;列的操作&#x2F;if-else逻辑判断</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">df[<span class="string">&quot;price_high_low&quot;</span>] = np.where(df[<span class="string">&quot;price&quot;</span>] &gt; <span class="number">5</span>, <span class="string">&quot;high&quot;</span>, <span class="string">&quot;low&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="Python-pandas-列的操作-去掉某些列"><a href="#Python-pandas-列的操作-去掉某些列" class="headerlink" title="Python&#x2F;pandas&#x2F;列的操作&#x2F;去掉某些列"></a>Python&#x2F;pandas&#x2F;列的操作&#x2F;去掉某些列</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 删除列</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">del</span> sku_dataframe[<span class="string">&#x27;批次id&#x27;</span>]</span><br><span class="line"></span><br><span class="line">df.drop(<span class="string">&#x27;col1&#x27;</span>, axis=<span class="number">1</span>, inplace=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">df = df.drop([<span class="string">&#x27;col1&#x27;</span>,<span class="string">&#x27;col2&#x27;</span>], axis=<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">df.drop(df.columns[<span class="number">0</span>], inplace=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="Python-pandas-字符串的操作-列名的操作"><a href="#Python-pandas-字符串的操作-列名的操作" class="headerlink" title="Python&#x2F;pandas&#x2F;字符串的操作&#x2F;列名的操作"></a>Python&#x2F;pandas&#x2F;字符串的操作&#x2F;列名的操作</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 对于列名的字符串操作</span></span><br><span class="line"></span><br><span class="line">df.columns = df.columns.<span class="built_in">str</span>.lower()</span><br><span class="line"></span><br><span class="line">df.columns = df.columns.<span class="built_in">str</span>.replace(<span class="string">&#x27; &#x27;</span>, <span class="string">&#x27;_&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="Python-pandas-字符串的操作-Contains-方法"><a href="#Python-pandas-字符串的操作-Contains-方法" class="headerlink" title="Python&#x2F;pandas&#x2F;字符串的操作&#x2F;Contains()方法"></a>Python&#x2F;pandas&#x2F;字符串的操作&#x2F;Contains()方法</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 是否包含了某些字符串</span></span><br><span class="line"></span><br><span class="line">df[<span class="string">&#x27;name&#x27;</span>].<span class="built_in">str</span>.contains(<span class="string">&quot;John&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">## 里面可以放置正则表达式</span></span><br><span class="line"></span><br><span class="line">df[<span class="string">&#x27;phone_num&#x27;</span>].<span class="built_in">str</span>.contains(<span class="string">&#x27;...-...-....&#x27;</span>, regex=<span class="literal">True</span>) <span class="comment"># regex</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Python-pandas-字符串的操作-findall-方法"><a href="#Python-pandas-字符串的操作-findall-方法" class="headerlink" title="Python&#x2F;pandas&#x2F;字符串的操作&#x2F;findall()方法"></a>Python&#x2F;pandas&#x2F;字符串的操作&#x2F;findall()方法</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 正则表达式</span></span><br><span class="line"></span><br><span class="line">pattern = <span class="string">&#x27;([A-Z0-9._%+-]+)@([A-Z0-9.-]+)\\.([A-Z]&#123;1,9&#125;)&#x27;</span></span><br><span class="line"></span><br><span class="line">df[<span class="string">&#x27;email&#x27;</span>].<span class="built_in">str</span>.findall(pattern, flags=re.IGNORECASE)</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="Python-pandas-缺失值-查看空值的比例"><a href="#Python-pandas-缺失值-查看空值的比例" class="headerlink" title="Python&#x2F;pandas&#x2F;缺失值&#x2F;查看空值的比例"></a>Python&#x2F;pandas&#x2F;缺失值&#x2F;查看空值的比例</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">missing_vals</span>(<span class="params">df</span>):</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;空值所占的百分比&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">missing = [</span><br><span class="line"></span><br><span class="line">(df.columns[idx], perc)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> idx, perc <span class="keyword">in</span> <span class="built_in">enumerate</span>(df.isna().mean() * <span class="number">100</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> perc &gt; <span class="number">0</span></span><br><span class="line"></span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="built_in">len</span>(missing) == <span class="number">0</span>:</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="string">&quot;没有空值数据的存在&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 排序</span></span><br><span class="line"></span><br><span class="line">missing.sort(key=<span class="keyword">lambda</span> x: x[<span class="number">1</span>], reverse=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;总共有 <span class="subst">&#123;<span class="built_in">len</span>(missing)&#125;</span> 个变量存在空值\n&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> tup <span class="keyword">in</span> missing:</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">str</span>.ljust(<span class="string">f&quot;<span class="subst">&#123;tup[<span class="number">0</span>]:&lt;<span class="number">20</span>&#125;</span> =&gt; <span class="subst">&#123;<span class="built_in">round</span>(tup[<span class="number">1</span>], <span class="number">3</span>)&#125;</span>%&quot;</span>, <span class="number">1</span>))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<h3 id="Python-缺失值-空值的处理方式"><a href="#Python-缺失值-空值的处理方式" class="headerlink" title="Python&#x2F;缺失值&#x2F;空值的处理方式"></a>Python&#x2F;缺失值&#x2F;空值的处理方式</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 去除掉空值</span></span><br><span class="line"></span><br><span class="line">df.dropna(axis=<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">df.dropna(axis=<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 换成其他值来填充</span></span><br><span class="line"></span><br><span class="line">df.fillna(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">df.fillna(method=<span class="string">&quot;ffill&quot;</span>)</span><br><span class="line"></span><br><span class="line">df.fillna(method=<span class="string">&#x27;bfill&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 取代为其他的数值</span></span><br><span class="line"></span><br><span class="line">df.replace( -<span class="number">999</span>, np.nan)</span><br><span class="line"></span><br><span class="line">df.replace(<span class="string">&quot;?&quot;</span>, np.nan)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 推测其空值应该为其他什么数值</span></span><br><span class="line"></span><br><span class="line">ts.interpolate() <span class="comment"># time series</span></span><br><span class="line"></span><br><span class="line">df.interpolate() <span class="comment"># fill all consecutive values forward</span></span><br><span class="line"></span><br><span class="line">df.interpolate(limit=<span class="number">1</span>) <span class="comment"># fill one consecutive value forward</span></span><br><span class="line"></span><br><span class="line">df.interpolate(limit=<span class="number">1</span>, limit_direction=<span class="string">&quot;backward&quot;</span>)</span><br><span class="line"></span><br><span class="line">df.interpolate(limit_direction=<span class="string">&quot;both&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Python-日期格式的数据处理-获取指定时间的数据"><a href="#Python-日期格式的数据处理-获取指定时间的数据" class="headerlink" title="Python&#x2F;日期格式的数据处理&#x2F;获取指定时间的数据"></a>Python&#x2F;日期格式的数据处理&#x2F;获取指定时间的数据</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># 从今天开始算，之后的N天或者N个礼拜或者N个小时</span></span><br><span class="line"></span><br><span class="line">date.today() + datetime.timedelta(hours=<span class="number">30</span>)</span><br><span class="line"></span><br><span class="line">date.today() + datetime.timedelta(days=<span class="number">30</span>)</span><br><span class="line"></span><br><span class="line">date.today() + datetime.timedelta(weeks=<span class="number">30</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 过去的一年</span></span><br><span class="line"></span><br><span class="line">date.today() - datetime.timedelta(days=<span class="number">365</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Python-日期格式的数据处理-通过日期时间来获取数据"><a href="#Python-日期格式的数据处理-通过日期时间来获取数据" class="headerlink" title="Python&#x2F;日期格式的数据处理&#x2F;通过日期时间来获取数据"></a>Python&#x2F;日期格式的数据处理&#x2F;通过日期时间来获取数据</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">df[(df[<span class="string">&quot;Date&quot;</span>] &gt; <span class="string">&quot;2015-10-01&quot;</span>) &amp; (df[<span class="string">&quot;Date&quot;</span>] &lt; <span class="string">&quot;2018-01-05&quot;</span>)]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<h3 id="Python-日期格式的数据处理-通过指定日期来获取数据"><a href="#Python-日期格式的数据处理-通过指定日期来获取数据" class="headerlink" title="Python&#x2F;日期格式的数据处理&#x2F;通过指定日期来获取数据"></a>Python&#x2F;日期格式的数据处理&#x2F;通过指定日期来获取数据</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 筛选出某一天的数据</span></span><br><span class="line"></span><br><span class="line">df[df[<span class="string">&quot;Date&quot;</span>].dt.strftime(<span class="string">&quot;%Y-%m-%d&quot;</span>) == <span class="string">&quot;2022-03-05&quot;</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 筛选出某一个月的数据</span></span><br><span class="line"></span><br><span class="line">df[df[<span class="string">&quot;Date&quot;</span>].dt.strftime(<span class="string">&quot;%m&quot;</span>) == <span class="string">&quot;12&quot;</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 筛选出每一年的数据</span></span><br><span class="line"></span><br><span class="line">df[df[<span class="string">&quot;Date&quot;</span>].dt.strftime(<span class="string">&quot;%Y&quot;</span>) == <span class="string">&quot;2020&quot;</span>]</span><br></pre></td></tr></table></figure>
+
+<h3 id="Python-将格式化数据集-保留指定位数"><a href="#Python-将格式化数据集-保留指定位数" class="headerlink" title="Python&#x2F;将格式化数据集&#x2F;保留指定位数"></a>Python&#x2F;将格式化数据集&#x2F;保留指定位数</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">format_dict = &#123;</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;Open&quot;</span>: <span class="string">&quot;$&#123;:.2f&#125;&quot;</span>,</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;Close&quot;</span>: <span class="string">&quot;$&#123;:.2f&#125;&quot;</span>,</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;Volume&quot;</span>: <span class="string">&quot;&#123;:,&#125;&quot;</span>,</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">df.style.<span class="built_in">format</span>(format_dict)</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="Python-将格式化数据集-高亮显示数据"><a href="#Python-将格式化数据集-高亮显示数据" class="headerlink" title="Python&#x2F;将格式化数据集&#x2F;高亮显示数据"></a>Python&#x2F;将格式化数据集&#x2F;高亮显示数据</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">(</span><br><span class="line"></span><br><span class="line">df.style.<span class="built_in">format</span>(format_dict)</span><br><span class="line"></span><br><span class="line">.hide_index()</span><br><span class="line"></span><br><span class="line">.highlight_min([<span class="string">&quot;Open&quot;</span>], color=<span class="string">&quot;blue&quot;</span>)</span><br><span class="line"></span><br><span class="line">.highlight_max([<span class="string">&quot;Open&quot;</span>], color=<span class="string">&quot;red&quot;</span>)</span><br><span class="line"></span><br><span class="line">.background_gradient(subset=<span class="string">&quot;Close&quot;</span>, cmap=<span class="string">&quot;Greens&quot;</span>)</span><br><span class="line"></span><br><span class="line">.bar(<span class="string">&#x27;Volume&#x27;</span>, color=<span class="string">&#x27;lightblue&#x27;</span>, align=<span class="string">&#x27;zero&#x27;</span>)</span><br><span class="line"></span><br><span class="line">.set_caption(<span class="string">&#x27;Tesla Stock Prices in 2017&#x27;</span>)</span><br><span class="line"></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Python-将格式化数据集-pandas-styler"><a href="#Python-将格式化数据集-pandas-styler" class="headerlink" title="Python&#x2F;将格式化数据集&#x2F;pandas-styler"></a>Python&#x2F;将格式化数据集&#x2F;pandas-styler</h3><p>pandas也可以像excel一样，设置表格的可视化条件格式，而且只需要一行代码即可（可能需要一丢丢的前端HTML和CSS基础知识）。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">diabetes.describe().T.drop(<span class="string">&quot;count&quot;</span>, axis=<span class="number">1</span>).style.highlight_max(color=<span class="string">&quot;darkred&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="Python-数据输出设置宽度"><a href="#Python-数据输出设置宽度" class="headerlink" title="Python&#x2F;数据输出设置宽度"></a>Python&#x2F;数据输出设置宽度</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">df = wechat_csv_reader(file_name,<span class="number">0</span>,<span class="number">10</span>)</span><br><span class="line"></span><br><span class="line">xlswriter = pd.ExcelWriter(<span class="string">&quot;test.xlsx&quot;</span>)</span><br><span class="line"></span><br><span class="line">df.to_excel(xlswriter,<span class="string">&#x27;核销明细&#x27;</span>,index=<span class="literal">False</span>)</span><br><span class="line"></span><br><span class="line">worksheet = xlswriter.sheets[<span class="string">&#x27;核销明细&#x27;</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">#指定B列宽度设置成12</span></span><br><span class="line"></span><br><span class="line">worksheet.set_column(<span class="string">&#x27;B:B&#x27;</span>, <span class="number">12</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#指定1-4列宽度设置成15</span></span><br><span class="line"></span><br><span class="line">worksheet.set_column(<span class="number">1</span>, <span class="number">4</span>, <span class="number">15</span>)</span><br><span class="line"></span><br><span class="line">xlswriter.save()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="Python-路径-pathlib"><a href="#Python-路径-pathlib" class="headerlink" title="Python&#x2F;路径&#x2F;pathlib"></a>Python&#x2F;路径&#x2F;pathlib</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> pathlib <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">Path.cwd() <span class="comment">#返回文件当前所在目录；</span></span><br><span class="line"></span><br><span class="line">Path.home()<span class="comment">#返回电脑用户的目录。</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 拼接出Windows桌面路径</span></span><br><span class="line"></span><br><span class="line">Path.joinpath(Path.home(), <span class="string">&quot;Desktop&quot;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="Python-pandas-列的操作-判断open这一列列是否有NaN"><a href="#Python-pandas-列的操作-判断open这一列列是否有NaN" class="headerlink" title="Python&#x2F;pandas&#x2F;列的操作&#x2F;判断open这一列列是否有NaN"></a>Python&#x2F;pandas&#x2F;列的操作&#x2F;判断open这一列列是否有NaN</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">df[<span class="string">&#x27;$open&#x27;</span>].isnull().<span class="built_in">any</span>() <span class="comment"># 判断open这一列列是否有 NaN</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="Python-pandas-列的操作-判断全部是否有NaN"><a href="#Python-pandas-列的操作-判断全部是否有NaN" class="headerlink" title="Python&#x2F;pandas&#x2F;列的操作&#x2F;判断全部是否有NaN"></a>Python&#x2F;pandas&#x2F;列的操作&#x2F;判断全部是否有NaN</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">df[<span class="string">&#x27;$open&#x27;</span>].isnull().<span class="built_in">all</span>() <span class="comment"># 判断open列是否全部为NaN</span></span><br><span class="line"></span><br><span class="line">df.isnull().<span class="built_in">all</span>() <span class="comment"># 判断某列是否全部为NaN</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">df.drop_duplicates()</span><br><span class="line"></span><br><span class="line"><span class="comment">#保留重复项</span></span><br><span class="line"></span><br><span class="line">df.drop_duplicates(keep=Flase)</span><br><span class="line"></span><br><span class="line"><span class="comment">#删除重复的项</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 空返回true，非空返回false</span></span><br><span class="line"></span><br><span class="line">df.empty</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">new_list = [<span class="string">&#x27;1&#x27;</span>+x <span class="keyword">for</span> x <span class="keyword">in</span> old_list]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">df.drop(df.tail(n).index) 从尾部去掉 n 行</span><br><span class="line"></span><br><span class="line">df.dorp(df.head(n).index) 从头去掉 n 行</span><br><span class="line"></span><br><span class="line">可以加上 inplace=<span class="literal">True</span> 直接修改原 dataFrame，不过函数返回是 <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 按列筛选</span></span><br><span class="line"></span><br><span class="line">new_df = raw_sum_df[raw_sum_df[<span class="string">&#x27;活动名称&#x27;</span>]==‘活动’]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 筛选在列表中存在的</span></span><br><span class="line"></span><br><span class="line">new_df = raw_sum_df[raw_sum_df[<span class="string">&#x27;活动名称&#x27;</span>].isin(voucher_name_list)]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 筛选在不在列表中存在的</span></span><br><span class="line"></span><br><span class="line">new_df = raw_sum_df[raw_sum_df[<span class="string">&#x27;活动名称&#x27;</span>].isin(voucher_name_list)]</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">In [9]: bool([0,0,0])</span><br><span class="line"></span><br><span class="line">Out[9]: True</span><br><span class="line"></span><br><span class="line">In [10]: bool([])</span><br><span class="line"></span><br><span class="line">Out[10]: False</span><br><span class="line"></span><br><span class="line">In [11]: bool([1,0,1])</span><br><span class="line"></span><br><span class="line">Out[11]: True</span><br></pre></td></tr></table></figure>
+
+
+<p>#######################</p>
+<h1 id="时间转换位时间戳"><a href="#时间转换位时间戳" class="headerlink" title="时间转换位时间戳"></a>时间转换位时间戳</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line">t = <span class="string">&quot;2017-11-24 17:30:00&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#将其转换为时间数组</span></span><br><span class="line"></span><br><span class="line">timeStruct = time.strptime(t, <span class="string">&quot;%Y-%m-%d %H:%M:%S&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#转换为时间戳:</span></span><br><span class="line"></span><br><span class="line">timeStamp = <span class="built_in">int</span>(time.mktime(timeStruct))</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(timeStamp)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果：</span></span><br><span class="line"></span><br><span class="line"><span class="number">1511515800</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#######################</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 时间戳转换为指定格式日期</span></span><br><span class="line"></span><br><span class="line">timeStamp = <span class="number">1511515800</span></span><br><span class="line"></span><br><span class="line">localTime = time.localtime(timeStamp)</span><br><span class="line"></span><br><span class="line">strTime = time.strftime(<span class="string">&quot;%Y-%m-%d %H:%M:%S&quot;</span>, localTime)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(strTime)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果：</span></span><br><span class="line"></span><br><span class="line"><span class="number">2017</span>-<span class="number">11</span>-<span class="number">24</span> <span class="number">17</span>:<span class="number">30</span>:<span class="number">00</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># str 转 time 类型</span></span><br><span class="line"></span><br><span class="line">date_time = time.strptime(date_time_str , <span class="string">&quot;%Y/%m/%d %H:%M:%S&quot;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> os <span class="keyword">import</span> path</span><br><span class="line"></span><br><span class="line">d = path.dirname(__file__)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获得d所在的目录,即d的父级目录</span></span><br><span class="line"></span><br><span class="line">parent_path = os.path.dirname(d)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获得parent_path所在的目录即parent_path的父级目录</span></span><br><span class="line"></span><br><span class="line">parent_path2 = os.path.dirname(parent_path)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取今天（现在时间）</span></span><br><span class="line"></span><br><span class="line">today = datetime.datetime.today()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 昨天</span></span><br><span class="line"></span><br><span class="line">yesterday = today - datetime.timedelta(days=<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 明天</span></span><br><span class="line"></span><br><span class="line">tomorrow = today + datetime.timedelta(days=<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取当前日期</span></span><br><span class="line"></span><br><span class="line">date = datetime.date.today()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取一秒后的时间</span></span><br><span class="line"></span><br><span class="line">s = today + datetime.timedelta(seconds=<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取一分钟后的时间</span></span><br><span class="line"></span><br><span class="line">m = today + datetime.timedelta(minutes=<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取一小时后的时间</span></span><br><span class="line"></span><br><span class="line">h = today + datetime.timedelta(hours=<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取一年后的时间</span></span><br><span class="line"></span><br><span class="line">y = today + datetime.timedelta(days=<span class="number">365</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#pandas str转datetime</span></span><br><span class="line"></span><br><span class="line">raw_df[<span class="string">&#x27;消耗时间&#x27;</span>] = pd.to_datetime(raw_df[<span class="string">&#x27;消耗时间&#x27;</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment">#datetime转date</span></span><br><span class="line"></span><br><span class="line">raw_df[<span class="string">&#x27;消耗日期&#x27;</span>] = raw_df[<span class="string">&#x27;消耗时间&#x27;</span>].dt.date</span><br><span class="line"></span><br><span class="line"><span class="comment">#datetime转time</span></span><br><span class="line"></span><br><span class="line">raw_df[<span class="string">&#x27;消耗日期&#x27;</span>] = raw_df[<span class="string">&#x27;消耗时间&#x27;</span>].dt.time</span><br><span class="line"></span><br><span class="line"><span class="comment">#datetime提取年、月、日</span></span><br><span class="line"></span><br><span class="line">raw_df[<span class="string">&#x27;消耗日期&#x27;</span>] = raw_df[<span class="string">&#x27;消耗时间&#x27;</span>].dt.year</span><br><span class="line"></span><br><span class="line">raw_df[<span class="string">&#x27;消耗日期&#x27;</span>] = raw_df[<span class="string">&#x27;消耗时间&#x27;</span>].dt.month</span><br><span class="line"></span><br><span class="line">raw_df[<span class="string">&#x27;消耗日期&#x27;</span>] = raw_df[<span class="string">&#x27;消耗时间&#x27;</span>].dt.day</span><br><span class="line"></span><br><span class="line"><span class="comment">#判断一周里的第几天，Monday=0, Sunday=6</span></span><br><span class="line"></span><br><span class="line">raw_df[<span class="string">&#x27;消耗日期&#x27;</span>] = raw_df[<span class="string">&#x27;消耗时间&#x27;</span>].dt.weekday</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<p>#df 为dataframe对象，包含’word’, ‘count’两列数据</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># 方法一</span></span><br><span class="line">result_dic = df.groupby(<span class="string">&#x27;word&#x27;</span>)[<span class="string">&#x27;count&#x27;</span>].apply(<span class="built_in">list</span>).to_dict()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 对于同一个key对应多个value，则把同一key的value构成一个list</span></span><br><span class="line"></span><br><span class="line">result_dic = df.groupby(<span class="string">&#x27;word&#x27;</span>)[<span class="string">&#x27;count&#x27;</span>].apply(<span class="keyword">lambda</span> x:<span class="built_in">str</span>(x)).to_dict()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 对于同一个key对应一个value，直接使用value</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#结果</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#形如&#123;key:value&#125;的字典</span></span><br><span class="line"></span><br><span class="line"><span class="comment">####################### 方法二</span></span><br><span class="line"></span><br><span class="line">result_dic = df.set_index(<span class="string">&#x27;a&#x27;</span>).T.to_dict()</span><br><span class="line"></span><br><span class="line">result_dic = df[[<span class="string">&quot;a&quot;</span>, <span class="string">&quot;b&quot;</span>]].set_index(<span class="string">&quot;a&quot;</span>).to_dict()[<span class="string">&quot;b&quot;</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 形如&#123;key:&#123;&#x27;count&#x27;:value&#125;&#125;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># dataframe转array</span></span><br><span class="line"></span><br><span class="line">l = dataframe[<span class="string">&#x27;&#x27;</span>].values.tolist()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 字典转dataframe</span></span><br><span class="line"></span><br><span class="line">barcode_newDF = pd.DataFrame(barcode_newDF_dic)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除列</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">del</span> sku_dataframe[<span class="string">&#x27;批次id&#x27;</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重置index</span></span><br><span class="line"></span><br><span class="line">la = byid_df.reset_index(drop=<span class="literal">False</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 已有A列，增加空列</span></span><br><span class="line"></span><br><span class="line">df.reindex(columns=[‘A’,’B’,’C’] fill_value=‘’)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 取多列（new_df为DataFrame类型）</span></span><br><span class="line"></span><br><span class="line">new_df = df[[<span class="string">&#x27;column_name1&#x27;</span>, <span class="string">&#x27;column_name2&#x27;</span>]]</span><br><span class="line"></span><br><span class="line"><span class="comment">#返回df【列】的list</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">list</span>(voucher_setting_dataframe))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 选取特定列</span></span><br><span class="line"></span><br><span class="line">pick_cloums_list = [<span class="string">&quot;券批次号&quot;</span>, <span class="string">&quot;发券形式&quot;</span>, <span class="string">&quot;商品名称&quot;</span>, <span class="string">&quot;核销门槛&quot;</span>, <span class="string">&quot;单张优惠金额&quot;</span>, <span class="string">&quot;发券量&quot;</span>, <span class="string">&quot;已发券数&quot;</span>]</span><br><span class="line"></span><br><span class="line">dataframe = voucher_setting_dataframe[pick_cloums_list]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 清理dataframe中的“`”</span></span><br><span class="line"></span><br><span class="line">raw_sum_df = raw_sum_dataframe.replace(&#123;<span class="string">&quot;`&quot;</span>:<span class="string">&quot;&quot;</span>&#125;,regex=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#修改index</span></span><br><span class="line"></span><br><span class="line">DataFrame.index = [newName]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将DataFrame格式的数据转化成字典形式</span></span><br><span class="line"></span><br><span class="line">```python</span><br><span class="line">dict_country = df.set_index(<span class="string">&#x27;project&#x27;</span>).T.to_dict(<span class="string">&#x27;list&#x27;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 第一种:在读取数据的时候,指定数据类型</span></span><br><span class="line"></span><br><span class="line">data = pd.read_csv(<span class="string">&#x27;test.txt&#x27;</span>,sep = <span class="string">&#x27;|&#x27;</span>,dtype = <span class="string">&#x27;str&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#第二种:使用转换函数:</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 2.1:将所有数据转换为字符串</span></span><br><span class="line"></span><br><span class="line">dataframe=dataframe.astype(<span class="built_in">str</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#2.2:将某列转换为字符串</span></span><br><span class="line"></span><br><span class="line">data = data.astype(&#123;<span class="string">&#x27;outcome&#x27;</span>:<span class="string">&#x27;float&#x27;</span>,<span class="string">&#x27;age&#x27;</span>:<span class="string">&#x27;int&#x27;</span>&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">#第三种:使用dataframe的apply函数或者map函数</span></span><br><span class="line"></span><br><span class="line">data[<span class="string">&#x27;交易金额&#x27;</span>] = data.交易金额.<span class="built_in">map</span>(<span class="keyword">lambda</span> x:<span class="built_in">float</span>(x))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[wechat data structure](https://www.notion.so/wechat-data-structure-1a305743622043908c44c6be5dc1f999)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改指定多列的数据类型</span></span><br><span class="line"></span><br><span class="line">df[[<span class="string">&#x27;c3&#x27;</span>,<span class="string">&#x27;c5&#x27;</span>]] = df[[<span class="string">&#x27;c3&#x27;</span>,<span class="string">&#x27;c5&#x27;</span>]].apply(pd.to_numeric)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(df.dtypes)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改单列的数据类型</span></span><br><span class="line"></span><br><span class="line">df[<span class="string">&#x27;column_name&#x27;</span>] = df[<span class="string">&#x27;column_name&#x27;</span>].astype(np.<span class="built_in">str</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(df.dtypes)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建dataframe时，修改数据类型</span></span><br><span class="line"></span><br><span class="line">df = pd.DataFrame(data, dtype=<span class="string">&#x27;float&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(df.dtypes)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 读取时，修改数据类型</span></span><br><span class="line"></span><br><span class="line">df = pd.read_csv(<span class="string">&quot;somefile.csv&quot;</span>, dtype = &#123;<span class="string">&#x27;column_name&#x27;</span> : <span class="built_in">str</span>&#125;)</span><br><span class="line"></span><br><span class="line">df = pd.DataFrame(data, dtype=<span class="string">&#x27;float&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加列，填充0</span></span><br><span class="line"></span><br><span class="line">df.insert(<span class="number">1</span>,<span class="string">&#x27;c&#x27;</span>,value=<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 一列拆封</span></span><br><span class="line"></span><br><span class="line">combined_df[[<span class="string">&#x27;消耗日期&#x27;</span>, <span class="string">&quot;消耗时间&quot;</span>]] = combined_df[<span class="string">&quot;消耗时间&quot;</span>].<span class="built_in">str</span>.split(<span class="string">&#x27; &#x27;</span>, <span class="number">2</span>, expand = <span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 列改名</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">voucher_setting_df_1 = voucher_setting_df.rename(columns=&#123;<span class="string">&#x27;券批次号&#x27;</span>:<span class="string">&#x27;批次id&#x27;</span>,<span class="string">&#x27;券名称&#x27;</span>:<span class="string">&#x27;券名称&#x27;</span>&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 去除头尾的字符strip</span></span><br><span class="line">cleaned_df[<span class="string">&#x27;单品信息&#x27;</span>] = cleaned_df[<span class="string">&#x27;单品信息&#x27;</span>].<span class="built_in">str</span>.strip(<span class="string">&#x27;;&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip list #查看已安装的python模块</span><br><span class="line"></span><br><span class="line">pip freeze &gt;requirements.txt # 导出依赖库名称</span><br><span class="line"></span><br><span class="line">pip download -d packages -r requirements.txt #下载依赖库</span><br><span class="line"></span><br><span class="line">pip install --no-index --find-links=packages -r requirements.txt #将`packages`文件夹和`requirements.txt`文件拷贝至离线机器任意同级目录下，以管理员权限启动cmd命令窗口进入该目录，执行下述命令进行离线安装。</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>数据分析</category>
+        <category>python</category>
+        <category>pandas</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>澳洲家中日常必备清单</title>
+    <url>/2022/05/19/%E6%BE%B3%E6%B4%B2%E5%AE%B6%E4%B8%AD%E6%97%A5%E5%B8%B8%E5%BF%85%E5%A4%87%E6%B8%85%E5%8D%95/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>1⃣️ CEPACAINE漱口水！ 治疗牙龈肿痛，口腔溃疡。澳洲医生推荐买的，超级有效！猫猫家必备的，再也没有牙口烦恼。 购买地址：Chemist有售 💰价格：$15.49 问题在口腔，吃啥啥不香，买它！喵～</p>
+<hr>
+<p>2⃣️ Quick EZE胃糖 腹胀、胃酸、胃痛。消化不良、吃颗糖就能缓解～ 主要是这糖咋还那么好吃！ 购买地址：Chemist 💰价格：$4.99 胃也需要轻轻安抚，买它！喵～</p>
+<span id="more"></span>
+<hr>
+<p>3⃣️ VICKS 通鼻喷剂 在澳洲总感觉鼻子不适，鼻炎老犯，尤其总是鼻塞。这个通鼻喷剂起效快，薄荷味柔和不刺激。 购买地址：Chemist 💰价格$11.99 杜绝张口呼吸，买它！喵～</p>
+<hr>
+<p>4⃣️ Refresh眼药水 在家学习、工作、打游戏、熬夜，眼睛干涩的话最使用用人工泪液成分的眼药水。无刺激，缓解眼睛疲劳，闺蜜们都在用。 购买地址：Chemist 💰价格$13.49 缓解就靠累上加泪。买它，喵～</p>
+<hr>
+<p>5⃣️ LeQure Detox Soap排毒香皂 这款味道超级淡，小众然鹅超棒！主要可以用来控油去杂质。背部长痘痘的宝宝们一定要试试。滋养加排毒，姐妹推荐的，用过也感觉很好。 购买地址：Chemist 💰价格：$5.99 永远不进毒圈，买它，喵～</p>
+<hr>
+<p>6⃣️ Naprogesic止痛片 姨妈期最好的止痛片咯，因为成分对胃损伤小，刺激小。而且止痛的效果起效更快，当地女生首选经期续命药。小蓝片好多朋友都在用。 购买地址：Chemist 💰价格：$7.99 连我姨妈都在用！买它，喵～</p>
+<hr>
+<p>7⃣️ Dettol 洗衣消毒液 家里养宠物的朋友洗衣服都会用这个帮忙杀菌！能灭杀99.9%的细菌。尤其是合租又共用洗衣机的话这个肯定要买！ 购买地址：Coles、 WWS有售 💰价格：$8.99 再也不怕室友用洗衣机洗袜子了，买它！喵～</p>
+<hr>
+<p>8⃣️ Mr muscle通道强力剂！ 水槽，浴室如果都便秘了，那主人可就更难受了。 超强清下水道秘方，家家必备的男人。尤其是掉头发比较多的女生经常会堵掉下水道。用它就可以畅通哦。 购买地址：Coles、WWS有售 💰价格：$13.7 搞定下水道，心情好到爆，买它！喵～</p>
+<hr>
+]]></content>
+      <categories>
+        <category>生活</category>
+        <category>好物推荐</category>
+      </categories>
+      <tags>
+        <tag>推荐</tag>
+        <tag>日常</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>有意思的翻译PROMPT</title>
     <url>/2024/04/29/%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84%E7%BF%BB%E8%AF%91PROMPT/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><img src="/2024/04/29/%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84%E7%BF%BB%E8%AF%91PROMPT/image-20240428223752145.jpeg"></p>
@@ -11111,27 +11337,6 @@
         <tag>Prompt</tag>
         <tag>AI</tag>
         <tag>翻译</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>什么是PARA</title>
-    <url>/2024/04/29/whats_PARA/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>PARA 是一种组织知识的方法，全称为 “Progressive Authentication of Reliable Acumen”，中文可以译为“渐进式验证可靠洞察”。</p>
-<p>它是由 Tiago Forte 提出的，主要用于管理笔记和信息，以提高知识工作的效率。</p>
-<span id="more"></span>
-
-<p>PARA 主要包含四个层级，每个层级都有其特定的功能和目的：</p>
-<ol>
-<li><strong>项目（Projects）</strong>：这是 PARA 结构中的最高层级，代表着你正在进行的各种项目或目标。每个项目都应该是独立的，有明确的开始和结束。</li>
-<li><strong>领域（Areas））：</strong>这个层级代表你感兴趣或需要管理的不同领域或主题，如工作、健康、学习等。领域通常是持久的，不会像项目那样有明确的结束。</li>
-<li><strong>资源（Resources）</strong>：资源是指那些可以跨项目和领域重复使用的具体信息或知识，如文章、教程、工具等。这个层级的目的是为了积累和整理那些可能有用的信息。</li>
-<li><strong>行动（Actions）</strong>：这是最低的层级，包括了具体的行动项或待办事项。这些通常是短期任务，需要被执行或跟踪。</li>
-</ol>
-<p>PARA 方法的一个关键特点是灵活性和可定制性，它允许用户根据自己的需要调整和组织信息。这种方法特别适合那些需要处理大量信息并希望提高工作效率的人。通过使用 PARA，用户可以更有效地管理他们的知识和任务，从而提高生产力。</p>
-]]></content>
-      <tags>
-        <tag>方法论</tag>
-        <tag>PARA</tag>
       </tags>
   </entry>
   <entry>
@@ -11284,229 +11489,24 @@
       </tags>
   </entry>
   <entry>
-    <title>鸡尾酒配方</title>
-    <url>/2020/05/04/%E9%B8%A1%E5%B0%BE%E9%85%92%E9%85%8D%E6%96%B9/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="茶酒"><a href="#茶酒" class="headerlink" title="茶酒"></a>茶酒</h2><ul>
-<li>茶：120ml</li>
-<li>酒：45ml</li>
-<li>糖浆：10ml</li>
-<li>柠檬：5ml</li>
-</ul>
-<h2 id="B52轰炸机"><a href="#B52轰炸机" class="headerlink" title="B52轰炸机"></a>B52轰炸机</h2><ul>
-<li>1&#x2F;3咖啡力娇酒</li>
-<li>1&#x2F;3百利甜</li>
-<li>1&#x2F;3君度<span id="more"></span></li>
-</ul>
-<h2 id="长岛冰茶"><a href="#长岛冰茶" class="headerlink" title="长岛冰茶"></a>长岛冰茶</h2><ul>
-<li>饮具：玻璃杯加冰</li>
-<li>黄柠汁：5ml</li>
-<li>伏特加：15ml</li>
-<li>龙舌兰：15ml</li>
-<li>金酒：15ml</li>
-<li>白朗姆：15ml</li>
-<li>可乐：填满</li>
-<li>装饰</li>
-</ul>
-<h2 id="自由古巴"><a href="#自由古巴" class="headerlink" title="自由古巴"></a>自由古巴</h2><ul>
-<li>绿柠：5ml</li>
-<li>白朗姆：45ml</li>
-<li>可乐：加满</li>
-<li>装饰</li>
-</ul>
-<h2 id="莫吉托"><a href="#莫吉托" class="headerlink" title="莫吉托"></a>莫吉托</h2><ul>
-<li>绿柠块：3块（挤压）</li>
-<li>薄荷：轻挤压</li>
-<li>薄荷糖浆：8ml</li>
-<li>白朗姆：45ml</li>
-<li>冰：满</li>
-<li>苏打水：加到杯子4&#x2F;5</li>
-<li>用勺子伸到杯底做提拉</li>
-<li>装饰：绿柠片，薄荷簇</li>
-</ul>
-<h2 id="教父"><a href="#教父" class="headerlink" title="教父"></a>教父</h2><ul>
-<li>饮具：传统杯 + 方冰</li>
-<li>金宾波本：50ml</li>
-<li>蒂萨诺：10ml</li>
-<li>用勺子搅匀</li>
-</ul>
-<h2 id="蓝色夏威夷"><a href="#蓝色夏威夷" class="headerlink" title="蓝色夏威夷"></a>蓝色夏威夷</h2><ul>
-<li>饮具：玻璃杯 + 冰</li>
-<li>白朗姆：40ml</li>
-<li>蓝橙：20ml</li>
-<li>马利宝：20ml</li>
-<li>菠萝汁：45ml</li>
-<li>雪碧：加满</li>
-<li>装饰</li>
-</ul>
-<h2 id="醉酒的梵高"><a href="#醉酒的梵高" class="headerlink" title="醉酒的梵高"></a>醉酒的梵高</h2><ul>
-<li>龙舌兰：40ml</li>
-<li>菠萝汁：45ml</li>
-<li>雪碧：加满</li>
-<li>蓝橙力娇：最后加入，不搅动</li>
-</ul>
-<h2 id="心橙大海"><a href="#心橙大海" class="headerlink" title="心橙大海"></a>心橙大海</h2><ul>
-<li>饮具：玻璃杯 + 冰</li>
-<li>伏特加：45ml</li>
-<li>橙汁：装满</li>
-</ul>
-<h2 id="金汤力"><a href="#金汤力" class="headerlink" title="金汤力"></a>金汤力</h2><ul>
-<li>饮具：玻璃杯 + 冰</li>
-<li>金酒：45ml</li>
-<li>汤力水：加满</li>
-<li>装饰</li>
-</ul>
-<h2 id="日出"><a href="#日出" class="headerlink" title="日出"></a>日出</h2><ul>
-<li>饮具：玻璃杯 + 冰</li>
-<li>龙舌兰：45ml</li>
-<li>橙汁：加满</li>
-<li>红色糖浆：适量调整着色区域</li>
-</ul>
-<h2 id="蓝色玛格丽特"><a href="#蓝色玛格丽特" class="headerlink" title="蓝色玛格丽特"></a>蓝色玛格丽特</h2><ul>
-<li>饮具：玻璃杯 + 盐边</li>
-<li>龙舌兰：30ml</li>
-<li>蓝橙力娇酒：15ml</li>
-<li>蔗糖：5ml</li>
-<li>黄柠檬：点缀</li>
-</ul>
-<h2 id="白色玛格丽特"><a href="#白色玛格丽特" class="headerlink" title="白色玛格丽特"></a>白色玛格丽特</h2><ul>
-<li>龙舌兰：30ml</li>
-<li>君度：15ml</li>
-<li>柠檬汁：几滴</li>
-<li>蔗糖：5ml</li>
-<li>加冰块摇匀</li>
-</ul>
-<h2 id="威士忌酸"><a href="#威士忌酸" class="headerlink" title="威士忌酸"></a>威士忌酸</h2><ul>
-<li>波本：45ml</li>
-<li>黄柠檬：半个</li>
-<li>蔗糖：10ml</li>
-<li>加冰块摇匀</li>
-</ul>
-<h2 id="前任"><a href="#前任" class="headerlink" title="前任"></a>前任</h2><ul>
-<li>饮具：玻璃杯 + 冰</li>
-<li>龙舌兰：45ml</li>
-<li>红柚糖浆：适量</li>
-<li>苏打水：加满</li>
-</ul>
-<h2 id="孟婆汤"><a href="#孟婆汤" class="headerlink" title="孟婆汤"></a>孟婆汤</h2><ul>
-<li>伏特加：30ml</li>
-<li>柠檬汁：15ml</li>
-<li>马力宝：15ml</li>
-<li>莫林绿薄荷糖浆：10ml</li>
-</ul>
-<h2 id="百香果莫吉托（无酒精）"><a href="#百香果莫吉托（无酒精）" class="headerlink" title="百香果莫吉托（无酒精）"></a>百香果莫吉托（无酒精）</h2><ul>
-<li>青柠汁：5ml</li>
-<li>冰：加满</li>
-<li>百香果糖浆：12ml</li>
-<li>薄荷糖浆：12ml</li>
-<li>气泡水：加满</li>
-<li>搅匀装饰</li>
-</ul>
-<h2 id="波斯猫（无酒精）"><a href="#波斯猫（无酒精）" class="headerlink" title="波斯猫（无酒精）"></a>波斯猫（无酒精）</h2><ul>
-<li>橙汁：60ml</li>
-<li>菠萝汁：40ml</li>
-<li>柠檬汁：半个</li>
-<li>红石榴糖浆：2勺</li>
-<li>蔗糖：1勺</li>
-<li>加冰块摇匀</li>
-</ul>
-<h2 id="蓝色多瑙河（无酒精）"><a href="#蓝色多瑙河（无酒精）" class="headerlink" title="蓝色多瑙河（无酒精）"></a>蓝色多瑙河（无酒精）</h2><ul>
-<li>柠檬汁：一点</li>
-<li>蓝柑糖浆：10ml</li>
-<li>蔗糖糖浆：5ml</li>
-<li>苏打水</li>
-</ul>
-<h2 id="柚恋柠檬（无酒精）"><a href="#柚恋柠檬（无酒精）" class="headerlink" title="柚恋柠檬（无酒精）"></a>柚恋柠檬（无酒精）</h2><ul>
-<li>柠檬汁：一点</li>
-<li>红柚糖浆：10ml</li>
-<li>蔗糖糖浆：5ml</li>
-<li>苏打水</li>
-</ul>
-<h2 id="清凉一夏（无酒精）"><a href="#清凉一夏（无酒精）" class="headerlink" title="清凉一夏（无酒精）"></a>清凉一夏（无酒精）</h2><ul>
-<li>饮具：威士忌杯🥃 + 方冰</li>
-<li>新鲜薄荷叶：4-5 片，拍醒</li>
-<li>可乐：加至8分满</li>
-</ul>
-<h2 id="甜蜜蜜"><a href="#甜蜜蜜" class="headerlink" title="甜蜜蜜"></a>甜蜜蜜</h2><p>60 ml 蜜茶<br>40 mlwhisky<br>5 ml 糖浆<br>1&#x2F;4 柠檬</p>
-<h2 id="威士忌可乐-Whisky-Coke"><a href="#威士忌可乐-Whisky-Coke" class="headerlink" title="威士忌可乐 Whisky Coke"></a>威士忌可乐 Whisky Coke</h2><p><span style="font-family:.PingFangSC-Regular;">威士忌</span> 45 ml<br>可乐 Cola Top</p>
-<h2 id="伏特加莱姆"><a href="#伏特加莱姆" class="headerlink" title="伏特加莱姆"></a>伏特加莱姆</h2><ul>
-<li>盐边</li>
-<li>伏特加 60 ml</li>
-<li>柠檬汁 30 ml</li>
-<li>糖水 10 ml</li>
-</ul>
-<h2 id="玛格丽特-Margarita"><a href="#玛格丽特-Margarita" class="headerlink" title="玛格丽特 Margarita"></a>玛格丽特 Margarita</h2><ul>
-<li>龙舌兰 45 ml</li>
-<li>君度橙 cointreau 15 ml</li>
-<li>柠檬汁 15 ml</li>
-<li>加冰摇一摇</li>
-<li>盐边</li>
-</ul>
-<h2 id="螺丝起子-Screwdriver"><a href="#螺丝起子-Screwdriver" class="headerlink" title="螺丝起子 Screwdriver"></a>螺丝起子 Screwdriver</h2><ul>
-<li>伏特加 45 ml</li>
-<li>橙汁</li>
-</ul>
-]]></content>
-      <categories>
-        <category>生活</category>
-        <category>鸡尾酒</category>
-      </categories>
-      <tags>
-        <tag>鸡尾酒</tag>
-        <tag>配方</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>GoPro Hero最实用的四个必备配件:打造完美生态</title>
-    <url>/2022/03/15/GoproHero/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><hr>
-<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">
-<iframe src="//player.bilibili.com/player.html?aid=244387247&bvid=BV1Av411174q&cid=229573649&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; Left: 0; top: 0;" ></iframe></div> 
-]]></content>
-      <categories>
-        <category>数码</category>
-        <category>相机</category>
-      </categories>
-      <tags>
-        <tag>数码</tag>
-        <tag>相机</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>菜谱</title>
-    <url>/2022/04/19/%E8%8F%9C%E8%B0%B1/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="空气炸锅鸡排"><a href="#空气炸锅鸡排" class="headerlink" title="空气炸锅鸡排"></a>空气炸锅鸡排</h1><ul>
-<li>温度：200度</li>
-<li>时间：8分钟 + 4分钟</li>
-</ul>
-<h1 id="空气炸锅健身食品"><a href="#空气炸锅健身食品" class="headerlink" title="空气炸锅健身食品"></a>空气炸锅健身食品</h1><ul>
-<li>鸡胸肉（黑胡椒、13香、橄榄油）</li>
-<li>地瓜（切块、橄榄油）</li>
-<li>温度：180度</li>
-<li>时间：15分钟</li>
-</ul>
+    <title>什么是PARA</title>
+    <url>/2024/04/29/whats_PARA/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>PARA 是一种组织知识的方法，全称为 “Progressive Authentication of Reliable Acumen”，中文可以译为“渐进式验证可靠洞察”。</p>
+<p>它是由 Tiago Forte 提出的，主要用于管理笔记和信息，以提高知识工作的效率。</p>
 <span id="more"></span>
-<p><a href="https://www.youtube.com/watch?v=D8O7myqk0Bw">健身食品制作视频</a></p>
-<h1 id="阳春面调料"><a href="#阳春面调料" class="headerlink" title="阳春面调料"></a>阳春面调料</h1><ul>
-<li>生抽、陈醋、盐、香油或猪油、葱花</li>
-</ul>
-<h1 id="爆炒香辣鱿鱼"><a href="#爆炒香辣鱿鱼" class="headerlink" title="爆炒香辣鱿鱼"></a>爆炒香辣鱿鱼</h1><p>食材：</p>
-<ul>
-<li>鱿鱼须、葱、姜、洋葱、料酒、豆瓣酱、生抽、老抽、蚝油、白糖、盐、熟芝麻</li>
-</ul>
-<p>做法：</p>
+
+<p>PARA 主要包含四个层级，每个层级都有其特定的功能和目的：</p>
 <ol>
-<li>鱿鱼洗净切好备用，冷水下锅，加入姜片、葱段、1勺料酒，焯水捞出备用</li>
-<li>锅中油热，倒入洋葱丝，炒出香味，加入1勺豆瓣酱炒出红油，倒入焯好水的鱿鱼须，翻炒上色</li>
-<li>加入1勺生抽、半勺老抽、1勺蚝油、适量白糖、少许盐、1勺熟芝麻，翻炒均匀，撒上葱花即可</li>
+<li><strong>项目（Projects）</strong>：这是 PARA 结构中的最高层级，代表着你正在进行的各种项目或目标。每个项目都应该是独立的，有明确的开始和结束。</li>
+<li><strong>领域（Areas））：</strong>这个层级代表你感兴趣或需要管理的不同领域或主题，如工作、健康、学习等。领域通常是持久的，不会像项目那样有明确的结束。</li>
+<li><strong>资源（Resources）</strong>：资源是指那些可以跨项目和领域重复使用的具体信息或知识，如文章、教程、工具等。这个层级的目的是为了积累和整理那些可能有用的信息。</li>
+<li><strong>行动（Actions）</strong>：这是最低的层级，包括了具体的行动项或待办事项。这些通常是短期任务，需要被执行或跟踪。</li>
 </ol>
+<p>PARA 方法的一个关键特点是灵活性和可定制性，它允许用户根据自己的需要调整和组织信息。这种方法特别适合那些需要处理大量信息并希望提高工作效率的人。通过使用 PARA，用户可以更有效地管理他们的知识和任务，从而提高生产力。</p>
 ]]></content>
-      <categories>
-        <category>生活</category>
-        <category>菜谱</category>
-      </categories>
       <tags>
-        <tag>菜谱</tag>
-        <tag>下酒菜</tag>
+        <tag>方法论</tag>
+        <tag>PARA</tag>
       </tags>
   </entry>
 </search>
