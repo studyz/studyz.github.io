@@ -133,9 +133,9 @@
     <category term="obsidian" scheme="https://blog.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/%E5%8D%9A%E5%AE%A2/obsidian/"/>
     
     
-    <category term="笔记" scheme="https://blog.jeremyang.top/tags/%E7%AC%94%E8%AE%B0/"/>
-    
     <category term="插件" scheme="https://blog.jeremyang.top/tags/%E6%8F%92%E4%BB%B6/"/>
+    
+    <category term="笔记" scheme="https://blog.jeremyang.top/tags/%E7%AC%94%E8%AE%B0/"/>
     
     <category term="Obsidian" scheme="https://blog.jeremyang.top/tags/Obsidian/"/>
     
@@ -553,9 +553,9 @@
     
     <category term="笔记" scheme="https://blog.jeremyang.top/tags/%E7%AC%94%E8%AE%B0/"/>
     
-    <category term="Apple" scheme="https://blog.jeremyang.top/tags/Apple/"/>
-    
     <category term="数码" scheme="https://blog.jeremyang.top/tags/%E6%95%B0%E7%A0%81/"/>
+    
+    <category term="Apple" scheme="https://blog.jeremyang.top/tags/Apple/"/>
     
   </entry>
   
