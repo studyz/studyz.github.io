@@ -2571,28 +2571,6 @@
       </tags>
   </entry>
   <entry>
-    <title>我应该怎么与这个世界相处？</title>
-    <url>/2024/02/22/%E6%88%91%E5%BA%94%E8%AF%A5%E6%80%8E%E4%B9%88%E4%B8%8E%E8%BF%99%E4%B8%AA%E4%B8%96%E7%95%8C%E7%9B%B8%E5%A4%84/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="https://sspai.com/post/73704">我应该怎么与这个世界相处 auther: Theia在路上</a></p>
-<p>去年在少数派社区看到的文章，当时标题吸引到我随手加了收藏，到今天才拎出来看一看。<br>怎么与这个世界相处，是一个持续的过程，需要不断地学习、适应和成长。</p>
-<ul>
-<li>避免二分式思维，采用灰度思维</li>
-<li>建立人生的系统，不要只关注单一的目标</li>
-<li>相信自己有实现人生系统的能力</li>
-<li>认为自己是身体的主人，不是奴隶</li>
-<li>当我们改变了自己的身体，身边的世界也会开始改变</li>
-</ul>
-]]></content>
-      <categories>
-        <category>生活</category>
-        <category>碎碎念</category>
-      </categories>
-      <tags>
-        <tag>随笔</tag>
-        <tag>分享</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>图形推理</title>
     <url>/2024/04/25/%E5%9B%BE%E5%BD%A2%E6%8E%A8%E7%90%86/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="图形推理考点"><a href="#图形推理考点" class="headerlink" title="图形推理考点"></a>图形推理考点</h2><ol>
@@ -2665,65 +2643,6 @@
         <tag>笔记</tag>
         <tag>ssh</tag>
         <tag>群晖</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>TailScale实现远端访问群晖服务器</title>
-    <url>/2024/04/21/TailScale%E5%AE%9E%E7%8E%B0%E8%BF%9C%E7%AB%AF%E8%AE%BF%E9%97%AE%E6%95%B4%E6%AE%B5%E5%B1%80%E5%9F%9F%E7%BD%91/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
-<p><a href="https://tailscale.com/">Tailscale</a>是以<a href="https://www.wireguard.com/">Wireguard</a>的协议加密，所以安全性更高，而且是P2P连线，流量不经伺服器，延迟更低、私密性更高。</p>
-</blockquote>
-<ol>
-<li>安装及加入到<code>TailScale</code>网络</li>
-<li>透过设定其中1部<code>TailScale</code>的装置为网关「Subnet Router」，可以访问整个内网网段</li>
-</ol>
-<blockquote>
-<p>以群晖NAS为例</p>
-</blockquote>
-<h3 id="1-TailScale安装"><a href="#1-TailScale安装" class="headerlink" title="1. TailScale安装"></a>1. TailScale安装</h3><ol>
-<li>群晖套件中心添加spk套件源</li>
-<li>社群套件搜索TailScale安装后登陆，成功授权后可以查看分配到的IP地址</li>
-</ol>
-<span id="more"></span>
-<h3 id="2-IP-转发设置"><a href="#2-IP-转发设置" class="headerlink" title="2.  IP 转发设置"></a>2.  <strong>IP</strong> 转发设置</h3><blockquote>
-<p>因为不是每一部设备都可以安装到Tailscale ， 所以这样设定「Subnet Route」的好处是家里内网只要1部Linux装置接入到Tailscale 网络，其他所有的外网的Tailscale装置都可以透过这部Linux装置作为网关访问家里内网所有的设备，如: 印表机，路由器，伺服器等等。</p>
-</blockquote>
-<ul>
-<li>启用 <strong>群晖</strong> 上的 <strong>IP</strong> 转发(IP Forwarding)</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tailscale up --advertise-routes=192.168.1.0/24 --netfilter-mode=off</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>192.168.1.0&#x2F;24替换为自己的网段，可以是IPV4或者IPV6。</p>
-</blockquote>
-<ul>
-<li>登入到网页控制台 &gt; <code>Machines</code></li>
-</ul>
-<p><code>Enable All</code>允许转发所有</p>
-<p>基于安全特性，<code>Tailscale</code>每隔6个月需要重新授权装置，作为「Subnet Router」(子网路由网关)，建议停用。</p>
-<ul>
-<li>外网的<code>Tailscale</code>装置线路测试</li>
-</ul>
-<p>可以看到是经节点「Subnet Router」IP <code>100.101.41.50</code> 接入到内网 <code>192.168.1.0/24</code>，延迟也很理想。</p>
-<blockquote>
-<p>透过设定其中1部「TailScale」的装置为网关「Subnet Router」，可以访问整个内网网段**</p>
-</blockquote>
-<p>Links:</p>
-<ul>
-<li><a href="https://tailscale.com/download/">Download and InstallTailscale</a></li>
-<li><a href="https://tailscale.com/kb/1104/enable-ip-forwarding/">Enable IP forwarding on Linux · Tailscale</a></li>
-<li><a href="https://tailscale.com/kb/1019/subnets/">Subnet routers and traffic relay nodes · Tailscale</a></li>
-<li><a href="https://post.smzdm.com/p/ad2kw7xx/">TailScale 实现远端访问整段局域网(ZeroTier另一选择)</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>技术</category>
-        <category>网络</category>
-      </categories>
-      <tags>
-        <tag>群晖</tag>
-        <tag>网络</tag>
-        <tag>NAS</tag>
       </tags>
   </entry>
   <entry>
@@ -11140,6 +11059,65 @@
       </tags>
   </entry>
   <entry>
+    <title>TailScale实现远端访问群晖服务器</title>
+    <url>/2024/04/21/TailScale%E5%AE%9E%E7%8E%B0%E8%BF%9C%E7%AB%AF%E8%AE%BF%E9%97%AE%E6%95%B4%E6%AE%B5%E5%B1%80%E5%9F%9F%E7%BD%91/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
+<p><a href="https://tailscale.com/">Tailscale</a>是以<a href="https://www.wireguard.com/">Wireguard</a>的协议加密，所以安全性更高，而且是P2P连线，流量不经伺服器，延迟更低、私密性更高。</p>
+</blockquote>
+<ol>
+<li>安装及加入到<code>TailScale</code>网络</li>
+<li>透过设定其中1部<code>TailScale</code>的装置为网关「Subnet Router」，可以访问整个内网网段</li>
+</ol>
+<blockquote>
+<p>以群晖NAS为例</p>
+</blockquote>
+<h3 id="1-TailScale安装"><a href="#1-TailScale安装" class="headerlink" title="1. TailScale安装"></a>1. TailScale安装</h3><ol>
+<li>群晖套件中心添加spk套件源</li>
+<li>社群套件搜索TailScale安装后登陆，成功授权后可以查看分配到的IP地址</li>
+</ol>
+<span id="more"></span>
+<h3 id="2-IP-转发设置"><a href="#2-IP-转发设置" class="headerlink" title="2.  IP 转发设置"></a>2.  <strong>IP</strong> 转发设置</h3><blockquote>
+<p>因为不是每一部设备都可以安装到Tailscale ， 所以这样设定「Subnet Route」的好处是家里内网只要1部Linux装置接入到Tailscale 网络，其他所有的外网的Tailscale装置都可以透过这部Linux装置作为网关访问家里内网所有的设备，如: 印表机，路由器，伺服器等等。</p>
+</blockquote>
+<ul>
+<li>启用 <strong>群晖</strong> 上的 <strong>IP</strong> 转发(IP Forwarding)</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tailscale up --advertise-routes=192.168.1.0/24 --netfilter-mode=off</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>192.168.1.0&#x2F;24替换为自己的网段，可以是IPV4或者IPV6。</p>
+</blockquote>
+<ul>
+<li>登入到网页控制台 &gt; <code>Machines</code></li>
+</ul>
+<p><code>Enable All</code>允许转发所有</p>
+<p>基于安全特性，<code>Tailscale</code>每隔6个月需要重新授权装置，作为「Subnet Router」(子网路由网关)，建议停用。</p>
+<ul>
+<li>外网的<code>Tailscale</code>装置线路测试</li>
+</ul>
+<p>可以看到是经节点「Subnet Router」IP <code>100.101.41.50</code> 接入到内网 <code>192.168.1.0/24</code>，延迟也很理想。</p>
+<blockquote>
+<p>透过设定其中1部「TailScale」的装置为网关「Subnet Router」，可以访问整个内网网段**</p>
+</blockquote>
+<p>Links:</p>
+<ul>
+<li><a href="https://tailscale.com/download/">Download and InstallTailscale</a></li>
+<li><a href="https://tailscale.com/kb/1104/enable-ip-forwarding/">Enable IP forwarding on Linux · Tailscale</a></li>
+<li><a href="https://tailscale.com/kb/1019/subnets/">Subnet routers and traffic relay nodes · Tailscale</a></li>
+<li><a href="https://post.smzdm.com/p/ad2kw7xx/">TailScale 实现远端访问整段局域网(ZeroTier另一选择)</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>网络</category>
+      </categories>
+      <tags>
+        <tag>群晖</tag>
+        <tag>网络</tag>
+        <tag>NAS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>中国历代神州火箭信息</title>
     <url>/2024/04/25/%E7%A5%9E%E5%B7%9E%E5%8D%81%E5%85%AB/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>新闻看到神州十八的发射直播，趁机梳理一下常识。</p>
@@ -11327,37 +11305,25 @@
       </tags>
   </entry>
   <entry>
-    <title>有意思的翻译PROMPT</title>
-    <url>/2024/04/29/%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84%E7%BF%BB%E8%AF%91PROMPT/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><img src="/2024/04/29/%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84%E7%BF%BB%E8%AF%91PROMPT/image-20240428223752145.jpeg"></p>
-<span id="more"></span>
-
-<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">你是一个英语翻译团队的领导. 你会安排团队成员进行如下翻译, 实现翻译的&quot;信达雅&quot;目标:  </span><br><span class="line">  </span><br><span class="line">第一轮翻译<span class="comment">--信,追求直译, 将英文翻译成中文, 力求准确  </span></span><br><span class="line">  </span><br><span class="line">第二轮翻译<span class="comment">--达,在第一轮翻译的基础上, 考虑文化, 语境, 语义, 思考文字背后想要表达的意思, 进行意译, 力求意境契合, 记得分开思考和翻译内容。  </span></span><br><span class="line">  </span><br><span class="line">第三轮翻译<span class="comment">--雅, 基于第二轮翻译理解的语境含义, 进一步思考其中的哲理, 然后使用中国&lt;诗经&gt;的语言风格针对哲理和语义进行翻译, 力求简明, 古意盎然  </span></span><br><span class="line">  </span><br><span class="line">例如:  </span><br><span class="line">- you need you. 哲理部分，可以引申到佛家所说的&quot;莫向外求&quot;, 儒家所说的&quot;反求诸己&quot;, 然后思考使用诗经语言风格进行重新表述.  </span><br><span class="line">  </span><br><span class="line">- <span class="keyword">nothing</span> <span class="keyword">for</span> <span class="keyword">nothing</span>. 哲理部分，可以引申到诗句“世上本无事，庸人自扰之”，也可引申到俗语“尘归尘，土归土”  </span><br><span class="line">  </span><br><span class="line">第四轮翻译<span class="comment">--初审: 完成三轮翻译后， 深吸一口气， 缓一缓， 思考一下第三轮翻译的结果，与其哲理的偏差在哪？ 不要扩展太多，务求精练深刻，精辟是第一要义。 据此思路进行改进。  </span></span><br><span class="line">  </span><br><span class="line">第五轮翻译<span class="comment">--终审: 最终，你将亲自进行审稿， 你会对比原文和最后的翻译结果， 先思考《诗经》的语言表达风格要点，再审阅初审翻译的结果是否满足, 并给出你的审校修改结论。  </span></span><br><span class="line">  </span><br><span class="line">注意: 思考部分,请使用 【思考】 开头，翻译结果请使用【翻译】开头。  </span><br><span class="line">  </span><br><span class="line">请严格遵守以上工作流程， 对以下文字进行翻译：</span><br></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>Prompt</tag>
-        <tag>AI</tag>
-        <tag>翻译</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>什么是PARA</title>
-    <url>/2024/04/29/whats_PARA/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>PARA 是一种组织知识的方法，全称为 “Progressive Authentication of Reliable Acumen”，中文可以译为“渐进式验证可靠洞察”。</p>
-<p>它是由 Tiago Forte 提出的，主要用于管理笔记和信息，以提高知识工作的效率。</p>
-<span id="more"></span>
-
-<p>PARA 主要包含四个层级，每个层级都有其特定的功能和目的：</p>
-<ol>
-<li><strong>项目（Projects）</strong>：这是 PARA 结构中的最高层级，代表着你正在进行的各种项目或目标。每个项目都应该是独立的，有明确的开始和结束。</li>
-<li><strong>领域（Areas））：</strong>这个层级代表你感兴趣或需要管理的不同领域或主题，如工作、健康、学习等。领域通常是持久的，不会像项目那样有明确的结束。</li>
-<li><strong>资源（Resources）</strong>：资源是指那些可以跨项目和领域重复使用的具体信息或知识，如文章、教程、工具等。这个层级的目的是为了积累和整理那些可能有用的信息。</li>
-<li><strong>行动（Actions）</strong>：这是最低的层级，包括了具体的行动项或待办事项。这些通常是短期任务，需要被执行或跟踪。</li>
-</ol>
-<p>PARA 方法的一个关键特点是灵活性和可定制性，它允许用户根据自己的需要调整和组织信息。这种方法特别适合那些需要处理大量信息并希望提高工作效率的人。通过使用 PARA，用户可以更有效地管理他们的知识和任务，从而提高生产力。</p>
+    <title>我应该怎么与这个世界相处？</title>
+    <url>/2024/02/22/%E6%88%91%E5%BA%94%E8%AF%A5%E6%80%8E%E4%B9%88%E4%B8%8E%E8%BF%99%E4%B8%AA%E4%B8%96%E7%95%8C%E7%9B%B8%E5%A4%84/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="https://sspai.com/post/73704">我应该怎么与这个世界相处 auther: Theia在路上</a></p>
+<p>去年在少数派社区看到的文章，当时标题吸引到我随手加了收藏，到今天才拎出来看一看。<br>怎么与这个世界相处，是一个持续的过程，需要不断地学习、适应和成长。</p>
+<ul>
+<li>避免二分式思维，采用灰度思维</li>
+<li>建立人生的系统，不要只关注单一的目标</li>
+<li>相信自己有实现人生系统的能力</li>
+<li>认为自己是身体的主人，不是奴隶</li>
+<li>当我们改变了自己的身体，身边的世界也会开始改变</li>
+</ul>
 ]]></content>
+      <categories>
+        <category>生活</category>
+        <category>碎碎念</category>
+      </categories>
       <tags>
-        <tag>方法论</tag>
-        <tag>PARA</tag>
+        <tag>随笔</tag>
+        <tag>分享</tag>
       </tags>
   </entry>
   <entry>
@@ -11507,6 +11473,40 @@
       <tags>
         <tag>随笔</tag>
         <tag>分享</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>有意思的翻译PROMPT</title>
+    <url>/2024/04/29/%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84%E7%BF%BB%E8%AF%91PROMPT/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><img src="/2024/04/29/%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84%E7%BF%BB%E8%AF%91PROMPT/image-20240428223752145.jpeg"></p>
+<span id="more"></span>
+
+<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">你是一个英语翻译团队的领导. 你会安排团队成员进行如下翻译, 实现翻译的&quot;信达雅&quot;目标:  </span><br><span class="line">  </span><br><span class="line">第一轮翻译<span class="comment">--信,追求直译, 将英文翻译成中文, 力求准确  </span></span><br><span class="line">  </span><br><span class="line">第二轮翻译<span class="comment">--达,在第一轮翻译的基础上, 考虑文化, 语境, 语义, 思考文字背后想要表达的意思, 进行意译, 力求意境契合, 记得分开思考和翻译内容。  </span></span><br><span class="line">  </span><br><span class="line">第三轮翻译<span class="comment">--雅, 基于第二轮翻译理解的语境含义, 进一步思考其中的哲理, 然后使用中国&lt;诗经&gt;的语言风格针对哲理和语义进行翻译, 力求简明, 古意盎然  </span></span><br><span class="line">  </span><br><span class="line">例如:  </span><br><span class="line">- you need you. 哲理部分，可以引申到佛家所说的&quot;莫向外求&quot;, 儒家所说的&quot;反求诸己&quot;, 然后思考使用诗经语言风格进行重新表述.  </span><br><span class="line">  </span><br><span class="line">- <span class="keyword">nothing</span> <span class="keyword">for</span> <span class="keyword">nothing</span>. 哲理部分，可以引申到诗句“世上本无事，庸人自扰之”，也可引申到俗语“尘归尘，土归土”  </span><br><span class="line">  </span><br><span class="line">第四轮翻译<span class="comment">--初审: 完成三轮翻译后， 深吸一口气， 缓一缓， 思考一下第三轮翻译的结果，与其哲理的偏差在哪？ 不要扩展太多，务求精练深刻，精辟是第一要义。 据此思路进行改进。  </span></span><br><span class="line">  </span><br><span class="line">第五轮翻译<span class="comment">--终审: 最终，你将亲自进行审稿， 你会对比原文和最后的翻译结果， 先思考《诗经》的语言表达风格要点，再审阅初审翻译的结果是否满足, 并给出你的审校修改结论。  </span></span><br><span class="line">  </span><br><span class="line">注意: 思考部分,请使用 【思考】 开头，翻译结果请使用【翻译】开头。  </span><br><span class="line">  </span><br><span class="line">请严格遵守以上工作流程， 对以下文字进行翻译：</span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>Prompt</tag>
+        <tag>AI</tag>
+        <tag>翻译</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>什么是PARA</title>
+    <url>/2024/04/29/whats_PARA/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>PARA 是一种组织知识的方法，全称为 “Progressive Authentication of Reliable Acumen”，中文可以译为“渐进式验证可靠洞察”。</p>
+<p>它是由 Tiago Forte 提出的，主要用于管理笔记和信息，以提高知识工作的效率。</p>
+<span id="more"></span>
+
+<p>PARA 主要包含四个层级，每个层级都有其特定的功能和目的：</p>
+<ol>
+<li><strong>项目（Projects）</strong>：这是 PARA 结构中的最高层级，代表着你正在进行的各种项目或目标。每个项目都应该是独立的，有明确的开始和结束。</li>
+<li><strong>领域（Areas））：</strong>这个层级代表你感兴趣或需要管理的不同领域或主题，如工作、健康、学习等。领域通常是持久的，不会像项目那样有明确的结束。</li>
+<li><strong>资源（Resources）</strong>：资源是指那些可以跨项目和领域重复使用的具体信息或知识，如文章、教程、工具等。这个层级的目的是为了积累和整理那些可能有用的信息。</li>
+<li><strong>行动（Actions）</strong>：这是最低的层级，包括了具体的行动项或待办事项。这些通常是短期任务，需要被执行或跟踪。</li>
+</ol>
+<p>PARA 方法的一个关键特点是灵活性和可定制性，它允许用户根据自己的需要调整和组织信息。这种方法特别适合那些需要处理大量信息并希望提高工作效率的人。通过使用 PARA，用户可以更有效地管理他们的知识和任务，从而提高生产力。</p>
+]]></content>
+      <tags>
+        <tag>方法论</tag>
+        <tag>PARA</tag>
       </tags>
   </entry>
 </search>
