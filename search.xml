@@ -59,6 +59,25 @@
       </tags>
   </entry>
   <entry>
+    <title>在hexo博客中插入思维导图</title>
+    <url>/2019/05/24/%E5%9C%A8hexo%E5%8D%9A%E5%AE%A2%E4%B8%AD%E6%8F%92%E5%85%A5%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="https://github.com/maxchang3/hexo-markmap">hexo-markmap</a></p>
+<p><strong>使用示例</strong></p>
+<span id="more"></span>
+
+<figure class="highlight clean"><table><tr><td class="code"><pre><span class="line">&#123;% markmap <span class="number">400</span>px %&#125;</span><br><span class="line">  </span><br><span class="line"># Blog内容同步与自动更新流程  </span><br><span class="line">  </span><br><span class="line">## macOS  </span><br><span class="line">### 群晖Drive  </span><br><span class="line">- 同步Hexo的post目录到iCloud  </span><br><span class="line">  </span><br><span class="line">## iCloud  </span><br><span class="line">- 同步Hexo的post目录  </span><br><span class="line">- 跨苹果设备同步  </span><br><span class="line">  </span><br><span class="line">## 苹果设备  </span><br><span class="line">### 任意设备  </span><br><span class="line">- 撰写blog  </span><br><span class="line">- 通过iCloud同步到macOS  </span><br><span class="line">  </span><br><span class="line">## macOS（继续）  </span><br><span class="line">### 群晖Drive（继续）  </span><br><span class="line">- 将新blog内容同步至群晖  </span><br><span class="line">  </span><br><span class="line">## 群晖  </span><br><span class="line">- 将内容自动布置到GitHub  </span><br><span class="line">  </span><br><span class="line">## GitHub  </span><br><span class="line">- 自动更新blog网站</span><br><span class="line">&#123;% endmarkmap %&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>技术</category>
+        <category>博客</category>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>markdown</tag>
+        <tag>插件</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>苹果全平台无缝同步群晖Obsidian库</title>
     <url>/2019/05/24/Apple%E5%85%A8%E5%B9%B3%E5%8F%B0%E6%97%A0%E7%BC%9D%E5%90%8C%E6%AD%A5%E7%BE%A4%E6%99%96Obsidian%E5%BA%93/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><strong>前提介绍：</strong></p>
@@ -108,53 +127,264 @@
       </tags>
   </entry>
   <entry>
-    <title>在hexo博客中插入思维导图</title>
-    <url>/2019/05/24/%E5%9C%A8hexo%E5%8D%9A%E5%AE%A2%E4%B8%AD%E6%8F%92%E5%85%A5%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="https://github.com/maxchang3/hexo-markmap">hexo-markmap</a></p>
-<p><strong>使用示例</strong></p>
+    <title>Hexo Hello World</title>
+    <url>/2019/05/01/hello_world/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Here-Cheatsheet">Markdown</a> 使用<a href="https://github.com/younghz/Markdown">Markdown 基本语法</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
+<h1 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h1><hr>
+<h3 id="hexo-快速、简洁且高效的博客框架"><a href="#hexo-快速、简洁且高效的博客框架" class="headerlink" title="hexo 快速、简洁且高效的博客框架"></a><a href="https://hexo.io/zh-cn/">hexo 快速、简洁且高效的博客框架</a></h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br><span class="line">hexo init blog</span><br><span class="line">cd blog</span><br><span class="line">npm install</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+
+<h3 id="init"><a href="#init" class="headerlink" title="init"></a>init</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">hexo init [folder]</span></span><br></pre></td></tr></table></figure>
+
+<p>新建一个网站。如果没有设置 <code>folder</code> ，Hexo 默认在目前的文件夹建立网站。</p>
 <span id="more"></span>
-
-<figure class="highlight clean"><table><tr><td class="code"><pre><span class="line">&#123;% markmap <span class="number">400</span>px %&#125;</span><br><span class="line">  </span><br><span class="line"># Blog内容同步与自动更新流程  </span><br><span class="line">  </span><br><span class="line">## macOS  </span><br><span class="line">### 群晖Drive  </span><br><span class="line">- 同步Hexo的post目录到iCloud  </span><br><span class="line">  </span><br><span class="line">## iCloud  </span><br><span class="line">- 同步Hexo的post目录  </span><br><span class="line">- 跨苹果设备同步  </span><br><span class="line">  </span><br><span class="line">## 苹果设备  </span><br><span class="line">### 任意设备  </span><br><span class="line">- 撰写blog  </span><br><span class="line">- 通过iCloud同步到macOS  </span><br><span class="line">  </span><br><span class="line">## macOS（继续）  </span><br><span class="line">### 群晖Drive（继续）  </span><br><span class="line">- 将新blog内容同步至群晖  </span><br><span class="line">  </span><br><span class="line">## 群晖  </span><br><span class="line">- 将内容自动布置到GitHub  </span><br><span class="line">  </span><br><span class="line">## GitHub  </span><br><span class="line">- 自动更新blog网站</span><br><span class="line">&#123;% endmarkmap %&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>技术</category>
-        <category>博客</category>
-        <category>hexo</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-        <tag>markdown</tag>
-        <tag>插件</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>为部署在Github上的Hexo博客配置域名</title>
-    <url>/2019/05/25/%E4%B8%BA%E9%83%A8%E7%BD%B2%E5%9C%A8Github%E4%B8%8A%E7%9A%84Hexo%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE%E5%9F%9F%E5%90%8D/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="一、Hexo项目部署到Github"><a href="#一、Hexo项目部署到Github" class="headerlink" title="一、Hexo项目部署到Github"></a>一、<a href="https://so.csdn.net/so/search?q=Hexo&spm=1001.2101.3001.7020">Hexo</a>项目部署到Github</h4><p>首先要确保你的hexo项目已经部署到github上，如果不知道hexo项目如何部署到github上，请看另一篇文章↓</p>
-<a href="/2019/05/06/Git_Hexo/" title="群晖Git部署Hexo">群晖Git部署Hexo</a>
-
-<p>如果你的<strong>hexo项目已经搭建好</strong>，可直接跳转到<strong>第五步，看部署到Github</strong>的步骤。</p>
-<h4 id="二、解析域名到GitHub-Pages"><a href="#二、解析域名到GitHub-Pages" class="headerlink" title="二、解析域名到GitHub Pages"></a>二、解析域名到GitHub Pages</h4><h5 id="1：首先购买或注册一个域名"><a href="#1：首先购买或注册一个域名" class="headerlink" title="1：首先购买或注册一个域名"></a>1：首先购买或注册一个域名</h5><p>购买域名的渠道有很多，可以国内，也可以国外，本人是在国外的GoDaddy平台上买的（好处是管理比较方便，不用备案啥的了…），问题多的话我再写一篇具体申请的blog。</p>
-<h5 id="2：解析域名到Github"><a href="#2：解析域名到Github" class="headerlink" title="2：解析域名到Github"></a>2：解析域名到Github</h5><p>首先登录你域名注册商的控制面板，这里以GoDaddy为例</p>
-<span id="more"></span>
-
-<p>打开<strong>控制面板</strong></p>
-<p><img src="/2019/05/25/%E4%B8%BA%E9%83%A8%E7%BD%B2%E5%9C%A8Github%E4%B8%8A%E7%9A%84Hexo%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE%E5%9F%9F%E5%90%8D/image-20240428210042566.png"></p>
-<p>接着<strong>打开DNS配置页面</strong></p>
-<p><img src="/2019/05/25/%E4%B8%BA%E9%83%A8%E7%BD%B2%E5%9C%A8Github%E4%B8%8A%E7%9A%84Hexo%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE%E5%9F%9F%E5%90%8D/image-20240428210031684.png"></p>
-<p>接着<strong>添加以下几条解析</strong></p>
-<p><img src="/2019/05/25/%E4%B8%BA%E9%83%A8%E7%BD%B2%E5%9C%A8Github%E4%B8%8A%E7%9A%84Hexo%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE%E5%9F%9F%E5%90%8D/image-20240428210020252.png"></p>
-<p>上面几条IP地址是从<a href="">Github官网</a>上得来的，具体可以查看这个地址<a href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site#configuring-an-apex-domain">Managing a custom domain for your GitHub Pages site - GitHub Docs</a></p>
-<p>至此，域名注册服务商上的github pages域名解析我们就完成了！</p>
-<h4 id="三、配置Hexo项目"><a href="#三、配置Hexo项目" class="headerlink" title="三、配置Hexo项目"></a>三、配置Hexo项目</h4><ol>
-<li>在你的hexo项目的<strong>source</strong>文件夹根目录里添加一个<strong>CNAME</strong>文件（不带任何后缀的文件），CNAME里面的内容是你的<strong>域名</strong>。</li>
-<li>然后打开我们 hexo 项目的配置文件 <strong>_config.yml</strong> ，找到 <strong>url 配置项</strong> ，替换成我们的域名就可以了。</li>
+<p>本命令相当于执行了以下几步：</p>
+<ol>
+<li>Git clone <a href="https://github.com/hexojs/hexo-starter">hexo-starter</a> 和 <a href="https://github.com/hexojs/hexo-theme-landscape">hexo-theme-landscape</a> 主题到当前目录或指定目录。</li>
+<li>使用 <a href="https://classic.yarnpkg.com/lang/en/">Yarn 1</a>、<a href="https://pnpm.io/zh/">pnpm</a> 或 <a href="https://docs.npmjs.com/cli/install">npm</a> 包管理器下载依赖（如有已安装多个，则列在前面的优先）。npm 默认随 <a href="https://hexo.io/zh-cn/docs/index.html#%E5%AE%89%E8%A3%85-Node-js">Node.js</a> 安装。</li>
 </ol>
-<h4 id="四、配置Github-Pages"><a href="#四、配置Github-Pages" class="headerlink" title="四、配置Github Pages"></a>四、配置Github Pages</h4><ol>
-<li>打开我们的hexo项目在github上的仓库，进入设置页面</li>
-<li>找到<strong>Pages选项</strong>，<code>Custom domain</code> 填上我们的<strong>域名</strong>，勾选上<strong>强制打开HTTPS</strong>。</li>
-<li>等DNS检查通过，稍微等一会，就可以用域名打开我们的Hexo部署在Github上的项目啦！</li>
+<h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new post <span class="string">&quot;PostName&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br><span class="line"><span class="comment"># 该命令可以简写为</span></span><br><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">hexo generate</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">该命令可以简写为</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">hexo g</span></span><br></pre></td></tr></table></figure>
+
+<p>生成静态文件。</p>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>-d</code>, <code>--deploy</code></td>
+<td>文件生成后立即部署网站</td>
+</tr>
+<tr>
+<td><code>-w</code>, <code>--watch</code></td>
+<td>监视文件变动</td>
+</tr>
+<tr>
+<td><code>-b</code>, <code>--bail</code></td>
+<td>生成过程中如果发生任何未处理的异常则抛出异常</td>
+</tr>
+<tr>
+<td><code>-f</code>, <code>--force</code></td>
+<td>强制重新生成文件  <br>Hexo 引入了差分机制，如果 <code>public</code> 目录存在，那么 <code>hexo g</code> 只会重新生成改动的文件。  <br>使用该参数的效果接近 <code>hexo clean &amp;&amp; hexo generate</code></td>
+</tr>
+<tr>
+<td><code>-c</code>, <code>--concurrency</code></td>
+<td>最大同时生成文件的数量，默认无限制</td>
+</tr>
+</tbody></table>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br><span class="line"><span class="comment"># 该命令可以简写为</span></span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<h3 id="version"><a href="#version" class="headerlink" title="version"></a>version</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">hexo version</span></span><br></pre></td></tr></table></figure>
+
+<p>显示 Hexo 版本。</p>
+<h1 id="Plugins"><a href="#Plugins" class="headerlink" title="Plugins"></a>Plugins</h1><hr>
+<ol>
+<li><a href="https://github.com/maxchang3/hexo-markmap">hexo思维导图：hexo-markmap</a></li>
+<li><a href="https://github.com/kuole-o/hexo-tag-map?tab=readme-ov-file">Hexo 文章插入交互式地图：hexo-tag-map</a></li>
 </ol>
-<p>原文链接： <a href="https://www.laodengai.com/domain-name-on-github-20240319/">Hexo 项目在 Github 上配置域名 | 老登 AI (laodengai.com)</a></p>
+<link rel="stylesheet" href="//unpkg.com/hexo-tag-map/lib/leaflet@1.7.1.css"><script data-pjax src="//unpkg.com/hexo-tag-map/lib/leaflet@1.7.1.js"></script><script data-pjax src="//unpkg.com/hexo-tag-map/lib/leaflet.ChineseTmsProviders@1.0.4.js"></script><div class="map-box" style="margin: 0.8rem 0 1.6rem 0;"><div id="gaodeMap-119.296623-26.081958" style="max-width:100%; height:360px;display: block;margin:0 auto;z-index:1;border-radius: 5px;"></div></div><script type="text/javascript">var normalm=L.tileLayer.chinaProvider('GaoDe.Normal.Map',{maxZoom:20,minZoom:1,attribution:'高德地图'});var imgm=L.tileLayer.chinaProvider('GaoDe.Satellite.Map',{maxZoom:20,minZoom:1,attribution:'高德地图'});var imga=L.tileLayer.chinaProvider('GaoDe.Satellite.Annotion',{maxZoom:20,minZoom:1,attribution:'高德地图'});var normal=L.layerGroup([normalm]),image=L.layerGroup([imgm,imga]);var baseLayers={"高德地图":normal,"高德卫星地图":imgm,"高德卫星标注":image};var mymap=L.map('gaodeMap-119.296623-26.081958',{center:[26.081958,119.296623],zoom:16,layers:[normal],zoomControl:false});L.control.layers(baseLayers,null).addTo(mymap);L.control.zoom({zoomInTitle:'放大',zoomOutTitle:'缩小'}).addTo(mymap);var marker = L.marker(['26.081958','119.296623']).addTo(mymap);marker.bindPopup("这里是福州三坊七巷，three lanes and seven alleys").openPopup();</script>
+
+
+<p><a href="https://lbs.amap.com/tools/picker">高德地图坐标拾取系统</a></p>
+<table>
+<thead>
+<tr>
+<th align="right">地图名</th>
+<th align="right">标签值&lt;必填&gt;</th>
+<th align="right">经度(-180~180)</th>
+<th align="right">纬度(-90~90)</th>
+<th align="right">文本</th>
+<th align="right">缩放等级(默认14)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="right">混合地图</td>
+<td align="right">map</td>
+<td align="right">坐标经度</td>
+<td align="right">坐标纬度</td>
+<td align="right">文本</td>
+<td align="right">取值3~18</td>
+</tr>
+<tr>
+<td align="right">谷歌地图</td>
+<td align="right">googleMap</td>
+<td align="right">坐标经度</td>
+<td align="right">坐标纬度</td>
+<td align="right">文本</td>
+<td align="right">取值1~20</td>
+</tr>
+<tr>
+<td align="right">高德地图</td>
+<td align="right">gaodeMap</td>
+<td align="right">坐标经度</td>
+<td align="right">坐标纬度</td>
+<td align="right">文本</td>
+<td align="right">取值3~18</td>
+</tr>
+<tr>
+<td align="right">百度地图</td>
+<td align="right">baiduMap</td>
+<td align="right">坐标经度</td>
+<td align="right">坐标纬度</td>
+<td align="right">文本</td>
+<td align="right">取值4~18</td>
+</tr>
+<tr>
+<td align="right">Geoq地图</td>
+<td align="right">geoqMap</td>
+<td align="right">坐标经度</td>
+<td align="right">坐标纬度</td>
+<td align="right">文本</td>
+<td align="right">取值1~18</td>
+</tr>
+<tr>
+<td align="right">openstreet地图</td>
+<td align="right">openstreetMap</td>
+<td align="right">坐标经度</td>
+<td align="right">坐标纬度</td>
+<td align="right">文本</td>
+<td align="right">取值1~18</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="right">地图名</th>
+<th align="right">宽(默认100%) &#x2F; 高(默认360px)</th>
+<th align="right">默认图层(默认1)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="right">混合地图</td>
+<td align="right">百分数或具体值(100%或360px)</td>
+<td align="right">取值1~7</td>
+</tr>
+<tr>
+<td align="right">谷歌地图</td>
+<td align="right">百分数或具体值(100%或360px)</td>
+<td align="right">取值1~3</td>
+</tr>
+<tr>
+<td align="right">高德地图</td>
+<td align="right">百分数或具体值(100%或360px)</td>
+<td align="right">取值1~3</td>
+</tr>
+<tr>
+<td align="right">百度地图</td>
+<td align="right">百分数或具体值(100%或360px)</td>
+<td align="right">取值1~2</td>
+</tr>
+<tr>
+<td align="right">Geoq地图</td>
+<td align="right">百分数或具体值(100%或360px)</td>
+<td align="right">取值1~5</td>
+</tr>
+<tr>
+<td align="right">openstreet地图</td>
+<td align="right">百分数或具体值(100%或360px)</td>
+<td align="right">不支持此参数</td>
+</tr>
+</tbody></table>
+<ol>
+<li>参数之间，用<strong>英文逗号</strong>相隔</li>
+<li>参数必须按上述事例顺序输入，不得为空</li>
+<li><strong>同一个页面，同一组经纬度值，只能插入一个相同标签值的地图</strong>(若有需要，可以将第二个地图上，经度或纬度末尾删除一两个数)</li>
+<li>参数取值必须在上述范围内</li>
+<li>默认图层：即地图叠加层的值，默认常规地图还是卫星地图，可按地图显示顺序取值</li>
+<li><strong>缩放等级，数字越大，地图比例尺越小，显示的越精细</strong></li>
+<li>除<strong>标签值</strong>外，其他参数选填，但 <strong>每个参数的左边的参数必填</strong></li>
+<li>谷歌地图需要外网才能加载查看</li>
+</ol>
+<h1 id="Notes"><a href="#Notes" class="headerlink" title="Notes"></a>Notes</h1><hr>
+<h3 id="本地图片的调用"><a href="#本地图片的调用" class="headerlink" title="本地图片的调用"></a>本地图片的调用</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">my version</span></span><br><span class="line">hexo: 7.2.0</span><br><span class="line">hexo-cli: 4.3.2</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><p>手动新建<br>首先是在 _posts 文件夹下建立一个<code>本地图片的调用.md</code>，再建立一个同名的文件夹 <code>本地图片的调用</code>。</p>
+</li>
+<li><p>hexo代码新建<br>使用<code>hexo new post 本地图片的调用</code>，可以生成md文件的同时生成一个同名文件夹用于存储网页资源。</p>
+</li>
+</ol>
+<p>这篇文章要引用的图片就放在该文件夹下。比如我就在该目录下放一个图片<code>1.png</code>。</p>
+<p><img src="/2019/05/01/hello_world/1.png"></p>
+<p>然后在博文 MarkDown 文件里引用该图片：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">这里是图片注释</span>](<span class="link">../images/2019_05_01_hello_world/1.png</span>)</span><br></pre></td></tr></table></figure>
+
+<p><strong>为什么引用的时候不用加文件夹的路径呢？</strong></p>
+<p>这是因为 hexo 在渲染的时候，会把<code>本地图片的调用.md</code> 渲染为<code>public</code>下的 <code>本地图片的调用.html</code>网页文件，而把对应文件夹下的静态资源，比如图片 <code>1.png</code>也拷贝到<code>public</code>下!</p>
+<p>需要注意的是，在<code>hexo/source/_posts</code>目录下的图片文件名不能重复。</p>
+<h3 id="skip-render"><a href="#skip-render" class="headerlink" title="skip render"></a>skip render</h3><p>修改hexo根目录下_config.yml文件，</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">skip_render:</span></span><br><span class="line">	<span class="bullet">-</span> <span class="string">&#x27;_posts/templates/**&#x27;</span></span><br><span class="line">	<span class="bullet">-</span> <span class="string">&#x27;_posts/draft/**&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>目录结构：<br><code>- hexo/source/_posts/templates/</code> 保存post模版，供Obsidian快速开始Post编写。<br><code>- hexo/source/_posts/draft/</code> 保存未编辑完成，或不想共享的文章内容。</p>
+<p>设置跳过渲染之后，最好使用<code>hexo clean</code>清除以前的编译结果，保证配置生效。再使用<code>hexo g</code>查看。</p>
+<h3 id="自动generate"><a href="#自动generate" class="headerlink" title="自动generate"></a>自动generate</h3><p>定时or设置条件运行命令<code>docker exec -it hexo bash -c &quot;hexo clean &amp;&amp; hexo g&quot;</code>来自动编译。</p>
+<p><strong>踩坑：</strong> 直接在群晖的<code>控制面板</code> - <code>任务计划</code>中添加自定义脚本<code>docker exec -it hexo bash -c &quot;hexo clean &amp;&amp; hexo g&quot;</code>会报错<code>the input device is not a TTY</code>.</p>
+<p>tty一词源于Teletypes,或teletypewriters。这个的意思是说后台linux执行的时候没有终端设备。我们一般执行docker里的命令时候都喜欢加上-it 这个参数，这里的-t 就是表示伪tty。所以，如果我们docker执行后台运行的任务或者程序直接去除 -t 这个参数就不会出现这个报错了。</p>
+<p><strong>所以要用 <code>docker exec hexo bash -c &quot;hexo clean &amp;&amp; hexo g&quot;</code></strong></p>
+<p><strong>待改进：</strong> 设置了每天generate一次。如果设置成有变动就generate就更好了，暂时没想到办法。</p>
+<h3 id="视频嵌入"><a href="#视频嵌入" class="headerlink" title="视频嵌入"></a>视频嵌入</h3><p>现在视频基本上都会分享到各大平台，所以暂时主要以嵌入网络视频展示。<br>研究了几款插件，基本上都是年久失修，使用不易，最终还是选择了<code>iframe</code>嵌入。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">%%bilibili视频嵌入%%</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;position: relative; width: 100%; height: 0; padding-bottom: 75%;&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">src</span>=<span class="string">&quot;//player.bilibili.com/player.html?aid=244387247&amp;cid=229573649&amp;page=1&quot;</span> <span class="attr">scrolling</span>=<span class="string">&quot;no&quot;</span> <span class="attr">border</span>=<span class="string">&quot;0&quot;</span> <span class="attr">frameborder</span>=<span class="string">&quot;no&quot;</span> <span class="attr">framespacing</span>=<span class="string">&quot;0&quot;</span> <span class="attr">allowfullscreen</span>=<span class="string">&quot;true&quot;</span> <span class="attr">style</span>=<span class="string">&quot;position: absolute; width: 100%; height: 100%; Left: 0; top: 0;&quot;</span> &gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span>  </span><br></pre></td></tr></table></figure>
+
+<p><a href="https://github.com/stephenmkbrady/hexo-tag-html5">hexo-tag-html5video</a></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install --save hexo-tag-html5video</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% html5video &#x27;100%&#x27; &#x27;250px&#x27; &#x27;video/mp4&#x27; %&#125; </span><br><span class="line">&#123;% asset<span class="emphasis">_path &lt;视频路径&gt; %&#125; </span></span><br><span class="line"><span class="emphasis">&#123;% endhtml5video %&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="菜单导航配置"><a href="#菜单导航配置" class="headerlink" title="菜单导航配置"></a>菜单导航配置</h3><p>配置基本菜单导航的名称、路径url和图标icon.</p>
+<ol>
+<li>菜单导航名称可以是中文也可以是英文(如：<code>Index</code> 或 <code>主页</code>)</li>
+<li><code>External</code> 表示是否在新标签页打开连接</li>
+<li>导航地址可以是站内地址也可以是外网地址</li>
+</ol>
+<h3 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h3><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">hexo</span><br><span class="line"><span class="bullet">  -</span> node<span class="emphasis">_modules</span></span><br><span class="line"><span class="emphasis">  - scaffolds # 模板文件夹</span></span><br><span class="line"><span class="emphasis">    - draft.md # 草稿模板文件</span></span><br><span class="line"><span class="emphasis">    - page.md # 页面模板文件</span></span><br><span class="line"><span class="emphasis">    - post.md # 文章模板文件</span></span><br><span class="line"><span class="emphasis">  - source # 资源文件夹</span></span><br><span class="line"><span class="emphasis">    - _</span>drafts # 草稿文件夹</span><br><span class="line"><span class="bullet">    -</span> <span class="emphasis">_posts # post文件夹</span></span><br><span class="line"><span class="emphasis">    - images #图片文件夹</span></span><br><span class="line"><span class="emphasis">  - themes # 主题文件夹</span></span><br><span class="line"><span class="emphasis">    - ayer # 主题文件夹</span></span><br><span class="line"><span class="emphasis">      - _</span>config.yml # 主题配置文件</span><br><span class="line"><span class="bullet">      -</span> languages # 语言文件夹</span><br><span class="line"><span class="bullet">      -</span> layout # 布局文件夹</span><br><span class="line"><span class="bullet">      -</span> scripts # 脚本文件夹</span><br><span class="line"><span class="bullet">      -</span> source # 资源文件夹</span><br><span class="line"><span class="bullet">        -</span> css # 样式文件夹</span><br><span class="line"><span class="bullet">        -</span> fonts # 字体文件夹</span><br><span class="line"><span class="bullet">        -</span> images # 图片文件夹</span><br><span class="line"><span class="bullet">        -</span> js # 脚本文件夹</span><br><span class="line"><span class="bullet">  -</span> <span class="emphasis">_config.yml # 配置文件</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="本地图片的调用-1"><a href="#本地图片的调用-1" class="headerlink" title="本地图片的调用"></a>本地图片的调用</h3><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">这里是图片注释</span>](<span class="link">../images/2019_05_01_hello_world/1.png</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="DIY-hexo-new-post"><a href="#DIY-hexo-new-post" class="headerlink" title="DIY hexo new post"></a>DIY hexo new post</h3><p>修改hexo根目录下_config.yml文件，</p>
+<ol>
+<li>为新建post自动加上当前日期，避免title重复，造成的一系列问题。</li>
+</ol>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Writing</span></span><br><span class="line"><span class="comment"># new_post_name: title.md # default setting</span></span><br><span class="line"><span class="attr">new_post_name:</span> <span class="string">:year_:month_:day_:title.md</span> </span><br><span class="line"><span class="comment"># new posts name as year_month_day_postname</span></span><br><span class="line"><span class="attr">default_layout:</span> <span class="string">post</span></span><br><span class="line"><span class="attr">titlecase:</span> <span class="literal">false</span> <span class="comment"># Transform title into titlecase</span></span><br><span class="line"><span class="attr">external_link:</span></span><br><span class="line"><span class="attr">enable:</span> <span class="literal">true</span> <span class="comment"># Open external links in new tab</span></span><br><span class="line"><span class="attr">field:</span> <span class="string">site</span> <span class="comment"># Apply to the whole site</span></span><br><span class="line"><span class="attr">exclude:</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="attr">filename_case:</span> <span class="number">0</span></span><br><span class="line"><span class="attr">render_drafts:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>为了使_post文件夹尽可能的精简，便于网盘同步，只保留md文件，图片等资源放在<code>source</code>目录下<code>images</code>文件夹内。</li>
+</ol>
+<figure class="highlight sqf"><table><tr><td class="code"><pre><span class="line">post_asset_folder: <span class="literal">false</span> </span><br><span class="line"># 改成<span class="literal">true</span>，则在<span class="variable">_post</span>新建下新建md文件的同时新建一个同名的文件夹用于存储当前页面的一些资源。</span><br></pre></td></tr></table></figure>
+
+<h3 id="引用文章"><a href="#引用文章" class="headerlink" title="引用文章"></a><a href="https://hexo.io/zh-cn/docs/tag-plugins#%E5%BC%95%E7%94%A8%E6%96%87%E7%AB%A0">引用文章</a></h3><p>引用其他文章的链接。</p>
+<figure class="highlight django"><table><tr><td class="code"><pre><span class="line"><span class="template-tag">&#123;% <span class="name">post_path</span> filename %&#125;</span><span class="language-xml">  </span></span><br><span class="line"><span class="language-xml"></span><span class="template-tag">&#123;% <span class="name">post_link</span> filename [title] [escape] %&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>在使用此标签时可以忽略文章文件所在的路径或者文章的永久链接信息、如语言、日期。</p>
+<p>例如，在文章中使用 <code>&#123;% post_link how-to-bake-a-cake %&#125;</code> 时，只需有一个名为 <code>how-to-bake-a-cake.md</code> 的文章文件即可。即使这个文件位于站点文件夹的 <code>source/posts/2015-02-my-family-holiday</code> 目录下、或者文章的永久链接是 <code>2018/en/how-to-bake-a-cake</code>，都没有影响。</p>
+<p>默认链接文字是文章的标题，你也可以自定义要显示的文本。</p>
+<p>默认对文章的标题和自定义标题里的特殊字符进行转义。可以使用 <code>escape</code> 选项，禁止对特殊字符进行转义。</p>
+<p>例如：</p>
+<p><strong>链接使用文章的标题</strong></p>
+<p><code>&#123;% post_link hexo-3-8-released %&#125;</code></p>
+<p><strong>链接使用自定义文字</strong></p>
+<p><code>&#123;% post_link hexo-3-8-released '通往文章的链接' %&#125;</code></p>
+<p><strong>对标题的特殊字符进行转义</strong></p>
+<figure class="highlight crmsh"><table><tr><td class="code"><pre><span class="line">&#123;% post_link hexo-<span class="number">4</span>-released &#x27;How to use <span class="tag">&lt;b&gt;</span> <span class="keyword">tag</span> <span class="title">in</span> title&#x27; %&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="动态自定义附件文件夹名称"><a href="#动态自定义附件文件夹名称" class="headerlink" title="动态自定义附件文件夹名称"></a>动态自定义附件文件夹名称</h3><p>插件 <strong>Custom Attachment Location</strong> ，安装后进行附件文件夹的设置:</p>
+<figure class="highlight xl"><table><tr><td class="code"><pre><span class="line">C<span class="function"><span class="title">ustom</span> Attachment Location --&gt;</span> L<span class="function"><span class="title">ocation</span> <span class="keyword">for</span> New Attachments --&gt;</span> ./$&#123;filename&#125;.assets （这样设置是为了与 Typora 兼容，正常显示 Typora 中创建的笔记的图片附件）</span><br></pre></td></tr></table></figure>
+
+<h1 id="post在首页全文展示问题"><a href="#post在首页全文展示问题" class="headerlink" title="post在首页全文展示问题"></a>post在首页全文展示问题</h1><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"># 主题config文件 ~/hexo/themes/ayer/_config.yml</span><br><span class="line"># 文章太长，截断按钮文字(在需要截断的行增加此标记：<span class="comment">&lt;!--more--&gt;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<p>More info:<br><a href="https://post.smzdm.com/p/agqol9zm/">晨聊 篇十七：markdown也变脸，obsidian + hexo 在群晖NAS上的双剑合璧</a></p>
 ]]></content>
       <categories>
         <category>技术</category>
@@ -163,8 +393,8 @@
       </categories>
       <tags>
         <tag>hexo</tag>
+        <tag>笔记</tag>
         <tag>markdown</tag>
-        <tag>插件</tag>
       </tags>
   </entry>
   <entry>
@@ -340,87 +570,44 @@
       </tags>
   </entry>
   <entry>
-    <title>GoPro Hero最实用的四个必备配件:打造完美生态</title>
-    <url>/2022/03/15/GoproHero/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><hr>
-<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">
-<iframe src="//player.bilibili.com/player.html?aid=244387247&bvid=BV1Av411174q&cid=229573649&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; Left: 0; top: 0;" ></iframe></div> 
-]]></content>
-      <categories>
-        <category>数码</category>
-        <category>相机</category>
-      </categories>
-      <tags>
-        <tag>数码</tag>
-        <tag>相机</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>菜谱</title>
-    <url>/2022/04/19/%E8%8F%9C%E8%B0%B1/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="空气炸锅鸡排"><a href="#空气炸锅鸡排" class="headerlink" title="空气炸锅鸡排"></a>空气炸锅鸡排</h1><ul>
-<li>温度：200度</li>
-<li>时间：8分钟 + 4分钟</li>
-</ul>
-<h1 id="空气炸锅健身食品"><a href="#空气炸锅健身食品" class="headerlink" title="空气炸锅健身食品"></a>空气炸锅健身食品</h1><ul>
-<li>鸡胸肉（黑胡椒、13香、橄榄油）</li>
-<li>地瓜（切块、橄榄油）</li>
-<li>温度：180度</li>
-<li>时间：15分钟</li>
-</ul>
+    <title>为部署在Github上的Hexo博客配置域名</title>
+    <url>/2019/05/25/%E4%B8%BA%E9%83%A8%E7%BD%B2%E5%9C%A8Github%E4%B8%8A%E7%9A%84Hexo%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE%E5%9F%9F%E5%90%8D/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="一、Hexo项目部署到Github"><a href="#一、Hexo项目部署到Github" class="headerlink" title="一、Hexo项目部署到Github"></a>一、<a href="https://so.csdn.net/so/search?q=Hexo&spm=1001.2101.3001.7020">Hexo</a>项目部署到Github</h4><p>首先要确保你的hexo项目已经部署到github上，如果不知道hexo项目如何部署到github上，请看另一篇文章↓</p>
+<a href="/2019/05/06/Git_Hexo/" title="群晖Git部署Hexo">群晖Git部署Hexo</a>
+
+<p>如果你的<strong>hexo项目已经搭建好</strong>，可直接跳转到<strong>第五步，看部署到Github</strong>的步骤。</p>
+<h4 id="二、解析域名到GitHub-Pages"><a href="#二、解析域名到GitHub-Pages" class="headerlink" title="二、解析域名到GitHub Pages"></a>二、解析域名到GitHub Pages</h4><h5 id="1：首先购买或注册一个域名"><a href="#1：首先购买或注册一个域名" class="headerlink" title="1：首先购买或注册一个域名"></a>1：首先购买或注册一个域名</h5><p>购买域名的渠道有很多，可以国内，也可以国外，本人是在国外的GoDaddy平台上买的（好处是管理比较方便，不用备案啥的了…），问题多的话我再写一篇具体申请的blog。</p>
+<h5 id="2：解析域名到Github"><a href="#2：解析域名到Github" class="headerlink" title="2：解析域名到Github"></a>2：解析域名到Github</h5><p>首先登录你域名注册商的控制面板，这里以GoDaddy为例</p>
 <span id="more"></span>
-<p><a href="https://www.youtube.com/watch?v=D8O7myqk0Bw">健身食品制作视频</a></p>
-<h1 id="阳春面调料"><a href="#阳春面调料" class="headerlink" title="阳春面调料"></a>阳春面调料</h1><ul>
-<li>生抽、陈醋、盐、香油或猪油、葱花</li>
-</ul>
-<h1 id="爆炒香辣鱿鱼"><a href="#爆炒香辣鱿鱼" class="headerlink" title="爆炒香辣鱿鱼"></a>爆炒香辣鱿鱼</h1><p>食材：</p>
-<ul>
-<li>鱿鱼须、葱、姜、洋葱、料酒、豆瓣酱、生抽、老抽、蚝油、白糖、盐、熟芝麻</li>
-</ul>
-<p>做法：</p>
-<ol>
-<li>鱿鱼洗净切好备用，冷水下锅，加入姜片、葱段、1勺料酒，焯水捞出备用</li>
-<li>锅中油热，倒入洋葱丝，炒出香味，加入1勺豆瓣酱炒出红油，倒入焯好水的鱿鱼须，翻炒上色</li>
-<li>加入1勺生抽、半勺老抽、1勺蚝油、适量白糖、少许盐、1勺熟芝麻，翻炒均匀，撒上葱花即可</li>
+
+<p>打开<strong>控制面板</strong></p>
+<p><img src="/2019/05/25/%E4%B8%BA%E9%83%A8%E7%BD%B2%E5%9C%A8Github%E4%B8%8A%E7%9A%84Hexo%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE%E5%9F%9F%E5%90%8D/image-20240428210042566.png"></p>
+<p>接着<strong>打开DNS配置页面</strong></p>
+<p><img src="/2019/05/25/%E4%B8%BA%E9%83%A8%E7%BD%B2%E5%9C%A8Github%E4%B8%8A%E7%9A%84Hexo%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE%E5%9F%9F%E5%90%8D/image-20240428210031684.png"></p>
+<p>接着<strong>添加以下几条解析</strong></p>
+<p><img src="/2019/05/25/%E4%B8%BA%E9%83%A8%E7%BD%B2%E5%9C%A8Github%E4%B8%8A%E7%9A%84Hexo%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE%E5%9F%9F%E5%90%8D/image-20240428210020252.png"></p>
+<p>上面几条IP地址是从<a href="">Github官网</a>上得来的，具体可以查看这个地址<a href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site#configuring-an-apex-domain">Managing a custom domain for your GitHub Pages site - GitHub Docs</a></p>
+<p>至此，域名注册服务商上的github pages域名解析我们就完成了！</p>
+<h4 id="三、配置Hexo项目"><a href="#三、配置Hexo项目" class="headerlink" title="三、配置Hexo项目"></a>三、配置Hexo项目</h4><ol>
+<li>在你的hexo项目的<strong>source</strong>文件夹根目录里添加一个<strong>CNAME</strong>文件（不带任何后缀的文件），CNAME里面的内容是你的<strong>域名</strong>。</li>
+<li>然后打开我们 hexo 项目的配置文件 <strong>_config.yml</strong> ，找到 <strong>url 配置项</strong> ，替换成我们的域名就可以了。</li>
 </ol>
+<h4 id="四、配置Github-Pages"><a href="#四、配置Github-Pages" class="headerlink" title="四、配置Github Pages"></a>四、配置Github Pages</h4><ol>
+<li>打开我们的hexo项目在github上的仓库，进入设置页面</li>
+<li>找到<strong>Pages选项</strong>，<code>Custom domain</code> 填上我们的<strong>域名</strong>，勾选上<strong>强制打开HTTPS</strong>。</li>
+<li>等DNS检查通过，稍微等一会，就可以用域名打开我们的Hexo部署在Github上的项目啦！</li>
+</ol>
+<p>原文链接： <a href="https://www.laodengai.com/domain-name-on-github-20240319/">Hexo 项目在 Github 上配置域名 | 老登 AI (laodengai.com)</a></p>
 ]]></content>
       <categories>
-        <category>生活</category>
-        <category>菜谱</category>
+        <category>技术</category>
+        <category>博客</category>
+        <category>hexo</category>
       </categories>
       <tags>
-        <tag>菜谱</tag>
-        <tag>下酒菜</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>澳洲家中日常必备清单</title>
-    <url>/2022/05/19/%E6%BE%B3%E6%B4%B2%E5%AE%B6%E4%B8%AD%E6%97%A5%E5%B8%B8%E5%BF%85%E5%A4%87%E6%B8%85%E5%8D%95/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>1⃣️ CEPACAINE漱口水！ 治疗牙龈肿痛，口腔溃疡。澳洲医生推荐买的，超级有效！猫猫家必备的，再也没有牙口烦恼。 购买地址：Chemist有售 💰价格：$15.49 问题在口腔，吃啥啥不香，买它！喵～</p>
-<hr>
-<p>2⃣️ Quick EZE胃糖 腹胀、胃酸、胃痛。消化不良、吃颗糖就能缓解～ 主要是这糖咋还那么好吃！ 购买地址：Chemist 💰价格：$4.99 胃也需要轻轻安抚，买它！喵～</p>
-<span id="more"></span>
-<hr>
-<p>3⃣️ VICKS 通鼻喷剂 在澳洲总感觉鼻子不适，鼻炎老犯，尤其总是鼻塞。这个通鼻喷剂起效快，薄荷味柔和不刺激。 购买地址：Chemist 💰价格$11.99 杜绝张口呼吸，买它！喵～</p>
-<hr>
-<p>4⃣️ Refresh眼药水 在家学习、工作、打游戏、熬夜，眼睛干涩的话最使用用人工泪液成分的眼药水。无刺激，缓解眼睛疲劳，闺蜜们都在用。 购买地址：Chemist 💰价格$13.49 缓解就靠累上加泪。买它，喵～</p>
-<hr>
-<p>5⃣️ LeQure Detox Soap排毒香皂 这款味道超级淡，小众然鹅超棒！主要可以用来控油去杂质。背部长痘痘的宝宝们一定要试试。滋养加排毒，姐妹推荐的，用过也感觉很好。 购买地址：Chemist 💰价格：$5.99 永远不进毒圈，买它，喵～</p>
-<hr>
-<p>6⃣️ Naprogesic止痛片 姨妈期最好的止痛片咯，因为成分对胃损伤小，刺激小。而且止痛的效果起效更快，当地女生首选经期续命药。小蓝片好多朋友都在用。 购买地址：Chemist 💰价格：$7.99 连我姨妈都在用！买它，喵～</p>
-<hr>
-<p>7⃣️ Dettol 洗衣消毒液 家里养宠物的朋友洗衣服都会用这个帮忙杀菌！能灭杀99.9%的细菌。尤其是合租又共用洗衣机的话这个肯定要买！ 购买地址：Coles、 WWS有售 💰价格：$8.99 再也不怕室友用洗衣机洗袜子了，买它！喵～</p>
-<hr>
-<p>8⃣️ Mr muscle通道强力剂！ 水槽，浴室如果都便秘了，那主人可就更难受了。 超强清下水道秘方，家家必备的男人。尤其是掉头发比较多的女生经常会堵掉下水道。用它就可以畅通哦。 购买地址：Coles、WWS有售 💰价格：$13.7 搞定下水道，心情好到爆，买它！喵～</p>
-<hr>
-]]></content>
-      <categories>
-        <category>生活</category>
-        <category>好物推荐</category>
-      </categories>
-      <tags>
-        <tag>推荐</tag>
-        <tag>日常</tag>
+        <tag>hexo</tag>
+        <tag>markdown</tag>
+        <tag>插件</tag>
       </tags>
   </entry>
   <entry>
@@ -1878,8 +2065,8 @@
       </categories>
       <tags>
         <tag>笔记</tag>
-        <tag>数码</tag>
         <tag>Apple</tag>
+        <tag>数码</tag>
       </tags>
   </entry>
   <entry>
@@ -2180,6 +2367,86 @@
         <tag>笔记</tag>
         <tag>数据分析师</tag>
         <tag>方法论</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>这可能是我见过最好的 NumPy 图解教程！</title>
+    <url>/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
+<p>NumPy是Python中用于数据分析、机器学习、科学计算的重要软件包。它极大地简化了向量和矩阵的操作及处理。python的不少数据处理软件包依赖于NumPy作为其基础架构的核心部分（例如scikit-learn、SciPy、pandas和tensorflow）。除了数据切片和数据切块的功能之外，掌握numpy也使得开发者在使用各数据处理库调试和处理复杂用例时更具优势。</p>
+</blockquote>
+<p><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0001.png"></p>
+<p>在本文中，将介绍NumPy的主要用法，以及它如何呈现不同类型的数据（表格，图像，文本等），这些经Numpy处理后的数据将成为机器学习模型的输入。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br></pre></td></tr></table></figure>
+
+<h1 id="NumPy中的数组操作"><a href="#NumPy中的数组操作" class="headerlink" title="NumPy中的数组操作"></a>NumPy中的数组操作</h1><span id="more"></span>
+<h3 id="创建数组"><a href="#创建数组" class="headerlink" title="创建数组"></a>创建数组</h3><p>我们可以通过将python列表传入np.array()来创建一个NumPy数组（也就是强大的ndarray）。在下面的例子里，创建出的数组如右边所示，<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0002.png"></p>
+<p>通常情况下，我们希望NumPy为我们初始化数组的值，为此NumPy提供了诸如ones()，zeros()和random.random()之类的方法。我们只需传入元素个数即可：</p>
+<p><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0003.png"><br>一旦我们创建了数组，我们就可以用其做点有趣的应用了，文摘菌将在下文展开说明。</p>
+<h3 id="数组的算术运算"><a href="#数组的算术运算" class="headerlink" title="数组的算术运算"></a>数组的算术运算</h3><p>让我们创建两个NumPy数组，分别称作data和ones：</p>
+<p><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0004.png"><br>若要计算两个数组的加法，只需简单地敲入data + ones，就可以实现对应位置上的数据相加的操作（即每行数据进行相加），这种操作比循环读取数组的方法代码实现更加简洁。<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0005.png"></p>
+<p>当然，在此基础上举一反三，也可以实现减法、乘法和除法等操作：<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0006.png"><br>许多情况下，我们希望进行数组和单个数值的操作（也称作向量和标量之间的操作）。比如：如果数组表示的是以英里为单位的距离，我们的目标是将其转换为公里数。可以简单的写作<code>data \* 1.6</code>：<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0007.png"></p>
+<p>NumPy通过数组广播（broadcasting）知道这种操作需要和数组的每个元素相乘。</p>
+<h3 id="数组的切片操作"><a href="#数组的切片操作" class="headerlink" title="数组的切片操作"></a>数组的切片操作</h3><p>我们可以像python列表操作那样对NumPy数组进行索引和切片，如下图所示：  </p>
+<p><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0008.png"></p>
+<h3 id="聚合函数"><a href="#聚合函数" class="headerlink" title="聚合函数"></a>聚合函数</h3><p>NumPy为我们带来的便利还有聚合函数，聚合函数可以将数据进行压缩，统计数组中的一些特征值：<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0009.png"></p>
+<p>除了<code>min</code>，<code>max</code>和<code>sum</code>等函数，还有<code>mean（均值）</code>，<code>prod（数据乘法）</code>计算所有元素的乘积，std（标准差），等等。上面的所有例子都在一个维度上处理向量。除此之外，NumPy之美的一个关键之处是它能够将之前所看到的所有函数应用到任意维度上。</p>
+<h1 id="NumPy中的矩阵操作"><a href="#NumPy中的矩阵操作" class="headerlink" title="NumPy中的矩阵操作"></a>NumPy中的矩阵操作</h1><h3 id="创建矩阵"><a href="#创建矩阵" class="headerlink" title="创建矩阵"></a>创建矩阵</h3><p>我们可以通过将二维列表传给Numpy来创建矩阵。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">np.array([[<span class="number">1</span>,<span class="number">2</span>],[<span class="number">3</span>,<span class="number">4</span>]])</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0010.png"><br>除此外，也可以使用上文提到的<code>ones()</code>、<code>zeros()</code>和<code>random.random()</code>来创建矩阵，只需传入一个元组来描述矩阵的维度：  </p>
+<p><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0011.png"></p>
+<h3 id="矩阵的算术运算"><a href="#矩阵的算术运算" class="headerlink" title="矩阵的算术运算"></a>矩阵的算术运算</h3><p>对于大小相同的两个矩阵，我们可以使用算术运算符（<code>+-\*/</code>）将其相加或者相乘。NumPy对这类运算采用对应位置（position-wise）操作处理：  </p>
+<p><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0012.png"><br>对于不同大小的矩阵，只有两个矩阵的维度同为1时（例如矩阵只有一列或一行），我们才能进行这些算术运算，在这种情况下，NumPy使用广播规则（broadcast）进行操作处理：<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0013.png"><br>与算术运算有很大区别是使用点积的矩阵乘法。NumPy提供了<code>dot()</code>方法，可用于矩阵之间进行点积运算：<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0014.png"></p>
+<p>上图的底部添加了矩阵尺寸，以强调运算的两个矩阵在列和行必须相等。可以将此操作图解为如下所示：<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0015.png"></p>
+<h3 id="矩阵的切片和聚合"><a href="#矩阵的切片和聚合" class="headerlink" title="矩阵的切片和聚合"></a>矩阵的切片和聚合</h3><p>索引和切片功能在操作矩阵时变得更加有用。可以在不同维度上使用索引操作来对数据进行切片。  </p>
+<p><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0016.png"></p>
+<p>我们可以像聚合向量一样聚合矩阵：</p>
+<p><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0017.png"></p>
+<p>不仅可以聚合矩阵中的所有值，还可以使用<code>axis</code>参数指定行和列的聚合：</p>
+<p><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0018.png"></p>
+<h3 id="矩阵的转置和重构"><a href="#矩阵的转置和重构" class="headerlink" title="矩阵的转置和重构"></a>矩阵的转置和重构</h3><p>处理矩阵时经常需要对矩阵进行转置操作，常见的情况如计算两个矩阵的点积。NumPy数组的属性T可用于获取矩阵的转置。</p>
+<p><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0019.png"></p>
+<p>在较为复杂的用例中，你可能会发现自己需要改变某个矩阵的维度。这在机器学习应用中很常见，例如模型的输入矩阵形状与数据集不同，可以使用NumPy的<code>reshape()</code>方法。只需将矩阵所需的新维度传入即可。也可以传入-1，NumPy可以根据你的矩阵推断出正确的维度：<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0020.png"></p>
+<p>上文中的所有功能都适用于多维数据，其中心数据结构称为ndarray（N维数组）。</p>
+<p><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0021.png"></p>
+<p>很多时候，改变维度只需在NumPy函数的参数中添加一个逗号，如下图所示：</p>
+<p><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0022.png"></p>
+<h1 id="NumPy中的公式应用示例"><a href="#NumPy中的公式应用示例" class="headerlink" title="NumPy中的公式应用示例"></a>NumPy中的公式应用示例</h1><p>NumPy的关键用例是实现适用于矩阵和向量的数学公式。这也Python中常用NumPy的原因。例如，均方误差是监督机器学习模型处理回归问题的核心：</p>
+<p><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0023.png"></p>
+<p>在NumPy中可以很容易地实现均方误差：<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0024.png"></p>
+<p>这样做的好处是，numpy无需考虑predictions与labels具体包含的值。文摘菌将通过一个示例来逐步执行上面代码行中的四个操作：<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0025.png"></p>
+<p>预测（predictions）和标签（labels）向量都包含三个值。这意味着n的值为3。在我们执行减法后，我们最终得到如下值：<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0026.png"></p>
+<p>然后我们可以计算向量中各值的平方：<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0027.png"></p>
+<p>现在我们对这些值求和：<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0028.png"></p>
+<p>最终得到该预测的误差值和模型质量分数。</p>
+<h1 id="用NumPy表示日常数据"><a href="#用NumPy表示日常数据" class="headerlink" title="用NumPy表示日常数据"></a>用NumPy表示日常数据</h1><p>日常接触到的数据类型，如电子表格，图像，音频……等，如何表示呢？Numpy可以解决这个问题。</p>
+<h3 id="表和电子表格"><a href="#表和电子表格" class="headerlink" title="表和电子表格"></a>表和电子表格</h3><p>电子表格或数据表都是二维矩阵。电子表格中的每个工作表都可以是自己的变量。python中类似的结构是pandas数据帧（dataframe），它实际上使用NumPy来构建的。<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0029.png"></p>
+<h3 id="音频和时间序列"><a href="#音频和时间序列" class="headerlink" title="音频和时间序列"></a>音频和时间序列</h3><p>音频文件是一维样本数组。每个样本都是代表一小段音频信号的数字。CD质量的音频每秒可能有44,100个采样样本，每个样本是一个-65535到65536之间的整数。这意味着如果你有一个10秒的CD质量的WAVE文件，你可以将它加载到长度为10 * 44,100 &#x3D; 441,000个样本的NumPy数组中。想要提取音频的第一秒？只需将文件加载到我们称之为audio的NumPy数组中，然后截取audio[:44100]。</p>
+<p>以下是一段音频文件：<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0030.png"></p>
+<p>时间序列数据也是如此（例如，股票价格随时间变化的序列）。</p>
+<h3 id="图像"><a href="#图像" class="headerlink" title="图像"></a>图像</h3><p>图像是大小为（高度×宽度）的像素矩阵。如果图像是黑白图像（也称为灰度图像），则每个像素可以由单个数字表示（通常在0（黑色）和255（白色）之间）。如果对图像做处理，裁剪图像的左上角10 x 10大小的一块像素区域，用NumPy中的image[:10,:10]就可以实现。</p>
+<p>这是一个图像文件的片段：<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0031.png"></p>
+<p>如果图像是彩色的，则每个像素由三个数字表示 ：红色，绿色和蓝色。在这种情况下，我们需要第三维（因为每个单元格只能包含一个数字）。因此彩色图像由尺寸为(高x宽x 3）的ndarray表示。<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0032.png"></p>
+<h3 id="语言"><a href="#语言" class="headerlink" title="语言"></a>语言</h3><p>如果我们处理文本，情况就会有所不同。用数字表示文本需要两个步骤，构建词汇表（模型知道的所有唯一单词的清单）和嵌入（embedding）。让我们看看用数字表示这个（翻译的）古语引用的步骤：“Have the bards who preceded me left any theme unsung?”</p>
+<p>模型需要先训练大量文本才能用数字表示这位战场诗人的诗句。我们可以让模型处理一个小数据集，并使用这个数据集来构建一个词汇表（71,290个单词）：<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0033.png"></p>
+<p>然后可以将句子划分成一系列“词”token（基于通用规则的单词或单词部分）：<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0034.png"></p>
+<p>然后我们用词汇表中的id替换每个单词：<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0035.png"></p>
+<p>这些ID仍然不能为模型提供有价值的信息。因此，在将一系列单词送入模型之前，需要使用嵌入（embedding）来替换token&#x2F;单词（在本例子中使用50维度的word2vec嵌入)：<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0036.png"></p>
+<p>你可以看到此NumPy数组的维度为[embedding_dimension x sequence_length]。</p>
+<p>在实践中，这些数值不一定是这样的，但我以这种方式呈现它是为了视觉上的一致。出于性能原因，深度学习模型倾向于保留批数据大小的第一维（因为如果并行训练多个示例，则可以更快地训练模型）。很明显，这里非常适合使用reshape()。例如，像BERT这样的模型会期望其输入矩阵的形状为：[batch_size，sequence_length，embedding_size]。<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0037.png"></p>
+<p>这是一个数字合集，模型可以处理并执行各种有用的操作。我留空了许多行，可以用其他示例填充以供模型训练（或预测）。</p>
+<p>事实证明，在我们的例子中，那位诗人的话语比其他诗人的诗句更加名垂千古。尽管生而为奴，诗人安塔拉（Antarah）的英勇和语言能力使他获得了自由和神话般的地位，他的诗是伊斯兰教以前的阿拉伯半岛《悬诗》的七首诗之一。</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>数据分析</category>
+        <category>numpy</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+        <tag>python</tag>
+        <tag>numpy</tag>
       </tags>
   </entry>
   <entry>
@@ -10976,354 +11243,37 @@
       </tags>
   </entry>
   <entry>
-    <title>Hexo Hello World</title>
-    <url>/2019/05/01/hello_world/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Here-Cheatsheet">Markdown</a> 使用<a href="https://github.com/younghz/Markdown">Markdown 基本语法</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
-<h1 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h1><hr>
-<h3 id="hexo-快速、简洁且高效的博客框架"><a href="#hexo-快速、简洁且高效的博客框架" class="headerlink" title="hexo 快速、简洁且高效的博客框架"></a><a href="https://hexo.io/zh-cn/">hexo 快速、简洁且高效的博客框架</a></h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br><span class="line">hexo init blog</span><br><span class="line">cd blog</span><br><span class="line">npm install</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
-
-<h3 id="init"><a href="#init" class="headerlink" title="init"></a>init</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">hexo init [folder]</span></span><br></pre></td></tr></table></figure>
-
-<p>新建一个网站。如果没有设置 <code>folder</code> ，Hexo 默认在目前的文件夹建立网站。</p>
+    <title>有意思的翻译PROMPT</title>
+    <url>/2024/04/29/%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84%E7%BF%BB%E8%AF%91PROMPT/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><img src="/2024/04/29/%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84%E7%BF%BB%E8%AF%91PROMPT/image-20240428223752145.jpeg"></p>
 <span id="more"></span>
-<p>本命令相当于执行了以下几步：</p>
-<ol>
-<li>Git clone <a href="https://github.com/hexojs/hexo-starter">hexo-starter</a> 和 <a href="https://github.com/hexojs/hexo-theme-landscape">hexo-theme-landscape</a> 主题到当前目录或指定目录。</li>
-<li>使用 <a href="https://classic.yarnpkg.com/lang/en/">Yarn 1</a>、<a href="https://pnpm.io/zh/">pnpm</a> 或 <a href="https://docs.npmjs.com/cli/install">npm</a> 包管理器下载依赖（如有已安装多个，则列在前面的优先）。npm 默认随 <a href="https://hexo.io/zh-cn/docs/index.html#%E5%AE%89%E8%A3%85-Node-js">Node.js</a> 安装。</li>
-</ol>
-<h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new post <span class="string">&quot;PostName&quot;</span></span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br><span class="line"><span class="comment"># 该命令可以简写为</span></span><br><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">hexo generate</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">该命令可以简写为</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">hexo g</span></span><br></pre></td></tr></table></figure>
-
-<p>生成静态文件。</p>
-<table>
-<thead>
-<tr>
-<th>选项</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>-d</code>, <code>--deploy</code></td>
-<td>文件生成后立即部署网站</td>
-</tr>
-<tr>
-<td><code>-w</code>, <code>--watch</code></td>
-<td>监视文件变动</td>
-</tr>
-<tr>
-<td><code>-b</code>, <code>--bail</code></td>
-<td>生成过程中如果发生任何未处理的异常则抛出异常</td>
-</tr>
-<tr>
-<td><code>-f</code>, <code>--force</code></td>
-<td>强制重新生成文件  <br>Hexo 引入了差分机制，如果 <code>public</code> 目录存在，那么 <code>hexo g</code> 只会重新生成改动的文件。  <br>使用该参数的效果接近 <code>hexo clean &amp;&amp; hexo generate</code></td>
-</tr>
-<tr>
-<td><code>-c</code>, <code>--concurrency</code></td>
-<td>最大同时生成文件的数量，默认无限制</td>
-</tr>
-</tbody></table>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br><span class="line"><span class="comment"># 该命令可以简写为</span></span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-<h3 id="version"><a href="#version" class="headerlink" title="version"></a>version</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">hexo version</span></span><br></pre></td></tr></table></figure>
-
-<p>显示 Hexo 版本。</p>
-<h1 id="Plugins"><a href="#Plugins" class="headerlink" title="Plugins"></a>Plugins</h1><hr>
-<ol>
-<li><a href="https://github.com/maxchang3/hexo-markmap">hexo思维导图：hexo-markmap</a></li>
-<li><a href="https://github.com/kuole-o/hexo-tag-map?tab=readme-ov-file">Hexo 文章插入交互式地图：hexo-tag-map</a></li>
-</ol>
-<link rel="stylesheet" href="//unpkg.com/hexo-tag-map/lib/leaflet@1.7.1.css"><script data-pjax src="//unpkg.com/hexo-tag-map/lib/leaflet@1.7.1.js"></script><script data-pjax src="//unpkg.com/hexo-tag-map/lib/leaflet.ChineseTmsProviders@1.0.4.js"></script><div class="map-box" style="margin: 0.8rem 0 1.6rem 0;"><div id="gaodeMap-119.296623-26.081958" style="max-width:100%; height:360px;display: block;margin:0 auto;z-index:1;border-radius: 5px;"></div></div><script type="text/javascript">var normalm=L.tileLayer.chinaProvider('GaoDe.Normal.Map',{maxZoom:20,minZoom:1,attribution:'高德地图'});var imgm=L.tileLayer.chinaProvider('GaoDe.Satellite.Map',{maxZoom:20,minZoom:1,attribution:'高德地图'});var imga=L.tileLayer.chinaProvider('GaoDe.Satellite.Annotion',{maxZoom:20,minZoom:1,attribution:'高德地图'});var normal=L.layerGroup([normalm]),image=L.layerGroup([imgm,imga]);var baseLayers={"高德地图":normal,"高德卫星地图":imgm,"高德卫星标注":image};var mymap=L.map('gaodeMap-119.296623-26.081958',{center:[26.081958,119.296623],zoom:16,layers:[normal],zoomControl:false});L.control.layers(baseLayers,null).addTo(mymap);L.control.zoom({zoomInTitle:'放大',zoomOutTitle:'缩小'}).addTo(mymap);var marker = L.marker(['26.081958','119.296623']).addTo(mymap);marker.bindPopup("这里是福州三坊七巷，three lanes and seven alleys").openPopup();</script>
-
-
-<p><a href="https://lbs.amap.com/tools/picker">高德地图坐标拾取系统</a></p>
-<table>
-<thead>
-<tr>
-<th align="right">地图名</th>
-<th align="right">标签值&lt;必填&gt;</th>
-<th align="right">经度(-180~180)</th>
-<th align="right">纬度(-90~90)</th>
-<th align="right">文本</th>
-<th align="right">缩放等级(默认14)</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="right">混合地图</td>
-<td align="right">map</td>
-<td align="right">坐标经度</td>
-<td align="right">坐标纬度</td>
-<td align="right">文本</td>
-<td align="right">取值3~18</td>
-</tr>
-<tr>
-<td align="right">谷歌地图</td>
-<td align="right">googleMap</td>
-<td align="right">坐标经度</td>
-<td align="right">坐标纬度</td>
-<td align="right">文本</td>
-<td align="right">取值1~20</td>
-</tr>
-<tr>
-<td align="right">高德地图</td>
-<td align="right">gaodeMap</td>
-<td align="right">坐标经度</td>
-<td align="right">坐标纬度</td>
-<td align="right">文本</td>
-<td align="right">取值3~18</td>
-</tr>
-<tr>
-<td align="right">百度地图</td>
-<td align="right">baiduMap</td>
-<td align="right">坐标经度</td>
-<td align="right">坐标纬度</td>
-<td align="right">文本</td>
-<td align="right">取值4~18</td>
-</tr>
-<tr>
-<td align="right">Geoq地图</td>
-<td align="right">geoqMap</td>
-<td align="right">坐标经度</td>
-<td align="right">坐标纬度</td>
-<td align="right">文本</td>
-<td align="right">取值1~18</td>
-</tr>
-<tr>
-<td align="right">openstreet地图</td>
-<td align="right">openstreetMap</td>
-<td align="right">坐标经度</td>
-<td align="right">坐标纬度</td>
-<td align="right">文本</td>
-<td align="right">取值1~18</td>
-</tr>
-</tbody></table>
-<table>
-<thead>
-<tr>
-<th align="right">地图名</th>
-<th align="right">宽(默认100%) &#x2F; 高(默认360px)</th>
-<th align="right">默认图层(默认1)</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="right">混合地图</td>
-<td align="right">百分数或具体值(100%或360px)</td>
-<td align="right">取值1~7</td>
-</tr>
-<tr>
-<td align="right">谷歌地图</td>
-<td align="right">百分数或具体值(100%或360px)</td>
-<td align="right">取值1~3</td>
-</tr>
-<tr>
-<td align="right">高德地图</td>
-<td align="right">百分数或具体值(100%或360px)</td>
-<td align="right">取值1~3</td>
-</tr>
-<tr>
-<td align="right">百度地图</td>
-<td align="right">百分数或具体值(100%或360px)</td>
-<td align="right">取值1~2</td>
-</tr>
-<tr>
-<td align="right">Geoq地图</td>
-<td align="right">百分数或具体值(100%或360px)</td>
-<td align="right">取值1~5</td>
-</tr>
-<tr>
-<td align="right">openstreet地图</td>
-<td align="right">百分数或具体值(100%或360px)</td>
-<td align="right">不支持此参数</td>
-</tr>
-</tbody></table>
-<ol>
-<li>参数之间，用<strong>英文逗号</strong>相隔</li>
-<li>参数必须按上述事例顺序输入，不得为空</li>
-<li><strong>同一个页面，同一组经纬度值，只能插入一个相同标签值的地图</strong>(若有需要，可以将第二个地图上，经度或纬度末尾删除一两个数)</li>
-<li>参数取值必须在上述范围内</li>
-<li>默认图层：即地图叠加层的值，默认常规地图还是卫星地图，可按地图显示顺序取值</li>
-<li><strong>缩放等级，数字越大，地图比例尺越小，显示的越精细</strong></li>
-<li>除<strong>标签值</strong>外，其他参数选填，但 <strong>每个参数的左边的参数必填</strong></li>
-<li>谷歌地图需要外网才能加载查看</li>
-</ol>
-<h1 id="Notes"><a href="#Notes" class="headerlink" title="Notes"></a>Notes</h1><hr>
-<h3 id="本地图片的调用"><a href="#本地图片的调用" class="headerlink" title="本地图片的调用"></a>本地图片的调用</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">my version</span></span><br><span class="line">hexo: 7.2.0</span><br><span class="line">hexo-cli: 4.3.2</span><br></pre></td></tr></table></figure>
-
-<ol>
-<li><p>手动新建<br>首先是在 _posts 文件夹下建立一个<code>本地图片的调用.md</code>，再建立一个同名的文件夹 <code>本地图片的调用</code>。</p>
-</li>
-<li><p>hexo代码新建<br>使用<code>hexo new post 本地图片的调用</code>，可以生成md文件的同时生成一个同名文件夹用于存储网页资源。</p>
-</li>
-</ol>
-<p>这篇文章要引用的图片就放在该文件夹下。比如我就在该目录下放一个图片<code>1.png</code>。</p>
-<p><img src="/2019/05/01/hello_world/1.png"></p>
-<p>然后在博文 MarkDown 文件里引用该图片：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">这里是图片注释</span>](<span class="link">../images/2019_05_01_hello_world/1.png</span>)</span><br></pre></td></tr></table></figure>
-
-<p><strong>为什么引用的时候不用加文件夹的路径呢？</strong></p>
-<p>这是因为 hexo 在渲染的时候，会把<code>本地图片的调用.md</code> 渲染为<code>public</code>下的 <code>本地图片的调用.html</code>网页文件，而把对应文件夹下的静态资源，比如图片 <code>1.png</code>也拷贝到<code>public</code>下!</p>
-<p>需要注意的是，在<code>hexo/source/_posts</code>目录下的图片文件名不能重复。</p>
-<h3 id="skip-render"><a href="#skip-render" class="headerlink" title="skip render"></a>skip render</h3><p>修改hexo根目录下_config.yml文件，</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">skip_render:</span></span><br><span class="line">	<span class="bullet">-</span> <span class="string">&#x27;_posts/templates/**&#x27;</span></span><br><span class="line">	<span class="bullet">-</span> <span class="string">&#x27;_posts/draft/**&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<p>目录结构：<br><code>- hexo/source/_posts/templates/</code> 保存post模版，供Obsidian快速开始Post编写。<br><code>- hexo/source/_posts/draft/</code> 保存未编辑完成，或不想共享的文章内容。</p>
-<p>设置跳过渲染之后，最好使用<code>hexo clean</code>清除以前的编译结果，保证配置生效。再使用<code>hexo g</code>查看。</p>
-<h3 id="自动generate"><a href="#自动generate" class="headerlink" title="自动generate"></a>自动generate</h3><p>定时or设置条件运行命令<code>docker exec -it hexo bash -c &quot;hexo clean &amp;&amp; hexo g&quot;</code>来自动编译。</p>
-<p><strong>踩坑：</strong> 直接在群晖的<code>控制面板</code> - <code>任务计划</code>中添加自定义脚本<code>docker exec -it hexo bash -c &quot;hexo clean &amp;&amp; hexo g&quot;</code>会报错<code>the input device is not a TTY</code>.</p>
-<p>tty一词源于Teletypes,或teletypewriters。这个的意思是说后台linux执行的时候没有终端设备。我们一般执行docker里的命令时候都喜欢加上-it 这个参数，这里的-t 就是表示伪tty。所以，如果我们docker执行后台运行的任务或者程序直接去除 -t 这个参数就不会出现这个报错了。</p>
-<p><strong>所以要用 <code>docker exec hexo bash -c &quot;hexo clean &amp;&amp; hexo g&quot;</code></strong></p>
-<p><strong>待改进：</strong> 设置了每天generate一次。如果设置成有变动就generate就更好了，暂时没想到办法。</p>
-<h3 id="视频嵌入"><a href="#视频嵌入" class="headerlink" title="视频嵌入"></a>视频嵌入</h3><p>现在视频基本上都会分享到各大平台，所以暂时主要以嵌入网络视频展示。<br>研究了几款插件，基本上都是年久失修，使用不易，最终还是选择了<code>iframe</code>嵌入。</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">%%bilibili视频嵌入%%</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;position: relative; width: 100%; height: 0; padding-bottom: 75%;&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">src</span>=<span class="string">&quot;//player.bilibili.com/player.html?aid=244387247&amp;cid=229573649&amp;page=1&quot;</span> <span class="attr">scrolling</span>=<span class="string">&quot;no&quot;</span> <span class="attr">border</span>=<span class="string">&quot;0&quot;</span> <span class="attr">frameborder</span>=<span class="string">&quot;no&quot;</span> <span class="attr">framespacing</span>=<span class="string">&quot;0&quot;</span> <span class="attr">allowfullscreen</span>=<span class="string">&quot;true&quot;</span> <span class="attr">style</span>=<span class="string">&quot;position: absolute; width: 100%; height: 100%; Left: 0; top: 0;&quot;</span> &gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span>  </span><br></pre></td></tr></table></figure>
-
-<p><a href="https://github.com/stephenmkbrady/hexo-tag-html5">hexo-tag-html5video</a></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install --save hexo-tag-html5video</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% html5video &#x27;100%&#x27; &#x27;250px&#x27; &#x27;video/mp4&#x27; %&#125; </span><br><span class="line">&#123;% asset<span class="emphasis">_path &lt;视频路径&gt; %&#125; </span></span><br><span class="line"><span class="emphasis">&#123;% endhtml5video %&#125;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="菜单导航配置"><a href="#菜单导航配置" class="headerlink" title="菜单导航配置"></a>菜单导航配置</h3><p>配置基本菜单导航的名称、路径url和图标icon.</p>
-<ol>
-<li>菜单导航名称可以是中文也可以是英文(如：<code>Index</code> 或 <code>主页</code>)</li>
-<li><code>External</code> 表示是否在新标签页打开连接</li>
-<li>导航地址可以是站内地址也可以是外网地址</li>
-</ol>
-<h3 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h3><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">hexo</span><br><span class="line"><span class="bullet">  -</span> node<span class="emphasis">_modules</span></span><br><span class="line"><span class="emphasis">  - scaffolds # 模板文件夹</span></span><br><span class="line"><span class="emphasis">    - draft.md # 草稿模板文件</span></span><br><span class="line"><span class="emphasis">    - page.md # 页面模板文件</span></span><br><span class="line"><span class="emphasis">    - post.md # 文章模板文件</span></span><br><span class="line"><span class="emphasis">  - source # 资源文件夹</span></span><br><span class="line"><span class="emphasis">    - _</span>drafts # 草稿文件夹</span><br><span class="line"><span class="bullet">    -</span> <span class="emphasis">_posts # post文件夹</span></span><br><span class="line"><span class="emphasis">    - images #图片文件夹</span></span><br><span class="line"><span class="emphasis">  - themes # 主题文件夹</span></span><br><span class="line"><span class="emphasis">    - ayer # 主题文件夹</span></span><br><span class="line"><span class="emphasis">      - _</span>config.yml # 主题配置文件</span><br><span class="line"><span class="bullet">      -</span> languages # 语言文件夹</span><br><span class="line"><span class="bullet">      -</span> layout # 布局文件夹</span><br><span class="line"><span class="bullet">      -</span> scripts # 脚本文件夹</span><br><span class="line"><span class="bullet">      -</span> source # 资源文件夹</span><br><span class="line"><span class="bullet">        -</span> css # 样式文件夹</span><br><span class="line"><span class="bullet">        -</span> fonts # 字体文件夹</span><br><span class="line"><span class="bullet">        -</span> images # 图片文件夹</span><br><span class="line"><span class="bullet">        -</span> js # 脚本文件夹</span><br><span class="line"><span class="bullet">  -</span> <span class="emphasis">_config.yml # 配置文件</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="本地图片的调用-1"><a href="#本地图片的调用-1" class="headerlink" title="本地图片的调用"></a>本地图片的调用</h3><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">这里是图片注释</span>](<span class="link">../images/2019_05_01_hello_world/1.png</span>)</span><br></pre></td></tr></table></figure>
-
-<h3 id="DIY-hexo-new-post"><a href="#DIY-hexo-new-post" class="headerlink" title="DIY hexo new post"></a>DIY hexo new post</h3><p>修改hexo根目录下_config.yml文件，</p>
-<ol>
-<li>为新建post自动加上当前日期，避免title重复，造成的一系列问题。</li>
-</ol>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Writing</span></span><br><span class="line"><span class="comment"># new_post_name: title.md # default setting</span></span><br><span class="line"><span class="attr">new_post_name:</span> <span class="string">:year_:month_:day_:title.md</span> </span><br><span class="line"><span class="comment"># new posts name as year_month_day_postname</span></span><br><span class="line"><span class="attr">default_layout:</span> <span class="string">post</span></span><br><span class="line"><span class="attr">titlecase:</span> <span class="literal">false</span> <span class="comment"># Transform title into titlecase</span></span><br><span class="line"><span class="attr">external_link:</span></span><br><span class="line"><span class="attr">enable:</span> <span class="literal">true</span> <span class="comment"># Open external links in new tab</span></span><br><span class="line"><span class="attr">field:</span> <span class="string">site</span> <span class="comment"># Apply to the whole site</span></span><br><span class="line"><span class="attr">exclude:</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="attr">filename_case:</span> <span class="number">0</span></span><br><span class="line"><span class="attr">render_drafts:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>为了使_post文件夹尽可能的精简，便于网盘同步，只保留md文件，图片等资源放在<code>source</code>目录下<code>images</code>文件夹内。</li>
-</ol>
-<figure class="highlight sqf"><table><tr><td class="code"><pre><span class="line">post_asset_folder: <span class="literal">false</span> </span><br><span class="line"># 改成<span class="literal">true</span>，则在<span class="variable">_post</span>新建下新建md文件的同时新建一个同名的文件夹用于存储当前页面的一些资源。</span><br></pre></td></tr></table></figure>
-
-<h3 id="引用文章"><a href="#引用文章" class="headerlink" title="引用文章"></a><a href="https://hexo.io/zh-cn/docs/tag-plugins#%E5%BC%95%E7%94%A8%E6%96%87%E7%AB%A0">引用文章</a></h3><p>引用其他文章的链接。</p>
-<figure class="highlight django"><table><tr><td class="code"><pre><span class="line"><span class="template-tag">&#123;% <span class="name">post_path</span> filename %&#125;</span><span class="language-xml">  </span></span><br><span class="line"><span class="language-xml"></span><span class="template-tag">&#123;% <span class="name">post_link</span> filename [title] [escape] %&#125;</span></span><br></pre></td></tr></table></figure>
-
-<p>在使用此标签时可以忽略文章文件所在的路径或者文章的永久链接信息、如语言、日期。</p>
-<p>例如，在文章中使用 <code>&#123;% post_link how-to-bake-a-cake %&#125;</code> 时，只需有一个名为 <code>how-to-bake-a-cake.md</code> 的文章文件即可。即使这个文件位于站点文件夹的 <code>source/posts/2015-02-my-family-holiday</code> 目录下、或者文章的永久链接是 <code>2018/en/how-to-bake-a-cake</code>，都没有影响。</p>
-<p>默认链接文字是文章的标题，你也可以自定义要显示的文本。</p>
-<p>默认对文章的标题和自定义标题里的特殊字符进行转义。可以使用 <code>escape</code> 选项，禁止对特殊字符进行转义。</p>
-<p>例如：</p>
-<p><strong>链接使用文章的标题</strong></p>
-<p><code>&#123;% post_link hexo-3-8-released %&#125;</code></p>
-<p><strong>链接使用自定义文字</strong></p>
-<p><code>&#123;% post_link hexo-3-8-released '通往文章的链接' %&#125;</code></p>
-<p><strong>对标题的特殊字符进行转义</strong></p>
-<figure class="highlight crmsh"><table><tr><td class="code"><pre><span class="line">&#123;% post_link hexo-<span class="number">4</span>-released &#x27;How to use <span class="tag">&lt;b&gt;</span> <span class="keyword">tag</span> <span class="title">in</span> title&#x27; %&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="动态自定义附件文件夹名称"><a href="#动态自定义附件文件夹名称" class="headerlink" title="动态自定义附件文件夹名称"></a>动态自定义附件文件夹名称</h3><p>插件 <strong>Custom Attachment Location</strong> ，安装后进行附件文件夹的设置:</p>
-<figure class="highlight xl"><table><tr><td class="code"><pre><span class="line">C<span class="function"><span class="title">ustom</span> Attachment Location --&gt;</span> L<span class="function"><span class="title">ocation</span> <span class="keyword">for</span> New Attachments --&gt;</span> ./$&#123;filename&#125;.assets （这样设置是为了与 Typora 兼容，正常显示 Typora 中创建的笔记的图片附件）</span><br></pre></td></tr></table></figure>
-
-<h1 id="post在首页全文展示问题"><a href="#post在首页全文展示问题" class="headerlink" title="post在首页全文展示问题"></a>post在首页全文展示问题</h1><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"># 主题config文件 ~/hexo/themes/ayer/_config.yml</span><br><span class="line"># 文章太长，截断按钮文字(在需要截断的行增加此标记：<span class="comment">&lt;!--more--&gt;</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-
-<p>More info:<br><a href="https://post.smzdm.com/p/agqol9zm/">晨聊 篇十七：markdown也变脸，obsidian + hexo 在群晖NAS上的双剑合璧</a></p>
-]]></content>
-      <categories>
-        <category>技术</category>
-        <category>博客</category>
-        <category>hexo</category>
-      </categories>
+<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">你是一个英语翻译团队的领导. 你会安排团队成员进行如下翻译, 实现翻译的&quot;信达雅&quot;目标:  </span><br><span class="line">  </span><br><span class="line">第一轮翻译<span class="comment">--信,追求直译, 将英文翻译成中文, 力求准确  </span></span><br><span class="line">  </span><br><span class="line">第二轮翻译<span class="comment">--达,在第一轮翻译的基础上, 考虑文化, 语境, 语义, 思考文字背后想要表达的意思, 进行意译, 力求意境契合, 记得分开思考和翻译内容。  </span></span><br><span class="line">  </span><br><span class="line">第三轮翻译<span class="comment">--雅, 基于第二轮翻译理解的语境含义, 进一步思考其中的哲理, 然后使用中国&lt;诗经&gt;的语言风格针对哲理和语义进行翻译, 力求简明, 古意盎然  </span></span><br><span class="line">  </span><br><span class="line">例如:  </span><br><span class="line">- you need you. 哲理部分，可以引申到佛家所说的&quot;莫向外求&quot;, 儒家所说的&quot;反求诸己&quot;, 然后思考使用诗经语言风格进行重新表述.  </span><br><span class="line">  </span><br><span class="line">- <span class="keyword">nothing</span> <span class="keyword">for</span> <span class="keyword">nothing</span>. 哲理部分，可以引申到诗句“世上本无事，庸人自扰之”，也可引申到俗语“尘归尘，土归土”  </span><br><span class="line">  </span><br><span class="line">第四轮翻译<span class="comment">--初审: 完成三轮翻译后， 深吸一口气， 缓一缓， 思考一下第三轮翻译的结果，与其哲理的偏差在哪？ 不要扩展太多，务求精练深刻，精辟是第一要义。 据此思路进行改进。  </span></span><br><span class="line">  </span><br><span class="line">第五轮翻译<span class="comment">--终审: 最终，你将亲自进行审稿， 你会对比原文和最后的翻译结果， 先思考《诗经》的语言表达风格要点，再审阅初审翻译的结果是否满足, 并给出你的审校修改结论。  </span></span><br><span class="line">  </span><br><span class="line">注意: 思考部分,请使用 【思考】 开头，翻译结果请使用【翻译】开头。  </span><br><span class="line">  </span><br><span class="line">请严格遵守以上工作流程， 对以下文字进行翻译：</span><br></pre></td></tr></table></figure>]]></content>
       <tags>
-        <tag>hexo</tag>
-        <tag>笔记</tag>
-        <tag>markdown</tag>
+        <tag>Prompt</tag>
+        <tag>AI</tag>
+        <tag>翻译</tag>
       </tags>
   </entry>
   <entry>
-    <title>这可能是我见过最好的 NumPy 图解教程！</title>
-    <url>/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
-<p>NumPy是Python中用于数据分析、机器学习、科学计算的重要软件包。它极大地简化了向量和矩阵的操作及处理。python的不少数据处理软件包依赖于NumPy作为其基础架构的核心部分（例如scikit-learn、SciPy、pandas和tensorflow）。除了数据切片和数据切块的功能之外，掌握numpy也使得开发者在使用各数据处理库调试和处理复杂用例时更具优势。</p>
-</blockquote>
-<p><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0001.png"></p>
-<p>在本文中，将介绍NumPy的主要用法，以及它如何呈现不同类型的数据（表格，图像，文本等），这些经Numpy处理后的数据将成为机器学习模型的输入。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br></pre></td></tr></table></figure>
+    <title>什么是PARA</title>
+    <url>/2024/04/29/whats_PARA/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>PARA 是一种组织知识的方法，全称为 “Progressive Authentication of Reliable Acumen”，中文可以译为“渐进式验证可靠洞察”。</p>
+<p>它是由 Tiago Forte 提出的，主要用于管理笔记和信息，以提高知识工作的效率。</p>
+<span id="more"></span>
 
-<h1 id="NumPy中的数组操作"><a href="#NumPy中的数组操作" class="headerlink" title="NumPy中的数组操作"></a>NumPy中的数组操作</h1><span id="more"></span>
-<h3 id="创建数组"><a href="#创建数组" class="headerlink" title="创建数组"></a>创建数组</h3><p>我们可以通过将python列表传入np.array()来创建一个NumPy数组（也就是强大的ndarray）。在下面的例子里，创建出的数组如右边所示，<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0002.png"></p>
-<p>通常情况下，我们希望NumPy为我们初始化数组的值，为此NumPy提供了诸如ones()，zeros()和random.random()之类的方法。我们只需传入元素个数即可：</p>
-<p><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0003.png"><br>一旦我们创建了数组，我们就可以用其做点有趣的应用了，文摘菌将在下文展开说明。</p>
-<h3 id="数组的算术运算"><a href="#数组的算术运算" class="headerlink" title="数组的算术运算"></a>数组的算术运算</h3><p>让我们创建两个NumPy数组，分别称作data和ones：</p>
-<p><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0004.png"><br>若要计算两个数组的加法，只需简单地敲入data + ones，就可以实现对应位置上的数据相加的操作（即每行数据进行相加），这种操作比循环读取数组的方法代码实现更加简洁。<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0005.png"></p>
-<p>当然，在此基础上举一反三，也可以实现减法、乘法和除法等操作：<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0006.png"><br>许多情况下，我们希望进行数组和单个数值的操作（也称作向量和标量之间的操作）。比如：如果数组表示的是以英里为单位的距离，我们的目标是将其转换为公里数。可以简单的写作<code>data \* 1.6</code>：<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0007.png"></p>
-<p>NumPy通过数组广播（broadcasting）知道这种操作需要和数组的每个元素相乘。</p>
-<h3 id="数组的切片操作"><a href="#数组的切片操作" class="headerlink" title="数组的切片操作"></a>数组的切片操作</h3><p>我们可以像python列表操作那样对NumPy数组进行索引和切片，如下图所示：  </p>
-<p><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0008.png"></p>
-<h3 id="聚合函数"><a href="#聚合函数" class="headerlink" title="聚合函数"></a>聚合函数</h3><p>NumPy为我们带来的便利还有聚合函数，聚合函数可以将数据进行压缩，统计数组中的一些特征值：<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0009.png"></p>
-<p>除了<code>min</code>，<code>max</code>和<code>sum</code>等函数，还有<code>mean（均值）</code>，<code>prod（数据乘法）</code>计算所有元素的乘积，std（标准差），等等。上面的所有例子都在一个维度上处理向量。除此之外，NumPy之美的一个关键之处是它能够将之前所看到的所有函数应用到任意维度上。</p>
-<h1 id="NumPy中的矩阵操作"><a href="#NumPy中的矩阵操作" class="headerlink" title="NumPy中的矩阵操作"></a>NumPy中的矩阵操作</h1><h3 id="创建矩阵"><a href="#创建矩阵" class="headerlink" title="创建矩阵"></a>创建矩阵</h3><p>我们可以通过将二维列表传给Numpy来创建矩阵。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">np.array([[<span class="number">1</span>,<span class="number">2</span>],[<span class="number">3</span>,<span class="number">4</span>]])</span><br></pre></td></tr></table></figure>
-
-<p><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0010.png"><br>除此外，也可以使用上文提到的<code>ones()</code>、<code>zeros()</code>和<code>random.random()</code>来创建矩阵，只需传入一个元组来描述矩阵的维度：  </p>
-<p><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0011.png"></p>
-<h3 id="矩阵的算术运算"><a href="#矩阵的算术运算" class="headerlink" title="矩阵的算术运算"></a>矩阵的算术运算</h3><p>对于大小相同的两个矩阵，我们可以使用算术运算符（<code>+-\*/</code>）将其相加或者相乘。NumPy对这类运算采用对应位置（position-wise）操作处理：  </p>
-<p><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0012.png"><br>对于不同大小的矩阵，只有两个矩阵的维度同为1时（例如矩阵只有一列或一行），我们才能进行这些算术运算，在这种情况下，NumPy使用广播规则（broadcast）进行操作处理：<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0013.png"><br>与算术运算有很大区别是使用点积的矩阵乘法。NumPy提供了<code>dot()</code>方法，可用于矩阵之间进行点积运算：<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0014.png"></p>
-<p>上图的底部添加了矩阵尺寸，以强调运算的两个矩阵在列和行必须相等。可以将此操作图解为如下所示：<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0015.png"></p>
-<h3 id="矩阵的切片和聚合"><a href="#矩阵的切片和聚合" class="headerlink" title="矩阵的切片和聚合"></a>矩阵的切片和聚合</h3><p>索引和切片功能在操作矩阵时变得更加有用。可以在不同维度上使用索引操作来对数据进行切片。  </p>
-<p><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0016.png"></p>
-<p>我们可以像聚合向量一样聚合矩阵：</p>
-<p><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0017.png"></p>
-<p>不仅可以聚合矩阵中的所有值，还可以使用<code>axis</code>参数指定行和列的聚合：</p>
-<p><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0018.png"></p>
-<h3 id="矩阵的转置和重构"><a href="#矩阵的转置和重构" class="headerlink" title="矩阵的转置和重构"></a>矩阵的转置和重构</h3><p>处理矩阵时经常需要对矩阵进行转置操作，常见的情况如计算两个矩阵的点积。NumPy数组的属性T可用于获取矩阵的转置。</p>
-<p><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0019.png"></p>
-<p>在较为复杂的用例中，你可能会发现自己需要改变某个矩阵的维度。这在机器学习应用中很常见，例如模型的输入矩阵形状与数据集不同，可以使用NumPy的<code>reshape()</code>方法。只需将矩阵所需的新维度传入即可。也可以传入-1，NumPy可以根据你的矩阵推断出正确的维度：<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0020.png"></p>
-<p>上文中的所有功能都适用于多维数据，其中心数据结构称为ndarray（N维数组）。</p>
-<p><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0021.png"></p>
-<p>很多时候，改变维度只需在NumPy函数的参数中添加一个逗号，如下图所示：</p>
-<p><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0022.png"></p>
-<h1 id="NumPy中的公式应用示例"><a href="#NumPy中的公式应用示例" class="headerlink" title="NumPy中的公式应用示例"></a>NumPy中的公式应用示例</h1><p>NumPy的关键用例是实现适用于矩阵和向量的数学公式。这也Python中常用NumPy的原因。例如，均方误差是监督机器学习模型处理回归问题的核心：</p>
-<p><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0023.png"></p>
-<p>在NumPy中可以很容易地实现均方误差：<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0024.png"></p>
-<p>这样做的好处是，numpy无需考虑predictions与labels具体包含的值。文摘菌将通过一个示例来逐步执行上面代码行中的四个操作：<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0025.png"></p>
-<p>预测（predictions）和标签（labels）向量都包含三个值。这意味着n的值为3。在我们执行减法后，我们最终得到如下值：<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0026.png"></p>
-<p>然后我们可以计算向量中各值的平方：<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0027.png"></p>
-<p>现在我们对这些值求和：<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0028.png"></p>
-<p>最终得到该预测的误差值和模型质量分数。</p>
-<h1 id="用NumPy表示日常数据"><a href="#用NumPy表示日常数据" class="headerlink" title="用NumPy表示日常数据"></a>用NumPy表示日常数据</h1><p>日常接触到的数据类型，如电子表格，图像，音频……等，如何表示呢？Numpy可以解决这个问题。</p>
-<h3 id="表和电子表格"><a href="#表和电子表格" class="headerlink" title="表和电子表格"></a>表和电子表格</h3><p>电子表格或数据表都是二维矩阵。电子表格中的每个工作表都可以是自己的变量。python中类似的结构是pandas数据帧（dataframe），它实际上使用NumPy来构建的。<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0029.png"></p>
-<h3 id="音频和时间序列"><a href="#音频和时间序列" class="headerlink" title="音频和时间序列"></a>音频和时间序列</h3><p>音频文件是一维样本数组。每个样本都是代表一小段音频信号的数字。CD质量的音频每秒可能有44,100个采样样本，每个样本是一个-65535到65536之间的整数。这意味着如果你有一个10秒的CD质量的WAVE文件，你可以将它加载到长度为10 * 44,100 &#x3D; 441,000个样本的NumPy数组中。想要提取音频的第一秒？只需将文件加载到我们称之为audio的NumPy数组中，然后截取audio[:44100]。</p>
-<p>以下是一段音频文件：<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0030.png"></p>
-<p>时间序列数据也是如此（例如，股票价格随时间变化的序列）。</p>
-<h3 id="图像"><a href="#图像" class="headerlink" title="图像"></a>图像</h3><p>图像是大小为（高度×宽度）的像素矩阵。如果图像是黑白图像（也称为灰度图像），则每个像素可以由单个数字表示（通常在0（黑色）和255（白色）之间）。如果对图像做处理，裁剪图像的左上角10 x 10大小的一块像素区域，用NumPy中的image[:10,:10]就可以实现。</p>
-<p>这是一个图像文件的片段：<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0031.png"></p>
-<p>如果图像是彩色的，则每个像素由三个数字表示 ：红色，绿色和蓝色。在这种情况下，我们需要第三维（因为每个单元格只能包含一个数字）。因此彩色图像由尺寸为(高x宽x 3）的ndarray表示。<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0032.png"></p>
-<h3 id="语言"><a href="#语言" class="headerlink" title="语言"></a>语言</h3><p>如果我们处理文本，情况就会有所不同。用数字表示文本需要两个步骤，构建词汇表（模型知道的所有唯一单词的清单）和嵌入（embedding）。让我们看看用数字表示这个（翻译的）古语引用的步骤：“Have the bards who preceded me left any theme unsung?”</p>
-<p>模型需要先训练大量文本才能用数字表示这位战场诗人的诗句。我们可以让模型处理一个小数据集，并使用这个数据集来构建一个词汇表（71,290个单词）：<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0033.png"></p>
-<p>然后可以将句子划分成一系列“词”token（基于通用规则的单词或单词部分）：<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0034.png"></p>
-<p>然后我们用词汇表中的id替换每个单词：<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0035.png"></p>
-<p>这些ID仍然不能为模型提供有价值的信息。因此，在将一系列单词送入模型之前，需要使用嵌入（embedding）来替换token&#x2F;单词（在本例子中使用50维度的word2vec嵌入)：<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0036.png"></p>
-<p>你可以看到此NumPy数组的维度为[embedding_dimension x sequence_length]。</p>
-<p>在实践中，这些数值不一定是这样的，但我以这种方式呈现它是为了视觉上的一致。出于性能原因，深度学习模型倾向于保留批数据大小的第一维（因为如果并行训练多个示例，则可以更快地训练模型）。很明显，这里非常适合使用reshape()。例如，像BERT这样的模型会期望其输入矩阵的形状为：[batch_size，sequence_length，embedding_size]。<br><img src="/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/0037.png"></p>
-<p>这是一个数字合集，模型可以处理并执行各种有用的操作。我留空了许多行，可以用其他示例填充以供模型训练（或预测）。</p>
-<p>事实证明，在我们的例子中，那位诗人的话语比其他诗人的诗句更加名垂千古。尽管生而为奴，诗人安塔拉（Antarah）的英勇和语言能力使他获得了自由和神话般的地位，他的诗是伊斯兰教以前的阿拉伯半岛《悬诗》的七首诗之一。</p>
+<p>PARA 主要包含四个层级，每个层级都有其特定的功能和目的：</p>
+<ol>
+<li><strong>项目（Projects）</strong>：这是 PARA 结构中的最高层级，代表着你正在进行的各种项目或目标。每个项目都应该是独立的，有明确的开始和结束。</li>
+<li><strong>领域（Areas））：</strong>这个层级代表你感兴趣或需要管理的不同领域或主题，如工作、健康、学习等。领域通常是持久的，不会像项目那样有明确的结束。</li>
+<li><strong>资源（Resources）</strong>：资源是指那些可以跨项目和领域重复使用的具体信息或知识，如文章、教程、工具等。这个层级的目的是为了积累和整理那些可能有用的信息。</li>
+<li><strong>行动（Actions）</strong>：这是最低的层级，包括了具体的行动项或待办事项。这些通常是短期任务，需要被执行或跟踪。</li>
+</ol>
+<p>PARA 方法的一个关键特点是灵活性和可定制性，它允许用户根据自己的需要调整和组织信息。这种方法特别适合那些需要处理大量信息并希望提高工作效率的人。通过使用 PARA，用户可以更有效地管理他们的知识和任务，从而提高生产力。</p>
 ]]></content>
-      <categories>
-        <category>技术</category>
-        <category>数据分析</category>
-        <category>numpy</category>
-      </categories>
       <tags>
-        <tag>笔记</tag>
-        <tag>python</tag>
-        <tag>numpy</tag>
+        <tag>方法论</tag>
+        <tag>PARA</tag>
       </tags>
   </entry>
   <entry>
@@ -11378,8 +11328,8 @@
       </categories>
       <tags>
         <tag>笔记</tag>
-        <tag>Obsidian</tag>
         <tag>插件</tag>
+        <tag>Obsidian</tag>
         <tag>分享</tag>
         <tag>webdav</tag>
       </tags>
@@ -11476,37 +11426,87 @@
       </tags>
   </entry>
   <entry>
-    <title>有意思的翻译PROMPT</title>
-    <url>/2024/04/29/%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84%E7%BF%BB%E8%AF%91PROMPT/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><img src="/2024/04/29/%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84%E7%BF%BB%E8%AF%91PROMPT/image-20240428223752145.jpeg"></p>
-<span id="more"></span>
-
-<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">你是一个英语翻译团队的领导. 你会安排团队成员进行如下翻译, 实现翻译的&quot;信达雅&quot;目标:  </span><br><span class="line">  </span><br><span class="line">第一轮翻译<span class="comment">--信,追求直译, 将英文翻译成中文, 力求准确  </span></span><br><span class="line">  </span><br><span class="line">第二轮翻译<span class="comment">--达,在第一轮翻译的基础上, 考虑文化, 语境, 语义, 思考文字背后想要表达的意思, 进行意译, 力求意境契合, 记得分开思考和翻译内容。  </span></span><br><span class="line">  </span><br><span class="line">第三轮翻译<span class="comment">--雅, 基于第二轮翻译理解的语境含义, 进一步思考其中的哲理, 然后使用中国&lt;诗经&gt;的语言风格针对哲理和语义进行翻译, 力求简明, 古意盎然  </span></span><br><span class="line">  </span><br><span class="line">例如:  </span><br><span class="line">- you need you. 哲理部分，可以引申到佛家所说的&quot;莫向外求&quot;, 儒家所说的&quot;反求诸己&quot;, 然后思考使用诗经语言风格进行重新表述.  </span><br><span class="line">  </span><br><span class="line">- <span class="keyword">nothing</span> <span class="keyword">for</span> <span class="keyword">nothing</span>. 哲理部分，可以引申到诗句“世上本无事，庸人自扰之”，也可引申到俗语“尘归尘，土归土”  </span><br><span class="line">  </span><br><span class="line">第四轮翻译<span class="comment">--初审: 完成三轮翻译后， 深吸一口气， 缓一缓， 思考一下第三轮翻译的结果，与其哲理的偏差在哪？ 不要扩展太多，务求精练深刻，精辟是第一要义。 据此思路进行改进。  </span></span><br><span class="line">  </span><br><span class="line">第五轮翻译<span class="comment">--终审: 最终，你将亲自进行审稿， 你会对比原文和最后的翻译结果， 先思考《诗经》的语言表达风格要点，再审阅初审翻译的结果是否满足, 并给出你的审校修改结论。  </span></span><br><span class="line">  </span><br><span class="line">注意: 思考部分,请使用 【思考】 开头，翻译结果请使用【翻译】开头。  </span><br><span class="line">  </span><br><span class="line">请严格遵守以上工作流程， 对以下文字进行翻译：</span><br></pre></td></tr></table></figure>]]></content>
+    <title>GoPro Hero最实用的四个必备配件:打造完美生态</title>
+    <url>/2022/03/15/GoproHero/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><hr>
+<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">
+<iframe src="//player.bilibili.com/player.html?aid=244387247&bvid=BV1Av411174q&cid=229573649&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; Left: 0; top: 0;" ></iframe></div> 
+]]></content>
+      <categories>
+        <category>数码</category>
+        <category>相机</category>
+      </categories>
       <tags>
-        <tag>Prompt</tag>
-        <tag>AI</tag>
-        <tag>翻译</tag>
+        <tag>数码</tag>
+        <tag>相机</tag>
       </tags>
   </entry>
   <entry>
-    <title>什么是PARA</title>
-    <url>/2024/04/29/whats_PARA/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>PARA 是一种组织知识的方法，全称为 “Progressive Authentication of Reliable Acumen”，中文可以译为“渐进式验证可靠洞察”。</p>
-<p>它是由 Tiago Forte 提出的，主要用于管理笔记和信息，以提高知识工作的效率。</p>
+    <title>菜谱</title>
+    <url>/2022/04/19/%E8%8F%9C%E8%B0%B1/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="空气炸锅鸡排"><a href="#空气炸锅鸡排" class="headerlink" title="空气炸锅鸡排"></a>空气炸锅鸡排</h1><ul>
+<li>温度：200度</li>
+<li>时间：8分钟 + 4分钟</li>
+</ul>
+<h1 id="空气炸锅健身食品"><a href="#空气炸锅健身食品" class="headerlink" title="空气炸锅健身食品"></a>空气炸锅健身食品</h1><ul>
+<li>鸡胸肉（黑胡椒、13香、橄榄油）</li>
+<li>地瓜（切块、橄榄油）</li>
+<li>温度：180度</li>
+<li>时间：15分钟</li>
+</ul>
 <span id="more"></span>
-
-<p>PARA 主要包含四个层级，每个层级都有其特定的功能和目的：</p>
+<p><a href="https://www.youtube.com/watch?v=D8O7myqk0Bw">健身食品制作视频</a></p>
+<h1 id="阳春面调料"><a href="#阳春面调料" class="headerlink" title="阳春面调料"></a>阳春面调料</h1><ul>
+<li>生抽、陈醋、盐、香油或猪油、葱花</li>
+</ul>
+<h1 id="爆炒香辣鱿鱼"><a href="#爆炒香辣鱿鱼" class="headerlink" title="爆炒香辣鱿鱼"></a>爆炒香辣鱿鱼</h1><p>食材：</p>
+<ul>
+<li>鱿鱼须、葱、姜、洋葱、料酒、豆瓣酱、生抽、老抽、蚝油、白糖、盐、熟芝麻</li>
+</ul>
+<p>做法：</p>
 <ol>
-<li><strong>项目（Projects）</strong>：这是 PARA 结构中的最高层级，代表着你正在进行的各种项目或目标。每个项目都应该是独立的，有明确的开始和结束。</li>
-<li><strong>领域（Areas））：</strong>这个层级代表你感兴趣或需要管理的不同领域或主题，如工作、健康、学习等。领域通常是持久的，不会像项目那样有明确的结束。</li>
-<li><strong>资源（Resources）</strong>：资源是指那些可以跨项目和领域重复使用的具体信息或知识，如文章、教程、工具等。这个层级的目的是为了积累和整理那些可能有用的信息。</li>
-<li><strong>行动（Actions）</strong>：这是最低的层级，包括了具体的行动项或待办事项。这些通常是短期任务，需要被执行或跟踪。</li>
+<li>鱿鱼洗净切好备用，冷水下锅，加入姜片、葱段、1勺料酒，焯水捞出备用</li>
+<li>锅中油热，倒入洋葱丝，炒出香味，加入1勺豆瓣酱炒出红油，倒入焯好水的鱿鱼须，翻炒上色</li>
+<li>加入1勺生抽、半勺老抽、1勺蚝油、适量白糖、少许盐、1勺熟芝麻，翻炒均匀，撒上葱花即可</li>
 </ol>
-<p>PARA 方法的一个关键特点是灵活性和可定制性，它允许用户根据自己的需要调整和组织信息。这种方法特别适合那些需要处理大量信息并希望提高工作效率的人。通过使用 PARA，用户可以更有效地管理他们的知识和任务，从而提高生产力。</p>
 ]]></content>
+      <categories>
+        <category>生活</category>
+        <category>菜谱</category>
+      </categories>
       <tags>
-        <tag>方法论</tag>
-        <tag>PARA</tag>
+        <tag>菜谱</tag>
+        <tag>下酒菜</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>澳洲家中日常必备清单</title>
+    <url>/2022/05/19/%E6%BE%B3%E6%B4%B2%E5%AE%B6%E4%B8%AD%E6%97%A5%E5%B8%B8%E5%BF%85%E5%A4%87%E6%B8%85%E5%8D%95/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>1⃣️ CEPACAINE漱口水！ 治疗牙龈肿痛，口腔溃疡。澳洲医生推荐买的，超级有效！猫猫家必备的，再也没有牙口烦恼。 购买地址：Chemist有售 💰价格：$15.49 问题在口腔，吃啥啥不香，买它！喵～</p>
+<hr>
+<p>2⃣️ Quick EZE胃糖 腹胀、胃酸、胃痛。消化不良、吃颗糖就能缓解～ 主要是这糖咋还那么好吃！ 购买地址：Chemist 💰价格：$4.99 胃也需要轻轻安抚，买它！喵～</p>
+<span id="more"></span>
+<hr>
+<p>3⃣️ VICKS 通鼻喷剂 在澳洲总感觉鼻子不适，鼻炎老犯，尤其总是鼻塞。这个通鼻喷剂起效快，薄荷味柔和不刺激。 购买地址：Chemist 💰价格$11.99 杜绝张口呼吸，买它！喵～</p>
+<hr>
+<p>4⃣️ Refresh眼药水 在家学习、工作、打游戏、熬夜，眼睛干涩的话最使用用人工泪液成分的眼药水。无刺激，缓解眼睛疲劳，闺蜜们都在用。 购买地址：Chemist 💰价格$13.49 缓解就靠累上加泪。买它，喵～</p>
+<hr>
+<p>5⃣️ LeQure Detox Soap排毒香皂 这款味道超级淡，小众然鹅超棒！主要可以用来控油去杂质。背部长痘痘的宝宝们一定要试试。滋养加排毒，姐妹推荐的，用过也感觉很好。 购买地址：Chemist 💰价格：$5.99 永远不进毒圈，买它，喵～</p>
+<hr>
+<p>6⃣️ Naprogesic止痛片 姨妈期最好的止痛片咯，因为成分对胃损伤小，刺激小。而且止痛的效果起效更快，当地女生首选经期续命药。小蓝片好多朋友都在用。 购买地址：Chemist 💰价格：$7.99 连我姨妈都在用！买它，喵～</p>
+<hr>
+<p>7⃣️ Dettol 洗衣消毒液 家里养宠物的朋友洗衣服都会用这个帮忙杀菌！能灭杀99.9%的细菌。尤其是合租又共用洗衣机的话这个肯定要买！ 购买地址：Coles、 WWS有售 💰价格：$8.99 再也不怕室友用洗衣机洗袜子了，买它！喵～</p>
+<hr>
+<p>8⃣️ Mr muscle通道强力剂！ 水槽，浴室如果都便秘了，那主人可就更难受了。 超强清下水道秘方，家家必备的男人。尤其是掉头发比较多的女生经常会堵掉下水道。用它就可以畅通哦。 购买地址：Coles、WWS有售 💰价格：$13.7 搞定下水道，心情好到爆，买它！喵～</p>
+<hr>
+]]></content>
+      <categories>
+        <category>生活</category>
+        <category>好物推荐</category>
+      </categories>
+      <tags>
+        <tag>推荐</tag>
+        <tag>日常</tag>
       </tags>
   </entry>
 </search>
