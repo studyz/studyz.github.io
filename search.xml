@@ -272,113 +272,6 @@
       </tags>
   </entry>
   <entry>
-    <title>群晖Git部署Hexo</title>
-    <url>/2019/05/06/Git_Hexo/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="一、前期准备"><a href="#一、前期准备" class="headerlink" title="一、前期准备"></a>一、前期准备</h2><h3 id="1-1-注册-账号-Gitee-GitHub"><a href="#1-1-注册-账号-Gitee-GitHub" class="headerlink" title="1.1 注册 账号 Gitee&#x2F;GitHub"></a>1.1 注册 账号 Gitee&#x2F;GitHub</h3><p>注册一个属于自己的 Github 或 Gitee 账号，</p>
-<p>Gitee在国内访问速度更快，但Gitee需要上传身份证照片若干张进行实名认证，懒得掏身份证，pass掉。</p>
-<span id="more"></span>
-<p><img src="/2019/05/06/Git_Hexo/%E5%AE%9E%E5%90%8D%E9%AA%8C%E8%AF%81.png" alt="实名认证"></p>
-<p>本文采用 Github 演示。 </p>
-<h3 id="1-2-安装-Git"><a href="#1-2-安装-Git" class="headerlink" title="1.2 安装 Git"></a>1.2 安装 Git</h3><p>选择对应的系统平台，下载后，傻瓜式安装即可。 安装完成后，打开运行 –&gt; 输入命令，回车打开命令行窗口 输入以下Git指令</p>
-<figure class="highlight ada"><table><tr><td class="code"><pre><span class="line">git <span class="comment">--version</span></span><br></pre></td></tr></table></figure>
-
-<p>出现版本号，即代表 git 安装成功</p>
-<h3 id="1-3-Git-和-Github-建立联系"><a href="#1-3-Git-和-Github-建立联系" class="headerlink" title="1.3 Git 和 Github 建立联系"></a>1.3 Git 和 Github 建立联系</h3><p>任意目录下，打开 git bash 命令行，输入以下命令生成公钥：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C 邮箱</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">为了管理多个密钥，你可以在生成密钥时为每个密钥指定不同的文件名</span></span><br><span class="line">ssh-keygen -t rsa -C &quot;your_email@example.com&quot; -f ~/.ssh/id_rsa_example_com</span><br></pre></td></tr></table></figure>
-
-
-<p>回车出现 （y&#x2F;n）, 输入 y , 连续点击回车，即可生成。</p>
-<p>在<code>~/.ssh</code> 目录，找到 <code>id_rsa_example_com.pub</code> 文件，<code>cat ~/.ssh/id_rsa_example_com.pub</code>获取公钥。</p>
-<p>到GitHub找到 <code>设置</code> 并打开，找到左侧栏 <code>Access</code>下找到<code>SSH and GPG keys</code>，点击<code>New SSH keys</code>，添加 <code>Title</code> 和 <code>Key</code></p>
-<p>云端仓库创建完成的 gitee，更改远程仓库 URL 为 SSH</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">chmod 600 ~/.ssh/id_rsa_*</span><br><span class="line">chown your_username:users ~/.ssh/id_rsa_*</span><br></pre></td></tr></table></figure>
-
-
-<p><strong>输入以下指令，进行全局配置：</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;你的用户名&quot;</span><br><span class="line">git config --global user.email &quot;你的邮箱&quot;</span><br></pre></td></tr></table></figure>
-
-<p>查看config文件是否存在，不存在新建<code>touch config</code>,<br> config文件内容如下：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">Host github.com</span><br><span class="line">    User git</span><br><span class="line">    IdentityFile ~/.ssh/id_rsa_example_com</span><br><span class="line">    PreferredAuthentications publickey</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">测试连接</span></span><br><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
-
-
-
-<p>将纳入版本库的文件，提交到 gitee 远程仓库：</p>
-<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">add</span> .</span><br><span class="line">git commit -m <span class="string">&#x27;first commit&#x27;</span></span><br><span class="line">git remote <span class="built_in">add</span> origin 你的仓库地址</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
-
-<p>此时，提交完成，打开浏览器，输入你的仓库地址，刷新即可看到文件。</p>
-<ol>
-<li><code>hexo clean</code>: 这个命令用于清理缓存文件和已生成的静态文件。它删除了<code>public</code>文件夹中的内容以及<code>.hexo</code>文件夹中的缓存文件。这是在部署博客之前的一个好习惯，因为它确保了生成的静态文件是最新的，避免了由于旧的缓存或文件导致的潜在问题。</li>
-<li><code>hexo deploy</code>: 这个命令用于将博客部署到服务器上。在执行这个命令之前，Hexo会生成所有的静态文件，并根据<code>_config.yml</code>文件中的<code>deploy</code>部分配置将它们上传到指定的服务器。这通常涉及到将文件推送到GitHub Pages、FTP服务器或其他静态网站托管服务。</li>
-</ol>
-<figure class="highlight 1c"><table><tr><td class="code"><pre><span class="line">$ hexo clean <span class="meta">&amp;&amp; hexo deploy</span></span><br></pre></td></tr></table></figure>
-
-<p>在NAS上定时执行<code>hexo clean &amp;&amp; hexo deploy</code>，实现自动更新内容。</p>
-]]></content>
-      <categories>
-        <category>技术</category>
-        <category>博客</category>
-        <category>hexo</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-        <tag>笔记</tag>
-        <tag>技术</tag>
-        <tag>ssh</tag>
-        <tag>GitHub</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>苹果全平台无缝同步群晖Obsidian库</title>
-    <url>/2019/05/24/Apple%E5%85%A8%E5%B9%B3%E5%8F%B0%E6%97%A0%E7%BC%9D%E5%90%8C%E6%AD%A5%E7%BE%A4%E6%99%96Obsidian%E5%BA%93/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><strong>前提介绍：</strong></p>
-<blockquote>
-<p><a href="https://obsidian.md/">Obsidian</a>是一款基于Markdown的笔记软件，以其强大的链接和标签功能、本地化存储及丰富的插件生态，为用户提供高效的知识管理和创作体验。 </p>
-</blockquote>
-<blockquote>
-<p><a href="https://www.synology.cn/zh-cn">群晖NAS</a>是一种基于网络连接的存储设备，它提供集中管理和共享文件的平台，支持多种功能，如数据备份、多媒体服务器等，方便用户随时随地访问和管理数据。</p>
-</blockquote>
-<h2 id="本文的目的"><a href="#本文的目的" class="headerlink" title="本文的目的"></a>本文的目的</h2><p><a href="https://obsidian.md/">Obsidian</a>作为一款优秀的markdown笔记软件，非常适合搭配hexo撰写blog。</p>
-<p>通过macOS上群晖Drive将hexo的post目录同步到iCloud，实现macOS和群晖drive的同步，然后通过iCloud在不同苹果设备上同步hexo的post目录，实现任意苹果设备撰写blog都可以在macOS通过群晖drive将新blog内容同步至群晖，再由群晖将内容自动布置到GitHub，实现blog网站的自动更新。</p>
-<span id="more"></span>
-
-
-<div class="markmap-container" style="height:400px">
-  <svg data="{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:1,&quot;p&quot;:{&quot;lines&quot;:[1,2]},&quot;v&quot;:&quot;Blog内容同步与自动更新流程&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:2,&quot;p&quot;:{&quot;lines&quot;:[3,4]},&quot;v&quot;:&quot;macOS&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[4,5]},&quot;v&quot;:&quot;群晖Drive&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:5,&quot;p&quot;:{&quot;lines&quot;:[5,6]},&quot;v&quot;:&quot;同步Hexo的post目录到iCloud&quot;}]}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:2,&quot;p&quot;:{&quot;lines&quot;:[7,8]},&quot;v&quot;:&quot;iCloud&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:4,&quot;p&quot;:{&quot;lines&quot;:[8,9]},&quot;v&quot;:&quot;同步Hexo的post目录&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:4,&quot;p&quot;:{&quot;lines&quot;:[9,10]},&quot;v&quot;:&quot;跨苹果设备同步&quot;}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:2,&quot;p&quot;:{&quot;lines&quot;:[11,12]},&quot;v&quot;:&quot;苹果设备&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[12,13]},&quot;v&quot;:&quot;任意设备&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:5,&quot;p&quot;:{&quot;lines&quot;:[13,14]},&quot;v&quot;:&quot;撰写blog&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:5,&quot;p&quot;:{&quot;lines&quot;:[14,15]},&quot;v&quot;:&quot;通过iCloud同步到macOS&quot;}]}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:2,&quot;p&quot;:{&quot;lines&quot;:[16,17]},&quot;v&quot;:&quot;macOS（继续）&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[17,18]},&quot;v&quot;:&quot;群晖Drive（继续）&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:5,&quot;p&quot;:{&quot;lines&quot;:[18,19]},&quot;v&quot;:&quot;将新blog内容同步至群晖&quot;}]}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:2,&quot;p&quot;:{&quot;lines&quot;:[20,21]},&quot;v&quot;:&quot;群晖&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:4,&quot;p&quot;:{&quot;lines&quot;:[21,22]},&quot;v&quot;:&quot;将内容自动布置到GitHub&quot;}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:2,&quot;p&quot;:{&quot;lines&quot;:[23,24]},&quot;v&quot;:&quot;GitHub&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:4,&quot;p&quot;:{&quot;lines&quot;:[24,25]},&quot;v&quot;:&quot;自动更新blog网站&quot;}]}]}"></svg>
-</div>
-
-
-
-<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><blockquote>
-<p>iPadOS和iOS端Obsidian只能识别打开iCloud Drive中Obsidian目录下的库，但macOS端的群晖Drive同步目录找不到iCloud目录，也就无法从iCloud同步至群晖。</p>
-</blockquote>
-<h2 id="解决步骤"><a href="#解决步骤" class="headerlink" title="解决步骤"></a>解决步骤</h2><h3 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h3><p>全部苹果设备开启 iCloud 同步，在 iOS&#x2F;iPadOS 下打开 obsidian 新建库，会自动生成一个<code>welcome.md</code>文件。</p>
-<h3 id="第二步"><a href="#第二步" class="headerlink" title="第二步"></a>第二步</h3><p>打开 macOS 访达，左侧打开 iCloud 云盘，点 obsidian 图标文件下载到本地管理（云箭头表示还在云上）。</p>
-<h3 id="第三步"><a href="#第三步" class="headerlink" title="第三步"></a>第三步</h3><p>显示 Mac 隐藏文件的两种方法：</p>
-<ol>
-<li>mac 终端中输入入命令：<code>defaults write com.apple.finder AppleShowAllFiles -bool true; killall Finder</code>  。</li>
-<li>快捷键组合：<code>⌘+⇧+。</code></li>
-</ol>
-<p>隐藏文件显示后，找到自己用户名下的资源库，在上方菜单栏<code>显示</code>-<code>查看显示选项</code>（<code>⌘+J</code>）中勾选<code>显示资源库文件夹</code>，这样就可以在群晖Drive同步软件中定位到 iCloud 内的文件夹。</p>
-<h3 id="第四步"><a href="#第四步" class="headerlink" title="第四步"></a>第四步</h3><p>macOS 打开群晖的配套同步软件<code>群晖 Drive Client</code>设置，创建选定<code>mac</code>用户名下<code>library</code>中的<code>moblie documents</code>文件，翻到iCloud前缀的obsidian文件夹，同步之前 iOS 中新建的库即可。</p>
-<h3 id="第五步"><a href="#第五步" class="headerlink" title="第五步"></a>第五步</h3><p>macOS 中iCloud下 Obsidian 打开库文件夹，在网络 nas 中即可找到此 iOS&#x2F;iPadOS 新建的库。</p>
-<p>完成之后，关闭显示 Mac 隐藏文件：<code>defaults write com.apple.finder AppleShowAllFiles -boolean false ; killall Finder</code></p>
-<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><p>实测多设备下修改输入，几乎都是秒刷到账，唯一要担心的是删的太快，如果在一处误删掉某内容，很快会被同步覆盖。不过群晖drive 中可以看同步日志，应问题不大。</p>
-<p>目前还没有遇上同步问题，仅提供解决方案，数据无价，请自行斟酌＼（＾ ＾）／</p>
-]]></content>
-      <categories>
-        <category>技术</category>
-        <category>博客</category>
-        <category>hexo</category>
-      </categories>
-      <tags>
-        <tag>markdown</tag>
-        <tag>hexo</tag>
-        <tag>Obsidian</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>在hexo博客中插入思维导图</title>
     <url>/2019/05/24/%E5%9C%A8hexo%E5%8D%9A%E5%AE%A2%E4%B8%AD%E6%8F%92%E5%85%A5%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="https://github.com/maxchang3/hexo-markmap">hexo-markmap</a></p>
@@ -1750,6 +1643,113 @@
       </tags>
   </entry>
   <entry>
+    <title>群晖Git部署Hexo</title>
+    <url>/2019/05/06/Git_Hexo/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="一、前期准备"><a href="#一、前期准备" class="headerlink" title="一、前期准备"></a>一、前期准备</h2><h3 id="1-1-注册-账号-Gitee-GitHub"><a href="#1-1-注册-账号-Gitee-GitHub" class="headerlink" title="1.1 注册 账号 Gitee&#x2F;GitHub"></a>1.1 注册 账号 Gitee&#x2F;GitHub</h3><p>注册一个属于自己的 Github 或 Gitee 账号，</p>
+<p>Gitee在国内访问速度更快，但Gitee需要上传身份证照片若干张进行实名认证，懒得掏身份证，pass掉。</p>
+<span id="more"></span>
+<p><img src="/2019/05/06/Git_Hexo/%E5%AE%9E%E5%90%8D%E9%AA%8C%E8%AF%81.png" alt="实名认证"></p>
+<p>本文采用 Github 演示。 </p>
+<h3 id="1-2-安装-Git"><a href="#1-2-安装-Git" class="headerlink" title="1.2 安装 Git"></a>1.2 安装 Git</h3><p>选择对应的系统平台，下载后，傻瓜式安装即可。 安装完成后，打开运行 –&gt; 输入命令，回车打开命令行窗口 输入以下Git指令</p>
+<figure class="highlight ada"><table><tr><td class="code"><pre><span class="line">git <span class="comment">--version</span></span><br></pre></td></tr></table></figure>
+
+<p>出现版本号，即代表 git 安装成功</p>
+<h3 id="1-3-Git-和-Github-建立联系"><a href="#1-3-Git-和-Github-建立联系" class="headerlink" title="1.3 Git 和 Github 建立联系"></a>1.3 Git 和 Github 建立联系</h3><p>任意目录下，打开 git bash 命令行，输入以下命令生成公钥：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C 邮箱</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">为了管理多个密钥，你可以在生成密钥时为每个密钥指定不同的文件名</span></span><br><span class="line">ssh-keygen -t rsa -C &quot;your_email@example.com&quot; -f ~/.ssh/id_rsa_example_com</span><br></pre></td></tr></table></figure>
+
+
+<p>回车出现 （y&#x2F;n）, 输入 y , 连续点击回车，即可生成。</p>
+<p>在<code>~/.ssh</code> 目录，找到 <code>id_rsa_example_com.pub</code> 文件，<code>cat ~/.ssh/id_rsa_example_com.pub</code>获取公钥。</p>
+<p>到GitHub找到 <code>设置</code> 并打开，找到左侧栏 <code>Access</code>下找到<code>SSH and GPG keys</code>，点击<code>New SSH keys</code>，添加 <code>Title</code> 和 <code>Key</code></p>
+<p>云端仓库创建完成的 gitee，更改远程仓库 URL 为 SSH</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">chmod 600 ~/.ssh/id_rsa_*</span><br><span class="line">chown your_username:users ~/.ssh/id_rsa_*</span><br></pre></td></tr></table></figure>
+
+
+<p><strong>输入以下指令，进行全局配置：</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;你的用户名&quot;</span><br><span class="line">git config --global user.email &quot;你的邮箱&quot;</span><br></pre></td></tr></table></figure>
+
+<p>查看config文件是否存在，不存在新建<code>touch config</code>,<br> config文件内容如下：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">Host github.com</span><br><span class="line">    User git</span><br><span class="line">    IdentityFile ~/.ssh/id_rsa_example_com</span><br><span class="line">    PreferredAuthentications publickey</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">测试连接</span></span><br><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+
+
+
+<p>将纳入版本库的文件，提交到 gitee 远程仓库：</p>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">add</span> .</span><br><span class="line">git commit -m <span class="string">&#x27;first commit&#x27;</span></span><br><span class="line">git remote <span class="built_in">add</span> origin 你的仓库地址</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
+
+<p>此时，提交完成，打开浏览器，输入你的仓库地址，刷新即可看到文件。</p>
+<ol>
+<li><code>hexo clean</code>: 这个命令用于清理缓存文件和已生成的静态文件。它删除了<code>public</code>文件夹中的内容以及<code>.hexo</code>文件夹中的缓存文件。这是在部署博客之前的一个好习惯，因为它确保了生成的静态文件是最新的，避免了由于旧的缓存或文件导致的潜在问题。</li>
+<li><code>hexo deploy</code>: 这个命令用于将博客部署到服务器上。在执行这个命令之前，Hexo会生成所有的静态文件，并根据<code>_config.yml</code>文件中的<code>deploy</code>部分配置将它们上传到指定的服务器。这通常涉及到将文件推送到GitHub Pages、FTP服务器或其他静态网站托管服务。</li>
+</ol>
+<figure class="highlight 1c"><table><tr><td class="code"><pre><span class="line">$ hexo clean <span class="meta">&amp;&amp; hexo deploy</span></span><br></pre></td></tr></table></figure>
+
+<p>在NAS上定时执行<code>hexo clean &amp;&amp; hexo deploy</code>，实现自动更新内容。</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>博客</category>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>笔记</tag>
+        <tag>技术</tag>
+        <tag>ssh</tag>
+        <tag>GitHub</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>苹果全平台无缝同步群晖Obsidian库</title>
+    <url>/2019/05/24/Apple%E5%85%A8%E5%B9%B3%E5%8F%B0%E6%97%A0%E7%BC%9D%E5%90%8C%E6%AD%A5%E7%BE%A4%E6%99%96Obsidian%E5%BA%93/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><strong>前提介绍：</strong></p>
+<blockquote>
+<p><a href="https://obsidian.md/">Obsidian</a>是一款基于Markdown的笔记软件，以其强大的链接和标签功能、本地化存储及丰富的插件生态，为用户提供高效的知识管理和创作体验。 </p>
+</blockquote>
+<blockquote>
+<p><a href="https://www.synology.cn/zh-cn">群晖NAS</a>是一种基于网络连接的存储设备，它提供集中管理和共享文件的平台，支持多种功能，如数据备份、多媒体服务器等，方便用户随时随地访问和管理数据。</p>
+</blockquote>
+<h2 id="本文的目的"><a href="#本文的目的" class="headerlink" title="本文的目的"></a>本文的目的</h2><p><a href="https://obsidian.md/">Obsidian</a>作为一款优秀的markdown笔记软件，非常适合搭配hexo撰写blog。</p>
+<p>通过macOS上群晖Drive将hexo的post目录同步到iCloud，实现macOS和群晖drive的同步，然后通过iCloud在不同苹果设备上同步hexo的post目录，实现任意苹果设备撰写blog都可以在macOS通过群晖drive将新blog内容同步至群晖，再由群晖将内容自动布置到GitHub，实现blog网站的自动更新。</p>
+<span id="more"></span>
+
+
+<div class="markmap-container" style="height:400px">
+  <svg data="{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:1,&quot;p&quot;:{&quot;lines&quot;:[1,2]},&quot;v&quot;:&quot;Blog内容同步与自动更新流程&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:2,&quot;p&quot;:{&quot;lines&quot;:[3,4]},&quot;v&quot;:&quot;macOS&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[4,5]},&quot;v&quot;:&quot;群晖Drive&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:5,&quot;p&quot;:{&quot;lines&quot;:[5,6]},&quot;v&quot;:&quot;同步Hexo的post目录到iCloud&quot;}]}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:2,&quot;p&quot;:{&quot;lines&quot;:[7,8]},&quot;v&quot;:&quot;iCloud&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:4,&quot;p&quot;:{&quot;lines&quot;:[8,9]},&quot;v&quot;:&quot;同步Hexo的post目录&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:4,&quot;p&quot;:{&quot;lines&quot;:[9,10]},&quot;v&quot;:&quot;跨苹果设备同步&quot;}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:2,&quot;p&quot;:{&quot;lines&quot;:[11,12]},&quot;v&quot;:&quot;苹果设备&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[12,13]},&quot;v&quot;:&quot;任意设备&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:5,&quot;p&quot;:{&quot;lines&quot;:[13,14]},&quot;v&quot;:&quot;撰写blog&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:5,&quot;p&quot;:{&quot;lines&quot;:[14,15]},&quot;v&quot;:&quot;通过iCloud同步到macOS&quot;}]}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:2,&quot;p&quot;:{&quot;lines&quot;:[16,17]},&quot;v&quot;:&quot;macOS（继续）&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[17,18]},&quot;v&quot;:&quot;群晖Drive（继续）&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:5,&quot;p&quot;:{&quot;lines&quot;:[18,19]},&quot;v&quot;:&quot;将新blog内容同步至群晖&quot;}]}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:2,&quot;p&quot;:{&quot;lines&quot;:[20,21]},&quot;v&quot;:&quot;群晖&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:4,&quot;p&quot;:{&quot;lines&quot;:[21,22]},&quot;v&quot;:&quot;将内容自动布置到GitHub&quot;}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:2,&quot;p&quot;:{&quot;lines&quot;:[23,24]},&quot;v&quot;:&quot;GitHub&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:4,&quot;p&quot;:{&quot;lines&quot;:[24,25]},&quot;v&quot;:&quot;自动更新blog网站&quot;}]}]}"></svg>
+</div>
+
+
+
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><blockquote>
+<p>iPadOS和iOS端Obsidian只能识别打开iCloud Drive中Obsidian目录下的库，但macOS端的群晖Drive同步目录找不到iCloud目录，也就无法从iCloud同步至群晖。</p>
+</blockquote>
+<h2 id="解决步骤"><a href="#解决步骤" class="headerlink" title="解决步骤"></a>解决步骤</h2><h3 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h3><p>全部苹果设备开启 iCloud 同步，在 iOS&#x2F;iPadOS 下打开 obsidian 新建库，会自动生成一个<code>welcome.md</code>文件。</p>
+<h3 id="第二步"><a href="#第二步" class="headerlink" title="第二步"></a>第二步</h3><p>打开 macOS 访达，左侧打开 iCloud 云盘，点 obsidian 图标文件下载到本地管理（云箭头表示还在云上）。</p>
+<h3 id="第三步"><a href="#第三步" class="headerlink" title="第三步"></a>第三步</h3><p>显示 Mac 隐藏文件的两种方法：</p>
+<ol>
+<li>mac 终端中输入入命令：<code>defaults write com.apple.finder AppleShowAllFiles -bool true; killall Finder</code>  。</li>
+<li>快捷键组合：<code>⌘+⇧+。</code></li>
+</ol>
+<p>隐藏文件显示后，找到自己用户名下的资源库，在上方菜单栏<code>显示</code>-<code>查看显示选项</code>（<code>⌘+J</code>）中勾选<code>显示资源库文件夹</code>，这样就可以在群晖Drive同步软件中定位到 iCloud 内的文件夹。</p>
+<h3 id="第四步"><a href="#第四步" class="headerlink" title="第四步"></a>第四步</h3><p>macOS 打开群晖的配套同步软件<code>群晖 Drive Client</code>设置，创建选定<code>mac</code>用户名下<code>library</code>中的<code>moblie documents</code>文件，翻到iCloud前缀的obsidian文件夹，同步之前 iOS 中新建的库即可。</p>
+<h3 id="第五步"><a href="#第五步" class="headerlink" title="第五步"></a>第五步</h3><p>macOS 中iCloud下 Obsidian 打开库文件夹，在网络 nas 中即可找到此 iOS&#x2F;iPadOS 新建的库。</p>
+<p>完成之后，关闭显示 Mac 隐藏文件：<code>defaults write com.apple.finder AppleShowAllFiles -boolean false ; killall Finder</code></p>
+<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><p>实测多设备下修改输入，几乎都是秒刷到账，唯一要担心的是删的太快，如果在一处误删掉某内容，很快会被同步覆盖。不过群晖drive 中可以看同步日志，应问题不大。</p>
+<p>目前还没有遇上同步问题，仅提供解决方案，数据无价，请自行斟酌＼（＾ ＾）／</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>博客</category>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>markdown</tag>
+        <tag>hexo</tag>
+        <tag>Obsidian</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>机器学习笔记</title>
     <url>/2023/05/04/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="k-近邻算法-KNN"><a href="#k-近邻算法-KNN" class="headerlink" title="k-近邻算法(KNN)"></a><a href="https://alv1.apachecn.org/#/docs/ml/2">k-近邻算法(KNN)</a></h1><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>KNN是一种基本的 #分类 和 #回归 方法。给一个训练数据集，对新的输入实例，在训练数据集中找到与之最接近（直线距离，欧式距离）的K个实例，这k个实例的多数分类，就是这个输入实例的分类。</p>
@@ -2154,6 +2154,306 @@
       </tags>
   </entry>
   <entry>
+    <title>数据分析师所需的技术与理论</title>
+    <url>/2023/09/10/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E6%89%80%E9%9C%80%E7%9A%84%E6%8A%80%E6%9C%AF%E4%B8%8E%E7%90%86%E8%AE%BA/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
+<p>对数据分析师来说，要想避免沦为取数、跑数的工具人命运，就明确并巩固自己的优势与价值。因此明确数据分析师的成长路径、能力要求、能力提升方法就显得格外重要。而笔者作为数据分析专家，也就此分享了自己的思考与见解。</p>
+</blockquote>
+<h1 id="一、数据分析师的种类、职责与升级路线"><a href="#一、数据分析师的种类、职责与升级路线" class="headerlink" title="一、数据分析师的种类、职责与升级路线"></a>一、数据分析师的种类、职责与升级路线</h1><p>在国内数据分析师一般分为5大种类：<strong>数据产品、数据分析师、数据建模师、数据工程师与数据科</strong>学家，这5类人才的必备能力和成长路线我们来逐一介绍。</p>
+<span id="more"></span>
+<h3 id="1-1数据产品"><a href="#1-1数据产品" class="headerlink" title="1.1数据产品"></a>1.1数据产品</h3><p><img src="/2023/09/10/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E6%89%80%E9%9C%80%E7%9A%84%E6%8A%80%E6%9C%AF%E4%B8%8E%E7%90%86%E8%AE%BA/0001.png"></p>
+<p>数据产品概览图</p>
+<p>在产品的基础上，增加数据思维。</p>
+<p>数据产品不仅懂得埋点原理，能够通过抓包等工具抓取数据并进行分析。同时还能够参与数据化产品的制作，如BI报表、CRM系统、AB test试验后台等。</p>
+<p>老板会说：“去给我做个神策、GrowingIO那样婶儿的平台出来”，然后你就根据老板的需求，转化为详细的技术需求，提给技术去开发，这就是数据产品的日常。</p>
+<p><strong>1.1.1 成长路线：</strong> CGO、增长专家、产品总监、数据产品总监、数据运营总监</p>
+<p><strong>1.1.2 必备能力</strong></p>
+<ul>
+<li>① 数据技术</li>
+<li>② 可视化</li>
+<li>⑤ 业务思维</li>
+<li>⑦ 专业能力</li>
+<li>⑧ 沟通能力</li>
+</ul>
+<p>（①②⑤⑦⑧是啥？下文详解）</p>
+<p><strong>1.1.3 成长建议</strong></p>
+<ol>
+<li>数据产品一般会对编程、数据处理、统计等专业知识方面较弱，建议加强数据分析能力，做个有技术、分析能力的产品。</li>
+<li>既然有产品属性，那就涉及到与技术无止境的扯皮之中，如何提升自己业务与沟通能力让自己更专业，同时使工作流程更加顺畅，这便是数据产品的王者能力。</li>
+</ol>
+<h3 id="1-2-数据分析师"><a href="#1-2-数据分析师" class="headerlink" title="1.2 数据分析师"></a>1.2 数据分析师</h3><p><img src="/2023/09/10/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E6%89%80%E9%9C%80%E7%9A%84%E6%8A%80%E6%9C%AF%E4%B8%8E%E7%90%86%E8%AE%BA/0002.png"></p>
+<p>数据分析师概览图</p>
+<p>这就是我们常说的商业化数据分析师，主要负责01搭建可视化监控报表，利用数据挖掘和洞察业务，为需求部门提供数据支撑、分析报告、商业化模型等服务，这里面的key word是监控、挖掘、有价值和服务，在公司里担任领导的眼睛与大脑的角色。</p>
+<p><strong>1.2.1 成长路线：</strong> CGO、增长专家、数据咨询专家、数据分析总监、数据运营总监</p>
+<p><strong>1.2.2 必备能力</strong></p>
+<ul>
+<li>① 数据技术</li>
+<li>② 可视化</li>
+<li>③ 统计学基础</li>
+<li>⑤ 业务思维能力</li>
+<li>⑦ 专业能力</li>
+<li><strong>⑧ 沟通能力</strong></li>
+</ul>
+<p>（①③③⑤⑦⑧是啥？下文详解）</p>
+<p><strong>1.2.3 成长建议</strong></p>
+<p><strong>（1）一定要重视可视化</strong></p>
+<p>为什么呢？</p>
+<p>因为数据分析师花90%的时间用在处理数据上，只贡献了10%的价值，而老板看到你的报告，却用了不到10%的时间便做出决策，贡献了90%的价值，所以说BI可视化尤为重要。下图给大家展示可视化的正反两个例子A和B：</p>
+<p><img src="/2023/09/10/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E6%89%80%E9%9C%80%E7%9A%84%E6%8A%80%E6%9C%AF%E4%B8%8E%E7%90%86%E8%AE%BA/0003.png"></p>
+<p>可视化对比图</p>
+<p>同样是数据分析师做出来的AB两张图，看了图A的老板点头肯定，看了图B的老板肯定想弄死你，正愁没人裁，有没有？</p>
+<p><strong>（2）分析师要有自己的业务思维能力</strong></p>
+<p>什么意思？比如老板经常会问你今天的DAU怎么暴涨了，留存怎么掉了等等。</p>
+<p>许多大神都有自己的独立业务思维，对答如流，迅速解决问题，并有自己的一套思维，什么留存“六脉神剑”啊，增长“九宫格”啊啥的，这都是业务思维沉淀形成的。</p>
+<p><strong>（3）千万不要把数据分析师做成取数的、跑数的，那样你的可替代性太强</strong></p>
+<p>如果明天要裁一个数据分析师，那么这类“工具人”就是首选。数据分析师的价值是挖掘数据中的价值并让领导知道你这么做的价值，不要你觉得，要你的领导和你都觉得，这才是最重要的。</p>
+<p><strong>（4）沟通能力</strong></p>
+<p>这个是我面试经常会问的问题，你觉得数据分析师最重要的能力是什么？</p>
+<p>对，就是沟通能力，如果你连需求方想要的是什么都唠不明白，那你如何服务于他，目标错误高效的执行就是灾难，咔咔做了2周，发现不是人家想要的，这种事在工作上并不少见，所以说沟通真的很重要。</p>
+<p><strong>（5）要养成大局观</strong></p>
+<p>作为数据分析师不能总局限于自己业务的那些数，也要抬头看看市场上大盘变化，以及竞品变化。</p>
+<p>分析格局的大小源自看待问题的高度，这一点非常重要，初期可以慢慢养成，这也是高阶分析师必备的能力。</p>
+<h3 id="1-3-数据建模师"><a href="#1-3-数据建模师" class="headerlink" title="1.3 数据建模师"></a>1.3 数据建模师</h3><p><img src="/2023/09/10/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E6%89%80%E9%9C%80%E7%9A%84%E6%8A%80%E6%9C%AF%E4%B8%8E%E7%90%86%E8%AE%BA/0004.png"></p>
+<p>数据建模师概览图</p>
+<p>数据建模师也叫算法工程师，是数理统计知识、编程与业务思维集一身的模型大师，通过建立数学模型、利用算法实现增长，可以说是一家产品的灵魂工作者，你就说信息流产品的推荐算法核不核心、金融行业的反欺诈和信用评级厉不厉害，P2P的智能配标优不优秀。</p>
+<p><strong>1.3.1 成长路线：</strong> CTO、技术总监、资深算法工程师</p>
+<p><strong>1.3.2 必备能力</strong></p>
+<ul>
+<li>① 数据技术</li>
+<li>③ 统计学基础</li>
+<li>④ 建模能力</li>
+<li>⑤ 业务思维能力</li>
+<li>⑥ 大局能力</li>
+<li>⑦ 专业能力</li>
+</ul>
+<p>（①③④⑤⑥⑦是啥？下文详解）</p>
+<p><strong>1.3.3 成长建议</strong></p>
+<p><strong>（1）技术不用说，那必须杠杠的，但容易钻入数据的黑洞，沉迷于算法但又无法与实际业务相结合，最终项目流产</strong></p>
+<p>谷歌眼镜厉不厉害，炫不炫酷，最终惨遭压箱底，暂停个人消费者服务的命运，为什么？</p>
+<p>出发点很好，但花费过高、周边技术不完善等因素，使其不具备商业价值，最终倒在了5G之前。</p>
+<p>我还认识一个彩票公司的小哥，自称研制出了一套“迷人”的算法，能够让公司收益最大化，可最终…呵呵。</p>
+<p>我想说的是技术一定要结合实际业务，通过技术变现这才是王道，并不是所有公司都有钱有精力去做“华而不实”的事情，尤其是在目前的大环境下。</p>
+<p><strong>（2）大家都认为技术不需要沟通，我们的通用语言是R、python、java、自然语言，很冰冷很cool</strong></p>
+<p>但熟不知你若会技术又有业务头脑，那总监的位置是不是在向你招手；你若懂业务、懂管理又会为人处世，拿下CTO这个位置是不是志在必得。</p>
+<p>当然也有喜欢钻研算法，不掺乎管理层的资深技术，所谓事了拂衣去，深藏功与名，说的就是这些人。</p>
+<p>不管怎么说，之所以能够有今天的成就，除了过硬的技术外，很好的沟通能力也是必不可少的。</p>
+<h3 id="1-4-数据工程师"><a href="#1-4-数据工程师" class="headerlink" title="1.4 数据工程师"></a>1.4 数据工程师</h3><p><img src="/2023/09/10/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E6%89%80%E9%9C%80%E7%9A%84%E6%8A%80%E6%9C%AF%E4%B8%8E%E7%90%86%E8%AE%BA/0005.png"></p>
+<p>数据工程师概览图</p>
+<p>数据工程师的职能更偏向技术工程，主要的工作职责是搭建数据仓库、创建ETL、进行数据治理、数据安全等方面的工作、通过提升运行速度，优化数据结构，更好地服务于数据使用方，比如数据分析师、数据产品及数据建模师。</p>
+<p><strong>1.4.1 成长路线：</strong> CTO、技术总监、资深研发工程师</p>
+<p><strong>1.4.2 必备能力</strong></p>
+<ul>
+<li>① 数据技术</li>
+<li>④ 建模能力</li>
+<li>⑤ 业务思维能力</li>
+<li>⑦ 专业能力</li>
+</ul>
+<p>（①④⑤⑦是啥？下文详解）</p>
+<p><strong>1.4.3 成长建议</strong></p>
+<p><strong>（1）我们不生产数据，只是数据的搬运工，搬好了是我们应该的，但搬不好任务流程挂掉，BI报表自动化任务失败就要扣薪水</strong></p>
+<p>这是许多数据工程师接触都遇到的问题，这个时候就考验专业能力，如何优化流程，监控及预警就尤为重要了。</p>
+<p>举个我自己的亲身经历吧，之前做了流失用户自动召回系统，每天定时按照算法算出目标用户并发送短信、push和红包。</p>
+<p>逻辑简单的说是这样的，A表是全量用户表，B表是活跃用户，那么A-B&#x3D;C，C表就是目标用户，即不活跃的流失用户。</p>
+<p>突然有一天因为一个BUG，导致B表挂掉了，B表变为空表，那么A-B&#x3D;A-0&#x3D;A&#x3D;C，就相当于把A表全量用户都发送优惠券及信息。</p>
+<p>这事故仅次于PDD那次红包事故了，当时我们没有推卸责任（毕竟绩效已经没了），迅速制定了数据异常预警，人工短信确认等机制，避免了类似事故发生。</p>
+<p>这次事故给我的教训就是，人无远虑必有近忧，错误是不可避免的，但如何提升专业水平，降低错误发生概率，提前预知错误，以避免资源的浪费。</p>
+<p><strong>（2）沟通、沟通还是沟通…</strong></p>
+<h3 id="1-5-数据科学家"><a href="#1-5-数据科学家" class="headerlink" title="1.5 数据科学家"></a>1.5 数据科学家</h3><p><img src="/2023/09/10/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E6%89%80%E9%9C%80%E7%9A%84%E6%8A%80%E6%9C%AF%E4%B8%8E%E7%90%86%E8%AE%BA/0006.png"></p>
+<p>数据科学家概览图</p>
+<p>综合性人才，数据分析能力、统计学基础、业务能力、算法与沟通能力集聚一身的人才。市面上有很多不懂技术只会嘴炮的领导，也不缺不懂结合业务的技术大拿，但做到样样精通，实属不易。向下能够了解前沿技术并指导下属进行研究开发，向上能够很好的与领导沟通，让领导理解这么做的价值。</p>
+<ul>
+<li>跟数据分析师比分析能力，数据分析师卒；</li>
+<li>跟算法工程师过算法能力，算法工程师卒；</li>
+<li>跟数据工程师拼技术能力，数据工程师卒；</li>
+<li>跟数据产品唠业务能力，数据产品卒。</li>
+</ul>
+<p>就是这么强大，不过这类人才乃是可遇不可求，正所谓流氓会武术，谁也挡不住；科学家会武术，流氓也挡不住，实在是社会…社会…</p>
+<p><strong>1.5.1 成长路线：</strong> 没啥可建议的，挺好的哥…</p>
+<p><strong>1.5.2 必备能力：</strong> 全部①-⑧</p>
+<p>（①②③④⑤⑥⑦⑧是啥？下文详解）</p>
+<p><strong>1.5.3 成长建议：</strong> 没啥建议，都挺好的，就是建议给别人留条活路，卒。</p>
+<h1 id="二、数据分析师的8种能力"><a href="#二、数据分析师的8种能力" class="headerlink" title="二、数据分析师的8种能力"></a>二、数据分析师的8种能力</h1><hr>
+<h3 id="2-1-数据技术"><a href="#2-1-数据技术" class="headerlink" title="2.1 数据技术"></a>2.1 数据技术</h3><p>既然是数据分析，就要了解数据在各个环节是如何运转的，同时还能运用工具读取和分析数据，在这里我将其分成基础、数据提取、分析工具。</p>
+<p><strong>基础：office软件</strong></p>
+<p>包括且不限于excel、VBA、ppt、word，尤其是excel很深很深，大多数人只用了excel中1%的功能，到现在我只敢说会用excel，谈不上精通，也许我只用了2%吧，但应付日常数据足矣。</p>
+<p><strong>数据提取：SQL、HiveSQL</strong></p>
+<p>都是类SQL软件，会一个就能精通所有，大家不要觉得编程很难就望而却步，其实SQL是最简单的语言，不夸张的说，用心学SQL不到一个月就可以干活了，什么你还学不会？你只是缺个人逼你而已。</p>
+<p><strong>分析工具：SPSS、SPSS modeler、R、Python、SAS</strong></p>
+<p>不是每个人都有机会接触SAS，如果没机会也不要紧，这里推荐大家一定要学SPSS，可以理解为升级版的excel，也很简单；然后Python和R任选其一即可。</p>
+<h3 id="2-2-可视化"><a href="#2-2-可视化" class="headerlink" title="2.2 可视化"></a>2.2 可视化</h3><p>Excel、PPT、Tableau、Echarts、powerBI</p>
+<p>数据可视化的工具很多，除了Python、R、JAVA这类的之外，上面列的几种算是比较常见的BI可视化工具。先说Excel和PPT，没错它们也算可视化软件，如下图：</p>
+<p><img src="/2023/09/10/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E6%89%80%E9%9C%80%E7%9A%84%E6%8A%80%E6%9C%AF%E4%B8%8E%E7%90%86%E8%AE%BA/0007.png"></p>
+<p>Excel可视化</p>
+<p>这是用我用excel做出来的dashboard（看板），也还可以吧，应付一般老板那是够够的。但要想玩的洋一点，就得用例如tableau、powerBI等软件，毕竟老美都用tableau么，样式如下图所示：</p>
+<p><img src="/2023/09/10/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E6%89%80%E9%9C%80%E7%9A%84%E6%8A%80%E6%9C%AF%E4%B8%8E%E7%90%86%E8%AE%BA/0008.png"></p>
+<p>新增用户热力图</p>
+<p>不管是用什么工具，能够将抽象的数据用图形展示出来，便于老板观察和决策，那就是ok的，至于如何做的好看，那就是进阶的课题了。</p>
+<h3 id="2-3-统计学基础"><a href="#2-3-统计学基础" class="headerlink" title="2.3 统计学基础"></a>2.3 统计学基础</h3><p><strong>统计学基础在AB test、数学模型、抽样检验里常常会用到</strong>，有的时候你看到的数据并不是真实的，怎么去解释，我给大家列几个例子：</p>
+<p><strong>示例一 AB test的错觉：</strong></p>
+<p><img src="/2023/09/10/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E6%89%80%E9%9C%80%E7%9A%84%E6%8A%80%E6%9C%AF%E4%B8%8E%E7%90%86%E8%AE%BA/0009.png"></p>
+<p>AB test结果图</p>
+<p>看到这张图，很多人都会认为B比A的转化效果好对吧，但是这里有多大的可能是因为一些随机的因素导致这样的区别呢，这就要用到统计学的假设检验了。</p>
+<p>我们来假设B不会比A效果好，然后试图通过样本来推翻这个假设，如果样本足以推翻假设，那么我们就可以认为实验完成了，所见即所得；否则我们会认为B比A好只是偶然现象，这组AB test没有任何意义，需重新测试。</p>
+<p><strong>示例二 R平方值的重要性：</strong></p>
+<p><img src="/2023/09/10/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E6%89%80%E9%9C%80%E7%9A%84%E6%8A%80%E6%9C%AF%E4%B8%8E%E7%90%86%E8%AE%BA/0010.png"></p>
+<p>DAU预测图</p>
+<p>上图是一个简单的回归模型用来预测DAU，<strong>红色是指数回归，绿色是多项式回归，哪种模型更精准呢，这时候就要看R方。</strong></p>
+<p>R平方值是趋势线拟合程度的指标，取值范围在0到1之间，它的数值大小可以反映趋势线的估计值与对应的实际数据之间的拟合程度，拟合程度越接近1，趋势线的可靠性就越高。</p>
+<p>同样是预测，3个月后指数预测比多项式预测高出30%，选哪个模型才能使误差率最小化呢，这个时候R方的重要性就体现出来了。</p>
+<p>以上列举了2个统计学的小例子，在实际工作当中还会遇到很多统计学的知识，<strong>比如显著性、置信度、离散度等等，统计学会让我们的分析结果更加专业，更加严谨。</strong></p>
+<h3 id="2-4-建模能力"><a href="#2-4-建模能力" class="headerlink" title="2.4 建模能力"></a>2.4 建模能力</h3><p>根据不同的业务需求，会使用一些模型，下面简单的介绍集中常用模型供大家参考。</p>
+<p><strong>分类：</strong> 基于历史用户行为构建模型，套用到新用户身上，预测用户可能发生某种行为的概率，常用的分类模型有C5.0、决策树、随机森林、逻辑回归等，如下图运用逻辑回归，预测用户是否下单：</p>
+<p><img src="/2023/09/10/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E6%89%80%E9%9C%80%E7%9A%84%E6%8A%80%E6%9C%AF%E4%B8%8E%E7%90%86%E8%AE%BA/0011.png"></p>
+<p>模型概念图</p>
+<p><strong>聚类：</strong> 按照个体的特征将他们分类，让同一个类别内的个体之间具有较高的相似度，不同类别之间具有较大的差异性，常用于给用户打标签，如下图K-means聚类所示：</p>
+<p><img src="/2023/09/10/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E6%89%80%E9%9C%80%E7%9A%84%E6%8A%80%E6%9C%AF%E4%B8%8E%E7%90%86%E8%AE%BA/0012.png"></p>
+<p>聚类概念图</p>
+<p><strong>回归：</strong> 在③提到的指数回归和多项式回归就是典型的例子，常用于预测销量、人口等数据。</p>
+<p><strong>评估：</strong> 评估模型市面上分为2大类，回归和标准化模型，多用于对品牌投放、效果投放、会员积分的评估，如下图所示：</p>
+<p><img src="/2023/09/10/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E6%89%80%E9%9C%80%E7%9A%84%E6%8A%80%E6%9C%AF%E4%B8%8E%E7%90%86%E8%AE%BA/0013.png"></p>
+<p>渠道评估模型（AHP标准化模型）</p>
+<p>除了上述的4大类模型外，还有很多种类的模型，根据实际业务去选择对应的模型就ok了，在这里不过多赘述。</p>
+<h3 id="2-5-业务思维能力"><a href="#2-5-业务思维能力" class="headerlink" title="2.5 业务思维能力"></a>2.5 业务思维能力</h3><p>数据是冰冷的，若想开启真相的大门，业务思维便是我们的钥匙。</p>
+<p>举个简单的例子，老板发现2019年6月份的汽车成交量突然猛增，想让你分析一下原因。</p>
+<p>这时候你会发现产品、渠道、技术等等都没问题，那会是什么原因呢？</p>
+<p>如果你没有业务思维就会埋在一堆数据里，如果有业务思维就会去想，国家规定2019年7月1日开始执行国六排放标准，国五汽车将不能再办理牌照，这时候经销商、4s店应该怎么办？那当然是降价清库存啦，你降价了用户当然是买买买啦。所以说业务思维非常重要，不要死看数，看死数。</p>
+<h3 id="2-6-大局能力"><a href="#2-6-大局能力" class="headerlink" title="2.6 大局能力"></a>2.6 大局能力</h3><p>知己知彼，百战不殆。作为分析师亦是如此，知己好做，知彼怎么做呢？</p>
+<p>那就是竞品分析，从竞品数据及竞品策略层面分析对手。</p>
+<p>职场上老板也经常会问咱们的数据怎么样？</p>
+<p>然后你会说大幅增长，形势一片大好。</p>
+<p>老板又问了，竞品数据怎么样？</p>
+<p>这时候你就傻眼了，不是回答不上来，就是数据没有竞品好看。</p>
+<p>优秀的数据分析师则会这样去说：</p>
+<blockquote>
+<p>“我们同比增长XX，环比XX，竞品的数据是XX，我们哪些方面优秀，哪些不足，接下来应该如何如何。”</p>
+</blockquote>
+<p>这样一套操作下来，领导会觉得你的工作做到位了，不是一问三不知，也不是自己“闭门造车”。</p>
+<h3 id="2-7-专业能力"><a href="#2-7-专业能力" class="headerlink" title="2.7 专业能力"></a>2.7 专业能力</h3><p>数据产品如何构建埋点，数据分析师如何输出有价值的商业洞悉报告，数据工程师如何优化数据结构，数据建模型如何针对不同业务建立最优模型，数据科学家如何把大数据中的规律传达给BOSS从而影响产品，流程和决策。</p>
+<h3 id="2-8-沟通能力"><a href="#2-8-沟通能力" class="headerlink" title="2.8 沟通能力"></a>2.8 沟通能力</h3><p>我在面试的时候问的最多的问题是，你觉得数据分析师最重要的技能是什么？</p>
+<p>对！是沟通，什么数据敏感度、增长思维、方法论都是瞎扯，你连话都听不清楚，说不明白，你能知道老板想要的是什么，你又怎么能把分析出来的价值让老板知道，所以说排名第一位的能力是沟通！沟通！沟通！</p>
+<h1 id="数据分析初学者的常见问题"><a href="#数据分析初学者的常见问题" class="headerlink" title="数据分析初学者的常见问题"></a>数据分析初学者的常见问题</h1><p>日积月累，也让我形成了一套自己的认知体系，对<strong>数据分析</strong>有了一定程度的认识。在我的经历中，经常会有一些伙伴问以下两种问题：</p>
+<h3 id="1、小白类"><a href="#1、小白类" class="headerlink" title="1、小白类"></a><strong>1、小白类</strong></h3><ul>
+<li>我要想入行数据分析，应该从哪里开始学？</li>
+<li>想成为数据分析师，我要学习那些技能、掌握那些工具？</li>
+<li>我没做过数据分析，数学特别不好，能学好吗？</li>
+<li>我学的是文科专业，能从事数据分析师吗？</li>
+</ul>
+<h3 id="2、迷茫类"><a href="#2、迷茫类" class="headerlink" title="2、迷茫类"></a>2、迷茫类</h3><ul>
+<li>做了好几年数据分析，感觉看不到以后的晋升线路？</li>
+<li>我对数据分析有一定了解，如何快速用到我现在的职业上</li>
+<li>从事运营、产品的工作，看过和做过一些数据分析，但不专业，能不能成为专业分析师</li>
+<li>以后数据分析师会不会发展不好，未来潜力如何？</li>
+</ul>
+<p>但无论是小白类还是迷茫类，我们都要清楚的认识到<strong>数据分析师到底是干什么的</strong>，在职场中他们到底有什么不同，只有了解了这些，以上的疑惑才能迎刃而解，我们常用的分析思维就是拆分，就好比乐高一样，有很多小积木组合，只要我们理解了这些小积木的形状，我们也就能搭建起自己的梦想。</p>
+<h1 id="数据分析师类型划分"><a href="#数据分析师类型划分" class="headerlink" title="数据分析师类型划分"></a>数据分析师类型划分</h1><p>常见的几个数据分析师划分主要包含以下这6大类，当然每一类其实也有自己的层级，我只是做一个简单的区分，让大家有一个基本的概况：</p>
+<p><img src="/2023/09/10/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E6%89%80%E9%9C%80%E7%9A%84%E6%8A%80%E6%9C%AF%E4%B8%8E%E7%90%86%E8%AE%BA/0014.jpg"></p>
+<h3 id="1、A类：商业分析师"><a href="#1、A类：商业分析师" class="headerlink" title="1、A类：商业分析师"></a><strong>1、A类：商业分析师</strong></h3><p><strong>1）特点：</strong> 上手快、深入难</p>
+<p> <strong>2）主要的工作：</strong> 帮助业务、市场以及管理层做一些数据的洞察，还原数据的本质，讲述数据的故事，要很清楚的了解市场要什么？用户爱什么？</p>
+<p> <strong>3）需要掌握的：</strong></p>
+<ul>
+<li>硬性技能：SQL、EXCEL、PPT</li>
+<li>软性技能：表达能力、视觉思维、逻辑性强、思维清晰，特别是沟通能力！</li>
+<li>掌握的方法论：ABtest、AAARRR、SWOT、RFM、28原则、5W2H等</li>
+<li>掌握的统计学：常规统计指标（均值、中位数、分位数、T检验等)、回归、聚类、因子、决策树、逻辑回归等，这些足够了</li>
+<li>加分项：图表可视化、结构化思维、金字塔原理、千万级数据处理经验（这类一般1年遇不到几次）</li>
+</ul>
+<p> <strong>4）适合人群：</strong> 文科类、运营\产品转岗类、不喜欢编程、不善于研究算法的同学</p>
+<p><strong>5）以后发展：</strong> 业务负责人、独立咨询师、管理层、战略分析师、团队领头羊</p>
+<p><strong>6）核心：</strong> 不一定技术强、算法掌握牛，但一定要能深入行业、深入场景</p>
+<p> <strong>注意：</strong> 掌握一些宏观数据的获取方式，没事的时候多收集一些，自己根据所在行业而定，从事互联网或者移动互联网的话，最好掌握一种<a href="https://www.finebi.com/solutions/dp"><strong>自助式BI工具</strong></a>，比如Google Analytics、FineBI等。</p>
+<h3 id="2、B类：炮灰分析师"><a href="#2、B类：炮灰分析师" class="headerlink" title="2、B类：炮灰分析师"></a><strong>2、B类：炮灰分析师</strong></h3><p><strong>1）特点：</strong> 啥都要学，最累、干的你怀疑数据分析的价值</p>
+<p><strong>2）主要的工作：</strong> 协助业务或者上级完成一些常规的需求，这类一般是别人要什么，我们做什么，但是在不同的行业，不同的部门做的事情差异还是很大</p>
+<p><strong>3）需要掌握的：</strong></p>
+<ul>
+<li>硬性技能：SQL、EXCEL、PPT、python\spss\R任选其一，根据场景而定</li>
+<li>软性技能：沟通能力、抗打击能力、加班能力、数据管理能力（数据库和数据字典）</li>
+<li>掌握的方法论：ABtest、AAARRR、SWOT、RFM、5W2等，不知道也能干</li>
+<li>掌握的统计学：常规统计指标（均值、中位数、分位数等)、回归、聚类、因子、决策树、逻辑回归等，这些足够了，但基本高级的模型用不上，定位决定</li>
+<li>加分项：听话能力、擅长各类工具的应用，能快速响应需求方的需求</li>
+<li>突破：要自己根据环境主动参与一些讨论，承担一些从无到有的分析，从被动变为主动</li>
+</ul>
+<p><strong>4）以后发展：</strong> 纯正数据分析师、数据产品经理、数仓人员</p>
+<p><strong>5）适合人群：</strong> 都可</p>
+<h3 id="3、C类：数据分析师"><a href="#3、C类：数据分析师" class="headerlink" title="3、C类：数据分析师"></a>3、C类：数据分析师</h3><p><strong>1）特点：</strong> 独当一面、战斗力极强、对企业决策者有一定的影响</p>
+<p><strong>2）主要的工作：</strong> 除了被动的常规分析外，还要能主动发现业务存在的问题，会用数据找事，梳理业务发展与指标体系之间的关系，从日常监督分析开始，更多的是专题性的分析，无中生有</p>
+<p><strong>3）需要掌握的：</strong></p>
+<ul>
+<li>硬性技能：SQL、EXCEL、PPT、python\spss\R任选其一，tableau\FineBI\powerbi，也要懂一些市面上流行的数据产品</li>
+<li>软性技能：沟通能力、表达能力、逻辑思维强</li>
+<li>掌握的方法论：ABtest、AAARRR、SWOT、RFM、28原则、5W2H，用户及产品生命周期等</li>
+<li>掌握的统计学：常规统计指标（均值、中位数、分位数等)、回归、聚类、因子、决策树、逻辑回归、机器学习等，这些足够用了</li>
+<li>加分项：图表可视化、PPT展示、系统性思维、在行业有很多认识和沉淀</li>
+<li>要点：算法、技术、工具、业务混为一体，样样都要懂</li>
+<li>总结：这类目前市场上很紧缺，被称为稀缺动物</li>
+</ul>
+<h3 id="4、D类：BI工程师-分析师中的程序员"><a href="#4、D类：BI工程师-分析师中的程序员" class="headerlink" title="4、D类：BI工程师-分析师中的程序员"></a>4、D类：BI工程师-分析师中的程序员</h3><p><strong>1）主要的工作：</strong> 和数据的ETL打交道多，主要做数据规范、数据仓库、业务需求报表开发、多维度呈现等</p>
+<p><strong>2）需要掌握的：</strong></p>
+<ul>
+<li>硬性技能：数据库技术、数据仓库、Informatica, Datastage，Kettle，还有一些厂家的展示产品Business Objects, Cognos，常用梳理工具</li>
+<li>ERwin、echarts等</li>
+<li>软性技能：理解能力、表达能力、思维缜密</li>
+<li>掌握的方法论：无，基本人家让干啥咱干啥</li>
+<li>掌握的统计学：常规统计指标（均值、中位数、分位数等)、回归、聚类、因子、决策树、逻辑回归等，</li>
+<li>加分项：技术过硬，有过大型BI建设经验，既能干DBA又能干BI、视觉思维</li>
+<li>突破：这些人比一般的数据分析师更懂底层，缺少的只是与业务的融合，看自己的定位了</li>
+<li>总结：绝对的苦逼，容易吐血那种，常常怀疑人生</li>
+</ul>
+<p><strong>3）发展线路：</strong> CTO、项目经理、产品经理、平台负责人等</p>
+<h3 id="5、E类：算法工程师-就是你们班技术最强的"><a href="#5、E类：算法工程师-就是你们班技术最强的" class="headerlink" title="5、E类：算法工程师-就是你们班技术最强的"></a>5、E类：算法工程师-就是你们班技术最强的</h3><p><strong>1）主要的工作：</strong> 做算法、搞研发、创新算法</p>
+<p><strong>2）需要掌握的：</strong></p>
+<ul>
+<li>硬性技能：数据库技术、hadoop、python、R、spark等等</li>
+<li>软性技能：理解能力、表达能力、思维能力</li>
+<li>掌握的方法论：懂一些常见的即可</li>
+<li>掌握的统计学：各种算法都要精通，而且在不同的场景下，要自己开发新算法</li>
+<li>加分项：算法很熟悉、技术没得说、学历高</li>
+<li>总结：工资高、压力大，经常断片</li>
+</ul>
+<p><strong>3）适合人群：</strong> 名校对口专业毕业，没办法人太多，某宝从国内top已经要求全球TOP了</p>
+<h1 id="数据分析行业必备能力"><a href="#数据分析行业必备能力" class="headerlink" title="数据分析行业必备能力"></a>数据分析行业必备能力</h1><p>了解了这些数据分析师的百态之后，该如何入门的问题相信也会得到解答，我们一起来探讨一下<strong>数据分析师所需要掌握的那些能力</strong>，我总结出了以下7点和大家分享。</p>
+<p><img src="/2023/09/10/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E6%89%80%E9%9C%80%E7%9A%84%E6%8A%80%E6%9C%AF%E4%B8%8E%E7%90%86%E8%AE%BA/0015.png"></p>
+<h3 id="1、基本工具应用的能力"><a href="#1、基本工具应用的能力" class="headerlink" title="1、基本工具应用的能力"></a>1、基本工具应用的能力</h3><p>Office的三件套是必备的，特别是（excel、PPT），但所有的excel、ppt功能都要学习吗？显然不是，很多人在这个上面浪费的时间太多太多了。</p>
+<ul>
+<li>对于<strong>excel</strong>来讲，基本的函数（加减乘除、条件筛选、匹配函数、透视表、图表）就足够了，VBA对基础业务人员来说可以放弃。</li>
+<li>对<strong>PPT</strong>来讲，不要把自己打造成为一个专业的PPTer，PPT对于分析师来讲，唯一的核心就是展示，因此基本的操作就足够了，可能当入门的时候，你连打开PPT 的机会都没有，就是提数</li>
+</ul>
+<h3 id="2、专业工具使用"><a href="#2、专业工具使用" class="headerlink" title="2、专业工具使用"></a>2、专业工具使用</h3><p>这一块能力主要分为2个方面，<strong>数据分析与处理和数据展示</strong>。</p>
+<p>比如不善于编程的同学可以选择spss、clementine，也可以尝试玩玩kettle，不讨厌编程的话建议直接去学习python、R。</p>
+<p>相对来讲，专业对口的学起来用起来顺手一些，学哪个工具都可以，一般的招聘都是掌握一种就可以，所以不要逼着自己去学不顺手的工具，浪费时间，<strong>投入产出比太低</strong>。</p>
+<p>另外就是可视化的，其实excel就是一个最基础的可视化工具，简单易用，场景多，如果想要可视化分析效率更高，建议掌握tableau、<a href="https://www.finebi.com/product"><strong>FineBI</strong></a>之类的一种BI工具，现在很多企业都在用商用BI软件了，如果可以提前知道要去的企业应用的哪种，可以重点学习一下。</p>
+<h3 id="3、发现问题的能力"><a href="#3、发现问题的能力" class="headerlink" title="3、发现问题的能力"></a>3、发现问题的能力</h3><p>这是一种很重要的能力，可以塑造自己从被动转为主动，这需要我们有足够的<strong>知识储备和业务的沉淀</strong>，你才有发现问题的资本，而不是让人家觉得你在找茬。</p>
+<h3 id="4、解决问题的能力"><a href="#4、解决问题的能力" class="headerlink" title="4、解决问题的能力"></a>4、解决问题的能力</h3><p>数据分析不但要展示过去、现状、未来，更重要的是遇见问题的时候能告诉大家为什么会发生、为什么是这样，而不是凭我们经验去想当然地下结论。</p>
+<h3 id="5、行业洞察能力"><a href="#5、行业洞察能力" class="headerlink" title="5、行业洞察能力"></a>5、行业洞察能力</h3><p>行业的洞察力不是靠阅读文章的数量，看书多少本来决定的，虽然之前存在一定的关系，但不是纯正相关或者因果关系，而是要依靠咨询公司的那一套方法论去不断的模仿、思考、复盘的。</p>
+<h3 id="6、创新的对应方案"><a href="#6、创新的对应方案" class="headerlink" title="6、创新的对应方案"></a>6、创新的对应方案</h3><p>知道了事情的来龙去脉，能不能站在用户体验的角度设计出一套，记住自己分析数据、呈现数据的时候不仅仅是数据，而是一群人的行为趋势。</p>
+<p>比如你要开一个陕西面馆，你<strong>能否根据用户的数据打造出一套引导改变他们习惯的面馆</strong>，而不仅仅是影响。</p>
+<h3 id="7、数据的解读能力"><a href="#7、数据的解读能力" class="headerlink" title="7、数据的解读能力"></a>7、数据的解读能力</h3><p>经常看一些小伙伴写的分析报告，出现最多的就是同比、环比，而同比、环比之后在没有任何的描述，<strong>这时候你描述的只是一种数据的状态，并没有把数据背后的故事讲清楚</strong>，比如什么原因引起的？你是从哪些角度分析发现的？这样的报告很难带读者到你的思维世界</p>
+<p>许多人在数据分析入门时往往<strong>忽略了<a href="https://www.finebi.com/product">数据分析</a>的本质</strong>，把太多的时间和精力放在了基本工具、专业工具方面。即使你的工具使用、编程能力不强，但只要你可迁移的能力很强，企业都会要。当然不是说大家不要投入时间去学习工具，而是建议不要投入太多的时间，比如学习excel，有的人要连续学习好几个月，其实一周足够了！</p>
+<p>的趋势。</p>
+<p>备受市场认可的软件其实有很多，选择时必须要结合实际的情况。一般的情况下，都建议选择市面上较主流的产品，比较容易达到好的效果，目前企业数据分析BI软件市场占有率前列的，就是帆软BI软件——<strong>FineBI</strong>。</p>
+<h1 id="数据分析师所需的技术与理论"><a href="#数据分析师所需的技术与理论" class="headerlink" title="数据分析师所需的技术与理论"></a>数据分析师所需的技术与理论</h1><h3 id="1-统计学和概率论"><a href="#1-统计学和概率论" class="headerlink" title="1-统计学和概率论"></a>1-统计学和概率论</h3><p>统计学和概率论可帮助您正确理解数字、回答一些相关假设并做出更好的预测。例如：</p>
+<p>销售旺季的平均销量？</p>
+<p>每天售出单量增长幅度是多少？</p>
+<p>还有多少潜在客户准备购买的？</p>
+<p>多少个咨询客户才能转化成一个下单客户？</p>
+<p>购买我们产品的客户占整个市场的百分比是多少？</p>
+<p>此外，还可以使用回归和时间序列等统计方法，对未来的预期销售额做出相关预测。</p>
+<h3 id="2-数据库知识"><a href="#2-数据库知识" class="headerlink" title="2-数据库知识"></a>2-数据库知识</h3><p>在大数据时代，企业的数据都是存储在数据库中的，因此至少要熟练掌握一个或以上的数据库管理系统。市场上有许多数据库管理系统，如 Oracle、MongoDB、SQLite等。但是最常用的还是MySQL，它是评价最高的开源 DBMS，以其成熟度和可靠性而闻名。但我们如何从数据库中提取所需的数据呢？这正是SQL可以发挥作用的地方，SQL是一种专门设计用于处理大型数据库的结构化语言，检索数据效率非常高。</p>
+<h3 id="3-统计工具"><a href="#3-统计工具" class="headerlink" title="3-统计工具"></a>3-统计工具</h3><p>获得数据后，您需要知道至少一种统计工具，并利用这些统计工具对数据进行分析，常见的统计软件包括SPSS、SAS、Sage、Mathematica等。目前，任何人都可以使用Microsoft Excel进行最简单的统计分析，MS Excel 是一种电子表格，可帮助人们分析和绘制数据，它还可以执行大量复杂的数学和统计功能。</p>
+<h3 id="4-编程语言"><a href="#4-编程语言" class="headerlink" title="4-编程语言"></a>4-编程语言</h3><p>数据分析师最常用的编程语言是 Python 和 R，原因是今天生成的数据量很大，需要掌握这些编程工具才能更好地开展工作。编程语言提供了两个主要好处。首先，它可以使数据转换变得非常容易。其次，这些语言拥有丰富的库，可以帮助人们轻松地制作预测模型，例如python 中的sklearn 库。</p>
+<h3 id="5-可视化"><a href="#5-可视化" class="headerlink" title="5-可视化"></a>5-可视化</h3><p>在21世纪之后，每个行业的数据都可以被可视化，它是决策者和数据分析师了解事情结果的桥梁。目前，市场上最突出的可视化工具包括 – PowerBI、Tableau 和智分析等，以下图的智分析为例，目前的图表可视化正从传统的静态报表逐渐向BI动态报表过渡，可视化能力得到进一步的加强。</p>
+<h1 id="数据分析师所需的软技能"><a href="#数据分析师所需的软技能" class="headerlink" title="数据分析师所需的软技能"></a>数据分析师所需的软技能</h1><h3 id="1-沟通"><a href="#1-沟通" class="headerlink" title="1-沟通"></a>1-沟通</h3><h3 id="2-批判性思维"><a href="#2-批判性思维" class="headerlink" title="2-批判性思维"></a>2-批判性思维</h3><h3 id="3-好奇心"><a href="#3-好奇心" class="headerlink" title="3-好奇心"></a>3-好奇心</h3><h3 id="4-解决问题"><a href="#4-解决问题" class="headerlink" title="4-解决问题"></a>4-解决问题</h3><h3 id="5-终身学习"><a href="#5-终身学习" class="headerlink" title="5-终身学习"></a>5-终身学习</h3>]]></content>
+      <categories>
+        <category>技术</category>
+        <category>数据分析</category>
+        <category>方法论</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+        <tag>数据分析师</tag>
+        <tag>方法论</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>这可能是我见过最好的 NumPy 图解教程！</title>
     <url>/2023/10/23/%E8%BF%99%E5%8F%AF%E8%83%BD%E6%98%AF%E6%88%91%E8%A7%81%E8%BF%87%E6%9C%80%E5%A5%BD%E7%9A%84NumPy%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
@@ -2282,6 +2582,31 @@
 <li>认为自己是身体的主人，不是奴隶</li>
 <li>当我们改变了自己的身体，身边的世界也会开始改变</li>
 </ul>
+]]></content>
+      <categories>
+        <category>生活</category>
+        <category>碎碎念</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+        <tag>分享</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>图形推理</title>
+    <url>/2024/04/25/%E5%9B%BE%E5%BD%A2%E6%8E%A8%E7%90%86/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="图形推理考点"><a href="#图形推理考点" class="headerlink" title="图形推理考点"></a>图形推理考点</h2><ol>
+<li>位置规律：图形的位置变化，如平移、旋转等。</li>
+<li>样式规律：图形的形状、颜色、大小等样式变化。</li>
+<li>属性规律：图形的内部属性，如对称性、连通性等。</li>
+<li>数量规律：图形中元素的数量变化，如增加、减少或保持不变。</li>
+<li>特殊规律：图形中的特殊模式或序列，如序列顺序、奇偶性等。</li>
+</ol>
+<span id="more"></span>
+<h2 id="如何计算一个数相对于另一个数的增加倍数。"><a href="#如何计算一个数相对于另一个数的增加倍数。" class="headerlink" title="如何计算一个数相对于另一个数的增加倍数。"></a>如何计算一个数相对于另一个数的增加倍数。</h2><p>计算公式是：<br><img src="/2024/04/25/%E5%9B%BE%E5%BD%A2%E6%8E%A8%E7%90%86/20240426204834.png"></p>
+<p>这里的“新数值”是数值增加后的结果，而“原数值”是数值增加前的原始数值。通过将新数值除以原数值，我们可以得到新数值是原数值的多少倍。从这个倍数中减去1，就能得到增加的倍数。</p>
+<p>例如，如果原数值是50006，新数值是98576，那么98576是50006的1.971倍（98576除以50006的结果）。这意味着98576比50006增加了0.971倍（1.971减去1）。</p>
+<p>这个计算方法适用于任何数值的增加倍数计算，可以帮助我们理解一个数相对于另一个数增长了多少倍。</p>
 ]]></content>
       <categories>
         <category>生活</category>
@@ -11002,28 +11327,16 @@
       </tags>
   </entry>
   <entry>
-    <title>图形推理</title>
-    <url>/2024/04/25/%E5%9B%BE%E5%BD%A2%E6%8E%A8%E7%90%86/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="图形推理考点"><a href="#图形推理考点" class="headerlink" title="图形推理考点"></a>图形推理考点</h2><ol>
-<li>位置规律：图形的位置变化，如平移、旋转等。</li>
-<li>样式规律：图形的形状、颜色、大小等样式变化。</li>
-<li>属性规律：图形的内部属性，如对称性、连通性等。</li>
-<li>数量规律：图形中元素的数量变化，如增加、减少或保持不变。</li>
-<li>特殊规律：图形中的特殊模式或序列，如序列顺序、奇偶性等。</li>
-</ol>
+    <title>有意思的翻译PROMPT</title>
+    <url>/2024/04/29/%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84%E7%BF%BB%E8%AF%91PROMPT/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><img src="/2024/04/29/%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84%E7%BF%BB%E8%AF%91PROMPT/image-20240428223752145.jpeg"></p>
 <span id="more"></span>
-<h2 id="如何计算一个数相对于另一个数的增加倍数。"><a href="#如何计算一个数相对于另一个数的增加倍数。" class="headerlink" title="如何计算一个数相对于另一个数的增加倍数。"></a>如何计算一个数相对于另一个数的增加倍数。</h2><p>计算公式是：<br><img src="/2024/04/25/%E5%9B%BE%E5%BD%A2%E6%8E%A8%E7%90%86/20240426204834.png"></p>
-<p>这里的“新数值”是数值增加后的结果，而“原数值”是数值增加前的原始数值。通过将新数值除以原数值，我们可以得到新数值是原数值的多少倍。从这个倍数中减去1，就能得到增加的倍数。</p>
-<p>例如，如果原数值是50006，新数值是98576，那么98576是50006的1.971倍（98576除以50006的结果）。这意味着98576比50006增加了0.971倍（1.971减去1）。</p>
-<p>这个计算方法适用于任何数值的增加倍数计算，可以帮助我们理解一个数相对于另一个数增长了多少倍。</p>
-]]></content>
-      <categories>
-        <category>生活</category>
-        <category>碎碎念</category>
-      </categories>
+
+<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">你是一个英语翻译团队的领导. 你会安排团队成员进行如下翻译, 实现翻译的&quot;信达雅&quot;目标:  </span><br><span class="line">  </span><br><span class="line">第一轮翻译<span class="comment">--信,追求直译, 将英文翻译成中文, 力求准确  </span></span><br><span class="line">  </span><br><span class="line">第二轮翻译<span class="comment">--达,在第一轮翻译的基础上, 考虑文化, 语境, 语义, 思考文字背后想要表达的意思, 进行意译, 力求意境契合, 记得分开思考和翻译内容。  </span></span><br><span class="line">  </span><br><span class="line">第三轮翻译<span class="comment">--雅, 基于第二轮翻译理解的语境含义, 进一步思考其中的哲理, 然后使用中国&lt;诗经&gt;的语言风格针对哲理和语义进行翻译, 力求简明, 古意盎然  </span></span><br><span class="line">  </span><br><span class="line">例如:  </span><br><span class="line">- you need you. 哲理部分，可以引申到佛家所说的&quot;莫向外求&quot;, 儒家所说的&quot;反求诸己&quot;, 然后思考使用诗经语言风格进行重新表述.  </span><br><span class="line">  </span><br><span class="line">- <span class="keyword">nothing</span> <span class="keyword">for</span> <span class="keyword">nothing</span>. 哲理部分，可以引申到诗句“世上本无事，庸人自扰之”，也可引申到俗语“尘归尘，土归土”  </span><br><span class="line">  </span><br><span class="line">第四轮翻译<span class="comment">--初审: 完成三轮翻译后， 深吸一口气， 缓一缓， 思考一下第三轮翻译的结果，与其哲理的偏差在哪？ 不要扩展太多，务求精练深刻，精辟是第一要义。 据此思路进行改进。  </span></span><br><span class="line">  </span><br><span class="line">第五轮翻译<span class="comment">--终审: 最终，你将亲自进行审稿， 你会对比原文和最后的翻译结果， 先思考《诗经》的语言表达风格要点，再审阅初审翻译的结果是否满足, 并给出你的审校修改结论。  </span></span><br><span class="line">  </span><br><span class="line">注意: 思考部分,请使用 【思考】 开头，翻译结果请使用【翻译】开头。  </span><br><span class="line">  </span><br><span class="line">请严格遵守以上工作流程， 对以下文字进行翻译：</span><br></pre></td></tr></table></figure>]]></content>
       <tags>
-        <tag>随笔</tag>
-        <tag>分享</tag>
+        <tag>Prompt</tag>
+        <tag>AI</tag>
+        <tag>翻译</tag>
       </tags>
   </entry>
   <entry>
@@ -11099,8 +11412,8 @@
       </categories>
       <tags>
         <tag>笔记</tag>
-        <tag>Obsidian</tag>
         <tag>插件</tag>
+        <tag>Obsidian</tag>
         <tag>分享</tag>
         <tag>webdav</tag>
       </tags>
@@ -11194,319 +11507,6 @@
       <tags>
         <tag>随笔</tag>
         <tag>分享</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>数据分析师所需的技术与理论</title>
-    <url>/2023/09/10/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E6%89%80%E9%9C%80%E7%9A%84%E6%8A%80%E6%9C%AF%E4%B8%8E%E7%90%86%E8%AE%BA/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
-<p>对数据分析师来说，要想避免沦为取数、跑数的工具人命运，就明确并巩固自己的优势与价值。因此明确数据分析师的成长路径、能力要求、能力提升方法就显得格外重要。而笔者作为数据分析专家，也就此分享了自己的思考与见解。</p>
-</blockquote>
-<h1 id="一、数据分析师的种类、职责与升级路线"><a href="#一、数据分析师的种类、职责与升级路线" class="headerlink" title="一、数据分析师的种类、职责与升级路线"></a>一、数据分析师的种类、职责与升级路线</h1><p>在国内数据分析师一般分为5大种类：<strong>数据产品、数据分析师、数据建模师、数据工程师与数据科</strong>学家，这5类人才的必备能力和成长路线我们来逐一介绍。</p>
-<span id="more"></span>
-<h3 id="1-1数据产品"><a href="#1-1数据产品" class="headerlink" title="1.1数据产品"></a>1.1数据产品</h3><p><img src="/2023/09/10/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E6%89%80%E9%9C%80%E7%9A%84%E6%8A%80%E6%9C%AF%E4%B8%8E%E7%90%86%E8%AE%BA/0001.png"></p>
-<p>数据产品概览图</p>
-<p>在产品的基础上，增加数据思维。</p>
-<p>数据产品不仅懂得埋点原理，能够通过抓包等工具抓取数据并进行分析。同时还能够参与数据化产品的制作，如BI报表、CRM系统、AB test试验后台等。</p>
-<p>老板会说：“去给我做个神策、GrowingIO那样婶儿的平台出来”，然后你就根据老板的需求，转化为详细的技术需求，提给技术去开发，这就是数据产品的日常。</p>
-<p><strong>1.1.1 成长路线：</strong> CGO、增长专家、产品总监、数据产品总监、数据运营总监</p>
-<p><strong>1.1.2 必备能力</strong></p>
-<ul>
-<li>① 数据技术</li>
-<li>② 可视化</li>
-<li>⑤ 业务思维</li>
-<li>⑦ 专业能力</li>
-<li>⑧ 沟通能力</li>
-</ul>
-<p>（①②⑤⑦⑧是啥？下文详解）</p>
-<p><strong>1.1.3 成长建议</strong></p>
-<ol>
-<li>数据产品一般会对编程、数据处理、统计等专业知识方面较弱，建议加强数据分析能力，做个有技术、分析能力的产品。</li>
-<li>既然有产品属性，那就涉及到与技术无止境的扯皮之中，如何提升自己业务与沟通能力让自己更专业，同时使工作流程更加顺畅，这便是数据产品的王者能力。</li>
-</ol>
-<h3 id="1-2-数据分析师"><a href="#1-2-数据分析师" class="headerlink" title="1.2 数据分析师"></a>1.2 数据分析师</h3><p><img src="/2023/09/10/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E6%89%80%E9%9C%80%E7%9A%84%E6%8A%80%E6%9C%AF%E4%B8%8E%E7%90%86%E8%AE%BA/0002.png"></p>
-<p>数据分析师概览图</p>
-<p>这就是我们常说的商业化数据分析师，主要负责01搭建可视化监控报表，利用数据挖掘和洞察业务，为需求部门提供数据支撑、分析报告、商业化模型等服务，这里面的key word是监控、挖掘、有价值和服务，在公司里担任领导的眼睛与大脑的角色。</p>
-<p><strong>1.2.1 成长路线：</strong> CGO、增长专家、数据咨询专家、数据分析总监、数据运营总监</p>
-<p><strong>1.2.2 必备能力</strong></p>
-<ul>
-<li>① 数据技术</li>
-<li>② 可视化</li>
-<li>③ 统计学基础</li>
-<li>⑤ 业务思维能力</li>
-<li>⑦ 专业能力</li>
-<li><strong>⑧ 沟通能力</strong></li>
-</ul>
-<p>（①③③⑤⑦⑧是啥？下文详解）</p>
-<p><strong>1.2.3 成长建议</strong></p>
-<p><strong>（1）一定要重视可视化</strong></p>
-<p>为什么呢？</p>
-<p>因为数据分析师花90%的时间用在处理数据上，只贡献了10%的价值，而老板看到你的报告，却用了不到10%的时间便做出决策，贡献了90%的价值，所以说BI可视化尤为重要。下图给大家展示可视化的正反两个例子A和B：</p>
-<p><img src="/2023/09/10/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E6%89%80%E9%9C%80%E7%9A%84%E6%8A%80%E6%9C%AF%E4%B8%8E%E7%90%86%E8%AE%BA/0003.png"></p>
-<p>可视化对比图</p>
-<p>同样是数据分析师做出来的AB两张图，看了图A的老板点头肯定，看了图B的老板肯定想弄死你，正愁没人裁，有没有？</p>
-<p><strong>（2）分析师要有自己的业务思维能力</strong></p>
-<p>什么意思？比如老板经常会问你今天的DAU怎么暴涨了，留存怎么掉了等等。</p>
-<p>许多大神都有自己的独立业务思维，对答如流，迅速解决问题，并有自己的一套思维，什么留存“六脉神剑”啊，增长“九宫格”啊啥的，这都是业务思维沉淀形成的。</p>
-<p><strong>（3）千万不要把数据分析师做成取数的、跑数的，那样你的可替代性太强</strong></p>
-<p>如果明天要裁一个数据分析师，那么这类“工具人”就是首选。数据分析师的价值是挖掘数据中的价值并让领导知道你这么做的价值，不要你觉得，要你的领导和你都觉得，这才是最重要的。</p>
-<p><strong>（4）沟通能力</strong></p>
-<p>这个是我面试经常会问的问题，你觉得数据分析师最重要的能力是什么？</p>
-<p>对，就是沟通能力，如果你连需求方想要的是什么都唠不明白，那你如何服务于他，目标错误高效的执行就是灾难，咔咔做了2周，发现不是人家想要的，这种事在工作上并不少见，所以说沟通真的很重要。</p>
-<p><strong>（5）要养成大局观</strong></p>
-<p>作为数据分析师不能总局限于自己业务的那些数，也要抬头看看市场上大盘变化，以及竞品变化。</p>
-<p>分析格局的大小源自看待问题的高度，这一点非常重要，初期可以慢慢养成，这也是高阶分析师必备的能力。</p>
-<h3 id="1-3-数据建模师"><a href="#1-3-数据建模师" class="headerlink" title="1.3 数据建模师"></a>1.3 数据建模师</h3><p><img src="/2023/09/10/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E6%89%80%E9%9C%80%E7%9A%84%E6%8A%80%E6%9C%AF%E4%B8%8E%E7%90%86%E8%AE%BA/0004.png"></p>
-<p>数据建模师概览图</p>
-<p>数据建模师也叫算法工程师，是数理统计知识、编程与业务思维集一身的模型大师，通过建立数学模型、利用算法实现增长，可以说是一家产品的灵魂工作者，你就说信息流产品的推荐算法核不核心、金融行业的反欺诈和信用评级厉不厉害，P2P的智能配标优不优秀。</p>
-<p><strong>1.3.1 成长路线：</strong> CTO、技术总监、资深算法工程师</p>
-<p><strong>1.3.2 必备能力</strong></p>
-<ul>
-<li>① 数据技术</li>
-<li>③ 统计学基础</li>
-<li>④ 建模能力</li>
-<li>⑤ 业务思维能力</li>
-<li>⑥ 大局能力</li>
-<li>⑦ 专业能力</li>
-</ul>
-<p>（①③④⑤⑥⑦是啥？下文详解）</p>
-<p><strong>1.3.3 成长建议</strong></p>
-<p><strong>（1）技术不用说，那必须杠杠的，但容易钻入数据的黑洞，沉迷于算法但又无法与实际业务相结合，最终项目流产</strong></p>
-<p>谷歌眼镜厉不厉害，炫不炫酷，最终惨遭压箱底，暂停个人消费者服务的命运，为什么？</p>
-<p>出发点很好，但花费过高、周边技术不完善等因素，使其不具备商业价值，最终倒在了5G之前。</p>
-<p>我还认识一个彩票公司的小哥，自称研制出了一套“迷人”的算法，能够让公司收益最大化，可最终…呵呵。</p>
-<p>我想说的是技术一定要结合实际业务，通过技术变现这才是王道，并不是所有公司都有钱有精力去做“华而不实”的事情，尤其是在目前的大环境下。</p>
-<p><strong>（2）大家都认为技术不需要沟通，我们的通用语言是R、python、java、自然语言，很冰冷很cool</strong></p>
-<p>但熟不知你若会技术又有业务头脑，那总监的位置是不是在向你招手；你若懂业务、懂管理又会为人处世，拿下CTO这个位置是不是志在必得。</p>
-<p>当然也有喜欢钻研算法，不掺乎管理层的资深技术，所谓事了拂衣去，深藏功与名，说的就是这些人。</p>
-<p>不管怎么说，之所以能够有今天的成就，除了过硬的技术外，很好的沟通能力也是必不可少的。</p>
-<h3 id="1-4-数据工程师"><a href="#1-4-数据工程师" class="headerlink" title="1.4 数据工程师"></a>1.4 数据工程师</h3><p><img src="/2023/09/10/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E6%89%80%E9%9C%80%E7%9A%84%E6%8A%80%E6%9C%AF%E4%B8%8E%E7%90%86%E8%AE%BA/0005.png"></p>
-<p>数据工程师概览图</p>
-<p>数据工程师的职能更偏向技术工程，主要的工作职责是搭建数据仓库、创建ETL、进行数据治理、数据安全等方面的工作、通过提升运行速度，优化数据结构，更好地服务于数据使用方，比如数据分析师、数据产品及数据建模师。</p>
-<p><strong>1.4.1 成长路线：</strong> CTO、技术总监、资深研发工程师</p>
-<p><strong>1.4.2 必备能力</strong></p>
-<ul>
-<li>① 数据技术</li>
-<li>④ 建模能力</li>
-<li>⑤ 业务思维能力</li>
-<li>⑦ 专业能力</li>
-</ul>
-<p>（①④⑤⑦是啥？下文详解）</p>
-<p><strong>1.4.3 成长建议</strong></p>
-<p><strong>（1）我们不生产数据，只是数据的搬运工，搬好了是我们应该的，但搬不好任务流程挂掉，BI报表自动化任务失败就要扣薪水</strong></p>
-<p>这是许多数据工程师接触都遇到的问题，这个时候就考验专业能力，如何优化流程，监控及预警就尤为重要了。</p>
-<p>举个我自己的亲身经历吧，之前做了流失用户自动召回系统，每天定时按照算法算出目标用户并发送短信、push和红包。</p>
-<p>逻辑简单的说是这样的，A表是全量用户表，B表是活跃用户，那么A-B&#x3D;C，C表就是目标用户，即不活跃的流失用户。</p>
-<p>突然有一天因为一个BUG，导致B表挂掉了，B表变为空表，那么A-B&#x3D;A-0&#x3D;A&#x3D;C，就相当于把A表全量用户都发送优惠券及信息。</p>
-<p>这事故仅次于PDD那次红包事故了，当时我们没有推卸责任（毕竟绩效已经没了），迅速制定了数据异常预警，人工短信确认等机制，避免了类似事故发生。</p>
-<p>这次事故给我的教训就是，人无远虑必有近忧，错误是不可避免的，但如何提升专业水平，降低错误发生概率，提前预知错误，以避免资源的浪费。</p>
-<p><strong>（2）沟通、沟通还是沟通…</strong></p>
-<h3 id="1-5-数据科学家"><a href="#1-5-数据科学家" class="headerlink" title="1.5 数据科学家"></a>1.5 数据科学家</h3><p><img src="/2023/09/10/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E6%89%80%E9%9C%80%E7%9A%84%E6%8A%80%E6%9C%AF%E4%B8%8E%E7%90%86%E8%AE%BA/0006.png"></p>
-<p>数据科学家概览图</p>
-<p>综合性人才，数据分析能力、统计学基础、业务能力、算法与沟通能力集聚一身的人才。市面上有很多不懂技术只会嘴炮的领导，也不缺不懂结合业务的技术大拿，但做到样样精通，实属不易。向下能够了解前沿技术并指导下属进行研究开发，向上能够很好的与领导沟通，让领导理解这么做的价值。</p>
-<ul>
-<li>跟数据分析师比分析能力，数据分析师卒；</li>
-<li>跟算法工程师过算法能力，算法工程师卒；</li>
-<li>跟数据工程师拼技术能力，数据工程师卒；</li>
-<li>跟数据产品唠业务能力，数据产品卒。</li>
-</ul>
-<p>就是这么强大，不过这类人才乃是可遇不可求，正所谓流氓会武术，谁也挡不住；科学家会武术，流氓也挡不住，实在是社会…社会…</p>
-<p><strong>1.5.1 成长路线：</strong> 没啥可建议的，挺好的哥…</p>
-<p><strong>1.5.2 必备能力：</strong> 全部①-⑧</p>
-<p>（①②③④⑤⑥⑦⑧是啥？下文详解）</p>
-<p><strong>1.5.3 成长建议：</strong> 没啥建议，都挺好的，就是建议给别人留条活路，卒。</p>
-<h1 id="二、数据分析师的8种能力"><a href="#二、数据分析师的8种能力" class="headerlink" title="二、数据分析师的8种能力"></a>二、数据分析师的8种能力</h1><hr>
-<h3 id="2-1-数据技术"><a href="#2-1-数据技术" class="headerlink" title="2.1 数据技术"></a>2.1 数据技术</h3><p>既然是数据分析，就要了解数据在各个环节是如何运转的，同时还能运用工具读取和分析数据，在这里我将其分成基础、数据提取、分析工具。</p>
-<p><strong>基础：office软件</strong></p>
-<p>包括且不限于excel、VBA、ppt、word，尤其是excel很深很深，大多数人只用了excel中1%的功能，到现在我只敢说会用excel，谈不上精通，也许我只用了2%吧，但应付日常数据足矣。</p>
-<p><strong>数据提取：SQL、HiveSQL</strong></p>
-<p>都是类SQL软件，会一个就能精通所有，大家不要觉得编程很难就望而却步，其实SQL是最简单的语言，不夸张的说，用心学SQL不到一个月就可以干活了，什么你还学不会？你只是缺个人逼你而已。</p>
-<p><strong>分析工具：SPSS、SPSS modeler、R、Python、SAS</strong></p>
-<p>不是每个人都有机会接触SAS，如果没机会也不要紧，这里推荐大家一定要学SPSS，可以理解为升级版的excel，也很简单；然后Python和R任选其一即可。</p>
-<h3 id="2-2-可视化"><a href="#2-2-可视化" class="headerlink" title="2.2 可视化"></a>2.2 可视化</h3><p>Excel、PPT、Tableau、Echarts、powerBI</p>
-<p>数据可视化的工具很多，除了Python、R、JAVA这类的之外，上面列的几种算是比较常见的BI可视化工具。先说Excel和PPT，没错它们也算可视化软件，如下图：</p>
-<p><img src="/2023/09/10/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E6%89%80%E9%9C%80%E7%9A%84%E6%8A%80%E6%9C%AF%E4%B8%8E%E7%90%86%E8%AE%BA/0007.png"></p>
-<p>Excel可视化</p>
-<p>这是用我用excel做出来的dashboard（看板），也还可以吧，应付一般老板那是够够的。但要想玩的洋一点，就得用例如tableau、powerBI等软件，毕竟老美都用tableau么，样式如下图所示：</p>
-<p><img src="/2023/09/10/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E6%89%80%E9%9C%80%E7%9A%84%E6%8A%80%E6%9C%AF%E4%B8%8E%E7%90%86%E8%AE%BA/0008.png"></p>
-<p>新增用户热力图</p>
-<p>不管是用什么工具，能够将抽象的数据用图形展示出来，便于老板观察和决策，那就是ok的，至于如何做的好看，那就是进阶的课题了。</p>
-<h3 id="2-3-统计学基础"><a href="#2-3-统计学基础" class="headerlink" title="2.3 统计学基础"></a>2.3 统计学基础</h3><p><strong>统计学基础在AB test、数学模型、抽样检验里常常会用到</strong>，有的时候你看到的数据并不是真实的，怎么去解释，我给大家列几个例子：</p>
-<p><strong>示例一 AB test的错觉：</strong></p>
-<p><img src="/2023/09/10/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E6%89%80%E9%9C%80%E7%9A%84%E6%8A%80%E6%9C%AF%E4%B8%8E%E7%90%86%E8%AE%BA/0009.png"></p>
-<p>AB test结果图</p>
-<p>看到这张图，很多人都会认为B比A的转化效果好对吧，但是这里有多大的可能是因为一些随机的因素导致这样的区别呢，这就要用到统计学的假设检验了。</p>
-<p>我们来假设B不会比A效果好，然后试图通过样本来推翻这个假设，如果样本足以推翻假设，那么我们就可以认为实验完成了，所见即所得；否则我们会认为B比A好只是偶然现象，这组AB test没有任何意义，需重新测试。</p>
-<p><strong>示例二 R平方值的重要性：</strong></p>
-<p><img src="/2023/09/10/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E6%89%80%E9%9C%80%E7%9A%84%E6%8A%80%E6%9C%AF%E4%B8%8E%E7%90%86%E8%AE%BA/0010.png"></p>
-<p>DAU预测图</p>
-<p>上图是一个简单的回归模型用来预测DAU，<strong>红色是指数回归，绿色是多项式回归，哪种模型更精准呢，这时候就要看R方。</strong></p>
-<p>R平方值是趋势线拟合程度的指标，取值范围在0到1之间，它的数值大小可以反映趋势线的估计值与对应的实际数据之间的拟合程度，拟合程度越接近1，趋势线的可靠性就越高。</p>
-<p>同样是预测，3个月后指数预测比多项式预测高出30%，选哪个模型才能使误差率最小化呢，这个时候R方的重要性就体现出来了。</p>
-<p>以上列举了2个统计学的小例子，在实际工作当中还会遇到很多统计学的知识，<strong>比如显著性、置信度、离散度等等，统计学会让我们的分析结果更加专业，更加严谨。</strong></p>
-<h3 id="2-4-建模能力"><a href="#2-4-建模能力" class="headerlink" title="2.4 建模能力"></a>2.4 建模能力</h3><p>根据不同的业务需求，会使用一些模型，下面简单的介绍集中常用模型供大家参考。</p>
-<p><strong>分类：</strong> 基于历史用户行为构建模型，套用到新用户身上，预测用户可能发生某种行为的概率，常用的分类模型有C5.0、决策树、随机森林、逻辑回归等，如下图运用逻辑回归，预测用户是否下单：</p>
-<p><img src="/2023/09/10/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E6%89%80%E9%9C%80%E7%9A%84%E6%8A%80%E6%9C%AF%E4%B8%8E%E7%90%86%E8%AE%BA/0011.png"></p>
-<p>模型概念图</p>
-<p><strong>聚类：</strong> 按照个体的特征将他们分类，让同一个类别内的个体之间具有较高的相似度，不同类别之间具有较大的差异性，常用于给用户打标签，如下图K-means聚类所示：</p>
-<p><img src="/2023/09/10/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E6%89%80%E9%9C%80%E7%9A%84%E6%8A%80%E6%9C%AF%E4%B8%8E%E7%90%86%E8%AE%BA/0012.png"></p>
-<p>聚类概念图</p>
-<p><strong>回归：</strong> 在③提到的指数回归和多项式回归就是典型的例子，常用于预测销量、人口等数据。</p>
-<p><strong>评估：</strong> 评估模型市面上分为2大类，回归和标准化模型，多用于对品牌投放、效果投放、会员积分的评估，如下图所示：</p>
-<p><img src="/2023/09/10/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E6%89%80%E9%9C%80%E7%9A%84%E6%8A%80%E6%9C%AF%E4%B8%8E%E7%90%86%E8%AE%BA/0013.png"></p>
-<p>渠道评估模型（AHP标准化模型）</p>
-<p>除了上述的4大类模型外，还有很多种类的模型，根据实际业务去选择对应的模型就ok了，在这里不过多赘述。</p>
-<h3 id="2-5-业务思维能力"><a href="#2-5-业务思维能力" class="headerlink" title="2.5 业务思维能力"></a>2.5 业务思维能力</h3><p>数据是冰冷的，若想开启真相的大门，业务思维便是我们的钥匙。</p>
-<p>举个简单的例子，老板发现2019年6月份的汽车成交量突然猛增，想让你分析一下原因。</p>
-<p>这时候你会发现产品、渠道、技术等等都没问题，那会是什么原因呢？</p>
-<p>如果你没有业务思维就会埋在一堆数据里，如果有业务思维就会去想，国家规定2019年7月1日开始执行国六排放标准，国五汽车将不能再办理牌照，这时候经销商、4s店应该怎么办？那当然是降价清库存啦，你降价了用户当然是买买买啦。所以说业务思维非常重要，不要死看数，看死数。</p>
-<h3 id="2-6-大局能力"><a href="#2-6-大局能力" class="headerlink" title="2.6 大局能力"></a>2.6 大局能力</h3><p>知己知彼，百战不殆。作为分析师亦是如此，知己好做，知彼怎么做呢？</p>
-<p>那就是竞品分析，从竞品数据及竞品策略层面分析对手。</p>
-<p>职场上老板也经常会问咱们的数据怎么样？</p>
-<p>然后你会说大幅增长，形势一片大好。</p>
-<p>老板又问了，竞品数据怎么样？</p>
-<p>这时候你就傻眼了，不是回答不上来，就是数据没有竞品好看。</p>
-<p>优秀的数据分析师则会这样去说：</p>
-<blockquote>
-<p>“我们同比增长XX，环比XX，竞品的数据是XX，我们哪些方面优秀，哪些不足，接下来应该如何如何。”</p>
-</blockquote>
-<p>这样一套操作下来，领导会觉得你的工作做到位了，不是一问三不知，也不是自己“闭门造车”。</p>
-<h3 id="2-7-专业能力"><a href="#2-7-专业能力" class="headerlink" title="2.7 专业能力"></a>2.7 专业能力</h3><p>数据产品如何构建埋点，数据分析师如何输出有价值的商业洞悉报告，数据工程师如何优化数据结构，数据建模型如何针对不同业务建立最优模型，数据科学家如何把大数据中的规律传达给BOSS从而影响产品，流程和决策。</p>
-<h3 id="2-8-沟通能力"><a href="#2-8-沟通能力" class="headerlink" title="2.8 沟通能力"></a>2.8 沟通能力</h3><p>我在面试的时候问的最多的问题是，你觉得数据分析师最重要的技能是什么？</p>
-<p>对！是沟通，什么数据敏感度、增长思维、方法论都是瞎扯，你连话都听不清楚，说不明白，你能知道老板想要的是什么，你又怎么能把分析出来的价值让老板知道，所以说排名第一位的能力是沟通！沟通！沟通！</p>
-<h1 id="数据分析初学者的常见问题"><a href="#数据分析初学者的常见问题" class="headerlink" title="数据分析初学者的常见问题"></a>数据分析初学者的常见问题</h1><p>日积月累，也让我形成了一套自己的认知体系，对<strong>数据分析</strong>有了一定程度的认识。在我的经历中，经常会有一些伙伴问以下两种问题：</p>
-<h3 id="1、小白类"><a href="#1、小白类" class="headerlink" title="1、小白类"></a><strong>1、小白类</strong></h3><ul>
-<li>我要想入行数据分析，应该从哪里开始学？</li>
-<li>想成为数据分析师，我要学习那些技能、掌握那些工具？</li>
-<li>我没做过数据分析，数学特别不好，能学好吗？</li>
-<li>我学的是文科专业，能从事数据分析师吗？</li>
-</ul>
-<h3 id="2、迷茫类"><a href="#2、迷茫类" class="headerlink" title="2、迷茫类"></a>2、迷茫类</h3><ul>
-<li>做了好几年数据分析，感觉看不到以后的晋升线路？</li>
-<li>我对数据分析有一定了解，如何快速用到我现在的职业上</li>
-<li>从事运营、产品的工作，看过和做过一些数据分析，但不专业，能不能成为专业分析师</li>
-<li>以后数据分析师会不会发展不好，未来潜力如何？</li>
-</ul>
-<p>但无论是小白类还是迷茫类，我们都要清楚的认识到<strong>数据分析师到底是干什么的</strong>，在职场中他们到底有什么不同，只有了解了这些，以上的疑惑才能迎刃而解，我们常用的分析思维就是拆分，就好比乐高一样，有很多小积木组合，只要我们理解了这些小积木的形状，我们也就能搭建起自己的梦想。</p>
-<h1 id="数据分析师类型划分"><a href="#数据分析师类型划分" class="headerlink" title="数据分析师类型划分"></a>数据分析师类型划分</h1><p>常见的几个数据分析师划分主要包含以下这6大类，当然每一类其实也有自己的层级，我只是做一个简单的区分，让大家有一个基本的概况：</p>
-<p><img src="/2023/09/10/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E6%89%80%E9%9C%80%E7%9A%84%E6%8A%80%E6%9C%AF%E4%B8%8E%E7%90%86%E8%AE%BA/0014.jpg"></p>
-<h3 id="1、A类：商业分析师"><a href="#1、A类：商业分析师" class="headerlink" title="1、A类：商业分析师"></a><strong>1、A类：商业分析师</strong></h3><p><strong>1）特点：</strong> 上手快、深入难</p>
-<p> <strong>2）主要的工作：</strong> 帮助业务、市场以及管理层做一些数据的洞察，还原数据的本质，讲述数据的故事，要很清楚的了解市场要什么？用户爱什么？</p>
-<p> <strong>3）需要掌握的：</strong></p>
-<ul>
-<li>硬性技能：SQL、EXCEL、PPT</li>
-<li>软性技能：表达能力、视觉思维、逻辑性强、思维清晰，特别是沟通能力！</li>
-<li>掌握的方法论：ABtest、AAARRR、SWOT、RFM、28原则、5W2H等</li>
-<li>掌握的统计学：常规统计指标（均值、中位数、分位数、T检验等)、回归、聚类、因子、决策树、逻辑回归等，这些足够了</li>
-<li>加分项：图表可视化、结构化思维、金字塔原理、千万级数据处理经验（这类一般1年遇不到几次）</li>
-</ul>
-<p> <strong>4）适合人群：</strong> 文科类、运营\产品转岗类、不喜欢编程、不善于研究算法的同学</p>
-<p><strong>5）以后发展：</strong> 业务负责人、独立咨询师、管理层、战略分析师、团队领头羊</p>
-<p><strong>6）核心：</strong> 不一定技术强、算法掌握牛，但一定要能深入行业、深入场景</p>
-<p> <strong>注意：</strong> 掌握一些宏观数据的获取方式，没事的时候多收集一些，自己根据所在行业而定，从事互联网或者移动互联网的话，最好掌握一种<a href="https://www.finebi.com/solutions/dp"><strong>自助式BI工具</strong></a>，比如Google Analytics、FineBI等。</p>
-<h3 id="2、B类：炮灰分析师"><a href="#2、B类：炮灰分析师" class="headerlink" title="2、B类：炮灰分析师"></a><strong>2、B类：炮灰分析师</strong></h3><p><strong>1）特点：</strong> 啥都要学，最累、干的你怀疑数据分析的价值</p>
-<p><strong>2）主要的工作：</strong> 协助业务或者上级完成一些常规的需求，这类一般是别人要什么，我们做什么，但是在不同的行业，不同的部门做的事情差异还是很大</p>
-<p><strong>3）需要掌握的：</strong></p>
-<ul>
-<li>硬性技能：SQL、EXCEL、PPT、python\spss\R任选其一，根据场景而定</li>
-<li>软性技能：沟通能力、抗打击能力、加班能力、数据管理能力（数据库和数据字典）</li>
-<li>掌握的方法论：ABtest、AAARRR、SWOT、RFM、5W2等，不知道也能干</li>
-<li>掌握的统计学：常规统计指标（均值、中位数、分位数等)、回归、聚类、因子、决策树、逻辑回归等，这些足够了，但基本高级的模型用不上，定位决定</li>
-<li>加分项：听话能力、擅长各类工具的应用，能快速响应需求方的需求</li>
-<li>突破：要自己根据环境主动参与一些讨论，承担一些从无到有的分析，从被动变为主动</li>
-</ul>
-<p><strong>4）以后发展：</strong> 纯正数据分析师、数据产品经理、数仓人员</p>
-<p><strong>5）适合人群：</strong> 都可</p>
-<h3 id="3、C类：数据分析师"><a href="#3、C类：数据分析师" class="headerlink" title="3、C类：数据分析师"></a>3、C类：数据分析师</h3><p><strong>1）特点：</strong> 独当一面、战斗力极强、对企业决策者有一定的影响</p>
-<p><strong>2）主要的工作：</strong> 除了被动的常规分析外，还要能主动发现业务存在的问题，会用数据找事，梳理业务发展与指标体系之间的关系，从日常监督分析开始，更多的是专题性的分析，无中生有</p>
-<p><strong>3）需要掌握的：</strong></p>
-<ul>
-<li>硬性技能：SQL、EXCEL、PPT、python\spss\R任选其一，tableau\FineBI\powerbi，也要懂一些市面上流行的数据产品</li>
-<li>软性技能：沟通能力、表达能力、逻辑思维强</li>
-<li>掌握的方法论：ABtest、AAARRR、SWOT、RFM、28原则、5W2H，用户及产品生命周期等</li>
-<li>掌握的统计学：常规统计指标（均值、中位数、分位数等)、回归、聚类、因子、决策树、逻辑回归、机器学习等，这些足够用了</li>
-<li>加分项：图表可视化、PPT展示、系统性思维、在行业有很多认识和沉淀</li>
-<li>要点：算法、技术、工具、业务混为一体，样样都要懂</li>
-<li>总结：这类目前市场上很紧缺，被称为稀缺动物</li>
-</ul>
-<h3 id="4、D类：BI工程师-分析师中的程序员"><a href="#4、D类：BI工程师-分析师中的程序员" class="headerlink" title="4、D类：BI工程师-分析师中的程序员"></a>4、D类：BI工程师-分析师中的程序员</h3><p><strong>1）主要的工作：</strong> 和数据的ETL打交道多，主要做数据规范、数据仓库、业务需求报表开发、多维度呈现等</p>
-<p><strong>2）需要掌握的：</strong></p>
-<ul>
-<li>硬性技能：数据库技术、数据仓库、Informatica, Datastage，Kettle，还有一些厂家的展示产品Business Objects, Cognos，常用梳理工具</li>
-<li>ERwin、echarts等</li>
-<li>软性技能：理解能力、表达能力、思维缜密</li>
-<li>掌握的方法论：无，基本人家让干啥咱干啥</li>
-<li>掌握的统计学：常规统计指标（均值、中位数、分位数等)、回归、聚类、因子、决策树、逻辑回归等，</li>
-<li>加分项：技术过硬，有过大型BI建设经验，既能干DBA又能干BI、视觉思维</li>
-<li>突破：这些人比一般的数据分析师更懂底层，缺少的只是与业务的融合，看自己的定位了</li>
-<li>总结：绝对的苦逼，容易吐血那种，常常怀疑人生</li>
-</ul>
-<p><strong>3）发展线路：</strong> CTO、项目经理、产品经理、平台负责人等</p>
-<h3 id="5、E类：算法工程师-就是你们班技术最强的"><a href="#5、E类：算法工程师-就是你们班技术最强的" class="headerlink" title="5、E类：算法工程师-就是你们班技术最强的"></a>5、E类：算法工程师-就是你们班技术最强的</h3><p><strong>1）主要的工作：</strong> 做算法、搞研发、创新算法</p>
-<p><strong>2）需要掌握的：</strong></p>
-<ul>
-<li>硬性技能：数据库技术、hadoop、python、R、spark等等</li>
-<li>软性技能：理解能力、表达能力、思维能力</li>
-<li>掌握的方法论：懂一些常见的即可</li>
-<li>掌握的统计学：各种算法都要精通，而且在不同的场景下，要自己开发新算法</li>
-<li>加分项：算法很熟悉、技术没得说、学历高</li>
-<li>总结：工资高、压力大，经常断片</li>
-</ul>
-<p><strong>3）适合人群：</strong> 名校对口专业毕业，没办法人太多，某宝从国内top已经要求全球TOP了</p>
-<h1 id="数据分析行业必备能力"><a href="#数据分析行业必备能力" class="headerlink" title="数据分析行业必备能力"></a>数据分析行业必备能力</h1><p>了解了这些数据分析师的百态之后，该如何入门的问题相信也会得到解答，我们一起来探讨一下<strong>数据分析师所需要掌握的那些能力</strong>，我总结出了以下7点和大家分享。</p>
-<p><img src="/2023/09/10/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E6%89%80%E9%9C%80%E7%9A%84%E6%8A%80%E6%9C%AF%E4%B8%8E%E7%90%86%E8%AE%BA/0015.png"></p>
-<h3 id="1、基本工具应用的能力"><a href="#1、基本工具应用的能力" class="headerlink" title="1、基本工具应用的能力"></a>1、基本工具应用的能力</h3><p>Office的三件套是必备的，特别是（excel、PPT），但所有的excel、ppt功能都要学习吗？显然不是，很多人在这个上面浪费的时间太多太多了。</p>
-<ul>
-<li>对于<strong>excel</strong>来讲，基本的函数（加减乘除、条件筛选、匹配函数、透视表、图表）就足够了，VBA对基础业务人员来说可以放弃。</li>
-<li>对<strong>PPT</strong>来讲，不要把自己打造成为一个专业的PPTer，PPT对于分析师来讲，唯一的核心就是展示，因此基本的操作就足够了，可能当入门的时候，你连打开PPT 的机会都没有，就是提数</li>
-</ul>
-<h3 id="2、专业工具使用"><a href="#2、专业工具使用" class="headerlink" title="2、专业工具使用"></a>2、专业工具使用</h3><p>这一块能力主要分为2个方面，<strong>数据分析与处理和数据展示</strong>。</p>
-<p>比如不善于编程的同学可以选择spss、clementine，也可以尝试玩玩kettle，不讨厌编程的话建议直接去学习python、R。</p>
-<p>相对来讲，专业对口的学起来用起来顺手一些，学哪个工具都可以，一般的招聘都是掌握一种就可以，所以不要逼着自己去学不顺手的工具，浪费时间，<strong>投入产出比太低</strong>。</p>
-<p>另外就是可视化的，其实excel就是一个最基础的可视化工具，简单易用，场景多，如果想要可视化分析效率更高，建议掌握tableau、<a href="https://www.finebi.com/product"><strong>FineBI</strong></a>之类的一种BI工具，现在很多企业都在用商用BI软件了，如果可以提前知道要去的企业应用的哪种，可以重点学习一下。</p>
-<h3 id="3、发现问题的能力"><a href="#3、发现问题的能力" class="headerlink" title="3、发现问题的能力"></a>3、发现问题的能力</h3><p>这是一种很重要的能力，可以塑造自己从被动转为主动，这需要我们有足够的<strong>知识储备和业务的沉淀</strong>，你才有发现问题的资本，而不是让人家觉得你在找茬。</p>
-<h3 id="4、解决问题的能力"><a href="#4、解决问题的能力" class="headerlink" title="4、解决问题的能力"></a>4、解决问题的能力</h3><p>数据分析不但要展示过去、现状、未来，更重要的是遇见问题的时候能告诉大家为什么会发生、为什么是这样，而不是凭我们经验去想当然地下结论。</p>
-<h3 id="5、行业洞察能力"><a href="#5、行业洞察能力" class="headerlink" title="5、行业洞察能力"></a>5、行业洞察能力</h3><p>行业的洞察力不是靠阅读文章的数量，看书多少本来决定的，虽然之前存在一定的关系，但不是纯正相关或者因果关系，而是要依靠咨询公司的那一套方法论去不断的模仿、思考、复盘的。</p>
-<h3 id="6、创新的对应方案"><a href="#6、创新的对应方案" class="headerlink" title="6、创新的对应方案"></a>6、创新的对应方案</h3><p>知道了事情的来龙去脉，能不能站在用户体验的角度设计出一套，记住自己分析数据、呈现数据的时候不仅仅是数据，而是一群人的行为趋势。</p>
-<p>比如你要开一个陕西面馆，你<strong>能否根据用户的数据打造出一套引导改变他们习惯的面馆</strong>，而不仅仅是影响。</p>
-<h3 id="7、数据的解读能力"><a href="#7、数据的解读能力" class="headerlink" title="7、数据的解读能力"></a>7、数据的解读能力</h3><p>经常看一些小伙伴写的分析报告，出现最多的就是同比、环比，而同比、环比之后在没有任何的描述，<strong>这时候你描述的只是一种数据的状态，并没有把数据背后的故事讲清楚</strong>，比如什么原因引起的？你是从哪些角度分析发现的？这样的报告很难带读者到你的思维世界</p>
-<p>许多人在数据分析入门时往往<strong>忽略了<a href="https://www.finebi.com/product">数据分析</a>的本质</strong>，把太多的时间和精力放在了基本工具、专业工具方面。即使你的工具使用、编程能力不强，但只要你可迁移的能力很强，企业都会要。当然不是说大家不要投入时间去学习工具，而是建议不要投入太多的时间，比如学习excel，有的人要连续学习好几个月，其实一周足够了！</p>
-<p>的趋势。</p>
-<p>备受市场认可的软件其实有很多，选择时必须要结合实际的情况。一般的情况下，都建议选择市面上较主流的产品，比较容易达到好的效果，目前企业数据分析BI软件市场占有率前列的，就是帆软BI软件——<strong>FineBI</strong>。</p>
-<h1 id="数据分析师所需的技术与理论"><a href="#数据分析师所需的技术与理论" class="headerlink" title="数据分析师所需的技术与理论"></a>数据分析师所需的技术与理论</h1><h3 id="1-统计学和概率论"><a href="#1-统计学和概率论" class="headerlink" title="1-统计学和概率论"></a>1-统计学和概率论</h3><p>统计学和概率论可帮助您正确理解数字、回答一些相关假设并做出更好的预测。例如：</p>
-<p>销售旺季的平均销量？</p>
-<p>每天售出单量增长幅度是多少？</p>
-<p>还有多少潜在客户准备购买的？</p>
-<p>多少个咨询客户才能转化成一个下单客户？</p>
-<p>购买我们产品的客户占整个市场的百分比是多少？</p>
-<p>此外，还可以使用回归和时间序列等统计方法，对未来的预期销售额做出相关预测。</p>
-<h3 id="2-数据库知识"><a href="#2-数据库知识" class="headerlink" title="2-数据库知识"></a>2-数据库知识</h3><p>在大数据时代，企业的数据都是存储在数据库中的，因此至少要熟练掌握一个或以上的数据库管理系统。市场上有许多数据库管理系统，如 Oracle、MongoDB、SQLite等。但是最常用的还是MySQL，它是评价最高的开源 DBMS，以其成熟度和可靠性而闻名。但我们如何从数据库中提取所需的数据呢？这正是SQL可以发挥作用的地方，SQL是一种专门设计用于处理大型数据库的结构化语言，检索数据效率非常高。</p>
-<h3 id="3-统计工具"><a href="#3-统计工具" class="headerlink" title="3-统计工具"></a>3-统计工具</h3><p>获得数据后，您需要知道至少一种统计工具，并利用这些统计工具对数据进行分析，常见的统计软件包括SPSS、SAS、Sage、Mathematica等。目前，任何人都可以使用Microsoft Excel进行最简单的统计分析，MS Excel 是一种电子表格，可帮助人们分析和绘制数据，它还可以执行大量复杂的数学和统计功能。</p>
-<h3 id="4-编程语言"><a href="#4-编程语言" class="headerlink" title="4-编程语言"></a>4-编程语言</h3><p>数据分析师最常用的编程语言是 Python 和 R，原因是今天生成的数据量很大，需要掌握这些编程工具才能更好地开展工作。编程语言提供了两个主要好处。首先，它可以使数据转换变得非常容易。其次，这些语言拥有丰富的库，可以帮助人们轻松地制作预测模型，例如python 中的sklearn 库。</p>
-<h3 id="5-可视化"><a href="#5-可视化" class="headerlink" title="5-可视化"></a>5-可视化</h3><p>在21世纪之后，每个行业的数据都可以被可视化，它是决策者和数据分析师了解事情结果的桥梁。目前，市场上最突出的可视化工具包括 – PowerBI、Tableau 和智分析等，以下图的智分析为例，目前的图表可视化正从传统的静态报表逐渐向BI动态报表过渡，可视化能力得到进一步的加强。</p>
-<h1 id="数据分析师所需的软技能"><a href="#数据分析师所需的软技能" class="headerlink" title="数据分析师所需的软技能"></a>数据分析师所需的软技能</h1><h3 id="1-沟通"><a href="#1-沟通" class="headerlink" title="1-沟通"></a>1-沟通</h3><h3 id="2-批判性思维"><a href="#2-批判性思维" class="headerlink" title="2-批判性思维"></a>2-批判性思维</h3><h3 id="3-好奇心"><a href="#3-好奇心" class="headerlink" title="3-好奇心"></a>3-好奇心</h3><h3 id="4-解决问题"><a href="#4-解决问题" class="headerlink" title="4-解决问题"></a>4-解决问题</h3><h3 id="5-终身学习"><a href="#5-终身学习" class="headerlink" title="5-终身学习"></a>5-终身学习</h3>]]></content>
-      <categories>
-        <category>技术</category>
-        <category>数据分析</category>
-        <category>方法论</category>
-      </categories>
-      <tags>
-        <tag>笔记</tag>
-        <tag>数据分析师</tag>
-        <tag>方法论</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>有意思的翻译PROMPT</title>
-    <url>/2024/04/29/%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84%E7%BF%BB%E8%AF%91PROMPT/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><img src="/2024/04/29/%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84%E7%BF%BB%E8%AF%91PROMPT/image-20240428223752145.jpeg"></p>
-<span id="more"></span>
-
-<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">你是一个英语翻译团队的领导. 你会安排团队成员进行如下翻译, 实现翻译的&quot;信达雅&quot;目标:  </span><br><span class="line">  </span><br><span class="line">第一轮翻译<span class="comment">--信,追求直译, 将英文翻译成中文, 力求准确  </span></span><br><span class="line">  </span><br><span class="line">第二轮翻译<span class="comment">--达,在第一轮翻译的基础上, 考虑文化, 语境, 语义, 思考文字背后想要表达的意思, 进行意译, 力求意境契合, 记得分开思考和翻译内容。  </span></span><br><span class="line">  </span><br><span class="line">第三轮翻译<span class="comment">--雅, 基于第二轮翻译理解的语境含义, 进一步思考其中的哲理, 然后使用中国&lt;诗经&gt;的语言风格针对哲理和语义进行翻译, 力求简明, 古意盎然  </span></span><br><span class="line">  </span><br><span class="line">例如:  </span><br><span class="line">- you need you. 哲理部分，可以引申到佛家所说的&quot;莫向外求&quot;, 儒家所说的&quot;反求诸己&quot;, 然后思考使用诗经语言风格进行重新表述.  </span><br><span class="line">  </span><br><span class="line">- <span class="keyword">nothing</span> <span class="keyword">for</span> <span class="keyword">nothing</span>. 哲理部分，可以引申到诗句“世上本无事，庸人自扰之”，也可引申到俗语“尘归尘，土归土”  </span><br><span class="line">  </span><br><span class="line">第四轮翻译<span class="comment">--初审: 完成三轮翻译后， 深吸一口气， 缓一缓， 思考一下第三轮翻译的结果，与其哲理的偏差在哪？ 不要扩展太多，务求精练深刻，精辟是第一要义。 据此思路进行改进。  </span></span><br><span class="line">  </span><br><span class="line">第五轮翻译<span class="comment">--终审: 最终，你将亲自进行审稿， 你会对比原文和最后的翻译结果， 先思考《诗经》的语言表达风格要点，再审阅初审翻译的结果是否满足, 并给出你的审校修改结论。  </span></span><br><span class="line">  </span><br><span class="line">注意: 思考部分,请使用 【思考】 开头，翻译结果请使用【翻译】开头。  </span><br><span class="line">  </span><br><span class="line">请严格遵守以上工作流程， 对以下文字进行翻译：</span><br></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>Prompt</tag>
-        <tag>AI</tag>
-        <tag>翻译</tag>
       </tags>
   </entry>
 </search>
