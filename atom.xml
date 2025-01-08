@@ -133,11 +133,11 @@
     <category term="obsidian" scheme="https://blog.jeremyang.top/categories/%E6%8A%80%E6%9C%AF/%E5%8D%9A%E5%AE%A2/obsidian/"/>
     
     
+    <category term="笔记" scheme="https://blog.jeremyang.top/tags/%E7%AC%94%E8%AE%B0/"/>
+    
     <category term="Obsidian" scheme="https://blog.jeremyang.top/tags/Obsidian/"/>
     
     <category term="插件" scheme="https://blog.jeremyang.top/tags/%E6%8F%92%E4%BB%B6/"/>
-    
-    <category term="笔记" scheme="https://blog.jeremyang.top/tags/%E7%AC%94%E8%AE%B0/"/>
     
     <category term="分享" scheme="https://blog.jeremyang.top/tags/%E5%88%86%E4%BA%AB/"/>
     
@@ -348,9 +348,9 @@
     
     <category term="笔记" scheme="https://blog.jeremyang.top/tags/%E7%AC%94%E8%AE%B0/"/>
     
-    <category term="群晖" scheme="https://blog.jeremyang.top/tags/%E7%BE%A4%E6%99%96/"/>
-    
     <category term="ssh" scheme="https://blog.jeremyang.top/tags/ssh/"/>
+    
+    <category term="群晖" scheme="https://blog.jeremyang.top/tags/%E7%BE%A4%E6%99%96/"/>
     
   </entry>
   
