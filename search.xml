@@ -1,277 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hexo Hello World</title>
-    <url>/2019/05/01/hello_world/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Here-Cheatsheet">Markdown</a> 使用<a href="https://github.com/younghz/Markdown">Markdown 基本语法</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
-<h1 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h1><hr>
-<h3 id="hexo-快速、简洁且高效的博客框架"><a href="#hexo-快速、简洁且高效的博客框架" class="headerlink" title="hexo 快速、简洁且高效的博客框架"></a><a href="https://hexo.io/zh-cn/">hexo 快速、简洁且高效的博客框架</a></h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br><span class="line">hexo init blog</span><br><span class="line">cd blog</span><br><span class="line">npm install</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
-
-<h3 id="init"><a href="#init" class="headerlink" title="init"></a>init</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">hexo init [folder]</span></span><br></pre></td></tr></table></figure>
-
-<p>新建一个网站。如果没有设置 <code>folder</code> ，Hexo 默认在目前的文件夹建立网站。</p>
-<span id="more"></span>
-<p>本命令相当于执行了以下几步：</p>
-<ol>
-<li>Git clone <a href="https://github.com/hexojs/hexo-starter">hexo-starter</a> 和 <a href="https://github.com/hexojs/hexo-theme-landscape">hexo-theme-landscape</a> 主题到当前目录或指定目录。</li>
-<li>使用 <a href="https://classic.yarnpkg.com/lang/en/">Yarn 1</a>、<a href="https://pnpm.io/zh/">pnpm</a> 或 <a href="https://docs.npmjs.com/cli/install">npm</a> 包管理器下载依赖（如有已安装多个，则列在前面的优先）。npm 默认随 <a href="https://hexo.io/zh-cn/docs/index.html#%E5%AE%89%E8%A3%85-Node-js">Node.js</a> 安装。</li>
-</ol>
-<h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new post <span class="string">&quot;PostName&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br><span class="line"><span class="comment"># 该命令可以简写为</span></span><br><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">hexo generate</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">该命令可以简写为</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">hexo g</span></span><br></pre></td></tr></table></figure>
-
-<p>生成静态文件。</p>
-<table>
-<thead>
-<tr>
-<th>选项</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>-d</code>, <code>--deploy</code></td>
-<td>文件生成后立即部署网站</td>
-</tr>
-<tr>
-<td><code>-w</code>, <code>--watch</code></td>
-<td>监视文件变动</td>
-</tr>
-<tr>
-<td><code>-b</code>, <code>--bail</code></td>
-<td>生成过程中如果发生任何未处理的异常则抛出异常</td>
-</tr>
-<tr>
-<td><code>-f</code>, <code>--force</code></td>
-<td>强制重新生成文件  <br>Hexo 引入了差分机制，如果 <code>public</code> 目录存在，那么 <code>hexo g</code> 只会重新生成改动的文件。  <br>使用该参数的效果接近 <code>hexo clean &amp;&amp; hexo generate</code></td>
-</tr>
-<tr>
-<td><code>-c</code>, <code>--concurrency</code></td>
-<td>最大同时生成文件的数量，默认无限制</td>
-</tr>
-</tbody></table>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br><span class="line"><span class="comment"># 该命令可以简写为</span></span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-<h3 id="version"><a href="#version" class="headerlink" title="version"></a>version</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">hexo version</span></span><br></pre></td></tr></table></figure>
-
-<p>显示 Hexo 版本。</p>
-<h1 id="Plugins"><a href="#Plugins" class="headerlink" title="Plugins"></a>Plugins</h1><hr>
-<ol>
-<li><a href="https://github.com/maxchang3/hexo-markmap">hexo思维导图：hexo-markmap</a></li>
-<li><a href="https://github.com/kuole-o/hexo-tag-map?tab=readme-ov-file">Hexo 文章插入交互式地图：hexo-tag-map</a></li>
-</ol>
-<link rel="stylesheet" href="//unpkg.com/hexo-tag-map/lib/leaflet@1.7.1.css"><script data-pjax src="//unpkg.com/hexo-tag-map/lib/leaflet@1.7.1.js"></script><script data-pjax src="//unpkg.com/hexo-tag-map/lib/leaflet.ChineseTmsProviders@1.0.4.js"></script><div class="map-box" style="margin: 0.8rem 0 1.6rem 0;"><div id="gaodeMap-119.296623-26.081958" style="max-width:100%; height:360px;display: block;margin:0 auto;z-index:1;border-radius: 5px;"></div></div><script type="text/javascript">var normalm=L.tileLayer.chinaProvider('GaoDe.Normal.Map',{maxZoom:20,minZoom:1,attribution:'高德地图'});var imgm=L.tileLayer.chinaProvider('GaoDe.Satellite.Map',{maxZoom:20,minZoom:1,attribution:'高德地图'});var imga=L.tileLayer.chinaProvider('GaoDe.Satellite.Annotion',{maxZoom:20,minZoom:1,attribution:'高德地图'});var normal=L.layerGroup([normalm]),image=L.layerGroup([imgm,imga]);var baseLayers={"高德地图":normal,"高德卫星地图":imgm,"高德卫星标注":image};var mymap=L.map('gaodeMap-119.296623-26.081958',{center:[26.081958,119.296623],zoom:16,layers:[normal],zoomControl:false});L.control.layers(baseLayers,null).addTo(mymap);L.control.zoom({zoomInTitle:'放大',zoomOutTitle:'缩小'}).addTo(mymap);var marker = L.marker(['26.081958','119.296623']).addTo(mymap);marker.bindPopup("这里是福州三坊七巷，three lanes and seven alleys").openPopup();</script>
-
-
-<p><a href="https://lbs.amap.com/tools/picker">高德地图坐标拾取系统</a></p>
-<table>
-<thead>
-<tr>
-<th align="right">地图名</th>
-<th align="right">标签值&lt;必填&gt;</th>
-<th align="right">经度(-180~180)</th>
-<th align="right">纬度(-90~90)</th>
-<th align="right">文本</th>
-<th align="right">缩放等级(默认14)</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="right">混合地图</td>
-<td align="right">map</td>
-<td align="right">坐标经度</td>
-<td align="right">坐标纬度</td>
-<td align="right">文本</td>
-<td align="right">取值3~18</td>
-</tr>
-<tr>
-<td align="right">谷歌地图</td>
-<td align="right">googleMap</td>
-<td align="right">坐标经度</td>
-<td align="right">坐标纬度</td>
-<td align="right">文本</td>
-<td align="right">取值1~20</td>
-</tr>
-<tr>
-<td align="right">高德地图</td>
-<td align="right">gaodeMap</td>
-<td align="right">坐标经度</td>
-<td align="right">坐标纬度</td>
-<td align="right">文本</td>
-<td align="right">取值3~18</td>
-</tr>
-<tr>
-<td align="right">百度地图</td>
-<td align="right">baiduMap</td>
-<td align="right">坐标经度</td>
-<td align="right">坐标纬度</td>
-<td align="right">文本</td>
-<td align="right">取值4~18</td>
-</tr>
-<tr>
-<td align="right">Geoq地图</td>
-<td align="right">geoqMap</td>
-<td align="right">坐标经度</td>
-<td align="right">坐标纬度</td>
-<td align="right">文本</td>
-<td align="right">取值1~18</td>
-</tr>
-<tr>
-<td align="right">openstreet地图</td>
-<td align="right">openstreetMap</td>
-<td align="right">坐标经度</td>
-<td align="right">坐标纬度</td>
-<td align="right">文本</td>
-<td align="right">取值1~18</td>
-</tr>
-</tbody></table>
-<table>
-<thead>
-<tr>
-<th align="right">地图名</th>
-<th align="right">宽(默认100%) &#x2F; 高(默认360px)</th>
-<th align="right">默认图层(默认1)</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="right">混合地图</td>
-<td align="right">百分数或具体值(100%或360px)</td>
-<td align="right">取值1~7</td>
-</tr>
-<tr>
-<td align="right">谷歌地图</td>
-<td align="right">百分数或具体值(100%或360px)</td>
-<td align="right">取值1~3</td>
-</tr>
-<tr>
-<td align="right">高德地图</td>
-<td align="right">百分数或具体值(100%或360px)</td>
-<td align="right">取值1~3</td>
-</tr>
-<tr>
-<td align="right">百度地图</td>
-<td align="right">百分数或具体值(100%或360px)</td>
-<td align="right">取值1~2</td>
-</tr>
-<tr>
-<td align="right">Geoq地图</td>
-<td align="right">百分数或具体值(100%或360px)</td>
-<td align="right">取值1~5</td>
-</tr>
-<tr>
-<td align="right">openstreet地图</td>
-<td align="right">百分数或具体值(100%或360px)</td>
-<td align="right">不支持此参数</td>
-</tr>
-</tbody></table>
-<ol>
-<li>参数之间，用<strong>英文逗号</strong>相隔</li>
-<li>参数必须按上述事例顺序输入，不得为空</li>
-<li><strong>同一个页面，同一组经纬度值，只能插入一个相同标签值的地图</strong>(若有需要，可以将第二个地图上，经度或纬度末尾删除一两个数)</li>
-<li>参数取值必须在上述范围内</li>
-<li>默认图层：即地图叠加层的值，默认常规地图还是卫星地图，可按地图显示顺序取值</li>
-<li><strong>缩放等级，数字越大，地图比例尺越小，显示的越精细</strong></li>
-<li>除<strong>标签值</strong>外，其他参数选填，但 <strong>每个参数的左边的参数必填</strong></li>
-<li>谷歌地图需要外网才能加载查看</li>
-</ol>
-<h1 id="Notes"><a href="#Notes" class="headerlink" title="Notes"></a>Notes</h1><hr>
-<h3 id="本地图片的调用"><a href="#本地图片的调用" class="headerlink" title="本地图片的调用"></a>本地图片的调用</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">my version</span></span><br><span class="line">hexo: 7.2.0</span><br><span class="line">hexo-cli: 4.3.2</span><br></pre></td></tr></table></figure>
-
-<ol>
-<li><p>手动新建<br>首先是在 _posts 文件夹下建立一个<code>本地图片的调用.md</code>，再建立一个同名的文件夹 <code>本地图片的调用</code>。</p>
-</li>
-<li><p>hexo代码新建<br>使用<code>hexo new post 本地图片的调用</code>，可以生成md文件的同时生成一个同名文件夹用于存储网页资源。</p>
-</li>
-</ol>
-<p>这篇文章要引用的图片就放在该文件夹下。比如我就在该目录下放一个图片<code>1.png</code>。</p>
-<p><img src="/2019/05/01/hello_world/1.png"></p>
-<p>然后在博文 MarkDown 文件里引用该图片：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">这里是图片注释</span>](<span class="link">../images/2019_05_01_hello_world/1.png</span>)</span><br></pre></td></tr></table></figure>
-
-<p><strong>为什么引用的时候不用加文件夹的路径呢？</strong></p>
-<p>这是因为 hexo 在渲染的时候，会把<code>本地图片的调用.md</code> 渲染为<code>public</code>下的 <code>本地图片的调用.html</code>网页文件，而把对应文件夹下的静态资源，比如图片 <code>1.png</code>也拷贝到<code>public</code>下!</p>
-<p>需要注意的是，在<code>hexo/source/_posts</code>目录下的图片文件名不能重复。</p>
-<h3 id="skip-render"><a href="#skip-render" class="headerlink" title="skip render"></a>skip render</h3><p>修改hexo根目录下_config.yml文件，</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">skip_render:</span></span><br><span class="line">	<span class="bullet">-</span> <span class="string">&#x27;_posts/templates/**&#x27;</span></span><br><span class="line">	<span class="bullet">-</span> <span class="string">&#x27;_posts/draft/**&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<p>目录结构：<br><code>- hexo/source/_posts/templates/</code> 保存post模版，供Obsidian快速开始Post编写。<br><code>- hexo/source/_posts/draft/</code> 保存未编辑完成，或不想共享的文章内容。</p>
-<p>设置跳过渲染之后，最好使用<code>hexo clean</code>清除以前的编译结果，保证配置生效。再使用<code>hexo g</code>查看。</p>
-<h3 id="自动generate"><a href="#自动generate" class="headerlink" title="自动generate"></a>自动generate</h3><p>定时or设置条件运行命令<code>docker exec -it hexo bash -c &quot;hexo clean &amp;&amp; hexo g&quot;</code>来自动编译。</p>
-<p><strong>踩坑：</strong> 直接在群晖的<code>控制面板</code> - <code>任务计划</code>中添加自定义脚本<code>docker exec -it hexo bash -c &quot;hexo clean &amp;&amp; hexo g&quot;</code>会报错<code>the input device is not a TTY</code>.</p>
-<p>tty一词源于Teletypes,或teletypewriters。这个的意思是说后台linux执行的时候没有终端设备。我们一般执行docker里的命令时候都喜欢加上-it 这个参数，这里的-t 就是表示伪tty。所以，如果我们docker执行后台运行的任务或者程序直接去除 -t 这个参数就不会出现这个报错了。</p>
-<p><strong>所以要用 <code>docker exec hexo bash -c &quot;hexo clean &amp;&amp; hexo g&quot;</code></strong></p>
-<p><strong>待改进：</strong> 设置了每天generate一次。如果设置成有变动就generate就更好了，暂时没想到办法。</p>
-<h3 id="视频嵌入"><a href="#视频嵌入" class="headerlink" title="视频嵌入"></a>视频嵌入</h3><p>现在视频基本上都会分享到各大平台，所以暂时主要以嵌入网络视频展示。<br>研究了几款插件，基本上都是年久失修，使用不易，最终还是选择了<code>iframe</code>嵌入。</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">%%bilibili视频嵌入%%</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;position: relative; width: 100%; height: 0; padding-bottom: 75%;&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">src</span>=<span class="string">&quot;//player.bilibili.com/player.html?aid=244387247&amp;cid=229573649&amp;page=1&quot;</span> <span class="attr">scrolling</span>=<span class="string">&quot;no&quot;</span> <span class="attr">border</span>=<span class="string">&quot;0&quot;</span> <span class="attr">frameborder</span>=<span class="string">&quot;no&quot;</span> <span class="attr">framespacing</span>=<span class="string">&quot;0&quot;</span> <span class="attr">allowfullscreen</span>=<span class="string">&quot;true&quot;</span> <span class="attr">style</span>=<span class="string">&quot;position: absolute; width: 100%; height: 100%; Left: 0; top: 0;&quot;</span> &gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span>  </span><br></pre></td></tr></table></figure>
-
-<p><a href="https://github.com/stephenmkbrady/hexo-tag-html5">hexo-tag-html5video</a></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install --save hexo-tag-html5video</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% html5video &#x27;100%&#x27; &#x27;250px&#x27; &#x27;video/mp4&#x27; %&#125; </span><br><span class="line">&#123;% asset<span class="emphasis">_path &lt;视频路径&gt; %&#125; </span></span><br><span class="line"><span class="emphasis">&#123;% endhtml5video %&#125;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="菜单导航配置"><a href="#菜单导航配置" class="headerlink" title="菜单导航配置"></a>菜单导航配置</h3><p>配置基本菜单导航的名称、路径url和图标icon.</p>
-<ol>
-<li>菜单导航名称可以是中文也可以是英文(如：<code>Index</code> 或 <code>主页</code>)</li>
-<li><code>External</code> 表示是否在新标签页打开连接</li>
-<li>导航地址可以是站内地址也可以是外网地址</li>
-</ol>
-<h3 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h3><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">hexo</span><br><span class="line"><span class="bullet">  -</span> node<span class="emphasis">_modules</span></span><br><span class="line"><span class="emphasis">  - scaffolds # 模板文件夹</span></span><br><span class="line"><span class="emphasis">    - draft.md # 草稿模板文件</span></span><br><span class="line"><span class="emphasis">    - page.md # 页面模板文件</span></span><br><span class="line"><span class="emphasis">    - post.md # 文章模板文件</span></span><br><span class="line"><span class="emphasis">  - source # 资源文件夹</span></span><br><span class="line"><span class="emphasis">    - _</span>drafts # 草稿文件夹</span><br><span class="line"><span class="bullet">    -</span> <span class="emphasis">_posts # post文件夹</span></span><br><span class="line"><span class="emphasis">    - images #图片文件夹</span></span><br><span class="line"><span class="emphasis">  - themes # 主题文件夹</span></span><br><span class="line"><span class="emphasis">    - ayer # 主题文件夹</span></span><br><span class="line"><span class="emphasis">      - _</span>config.yml # 主题配置文件</span><br><span class="line"><span class="bullet">      -</span> languages # 语言文件夹</span><br><span class="line"><span class="bullet">      -</span> layout # 布局文件夹</span><br><span class="line"><span class="bullet">      -</span> scripts # 脚本文件夹</span><br><span class="line"><span class="bullet">      -</span> source # 资源文件夹</span><br><span class="line"><span class="bullet">        -</span> css # 样式文件夹</span><br><span class="line"><span class="bullet">        -</span> fonts # 字体文件夹</span><br><span class="line"><span class="bullet">        -</span> images # 图片文件夹</span><br><span class="line"><span class="bullet">        -</span> js # 脚本文件夹</span><br><span class="line"><span class="bullet">  -</span> <span class="emphasis">_config.yml # 配置文件</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="本地图片的调用-1"><a href="#本地图片的调用-1" class="headerlink" title="本地图片的调用"></a>本地图片的调用</h3><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">这里是图片注释</span>](<span class="link">../images/2019_05_01_hello_world/1.png</span>)</span><br></pre></td></tr></table></figure>
-
-<h3 id="DIY-hexo-new-post"><a href="#DIY-hexo-new-post" class="headerlink" title="DIY hexo new post"></a>DIY hexo new post</h3><p>修改hexo根目录下_config.yml文件，</p>
-<ol>
-<li>为新建post自动加上当前日期，避免title重复，造成的一系列问题。</li>
-</ol>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Writing</span></span><br><span class="line"><span class="comment"># new_post_name: title.md # default setting</span></span><br><span class="line"><span class="attr">new_post_name:</span> <span class="string">:year_:month_:day_:title.md</span> </span><br><span class="line"><span class="comment"># new posts name as year_month_day_postname</span></span><br><span class="line"><span class="attr">default_layout:</span> <span class="string">post</span></span><br><span class="line"><span class="attr">titlecase:</span> <span class="literal">false</span> <span class="comment"># Transform title into titlecase</span></span><br><span class="line"><span class="attr">external_link:</span></span><br><span class="line"><span class="attr">enable:</span> <span class="literal">true</span> <span class="comment"># Open external links in new tab</span></span><br><span class="line"><span class="attr">field:</span> <span class="string">site</span> <span class="comment"># Apply to the whole site</span></span><br><span class="line"><span class="attr">exclude:</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="attr">filename_case:</span> <span class="number">0</span></span><br><span class="line"><span class="attr">render_drafts:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>为了使_post文件夹尽可能的精简，便于网盘同步，只保留md文件，图片等资源放在<code>source</code>目录下<code>images</code>文件夹内。</li>
-</ol>
-<figure class="highlight sqf"><table><tr><td class="code"><pre><span class="line">post_asset_folder: <span class="literal">false</span> </span><br><span class="line"># 改成<span class="literal">true</span>，则在<span class="variable">_post</span>新建下新建md文件的同时新建一个同名的文件夹用于存储当前页面的一些资源。</span><br></pre></td></tr></table></figure>
-
-<h3 id="引用文章"><a href="#引用文章" class="headerlink" title="引用文章"></a><a href="https://hexo.io/zh-cn/docs/tag-plugins#%E5%BC%95%E7%94%A8%E6%96%87%E7%AB%A0">引用文章</a></h3><p>引用其他文章的链接。</p>
-<figure class="highlight django"><table><tr><td class="code"><pre><span class="line"><span class="template-tag">&#123;% <span class="name">post_path</span> filename %&#125;</span><span class="language-xml">  </span></span><br><span class="line"><span class="language-xml"></span><span class="template-tag">&#123;% <span class="name">post_link</span> filename [title] [escape] %&#125;</span></span><br></pre></td></tr></table></figure>
-
-<p>在使用此标签时可以忽略文章文件所在的路径或者文章的永久链接信息、如语言、日期。</p>
-<p>例如，在文章中使用 <code>&#123;% post_link how-to-bake-a-cake %&#125;</code> 时，只需有一个名为 <code>how-to-bake-a-cake.md</code> 的文章文件即可。即使这个文件位于站点文件夹的 <code>source/posts/2015-02-my-family-holiday</code> 目录下、或者文章的永久链接是 <code>2018/en/how-to-bake-a-cake</code>，都没有影响。</p>
-<p>默认链接文字是文章的标题，你也可以自定义要显示的文本。</p>
-<p>默认对文章的标题和自定义标题里的特殊字符进行转义。可以使用 <code>escape</code> 选项，禁止对特殊字符进行转义。</p>
-<p>例如：</p>
-<p><strong>链接使用文章的标题</strong></p>
-<p><code>&#123;% post_link hexo-3-8-released %&#125;</code></p>
-<p><strong>链接使用自定义文字</strong></p>
-<p><code>&#123;% post_link hexo-3-8-released '通往文章的链接' %&#125;</code></p>
-<p><strong>对标题的特殊字符进行转义</strong></p>
-<figure class="highlight crmsh"><table><tr><td class="code"><pre><span class="line">&#123;% post_link hexo-<span class="number">4</span>-released &#x27;How to use <span class="tag">&lt;b&gt;</span> <span class="keyword">tag</span> <span class="title">in</span> title&#x27; %&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="动态自定义附件文件夹名称"><a href="#动态自定义附件文件夹名称" class="headerlink" title="动态自定义附件文件夹名称"></a>动态自定义附件文件夹名称</h3><p>插件 <strong>Custom Attachment Location</strong> ，安装后进行附件文件夹的设置:</p>
-<figure class="highlight xl"><table><tr><td class="code"><pre><span class="line">C<span class="function"><span class="title">ustom</span> Attachment Location --&gt;</span> L<span class="function"><span class="title">ocation</span> <span class="keyword">for</span> New Attachments --&gt;</span> ./$&#123;filename&#125;.assets （这样设置是为了与 Typora 兼容，正常显示 Typora 中创建的笔记的图片附件）</span><br></pre></td></tr></table></figure>
-
-<h1 id="post在首页全文展示问题"><a href="#post在首页全文展示问题" class="headerlink" title="post在首页全文展示问题"></a>post在首页全文展示问题</h1><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"># 主题config文件 ~/hexo/themes/ayer/_config.yml</span><br><span class="line"># 文章太长，截断按钮文字(在需要截断的行增加此标记：<span class="comment">&lt;!--more--&gt;</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-
-<p>More info:<br><a href="https://post.smzdm.com/p/agqol9zm/">晨聊 篇十七：markdown也变脸，obsidian + hexo 在群晖NAS上的双剑合璧</a></p>
-]]></content>
-      <categories>
-        <category>技术</category>
-        <category>博客</category>
-        <category>hexo</category>
-      </categories>
-      <tags>
-        <tag>markdown</tag>
-        <tag>hexo</tag>
-        <tag>笔记</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>群晖Git部署Hexo</title>
     <url>/2019/05/06/Git_Hexo/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="一、前期准备"><a href="#一、前期准备" class="headerlink" title="一、前期准备"></a>一、前期准备</h2><h3 id="1-1-注册-账号-Gitee-GitHub"><a href="#1-1-注册-账号-Gitee-GitHub" class="headerlink" title="1.1 注册 账号 Gitee&#x2F;GitHub"></a>1.1 注册 账号 Gitee&#x2F;GitHub</h3><p>注册一个属于自己的 Github 或 Gitee 账号，</p>
@@ -373,8 +102,8 @@
         <category>hexo</category>
       </categories>
       <tags>
-        <tag>markdown</tag>
         <tag>hexo</tag>
+        <tag>markdown</tag>
         <tag>Obsidian</tag>
       </tags>
   </entry>
@@ -392,8 +121,8 @@
         <category>hexo</category>
       </categories>
       <tags>
-        <tag>markdown</tag>
         <tag>hexo</tag>
+        <tag>markdown</tag>
         <tag>插件</tag>
       </tags>
   </entry>
@@ -433,9 +162,25 @@
         <category>hexo</category>
       </categories>
       <tags>
-        <tag>markdown</tag>
         <tag>hexo</tag>
+        <tag>markdown</tag>
         <tag>插件</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>GoPro Hero最实用的四个必备配件:打造完美生态</title>
+    <url>/2022/03/15/GoproHero/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><hr>
+<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">
+<iframe src="//player.bilibili.com/player.html?aid=244387247&bvid=BV1Av411174q&cid=229573649&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; Left: 0; top: 0;" ></iframe></div> 
+]]></content>
+      <categories>
+        <category>数码</category>
+        <category>相机</category>
+      </categories>
+      <tags>
+        <tag>数码</tag>
+        <tag>相机</tag>
       </tags>
   </entry>
   <entry>
@@ -611,22 +356,6 @@
       </tags>
   </entry>
   <entry>
-    <title>GoPro Hero最实用的四个必备配件:打造完美生态</title>
-    <url>/2022/03/15/GoproHero/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><hr>
-<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">
-<iframe src="//player.bilibili.com/player.html?aid=244387247&bvid=BV1Av411174q&cid=229573649&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; Left: 0; top: 0;" ></iframe></div> 
-]]></content>
-      <categories>
-        <category>数码</category>
-        <category>相机</category>
-      </categories>
-      <tags>
-        <tag>数码</tag>
-        <tag>相机</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>菜谱</title>
     <url>/2022/04/19/%E8%8F%9C%E8%B0%B1/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="空气炸锅鸡排"><a href="#空气炸锅鸡排" class="headerlink" title="空气炸锅鸡排"></a>空气炸锅鸡排</h1><ul>
@@ -662,36 +391,6 @@
       <tags>
         <tag>菜谱</tag>
         <tag>下酒菜</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>澳洲家中日常必备清单</title>
-    <url>/2022/05/19/%E6%BE%B3%E6%B4%B2%E5%AE%B6%E4%B8%AD%E6%97%A5%E5%B8%B8%E5%BF%85%E5%A4%87%E6%B8%85%E5%8D%95/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>1⃣️ CEPACAINE漱口水！ 治疗牙龈肿痛，口腔溃疡。澳洲医生推荐买的，超级有效！猫猫家必备的，再也没有牙口烦恼。 购买地址：Chemist有售 💰价格：$15.49 问题在口腔，吃啥啥不香，买它！喵～</p>
-<hr>
-<p>2⃣️ Quick EZE胃糖 腹胀、胃酸、胃痛。消化不良、吃颗糖就能缓解～ 主要是这糖咋还那么好吃！ 购买地址：Chemist 💰价格：$4.99 胃也需要轻轻安抚，买它！喵～</p>
-<span id="more"></span>
-<hr>
-<p>3⃣️ VICKS 通鼻喷剂 在澳洲总感觉鼻子不适，鼻炎老犯，尤其总是鼻塞。这个通鼻喷剂起效快，薄荷味柔和不刺激。 购买地址：Chemist 💰价格$11.99 杜绝张口呼吸，买它！喵～</p>
-<hr>
-<p>4⃣️ Refresh眼药水 在家学习、工作、打游戏、熬夜，眼睛干涩的话最使用用人工泪液成分的眼药水。无刺激，缓解眼睛疲劳，闺蜜们都在用。 购买地址：Chemist 💰价格$13.49 缓解就靠累上加泪。买它，喵～</p>
-<hr>
-<p>5⃣️ LeQure Detox Soap排毒香皂 这款味道超级淡，小众然鹅超棒！主要可以用来控油去杂质。背部长痘痘的宝宝们一定要试试。滋养加排毒，姐妹推荐的，用过也感觉很好。 购买地址：Chemist 💰价格：$5.99 永远不进毒圈，买它，喵～</p>
-<hr>
-<p>6⃣️ Naprogesic止痛片 姨妈期最好的止痛片咯，因为成分对胃损伤小，刺激小。而且止痛的效果起效更快，当地女生首选经期续命药。小蓝片好多朋友都在用。 购买地址：Chemist 💰价格：$7.99 连我姨妈都在用！买它，喵～</p>
-<hr>
-<p>7⃣️ Dettol 洗衣消毒液 家里养宠物的朋友洗衣服都会用这个帮忙杀菌！能灭杀99.9%的细菌。尤其是合租又共用洗衣机的话这个肯定要买！ 购买地址：Coles、 WWS有售 💰价格：$8.99 再也不怕室友用洗衣机洗袜子了，买它！喵～</p>
-<hr>
-<p>8⃣️ Mr muscle通道强力剂！ 水槽，浴室如果都便秘了，那主人可就更难受了。 超强清下水道秘方，家家必备的男人。尤其是掉头发比较多的女生经常会堵掉下水道。用它就可以畅通哦。 购买地址：Coles、WWS有售 💰价格：$13.7 搞定下水道，心情好到爆，买它！喵～</p>
-<hr>
-]]></content>
-      <categories>
-        <category>生活</category>
-        <category>好物推荐</category>
-      </categories>
-      <tags>
-        <tag>推荐</tag>
-        <tag>日常</tag>
       </tags>
   </entry>
   <entry>
@@ -1379,97 +1078,6 @@
         <tag>资源</tag>
         <tag>字体</tag>
         <tag>免费</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ChatGPT Prompt</title>
-    <url>/2023/08/12/ChatGPT_Prompt/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="English-Vesion"><a href="#English-Vesion" class="headerlink" title="English Vesion"></a>English Vesion</h2><details>
-  <summary>English Version</summary>
-  <p> 
-
-<ol>
-<li><p>Brainstorm 10 content ideas related to [topic] that [your audience] would find interesting and beneficial.</p>
-</li>
-<li><p>Write a fun bedtime story for [whomever you want], with them as a main character.</p>
-</li>
-<li><p>Write an article about [topic]. Consider diverse perspectives and write it in a [preferred tone] tone.</p>
-</li>
-<li><p>Summarize [LinkedIn profile url] and list the top 5 pain points they likely face in their current role.</p>
-</li>
-<li><p>Create social media content for 7 days that is focused on [topic] and that will engage [target audience].</p>
-</li>
-</ol>
-<p>  Instructions: Create social media content that is appropriate for the chosen topic and target audience. Content should be varied. Content should also include calls to action that encourage users to engage with the content, such as likes, shares, and comments.</p>
-<ol start="6">
-<li><p>I enjoy [list a few interests or hobbies]. What are some completely unrelated activities that I might find interesting?</p>
-</li>
-<li><p>Write 10 [subject lines &#x2F; headlines &#x2F; social media threads &#x2F; ad headlines &#x2F; etc.] with a curiosity gap that discuss [topic].</p>
-</li>
-<li><p>Pretend you are [role], come up with 10 ideas of how to do [task or problem]. Compare each of these ideas and list the pros and cons of each idea.</p>
-</li>
-<li><p>Summarize in table format the features, benefits, and pain solved for this product: [url to product features page].</p>
-</li>
-<li><p>Create a list of [10] frequently asked questions about [keyword] and provide answers for each one of them considering the SERP and rich result guidelines.</p>
-</li>
-<li><p>Create 5 social media posts promoting this blog post: [blog post URL].</p>
-</li>
-<li><p>Create a step by step guide to instruct how to [topic].</p>
-  </p>
-</details>
-<span id="more"></span></li>
-</ol>
-<h2 id="中文版本"><a href="#中文版本" class="headerlink" title="中文版本"></a>中文版本</h2><details>
-  <summary>中文版本</summary>
-  <p> 
-  
-<ol>
-<li><p>脑筋急转弯10个与[topic]相关的内容想法，让[your audience]感兴趣和受益。</p>
-</li>
-<li><p>为[whomever you want]编写一个fun的睡前故事，ta是故事的主要角色。</p>
-</li>
-<li><p>编写一个关于[topic]的的文章，考虑多种角度，使用[preferred tone]的口调。</p>
-</li>
-<li><p>总结[LinkedIn profile url]并 listing the top 5 pain points they likely face in their current role.</p>
-</li>
-<li><p>创建7天social media content，聚焦于[topic]，让[target audience]参与。</p>
-</li>
-</ol>
-<p>  Instructions: 创建social media content，符合choosen topic and target audience。Content should be varied. Content should also include calls to action that encourage users to engage with the content, such as likes, shares, and comments.</p>
-<ol start="6">
-<li><p>我享受[list a few interests or hobbies]。哪些是不完全related的activity？</p>
-</li>
-<li><p>写10个与curiosity gap相关的[topic] theme的subject lines &#x2F; headlines &#x2F; social media threads &#x2F; ad headlines &#x2F; etc.</p>
-</li>
-<li><p>假设你是[role]，列出10个做[task or problem]的方法。比较每个方法并list the pros and cons of each idea.</p>
-</li>
-<li><p>用表格格式 summarize the features, benefits, and pain solved for this product: [url to product features page].</p>
-</li>
-<li><p>创建一个包含常见问题及回答的列表，关于[keyword]。</p>
-</li>
-<li><p>创建5个social media posts promoting this blog post: [blog post URL]。</p>
-</li>
-<li><p>创建一个step by step guide to instruct how to [topic]。</p>
-</li>
-</ol>
-  </p>
-</details>
-
-
-
-
-
-
-
-]]></content>
-      <categories>
-        <category>技术</category>
-        <category>人工智能</category>
-        <category>Prompt</category>
-      </categories>
-      <tags>
-        <tag>Prompt</tag>
-        <tag>GPT</tag>
       </tags>
   </entry>
   <entry>
@@ -11507,6 +11115,398 @@
       <tags>
         <tag>随笔</tag>
         <tag>分享</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo Hello World</title>
+    <url>/2019/05/01/hello_world/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Here-Cheatsheet">Markdown</a> 使用<a href="https://github.com/younghz/Markdown">Markdown 基本语法</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
+<h1 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h1><hr>
+<h3 id="hexo-快速、简洁且高效的博客框架"><a href="#hexo-快速、简洁且高效的博客框架" class="headerlink" title="hexo 快速、简洁且高效的博客框架"></a><a href="https://hexo.io/zh-cn/">hexo 快速、简洁且高效的博客框架</a></h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br><span class="line">hexo init blog</span><br><span class="line">cd blog</span><br><span class="line">npm install</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+
+<h3 id="init"><a href="#init" class="headerlink" title="init"></a>init</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">hexo init [folder]</span></span><br></pre></td></tr></table></figure>
+
+<p>新建一个网站。如果没有设置 <code>folder</code> ，Hexo 默认在目前的文件夹建立网站。</p>
+<span id="more"></span>
+<p>本命令相当于执行了以下几步：</p>
+<ol>
+<li>Git clone <a href="https://github.com/hexojs/hexo-starter">hexo-starter</a> 和 <a href="https://github.com/hexojs/hexo-theme-landscape">hexo-theme-landscape</a> 主题到当前目录或指定目录。</li>
+<li>使用 <a href="https://classic.yarnpkg.com/lang/en/">Yarn 1</a>、<a href="https://pnpm.io/zh/">pnpm</a> 或 <a href="https://docs.npmjs.com/cli/install">npm</a> 包管理器下载依赖（如有已安装多个，则列在前面的优先）。npm 默认随 <a href="https://hexo.io/zh-cn/docs/index.html#%E5%AE%89%E8%A3%85-Node-js">Node.js</a> 安装。</li>
+</ol>
+<h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new post <span class="string">&quot;PostName&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br><span class="line"><span class="comment"># 该命令可以简写为</span></span><br><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">hexo generate</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">该命令可以简写为</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">hexo g</span></span><br></pre></td></tr></table></figure>
+
+<p>生成静态文件。</p>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>-d</code>, <code>--deploy</code></td>
+<td>文件生成后立即部署网站</td>
+</tr>
+<tr>
+<td><code>-w</code>, <code>--watch</code></td>
+<td>监视文件变动</td>
+</tr>
+<tr>
+<td><code>-b</code>, <code>--bail</code></td>
+<td>生成过程中如果发生任何未处理的异常则抛出异常</td>
+</tr>
+<tr>
+<td><code>-f</code>, <code>--force</code></td>
+<td>强制重新生成文件  <br>Hexo 引入了差分机制，如果 <code>public</code> 目录存在，那么 <code>hexo g</code> 只会重新生成改动的文件。  <br>使用该参数的效果接近 <code>hexo clean &amp;&amp; hexo generate</code></td>
+</tr>
+<tr>
+<td><code>-c</code>, <code>--concurrency</code></td>
+<td>最大同时生成文件的数量，默认无限制</td>
+</tr>
+</tbody></table>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br><span class="line"><span class="comment"># 该命令可以简写为</span></span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<h3 id="version"><a href="#version" class="headerlink" title="version"></a>version</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">hexo version</span></span><br></pre></td></tr></table></figure>
+
+<p>显示 Hexo 版本。</p>
+<h1 id="Plugins"><a href="#Plugins" class="headerlink" title="Plugins"></a>Plugins</h1><hr>
+<ol>
+<li><a href="https://github.com/maxchang3/hexo-markmap">hexo思维导图：hexo-markmap</a></li>
+<li><a href="https://github.com/kuole-o/hexo-tag-map?tab=readme-ov-file">Hexo 文章插入交互式地图：hexo-tag-map</a></li>
+</ol>
+<link rel="stylesheet" href="//unpkg.com/hexo-tag-map/lib/leaflet@1.7.1.css"><script data-pjax src="//unpkg.com/hexo-tag-map/lib/leaflet@1.7.1.js"></script><script data-pjax src="//unpkg.com/hexo-tag-map/lib/leaflet.ChineseTmsProviders@1.0.4.js"></script><div class="map-box" style="margin: 0.8rem 0 1.6rem 0;"><div id="gaodeMap-119.296623-26.081958" style="max-width:100%; height:360px;display: block;margin:0 auto;z-index:1;border-radius: 5px;"></div></div><script type="text/javascript">var normalm=L.tileLayer.chinaProvider('GaoDe.Normal.Map',{maxZoom:20,minZoom:1,attribution:'高德地图'});var imgm=L.tileLayer.chinaProvider('GaoDe.Satellite.Map',{maxZoom:20,minZoom:1,attribution:'高德地图'});var imga=L.tileLayer.chinaProvider('GaoDe.Satellite.Annotion',{maxZoom:20,minZoom:1,attribution:'高德地图'});var normal=L.layerGroup([normalm]),image=L.layerGroup([imgm,imga]);var baseLayers={"高德地图":normal,"高德卫星地图":imgm,"高德卫星标注":image};var mymap=L.map('gaodeMap-119.296623-26.081958',{center:[26.081958,119.296623],zoom:16,layers:[normal],zoomControl:false});L.control.layers(baseLayers,null).addTo(mymap);L.control.zoom({zoomInTitle:'放大',zoomOutTitle:'缩小'}).addTo(mymap);var marker = L.marker(['26.081958','119.296623']).addTo(mymap);marker.bindPopup("这里是福州三坊七巷，three lanes and seven alleys").openPopup();</script>
+
+
+<p><a href="https://lbs.amap.com/tools/picker">高德地图坐标拾取系统</a></p>
+<table>
+<thead>
+<tr>
+<th align="right">地图名</th>
+<th align="right">标签值&lt;必填&gt;</th>
+<th align="right">经度(-180~180)</th>
+<th align="right">纬度(-90~90)</th>
+<th align="right">文本</th>
+<th align="right">缩放等级(默认14)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="right">混合地图</td>
+<td align="right">map</td>
+<td align="right">坐标经度</td>
+<td align="right">坐标纬度</td>
+<td align="right">文本</td>
+<td align="right">取值3~18</td>
+</tr>
+<tr>
+<td align="right">谷歌地图</td>
+<td align="right">googleMap</td>
+<td align="right">坐标经度</td>
+<td align="right">坐标纬度</td>
+<td align="right">文本</td>
+<td align="right">取值1~20</td>
+</tr>
+<tr>
+<td align="right">高德地图</td>
+<td align="right">gaodeMap</td>
+<td align="right">坐标经度</td>
+<td align="right">坐标纬度</td>
+<td align="right">文本</td>
+<td align="right">取值3~18</td>
+</tr>
+<tr>
+<td align="right">百度地图</td>
+<td align="right">baiduMap</td>
+<td align="right">坐标经度</td>
+<td align="right">坐标纬度</td>
+<td align="right">文本</td>
+<td align="right">取值4~18</td>
+</tr>
+<tr>
+<td align="right">Geoq地图</td>
+<td align="right">geoqMap</td>
+<td align="right">坐标经度</td>
+<td align="right">坐标纬度</td>
+<td align="right">文本</td>
+<td align="right">取值1~18</td>
+</tr>
+<tr>
+<td align="right">openstreet地图</td>
+<td align="right">openstreetMap</td>
+<td align="right">坐标经度</td>
+<td align="right">坐标纬度</td>
+<td align="right">文本</td>
+<td align="right">取值1~18</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="right">地图名</th>
+<th align="right">宽(默认100%) &#x2F; 高(默认360px)</th>
+<th align="right">默认图层(默认1)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="right">混合地图</td>
+<td align="right">百分数或具体值(100%或360px)</td>
+<td align="right">取值1~7</td>
+</tr>
+<tr>
+<td align="right">谷歌地图</td>
+<td align="right">百分数或具体值(100%或360px)</td>
+<td align="right">取值1~3</td>
+</tr>
+<tr>
+<td align="right">高德地图</td>
+<td align="right">百分数或具体值(100%或360px)</td>
+<td align="right">取值1~3</td>
+</tr>
+<tr>
+<td align="right">百度地图</td>
+<td align="right">百分数或具体值(100%或360px)</td>
+<td align="right">取值1~2</td>
+</tr>
+<tr>
+<td align="right">Geoq地图</td>
+<td align="right">百分数或具体值(100%或360px)</td>
+<td align="right">取值1~5</td>
+</tr>
+<tr>
+<td align="right">openstreet地图</td>
+<td align="right">百分数或具体值(100%或360px)</td>
+<td align="right">不支持此参数</td>
+</tr>
+</tbody></table>
+<ol>
+<li>参数之间，用<strong>英文逗号</strong>相隔</li>
+<li>参数必须按上述事例顺序输入，不得为空</li>
+<li><strong>同一个页面，同一组经纬度值，只能插入一个相同标签值的地图</strong>(若有需要，可以将第二个地图上，经度或纬度末尾删除一两个数)</li>
+<li>参数取值必须在上述范围内</li>
+<li>默认图层：即地图叠加层的值，默认常规地图还是卫星地图，可按地图显示顺序取值</li>
+<li><strong>缩放等级，数字越大，地图比例尺越小，显示的越精细</strong></li>
+<li>除<strong>标签值</strong>外，其他参数选填，但 <strong>每个参数的左边的参数必填</strong></li>
+<li>谷歌地图需要外网才能加载查看</li>
+</ol>
+<h1 id="Notes"><a href="#Notes" class="headerlink" title="Notes"></a>Notes</h1><hr>
+<h3 id="本地图片的调用"><a href="#本地图片的调用" class="headerlink" title="本地图片的调用"></a>本地图片的调用</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">my version</span></span><br><span class="line">hexo: 7.2.0</span><br><span class="line">hexo-cli: 4.3.2</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><p>手动新建<br>首先是在 _posts 文件夹下建立一个<code>本地图片的调用.md</code>，再建立一个同名的文件夹 <code>本地图片的调用</code>。</p>
+</li>
+<li><p>hexo代码新建<br>使用<code>hexo new post 本地图片的调用</code>，可以生成md文件的同时生成一个同名文件夹用于存储网页资源。</p>
+</li>
+</ol>
+<p>这篇文章要引用的图片就放在该文件夹下。比如我就在该目录下放一个图片<code>1.png</code>。</p>
+<p><img src="/2019/05/01/hello_world/1.png"></p>
+<p>然后在博文 MarkDown 文件里引用该图片：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">这里是图片注释</span>](<span class="link">../images/2019_05_01_hello_world/1.png</span>)</span><br></pre></td></tr></table></figure>
+
+<p><strong>为什么引用的时候不用加文件夹的路径呢？</strong></p>
+<p>这是因为 hexo 在渲染的时候，会把<code>本地图片的调用.md</code> 渲染为<code>public</code>下的 <code>本地图片的调用.html</code>网页文件，而把对应文件夹下的静态资源，比如图片 <code>1.png</code>也拷贝到<code>public</code>下!</p>
+<p>需要注意的是，在<code>hexo/source/_posts</code>目录下的图片文件名不能重复。</p>
+<h3 id="skip-render"><a href="#skip-render" class="headerlink" title="skip render"></a>skip render</h3><p>修改hexo根目录下_config.yml文件，</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">skip_render:</span></span><br><span class="line">	<span class="bullet">-</span> <span class="string">&#x27;_posts/templates/**&#x27;</span></span><br><span class="line">	<span class="bullet">-</span> <span class="string">&#x27;_posts/draft/**&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>目录结构：<br><code>- hexo/source/_posts/templates/</code> 保存post模版，供Obsidian快速开始Post编写。<br><code>- hexo/source/_posts/draft/</code> 保存未编辑完成，或不想共享的文章内容。</p>
+<p>设置跳过渲染之后，最好使用<code>hexo clean</code>清除以前的编译结果，保证配置生效。再使用<code>hexo g</code>查看。</p>
+<h3 id="自动generate"><a href="#自动generate" class="headerlink" title="自动generate"></a>自动generate</h3><p>定时or设置条件运行命令<code>docker exec -it hexo bash -c &quot;hexo clean &amp;&amp; hexo g&quot;</code>来自动编译。</p>
+<p><strong>踩坑：</strong> 直接在群晖的<code>控制面板</code> - <code>任务计划</code>中添加自定义脚本<code>docker exec -it hexo bash -c &quot;hexo clean &amp;&amp; hexo g&quot;</code>会报错<code>the input device is not a TTY</code>.</p>
+<p>tty一词源于Teletypes,或teletypewriters。这个的意思是说后台linux执行的时候没有终端设备。我们一般执行docker里的命令时候都喜欢加上-it 这个参数，这里的-t 就是表示伪tty。所以，如果我们docker执行后台运行的任务或者程序直接去除 -t 这个参数就不会出现这个报错了。</p>
+<p><strong>所以要用 <code>docker exec hexo bash -c &quot;hexo clean &amp;&amp; hexo g&quot;</code></strong></p>
+<p><strong>待改进：</strong> 设置了每天generate一次。如果设置成有变动就generate就更好了，暂时没想到办法。</p>
+<h3 id="视频嵌入"><a href="#视频嵌入" class="headerlink" title="视频嵌入"></a>视频嵌入</h3><p>现在视频基本上都会分享到各大平台，所以暂时主要以嵌入网络视频展示。<br>研究了几款插件，基本上都是年久失修，使用不易，最终还是选择了<code>iframe</code>嵌入。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">%%bilibili视频嵌入%%</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;position: relative; width: 100%; height: 0; padding-bottom: 75%;&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">src</span>=<span class="string">&quot;//player.bilibili.com/player.html?aid=244387247&amp;cid=229573649&amp;page=1&quot;</span> <span class="attr">scrolling</span>=<span class="string">&quot;no&quot;</span> <span class="attr">border</span>=<span class="string">&quot;0&quot;</span> <span class="attr">frameborder</span>=<span class="string">&quot;no&quot;</span> <span class="attr">framespacing</span>=<span class="string">&quot;0&quot;</span> <span class="attr">allowfullscreen</span>=<span class="string">&quot;true&quot;</span> <span class="attr">style</span>=<span class="string">&quot;position: absolute; width: 100%; height: 100%; Left: 0; top: 0;&quot;</span> &gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span>  </span><br></pre></td></tr></table></figure>
+
+<p><a href="https://github.com/stephenmkbrady/hexo-tag-html5">hexo-tag-html5video</a></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install --save hexo-tag-html5video</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% html5video &#x27;100%&#x27; &#x27;250px&#x27; &#x27;video/mp4&#x27; %&#125; </span><br><span class="line">&#123;% asset<span class="emphasis">_path &lt;视频路径&gt; %&#125; </span></span><br><span class="line"><span class="emphasis">&#123;% endhtml5video %&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="菜单导航配置"><a href="#菜单导航配置" class="headerlink" title="菜单导航配置"></a>菜单导航配置</h3><p>配置基本菜单导航的名称、路径url和图标icon.</p>
+<ol>
+<li>菜单导航名称可以是中文也可以是英文(如：<code>Index</code> 或 <code>主页</code>)</li>
+<li><code>External</code> 表示是否在新标签页打开连接</li>
+<li>导航地址可以是站内地址也可以是外网地址</li>
+</ol>
+<h3 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h3><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">hexo</span><br><span class="line"><span class="bullet">  -</span> node<span class="emphasis">_modules</span></span><br><span class="line"><span class="emphasis">  - scaffolds # 模板文件夹</span></span><br><span class="line"><span class="emphasis">    - draft.md # 草稿模板文件</span></span><br><span class="line"><span class="emphasis">    - page.md # 页面模板文件</span></span><br><span class="line"><span class="emphasis">    - post.md # 文章模板文件</span></span><br><span class="line"><span class="emphasis">  - source # 资源文件夹</span></span><br><span class="line"><span class="emphasis">    - _</span>drafts # 草稿文件夹</span><br><span class="line"><span class="bullet">    -</span> <span class="emphasis">_posts # post文件夹</span></span><br><span class="line"><span class="emphasis">    - images #图片文件夹</span></span><br><span class="line"><span class="emphasis">  - themes # 主题文件夹</span></span><br><span class="line"><span class="emphasis">    - ayer # 主题文件夹</span></span><br><span class="line"><span class="emphasis">      - _</span>config.yml # 主题配置文件</span><br><span class="line"><span class="bullet">      -</span> languages # 语言文件夹</span><br><span class="line"><span class="bullet">      -</span> layout # 布局文件夹</span><br><span class="line"><span class="bullet">      -</span> scripts # 脚本文件夹</span><br><span class="line"><span class="bullet">      -</span> source # 资源文件夹</span><br><span class="line"><span class="bullet">        -</span> css # 样式文件夹</span><br><span class="line"><span class="bullet">        -</span> fonts # 字体文件夹</span><br><span class="line"><span class="bullet">        -</span> images # 图片文件夹</span><br><span class="line"><span class="bullet">        -</span> js # 脚本文件夹</span><br><span class="line"><span class="bullet">  -</span> <span class="emphasis">_config.yml # 配置文件</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="本地图片的调用-1"><a href="#本地图片的调用-1" class="headerlink" title="本地图片的调用"></a>本地图片的调用</h3><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">这里是图片注释</span>](<span class="link">../images/2019_05_01_hello_world/1.png</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="DIY-hexo-new-post"><a href="#DIY-hexo-new-post" class="headerlink" title="DIY hexo new post"></a>DIY hexo new post</h3><p>修改hexo根目录下_config.yml文件，</p>
+<ol>
+<li>为新建post自动加上当前日期，避免title重复，造成的一系列问题。</li>
+</ol>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Writing</span></span><br><span class="line"><span class="comment"># new_post_name: title.md # default setting</span></span><br><span class="line"><span class="attr">new_post_name:</span> <span class="string">:year_:month_:day_:title.md</span> </span><br><span class="line"><span class="comment"># new posts name as year_month_day_postname</span></span><br><span class="line"><span class="attr">default_layout:</span> <span class="string">post</span></span><br><span class="line"><span class="attr">titlecase:</span> <span class="literal">false</span> <span class="comment"># Transform title into titlecase</span></span><br><span class="line"><span class="attr">external_link:</span></span><br><span class="line"><span class="attr">enable:</span> <span class="literal">true</span> <span class="comment"># Open external links in new tab</span></span><br><span class="line"><span class="attr">field:</span> <span class="string">site</span> <span class="comment"># Apply to the whole site</span></span><br><span class="line"><span class="attr">exclude:</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="attr">filename_case:</span> <span class="number">0</span></span><br><span class="line"><span class="attr">render_drafts:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>为了使_post文件夹尽可能的精简，便于网盘同步，只保留md文件，图片等资源放在<code>source</code>目录下<code>images</code>文件夹内。</li>
+</ol>
+<figure class="highlight sqf"><table><tr><td class="code"><pre><span class="line">post_asset_folder: <span class="literal">false</span> </span><br><span class="line"># 改成<span class="literal">true</span>，则在<span class="variable">_post</span>新建下新建md文件的同时新建一个同名的文件夹用于存储当前页面的一些资源。</span><br></pre></td></tr></table></figure>
+
+<h3 id="引用文章"><a href="#引用文章" class="headerlink" title="引用文章"></a><a href="https://hexo.io/zh-cn/docs/tag-plugins#%E5%BC%95%E7%94%A8%E6%96%87%E7%AB%A0">引用文章</a></h3><p>引用其他文章的链接。</p>
+<figure class="highlight django"><table><tr><td class="code"><pre><span class="line"><span class="template-tag">&#123;% <span class="name">post_path</span> filename %&#125;</span><span class="language-xml">  </span></span><br><span class="line"><span class="language-xml"></span><span class="template-tag">&#123;% <span class="name">post_link</span> filename [title] [escape] %&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>在使用此标签时可以忽略文章文件所在的路径或者文章的永久链接信息、如语言、日期。</p>
+<p>例如，在文章中使用 <code>&#123;% post_link how-to-bake-a-cake %&#125;</code> 时，只需有一个名为 <code>how-to-bake-a-cake.md</code> 的文章文件即可。即使这个文件位于站点文件夹的 <code>source/posts/2015-02-my-family-holiday</code> 目录下、或者文章的永久链接是 <code>2018/en/how-to-bake-a-cake</code>，都没有影响。</p>
+<p>默认链接文字是文章的标题，你也可以自定义要显示的文本。</p>
+<p>默认对文章的标题和自定义标题里的特殊字符进行转义。可以使用 <code>escape</code> 选项，禁止对特殊字符进行转义。</p>
+<p>例如：</p>
+<p><strong>链接使用文章的标题</strong></p>
+<p><code>&#123;% post_link hexo-3-8-released %&#125;</code></p>
+<p><strong>链接使用自定义文字</strong></p>
+<p><code>&#123;% post_link hexo-3-8-released '通往文章的链接' %&#125;</code></p>
+<p><strong>对标题的特殊字符进行转义</strong></p>
+<figure class="highlight crmsh"><table><tr><td class="code"><pre><span class="line">&#123;% post_link hexo-<span class="number">4</span>-released &#x27;How to use <span class="tag">&lt;b&gt;</span> <span class="keyword">tag</span> <span class="title">in</span> title&#x27; %&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="动态自定义附件文件夹名称"><a href="#动态自定义附件文件夹名称" class="headerlink" title="动态自定义附件文件夹名称"></a>动态自定义附件文件夹名称</h3><p>插件 <strong>Custom Attachment Location</strong> ，安装后进行附件文件夹的设置:</p>
+<figure class="highlight xl"><table><tr><td class="code"><pre><span class="line">C<span class="function"><span class="title">ustom</span> Attachment Location --&gt;</span> L<span class="function"><span class="title">ocation</span> <span class="keyword">for</span> New Attachments --&gt;</span> ./$&#123;filename&#125;.assets （这样设置是为了与 Typora 兼容，正常显示 Typora 中创建的笔记的图片附件）</span><br></pre></td></tr></table></figure>
+
+<h1 id="post在首页全文展示问题"><a href="#post在首页全文展示问题" class="headerlink" title="post在首页全文展示问题"></a>post在首页全文展示问题</h1><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"># 主题config文件 ~/hexo/themes/ayer/_config.yml</span><br><span class="line"># 文章太长，截断按钮文字(在需要截断的行增加此标记：<span class="comment">&lt;!--more--&gt;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<p>More info:<br><a href="https://post.smzdm.com/p/agqol9zm/">晨聊 篇十七：markdown也变脸，obsidian + hexo 在群晖NAS上的双剑合璧</a></p>
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>博客</category>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>笔记</tag>
+        <tag>markdown</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>澳洲家中日常必备清单</title>
+    <url>/2022/05/19/%E6%BE%B3%E6%B4%B2%E5%AE%B6%E4%B8%AD%E6%97%A5%E5%B8%B8%E5%BF%85%E5%A4%87%E6%B8%85%E5%8D%95/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>1⃣️ CEPACAINE漱口水！ 治疗牙龈肿痛，口腔溃疡。澳洲医生推荐买的，超级有效！猫猫家必备的，再也没有牙口烦恼。 购买地址：Chemist有售 💰价格：$15.49 问题在口腔，吃啥啥不香，买它！喵～</p>
+<hr>
+<p>2⃣️ Quick EZE胃糖 腹胀、胃酸、胃痛。消化不良、吃颗糖就能缓解～ 主要是这糖咋还那么好吃！ 购买地址：Chemist 💰价格：$4.99 胃也需要轻轻安抚，买它！喵～</p>
+<span id="more"></span>
+<hr>
+<p>3⃣️ VICKS 通鼻喷剂 在澳洲总感觉鼻子不适，鼻炎老犯，尤其总是鼻塞。这个通鼻喷剂起效快，薄荷味柔和不刺激。 购买地址：Chemist 💰价格$11.99 杜绝张口呼吸，买它！喵～</p>
+<hr>
+<p>4⃣️ Refresh眼药水 在家学习、工作、打游戏、熬夜，眼睛干涩的话最使用用人工泪液成分的眼药水。无刺激，缓解眼睛疲劳，闺蜜们都在用。 购买地址：Chemist 💰价格$13.49 缓解就靠累上加泪。买它，喵～</p>
+<hr>
+<p>5⃣️ LeQure Detox Soap排毒香皂 这款味道超级淡，小众然鹅超棒！主要可以用来控油去杂质。背部长痘痘的宝宝们一定要试试。滋养加排毒，姐妹推荐的，用过也感觉很好。 购买地址：Chemist 💰价格：$5.99 永远不进毒圈，买它，喵～</p>
+<hr>
+<p>6⃣️ Naprogesic止痛片 姨妈期最好的止痛片咯，因为成分对胃损伤小，刺激小。而且止痛的效果起效更快，当地女生首选经期续命药。小蓝片好多朋友都在用。 购买地址：Chemist 💰价格：$7.99 连我姨妈都在用！买它，喵～</p>
+<hr>
+<p>7⃣️ Dettol 洗衣消毒液 家里养宠物的朋友洗衣服都会用这个帮忙杀菌！能灭杀99.9%的细菌。尤其是合租又共用洗衣机的话这个肯定要买！ 购买地址：Coles、 WWS有售 💰价格：$8.99 再也不怕室友用洗衣机洗袜子了，买它！喵～</p>
+<hr>
+<p>8⃣️ Mr muscle通道强力剂！ 水槽，浴室如果都便秘了，那主人可就更难受了。 超强清下水道秘方，家家必备的男人。尤其是掉头发比较多的女生经常会堵掉下水道。用它就可以畅通哦。 购买地址：Coles、WWS有售 💰价格：$13.7 搞定下水道，心情好到爆，买它！喵～</p>
+<hr>
+]]></content>
+      <categories>
+        <category>生活</category>
+        <category>好物推荐</category>
+      </categories>
+      <tags>
+        <tag>推荐</tag>
+        <tag>日常</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ChatGPT Prompt</title>
+    <url>/2023/08/12/ChatGPT_Prompt/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="English-Vesion"><a href="#English-Vesion" class="headerlink" title="English Vesion"></a>English Vesion</h2><details>
+  <summary>English Version</summary>
+  <p> 
+
+<ol>
+<li><p>Brainstorm 10 content ideas related to [topic] that [your audience] would find interesting and beneficial.</p>
+</li>
+<li><p>Write a fun bedtime story for [whomever you want], with them as a main character.</p>
+</li>
+<li><p>Write an article about [topic]. Consider diverse perspectives and write it in a [preferred tone] tone.</p>
+</li>
+<li><p>Summarize [LinkedIn profile url] and list the top 5 pain points they likely face in their current role.</p>
+</li>
+<li><p>Create social media content for 7 days that is focused on [topic] and that will engage [target audience].</p>
+</li>
+</ol>
+<p>  Instructions: Create social media content that is appropriate for the chosen topic and target audience. Content should be varied. Content should also include calls to action that encourage users to engage with the content, such as likes, shares, and comments.</p>
+<ol start="6">
+<li><p>I enjoy [list a few interests or hobbies]. What are some completely unrelated activities that I might find interesting?</p>
+</li>
+<li><p>Write 10 [subject lines &#x2F; headlines &#x2F; social media threads &#x2F; ad headlines &#x2F; etc.] with a curiosity gap that discuss [topic].</p>
+</li>
+<li><p>Pretend you are [role], come up with 10 ideas of how to do [task or problem]. Compare each of these ideas and list the pros and cons of each idea.</p>
+</li>
+<li><p>Summarize in table format the features, benefits, and pain solved for this product: [url to product features page].</p>
+</li>
+<li><p>Create a list of [10] frequently asked questions about [keyword] and provide answers for each one of them considering the SERP and rich result guidelines.</p>
+</li>
+<li><p>Create 5 social media posts promoting this blog post: [blog post URL].</p>
+</li>
+<li><p>Create a step by step guide to instruct how to [topic].</p>
+  </p>
+</details>
+<span id="more"></span></li>
+</ol>
+<h2 id="中文版本"><a href="#中文版本" class="headerlink" title="中文版本"></a>中文版本</h2><details>
+  <summary>中文版本</summary>
+  <p> 
+  
+<ol>
+<li><p>脑筋急转弯10个与[topic]相关的内容想法，让[your audience]感兴趣和受益。</p>
+</li>
+<li><p>为[whomever you want]编写一个fun的睡前故事，ta是故事的主要角色。</p>
+</li>
+<li><p>编写一个关于[topic]的的文章，考虑多种角度，使用[preferred tone]的口调。</p>
+</li>
+<li><p>总结[LinkedIn profile url]并 listing the top 5 pain points they likely face in their current role.</p>
+</li>
+<li><p>创建7天social media content，聚焦于[topic]，让[target audience]参与。</p>
+</li>
+</ol>
+<p>  Instructions: 创建social media content，符合choosen topic and target audience。Content should be varied. Content should also include calls to action that encourage users to engage with the content, such as likes, shares, and comments.</p>
+<ol start="6">
+<li><p>我享受[list a few interests or hobbies]。哪些是不完全related的activity？</p>
+</li>
+<li><p>写10个与curiosity gap相关的[topic] theme的subject lines &#x2F; headlines &#x2F; social media threads &#x2F; ad headlines &#x2F; etc.</p>
+</li>
+<li><p>假设你是[role]，列出10个做[task or problem]的方法。比较每个方法并list the pros and cons of each idea.</p>
+</li>
+<li><p>用表格格式 summarize the features, benefits, and pain solved for this product: [url to product features page].</p>
+</li>
+<li><p>创建一个包含常见问题及回答的列表，关于[keyword]。</p>
+</li>
+<li><p>创建5个social media posts promoting this blog post: [blog post URL]。</p>
+</li>
+<li><p>创建一个step by step guide to instruct how to [topic]。</p>
+</li>
+</ol>
+  </p>
+</details>
+
+
+
+
+
+
+
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>人工智能</category>
+        <category>Prompt</category>
+      </categories>
+      <tags>
+        <tag>Prompt</tag>
+        <tag>GPT</tag>
       </tags>
   </entry>
 </search>
