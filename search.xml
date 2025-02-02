@@ -1,6 +1,341 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>苹果全平台无缝同步群晖Obsidian库</title>
+    <url>/2019/05/24/Apple%E5%85%A8%E5%B9%B3%E5%8F%B0%E6%97%A0%E7%BC%9D%E5%90%8C%E6%AD%A5%E7%BE%A4%E6%99%96Obsidian%E5%BA%93/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><strong>前提介绍：</strong></p>
+<blockquote>
+<p><a href="https://obsidian.md/">Obsidian</a>是一款基于Markdown的笔记软件，以其强大的链接和标签功能、本地化存储及丰富的插件生态，为用户提供高效的知识管理和创作体验。 </p>
+</blockquote>
+<blockquote>
+<p><a href="https://www.synology.cn/zh-cn">群晖NAS</a>是一种基于网络连接的存储设备，它提供集中管理和共享文件的平台，支持多种功能，如数据备份、多媒体服务器等，方便用户随时随地访问和管理数据。</p>
+</blockquote>
+<h2 id="本文的目的"><a href="#本文的目的" class="headerlink" title="本文的目的"></a>本文的目的</h2><p><a href="https://obsidian.md/">Obsidian</a>作为一款优秀的markdown笔记软件，非常适合搭配hexo撰写blog。</p>
+<p>通过macOS上群晖Drive将hexo的post目录同步到iCloud，实现macOS和群晖drive的同步，然后通过iCloud在不同苹果设备上同步hexo的post目录，实现任意苹果设备撰写blog都可以在macOS通过群晖drive将新blog内容同步至群晖，再由群晖将内容自动布置到GitHub，实现blog网站的自动更新。</p>
+<span id="more"></span>
+
+
+<div class="markmap-container" style="height:400px">
+  <svg data="{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:1,&quot;p&quot;:{&quot;lines&quot;:[1,2]},&quot;v&quot;:&quot;Blog内容同步与自动更新流程&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:2,&quot;p&quot;:{&quot;lines&quot;:[3,4]},&quot;v&quot;:&quot;macOS&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[4,5]},&quot;v&quot;:&quot;群晖Drive&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:5,&quot;p&quot;:{&quot;lines&quot;:[5,6]},&quot;v&quot;:&quot;同步Hexo的post目录到iCloud&quot;}]}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:2,&quot;p&quot;:{&quot;lines&quot;:[7,8]},&quot;v&quot;:&quot;iCloud&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:4,&quot;p&quot;:{&quot;lines&quot;:[8,9]},&quot;v&quot;:&quot;同步Hexo的post目录&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:4,&quot;p&quot;:{&quot;lines&quot;:[9,10]},&quot;v&quot;:&quot;跨苹果设备同步&quot;}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:2,&quot;p&quot;:{&quot;lines&quot;:[11,12]},&quot;v&quot;:&quot;苹果设备&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[12,13]},&quot;v&quot;:&quot;任意设备&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:5,&quot;p&quot;:{&quot;lines&quot;:[13,14]},&quot;v&quot;:&quot;撰写blog&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:5,&quot;p&quot;:{&quot;lines&quot;:[14,15]},&quot;v&quot;:&quot;通过iCloud同步到macOS&quot;}]}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:2,&quot;p&quot;:{&quot;lines&quot;:[16,17]},&quot;v&quot;:&quot;macOS（继续）&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[17,18]},&quot;v&quot;:&quot;群晖Drive（继续）&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:5,&quot;p&quot;:{&quot;lines&quot;:[18,19]},&quot;v&quot;:&quot;将新blog内容同步至群晖&quot;}]}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:2,&quot;p&quot;:{&quot;lines&quot;:[20,21]},&quot;v&quot;:&quot;群晖&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:4,&quot;p&quot;:{&quot;lines&quot;:[21,22]},&quot;v&quot;:&quot;将内容自动布置到GitHub&quot;}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:2,&quot;p&quot;:{&quot;lines&quot;:[23,24]},&quot;v&quot;:&quot;GitHub&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:4,&quot;p&quot;:{&quot;lines&quot;:[24,25]},&quot;v&quot;:&quot;自动更新blog网站&quot;}]}]}"></svg>
+</div>
+
+
+
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><blockquote>
+<p>iPadOS和iOS端Obsidian只能识别打开iCloud Drive中Obsidian目录下的库，但macOS端的群晖Drive同步目录找不到iCloud目录，也就无法从iCloud同步至群晖。</p>
+</blockquote>
+<h2 id="解决步骤"><a href="#解决步骤" class="headerlink" title="解决步骤"></a>解决步骤</h2><h3 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h3><p>全部苹果设备开启 iCloud 同步，在 iOS&#x2F;iPadOS 下打开 obsidian 新建库，会自动生成一个<code>welcome.md</code>文件。</p>
+<h3 id="第二步"><a href="#第二步" class="headerlink" title="第二步"></a>第二步</h3><p>打开 macOS 访达，左侧打开 iCloud 云盘，点 obsidian 图标文件下载到本地管理（云箭头表示还在云上）。</p>
+<h3 id="第三步"><a href="#第三步" class="headerlink" title="第三步"></a>第三步</h3><p>显示 Mac 隐藏文件的两种方法：</p>
+<ol>
+<li>mac 终端中输入入命令：<code>defaults write com.apple.finder AppleShowAllFiles -bool true; killall Finder</code>  。</li>
+<li>快捷键组合：<code>⌘+⇧+。</code></li>
+</ol>
+<p>隐藏文件显示后，找到自己用户名下的资源库，在上方菜单栏<code>显示</code>-<code>查看显示选项</code>（<code>⌘+J</code>）中勾选<code>显示资源库文件夹</code>，这样就可以在群晖Drive同步软件中定位到 iCloud 内的文件夹。</p>
+<h3 id="第四步"><a href="#第四步" class="headerlink" title="第四步"></a>第四步</h3><p>macOS 打开群晖的配套同步软件<code>群晖 Drive Client</code>设置，创建选定<code>mac</code>用户名下<code>library</code>中的<code>moblie documents</code>文件，翻到iCloud前缀的obsidian文件夹，同步之前 iOS 中新建的库即可。</p>
+<h3 id="第五步"><a href="#第五步" class="headerlink" title="第五步"></a>第五步</h3><p>macOS 中iCloud下 Obsidian 打开库文件夹，在网络 nas 中即可找到此 iOS&#x2F;iPadOS 新建的库。</p>
+<p>完成之后，关闭显示 Mac 隐藏文件：<code>defaults write com.apple.finder AppleShowAllFiles -boolean false ; killall Finder</code></p>
+<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><p>实测多设备下修改输入，几乎都是秒刷到账，唯一要担心的是删的太快，如果在一处误删掉某内容，很快会被同步覆盖。不过群晖drive 中可以看同步日志，应问题不大。</p>
+<p>目前还没有遇上同步问题，仅提供解决方案，数据无价，请自行斟酌＼（＾ ＾）／</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>博客</category>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>markdown</tag>
+        <tag>hexo</tag>
+        <tag>Obsidian</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>在hexo博客中插入思维导图</title>
+    <url>/2019/05/24/%E5%9C%A8hexo%E5%8D%9A%E5%AE%A2%E4%B8%AD%E6%8F%92%E5%85%A5%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="https://github.com/maxchang3/hexo-markmap">hexo-markmap</a></p>
+<p><strong>使用示例</strong></p>
+<span id="more"></span>
+
+<figure class="highlight clean"><table><tr><td class="code"><pre><span class="line">&#123;% markmap <span class="number">400</span>px %&#125;</span><br><span class="line">  </span><br><span class="line"># Blog内容同步与自动更新流程  </span><br><span class="line">  </span><br><span class="line">## macOS  </span><br><span class="line">### 群晖Drive  </span><br><span class="line">- 同步Hexo的post目录到iCloud  </span><br><span class="line">  </span><br><span class="line">## iCloud  </span><br><span class="line">- 同步Hexo的post目录  </span><br><span class="line">- 跨苹果设备同步  </span><br><span class="line">  </span><br><span class="line">## 苹果设备  </span><br><span class="line">### 任意设备  </span><br><span class="line">- 撰写blog  </span><br><span class="line">- 通过iCloud同步到macOS  </span><br><span class="line">  </span><br><span class="line">## macOS（继续）  </span><br><span class="line">### 群晖Drive（继续）  </span><br><span class="line">- 将新blog内容同步至群晖  </span><br><span class="line">  </span><br><span class="line">## 群晖  </span><br><span class="line">- 将内容自动布置到GitHub  </span><br><span class="line">  </span><br><span class="line">## GitHub  </span><br><span class="line">- 自动更新blog网站</span><br><span class="line">&#123;% endmarkmap %&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>技术</category>
+        <category>博客</category>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>markdown</tag>
+        <tag>hexo</tag>
+        <tag>插件</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>为部署在Github上的Hexo博客配置域名</title>
+    <url>/2019/05/25/%E4%B8%BA%E9%83%A8%E7%BD%B2%E5%9C%A8Github%E4%B8%8A%E7%9A%84Hexo%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE%E5%9F%9F%E5%90%8D/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="一、Hexo项目部署到Github"><a href="#一、Hexo项目部署到Github" class="headerlink" title="一、Hexo项目部署到Github"></a>一、<a href="https://so.csdn.net/so/search?q=Hexo&spm=1001.2101.3001.7020">Hexo</a>项目部署到Github</h4><p>首先要确保你的hexo项目已经部署到github上，如果不知道hexo项目如何部署到github上，请看另一篇文章↓</p>
+<a href="/2019/05/06/Git_Hexo/" title="群晖Git部署Hexo">群晖Git部署Hexo</a>
+
+<p>如果你的<strong>hexo项目已经搭建好</strong>，可直接跳转到<strong>第五步，看部署到Github</strong>的步骤。</p>
+<h4 id="二、解析域名到GitHub-Pages"><a href="#二、解析域名到GitHub-Pages" class="headerlink" title="二、解析域名到GitHub Pages"></a>二、解析域名到GitHub Pages</h4><h5 id="1：首先购买或注册一个域名"><a href="#1：首先购买或注册一个域名" class="headerlink" title="1：首先购买或注册一个域名"></a>1：首先购买或注册一个域名</h5><p>购买域名的渠道有很多，可以国内，也可以国外，本人是在国外的GoDaddy平台上买的（好处是管理比较方便，不用备案啥的了…），问题多的话我再写一篇具体申请的blog。</p>
+<h5 id="2：解析域名到Github"><a href="#2：解析域名到Github" class="headerlink" title="2：解析域名到Github"></a>2：解析域名到Github</h5><p>首先登录你域名注册商的控制面板，这里以GoDaddy为例</p>
+<span id="more"></span>
+
+<p>打开<strong>控制面板</strong></p>
+<p><img src="/2019/05/25/%E4%B8%BA%E9%83%A8%E7%BD%B2%E5%9C%A8Github%E4%B8%8A%E7%9A%84Hexo%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE%E5%9F%9F%E5%90%8D/image-20240428210042566.png"></p>
+<p>接着<strong>打开DNS配置页面</strong></p>
+<p><img src="/2019/05/25/%E4%B8%BA%E9%83%A8%E7%BD%B2%E5%9C%A8Github%E4%B8%8A%E7%9A%84Hexo%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE%E5%9F%9F%E5%90%8D/image-20240428210031684.png"></p>
+<p>接着<strong>添加以下几条解析</strong></p>
+<p><img src="/2019/05/25/%E4%B8%BA%E9%83%A8%E7%BD%B2%E5%9C%A8Github%E4%B8%8A%E7%9A%84Hexo%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE%E5%9F%9F%E5%90%8D/image-20240428210020252.png"></p>
+<p>上面几条IP地址是从<a href="">Github官网</a>上得来的，具体可以查看这个地址<a href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site#configuring-an-apex-domain">Managing a custom domain for your GitHub Pages site - GitHub Docs</a></p>
+<p>至此，域名注册服务商上的github pages域名解析我们就完成了！</p>
+<h4 id="三、配置Hexo项目"><a href="#三、配置Hexo项目" class="headerlink" title="三、配置Hexo项目"></a>三、配置Hexo项目</h4><ol>
+<li>在你的hexo项目的<strong>source</strong>文件夹根目录里添加一个<strong>CNAME</strong>文件（不带任何后缀的文件），CNAME里面的内容是你的<strong>域名</strong>。</li>
+<li>然后打开我们 hexo 项目的配置文件 <strong>_config.yml</strong> ，找到 <strong>url 配置项</strong> ，替换成我们的域名就可以了。</li>
+</ol>
+<h4 id="四、配置Github-Pages"><a href="#四、配置Github-Pages" class="headerlink" title="四、配置Github Pages"></a>四、配置Github Pages</h4><ol>
+<li>打开我们的hexo项目在github上的仓库，进入设置页面</li>
+<li>找到<strong>Pages选项</strong>，<code>Custom domain</code> 填上我们的<strong>域名</strong>，勾选上<strong>强制打开HTTPS</strong>。</li>
+<li>等DNS检查通过，稍微等一会，就可以用域名打开我们的Hexo部署在Github上的项目啦！</li>
+</ol>
+<p>原文链接： <a href="https://www.laodengai.com/domain-name-on-github-20240319/">Hexo 项目在 Github 上配置域名 | 老登 AI (laodengai.com)</a></p>
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>博客</category>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>markdown</tag>
+        <tag>hexo</tag>
+        <tag>插件</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>鸡尾酒配方</title>
+    <url>/2020/05/04/%E9%B8%A1%E5%B0%BE%E9%85%92%E9%85%8D%E6%96%B9/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="茶酒"><a href="#茶酒" class="headerlink" title="茶酒"></a>茶酒</h2><ul>
+<li>茶：120ml</li>
+<li>酒：45ml</li>
+<li>糖浆：10ml</li>
+<li>柠檬：5ml</li>
+</ul>
+<h2 id="B52轰炸机"><a href="#B52轰炸机" class="headerlink" title="B52轰炸机"></a>B52轰炸机</h2><ul>
+<li>1&#x2F;3咖啡力娇酒</li>
+<li>1&#x2F;3百利甜</li>
+<li>1&#x2F;3君度<span id="more"></span></li>
+</ul>
+<h2 id="长岛冰茶"><a href="#长岛冰茶" class="headerlink" title="长岛冰茶"></a>长岛冰茶</h2><ul>
+<li>饮具：玻璃杯加冰</li>
+<li>黄柠汁：5ml</li>
+<li>伏特加：15ml</li>
+<li>龙舌兰：15ml</li>
+<li>金酒：15ml</li>
+<li>白朗姆：15ml</li>
+<li>可乐：填满</li>
+<li>装饰</li>
+</ul>
+<h2 id="自由古巴"><a href="#自由古巴" class="headerlink" title="自由古巴"></a>自由古巴</h2><ul>
+<li>绿柠：5ml</li>
+<li>白朗姆：45ml</li>
+<li>可乐：加满</li>
+<li>装饰</li>
+</ul>
+<h2 id="莫吉托"><a href="#莫吉托" class="headerlink" title="莫吉托"></a>莫吉托</h2><ul>
+<li>绿柠块：3块（挤压）</li>
+<li>薄荷：轻挤压</li>
+<li>薄荷糖浆：8ml</li>
+<li>白朗姆：45ml</li>
+<li>冰：满</li>
+<li>苏打水：加到杯子4&#x2F;5</li>
+<li>用勺子伸到杯底做提拉</li>
+<li>装饰：绿柠片，薄荷簇</li>
+</ul>
+<h2 id="教父"><a href="#教父" class="headerlink" title="教父"></a>教父</h2><ul>
+<li>饮具：传统杯 + 方冰</li>
+<li>金宾波本：50ml</li>
+<li>蒂萨诺：10ml</li>
+<li>用勺子搅匀</li>
+</ul>
+<h2 id="蓝色夏威夷"><a href="#蓝色夏威夷" class="headerlink" title="蓝色夏威夷"></a>蓝色夏威夷</h2><ul>
+<li>饮具：玻璃杯 + 冰</li>
+<li>白朗姆：40ml</li>
+<li>蓝橙：20ml</li>
+<li>马利宝：20ml</li>
+<li>菠萝汁：45ml</li>
+<li>雪碧：加满</li>
+<li>装饰</li>
+</ul>
+<h2 id="醉酒的梵高"><a href="#醉酒的梵高" class="headerlink" title="醉酒的梵高"></a>醉酒的梵高</h2><ul>
+<li>龙舌兰：40ml</li>
+<li>菠萝汁：45ml</li>
+<li>雪碧：加满</li>
+<li>蓝橙力娇：最后加入，不搅动</li>
+</ul>
+<h2 id="心橙大海"><a href="#心橙大海" class="headerlink" title="心橙大海"></a>心橙大海</h2><ul>
+<li>饮具：玻璃杯 + 冰</li>
+<li>伏特加：45ml</li>
+<li>橙汁：装满</li>
+</ul>
+<h2 id="金汤力"><a href="#金汤力" class="headerlink" title="金汤力"></a>金汤力</h2><ul>
+<li>饮具：玻璃杯 + 冰</li>
+<li>金酒：45ml</li>
+<li>汤力水：加满</li>
+<li>装饰</li>
+</ul>
+<h2 id="日出"><a href="#日出" class="headerlink" title="日出"></a>日出</h2><ul>
+<li>饮具：玻璃杯 + 冰</li>
+<li>龙舌兰：45ml</li>
+<li>橙汁：加满</li>
+<li>红色糖浆：适量调整着色区域</li>
+</ul>
+<h2 id="蓝色玛格丽特"><a href="#蓝色玛格丽特" class="headerlink" title="蓝色玛格丽特"></a>蓝色玛格丽特</h2><ul>
+<li>饮具：玻璃杯 + 盐边</li>
+<li>龙舌兰：30ml</li>
+<li>蓝橙力娇酒：15ml</li>
+<li>蔗糖：5ml</li>
+<li>黄柠檬：点缀</li>
+</ul>
+<h2 id="白色玛格丽特"><a href="#白色玛格丽特" class="headerlink" title="白色玛格丽特"></a>白色玛格丽特</h2><ul>
+<li>龙舌兰：30ml</li>
+<li>君度：15ml</li>
+<li>柠檬汁：几滴</li>
+<li>蔗糖：5ml</li>
+<li>加冰块摇匀</li>
+</ul>
+<h2 id="威士忌酸"><a href="#威士忌酸" class="headerlink" title="威士忌酸"></a>威士忌酸</h2><ul>
+<li>波本：45ml</li>
+<li>黄柠檬：半个</li>
+<li>蔗糖：10ml</li>
+<li>加冰块摇匀</li>
+</ul>
+<h2 id="前任"><a href="#前任" class="headerlink" title="前任"></a>前任</h2><ul>
+<li>饮具：玻璃杯 + 冰</li>
+<li>龙舌兰：45ml</li>
+<li>红柚糖浆：适量</li>
+<li>苏打水：加满</li>
+</ul>
+<h2 id="孟婆汤"><a href="#孟婆汤" class="headerlink" title="孟婆汤"></a>孟婆汤</h2><ul>
+<li>伏特加：30ml</li>
+<li>柠檬汁：15ml</li>
+<li>马力宝：15ml</li>
+<li>莫林绿薄荷糖浆：10ml</li>
+</ul>
+<h2 id="百香果莫吉托（无酒精）"><a href="#百香果莫吉托（无酒精）" class="headerlink" title="百香果莫吉托（无酒精）"></a>百香果莫吉托（无酒精）</h2><ul>
+<li>青柠汁：5ml</li>
+<li>冰：加满</li>
+<li>百香果糖浆：12ml</li>
+<li>薄荷糖浆：12ml</li>
+<li>气泡水：加满</li>
+<li>搅匀装饰</li>
+</ul>
+<h2 id="波斯猫（无酒精）"><a href="#波斯猫（无酒精）" class="headerlink" title="波斯猫（无酒精）"></a>波斯猫（无酒精）</h2><ul>
+<li>橙汁：60ml</li>
+<li>菠萝汁：40ml</li>
+<li>柠檬汁：半个</li>
+<li>红石榴糖浆：2勺</li>
+<li>蔗糖：1勺</li>
+<li>加冰块摇匀</li>
+</ul>
+<h2 id="蓝色多瑙河（无酒精）"><a href="#蓝色多瑙河（无酒精）" class="headerlink" title="蓝色多瑙河（无酒精）"></a>蓝色多瑙河（无酒精）</h2><ul>
+<li>柠檬汁：一点</li>
+<li>蓝柑糖浆：10ml</li>
+<li>蔗糖糖浆：5ml</li>
+<li>苏打水</li>
+</ul>
+<h2 id="柚恋柠檬（无酒精）"><a href="#柚恋柠檬（无酒精）" class="headerlink" title="柚恋柠檬（无酒精）"></a>柚恋柠檬（无酒精）</h2><ul>
+<li>柠檬汁：一点</li>
+<li>红柚糖浆：10ml</li>
+<li>蔗糖糖浆：5ml</li>
+<li>苏打水</li>
+</ul>
+<h2 id="清凉一夏（无酒精）"><a href="#清凉一夏（无酒精）" class="headerlink" title="清凉一夏（无酒精）"></a>清凉一夏（无酒精）</h2><ul>
+<li>饮具：威士忌杯🥃 + 方冰</li>
+<li>新鲜薄荷叶：4-5 片，拍醒</li>
+<li>可乐：加至8分满</li>
+</ul>
+<h2 id="甜蜜蜜"><a href="#甜蜜蜜" class="headerlink" title="甜蜜蜜"></a>甜蜜蜜</h2><p>60 ml 蜜茶<br>40 mlwhisky<br>5 ml 糖浆<br>1&#x2F;4 柠檬</p>
+<h2 id="威士忌可乐-Whisky-Coke"><a href="#威士忌可乐-Whisky-Coke" class="headerlink" title="威士忌可乐 Whisky Coke"></a>威士忌可乐 Whisky Coke</h2><p><span style="font-family:.PingFangSC-Regular;">威士忌</span> 45 ml<br>可乐 Cola Top</p>
+<h2 id="伏特加莱姆"><a href="#伏特加莱姆" class="headerlink" title="伏特加莱姆"></a>伏特加莱姆</h2><ul>
+<li>盐边</li>
+<li>伏特加 60 ml</li>
+<li>柠檬汁 30 ml</li>
+<li>糖水 10 ml</li>
+</ul>
+<h2 id="玛格丽特-Margarita"><a href="#玛格丽特-Margarita" class="headerlink" title="玛格丽特 Margarita"></a>玛格丽特 Margarita</h2><ul>
+<li>龙舌兰 45 ml</li>
+<li>君度橙 cointreau 15 ml</li>
+<li>柠檬汁 15 ml</li>
+<li>加冰摇一摇</li>
+<li>盐边</li>
+</ul>
+<h2 id="螺丝起子-Screwdriver"><a href="#螺丝起子-Screwdriver" class="headerlink" title="螺丝起子 Screwdriver"></a>螺丝起子 Screwdriver</h2><ul>
+<li>伏特加 45 ml</li>
+<li>橙汁</li>
+</ul>
+]]></content>
+      <categories>
+        <category>生活</category>
+        <category>鸡尾酒</category>
+      </categories>
+      <tags>
+        <tag>鸡尾酒</tag>
+        <tag>配方</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>GoPro Hero最实用的四个必备配件:打造完美生态</title>
+    <url>/2022/03/15/GoproHero/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><hr>
+<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">
+<iframe src="//player.bilibili.com/player.html?aid=244387247&bvid=BV1Av411174q&cid=229573649&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; Left: 0; top: 0;" ></iframe></div> 
+]]></content>
+      <categories>
+        <category>数码</category>
+        <category>相机</category>
+      </categories>
+      <tags>
+        <tag>数码</tag>
+        <tag>相机</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>菜谱</title>
+    <url>/2022/04/19/%E8%8F%9C%E8%B0%B1/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="空气炸锅鸡排"><a href="#空气炸锅鸡排" class="headerlink" title="空气炸锅鸡排"></a>空气炸锅鸡排</h1><ul>
+<li>温度：200度</li>
+<li>时间：8分钟 + 4分钟</li>
+</ul>
+<h1 id="空气炸锅健身食品"><a href="#空气炸锅健身食品" class="headerlink" title="空气炸锅健身食品"></a>空气炸锅健身食品</h1><ul>
+<li>鸡胸肉（黑胡椒、13香、橄榄油）</li>
+<li>地瓜（切块、橄榄油）</li>
+<li>温度：180度</li>
+<li>时间：15分钟</li>
+</ul>
+<span id="more"></span>
+<p><a href="https://www.youtube.com/watch?v=D8O7myqk0Bw">健身食品制作视频</a></p>
+<h1 id="阳春面调料"><a href="#阳春面调料" class="headerlink" title="阳春面调料"></a>阳春面调料</h1><ul>
+<li>生抽、陈醋、盐、香油或猪油、葱花</li>
+</ul>
+<h1 id="爆炒香辣鱿鱼"><a href="#爆炒香辣鱿鱼" class="headerlink" title="爆炒香辣鱿鱼"></a>爆炒香辣鱿鱼</h1><p>食材：</p>
+<ul>
+<li>鱿鱼须、葱、姜、洋葱、料酒、豆瓣酱、生抽、老抽、蚝油、白糖、盐、熟芝麻</li>
+</ul>
+<p>做法：</p>
+<ol>
+<li>鱿鱼洗净切好备用，冷水下锅，加入姜片、葱段、1勺料酒，焯水捞出备用</li>
+<li>锅中油热，倒入洋葱丝，炒出香味，加入1勺豆瓣酱炒出红油，倒入焯好水的鱿鱼须，翻炒上色</li>
+<li>加入1勺生抽、半勺老抽、1勺蚝油、适量白糖、少许盐、1勺熟芝麻，翻炒均匀，撒上葱花即可</li>
+</ol>
+]]></content>
+      <categories>
+        <category>生活</category>
+        <category>菜谱</category>
+      </categories>
+      <tags>
+        <tag>菜谱</tag>
+        <tag>下酒菜</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo Hello World</title>
     <url>/2019/05/01/hello_world/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
@@ -330,125 +665,33 @@
       </tags>
   </entry>
   <entry>
-    <title>苹果全平台无缝同步群晖Obsidian库</title>
-    <url>/2019/05/24/Apple%E5%85%A8%E5%B9%B3%E5%8F%B0%E6%97%A0%E7%BC%9D%E5%90%8C%E6%AD%A5%E7%BE%A4%E6%99%96Obsidian%E5%BA%93/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><strong>前提介绍：</strong></p>
-<blockquote>
-<p><a href="https://obsidian.md/">Obsidian</a>是一款基于Markdown的笔记软件，以其强大的链接和标签功能、本地化存储及丰富的插件生态，为用户提供高效的知识管理和创作体验。 </p>
-</blockquote>
-<blockquote>
-<p><a href="https://www.synology.cn/zh-cn">群晖NAS</a>是一种基于网络连接的存储设备，它提供集中管理和共享文件的平台，支持多种功能，如数据备份、多媒体服务器等，方便用户随时随地访问和管理数据。</p>
-</blockquote>
-<h2 id="本文的目的"><a href="#本文的目的" class="headerlink" title="本文的目的"></a>本文的目的</h2><p><a href="https://obsidian.md/">Obsidian</a>作为一款优秀的markdown笔记软件，非常适合搭配hexo撰写blog。</p>
-<p>通过macOS上群晖Drive将hexo的post目录同步到iCloud，实现macOS和群晖drive的同步，然后通过iCloud在不同苹果设备上同步hexo的post目录，实现任意苹果设备撰写blog都可以在macOS通过群晖drive将新blog内容同步至群晖，再由群晖将内容自动布置到GitHub，实现blog网站的自动更新。</p>
+    <title>澳洲家中日常必备清单</title>
+    <url>/2022/05/19/%E6%BE%B3%E6%B4%B2%E5%AE%B6%E4%B8%AD%E6%97%A5%E5%B8%B8%E5%BF%85%E5%A4%87%E6%B8%85%E5%8D%95/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>1⃣️ CEPACAINE漱口水！ 治疗牙龈肿痛，口腔溃疡。澳洲医生推荐买的，超级有效！猫猫家必备的，再也没有牙口烦恼。 购买地址：Chemist有售 💰价格：$15.49 问题在口腔，吃啥啥不香，买它！喵～</p>
+<hr>
+<p>2⃣️ Quick EZE胃糖 腹胀、胃酸、胃痛。消化不良、吃颗糖就能缓解～ 主要是这糖咋还那么好吃！ 购买地址：Chemist 💰价格：$4.99 胃也需要轻轻安抚，买它！喵～</p>
 <span id="more"></span>
-
-
-<div class="markmap-container" style="height:400px">
-  <svg data="{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:1,&quot;p&quot;:{&quot;lines&quot;:[1,2]},&quot;v&quot;:&quot;Blog内容同步与自动更新流程&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:2,&quot;p&quot;:{&quot;lines&quot;:[3,4]},&quot;v&quot;:&quot;macOS&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[4,5]},&quot;v&quot;:&quot;群晖Drive&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:5,&quot;p&quot;:{&quot;lines&quot;:[5,6]},&quot;v&quot;:&quot;同步Hexo的post目录到iCloud&quot;}]}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:2,&quot;p&quot;:{&quot;lines&quot;:[7,8]},&quot;v&quot;:&quot;iCloud&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:4,&quot;p&quot;:{&quot;lines&quot;:[8,9]},&quot;v&quot;:&quot;同步Hexo的post目录&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:4,&quot;p&quot;:{&quot;lines&quot;:[9,10]},&quot;v&quot;:&quot;跨苹果设备同步&quot;}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:2,&quot;p&quot;:{&quot;lines&quot;:[11,12]},&quot;v&quot;:&quot;苹果设备&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[12,13]},&quot;v&quot;:&quot;任意设备&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:5,&quot;p&quot;:{&quot;lines&quot;:[13,14]},&quot;v&quot;:&quot;撰写blog&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:5,&quot;p&quot;:{&quot;lines&quot;:[14,15]},&quot;v&quot;:&quot;通过iCloud同步到macOS&quot;}]}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:2,&quot;p&quot;:{&quot;lines&quot;:[16,17]},&quot;v&quot;:&quot;macOS（继续）&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[17,18]},&quot;v&quot;:&quot;群晖Drive（继续）&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:5,&quot;p&quot;:{&quot;lines&quot;:[18,19]},&quot;v&quot;:&quot;将新blog内容同步至群晖&quot;}]}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:2,&quot;p&quot;:{&quot;lines&quot;:[20,21]},&quot;v&quot;:&quot;群晖&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:4,&quot;p&quot;:{&quot;lines&quot;:[21,22]},&quot;v&quot;:&quot;将内容自动布置到GitHub&quot;}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:2,&quot;p&quot;:{&quot;lines&quot;:[23,24]},&quot;v&quot;:&quot;GitHub&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:4,&quot;p&quot;:{&quot;lines&quot;:[24,25]},&quot;v&quot;:&quot;自动更新blog网站&quot;}]}]}"></svg>
-</div>
-
-
-
-<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><blockquote>
-<p>iPadOS和iOS端Obsidian只能识别打开iCloud Drive中Obsidian目录下的库，但macOS端的群晖Drive同步目录找不到iCloud目录，也就无法从iCloud同步至群晖。</p>
-</blockquote>
-<h2 id="解决步骤"><a href="#解决步骤" class="headerlink" title="解决步骤"></a>解决步骤</h2><h3 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h3><p>全部苹果设备开启 iCloud 同步，在 iOS&#x2F;iPadOS 下打开 obsidian 新建库，会自动生成一个<code>welcome.md</code>文件。</p>
-<h3 id="第二步"><a href="#第二步" class="headerlink" title="第二步"></a>第二步</h3><p>打开 macOS 访达，左侧打开 iCloud 云盘，点 obsidian 图标文件下载到本地管理（云箭头表示还在云上）。</p>
-<h3 id="第三步"><a href="#第三步" class="headerlink" title="第三步"></a>第三步</h3><p>显示 Mac 隐藏文件的两种方法：</p>
-<ol>
-<li>mac 终端中输入入命令：<code>defaults write com.apple.finder AppleShowAllFiles -bool true; killall Finder</code>  。</li>
-<li>快捷键组合：<code>⌘+⇧+。</code></li>
-</ol>
-<p>隐藏文件显示后，找到自己用户名下的资源库，在上方菜单栏<code>显示</code>-<code>查看显示选项</code>（<code>⌘+J</code>）中勾选<code>显示资源库文件夹</code>，这样就可以在群晖Drive同步软件中定位到 iCloud 内的文件夹。</p>
-<h3 id="第四步"><a href="#第四步" class="headerlink" title="第四步"></a>第四步</h3><p>macOS 打开群晖的配套同步软件<code>群晖 Drive Client</code>设置，创建选定<code>mac</code>用户名下<code>library</code>中的<code>moblie documents</code>文件，翻到iCloud前缀的obsidian文件夹，同步之前 iOS 中新建的库即可。</p>
-<h3 id="第五步"><a href="#第五步" class="headerlink" title="第五步"></a>第五步</h3><p>macOS 中iCloud下 Obsidian 打开库文件夹，在网络 nas 中即可找到此 iOS&#x2F;iPadOS 新建的库。</p>
-<p>完成之后，关闭显示 Mac 隐藏文件：<code>defaults write com.apple.finder AppleShowAllFiles -boolean false ; killall Finder</code></p>
-<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><p>实测多设备下修改输入，几乎都是秒刷到账，唯一要担心的是删的太快，如果在一处误删掉某内容，很快会被同步覆盖。不过群晖drive 中可以看同步日志，应问题不大。</p>
-<p>目前还没有遇上同步问题，仅提供解决方案，数据无价，请自行斟酌＼（＾ ＾）／</p>
-]]></content>
-      <categories>
-        <category>技术</category>
-        <category>博客</category>
-        <category>hexo</category>
-      </categories>
-      <tags>
-        <tag>markdown</tag>
-        <tag>hexo</tag>
-        <tag>Obsidian</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>在hexo博客中插入思维导图</title>
-    <url>/2019/05/24/%E5%9C%A8hexo%E5%8D%9A%E5%AE%A2%E4%B8%AD%E6%8F%92%E5%85%A5%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="https://github.com/maxchang3/hexo-markmap">hexo-markmap</a></p>
-<p><strong>使用示例</strong></p>
-<span id="more"></span>
-
-<figure class="highlight clean"><table><tr><td class="code"><pre><span class="line">&#123;% markmap <span class="number">400</span>px %&#125;</span><br><span class="line">  </span><br><span class="line"># Blog内容同步与自动更新流程  </span><br><span class="line">  </span><br><span class="line">## macOS  </span><br><span class="line">### 群晖Drive  </span><br><span class="line">- 同步Hexo的post目录到iCloud  </span><br><span class="line">  </span><br><span class="line">## iCloud  </span><br><span class="line">- 同步Hexo的post目录  </span><br><span class="line">- 跨苹果设备同步  </span><br><span class="line">  </span><br><span class="line">## 苹果设备  </span><br><span class="line">### 任意设备  </span><br><span class="line">- 撰写blog  </span><br><span class="line">- 通过iCloud同步到macOS  </span><br><span class="line">  </span><br><span class="line">## macOS（继续）  </span><br><span class="line">### 群晖Drive（继续）  </span><br><span class="line">- 将新blog内容同步至群晖  </span><br><span class="line">  </span><br><span class="line">## 群晖  </span><br><span class="line">- 将内容自动布置到GitHub  </span><br><span class="line">  </span><br><span class="line">## GitHub  </span><br><span class="line">- 自动更新blog网站</span><br><span class="line">&#123;% endmarkmap %&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>技术</category>
-        <category>博客</category>
-        <category>hexo</category>
-      </categories>
-      <tags>
-        <tag>markdown</tag>
-        <tag>hexo</tag>
-        <tag>插件</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>GoPro Hero最实用的四个必备配件:打造完美生态</title>
-    <url>/2022/03/15/GoproHero/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><hr>
-<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">
-<iframe src="//player.bilibili.com/player.html?aid=244387247&bvid=BV1Av411174q&cid=229573649&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; Left: 0; top: 0;" ></iframe></div> 
-]]></content>
-      <categories>
-        <category>数码</category>
-        <category>相机</category>
-      </categories>
-      <tags>
-        <tag>数码</tag>
-        <tag>相机</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>菜谱</title>
-    <url>/2022/04/19/%E8%8F%9C%E8%B0%B1/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="空气炸锅鸡排"><a href="#空气炸锅鸡排" class="headerlink" title="空气炸锅鸡排"></a>空气炸锅鸡排</h1><ul>
-<li>温度：200度</li>
-<li>时间：8分钟 + 4分钟</li>
-</ul>
-<h1 id="空气炸锅健身食品"><a href="#空气炸锅健身食品" class="headerlink" title="空气炸锅健身食品"></a>空气炸锅健身食品</h1><ul>
-<li>鸡胸肉（黑胡椒、13香、橄榄油）</li>
-<li>地瓜（切块、橄榄油）</li>
-<li>温度：180度</li>
-<li>时间：15分钟</li>
-</ul>
-<span id="more"></span>
-<p><a href="https://www.youtube.com/watch?v=D8O7myqk0Bw">健身食品制作视频</a></p>
-<h1 id="阳春面调料"><a href="#阳春面调料" class="headerlink" title="阳春面调料"></a>阳春面调料</h1><ul>
-<li>生抽、陈醋、盐、香油或猪油、葱花</li>
-</ul>
-<h1 id="爆炒香辣鱿鱼"><a href="#爆炒香辣鱿鱼" class="headerlink" title="爆炒香辣鱿鱼"></a>爆炒香辣鱿鱼</h1><p>食材：</p>
-<ul>
-<li>鱿鱼须、葱、姜、洋葱、料酒、豆瓣酱、生抽、老抽、蚝油、白糖、盐、熟芝麻</li>
-</ul>
-<p>做法：</p>
-<ol>
-<li>鱿鱼洗净切好备用，冷水下锅，加入姜片、葱段、1勺料酒，焯水捞出备用</li>
-<li>锅中油热，倒入洋葱丝，炒出香味，加入1勺豆瓣酱炒出红油，倒入焯好水的鱿鱼须，翻炒上色</li>
-<li>加入1勺生抽、半勺老抽、1勺蚝油、适量白糖、少许盐、1勺熟芝麻，翻炒均匀，撒上葱花即可</li>
-</ol>
+<hr>
+<p>3⃣️ VICKS 通鼻喷剂 在澳洲总感觉鼻子不适，鼻炎老犯，尤其总是鼻塞。这个通鼻喷剂起效快，薄荷味柔和不刺激。 购买地址：Chemist 💰价格$11.99 杜绝张口呼吸，买它！喵～</p>
+<hr>
+<p>4⃣️ Refresh眼药水 在家学习、工作、打游戏、熬夜，眼睛干涩的话最使用用人工泪液成分的眼药水。无刺激，缓解眼睛疲劳，闺蜜们都在用。 购买地址：Chemist 💰价格$13.49 缓解就靠累上加泪。买它，喵～</p>
+<hr>
+<p>5⃣️ LeQure Detox Soap排毒香皂 这款味道超级淡，小众然鹅超棒！主要可以用来控油去杂质。背部长痘痘的宝宝们一定要试试。滋养加排毒，姐妹推荐的，用过也感觉很好。 购买地址：Chemist 💰价格：$5.99 永远不进毒圈，买它，喵～</p>
+<hr>
+<p>6⃣️ Naprogesic止痛片 姨妈期最好的止痛片咯，因为成分对胃损伤小，刺激小。而且止痛的效果起效更快，当地女生首选经期续命药。小蓝片好多朋友都在用。 购买地址：Chemist 💰价格：$7.99 连我姨妈都在用！买它，喵～</p>
+<hr>
+<p>7⃣️ Dettol 洗衣消毒液 家里养宠物的朋友洗衣服都会用这个帮忙杀菌！能灭杀99.9%的细菌。尤其是合租又共用洗衣机的话这个肯定要买！ 购买地址：Coles、 WWS有售 💰价格：$8.99 再也不怕室友用洗衣机洗袜子了，买它！喵～</p>
+<hr>
+<p>8⃣️ Mr muscle通道强力剂！ 水槽，浴室如果都便秘了，那主人可就更难受了。 超强清下水道秘方，家家必备的男人。尤其是掉头发比较多的女生经常会堵掉下水道。用它就可以畅通哦。 购买地址：Coles、WWS有售 💰价格：$13.7 搞定下水道，心情好到爆，买它！喵～</p>
+<hr>
 ]]></content>
       <categories>
         <category>生活</category>
-        <category>菜谱</category>
+        <category>好物推荐</category>
       </categories>
       <tags>
-        <tag>菜谱</tag>
-        <tag>下酒菜</tag>
+        <tag>推荐</tag>
+        <tag>日常</tag>
       </tags>
   </entry>
   <entry>
@@ -480,6 +723,31 @@
 
 <p>在这个例子中，对于每个学生，我们使用CASE WHEN语句根据他们的分数来判断他们的等级。如果分数大于等于90，那么他们被归类为”优秀”；如果分数大于等于80，但小于90，他们被归类为”良好”；如果分数大于等于60，但小于80，他们被归类为”及格”；否则，他们被归类为”不及格”。</p>
 <p>通过使用CASE WHEN语句，我们可以根据不同的条件返回不同的结果，从而实现灵活的数据处理和转换。</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>数据分析</category>
+        <category>SQL</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+        <tag>SQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>GroupBy</title>
+    <url>/2023/03/04/GroupBy/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>当我们需要对数据进行分组并进行聚合计算时，可以使用GROUP BY子句。GROUP BY子句通常与聚合函数（如SUM、COUNT、AVG等）一起使用。</p>
+<p>通过GROUP BY子句，我们可以将数据按照指定的列进行分组，并对每个组进行聚合计算。这些聚合计算的结果将基于每个组的值。</p>
+<p>下面是一个示例，假设我们有一个名为”orders”的表，其中包含了订单信息：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT product_id, COUNT(*) as total_orders</span><br><span class="line">FROM orders</span><br><span class="line">GROUP BY product_id;</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+<p>在上述示例中，我们按照”product_id”列进行了分组，并计算了每个产品的订单总数。通过使用COUNT(*)函数，我们可以计算每个产品的订单数量。</p>
+<p>GROUP BY子句可以与多个列一起使用，以便更细致地分组数据。例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT category_id, product_id, COUNT(*) as total_orders</span><br><span class="line">FROM orders</span><br><span class="line">GROUP BY category_id, product_id;</span><br></pre></td></tr></table></figure>
+
+<p>在这个示例中，我们按照”category_id”和”product_id”两列进行了分组，并计算了每个产品在每个类别中的订单总数。</p>
+<p>需要注意的是，GROUP BY子句必须与SELECT语句一起使用，并且SELECT语句中的列必须是GROUP BY子句中的列或者是聚合函数的参数。这样才能确保查询的正确性。</p>
 ]]></content>
       <categories>
         <category>技术</category>
@@ -632,249 +900,6 @@
       </tags>
   </entry>
   <entry>
-    <title>为部署在Github上的Hexo博客配置域名</title>
-    <url>/2019/05/25/%E4%B8%BA%E9%83%A8%E7%BD%B2%E5%9C%A8Github%E4%B8%8A%E7%9A%84Hexo%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE%E5%9F%9F%E5%90%8D/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="一、Hexo项目部署到Github"><a href="#一、Hexo项目部署到Github" class="headerlink" title="一、Hexo项目部署到Github"></a>一、<a href="https://so.csdn.net/so/search?q=Hexo&spm=1001.2101.3001.7020">Hexo</a>项目部署到Github</h4><p>首先要确保你的hexo项目已经部署到github上，如果不知道hexo项目如何部署到github上，请看另一篇文章↓</p>
-<a href="/2019/05/06/Git_Hexo/" title="群晖Git部署Hexo">群晖Git部署Hexo</a>
-
-<p>如果你的<strong>hexo项目已经搭建好</strong>，可直接跳转到<strong>第五步，看部署到Github</strong>的步骤。</p>
-<h4 id="二、解析域名到GitHub-Pages"><a href="#二、解析域名到GitHub-Pages" class="headerlink" title="二、解析域名到GitHub Pages"></a>二、解析域名到GitHub Pages</h4><h5 id="1：首先购买或注册一个域名"><a href="#1：首先购买或注册一个域名" class="headerlink" title="1：首先购买或注册一个域名"></a>1：首先购买或注册一个域名</h5><p>购买域名的渠道有很多，可以国内，也可以国外，本人是在国外的GoDaddy平台上买的（好处是管理比较方便，不用备案啥的了…），问题多的话我再写一篇具体申请的blog。</p>
-<h5 id="2：解析域名到Github"><a href="#2：解析域名到Github" class="headerlink" title="2：解析域名到Github"></a>2：解析域名到Github</h5><p>首先登录你域名注册商的控制面板，这里以GoDaddy为例</p>
-<span id="more"></span>
-
-<p>打开<strong>控制面板</strong></p>
-<p><img src="/2019/05/25/%E4%B8%BA%E9%83%A8%E7%BD%B2%E5%9C%A8Github%E4%B8%8A%E7%9A%84Hexo%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE%E5%9F%9F%E5%90%8D/image-20240428210042566.png"></p>
-<p>接着<strong>打开DNS配置页面</strong></p>
-<p><img src="/2019/05/25/%E4%B8%BA%E9%83%A8%E7%BD%B2%E5%9C%A8Github%E4%B8%8A%E7%9A%84Hexo%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE%E5%9F%9F%E5%90%8D/image-20240428210031684.png"></p>
-<p>接着<strong>添加以下几条解析</strong></p>
-<p><img src="/2019/05/25/%E4%B8%BA%E9%83%A8%E7%BD%B2%E5%9C%A8Github%E4%B8%8A%E7%9A%84Hexo%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE%E5%9F%9F%E5%90%8D/image-20240428210020252.png"></p>
-<p>上面几条IP地址是从<a href="">Github官网</a>上得来的，具体可以查看这个地址<a href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site#configuring-an-apex-domain">Managing a custom domain for your GitHub Pages site - GitHub Docs</a></p>
-<p>至此，域名注册服务商上的github pages域名解析我们就完成了！</p>
-<h4 id="三、配置Hexo项目"><a href="#三、配置Hexo项目" class="headerlink" title="三、配置Hexo项目"></a>三、配置Hexo项目</h4><ol>
-<li>在你的hexo项目的<strong>source</strong>文件夹根目录里添加一个<strong>CNAME</strong>文件（不带任何后缀的文件），CNAME里面的内容是你的<strong>域名</strong>。</li>
-<li>然后打开我们 hexo 项目的配置文件 <strong>_config.yml</strong> ，找到 <strong>url 配置项</strong> ，替换成我们的域名就可以了。</li>
-</ol>
-<h4 id="四、配置Github-Pages"><a href="#四、配置Github-Pages" class="headerlink" title="四、配置Github Pages"></a>四、配置Github Pages</h4><ol>
-<li>打开我们的hexo项目在github上的仓库，进入设置页面</li>
-<li>找到<strong>Pages选项</strong>，<code>Custom domain</code> 填上我们的<strong>域名</strong>，勾选上<strong>强制打开HTTPS</strong>。</li>
-<li>等DNS检查通过，稍微等一会，就可以用域名打开我们的Hexo部署在Github上的项目啦！</li>
-</ol>
-<p>原文链接： <a href="https://www.laodengai.com/domain-name-on-github-20240319/">Hexo 项目在 Github 上配置域名 | 老登 AI (laodengai.com)</a></p>
-]]></content>
-      <categories>
-        <category>技术</category>
-        <category>博客</category>
-        <category>hexo</category>
-      </categories>
-      <tags>
-        <tag>markdown</tag>
-        <tag>hexo</tag>
-        <tag>插件</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>鸡尾酒配方</title>
-    <url>/2020/05/04/%E9%B8%A1%E5%B0%BE%E9%85%92%E9%85%8D%E6%96%B9/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="茶酒"><a href="#茶酒" class="headerlink" title="茶酒"></a>茶酒</h2><ul>
-<li>茶：120ml</li>
-<li>酒：45ml</li>
-<li>糖浆：10ml</li>
-<li>柠檬：5ml</li>
-</ul>
-<h2 id="B52轰炸机"><a href="#B52轰炸机" class="headerlink" title="B52轰炸机"></a>B52轰炸机</h2><ul>
-<li>1&#x2F;3咖啡力娇酒</li>
-<li>1&#x2F;3百利甜</li>
-<li>1&#x2F;3君度<span id="more"></span></li>
-</ul>
-<h2 id="长岛冰茶"><a href="#长岛冰茶" class="headerlink" title="长岛冰茶"></a>长岛冰茶</h2><ul>
-<li>饮具：玻璃杯加冰</li>
-<li>黄柠汁：5ml</li>
-<li>伏特加：15ml</li>
-<li>龙舌兰：15ml</li>
-<li>金酒：15ml</li>
-<li>白朗姆：15ml</li>
-<li>可乐：填满</li>
-<li>装饰</li>
-</ul>
-<h2 id="自由古巴"><a href="#自由古巴" class="headerlink" title="自由古巴"></a>自由古巴</h2><ul>
-<li>绿柠：5ml</li>
-<li>白朗姆：45ml</li>
-<li>可乐：加满</li>
-<li>装饰</li>
-</ul>
-<h2 id="莫吉托"><a href="#莫吉托" class="headerlink" title="莫吉托"></a>莫吉托</h2><ul>
-<li>绿柠块：3块（挤压）</li>
-<li>薄荷：轻挤压</li>
-<li>薄荷糖浆：8ml</li>
-<li>白朗姆：45ml</li>
-<li>冰：满</li>
-<li>苏打水：加到杯子4&#x2F;5</li>
-<li>用勺子伸到杯底做提拉</li>
-<li>装饰：绿柠片，薄荷簇</li>
-</ul>
-<h2 id="教父"><a href="#教父" class="headerlink" title="教父"></a>教父</h2><ul>
-<li>饮具：传统杯 + 方冰</li>
-<li>金宾波本：50ml</li>
-<li>蒂萨诺：10ml</li>
-<li>用勺子搅匀</li>
-</ul>
-<h2 id="蓝色夏威夷"><a href="#蓝色夏威夷" class="headerlink" title="蓝色夏威夷"></a>蓝色夏威夷</h2><ul>
-<li>饮具：玻璃杯 + 冰</li>
-<li>白朗姆：40ml</li>
-<li>蓝橙：20ml</li>
-<li>马利宝：20ml</li>
-<li>菠萝汁：45ml</li>
-<li>雪碧：加满</li>
-<li>装饰</li>
-</ul>
-<h2 id="醉酒的梵高"><a href="#醉酒的梵高" class="headerlink" title="醉酒的梵高"></a>醉酒的梵高</h2><ul>
-<li>龙舌兰：40ml</li>
-<li>菠萝汁：45ml</li>
-<li>雪碧：加满</li>
-<li>蓝橙力娇：最后加入，不搅动</li>
-</ul>
-<h2 id="心橙大海"><a href="#心橙大海" class="headerlink" title="心橙大海"></a>心橙大海</h2><ul>
-<li>饮具：玻璃杯 + 冰</li>
-<li>伏特加：45ml</li>
-<li>橙汁：装满</li>
-</ul>
-<h2 id="金汤力"><a href="#金汤力" class="headerlink" title="金汤力"></a>金汤力</h2><ul>
-<li>饮具：玻璃杯 + 冰</li>
-<li>金酒：45ml</li>
-<li>汤力水：加满</li>
-<li>装饰</li>
-</ul>
-<h2 id="日出"><a href="#日出" class="headerlink" title="日出"></a>日出</h2><ul>
-<li>饮具：玻璃杯 + 冰</li>
-<li>龙舌兰：45ml</li>
-<li>橙汁：加满</li>
-<li>红色糖浆：适量调整着色区域</li>
-</ul>
-<h2 id="蓝色玛格丽特"><a href="#蓝色玛格丽特" class="headerlink" title="蓝色玛格丽特"></a>蓝色玛格丽特</h2><ul>
-<li>饮具：玻璃杯 + 盐边</li>
-<li>龙舌兰：30ml</li>
-<li>蓝橙力娇酒：15ml</li>
-<li>蔗糖：5ml</li>
-<li>黄柠檬：点缀</li>
-</ul>
-<h2 id="白色玛格丽特"><a href="#白色玛格丽特" class="headerlink" title="白色玛格丽特"></a>白色玛格丽特</h2><ul>
-<li>龙舌兰：30ml</li>
-<li>君度：15ml</li>
-<li>柠檬汁：几滴</li>
-<li>蔗糖：5ml</li>
-<li>加冰块摇匀</li>
-</ul>
-<h2 id="威士忌酸"><a href="#威士忌酸" class="headerlink" title="威士忌酸"></a>威士忌酸</h2><ul>
-<li>波本：45ml</li>
-<li>黄柠檬：半个</li>
-<li>蔗糖：10ml</li>
-<li>加冰块摇匀</li>
-</ul>
-<h2 id="前任"><a href="#前任" class="headerlink" title="前任"></a>前任</h2><ul>
-<li>饮具：玻璃杯 + 冰</li>
-<li>龙舌兰：45ml</li>
-<li>红柚糖浆：适量</li>
-<li>苏打水：加满</li>
-</ul>
-<h2 id="孟婆汤"><a href="#孟婆汤" class="headerlink" title="孟婆汤"></a>孟婆汤</h2><ul>
-<li>伏特加：30ml</li>
-<li>柠檬汁：15ml</li>
-<li>马力宝：15ml</li>
-<li>莫林绿薄荷糖浆：10ml</li>
-</ul>
-<h2 id="百香果莫吉托（无酒精）"><a href="#百香果莫吉托（无酒精）" class="headerlink" title="百香果莫吉托（无酒精）"></a>百香果莫吉托（无酒精）</h2><ul>
-<li>青柠汁：5ml</li>
-<li>冰：加满</li>
-<li>百香果糖浆：12ml</li>
-<li>薄荷糖浆：12ml</li>
-<li>气泡水：加满</li>
-<li>搅匀装饰</li>
-</ul>
-<h2 id="波斯猫（无酒精）"><a href="#波斯猫（无酒精）" class="headerlink" title="波斯猫（无酒精）"></a>波斯猫（无酒精）</h2><ul>
-<li>橙汁：60ml</li>
-<li>菠萝汁：40ml</li>
-<li>柠檬汁：半个</li>
-<li>红石榴糖浆：2勺</li>
-<li>蔗糖：1勺</li>
-<li>加冰块摇匀</li>
-</ul>
-<h2 id="蓝色多瑙河（无酒精）"><a href="#蓝色多瑙河（无酒精）" class="headerlink" title="蓝色多瑙河（无酒精）"></a>蓝色多瑙河（无酒精）</h2><ul>
-<li>柠檬汁：一点</li>
-<li>蓝柑糖浆：10ml</li>
-<li>蔗糖糖浆：5ml</li>
-<li>苏打水</li>
-</ul>
-<h2 id="柚恋柠檬（无酒精）"><a href="#柚恋柠檬（无酒精）" class="headerlink" title="柚恋柠檬（无酒精）"></a>柚恋柠檬（无酒精）</h2><ul>
-<li>柠檬汁：一点</li>
-<li>红柚糖浆：10ml</li>
-<li>蔗糖糖浆：5ml</li>
-<li>苏打水</li>
-</ul>
-<h2 id="清凉一夏（无酒精）"><a href="#清凉一夏（无酒精）" class="headerlink" title="清凉一夏（无酒精）"></a>清凉一夏（无酒精）</h2><ul>
-<li>饮具：威士忌杯🥃 + 方冰</li>
-<li>新鲜薄荷叶：4-5 片，拍醒</li>
-<li>可乐：加至8分满</li>
-</ul>
-<h2 id="甜蜜蜜"><a href="#甜蜜蜜" class="headerlink" title="甜蜜蜜"></a>甜蜜蜜</h2><p>60 ml 蜜茶<br>40 mlwhisky<br>5 ml 糖浆<br>1&#x2F;4 柠檬</p>
-<h2 id="威士忌可乐-Whisky-Coke"><a href="#威士忌可乐-Whisky-Coke" class="headerlink" title="威士忌可乐 Whisky Coke"></a>威士忌可乐 Whisky Coke</h2><p><span style="font-family:.PingFangSC-Regular;">威士忌</span> 45 ml<br>可乐 Cola Top</p>
-<h2 id="伏特加莱姆"><a href="#伏特加莱姆" class="headerlink" title="伏特加莱姆"></a>伏特加莱姆</h2><ul>
-<li>盐边</li>
-<li>伏特加 60 ml</li>
-<li>柠檬汁 30 ml</li>
-<li>糖水 10 ml</li>
-</ul>
-<h2 id="玛格丽特-Margarita"><a href="#玛格丽特-Margarita" class="headerlink" title="玛格丽特 Margarita"></a>玛格丽特 Margarita</h2><ul>
-<li>龙舌兰 45 ml</li>
-<li>君度橙 cointreau 15 ml</li>
-<li>柠檬汁 15 ml</li>
-<li>加冰摇一摇</li>
-<li>盐边</li>
-</ul>
-<h2 id="螺丝起子-Screwdriver"><a href="#螺丝起子-Screwdriver" class="headerlink" title="螺丝起子 Screwdriver"></a>螺丝起子 Screwdriver</h2><ul>
-<li>伏特加 45 ml</li>
-<li>橙汁</li>
-</ul>
-]]></content>
-      <categories>
-        <category>生活</category>
-        <category>鸡尾酒</category>
-      </categories>
-      <tags>
-        <tag>鸡尾酒</tag>
-        <tag>配方</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>澳洲家中日常必备清单</title>
-    <url>/2022/05/19/%E6%BE%B3%E6%B4%B2%E5%AE%B6%E4%B8%AD%E6%97%A5%E5%B8%B8%E5%BF%85%E5%A4%87%E6%B8%85%E5%8D%95/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>1⃣️ CEPACAINE漱口水！ 治疗牙龈肿痛，口腔溃疡。澳洲医生推荐买的，超级有效！猫猫家必备的，再也没有牙口烦恼。 购买地址：Chemist有售 💰价格：$15.49 问题在口腔，吃啥啥不香，买它！喵～</p>
-<hr>
-<p>2⃣️ Quick EZE胃糖 腹胀、胃酸、胃痛。消化不良、吃颗糖就能缓解～ 主要是这糖咋还那么好吃！ 购买地址：Chemist 💰价格：$4.99 胃也需要轻轻安抚，买它！喵～</p>
-<span id="more"></span>
-<hr>
-<p>3⃣️ VICKS 通鼻喷剂 在澳洲总感觉鼻子不适，鼻炎老犯，尤其总是鼻塞。这个通鼻喷剂起效快，薄荷味柔和不刺激。 购买地址：Chemist 💰价格$11.99 杜绝张口呼吸，买它！喵～</p>
-<hr>
-<p>4⃣️ Refresh眼药水 在家学习、工作、打游戏、熬夜，眼睛干涩的话最使用用人工泪液成分的眼药水。无刺激，缓解眼睛疲劳，闺蜜们都在用。 购买地址：Chemist 💰价格$13.49 缓解就靠累上加泪。买它，喵～</p>
-<hr>
-<p>5⃣️ LeQure Detox Soap排毒香皂 这款味道超级淡，小众然鹅超棒！主要可以用来控油去杂质。背部长痘痘的宝宝们一定要试试。滋养加排毒，姐妹推荐的，用过也感觉很好。 购买地址：Chemist 💰价格：$5.99 永远不进毒圈，买它，喵～</p>
-<hr>
-<p>6⃣️ Naprogesic止痛片 姨妈期最好的止痛片咯，因为成分对胃损伤小，刺激小。而且止痛的效果起效更快，当地女生首选经期续命药。小蓝片好多朋友都在用。 购买地址：Chemist 💰价格：$7.99 连我姨妈都在用！买它，喵～</p>
-<hr>
-<p>7⃣️ Dettol 洗衣消毒液 家里养宠物的朋友洗衣服都会用这个帮忙杀菌！能灭杀99.9%的细菌。尤其是合租又共用洗衣机的话这个肯定要买！ 购买地址：Coles、 WWS有售 💰价格：$8.99 再也不怕室友用洗衣机洗袜子了，买它！喵～</p>
-<hr>
-<p>8⃣️ Mr muscle通道强力剂！ 水槽，浴室如果都便秘了，那主人可就更难受了。 超强清下水道秘方，家家必备的男人。尤其是掉头发比较多的女生经常会堵掉下水道。用它就可以畅通哦。 购买地址：Coles、WWS有售 💰价格：$13.7 搞定下水道，心情好到爆，买它！喵～</p>
-<hr>
-]]></content>
-      <categories>
-        <category>生活</category>
-        <category>好物推荐</category>
-      </categories>
-      <tags>
-        <tag>推荐</tag>
-        <tag>日常</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>DATEDIFF_日期之差</title>
     <url>/2023/03/02/DATEDIFF_%E6%97%A5%E6%9C%9F%E4%B9%8B%E5%B7%AE/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>DATEDIFF是一个SQL函数，用于计算两个日期之间的差距。</p>
@@ -903,20 +928,209 @@
       </tags>
   </entry>
   <entry>
-    <title>Pandas基本操作</title>
-    <url>/2023/03/15/Pandas%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="查看数据"><a href="#查看数据" class="headerlink" title="查看数据"></a>查看数据</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 查看头部 head(n)</span></span><br><span class="line">df.head()  <span class="comment">#默认查看前5条记录 </span></span><br><span class="line">df.head(<span class="number">8</span>)  <span class="comment">#指定查看前8条记录</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">## 查看尾部 tail(n)</span></span><br><span class="line">df.tail()  <span class="comment">#默认查看后面5条记录 </span></span><br><span class="line">df.tail(<span class="number">4</span>)  <span class="comment">#指定查看后面4条记录</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 随机查看样本 sample(n)</span></span><br><span class="line">df.sample()  <span class="comment">#随机查看一条记录 </span></span><br><span class="line">df.sample(<span class="number">4</span>)  <span class="comment">#随机查看4条记录</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 查看统计摘要</span></span><br><span class="line">df.describe()  <span class="comment">#返回所有数字列的统计摘要</span></span><br></pre></td></tr></table></figure>
+    <title>SQL窗口函数_LEAD_LAG详解</title>
+    <url>/2023/03/04/SQL%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0_LEAD_LAG%E8%AF%A6%E8%A7%A3/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>当涉及到SQL窗口函数时，LEAD()和LAG()是两个非常有用的函数。它们允许我们在查询中访问当前行之前或之后的行的值。</p>
+<p>LEAD()函数返回当前行之后的指定行数的值，而LAG()函数返回当前行之前的指定行数的值。这两个函数在许多情况下都很有用，例如在分析时间序列数据或计算相邻行之间的差异时。</p>
+<p>让我们以一个简单的示例来说明LEAD()和LAG()函数的用法。假设我们有一个名为sales的表，其中包含了销售数据：</p>
+<p>sales表：</p>
+<table>
+<thead>
+<tr>
+<th>sale_id</th>
+<th>sale_date</th>
+<th>sale_amount</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>2021-01-01</td>
+<td>1000</td>
+</tr>
+<tr>
+<td>2</td>
+<td>2021-01-02</td>
+<td>1500</td>
+</tr>
+<tr>
+<td>3</td>
+<td>2021-01-03</td>
+<td>2000</td>
+</tr>
+<tr>
+<td>4</td>
+<td>2021-01-04</td>
+<td>1200</td>
+</tr>
+<tr>
+<td>5</td>
+<td>2021-01-05</td>
+<td>1800</td>
+</tr>
+</tbody></table>
+<p>如果我们想要计算每天的销售额与前一天销售额的差异，我们可以使用LAG()函数：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">  sale_date,</span><br><span class="line">  sale_amount,</span><br><span class="line">  <span class="built_in">LAG</span>(sale_amount) <span class="keyword">OVER</span> (<span class="keyword">ORDER</span> <span class="keyword">BY</span> sale_date) <span class="keyword">AS</span> previous_day_sale_amount,</span><br><span class="line">  sale_amount <span class="operator">-</span> <span class="built_in">LAG</span>(sale_amount) <span class="keyword">OVER</span> (<span class="keyword">ORDER</span> <span class="keyword">BY</span> sale_date) <span class="keyword">AS</span> difference</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">  sales;</span><br></pre></td></tr></table></figure>
 <span id="more"></span>
-<h1 id="检索数据"><a href="#检索数据" class="headerlink" title="检索数据"></a>检索数据</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 切片[]</span></span><br><span class="line">df[<span class="number">0</span>:<span class="number">3</span>]  <span class="comment">#通过切片检索行数据</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## loc\iloc</span></span><br><span class="line">df.loc[<span class="number">1</span>]  <span class="comment">#标量标签，返回该行标签的Series数据 </span></span><br><span class="line">df.loc[[<span class="number">1</span>,<span class="number">3</span>]]  <span class="comment">#标签列表，返回标签列表的行DataFrame数据 </span></span><br><span class="line">df.loc[<span class="number">0</span>:<span class="number">3</span>]  <span class="comment">#切片对象，返回切片的行DataFrame数据 </span></span><br><span class="line">df.loc[<span class="number">0</span>:<span class="number">3</span>,<span class="string">&#x27;staff_id&#x27;</span>:<span class="string">&#x27;staff_salary&#x27;</span>]  <span class="comment">#根据行切片，列切片检索数据 </span></span><br><span class="line">df.loc[[<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="string">&#x27;staff_id&#x27;</span>,<span class="string">&#x27;staff_name&#x27;</span>,<span class="string">&#x27;staff_age&#x27;</span>]]  <span class="comment">#根据行标签列表，列标签列表检索数据</span></span><br><span class="line">df.iloc[<span class="number">1</span>]  <span class="comment">#整数标量选择，数据从0开始，为1的就是第二行的数据，返回的是Series </span></span><br><span class="line">df.iloc[[<span class="number">1</span>,<span class="number">3</span>]]  <span class="comment">#整数列表选择，选择位置为1和3的数据，返回的是DataFrame </span></span><br><span class="line">df.iloc[<span class="number">1</span>:<span class="number">3</span>]  <span class="comment">#切片选择，选择位置1至2的数据，不包含边界结束值，也就是不包含3的位置 </span></span><br><span class="line">df.iloc[<span class="number">1</span>:<span class="number">3</span>,<span class="number">1</span>:<span class="number">4</span>]  <span class="comment">#切片选择位置为1至3的行和1至4的列不含位置为3的行和位置为4的列</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## at\iat</span></span><br><span class="line">df.at[<span class="string">&#x27;A&#x27;</span>,<span class="string">&#x27;staff_name&#x27;</span>]  <span class="comment">#检索第“A”行的列标签为&quot;staff_name&quot;的数据 df.iat[0,1]  #检索第1行第2列的数据</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+<p>上述查询中，我们使用了LAG()函数来获取前一天的销售额，并通过与当前销售额的差异计算了difference列的值。通过指定ORDER BY子句，我们可以按照日期的顺序进行计算。</p>
+<p>类似地，如果我们想要计算每天的销售额与后一天销售额的差异，我们可以使用LEAD()函数：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">  sale_date,</span><br><span class="line">  sale_amount,</span><br><span class="line">  <span class="built_in">LEAD</span>(sale_amount) <span class="keyword">OVER</span> (<span class="keyword">ORDER</span> <span class="keyword">BY</span> sale_date) <span class="keyword">AS</span> next_day_sale_amount,</span><br><span class="line">  <span class="built_in">LEAD</span>(sale_amount) <span class="keyword">OVER</span> (<span class="keyword">ORDER</span> <span class="keyword">BY</span> sale_date) <span class="operator">-</span> sale_amount <span class="keyword">AS</span> difference</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">  sales;</span><br></pre></td></tr></table></figure>
+
+<p>这次，我们使用了LEAD()函数来获取后一天的销售额，并计算了差异。</p>
+<p>LEAD()和LAG()函数还支持更复杂的用法，比如指定分区（PARTITION BY）来在不同的组中进行计算，以及指定默认值以处理边界情况。它们可以极大地提升分析和比较相邻行的能力。</p>
+]]></content>
       <categories>
         <category>技术</category>
         <category>数据分析</category>
-        <category>python</category>
-        <category>pandas</category>
+        <category>SQL</category>
       </categories>
       <tags>
         <tag>笔记</tag>
-        <tag>python</tag>
+        <tag>SQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hadoop、Spark、Flink简单概要</title>
+    <url>/2023/03/28/Hadoop%E3%80%81Spark%E3%80%81Flink%E7%AE%80%E5%8D%95%E6%A6%82%E8%A6%81/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="https://zhuanlan.zhihu.com/p/526462792">Hadoop用于离线复杂大数据处理</a></p>
+<p>Spark 用于离线快速的大数据处理</p>
+<p>Flink 用于在线实时的大数据处理</p>
+<h1 id="1-数据处理"><a href="#1-数据处理" class="headerlink" title="1-数据处理"></a>1-数据处理</h1><p>Hadoop：为批处理而构建的Hadoop，它一次性在输入中获取大量数据集，对其进行处理并产生结果。批处理在处理大量数据时非常有效。由于数据的大小和系统的计算能力，输出会出现延迟。</p>
+<p>Spark：Spark也是 Hadoop生态系统的一部分。它本质上也是一个批处理系统，但它也支持流处理。</p>
+<p>Flink：Flink为流式处理和批处理提供了单一的运行时。</p>
+<span id="more"></span>
+<h1 id="2-流引擎"><a href="#2-流引擎" class="headerlink" title="2-流引擎"></a>2-流引擎</h1><p>Hadoop：Map-reduce是面向批处理的工具。它一次性在输入中获取大量数据集，对其进行处理并产生结果。</p>
+<p>Spark：Apache Spark Streaming以微批处理的形式处理数据流。每个批次都包含在批次期间到达的事件集合。但对于我们需要处理大量实时数据流并实时提供结果的用例来说，这还不够。</p>
+<p>Flink：Apache Flink是真正的流媒体引擎。它使用流来处理工作负载：流式处理、SQL、微批处理和批处理。批处理是一组有限的流数据。</p>
+<h1 id="3-数据流"><a href="#3-数据流" class="headerlink" title="3-数据流"></a>3-数据流</h1><p>Hadoop：MapReduce计算数据流没有任何循环。这是一个阶段链，在每个阶段，您都使用前一阶段的输出向前推进，并为下一阶段产生输入。</p>
+<p>Spark：虽然机器学习算法是一个循环数据流，但 Spark将其表示为（DAG）有向无环图。</p>
+<p>Flink：Flink采用了与其他方法不同的方法。它在运行时支持受控循环依赖图。这有助于以非常有效的方式表示机器学习算法。</p>
+<h1 id="4-计算模型"><a href="#4-计算模型" class="headerlink" title="4-计算模型"></a>4-计算模型</h1><p>Hadoop：MapReduce采用了面向批处理的模型，批处理正在处理静态数据，一次需要大量数据，对其进行处理，然后写出输出。</p>
+<p>Spark：Spark采用了微批处理。微批次本质上是一种“收集然后处理”的计算模型。</p>
+<p>Flink：Flink采用了连续流、基于算子的流模型。连续流算子在数据到达时对其进行处理，而不会延迟收集数据或处理数据。</p>
+<h1 id="5-性能"><a href="#5-性能" class="headerlink" title="5-性能"></a>5-性能</h1><p>Hadoop：Apache Hadoop仅支持批处理。它不处理流数据，因此与Hadoop、Spark和Flink相比，性能更慢。</p>
+<p>Spark：虽然Spark有优秀的社区背景，并且现在被认为是最成熟的社区，但它的流处理效率并不比Flink高，因为它使用的是微批处理。</p>
+<p>Flink：与任何其他数据处理系统相比，Flink的性能非常出色。比较Hadoop、Spark和Flink时可以看出，Flink使用原生闭环迭代运算符，这使得机器学习和图形处理更快。</p>
+<h1 id="6-内存管理"><a href="#6-内存管理" class="headerlink" title="6-内存管理"></a>6-内存管理</h1><p>Hadoop：提供可配置的内存管理，可以动态或静态地执行此操作。</p>
+<p>Spark：提供可配置的内存管理，Spark 1.6 的最新版本已经朝着自动化内存管理的方向发展。</p>
+<p>Flink：提供了自动内存管理，有自己的内存管理系统。</p>
+<h1 id="7-容错"><a href="#7-容错" class="headerlink" title="7-容错"></a>7-容错</h1><p>Hadoop：MapReduce具有高度容错性。如果Hadoop出现任何故障，则无需从头开始重新启动应用程序。</p>
+<p>Spark：Apache Spark Streaming恢复丢失的工作，无需额外的代码或配置。</p>
+<p>Flink：Apache Flink遵循的容错机制是基于Chandy-Lamport分布式快照。该机制是轻量级的，导致在保持高吞吐率的同时提供强大的一致性保证。</p>
+<h1 id="8-可扩展性"><a href="#8-可扩展性" class="headerlink" title="8-可扩展性"></a>8-可扩展性</h1><p>Hadoop：MapReduce具有很强的可扩展性潜力，并已在数万个节点上用于生产。</p>
+<p>Spark：它具有高度可扩展性，我们可以在集群中不断添加 n 个节点，一个已知的大型 Spark集群有8000个节点。</p>
+<p>Flink：Flink也具有很高的可扩展性，我们可以在集群中不断添加 n 个节点，一个已知的大型 Flink 集群有数千个节点。</p>
+<h1 id="9-迭代处理"><a href="#9-迭代处理" class="headerlink" title="9-迭代处理"></a>9-迭代处理</h1><p>Hadoop：不支持迭代处理。</p>
+<p>Spark：它批量迭代其数据。在Spark中，每次迭代都必须单独安排和执行。</p>
+<p>Flink：它通过使用其流式架构来迭代数据。可以指示Flink只处理实际发生变化的部分数据，从而显着提高作业的性能。</p>
+<h1 id="10-语言支持"><a href="#10-语言支持" class="headerlink" title="10-语言支持"></a>10-语言支持</h1><p>Hadoop：主要支持Java，其他支持的语言有c、c++、ruby、groovy、Perl、Python。</p>
+<p>Spark：支持Java、Scala、Python和R。Spark是在Scala中实现的，供其他语言的API，如Java、Python和 R。</p>
+<p>Flink：支持 Java、Scala、Python和R。Flink 是用 Java实现的，同时也提供了Scala API。</p>
+<h1 id="11-优化"><a href="#11-优化" class="headerlink" title="11-优化"></a>11-优化</h1><p>Hadoop：在 MapReduce 中，作业必须手动优化。有几种方法可以优化MapReduce作业：正确配置集群、使用组合器、使用LZO压缩、适当调整 MapReduce任务的数量以及为数据使用最合适和最紧凑的可写类型。</p>
+<p>Spark：在Spark中，作业必须手动优化。有一个新的可扩展优化器 Catalyst，它基于Scala中的函数式编程结构。 Catalyst 的可扩展设计有两个目的：第一，易于添加新的优化技术。其次，使外部开发人员能够扩展优化器催化剂。</p>
+<p>Flink：Apache Flink带有一个独立于实际编程接口的优化器。 Flink优化器的工作方式类似于关系数据库优化器，但将这些优化应用于Flink程序，而不是 SQL查询。</p>
+<h1 id="12-延迟"><a href="#12-延迟" class="headerlink" title="12-延迟"></a>12-延迟</h1><p>Hadoop：Hadoop的MapReduce框架相对较慢，因为它旨在支持不同的格式、结构和海量数据。这就是为什么 Hadoop的延迟比Spark和Flink都高。</p>
+<p>Spark：Spark是另一个批处理系统，但它比Hadoop MapReduce相对快，因为它通过RDD将大部分输入数据缓存在内存中，并将中间数据保存在内存中，最终在完成或需要时将数据写入磁盘。</p>
+<p>Flink：Flink的数据流运行时只需少量配置，即可实现低延迟和高吞吐量。</p>
+<h1 id="14-可视化"><a href="#14-可视化" class="headerlink" title="14-可视化"></a>14-可视化</h1><p>Hadoop：在Hadoop中，数据可视化工具是zoomdata，它可以直接连接到HDFS以及SQL-on-Hadoop技术，如 Impala、Hive、Spark SQL、Presto等。</p>
+<p>Spark：它提供了一个用于提交和执行作业的Web界面，在该界面上可以可视化生成的执行计划。 Flink和Spark都集成到Apache zeppelin中，它提供数据分析、摄取以及发现、可视化和协作。</p>
+<p>Flink：它还提供了一个用于提交和执行作业的Web界面，生成的执行计划可以在这个界面上进行可视化。</p>
+<h1 id="15-恢复"><a href="#15-恢复" class="headerlink" title="15-恢复"></a>15-恢复</h1><p>Hadoop：MapReduce自然地对系统故障或故障具有弹性。它是高度容错的系统。</p>
+<p>Spark：Apache Spark RDD允许通过重新计算DAG来恢复故障节点上的分区，同时还通过检查点支持与Hadoop更相似的恢复方式，以减少RDD的依赖关系。</p>
+<p>Flink：支持checkpointing机制，将程序存储在数据源和数据接收器中，窗口的状态，以及用户自定义的状态，在失败后恢复流式作业。</p>
+<h1 id="16-安全性"><a href="#16-安全性" class="headerlink" title="16-安全性"></a>16-安全性</h1><p>Hadoop：它支持Kerberos身份验证，管理起来有些麻烦。但是，第三方供应商已使组织能够利用Active Directory Kerberos和LDAP进行身份验证。</p>
+<p>Spark：Apache Spark的安全性有点稀疏，目前仅支持通过共享密钥（密码身份验证）进行身份验证。 当你在HDFS上运行Spark，它可以使用HDFS ACL和文件级权限。此外，Spark可以在 YARN上运行以使用Kerberos身份验证。</p>
+<p>Flink：Flink通过Hadoop &#x2F; Kerberos基础设施支持用户身份验证。如果在YARN上运行Flink，Flink会获取提交程序的用户的Kerberos令牌，并使用该令牌在YARN、HDFS和HBase上进行身份验证。Flink即将推出的连接器，流程序可以通过 SSL将自己验证为流代理。</p>
+<h1 id="17-成本"><a href="#17-成本" class="headerlink" title="17-成本"></a>17-成本</h1><p>Hadoop：MapReduce通常可以在比某些替代方案更便宜的硬件上运行，因为它不会尝试将所有内容都存储在内存中。</p>
+<p>Spark：由于Spark需要大量RAM才能在内存中运行，因此在集群中增加它会逐渐增加其成本。</p>
+<p>Flink：Apache Flink也需要大量的RAM在内存中运行，所以它的成本会逐渐增加。</p>
+<h1 id="18-兼容性"><a href="#18-兼容性" class="headerlink" title="18-兼容性"></a>18-兼容性</h1><p>Hadoop：Apache Hadoop MapReduce 和 Apache Spark相互兼容，Spark通过JDBC和ODBC共享MapReduce 对数据源、文件格式和商业智能工具的所有兼容性。</p>
+<p>Spark：Apache Spark和Hadoop相互兼容。 Spark与Hadoop数据兼容。它可以通过YARN或Spark的独立模式在 Hadoop集群中运行，并且可以处理HDFS、HBase、Cassandra、Hive和任何Hadoop InputFormat中的数据。</p>
+<p>Flink：Apache Flink是一个可扩展的数据分析框架，完全兼容Hadoop。它提供了一个Hadoop Compatibility包来包装针对Hadoop的MapReduce接口实现的函数，并将它们嵌入到Flink程序中。</p>
+<h1 id="20-使用感"><a href="#20-使用感" class="headerlink" title="20-使用感"></a>20-使用感</h1><p>Hadoop：MapReduce 开发人员需要手动编写每个操作的代码，这让编程工作变得非常困难。</p>
+<p>Spark：很容易编程，因为它有大量的高级操作符。</p>
+<p>Flink：也有高级算子，易于操作。</p>
+<h1 id="21-交互模式"><a href="#21-交互模式" class="headerlink" title="21-交互模式"></a>21-交互模式</h1><p>Hadoop：MapReduce 没有交互模式。</p>
+<p>Spark：Spark 有一个交互式Shell，可以学习如何充分利用Spark。这是一个用 Scala编写的Spark应用程序，提供一个具有自动完成功能的命令行环境，您可以在其中运行临时查询并熟悉 Spark的功能。</p>
+<p>Flink：它带有一个集成的交互式Scala Shell。它可以在本地设置和集群设置中使用。</p>
+<h1 id="22-实时分析"><a href="#22-实时分析" class="headerlink" title="22-实时分析"></a>22-实时分析</h1><p>Hadoop：MapReduce 在实时数据处理方面失败了，因为它旨在对大量数据执行批处理。</p>
+<p>Spark：它可以处理实时数据，即以每秒数百万个事件的速率来自实时事件流的数据。</p>
+<p>Flink：主要用于实时数据分析，虽然也提供了快速的批量数据处理。</p>
+<h1 id="23-调度器"><a href="#23-调度器" class="headerlink" title="23-调度器"></a>23-调度器</h1><p>Hadoop：Hadoop中的调度程序成为可插拔组件。多用户工作负载有两个调度器：公平调度器和容量调度器。为了调度复杂的流程，MapReduce需要像Oozie这样的外部作业调度程序。</p>
+<p>Spark：由于内存计算，Spark能充当自己的流调度程序。</p>
+<p>Flink：Flink可以使用YARN Scheduler，Flink也有自己的 Scheduler。</p>
+<h1 id="24-SQL支持"><a href="#24-SQL支持" class="headerlink" title="24-SQL支持"></a>24-SQL支持</h1><p>Hadoop：它使用户能够使用 Apache Hive运行SQL查询。</p>
+<p>Spark：它使用户能够使用Spark-SQL运行SQL查询。Spark提供了类似Hives的查询语言和类似DSL的Dataframe 来查询结构化数据。</p>
+<p>Flink：在Flink中，Table API是一种类似SQL的表达式语言，支持DSL等数据帧，目前仍处于测试阶段。有计划添加SQL接口，但不确定何时会进入框架。</p>
+<h1 id="25-缓存"><a href="#25-缓存" class="headerlink" title="25-缓存"></a>25-缓存</h1><p>Hadoop：MapReduce 无法将数据缓存在内存中以满足未来需求。</p>
+<p>Spark：它可以将数据缓存在内存中以进行进一步的迭代，从而提高其性能。</p>
+<p>Flink：它可以将数据缓存在内存中以供进一步迭代以提高其性能。</p>
+<h1 id="26-硬件要求"><a href="#26-硬件要求" class="headerlink" title="26-硬件要求"></a>26-硬件要求</h1><p>Hadoop：MapReduce在商品硬件上运行良好。</p>
+<p>Spark：Apache Spark需要中高级硬件。由于Spark将数据缓存在内存中以供进一步迭代，从而提高其性能。</p>
+<p>Flink：Apache Flink也需要中高级硬件。 Flink还可以将数据缓存在内存中以进行进一步的迭代，从而提高其性能。</p>
+<h1 id="27-机器学习"><a href="#27-机器学习" class="headerlink" title="27-机器学习"></a>27-机器学习</h1><p>Hadoop：需要像Apache Mahout这样的机器学习工具。</p>
+<p>Spark：有自己的一套机器学习MLlib。在内存缓存和其他实现细节中，它确实是实现ML算法的强大平台。</p>
+<p>Flink：有FlinkML，它是Flink的机器学习库。它支持运行时受控的循环依赖图。与DAG表示相比，这使得它们以非常有效的方式表示ML算法。</p>
+<h1 id="28-部署"><a href="#28-部署" class="headerlink" title="28-部署"></a>28-部署</h1><p>Hadoop：在独立模式下，Hadoop 被配置为在单节点、非分布式模式下运行。在伪分布式模式下，Hadoop以伪分布式模式运行。因此，不同之处在于每个Hadoop守护程序以伪分布式模式在单独的Java进程中运行。而在本地模式下，每个Hadoop守护程序都作为单个Java进程运行。在完全分布式模式下，所有守护进程在单独的节点中执行，形成一个多节点集群。</p>
+<p>Spark：还提供了一种简单的独立部署模式，可以在Mesos或YARN集群管理器上运行。它可以手动启动，通过手动启动 master和worker或使用我们提供的启动脚本。也可以在单台机器上运行这些守护进程进行测试。</p>
+<p>Flink：还提供了在YARN集群管理器上运行的独立部署模式。</p>
+<h1 id="29-消除重复"><a href="#29-消除重复" class="headerlink" title="29-消除重复"></a>29-消除重复</h1><p>Hadoop：Hadoop中没有重复消除。</p>
+<p>Spark：Spark还对每条记录进行一次准确的处理，因此消除了重复。</p>
+<p>Flink：Flink只处理一次记录，因此消除了重复，流应用程序可以在计算期间保持自定义状态。Flink的检查点机制确保在出现故障时状态的语义恰好只有一次。</p>
+<h1 id="30-Window标准"><a href="#30-Window标准" class="headerlink" title="30-Window标准"></a>30-Window标准</h1><p>一个数据流需要被分成许多逻辑流，每个逻辑流都可以应用一个窗口操作符。</p>
+<p>Hadoop：不支持流式传输，因此不需要窗口条件。</p>
+<p>Spark：具有基于时间的窗口标准。</p>
+<p>Flink：具有基于记录的或任何自定义的用户定义的Flink Window标准。  </p>
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>数据分析</category>
+        <category>数据库</category>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+        <tag>数据库</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>统计分析的八种方法</title>
+    <url>/2023/03/30/%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E7%9A%84%E5%85%AB%E7%A7%8D%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="一、指标对比分析法"><a href="#一、指标对比分析法" class="headerlink" title="一、指标对比分析法"></a>一、指标对比分析法</h1><p>指标对比分析法，又称比较分析法，是统计分析中最常用的方法。是通过有关的指标对比来反映事物数量上差异和变化的方法。有比较才能鉴别。单独看一些指标，只能说明总体的某些数量特征，得不出什么结论性的认识；一经过比较，如与国外、外单位比，与历史数据比，与计划相比，就可以对规模大小、水平高低、速度快慢作出判断和评价。</p>
+<p>指标分析对比分析方法可分为静态比较和动态比较分析。静态比较是同一时间条件下不同总体指标比较，如不同部门、不同地区、不同国家的比较，也叫横向比较；动态比较是同一总体条件不同时期指标数值的比较，也叫纵向比较。这两种方法既可单独使用，也可结合使用。进行对比分析时，可以单独使用总量指标或相对指标或平均指标，也可将它们结合起来进行对比。比较的结果可用相对数，如百分数、倍数、系数等，也可用相差的绝对数和相关的百分点（每1％为一个百分点）来表示，即将对比的指标相减。</p>
+<span id="more"></span>
+<h1 id="二、分组分析法"><a href="#二、分组分析法" class="headerlink" title="二、分组分析法"></a>二、分组分析法</h1><p>指标对比分析法是总体上的对比，但组成统计总体的各单位具有多种特征，这就使得在同一总体范围内的各单位之间产生了许多差别，统计分析不仅要对总体数量特征和数量关系进行分析，还要深入总体的内部进行分组分析。分组分析法就是根据统计分析的目的要求，把所研究的总体按照一个或者几个标志划分为若干个部分，加以整理，进行观察、分析，以揭示其内在的联系和规律性。</p>
+<p>统计分组法的关键问题在于正确选择分组标值和划分各组界限。</p>
+<h1 id="三、时间数列及动态分析法"><a href="#三、时间数列及动态分析法" class="headerlink" title="三、时间数列及动态分析法"></a>三、时间数列及动态分析法</h1><p>时间数列。是将同一指标在时间上变化和发展的一系列数值，按时间先后顺序排列，就形成时间数列，又称动态数列。它能反映社会经济现象的发展变动情况，通过时间数列的编制和分析，可以找出动态变化规律，为预测未来的发展趋势提供依据。时间数列可分为绝对数时间数列、相对数时间数列、平均数时间数列。</p>
+<p>时间数列速度指标。根据绝对数时间数列可以计算的速度指标：有发展速度、增长速度、平均发展速度、平均增长速度。</p>
+<p>动态分析法。在统计分析中，如果只有孤立的一个时期指标值，是很难作出判断的。如果编制了时间数列，就可以进行动态分析，反映其发展水平和速度的变化规律。</p>
+<p>进行动态分析，要注意数列中各个指标具有的可比性。总体范围、指标计算方法、计算价格和计量单位，都应该前后一致。时间间隔一般也要一致，但也可以根据研究目的，采取不同的间隔期，如按历史时期分。为了消除时间间隔期不同而产生的指标数值不可比，可采用年平均数和年平均发展速度来编制动态数列。此外在统计上，许多综合指标是采用价值形态来反映实物总量，如国内生产总值、工业总产值、社会商品零售总额等计算不同年份的发展速度时，必须消除价格变动因素的影响，才能正确的反映实物量的变化。也就是说必须用可比价格（如用不变价或用价格指数调整）计算不同年份相同产品的价值，然后才能进行对比。</p>
+<p>为了观察我国经济发展的波动轨迹，可将各年国内生产总值的发展速度编制时间数列，并据以绘制成曲线图，令人得到直观认识。</p>
+<h1 id="四、指数分析法"><a href="#四、指数分析法" class="headerlink" title="四、指数分析法"></a>四、指数分析法</h1><p>指数是指反映社会经济现象变动情况的相对数。有广义和狭义之分。根据指数所研究的范围不同可以有个体指数、类指数与总指数之分。</p>
+<p>指数的作用：一是可以综合反映复杂的社会经济现象的总体数量变动的方向和程度；二是可以分析某种社会经济现象的总变动受各因素变动影响的程度，这是一种因素分析法。操作方法是：通过指数体系中的数量关系，假定其他因素不变，来观察某一因素的变动对总变动的影响。</p>
+<p>用指数进行因素分析。因素分析就是将研究对象分解为各个因素，把研究对象的总体看成是各因素变动共同的结果，通过对各个因素的分析，对研究对象总变动中各项因素的影响程度进行测定。因素分析按其所研究的对象的统计指标不同可分为对总量指标的变动的因素分析，对平均指标变动的因素分析。</p>
+<h1 id="五、平衡分析法"><a href="#五、平衡分析法" class="headerlink" title="五、平衡分析法"></a>五、平衡分析法</h1><p>平衡分析是研究社会经济现象数量变化对等关系的一种方法。它把对立统一的双方按其构成要素一一排列起来，给人以整体的概念，以便于全局来观察它们之间的平衡关系。平衡关系广泛存在于经济生活中，大至全国宏观经济运行，小至个人经济收支。平衡种类繁多，如财政平衡表、劳动力平衡表、能源平衡表、国际收支平衡表、投入产出平衡表，等等。平衡分析的作用：一是从数量对等关系上反映社会经济现象的平衡状况，分析各种比例关系相适应状况；二是揭示不平衡的因素和发展潜力；三是利用平衡关系可以从各项已知指标中推算未知的个别指标。</p>
+<h1 id="六、综合评价分析"><a href="#六、综合评价分析" class="headerlink" title="六、综合评价分析"></a>六、综合评价分析</h1><p>社会经济分析现象往往是错综复杂的，社会经济运行状况是多种因素综合作用的结果，而且各个因素的变动方向和变动程度是不同的。如对宏观经济运行的评价，涉及生活、分配、流通、消费各个方面；对企业经济效益的评价，涉及人、财、物合理利用和市场销售状况。如果只用单一指标，就难以作出恰当的评价。</p>
+<p>进行综合评价包括四个步骤：</p>
+<p>（一）确定评价指标体系，这是综合评价的基础和依据。要注意指标体系的全面性和系统性。</p>
+<p>（二）搜集数据，并对不同计量单位的指标数值进行同度量处理。可采用相对化处理、函数化处理、标准化处理等方法。</p>
+<p>（三）确定各指标的权数，以保证评价的科学性。根据各个指标所处的地位和对总体影响程度不同，需要对不同指标赋予不同的权数。</p>
+<p>（四）对指标进行汇总，计算综合分值，并据此作出综合评价。</p>
+<h1 id="七、景气分析经济波动是客观存在的，是任何国家都难以完全避免的"><a href="#七、景气分析经济波动是客观存在的，是任何国家都难以完全避免的" class="headerlink" title="七、景气分析经济波动是客观存在的，是任何国家都难以完全避免的"></a>七、景气分析经济波动是客观存在的，是任何国家都难以完全避免的</h1><p>如何避免大的经济波动，保持经济的稳定发展，一直是各国政府和经济之专家在宏观调控和决策中面临的重要课题，景气分析正是适应这一要求而产生和发展的。景气分析是一种综合评价分析，可分为宏观经济景气分析和企业景气调查分析。</p>
+<p>宏观经济景气分析。是国家统计局20世纪80年代后期开始着手建立监测指标体系和评价方法，经过十多年时间和不断完善，已形成制度，定期提供景气分析报告，对宏观经济运行状态起到晴雨表和报警器的作用，便于国务院和有关部门及时采取宏观调控措施。以经常性的小调整，防止经济的大起大落。</p>
+<p>企业景气调查分析。是全国的大中型各类企业中，采取抽样调查的方法，通过问卷的形式，让企业负责人回答有关情况判断和预期。内容分为两类：一是对宏观经济总体的判断和预期；一是对企业经营状况的判断和预期，如产品订单、原材料购进、价格、存货、就业、市场需求、固定资产投资等。</p>
+<h1 id="八、预测分析宏观经济决策和微观经济决策"><a href="#八、预测分析宏观经济决策和微观经济决策" class="headerlink" title="八、预测分析宏观经济决策和微观经济决策"></a>八、预测分析宏观经济决策和微观经济决策</h1><p>不仅需要了解经济运行中已经发生了的实际情况，而且更需要预见未来将发生的情况。根据已知的过去和现在推测未来，就是预测分析。</p>
+<p>统计预测属于定量预测，是以数据分析为主，在预测中结合定性分析。统计预测的方法大致可分为两类：一类是主要根据指标时间数列自身变化与时间的依存关系进行预测，属于时间数列分析；另一类是根据指标之间相互影响的因果关系进行预测，属于回归分析。</p>
+<p>预测分析的方法有回归分析法、滑动平均法、指数平滑法、周期（季节）变化分析和随机变化分析等。比较复杂的预测分析需要建立计量经济模型，求解模型中的参数又有许多方法。</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>数据分析</category>
+        <category>方法论</category>
+      </categories>
+      <tags>
+        <tag>数据分析师</tag>
+        <tag>统计</tag>
+        <tag>方法</tag>
       </tags>
   </entry>
   <entry>
@@ -1129,151 +1343,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hadoop、Spark、Flink简单概要</title>
-    <url>/2023/03/28/Hadoop%E3%80%81Spark%E3%80%81Flink%E7%AE%80%E5%8D%95%E6%A6%82%E8%A6%81/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="https://zhuanlan.zhihu.com/p/526462792">Hadoop用于离线复杂大数据处理</a></p>
-<p>Spark 用于离线快速的大数据处理</p>
-<p>Flink 用于在线实时的大数据处理</p>
-<h1 id="1-数据处理"><a href="#1-数据处理" class="headerlink" title="1-数据处理"></a>1-数据处理</h1><p>Hadoop：为批处理而构建的Hadoop，它一次性在输入中获取大量数据集，对其进行处理并产生结果。批处理在处理大量数据时非常有效。由于数据的大小和系统的计算能力，输出会出现延迟。</p>
-<p>Spark：Spark也是 Hadoop生态系统的一部分。它本质上也是一个批处理系统，但它也支持流处理。</p>
-<p>Flink：Flink为流式处理和批处理提供了单一的运行时。</p>
-<span id="more"></span>
-<h1 id="2-流引擎"><a href="#2-流引擎" class="headerlink" title="2-流引擎"></a>2-流引擎</h1><p>Hadoop：Map-reduce是面向批处理的工具。它一次性在输入中获取大量数据集，对其进行处理并产生结果。</p>
-<p>Spark：Apache Spark Streaming以微批处理的形式处理数据流。每个批次都包含在批次期间到达的事件集合。但对于我们需要处理大量实时数据流并实时提供结果的用例来说，这还不够。</p>
-<p>Flink：Apache Flink是真正的流媒体引擎。它使用流来处理工作负载：流式处理、SQL、微批处理和批处理。批处理是一组有限的流数据。</p>
-<h1 id="3-数据流"><a href="#3-数据流" class="headerlink" title="3-数据流"></a>3-数据流</h1><p>Hadoop：MapReduce计算数据流没有任何循环。这是一个阶段链，在每个阶段，您都使用前一阶段的输出向前推进，并为下一阶段产生输入。</p>
-<p>Spark：虽然机器学习算法是一个循环数据流，但 Spark将其表示为（DAG）有向无环图。</p>
-<p>Flink：Flink采用了与其他方法不同的方法。它在运行时支持受控循环依赖图。这有助于以非常有效的方式表示机器学习算法。</p>
-<h1 id="4-计算模型"><a href="#4-计算模型" class="headerlink" title="4-计算模型"></a>4-计算模型</h1><p>Hadoop：MapReduce采用了面向批处理的模型，批处理正在处理静态数据，一次需要大量数据，对其进行处理，然后写出输出。</p>
-<p>Spark：Spark采用了微批处理。微批次本质上是一种“收集然后处理”的计算模型。</p>
-<p>Flink：Flink采用了连续流、基于算子的流模型。连续流算子在数据到达时对其进行处理，而不会延迟收集数据或处理数据。</p>
-<h1 id="5-性能"><a href="#5-性能" class="headerlink" title="5-性能"></a>5-性能</h1><p>Hadoop：Apache Hadoop仅支持批处理。它不处理流数据，因此与Hadoop、Spark和Flink相比，性能更慢。</p>
-<p>Spark：虽然Spark有优秀的社区背景，并且现在被认为是最成熟的社区，但它的流处理效率并不比Flink高，因为它使用的是微批处理。</p>
-<p>Flink：与任何其他数据处理系统相比，Flink的性能非常出色。比较Hadoop、Spark和Flink时可以看出，Flink使用原生闭环迭代运算符，这使得机器学习和图形处理更快。</p>
-<h1 id="6-内存管理"><a href="#6-内存管理" class="headerlink" title="6-内存管理"></a>6-内存管理</h1><p>Hadoop：提供可配置的内存管理，可以动态或静态地执行此操作。</p>
-<p>Spark：提供可配置的内存管理，Spark 1.6 的最新版本已经朝着自动化内存管理的方向发展。</p>
-<p>Flink：提供了自动内存管理，有自己的内存管理系统。</p>
-<h1 id="7-容错"><a href="#7-容错" class="headerlink" title="7-容错"></a>7-容错</h1><p>Hadoop：MapReduce具有高度容错性。如果Hadoop出现任何故障，则无需从头开始重新启动应用程序。</p>
-<p>Spark：Apache Spark Streaming恢复丢失的工作，无需额外的代码或配置。</p>
-<p>Flink：Apache Flink遵循的容错机制是基于Chandy-Lamport分布式快照。该机制是轻量级的，导致在保持高吞吐率的同时提供强大的一致性保证。</p>
-<h1 id="8-可扩展性"><a href="#8-可扩展性" class="headerlink" title="8-可扩展性"></a>8-可扩展性</h1><p>Hadoop：MapReduce具有很强的可扩展性潜力，并已在数万个节点上用于生产。</p>
-<p>Spark：它具有高度可扩展性，我们可以在集群中不断添加 n 个节点，一个已知的大型 Spark集群有8000个节点。</p>
-<p>Flink：Flink也具有很高的可扩展性，我们可以在集群中不断添加 n 个节点，一个已知的大型 Flink 集群有数千个节点。</p>
-<h1 id="9-迭代处理"><a href="#9-迭代处理" class="headerlink" title="9-迭代处理"></a>9-迭代处理</h1><p>Hadoop：不支持迭代处理。</p>
-<p>Spark：它批量迭代其数据。在Spark中，每次迭代都必须单独安排和执行。</p>
-<p>Flink：它通过使用其流式架构来迭代数据。可以指示Flink只处理实际发生变化的部分数据，从而显着提高作业的性能。</p>
-<h1 id="10-语言支持"><a href="#10-语言支持" class="headerlink" title="10-语言支持"></a>10-语言支持</h1><p>Hadoop：主要支持Java，其他支持的语言有c、c++、ruby、groovy、Perl、Python。</p>
-<p>Spark：支持Java、Scala、Python和R。Spark是在Scala中实现的，供其他语言的API，如Java、Python和 R。</p>
-<p>Flink：支持 Java、Scala、Python和R。Flink 是用 Java实现的，同时也提供了Scala API。</p>
-<h1 id="11-优化"><a href="#11-优化" class="headerlink" title="11-优化"></a>11-优化</h1><p>Hadoop：在 MapReduce 中，作业必须手动优化。有几种方法可以优化MapReduce作业：正确配置集群、使用组合器、使用LZO压缩、适当调整 MapReduce任务的数量以及为数据使用最合适和最紧凑的可写类型。</p>
-<p>Spark：在Spark中，作业必须手动优化。有一个新的可扩展优化器 Catalyst，它基于Scala中的函数式编程结构。 Catalyst 的可扩展设计有两个目的：第一，易于添加新的优化技术。其次，使外部开发人员能够扩展优化器催化剂。</p>
-<p>Flink：Apache Flink带有一个独立于实际编程接口的优化器。 Flink优化器的工作方式类似于关系数据库优化器，但将这些优化应用于Flink程序，而不是 SQL查询。</p>
-<h1 id="12-延迟"><a href="#12-延迟" class="headerlink" title="12-延迟"></a>12-延迟</h1><p>Hadoop：Hadoop的MapReduce框架相对较慢，因为它旨在支持不同的格式、结构和海量数据。这就是为什么 Hadoop的延迟比Spark和Flink都高。</p>
-<p>Spark：Spark是另一个批处理系统，但它比Hadoop MapReduce相对快，因为它通过RDD将大部分输入数据缓存在内存中，并将中间数据保存在内存中，最终在完成或需要时将数据写入磁盘。</p>
-<p>Flink：Flink的数据流运行时只需少量配置，即可实现低延迟和高吞吐量。</p>
-<h1 id="14-可视化"><a href="#14-可视化" class="headerlink" title="14-可视化"></a>14-可视化</h1><p>Hadoop：在Hadoop中，数据可视化工具是zoomdata，它可以直接连接到HDFS以及SQL-on-Hadoop技术，如 Impala、Hive、Spark SQL、Presto等。</p>
-<p>Spark：它提供了一个用于提交和执行作业的Web界面，在该界面上可以可视化生成的执行计划。 Flink和Spark都集成到Apache zeppelin中，它提供数据分析、摄取以及发现、可视化和协作。</p>
-<p>Flink：它还提供了一个用于提交和执行作业的Web界面，生成的执行计划可以在这个界面上进行可视化。</p>
-<h1 id="15-恢复"><a href="#15-恢复" class="headerlink" title="15-恢复"></a>15-恢复</h1><p>Hadoop：MapReduce自然地对系统故障或故障具有弹性。它是高度容错的系统。</p>
-<p>Spark：Apache Spark RDD允许通过重新计算DAG来恢复故障节点上的分区，同时还通过检查点支持与Hadoop更相似的恢复方式，以减少RDD的依赖关系。</p>
-<p>Flink：支持checkpointing机制，将程序存储在数据源和数据接收器中，窗口的状态，以及用户自定义的状态，在失败后恢复流式作业。</p>
-<h1 id="16-安全性"><a href="#16-安全性" class="headerlink" title="16-安全性"></a>16-安全性</h1><p>Hadoop：它支持Kerberos身份验证，管理起来有些麻烦。但是，第三方供应商已使组织能够利用Active Directory Kerberos和LDAP进行身份验证。</p>
-<p>Spark：Apache Spark的安全性有点稀疏，目前仅支持通过共享密钥（密码身份验证）进行身份验证。 当你在HDFS上运行Spark，它可以使用HDFS ACL和文件级权限。此外，Spark可以在 YARN上运行以使用Kerberos身份验证。</p>
-<p>Flink：Flink通过Hadoop &#x2F; Kerberos基础设施支持用户身份验证。如果在YARN上运行Flink，Flink会获取提交程序的用户的Kerberos令牌，并使用该令牌在YARN、HDFS和HBase上进行身份验证。Flink即将推出的连接器，流程序可以通过 SSL将自己验证为流代理。</p>
-<h1 id="17-成本"><a href="#17-成本" class="headerlink" title="17-成本"></a>17-成本</h1><p>Hadoop：MapReduce通常可以在比某些替代方案更便宜的硬件上运行，因为它不会尝试将所有内容都存储在内存中。</p>
-<p>Spark：由于Spark需要大量RAM才能在内存中运行，因此在集群中增加它会逐渐增加其成本。</p>
-<p>Flink：Apache Flink也需要大量的RAM在内存中运行，所以它的成本会逐渐增加。</p>
-<h1 id="18-兼容性"><a href="#18-兼容性" class="headerlink" title="18-兼容性"></a>18-兼容性</h1><p>Hadoop：Apache Hadoop MapReduce 和 Apache Spark相互兼容，Spark通过JDBC和ODBC共享MapReduce 对数据源、文件格式和商业智能工具的所有兼容性。</p>
-<p>Spark：Apache Spark和Hadoop相互兼容。 Spark与Hadoop数据兼容。它可以通过YARN或Spark的独立模式在 Hadoop集群中运行，并且可以处理HDFS、HBase、Cassandra、Hive和任何Hadoop InputFormat中的数据。</p>
-<p>Flink：Apache Flink是一个可扩展的数据分析框架，完全兼容Hadoop。它提供了一个Hadoop Compatibility包来包装针对Hadoop的MapReduce接口实现的函数，并将它们嵌入到Flink程序中。</p>
-<h1 id="20-使用感"><a href="#20-使用感" class="headerlink" title="20-使用感"></a>20-使用感</h1><p>Hadoop：MapReduce 开发人员需要手动编写每个操作的代码，这让编程工作变得非常困难。</p>
-<p>Spark：很容易编程，因为它有大量的高级操作符。</p>
-<p>Flink：也有高级算子，易于操作。</p>
-<h1 id="21-交互模式"><a href="#21-交互模式" class="headerlink" title="21-交互模式"></a>21-交互模式</h1><p>Hadoop：MapReduce 没有交互模式。</p>
-<p>Spark：Spark 有一个交互式Shell，可以学习如何充分利用Spark。这是一个用 Scala编写的Spark应用程序，提供一个具有自动完成功能的命令行环境，您可以在其中运行临时查询并熟悉 Spark的功能。</p>
-<p>Flink：它带有一个集成的交互式Scala Shell。它可以在本地设置和集群设置中使用。</p>
-<h1 id="22-实时分析"><a href="#22-实时分析" class="headerlink" title="22-实时分析"></a>22-实时分析</h1><p>Hadoop：MapReduce 在实时数据处理方面失败了，因为它旨在对大量数据执行批处理。</p>
-<p>Spark：它可以处理实时数据，即以每秒数百万个事件的速率来自实时事件流的数据。</p>
-<p>Flink：主要用于实时数据分析，虽然也提供了快速的批量数据处理。</p>
-<h1 id="23-调度器"><a href="#23-调度器" class="headerlink" title="23-调度器"></a>23-调度器</h1><p>Hadoop：Hadoop中的调度程序成为可插拔组件。多用户工作负载有两个调度器：公平调度器和容量调度器。为了调度复杂的流程，MapReduce需要像Oozie这样的外部作业调度程序。</p>
-<p>Spark：由于内存计算，Spark能充当自己的流调度程序。</p>
-<p>Flink：Flink可以使用YARN Scheduler，Flink也有自己的 Scheduler。</p>
-<h1 id="24-SQL支持"><a href="#24-SQL支持" class="headerlink" title="24-SQL支持"></a>24-SQL支持</h1><p>Hadoop：它使用户能够使用 Apache Hive运行SQL查询。</p>
-<p>Spark：它使用户能够使用Spark-SQL运行SQL查询。Spark提供了类似Hives的查询语言和类似DSL的Dataframe 来查询结构化数据。</p>
-<p>Flink：在Flink中，Table API是一种类似SQL的表达式语言，支持DSL等数据帧，目前仍处于测试阶段。有计划添加SQL接口，但不确定何时会进入框架。</p>
-<h1 id="25-缓存"><a href="#25-缓存" class="headerlink" title="25-缓存"></a>25-缓存</h1><p>Hadoop：MapReduce 无法将数据缓存在内存中以满足未来需求。</p>
-<p>Spark：它可以将数据缓存在内存中以进行进一步的迭代，从而提高其性能。</p>
-<p>Flink：它可以将数据缓存在内存中以供进一步迭代以提高其性能。</p>
-<h1 id="26-硬件要求"><a href="#26-硬件要求" class="headerlink" title="26-硬件要求"></a>26-硬件要求</h1><p>Hadoop：MapReduce在商品硬件上运行良好。</p>
-<p>Spark：Apache Spark需要中高级硬件。由于Spark将数据缓存在内存中以供进一步迭代，从而提高其性能。</p>
-<p>Flink：Apache Flink也需要中高级硬件。 Flink还可以将数据缓存在内存中以进行进一步的迭代，从而提高其性能。</p>
-<h1 id="27-机器学习"><a href="#27-机器学习" class="headerlink" title="27-机器学习"></a>27-机器学习</h1><p>Hadoop：需要像Apache Mahout这样的机器学习工具。</p>
-<p>Spark：有自己的一套机器学习MLlib。在内存缓存和其他实现细节中，它确实是实现ML算法的强大平台。</p>
-<p>Flink：有FlinkML，它是Flink的机器学习库。它支持运行时受控的循环依赖图。与DAG表示相比，这使得它们以非常有效的方式表示ML算法。</p>
-<h1 id="28-部署"><a href="#28-部署" class="headerlink" title="28-部署"></a>28-部署</h1><p>Hadoop：在独立模式下，Hadoop 被配置为在单节点、非分布式模式下运行。在伪分布式模式下，Hadoop以伪分布式模式运行。因此，不同之处在于每个Hadoop守护程序以伪分布式模式在单独的Java进程中运行。而在本地模式下，每个Hadoop守护程序都作为单个Java进程运行。在完全分布式模式下，所有守护进程在单独的节点中执行，形成一个多节点集群。</p>
-<p>Spark：还提供了一种简单的独立部署模式，可以在Mesos或YARN集群管理器上运行。它可以手动启动，通过手动启动 master和worker或使用我们提供的启动脚本。也可以在单台机器上运行这些守护进程进行测试。</p>
-<p>Flink：还提供了在YARN集群管理器上运行的独立部署模式。</p>
-<h1 id="29-消除重复"><a href="#29-消除重复" class="headerlink" title="29-消除重复"></a>29-消除重复</h1><p>Hadoop：Hadoop中没有重复消除。</p>
-<p>Spark：Spark还对每条记录进行一次准确的处理，因此消除了重复。</p>
-<p>Flink：Flink只处理一次记录，因此消除了重复，流应用程序可以在计算期间保持自定义状态。Flink的检查点机制确保在出现故障时状态的语义恰好只有一次。</p>
-<h1 id="30-Window标准"><a href="#30-Window标准" class="headerlink" title="30-Window标准"></a>30-Window标准</h1><p>一个数据流需要被分成许多逻辑流，每个逻辑流都可以应用一个窗口操作符。</p>
-<p>Hadoop：不支持流式传输，因此不需要窗口条件。</p>
-<p>Spark：具有基于时间的窗口标准。</p>
-<p>Flink：具有基于记录的或任何自定义的用户定义的Flink Window标准。  </p>
-]]></content>
-      <categories>
-        <category>技术</category>
-        <category>数据分析</category>
-        <category>数据库</category>
-        <category>笔记</category>
-      </categories>
-      <tags>
-        <tag>笔记</tag>
-        <tag>数据库</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>统计分析的八种方法</title>
-    <url>/2023/03/30/%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E7%9A%84%E5%85%AB%E7%A7%8D%E6%96%B9%E6%B3%95/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="一、指标对比分析法"><a href="#一、指标对比分析法" class="headerlink" title="一、指标对比分析法"></a>一、指标对比分析法</h1><p>指标对比分析法，又称比较分析法，是统计分析中最常用的方法。是通过有关的指标对比来反映事物数量上差异和变化的方法。有比较才能鉴别。单独看一些指标，只能说明总体的某些数量特征，得不出什么结论性的认识；一经过比较，如与国外、外单位比，与历史数据比，与计划相比，就可以对规模大小、水平高低、速度快慢作出判断和评价。</p>
-<p>指标分析对比分析方法可分为静态比较和动态比较分析。静态比较是同一时间条件下不同总体指标比较，如不同部门、不同地区、不同国家的比较，也叫横向比较；动态比较是同一总体条件不同时期指标数值的比较，也叫纵向比较。这两种方法既可单独使用，也可结合使用。进行对比分析时，可以单独使用总量指标或相对指标或平均指标，也可将它们结合起来进行对比。比较的结果可用相对数，如百分数、倍数、系数等，也可用相差的绝对数和相关的百分点（每1％为一个百分点）来表示，即将对比的指标相减。</p>
-<span id="more"></span>
-<h1 id="二、分组分析法"><a href="#二、分组分析法" class="headerlink" title="二、分组分析法"></a>二、分组分析法</h1><p>指标对比分析法是总体上的对比，但组成统计总体的各单位具有多种特征，这就使得在同一总体范围内的各单位之间产生了许多差别，统计分析不仅要对总体数量特征和数量关系进行分析，还要深入总体的内部进行分组分析。分组分析法就是根据统计分析的目的要求，把所研究的总体按照一个或者几个标志划分为若干个部分，加以整理，进行观察、分析，以揭示其内在的联系和规律性。</p>
-<p>统计分组法的关键问题在于正确选择分组标值和划分各组界限。</p>
-<h1 id="三、时间数列及动态分析法"><a href="#三、时间数列及动态分析法" class="headerlink" title="三、时间数列及动态分析法"></a>三、时间数列及动态分析法</h1><p>时间数列。是将同一指标在时间上变化和发展的一系列数值，按时间先后顺序排列，就形成时间数列，又称动态数列。它能反映社会经济现象的发展变动情况，通过时间数列的编制和分析，可以找出动态变化规律，为预测未来的发展趋势提供依据。时间数列可分为绝对数时间数列、相对数时间数列、平均数时间数列。</p>
-<p>时间数列速度指标。根据绝对数时间数列可以计算的速度指标：有发展速度、增长速度、平均发展速度、平均增长速度。</p>
-<p>动态分析法。在统计分析中，如果只有孤立的一个时期指标值，是很难作出判断的。如果编制了时间数列，就可以进行动态分析，反映其发展水平和速度的变化规律。</p>
-<p>进行动态分析，要注意数列中各个指标具有的可比性。总体范围、指标计算方法、计算价格和计量单位，都应该前后一致。时间间隔一般也要一致，但也可以根据研究目的，采取不同的间隔期，如按历史时期分。为了消除时间间隔期不同而产生的指标数值不可比，可采用年平均数和年平均发展速度来编制动态数列。此外在统计上，许多综合指标是采用价值形态来反映实物总量，如国内生产总值、工业总产值、社会商品零售总额等计算不同年份的发展速度时，必须消除价格变动因素的影响，才能正确的反映实物量的变化。也就是说必须用可比价格（如用不变价或用价格指数调整）计算不同年份相同产品的价值，然后才能进行对比。</p>
-<p>为了观察我国经济发展的波动轨迹，可将各年国内生产总值的发展速度编制时间数列，并据以绘制成曲线图，令人得到直观认识。</p>
-<h1 id="四、指数分析法"><a href="#四、指数分析法" class="headerlink" title="四、指数分析法"></a>四、指数分析法</h1><p>指数是指反映社会经济现象变动情况的相对数。有广义和狭义之分。根据指数所研究的范围不同可以有个体指数、类指数与总指数之分。</p>
-<p>指数的作用：一是可以综合反映复杂的社会经济现象的总体数量变动的方向和程度；二是可以分析某种社会经济现象的总变动受各因素变动影响的程度，这是一种因素分析法。操作方法是：通过指数体系中的数量关系，假定其他因素不变，来观察某一因素的变动对总变动的影响。</p>
-<p>用指数进行因素分析。因素分析就是将研究对象分解为各个因素，把研究对象的总体看成是各因素变动共同的结果，通过对各个因素的分析，对研究对象总变动中各项因素的影响程度进行测定。因素分析按其所研究的对象的统计指标不同可分为对总量指标的变动的因素分析，对平均指标变动的因素分析。</p>
-<h1 id="五、平衡分析法"><a href="#五、平衡分析法" class="headerlink" title="五、平衡分析法"></a>五、平衡分析法</h1><p>平衡分析是研究社会经济现象数量变化对等关系的一种方法。它把对立统一的双方按其构成要素一一排列起来，给人以整体的概念，以便于全局来观察它们之间的平衡关系。平衡关系广泛存在于经济生活中，大至全国宏观经济运行，小至个人经济收支。平衡种类繁多，如财政平衡表、劳动力平衡表、能源平衡表、国际收支平衡表、投入产出平衡表，等等。平衡分析的作用：一是从数量对等关系上反映社会经济现象的平衡状况，分析各种比例关系相适应状况；二是揭示不平衡的因素和发展潜力；三是利用平衡关系可以从各项已知指标中推算未知的个别指标。</p>
-<h1 id="六、综合评价分析"><a href="#六、综合评价分析" class="headerlink" title="六、综合评价分析"></a>六、综合评价分析</h1><p>社会经济分析现象往往是错综复杂的，社会经济运行状况是多种因素综合作用的结果，而且各个因素的变动方向和变动程度是不同的。如对宏观经济运行的评价，涉及生活、分配、流通、消费各个方面；对企业经济效益的评价，涉及人、财、物合理利用和市场销售状况。如果只用单一指标，就难以作出恰当的评价。</p>
-<p>进行综合评价包括四个步骤：</p>
-<p>（一）确定评价指标体系，这是综合评价的基础和依据。要注意指标体系的全面性和系统性。</p>
-<p>（二）搜集数据，并对不同计量单位的指标数值进行同度量处理。可采用相对化处理、函数化处理、标准化处理等方法。</p>
-<p>（三）确定各指标的权数，以保证评价的科学性。根据各个指标所处的地位和对总体影响程度不同，需要对不同指标赋予不同的权数。</p>
-<p>（四）对指标进行汇总，计算综合分值，并据此作出综合评价。</p>
-<h1 id="七、景气分析经济波动是客观存在的，是任何国家都难以完全避免的"><a href="#七、景气分析经济波动是客观存在的，是任何国家都难以完全避免的" class="headerlink" title="七、景气分析经济波动是客观存在的，是任何国家都难以完全避免的"></a>七、景气分析经济波动是客观存在的，是任何国家都难以完全避免的</h1><p>如何避免大的经济波动，保持经济的稳定发展，一直是各国政府和经济之专家在宏观调控和决策中面临的重要课题，景气分析正是适应这一要求而产生和发展的。景气分析是一种综合评价分析，可分为宏观经济景气分析和企业景气调查分析。</p>
-<p>宏观经济景气分析。是国家统计局20世纪80年代后期开始着手建立监测指标体系和评价方法，经过十多年时间和不断完善，已形成制度，定期提供景气分析报告，对宏观经济运行状态起到晴雨表和报警器的作用，便于国务院和有关部门及时采取宏观调控措施。以经常性的小调整，防止经济的大起大落。</p>
-<p>企业景气调查分析。是全国的大中型各类企业中，采取抽样调查的方法，通过问卷的形式，让企业负责人回答有关情况判断和预期。内容分为两类：一是对宏观经济总体的判断和预期；一是对企业经营状况的判断和预期，如产品订单、原材料购进、价格、存货、就业、市场需求、固定资产投资等。</p>
-<h1 id="八、预测分析宏观经济决策和微观经济决策"><a href="#八、预测分析宏观经济决策和微观经济决策" class="headerlink" title="八、预测分析宏观经济决策和微观经济决策"></a>八、预测分析宏观经济决策和微观经济决策</h1><p>不仅需要了解经济运行中已经发生了的实际情况，而且更需要预见未来将发生的情况。根据已知的过去和现在推测未来，就是预测分析。</p>
-<p>统计预测属于定量预测，是以数据分析为主，在预测中结合定性分析。统计预测的方法大致可分为两类：一类是主要根据指标时间数列自身变化与时间的依存关系进行预测，属于时间数列分析；另一类是根据指标之间相互影响的因果关系进行预测，属于回归分析。</p>
-<p>预测分析的方法有回归分析法、滑动平均法、指数平滑法、周期（季节）变化分析和随机变化分析等。比较复杂的预测分析需要建立计量经济模型，求解模型中的参数又有许多方法。</p>
-]]></content>
-      <categories>
-        <category>技术</category>
-        <category>数据分析</category>
-        <category>方法论</category>
-      </categories>
-      <tags>
-        <tag>数据分析师</tag>
-        <tag>统计</tag>
-        <tag>方法</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>免费商用字体收集</title>
     <url>/2022/07/01/%E5%85%8D%E8%B4%B9%E5%95%86%E7%94%A8%E5%AD%97%E4%BD%93%E6%94%B6%E9%9B%86/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="德拉黑体"><a href="#德拉黑体" class="headerlink" title="德拉黑体"></a><a href="https://github.com/syakuzen/DelaGothic/blob/master/fonts/ttf/DelaGothicOne-Regular.ttf">德拉黑体</a></h2><blockquote>
@@ -1294,27 +1363,6 @@
         <tag>字体</tag>
         <tag>免费</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>lora训练</title>
-    <url>/2023/04/19/lora%E8%AE%AD%E7%BB%83/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="https://github.com/camenduru/stable-diffusion-webui-colab">https://github.com/camenduru/stable-diffusion-webui-colab</a></p>
-<p><a href="https://github.com/camenduru/stable-diffusion-webui-colab/tree/drive">https://github.com/camenduru/stable-diffusion-webui-colab/tree/drive</a></p>
-<p><a href="https://github.com/bmaltais/kohya_ss">kohya_ss Files:</a>  </p>
-<p><a href="https://colab.research.google.com/drive/1vvi6lGdbEIbyuhM2Yg1R99dynuOkWh9Y#scrollTo=_u3q60di584x">在Google Colab上训练LORA模型,保存到谷歌云盘| 免费16GB GPU |KOHYA LORA | Dreambooth扩展 | Stable Diffusion</a></p>
-<span id="more"></span>
-<p><a href="https://github.com/Linaqruf/kohya-trainer">https://github.com/Linaqruf/kohya-trainer</a></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/bmaltais/kohya_ss.git</span><br><span class="line"></span><br><span class="line">cd kohya_ss</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">May need to <span class="built_in">chmod</span> +x ./setup.sh <span class="keyword">if</span> you<span class="string">&#x27;re on a machine with stricter security.</span></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="string">There are additional options if needed for a runpod environment.</span></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="string">Call &#x27;</span>setup.sh -h<span class="string">&#x27; or &#x27;</span>setup.sh --<span class="built_in">help</span><span class="string">&#x27; for more information.</span></span></span><br><span class="line">./setup.sh</span><br></pre></td></tr></table></figure>
-
-<p><a href="https://github.com/antis0007/sd-webui-gelbooru-prompt">Gelbooru标签自动摘录插件 Gelbooru Prompt</a><br><a href="https://github.com/DominikDoom/a1111-sd-webui-tagcomplete/blob/main/README_ZH.md">Tag自动补全</a><br><a href="https://github.com/adieyal/sd-dynamic-prompts">Dynamic Prompts extension</a></p>
-<p><a href="https://civitai.com/images/572998?period=Year&sort=Newest&view=categories">autum,sushi+goodGirl,30step</a></p>
-<p><a href="https://civitai.com/images/572647?period=Year&sort=Newest&view=categories&tags=5133">https://civitai.com/images/572647?period=Year&sort=Newest&view=categories&tags=5133</a></p>
-]]></content>
-      <categories>
-        <category>技术</category>
-        <category>人工智能</category>
-        <category>lora</category>
-      </categories>
   </entry>
   <entry>
     <title>ChatGPT Prompt</title>
@@ -1408,6 +1456,23 @@
       </tags>
   </entry>
   <entry>
+    <title>Pandas基本操作</title>
+    <url>/2023/03/15/Pandas%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="查看数据"><a href="#查看数据" class="headerlink" title="查看数据"></a>查看数据</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 查看头部 head(n)</span></span><br><span class="line">df.head()  <span class="comment">#默认查看前5条记录 </span></span><br><span class="line">df.head(<span class="number">8</span>)  <span class="comment">#指定查看前8条记录</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">## 查看尾部 tail(n)</span></span><br><span class="line">df.tail()  <span class="comment">#默认查看后面5条记录 </span></span><br><span class="line">df.tail(<span class="number">4</span>)  <span class="comment">#指定查看后面4条记录</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 随机查看样本 sample(n)</span></span><br><span class="line">df.sample()  <span class="comment">#随机查看一条记录 </span></span><br><span class="line">df.sample(<span class="number">4</span>)  <span class="comment">#随机查看4条记录</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 查看统计摘要</span></span><br><span class="line">df.describe()  <span class="comment">#返回所有数字列的统计摘要</span></span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+<h1 id="检索数据"><a href="#检索数据" class="headerlink" title="检索数据"></a>检索数据</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 切片[]</span></span><br><span class="line">df[<span class="number">0</span>:<span class="number">3</span>]  <span class="comment">#通过切片检索行数据</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## loc\iloc</span></span><br><span class="line">df.loc[<span class="number">1</span>]  <span class="comment">#标量标签，返回该行标签的Series数据 </span></span><br><span class="line">df.loc[[<span class="number">1</span>,<span class="number">3</span>]]  <span class="comment">#标签列表，返回标签列表的行DataFrame数据 </span></span><br><span class="line">df.loc[<span class="number">0</span>:<span class="number">3</span>]  <span class="comment">#切片对象，返回切片的行DataFrame数据 </span></span><br><span class="line">df.loc[<span class="number">0</span>:<span class="number">3</span>,<span class="string">&#x27;staff_id&#x27;</span>:<span class="string">&#x27;staff_salary&#x27;</span>]  <span class="comment">#根据行切片，列切片检索数据 </span></span><br><span class="line">df.loc[[<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="string">&#x27;staff_id&#x27;</span>,<span class="string">&#x27;staff_name&#x27;</span>,<span class="string">&#x27;staff_age&#x27;</span>]]  <span class="comment">#根据行标签列表，列标签列表检索数据</span></span><br><span class="line">df.iloc[<span class="number">1</span>]  <span class="comment">#整数标量选择，数据从0开始，为1的就是第二行的数据，返回的是Series </span></span><br><span class="line">df.iloc[[<span class="number">1</span>,<span class="number">3</span>]]  <span class="comment">#整数列表选择，选择位置为1和3的数据，返回的是DataFrame </span></span><br><span class="line">df.iloc[<span class="number">1</span>:<span class="number">3</span>]  <span class="comment">#切片选择，选择位置1至2的数据，不包含边界结束值，也就是不包含3的位置 </span></span><br><span class="line">df.iloc[<span class="number">1</span>:<span class="number">3</span>,<span class="number">1</span>:<span class="number">4</span>]  <span class="comment">#切片选择位置为1至3的行和1至4的列不含位置为3的行和位置为4的列</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## at\iat</span></span><br><span class="line">df.at[<span class="string">&#x27;A&#x27;</span>,<span class="string">&#x27;staff_name&#x27;</span>]  <span class="comment">#检索第“A”行的列标签为&quot;staff_name&quot;的数据 df.iat[0,1]  #检索第1行第2列的数据</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>技术</category>
+        <category>数据分析</category>
+        <category>python</category>
+        <category>pandas</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Python一些文章</title>
     <url>/2023/04/23/Python%E4%B8%80%E4%BA%9B%E6%96%87%E7%AB%A0/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="https://pythontutor.com/">Visualize code in Python, JavaScript, C, C++, and Java: pythontutor</a><br><a href="https://visualgo.net/">visualising data structures and algorithms through animation:Python动画算法</a></p>
@@ -1424,61 +1489,6 @@
         <tag>笔记</tag>
         <tag>python</tag>
         <tag>网站</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>数据分析师常用的Prompt技巧2/2</title>
-    <url>/2023/04/24/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E5%B8%B8%E7%94%A8%E7%9A%84Prompt%E6%8A%80%E5%B7%A7/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="01-什么是探索性分析EDA"><a href="#01-什么是探索性分析EDA" class="headerlink" title="01 什么是探索性分析EDA?"></a>01 什么是探索性分析EDA?</h3><p>探索性数据分析（EDA）是在数据分析初始阶段进行数据了解和探索的过程。通过EDA，我们可以全面了解数据概貌，明确分析方式，并找出异常的可能因素。探索性数据分析在数据分析中非常重要。</p>
-<p>EDA包括三个重要部分，分别是：</p>
-<ul>
-<li><p>数据可视化：这部分的EDA涉及到将原始数据转化为图表和可视化图形等视觉信息。</p>
-</li>
-<li><p>假设检验：它被用来分析两个或两个以上的变量之间是否存在统计学上的显著差异。这可以用来支持或反驳数据相关的理论。</p>
-</li>
-<li><p>总结统计：它包括计算基本统计量，如平均数、中位数和标准差。总结统计有助于理解数据的分布并发现任何异常值。</p>
-</li>
-</ul>
-<p>ChatGPT是一个进行EDA的高效的工具，因为它可以简化上面这些过程。我们可以用这个基于AI的聊天机器人完成EDA任务。我们接下探讨如何使用ChatGPT进行探索性数据分析。</p>
-<h3 id="02-ChatGPT-for-EDA数据可视化"><a href="#02-ChatGPT-for-EDA数据可视化" class="headerlink" title="02 ChatGPT for EDA数据可视化"></a>02 ChatGPT for EDA数据可视化</h3><p>ChatGPT在探索性数据分析中可以提供非常强的数据可视化能力。这里，需要指出的是，ChatGPT本身无法进行动态的数据可视化任务。然而，它可以帮助我们进行数据可视化。</p>
-<p>我们可以使用ChatGPT来清洗数据，排除任何不一致或异常。除此之外，这个聊天机器人还可以帮助我们删除重复记录等。</p>
-<p>此外，我们还可以学习如何使用ChatGPT来协助处理复杂的数据可视化。例如，我们可以使用ChatGPT来帮助我们使用诸如Python、R或SQL这样的编程语言来创建图表和图形。这个聊天机器人会为我们提供代码和所有必要的步骤，以完成数据可视化的任务，并做出数据驱动的决策。</p>
-<h3 id="03-ChatGPT-for-EDA数据预测"><a href="#03-ChatGPT-for-EDA数据预测" class="headerlink" title="03 ChatGPT for EDA数据预测"></a>03 ChatGPT for EDA数据预测</h3><p>预测分析是EDA的另一个重要方面。我们通常基于大量数据集，采用机器学习的方式来找出数据之间的规律并预测可能的结果。现在，ChatGPT可以帮我们确定应该使用哪种机器学习模型，以便我们更准确、高效地分析数据。</p>
-<p>这个聊天机器人被训练得能够处理不同的模型。例如，你可以使用分类模型来对数据进行分类，并为不同的变量赋予预定义的值。我们需要做的就是向聊天机器人描述目标变量，并明确想要使用的模型（在这个情况下，是分类模型）。ChatGPT会对数据进行分类，并根据模式进行预测。</p>
-<p>我们也可以要求聊天机器人根据不同的参数对用户进行划分，比如：</p>
-<p><code>使用以下数据集，并将用户分为&lt;输入类别&gt;&lt;插入数据集&gt;</code></p>
-<p>或者你可以使用一些额外的提示prompts来根据某些行为创建用户画像：</p>
-<p><code>根据&lt;画像特征&gt;，将用户划分为不同的群体</code></p>
-<p>通过这种方式，你可以使用ChatGPT进行一些常见的分类或者回归等预测，帮助我们更高效的找到数据间的规律和模式。</p>
-<h3 id="04-给出有效EDA的建议"><a href="#04-给出有效EDA的建议" class="headerlink" title="04 给出有效EDA的建议"></a>04 给出有效EDA的建议</h3><p>如果我们以正确的方式使用ChatGPT，可以帮助我们在探索性数据分析中获取很多信息。这个聊天机器人可以通过为你推荐正确的行动方向来消除数据分析过程中的难题。</p>
-<p>ChatGPT对于探索性数据分析过程可以帮助你的方式包括：</p>
-<p>它可以为你提供解决数据质量问题的实用方法。</p>
-<p>它可以是选择正确的分析工具和革命性技术的全面指导。</p>
-<p>它可以推荐模型构建和分析的相关特性。</p>
-<p>它可以让你理解哪些变量对于EDA来说是重要的。这样，数据科学家就会知道哪些变量可能更有可能产生影响</p>
-<p>它还可以为数据转换提供建议。例如，ChatGPT可以在处理缺失数据、归一化和缩放方面提供有用的建议。你可以使用简单的ChatGPT提示来让聊天机器人为你推荐EDA的最佳实践，</p>
-<p>比如：<code>使用这个数据库&lt;输入数据库&gt;，并分析&lt;输入时间段&gt;中行业&lt;输入行业名称&gt;的趋势，针对&lt;定义段落/客户人口统计/分析景观&gt;</code></p>
-<h3 id="05-ChatGPT-for-EDA情感分析"><a href="#05-ChatGPT-for-EDA情感分析" class="headerlink" title="05 ChatGPT for EDA情感分析"></a>05 ChatGPT for EDA情感分析</h3><p>ChatGPT的最大潜力在于进行情感分析。聊天机器人配备了先进的语言模型，使其具有自然语言处理能力。情感和探索性数据分析之间存在强烈的联系。</p>
-<p>作为一名数据分析师，我们可以分析巨大的数据集，并研究它们的情感。准确的语言模型可以给我们提供大量的数据。让我们看看情感分析和探索性数据分析之间的联系：</p>
-<p>文本分类：在这里，通过情感分析将文本数据分类为几种情感。文本情感分析允许EDA找到与数据中的情绪语气相关的模式和趋势。常用于分析客户评论、社交媒体帖子或与商品或服务相关的评价。</p>
-<p>观点挖掘：在EDA过程中，情感分析可以用来从文本中提取观点。数据分析师可以洞察人们的态度或偏好。它可以进一步用来确定人们表达的主要观点。通过对这些信息的进一步分析，可以了解不同人在不同维度上的情感表现。</p>
-<h3 id="06-ChatGPT-for-统计分析和建模"><a href="#06-ChatGPT-for-统计分析和建模" class="headerlink" title="06 ChatGPT for 统计分析和建模"></a>06 ChatGPT for 统计分析和建模</h3><p>使用统计分析数据并开发可以用于进行预测模型的过程被称为统计分析和建模。数据描述、汇总和解释都可以通过统计分析来完成。统计分析工具可以用来预测未来的值，发现模式，并从收集数据的人口中得出结论。这样，统计建模就成为了从数据中得出结论的强大技术。</p>
-<p>这个AI驱动的模型的分析软件可以收集预测、趋势，以及对收集的数据给出结论。许多不同的行业，如商业、医疗保健和社会科学，都使用统计分析和建模。</p>
-<p>数据分析师可以用以下方式进行统计分析和建模：</p>
-<p>EDA指导：ChatGPT可以在数据中寻找哪些变量相关或者更重要，以此给出建议来帮助完成EDA。它可能会提供有用的关键信息，以便找出趋势、模式或异常值。</p>
-<p>模型选择：在选择可接受的模型时，ChatGPT可以提供建议。为了提高模型性能，它可能会对模型选择、超参数调整和过程验证提供建议。</p>
-<p>模型预测：这个AI模型可以预测结果，并进行验证。它可以分析结果，评估模型的性能，并找出提高预测准确性的方法。</p>
-<h3 id="07-总结"><a href="#07-总结" class="headerlink" title="07 总结"></a>07 总结</h3><p>如果你是一名数据分析师，我们要开始考虑如何使用ChatGPT在探索性数据分析工作中发挥它的作用了。它可以在数据分析中帮助我们快速、高效、准确的完成EDA的工作，同时它还能给我们一些创新的、隐藏的洞察和建议，可以预见，在不久的将来，ChatGPT一定会重塑甚并颠覆数据分析的技能栈和分析工作内容，所以学会使用它，才能让AI为我们打工。</p>
-]]></content>
-      <categories>
-        <category>技术</category>
-        <category>人工智能</category>
-        <category>Prompt</category>
-      </categories>
-      <tags>
-        <tag>Prompt</tag>
-        <tag>GPT</tag>
-        <tag>数据分析</tag>
       </tags>
   </entry>
   <entry>
@@ -1999,8 +2009,8 @@
         <category>智能影音</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>数码</tag>
+        <tag>笔记</tag>
         <tag>Apple</tag>
       </tags>
   </entry>
@@ -2575,6 +2585,277 @@
         <tag>群晖</tag>
         <tag>网络</tag>
         <tag>NAS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>lora训练</title>
+    <url>/2023/04/19/lora%E8%AE%AD%E7%BB%83/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="https://github.com/camenduru/stable-diffusion-webui-colab">https://github.com/camenduru/stable-diffusion-webui-colab</a></p>
+<p><a href="https://github.com/camenduru/stable-diffusion-webui-colab/tree/drive">https://github.com/camenduru/stable-diffusion-webui-colab/tree/drive</a></p>
+<p><a href="https://github.com/bmaltais/kohya_ss">kohya_ss Files:</a>  </p>
+<p><a href="https://colab.research.google.com/drive/1vvi6lGdbEIbyuhM2Yg1R99dynuOkWh9Y#scrollTo=_u3q60di584x">在Google Colab上训练LORA模型,保存到谷歌云盘| 免费16GB GPU |KOHYA LORA | Dreambooth扩展 | Stable Diffusion</a></p>
+<span id="more"></span>
+<p><a href="https://github.com/Linaqruf/kohya-trainer">https://github.com/Linaqruf/kohya-trainer</a></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/bmaltais/kohya_ss.git</span><br><span class="line"></span><br><span class="line">cd kohya_ss</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">May need to <span class="built_in">chmod</span> +x ./setup.sh <span class="keyword">if</span> you<span class="string">&#x27;re on a machine with stricter security.</span></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="string">There are additional options if needed for a runpod environment.</span></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="string">Call &#x27;</span>setup.sh -h<span class="string">&#x27; or &#x27;</span>setup.sh --<span class="built_in">help</span><span class="string">&#x27; for more information.</span></span></span><br><span class="line">./setup.sh</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://github.com/antis0007/sd-webui-gelbooru-prompt">Gelbooru标签自动摘录插件 Gelbooru Prompt</a><br><a href="https://github.com/DominikDoom/a1111-sd-webui-tagcomplete/blob/main/README_ZH.md">Tag自动补全</a><br><a href="https://github.com/adieyal/sd-dynamic-prompts">Dynamic Prompts extension</a></p>
+<p><a href="https://civitai.com/images/572998?period=Year&sort=Newest&view=categories">autum,sushi+goodGirl,30step</a></p>
+<p><a href="https://civitai.com/images/572647?period=Year&sort=Newest&view=categories&tags=5133">https://civitai.com/images/572647?period=Year&sort=Newest&view=categories&tags=5133</a></p>
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>人工智能</category>
+        <category>lora</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>数据分析师常用的Prompt技巧1/2</title>
+    <url>/2023/04/23/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E5%B8%B8%E7%94%A8%E7%9A%84Prompt%E6%8A%80%E5%B7%A7/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>Prompt在数据分析中的作用非常重要，特别是在使用ChatGPT辅助数据分析工作时。Prompt可以被看作是向模型提供的任务说明或问题，它能够引导模型按照我们期望的方式进行工作。</p>
+<p>一个好的prompt可以明确指示模型执行具体的任务，例如进行数据清洗、数据可视化、统计分析等，并能够提供足够的上下文信息帮助模型理解任务的需求和目标。通过使用优秀的prompt，我们可以更高效地利用AI技术来协助我们的数据分析工作，大幅提升工作效率，同时也能帮助我们更深入地理解数据，从而得出更有价值的洞见。因此，学习如何编写有效的prompt是进行数据分析工作的重要技能。</p>
+<p>下面将通过数据分析工作中的几个常见任务来分别给出示例，演示如何正确、高效使用Prompt。</p>
+<h3 id="1-形成分析思路"><a href="#1-形成分析思路" class="headerlink" title="1. 形成分析思路"></a>1. 形成分析思路</h3><p>❌【普通人的prompt】:</p>
+<p><code>我需要找出销量最高的产品。</code></p>
+<p> ✅【数据分析师本的prompt】 :</p>
+<p><code>我有一个含&#39;product_id&#39;，&#39;order_id&#39;，&#39;purchase_date&#39;和&#39;sales_volume&#39;等字段的销售数据库。我想找出在过去一年内销量最高的十种产品。请帮我构建一个数据分析思路来进行这项工作。</code></p>
+<p>【两个版本的差异】: 较好版本的prompt明确了所需的数据库字段、时间范围以及具体的分析目标，使模型有更多的信息可以生成具体的分析思路。</p>
+<h3 id="2-构建指标体系"><a href="#2-构建指标体系" class="headerlink" title="2. 构建指标体系"></a>2. 构建指标体系</h3><p>❌【普通人的prompt】: </p>
+<p><code>我需要一些电商指标。</code> </p>
+<p> ✅【数据分析师本的prompt】:</p>
+<p><code>我正在为一家电商网站构建一个业务指标体系，包括了用户行为、销售绩效、市场营销效果等方面的指标。请帮我列出每个方面下可能包含的几个关键指标。</code> </p>
+<p>【两个版本的差异】: 较好版本的prompt明确了需要电商的哪几个方面的指标，使模型可以根据这些方向提供更具体的指标。</p>
+<h3 id="3-数据清洗"><a href="#3-数据清洗" class="headerlink" title="3. 数据清洗"></a>3. 数据清洗</h3><p>❌【普通人的prompt】: </p>
+<p><code>我需要进行数据清洗。</code></p>
+<p> ✅【数据分析师本的prompt】: </p>
+<p><code>我有一份包含用户年龄、性别、购买记录等信息的数据，但我注意到其中有些年龄数据存在负数，有些购买记录数据为空。请帮我规划一下数据清洗的流程，包括如何处理这些异常数据，以及我应该注意哪些可能的数据质量问题。</code></p>
+<p>【两个版本的差异】: 较好版本的prompt详细描述了数据的具体情况和存在的问题，使模型可以给出更具体的数据清洗策略和注意事项。</p>
+<h3 id="4-完成SQL代码"><a href="#4-完成SQL代码" class="headerlink" title="4. 完成SQL代码"></a>4. 完成SQL代码</h3><p>❌【普通人的prompt】: </p>
+<p><code>我需要查询用户的购买信息。</code> </p>
+<p> ✅【数据分析师本的prompt】: </p>
+<p><code>我有一个&#39;orders&#39;表，包含&#39;user_id&#39;, &#39;product_id&#39;, &#39;purchase_date&#39;, &#39;amount&#39;等字段。我想查询出在过去30天内购买金额超过500的用户的列表，并按照购买金额降序排序。请帮我写出对应的SQL代码。</code> </p>
+<p>【两个版本的差异】: 较好版本的prompt提供了明确的表字段、查询条件以及排序要求，使模型可以生成更精确的SQL代码。</p>
+<h3 id="5-SQL性能优化"><a href="#5-SQL性能优化" class="headerlink" title="5. SQL性能优化"></a>5. SQL性能优化</h3><p>❌【普通人的prompt】: </p>
+<p><code>我需要优化我的SQL查询。</code> </p>
+<p> ✅【数据分析师本的prompt】:</p>
+<p><code>我正在运行一个查询，它包含多个联接和子查询，并且查询时间很长。我在&#39;user&#39;表和&#39;order&#39;表之间进行了联接，然后在结果中进行了聚合操作。请帮我提供一些优化此查询性能的策略或建议。</code> </p>
+<p>【两个版本的差异】: 较好版本的prompt详细描述了查询的具体情况，使模型可以给出更具体的优化建议。</p>
+<h3 id="6-统计学分析"><a href="#6-统计学分析" class="headerlink" title="6. 统计学分析"></a>6. 统计学分析</h3><p>❌【普通人的prompt】:</p>
+<p><code>我需要进行一些统计分析。</code> </p>
+<p> ✅【数据分析师本的prompt】: </p>
+<p><code>我想对我们网站的用户年龄进行描述性统计分析，包括计算年龄的平均值、中位数、分位数、最小值、最大值以及标准差。并希望能理解年龄和用户购买金额之间的关系，需要进行相关性分析。请帮我设计一个分析流程。</code> </p>
+<p>【两个版本的差异】: 较好版本的prompt提供了具体的统计分析需求和数据内容，使模型能够生成更具体和有针对性的分析建议。</p>
+<h3 id="7-数据可视化"><a href="#7-数据可视化" class="headerlink" title="7. 数据可视化"></a>7. 数据可视化</h3><p>❌【普通人的prompt】:</p>
+<p><code>我需要进行数据可视化。</code></p>
+<p> ✅【数据分析师本的prompt】:</p>
+<p><code>我正在分析一个包含用户购买行为数据的数据集，我想对用户的购买金额分布和购买金额与购买次数的关系进行可视化展示。请帮我选择合适的可视化图表类型，以及如何设计图表以使信息展示得更清晰易懂。</code></p>
+<p>【两个版本的差异】:较好版本的prompt提供了具体的可视化目标和数据情况，使模型可以给出更具体的可视化建议。</p>
+<h3 id="8-AB-Test-结果分析"><a href="#8-AB-Test-结果分析" class="headerlink" title="8. AB Test 结果分析"></a>8. AB Test 结果分析</h3><p>❌【普通人的prompt】:</p>
+<p><code>我需要进行AB测试的显著性检验。</code></p>
+<p> ✅【数据分析师本的prompt】:</p>
+<p><code>我进行了一次AB测试，A组有500人，其中有200人完成了购买行为；B组有550人，其中有250人完成了购买行为。我想知道B组的转化率是否显著高于A组，需要进行显著性检验。请帮我设计一个检验流程，包括使用哪种统计检验方法，如何进行计算，以及如何解读结果。</code></p>
+<p>【两个版本的差异】:较好版本的prompt提供了具体的AB测试数据和目标，使模型可以生成更具体和有针对性的显著性检验方法和步骤。</p>
+<h3 id="9-完成分析报告"><a href="#9-完成分析报告" class="headerlink" title="9. 完成分析报告"></a>9. 完成分析报告</h3><p>❌【普通人的prompt】:</p>
+<p><code>我需要写一个分析报告。</code> </p>
+<p> ✅【数据分析师本的prompt】:</p>
+<p><code>我已经完成了对用户年龄和购买行为的关系的分析，发现年龄和购买金额之间存在中等程度的正相关性。请帮我撰写一个分析报告来呈现这个发现，包括报告的背景、方法、结果和讨论等部分。</code> </p>
+<p>【两个版本的差异】:较好版本的prompt提供了具体的分析结果以及报告的结构要求，使模型可以生成结构清晰、内容完整的分析报告。</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>人工智能</category>
+        <category>Prompt</category>
+      </categories>
+      <tags>
+        <tag>Prompt</tag>
+        <tag>GPT</tag>
+        <tag>数据分析</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>中国历代神州火箭信息</title>
+    <url>/2024/04/25/%E7%A5%9E%E5%B7%9E%E5%8D%81%E5%85%AB/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>新闻看到神州十八的发射直播，趁机梳理一下常识。</p>
+<p><strong>4次任务</strong>：</p>
+<ul>
+<li>景海鹏（神舟七号、神舟九号、神舟十一号、神舟十六号）</li>
+</ul>
+<p><strong>3次任务</strong>：</p>
+<ul>
+<li>聂海胜（神舟六号、神舟十号、神舟十二号）</li>
+</ul>
+<p><strong>2次任务</strong>：</p>
+<ul>
+<li>费俊龙（神舟六号、神舟十五号）</li>
+<li>刘伯明（神舟七号、神舟十二号）</li>
+<li>刘洋（神舟九号、神舟十四号）</li>
+<li>王亚平（神舟十号、神舟十三号）</li>
+<li>陈冬（神舟十一号、神舟十四号）</li>
+<li>汤洪波（神舟十二号、神舟十七号）</li>
+<li>叶光富（神舟十三号、神舟十八号）</li>
+</ul>
+<p><strong>1次任务</strong>：</p>
+<ul>
+<li>杨利伟（神舟五号）</li>
+<li>刘旺（神舟九号）</li>
+<li>张晓光（神舟十号）</li>
+<li>朱杨柱（神舟十六号）</li>
+<li>桂海潮（神舟十六号）</li>
+<li>唐胜杰（神舟十七号）</li>
+<li>江新林（神舟十七号）</li>
+<li>李聪（神舟十八号）</li>
+<li>李广苏（神舟十八号）</li>
+</ul>
+<span id="more"></span>
+
+<table>
+<thead>
+<tr>
+<th align="center">序号</th>
+<th align="center">飞船名称</th>
+<th align="center">发射时间</th>
+<th align="center">宇航员</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1</td>
+<td align="center">神舟一号</td>
+<td align="center">1999年11月20日</td>
+<td align="center">无</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">神舟二号</td>
+<td align="center">2001年1月10日</td>
+<td align="center">无</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center">神舟三号</td>
+<td align="center">2002年3月25日</td>
+<td align="center">无</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="center">神舟四号</td>
+<td align="center">2002年12月30日</td>
+<td align="center">无</td>
+</tr>
+<tr>
+<td align="center">5</td>
+<td align="center">神舟五号</td>
+<td align="center">2003年10月15日</td>
+<td align="center">杨利伟</td>
+</tr>
+<tr>
+<td align="center">6</td>
+<td align="center">神舟六号</td>
+<td align="center">2005年10月12日</td>
+<td align="center">费俊龙、聂海胜</td>
+</tr>
+<tr>
+<td align="center">7</td>
+<td align="center">神舟七号</td>
+<td align="center">2008年9月25日</td>
+<td align="center">翟志刚、刘伯明、景海鹏</td>
+</tr>
+<tr>
+<td align="center">8</td>
+<td align="center">神舟八号</td>
+<td align="center">2011年11月1日</td>
+<td align="center">无</td>
+</tr>
+<tr>
+<td align="center">9</td>
+<td align="center">神舟九号</td>
+<td align="center">2012年6月16日</td>
+<td align="center">景海鹏、刘旺、刘洋</td>
+</tr>
+<tr>
+<td align="center">10</td>
+<td align="center">神舟十号</td>
+<td align="center">2013年6月11日</td>
+<td align="center">聂海胜、张晓光、王亚平</td>
+</tr>
+<tr>
+<td align="center">11</td>
+<td align="center">神舟十一号</td>
+<td align="center">2016年10月17日</td>
+<td align="center">景海鹏、陈冬</td>
+</tr>
+<tr>
+<td align="center">12</td>
+<td align="center">神舟十二号</td>
+<td align="center">2021年6月17日</td>
+<td align="center">聂海胜、刘伯明、汤洪波</td>
+</tr>
+<tr>
+<td align="center">13</td>
+<td align="center">神舟十三号</td>
+<td align="center">2021年10月16日</td>
+<td align="center">翟志刚、王亚平、叶光富</td>
+</tr>
+<tr>
+<td align="center">14</td>
+<td align="center">神舟十四号</td>
+<td align="center">2022年6月5日</td>
+<td align="center">陈冬、刘洋、蔡旭哲</td>
+</tr>
+<tr>
+<td align="center">15</td>
+<td align="center">神舟十五号</td>
+<td align="center">2022年11月29日</td>
+<td align="center">费俊龙、邓清明、张陆</td>
+</tr>
+<tr>
+<td align="center">16</td>
+<td align="center">神舟十六号</td>
+<td align="center">2023年5月30日</td>
+<td align="center">景海鹏、朱杨柱、桂海潮</td>
+</tr>
+<tr>
+<td align="center">17</td>
+<td align="center">神舟十七号</td>
+<td align="center">2023年10月6日</td>
+<td align="center">汤洪波、唐胜杰、江新林</td>
+</tr>
+<tr>
+<td align="center">18</td>
+<td align="center">神舟十八号</td>
+<td align="center">2024年4月25日</td>
+<td align="center">叶光富、李聪、李广苏</td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>生活</category>
+        <category>碎碎念</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+        <tag>分享</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>阿里云盘第三方接口将需要额外付费</title>
+    <url>/2024/04/26/%E7%AC%AC%E4%B8%89%E6%96%B9%E9%98%BF%E9%87%8C%E4%BA%91%E6%8E%A5%E5%8F%A3%E6%94%B6%E8%B4%B9/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
+<p>网络消息称阿里云盘将于五月下旬推出 “三方应用权益包”，购买后可在第三方应用中享受高速下载通道、高清点播清晰度等权益，未购买的用户将无法享受这些权益。</p>
+</blockquote>
+<blockquote>
+<p>本文仅为预告,具体的权益内容和购买流程请以最终上线页面为准。</p>
+</blockquote>
+<span id="more"></span>
+
+<p>不氪金三方权益包，基于阿里云盘的播放方案就都只能看标清了，包括但不限于<strong>Infuse直连阿里云盘</strong>，<strong>alist挂载阿里云</strong>。看来又要回归20年前bt下载的时代了，硬盘价格估计又要应声上涨📈。</p>
+<p><img src="/2024/04/26/%E7%AC%AC%E4%B8%89%E6%96%B9%E9%98%BF%E9%87%8C%E4%BA%91%E6%8E%A5%E5%8F%A3%E6%94%B6%E8%B4%B9/1.webp" alt="image1"><br><img src="/2024/04/26/%E7%AC%AC%E4%B8%89%E6%96%B9%E9%98%BF%E9%87%8C%E4%BA%91%E6%8E%A5%E5%8F%A3%E6%94%B6%E8%B4%B9/2.webp" alt="image2"></p>
+]]></content>
+      <categories>
+        <category>生活</category>
+        <category>碎碎念</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+        <tag>分享</tag>
       </tags>
   </entry>
   <entry>
@@ -10991,224 +11272,58 @@
       </tags>
   </entry>
   <entry>
-    <title>中国历代神州火箭信息</title>
-    <url>/2024/04/25/%E7%A5%9E%E5%B7%9E%E5%8D%81%E5%85%AB/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>新闻看到神州十八的发射直播，趁机梳理一下常识。</p>
-<p><strong>4次任务</strong>：</p>
+    <title>数据分析师常用的Prompt技巧2/2</title>
+    <url>/2023/04/24/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E5%B8%B8%E7%94%A8%E7%9A%84Prompt%E6%8A%80%E5%B7%A7/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="01-什么是探索性分析EDA"><a href="#01-什么是探索性分析EDA" class="headerlink" title="01 什么是探索性分析EDA?"></a>01 什么是探索性分析EDA?</h3><p>探索性数据分析（EDA）是在数据分析初始阶段进行数据了解和探索的过程。通过EDA，我们可以全面了解数据概貌，明确分析方式，并找出异常的可能因素。探索性数据分析在数据分析中非常重要。</p>
+<p>EDA包括三个重要部分，分别是：</p>
 <ul>
-<li>景海鹏（神舟七号、神舟九号、神舟十一号、神舟十六号）</li>
+<li><p>数据可视化：这部分的EDA涉及到将原始数据转化为图表和可视化图形等视觉信息。</p>
+</li>
+<li><p>假设检验：它被用来分析两个或两个以上的变量之间是否存在统计学上的显著差异。这可以用来支持或反驳数据相关的理论。</p>
+</li>
+<li><p>总结统计：它包括计算基本统计量，如平均数、中位数和标准差。总结统计有助于理解数据的分布并发现任何异常值。</p>
+</li>
 </ul>
-<p><strong>3次任务</strong>：</p>
-<ul>
-<li>聂海胜（神舟六号、神舟十号、神舟十二号）</li>
-</ul>
-<p><strong>2次任务</strong>：</p>
-<ul>
-<li>费俊龙（神舟六号、神舟十五号）</li>
-<li>刘伯明（神舟七号、神舟十二号）</li>
-<li>刘洋（神舟九号、神舟十四号）</li>
-<li>王亚平（神舟十号、神舟十三号）</li>
-<li>陈冬（神舟十一号、神舟十四号）</li>
-<li>汤洪波（神舟十二号、神舟十七号）</li>
-<li>叶光富（神舟十三号、神舟十八号）</li>
-</ul>
-<p><strong>1次任务</strong>：</p>
-<ul>
-<li>杨利伟（神舟五号）</li>
-<li>刘旺（神舟九号）</li>
-<li>张晓光（神舟十号）</li>
-<li>朱杨柱（神舟十六号）</li>
-<li>桂海潮（神舟十六号）</li>
-<li>唐胜杰（神舟十七号）</li>
-<li>江新林（神舟十七号）</li>
-<li>李聪（神舟十八号）</li>
-<li>李广苏（神舟十八号）</li>
-</ul>
-<span id="more"></span>
-
-<table>
-<thead>
-<tr>
-<th align="center">序号</th>
-<th align="center">飞船名称</th>
-<th align="center">发射时间</th>
-<th align="center">宇航员</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">1</td>
-<td align="center">神舟一号</td>
-<td align="center">1999年11月20日</td>
-<td align="center">无</td>
-</tr>
-<tr>
-<td align="center">2</td>
-<td align="center">神舟二号</td>
-<td align="center">2001年1月10日</td>
-<td align="center">无</td>
-</tr>
-<tr>
-<td align="center">3</td>
-<td align="center">神舟三号</td>
-<td align="center">2002年3月25日</td>
-<td align="center">无</td>
-</tr>
-<tr>
-<td align="center">4</td>
-<td align="center">神舟四号</td>
-<td align="center">2002年12月30日</td>
-<td align="center">无</td>
-</tr>
-<tr>
-<td align="center">5</td>
-<td align="center">神舟五号</td>
-<td align="center">2003年10月15日</td>
-<td align="center">杨利伟</td>
-</tr>
-<tr>
-<td align="center">6</td>
-<td align="center">神舟六号</td>
-<td align="center">2005年10月12日</td>
-<td align="center">费俊龙、聂海胜</td>
-</tr>
-<tr>
-<td align="center">7</td>
-<td align="center">神舟七号</td>
-<td align="center">2008年9月25日</td>
-<td align="center">翟志刚、刘伯明、景海鹏</td>
-</tr>
-<tr>
-<td align="center">8</td>
-<td align="center">神舟八号</td>
-<td align="center">2011年11月1日</td>
-<td align="center">无</td>
-</tr>
-<tr>
-<td align="center">9</td>
-<td align="center">神舟九号</td>
-<td align="center">2012年6月16日</td>
-<td align="center">景海鹏、刘旺、刘洋</td>
-</tr>
-<tr>
-<td align="center">10</td>
-<td align="center">神舟十号</td>
-<td align="center">2013年6月11日</td>
-<td align="center">聂海胜、张晓光、王亚平</td>
-</tr>
-<tr>
-<td align="center">11</td>
-<td align="center">神舟十一号</td>
-<td align="center">2016年10月17日</td>
-<td align="center">景海鹏、陈冬</td>
-</tr>
-<tr>
-<td align="center">12</td>
-<td align="center">神舟十二号</td>
-<td align="center">2021年6月17日</td>
-<td align="center">聂海胜、刘伯明、汤洪波</td>
-</tr>
-<tr>
-<td align="center">13</td>
-<td align="center">神舟十三号</td>
-<td align="center">2021年10月16日</td>
-<td align="center">翟志刚、王亚平、叶光富</td>
-</tr>
-<tr>
-<td align="center">14</td>
-<td align="center">神舟十四号</td>
-<td align="center">2022年6月5日</td>
-<td align="center">陈冬、刘洋、蔡旭哲</td>
-</tr>
-<tr>
-<td align="center">15</td>
-<td align="center">神舟十五号</td>
-<td align="center">2022年11月29日</td>
-<td align="center">费俊龙、邓清明、张陆</td>
-</tr>
-<tr>
-<td align="center">16</td>
-<td align="center">神舟十六号</td>
-<td align="center">2023年5月30日</td>
-<td align="center">景海鹏、朱杨柱、桂海潮</td>
-</tr>
-<tr>
-<td align="center">17</td>
-<td align="center">神舟十七号</td>
-<td align="center">2023年10月6日</td>
-<td align="center">汤洪波、唐胜杰、江新林</td>
-</tr>
-<tr>
-<td align="center">18</td>
-<td align="center">神舟十八号</td>
-<td align="center">2024年4月25日</td>
-<td align="center">叶光富、李聪、李广苏</td>
-</tr>
-</tbody></table>
+<p>ChatGPT是一个进行EDA的高效的工具，因为它可以简化上面这些过程。我们可以用这个基于AI的聊天机器人完成EDA任务。我们接下探讨如何使用ChatGPT进行探索性数据分析。</p>
+<h3 id="02-ChatGPT-for-EDA数据可视化"><a href="#02-ChatGPT-for-EDA数据可视化" class="headerlink" title="02 ChatGPT for EDA数据可视化"></a>02 ChatGPT for EDA数据可视化</h3><p>ChatGPT在探索性数据分析中可以提供非常强的数据可视化能力。这里，需要指出的是，ChatGPT本身无法进行动态的数据可视化任务。然而，它可以帮助我们进行数据可视化。</p>
+<p>我们可以使用ChatGPT来清洗数据，排除任何不一致或异常。除此之外，这个聊天机器人还可以帮助我们删除重复记录等。</p>
+<p>此外，我们还可以学习如何使用ChatGPT来协助处理复杂的数据可视化。例如，我们可以使用ChatGPT来帮助我们使用诸如Python、R或SQL这样的编程语言来创建图表和图形。这个聊天机器人会为我们提供代码和所有必要的步骤，以完成数据可视化的任务，并做出数据驱动的决策。</p>
+<h3 id="03-ChatGPT-for-EDA数据预测"><a href="#03-ChatGPT-for-EDA数据预测" class="headerlink" title="03 ChatGPT for EDA数据预测"></a>03 ChatGPT for EDA数据预测</h3><p>预测分析是EDA的另一个重要方面。我们通常基于大量数据集，采用机器学习的方式来找出数据之间的规律并预测可能的结果。现在，ChatGPT可以帮我们确定应该使用哪种机器学习模型，以便我们更准确、高效地分析数据。</p>
+<p>这个聊天机器人被训练得能够处理不同的模型。例如，你可以使用分类模型来对数据进行分类，并为不同的变量赋予预定义的值。我们需要做的就是向聊天机器人描述目标变量，并明确想要使用的模型（在这个情况下，是分类模型）。ChatGPT会对数据进行分类，并根据模式进行预测。</p>
+<p>我们也可以要求聊天机器人根据不同的参数对用户进行划分，比如：</p>
+<p><code>使用以下数据集，并将用户分为&lt;输入类别&gt;&lt;插入数据集&gt;</code></p>
+<p>或者你可以使用一些额外的提示prompts来根据某些行为创建用户画像：</p>
+<p><code>根据&lt;画像特征&gt;，将用户划分为不同的群体</code></p>
+<p>通过这种方式，你可以使用ChatGPT进行一些常见的分类或者回归等预测，帮助我们更高效的找到数据间的规律和模式。</p>
+<h3 id="04-给出有效EDA的建议"><a href="#04-给出有效EDA的建议" class="headerlink" title="04 给出有效EDA的建议"></a>04 给出有效EDA的建议</h3><p>如果我们以正确的方式使用ChatGPT，可以帮助我们在探索性数据分析中获取很多信息。这个聊天机器人可以通过为你推荐正确的行动方向来消除数据分析过程中的难题。</p>
+<p>ChatGPT对于探索性数据分析过程可以帮助你的方式包括：</p>
+<p>它可以为你提供解决数据质量问题的实用方法。</p>
+<p>它可以是选择正确的分析工具和革命性技术的全面指导。</p>
+<p>它可以推荐模型构建和分析的相关特性。</p>
+<p>它可以让你理解哪些变量对于EDA来说是重要的。这样，数据科学家就会知道哪些变量可能更有可能产生影响</p>
+<p>它还可以为数据转换提供建议。例如，ChatGPT可以在处理缺失数据、归一化和缩放方面提供有用的建议。你可以使用简单的ChatGPT提示来让聊天机器人为你推荐EDA的最佳实践，</p>
+<p>比如：<code>使用这个数据库&lt;输入数据库&gt;，并分析&lt;输入时间段&gt;中行业&lt;输入行业名称&gt;的趋势，针对&lt;定义段落/客户人口统计/分析景观&gt;</code></p>
+<h3 id="05-ChatGPT-for-EDA情感分析"><a href="#05-ChatGPT-for-EDA情感分析" class="headerlink" title="05 ChatGPT for EDA情感分析"></a>05 ChatGPT for EDA情感分析</h3><p>ChatGPT的最大潜力在于进行情感分析。聊天机器人配备了先进的语言模型，使其具有自然语言处理能力。情感和探索性数据分析之间存在强烈的联系。</p>
+<p>作为一名数据分析师，我们可以分析巨大的数据集，并研究它们的情感。准确的语言模型可以给我们提供大量的数据。让我们看看情感分析和探索性数据分析之间的联系：</p>
+<p>文本分类：在这里，通过情感分析将文本数据分类为几种情感。文本情感分析允许EDA找到与数据中的情绪语气相关的模式和趋势。常用于分析客户评论、社交媒体帖子或与商品或服务相关的评价。</p>
+<p>观点挖掘：在EDA过程中，情感分析可以用来从文本中提取观点。数据分析师可以洞察人们的态度或偏好。它可以进一步用来确定人们表达的主要观点。通过对这些信息的进一步分析，可以了解不同人在不同维度上的情感表现。</p>
+<h3 id="06-ChatGPT-for-统计分析和建模"><a href="#06-ChatGPT-for-统计分析和建模" class="headerlink" title="06 ChatGPT for 统计分析和建模"></a>06 ChatGPT for 统计分析和建模</h3><p>使用统计分析数据并开发可以用于进行预测模型的过程被称为统计分析和建模。数据描述、汇总和解释都可以通过统计分析来完成。统计分析工具可以用来预测未来的值，发现模式，并从收集数据的人口中得出结论。这样，统计建模就成为了从数据中得出结论的强大技术。</p>
+<p>这个AI驱动的模型的分析软件可以收集预测、趋势，以及对收集的数据给出结论。许多不同的行业，如商业、医疗保健和社会科学，都使用统计分析和建模。</p>
+<p>数据分析师可以用以下方式进行统计分析和建模：</p>
+<p>EDA指导：ChatGPT可以在数据中寻找哪些变量相关或者更重要，以此给出建议来帮助完成EDA。它可能会提供有用的关键信息，以便找出趋势、模式或异常值。</p>
+<p>模型选择：在选择可接受的模型时，ChatGPT可以提供建议。为了提高模型性能，它可能会对模型选择、超参数调整和过程验证提供建议。</p>
+<p>模型预测：这个AI模型可以预测结果，并进行验证。它可以分析结果，评估模型的性能，并找出提高预测准确性的方法。</p>
+<h3 id="07-总结"><a href="#07-总结" class="headerlink" title="07 总结"></a>07 总结</h3><p>如果你是一名数据分析师，我们要开始考虑如何使用ChatGPT在探索性数据分析工作中发挥它的作用了。它可以在数据分析中帮助我们快速、高效、准确的完成EDA的工作，同时它还能给我们一些创新的、隐藏的洞察和建议，可以预见，在不久的将来，ChatGPT一定会重塑甚并颠覆数据分析的技能栈和分析工作内容，所以学会使用它，才能让AI为我们打工。</p>
 ]]></content>
       <categories>
-        <category>生活</category>
-        <category>碎碎念</category>
+        <category>技术</category>
+        <category>人工智能</category>
+        <category>Prompt</category>
       </categories>
-      <tags>
-        <tag>随笔</tag>
-        <tag>分享</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>阿里云盘第三方接口将需要额外付费</title>
-    <url>/2024/04/26/%E7%AC%AC%E4%B8%89%E6%96%B9%E9%98%BF%E9%87%8C%E4%BA%91%E6%8E%A5%E5%8F%A3%E6%94%B6%E8%B4%B9/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
-<p>网络消息称阿里云盘将于五月下旬推出 “三方应用权益包”，购买后可在第三方应用中享受高速下载通道、高清点播清晰度等权益，未购买的用户将无法享受这些权益。</p>
-</blockquote>
-<blockquote>
-<p>本文仅为预告,具体的权益内容和购买流程请以最终上线页面为准。</p>
-</blockquote>
-<span id="more"></span>
-
-<p>不氪金三方权益包，基于阿里云盘的播放方案就都只能看标清了，包括但不限于<strong>Infuse直连阿里云盘</strong>，<strong>alist挂载阿里云</strong>。看来又要回归20年前bt下载的时代了，硬盘价格估计又要应声上涨📈。</p>
-<p><img src="/2024/04/26/%E7%AC%AC%E4%B8%89%E6%96%B9%E9%98%BF%E9%87%8C%E4%BA%91%E6%8E%A5%E5%8F%A3%E6%94%B6%E8%B4%B9/1.webp" alt="image1"><br><img src="/2024/04/26/%E7%AC%AC%E4%B8%89%E6%96%B9%E9%98%BF%E9%87%8C%E4%BA%91%E6%8E%A5%E5%8F%A3%E6%94%B6%E8%B4%B9/2.webp" alt="image2"></p>
-]]></content>
-      <categories>
-        <category>生活</category>
-        <category>碎碎念</category>
-      </categories>
-      <tags>
-        <tag>随笔</tag>
-        <tag>分享</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>有意思的翻译PROMPT</title>
-    <url>/2024/04/29/%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84%E7%BF%BB%E8%AF%91PROMPT/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><img src="/2024/04/29/%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84%E7%BF%BB%E8%AF%91PROMPT/image-20240428223752145.jpeg"></p>
-<span id="more"></span>
-
-<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">你是一个英语翻译团队的领导. 你会安排团队成员进行如下翻译, 实现翻译的&quot;信达雅&quot;目标:  </span><br><span class="line">  </span><br><span class="line">第一轮翻译<span class="comment">--信,追求直译, 将英文翻译成中文, 力求准确  </span></span><br><span class="line">  </span><br><span class="line">第二轮翻译<span class="comment">--达,在第一轮翻译的基础上, 考虑文化, 语境, 语义, 思考文字背后想要表达的意思, 进行意译, 力求意境契合, 记得分开思考和翻译内容。  </span></span><br><span class="line">  </span><br><span class="line">第三轮翻译<span class="comment">--雅, 基于第二轮翻译理解的语境含义, 进一步思考其中的哲理, 然后使用中国&lt;诗经&gt;的语言风格针对哲理和语义进行翻译, 力求简明, 古意盎然  </span></span><br><span class="line">  </span><br><span class="line">例如:  </span><br><span class="line">- you need you. 哲理部分，可以引申到佛家所说的&quot;莫向外求&quot;, 儒家所说的&quot;反求诸己&quot;, 然后思考使用诗经语言风格进行重新表述.  </span><br><span class="line">  </span><br><span class="line">- <span class="keyword">nothing</span> <span class="keyword">for</span> <span class="keyword">nothing</span>. 哲理部分，可以引申到诗句“世上本无事，庸人自扰之”，也可引申到俗语“尘归尘，土归土”  </span><br><span class="line">  </span><br><span class="line">第四轮翻译<span class="comment">--初审: 完成三轮翻译后， 深吸一口气， 缓一缓， 思考一下第三轮翻译的结果，与其哲理的偏差在哪？ 不要扩展太多，务求精练深刻，精辟是第一要义。 据此思路进行改进。  </span></span><br><span class="line">  </span><br><span class="line">第五轮翻译<span class="comment">--终审: 最终，你将亲自进行审稿， 你会对比原文和最后的翻译结果， 先思考《诗经》的语言表达风格要点，再审阅初审翻译的结果是否满足, 并给出你的审校修改结论。  </span></span><br><span class="line">  </span><br><span class="line">注意: 思考部分,请使用 【思考】 开头，翻译结果请使用【翻译】开头。  </span><br><span class="line">  </span><br><span class="line">请严格遵守以上工作流程， 对以下文字进行翻译：</span><br></pre></td></tr></table></figure>]]></content>
       <tags>
         <tag>Prompt</tag>
-        <tag>AI</tag>
-        <tag>翻译</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>什么是PARA</title>
-    <url>/2024/04/29/whats_PARA/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>PARA 是一种组织知识的方法，全称为 “Progressive Authentication of Reliable Acumen”，中文可以译为“渐进式验证可靠洞察”。</p>
-<p>它是由 Tiago Forte 提出的，主要用于管理笔记和信息，以提高知识工作的效率。</p>
-<span id="more"></span>
-
-<p>PARA 主要包含四个层级，每个层级都有其特定的功能和目的：</p>
-<ol>
-<li><strong>项目（Projects）</strong>：这是 PARA 结构中的最高层级，代表着你正在进行的各种项目或目标。每个项目都应该是独立的，有明确的开始和结束。</li>
-<li><strong>领域（Areas））：</strong>这个层级代表你感兴趣或需要管理的不同领域或主题，如工作、健康、学习等。领域通常是持久的，不会像项目那样有明确的结束。</li>
-<li><strong>资源（Resources）</strong>：资源是指那些可以跨项目和领域重复使用的具体信息或知识，如文章、教程、工具等。这个层级的目的是为了积累和整理那些可能有用的信息。</li>
-<li><strong>行动（Actions）</strong>：这是最低的层级，包括了具体的行动项或待办事项。这些通常是短期任务，需要被执行或跟踪。</li>
-</ol>
-<p>PARA 方法的一个关键特点是灵活性和可定制性，它允许用户根据自己的需要调整和组织信息。这种方法特别适合那些需要处理大量信息并希望提高工作效率的人。通过使用 PARA，用户可以更有效地管理他们的知识和任务，从而提高生产力。</p>
-]]></content>
-      <tags>
-        <tag>方法论</tag>
-        <tag>PARA</tag>
+        <tag>GPT</tag>
+        <tag>数据分析</tag>
       </tags>
   </entry>
   <entry>
@@ -11262,9 +11377,9 @@
         <category>obsidian</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>Obsidian</tag>
         <tag>插件</tag>
+        <tag>笔记</tag>
         <tag>分享</tag>
         <tag>webdav</tag>
       </tags>
@@ -11361,152 +11476,37 @@
       </tags>
   </entry>
   <entry>
-    <title>GroupBy</title>
-    <url>/2023/03/04/GroupBy/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>当我们需要对数据进行分组并进行聚合计算时，可以使用GROUP BY子句。GROUP BY子句通常与聚合函数（如SUM、COUNT、AVG等）一起使用。</p>
-<p>通过GROUP BY子句，我们可以将数据按照指定的列进行分组，并对每个组进行聚合计算。这些聚合计算的结果将基于每个组的值。</p>
-<p>下面是一个示例，假设我们有一个名为”orders”的表，其中包含了订单信息：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT product_id, COUNT(*) as total_orders</span><br><span class="line">FROM orders</span><br><span class="line">GROUP BY product_id;</span><br></pre></td></tr></table></figure>
+    <title>有意思的翻译PROMPT</title>
+    <url>/2024/04/29/%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84%E7%BF%BB%E8%AF%91PROMPT/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><img src="/2024/04/29/%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84%E7%BF%BB%E8%AF%91PROMPT/image-20240428223752145.jpeg"></p>
 <span id="more"></span>
-<p>在上述示例中，我们按照”product_id”列进行了分组，并计算了每个产品的订单总数。通过使用COUNT(*)函数，我们可以计算每个产品的订单数量。</p>
-<p>GROUP BY子句可以与多个列一起使用，以便更细致地分组数据。例如：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT category_id, product_id, COUNT(*) as total_orders</span><br><span class="line">FROM orders</span><br><span class="line">GROUP BY category_id, product_id;</span><br></pre></td></tr></table></figure>
 
-<p>在这个示例中，我们按照”category_id”和”product_id”两列进行了分组，并计算了每个产品在每个类别中的订单总数。</p>
-<p>需要注意的是，GROUP BY子句必须与SELECT语句一起使用，并且SELECT语句中的列必须是GROUP BY子句中的列或者是聚合函数的参数。这样才能确保查询的正确性。</p>
-]]></content>
-      <categories>
-        <category>技术</category>
-        <category>数据分析</category>
-        <category>SQL</category>
-      </categories>
-      <tags>
-        <tag>笔记</tag>
-        <tag>SQL</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>SQL窗口函数_LEAD_LAG详解</title>
-    <url>/2023/03/04/SQL%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0_LEAD_LAG%E8%AF%A6%E8%A7%A3/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>当涉及到SQL窗口函数时，LEAD()和LAG()是两个非常有用的函数。它们允许我们在查询中访问当前行之前或之后的行的值。</p>
-<p>LEAD()函数返回当前行之后的指定行数的值，而LAG()函数返回当前行之前的指定行数的值。这两个函数在许多情况下都很有用，例如在分析时间序列数据或计算相邻行之间的差异时。</p>
-<p>让我们以一个简单的示例来说明LEAD()和LAG()函数的用法。假设我们有一个名为sales的表，其中包含了销售数据：</p>
-<p>sales表：</p>
-<table>
-<thead>
-<tr>
-<th>sale_id</th>
-<th>sale_date</th>
-<th>sale_amount</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td>2021-01-01</td>
-<td>1000</td>
-</tr>
-<tr>
-<td>2</td>
-<td>2021-01-02</td>
-<td>1500</td>
-</tr>
-<tr>
-<td>3</td>
-<td>2021-01-03</td>
-<td>2000</td>
-</tr>
-<tr>
-<td>4</td>
-<td>2021-01-04</td>
-<td>1200</td>
-</tr>
-<tr>
-<td>5</td>
-<td>2021-01-05</td>
-<td>1800</td>
-</tr>
-</tbody></table>
-<p>如果我们想要计算每天的销售额与前一天销售额的差异，我们可以使用LAG()函数：</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">  sale_date,</span><br><span class="line">  sale_amount,</span><br><span class="line">  <span class="built_in">LAG</span>(sale_amount) <span class="keyword">OVER</span> (<span class="keyword">ORDER</span> <span class="keyword">BY</span> sale_date) <span class="keyword">AS</span> previous_day_sale_amount,</span><br><span class="line">  sale_amount <span class="operator">-</span> <span class="built_in">LAG</span>(sale_amount) <span class="keyword">OVER</span> (<span class="keyword">ORDER</span> <span class="keyword">BY</span> sale_date) <span class="keyword">AS</span> difference</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">  sales;</span><br></pre></td></tr></table></figure>
-<span id="more"></span>
-<p>上述查询中，我们使用了LAG()函数来获取前一天的销售额，并通过与当前销售额的差异计算了difference列的值。通过指定ORDER BY子句，我们可以按照日期的顺序进行计算。</p>
-<p>类似地，如果我们想要计算每天的销售额与后一天销售额的差异，我们可以使用LEAD()函数：</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">  sale_date,</span><br><span class="line">  sale_amount,</span><br><span class="line">  <span class="built_in">LEAD</span>(sale_amount) <span class="keyword">OVER</span> (<span class="keyword">ORDER</span> <span class="keyword">BY</span> sale_date) <span class="keyword">AS</span> next_day_sale_amount,</span><br><span class="line">  <span class="built_in">LEAD</span>(sale_amount) <span class="keyword">OVER</span> (<span class="keyword">ORDER</span> <span class="keyword">BY</span> sale_date) <span class="operator">-</span> sale_amount <span class="keyword">AS</span> difference</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">  sales;</span><br></pre></td></tr></table></figure>
-
-<p>这次，我们使用了LEAD()函数来获取后一天的销售额，并计算了差异。</p>
-<p>LEAD()和LAG()函数还支持更复杂的用法，比如指定分区（PARTITION BY）来在不同的组中进行计算，以及指定默认值以处理边界情况。它们可以极大地提升分析和比较相邻行的能力。</p>
-]]></content>
-      <categories>
-        <category>技术</category>
-        <category>数据分析</category>
-        <category>SQL</category>
-      </categories>
-      <tags>
-        <tag>笔记</tag>
-        <tag>SQL</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>数据分析师常用的Prompt技巧1/2</title>
-    <url>/2023/04/23/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E5%B8%B8%E7%94%A8%E7%9A%84Prompt%E6%8A%80%E5%B7%A7/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>Prompt在数据分析中的作用非常重要，特别是在使用ChatGPT辅助数据分析工作时。Prompt可以被看作是向模型提供的任务说明或问题，它能够引导模型按照我们期望的方式进行工作。</p>
-<p>一个好的prompt可以明确指示模型执行具体的任务，例如进行数据清洗、数据可视化、统计分析等，并能够提供足够的上下文信息帮助模型理解任务的需求和目标。通过使用优秀的prompt，我们可以更高效地利用AI技术来协助我们的数据分析工作，大幅提升工作效率，同时也能帮助我们更深入地理解数据，从而得出更有价值的洞见。因此，学习如何编写有效的prompt是进行数据分析工作的重要技能。</p>
-<p>下面将通过数据分析工作中的几个常见任务来分别给出示例，演示如何正确、高效使用Prompt。</p>
-<h3 id="1-形成分析思路"><a href="#1-形成分析思路" class="headerlink" title="1. 形成分析思路"></a>1. 形成分析思路</h3><p>❌【普通人的prompt】:</p>
-<p><code>我需要找出销量最高的产品。</code></p>
-<p> ✅【数据分析师本的prompt】 :</p>
-<p><code>我有一个含&#39;product_id&#39;，&#39;order_id&#39;，&#39;purchase_date&#39;和&#39;sales_volume&#39;等字段的销售数据库。我想找出在过去一年内销量最高的十种产品。请帮我构建一个数据分析思路来进行这项工作。</code></p>
-<p>【两个版本的差异】: 较好版本的prompt明确了所需的数据库字段、时间范围以及具体的分析目标，使模型有更多的信息可以生成具体的分析思路。</p>
-<h3 id="2-构建指标体系"><a href="#2-构建指标体系" class="headerlink" title="2. 构建指标体系"></a>2. 构建指标体系</h3><p>❌【普通人的prompt】: </p>
-<p><code>我需要一些电商指标。</code> </p>
-<p> ✅【数据分析师本的prompt】:</p>
-<p><code>我正在为一家电商网站构建一个业务指标体系，包括了用户行为、销售绩效、市场营销效果等方面的指标。请帮我列出每个方面下可能包含的几个关键指标。</code> </p>
-<p>【两个版本的差异】: 较好版本的prompt明确了需要电商的哪几个方面的指标，使模型可以根据这些方向提供更具体的指标。</p>
-<h3 id="3-数据清洗"><a href="#3-数据清洗" class="headerlink" title="3. 数据清洗"></a>3. 数据清洗</h3><p>❌【普通人的prompt】: </p>
-<p><code>我需要进行数据清洗。</code></p>
-<p> ✅【数据分析师本的prompt】: </p>
-<p><code>我有一份包含用户年龄、性别、购买记录等信息的数据，但我注意到其中有些年龄数据存在负数，有些购买记录数据为空。请帮我规划一下数据清洗的流程，包括如何处理这些异常数据，以及我应该注意哪些可能的数据质量问题。</code></p>
-<p>【两个版本的差异】: 较好版本的prompt详细描述了数据的具体情况和存在的问题，使模型可以给出更具体的数据清洗策略和注意事项。</p>
-<h3 id="4-完成SQL代码"><a href="#4-完成SQL代码" class="headerlink" title="4. 完成SQL代码"></a>4. 完成SQL代码</h3><p>❌【普通人的prompt】: </p>
-<p><code>我需要查询用户的购买信息。</code> </p>
-<p> ✅【数据分析师本的prompt】: </p>
-<p><code>我有一个&#39;orders&#39;表，包含&#39;user_id&#39;, &#39;product_id&#39;, &#39;purchase_date&#39;, &#39;amount&#39;等字段。我想查询出在过去30天内购买金额超过500的用户的列表，并按照购买金额降序排序。请帮我写出对应的SQL代码。</code> </p>
-<p>【两个版本的差异】: 较好版本的prompt提供了明确的表字段、查询条件以及排序要求，使模型可以生成更精确的SQL代码。</p>
-<h3 id="5-SQL性能优化"><a href="#5-SQL性能优化" class="headerlink" title="5. SQL性能优化"></a>5. SQL性能优化</h3><p>❌【普通人的prompt】: </p>
-<p><code>我需要优化我的SQL查询。</code> </p>
-<p> ✅【数据分析师本的prompt】:</p>
-<p><code>我正在运行一个查询，它包含多个联接和子查询，并且查询时间很长。我在&#39;user&#39;表和&#39;order&#39;表之间进行了联接，然后在结果中进行了聚合操作。请帮我提供一些优化此查询性能的策略或建议。</code> </p>
-<p>【两个版本的差异】: 较好版本的prompt详细描述了查询的具体情况，使模型可以给出更具体的优化建议。</p>
-<h3 id="6-统计学分析"><a href="#6-统计学分析" class="headerlink" title="6. 统计学分析"></a>6. 统计学分析</h3><p>❌【普通人的prompt】:</p>
-<p><code>我需要进行一些统计分析。</code> </p>
-<p> ✅【数据分析师本的prompt】: </p>
-<p><code>我想对我们网站的用户年龄进行描述性统计分析，包括计算年龄的平均值、中位数、分位数、最小值、最大值以及标准差。并希望能理解年龄和用户购买金额之间的关系，需要进行相关性分析。请帮我设计一个分析流程。</code> </p>
-<p>【两个版本的差异】: 较好版本的prompt提供了具体的统计分析需求和数据内容，使模型能够生成更具体和有针对性的分析建议。</p>
-<h3 id="7-数据可视化"><a href="#7-数据可视化" class="headerlink" title="7. 数据可视化"></a>7. 数据可视化</h3><p>❌【普通人的prompt】:</p>
-<p><code>我需要进行数据可视化。</code></p>
-<p> ✅【数据分析师本的prompt】:</p>
-<p><code>我正在分析一个包含用户购买行为数据的数据集，我想对用户的购买金额分布和购买金额与购买次数的关系进行可视化展示。请帮我选择合适的可视化图表类型，以及如何设计图表以使信息展示得更清晰易懂。</code></p>
-<p>【两个版本的差异】:较好版本的prompt提供了具体的可视化目标和数据情况，使模型可以给出更具体的可视化建议。</p>
-<h3 id="8-AB-Test-结果分析"><a href="#8-AB-Test-结果分析" class="headerlink" title="8. AB Test 结果分析"></a>8. AB Test 结果分析</h3><p>❌【普通人的prompt】:</p>
-<p><code>我需要进行AB测试的显著性检验。</code></p>
-<p> ✅【数据分析师本的prompt】:</p>
-<p><code>我进行了一次AB测试，A组有500人，其中有200人完成了购买行为；B组有550人，其中有250人完成了购买行为。我想知道B组的转化率是否显著高于A组，需要进行显著性检验。请帮我设计一个检验流程，包括使用哪种统计检验方法，如何进行计算，以及如何解读结果。</code></p>
-<p>【两个版本的差异】:较好版本的prompt提供了具体的AB测试数据和目标，使模型可以生成更具体和有针对性的显著性检验方法和步骤。</p>
-<h3 id="9-完成分析报告"><a href="#9-完成分析报告" class="headerlink" title="9. 完成分析报告"></a>9. 完成分析报告</h3><p>❌【普通人的prompt】:</p>
-<p><code>我需要写一个分析报告。</code> </p>
-<p> ✅【数据分析师本的prompt】:</p>
-<p><code>我已经完成了对用户年龄和购买行为的关系的分析，发现年龄和购买金额之间存在中等程度的正相关性。请帮我撰写一个分析报告来呈现这个发现，包括报告的背景、方法、结果和讨论等部分。</code> </p>
-<p>【两个版本的差异】:较好版本的prompt提供了具体的分析结果以及报告的结构要求，使模型可以生成结构清晰、内容完整的分析报告。</p>
-]]></content>
-      <categories>
-        <category>技术</category>
-        <category>人工智能</category>
-        <category>Prompt</category>
-      </categories>
+<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">你是一个英语翻译团队的领导. 你会安排团队成员进行如下翻译, 实现翻译的&quot;信达雅&quot;目标:  </span><br><span class="line">  </span><br><span class="line">第一轮翻译<span class="comment">--信,追求直译, 将英文翻译成中文, 力求准确  </span></span><br><span class="line">  </span><br><span class="line">第二轮翻译<span class="comment">--达,在第一轮翻译的基础上, 考虑文化, 语境, 语义, 思考文字背后想要表达的意思, 进行意译, 力求意境契合, 记得分开思考和翻译内容。  </span></span><br><span class="line">  </span><br><span class="line">第三轮翻译<span class="comment">--雅, 基于第二轮翻译理解的语境含义, 进一步思考其中的哲理, 然后使用中国&lt;诗经&gt;的语言风格针对哲理和语义进行翻译, 力求简明, 古意盎然  </span></span><br><span class="line">  </span><br><span class="line">例如:  </span><br><span class="line">- you need you. 哲理部分，可以引申到佛家所说的&quot;莫向外求&quot;, 儒家所说的&quot;反求诸己&quot;, 然后思考使用诗经语言风格进行重新表述.  </span><br><span class="line">  </span><br><span class="line">- <span class="keyword">nothing</span> <span class="keyword">for</span> <span class="keyword">nothing</span>. 哲理部分，可以引申到诗句“世上本无事，庸人自扰之”，也可引申到俗语“尘归尘，土归土”  </span><br><span class="line">  </span><br><span class="line">第四轮翻译<span class="comment">--初审: 完成三轮翻译后， 深吸一口气， 缓一缓， 思考一下第三轮翻译的结果，与其哲理的偏差在哪？ 不要扩展太多，务求精练深刻，精辟是第一要义。 据此思路进行改进。  </span></span><br><span class="line">  </span><br><span class="line">第五轮翻译<span class="comment">--终审: 最终，你将亲自进行审稿， 你会对比原文和最后的翻译结果， 先思考《诗经》的语言表达风格要点，再审阅初审翻译的结果是否满足, 并给出你的审校修改结论。  </span></span><br><span class="line">  </span><br><span class="line">注意: 思考部分,请使用 【思考】 开头，翻译结果请使用【翻译】开头。  </span><br><span class="line">  </span><br><span class="line">请严格遵守以上工作流程， 对以下文字进行翻译：</span><br></pre></td></tr></table></figure>]]></content>
       <tags>
         <tag>Prompt</tag>
-        <tag>GPT</tag>
-        <tag>数据分析</tag>
+        <tag>AI</tag>
+        <tag>翻译</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>什么是PARA</title>
+    <url>/2024/04/29/whats_PARA/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>PARA 是一种组织知识的方法，全称为 “Progressive Authentication of Reliable Acumen”，中文可以译为“渐进式验证可靠洞察”。</p>
+<p>它是由 Tiago Forte 提出的，主要用于管理笔记和信息，以提高知识工作的效率。</p>
+<span id="more"></span>
+
+<p>PARA 主要包含四个层级，每个层级都有其特定的功能和目的：</p>
+<ol>
+<li><strong>项目（Projects）</strong>：这是 PARA 结构中的最高层级，代表着你正在进行的各种项目或目标。每个项目都应该是独立的，有明确的开始和结束。</li>
+<li><strong>领域（Areas））：</strong>这个层级代表你感兴趣或需要管理的不同领域或主题，如工作、健康、学习等。领域通常是持久的，不会像项目那样有明确的结束。</li>
+<li><strong>资源（Resources）</strong>：资源是指那些可以跨项目和领域重复使用的具体信息或知识，如文章、教程、工具等。这个层级的目的是为了积累和整理那些可能有用的信息。</li>
+<li><strong>行动（Actions）</strong>：这是最低的层级，包括了具体的行动项或待办事项。这些通常是短期任务，需要被执行或跟踪。</li>
+</ol>
+<p>PARA 方法的一个关键特点是灵活性和可定制性，它允许用户根据自己的需要调整和组织信息。这种方法特别适合那些需要处理大量信息并希望提高工作效率的人。通过使用 PARA，用户可以更有效地管理他们的知识和任务，从而提高生产力。</p>
+]]></content>
+      <tags>
+        <tag>方法论</tag>
+        <tag>PARA</tag>
       </tags>
   </entry>
 </search>
