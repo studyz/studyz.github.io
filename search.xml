@@ -1,361 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>群晖Git部署Hexo</title>
-    <url>/2019/05/06/Git_Hexo/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="一、前期准备"><a href="#一、前期准备" class="headerlink" title="一、前期准备"></a>一、前期准备</h2><h3 id="1-1-注册-账号-Gitee-GitHub"><a href="#1-1-注册-账号-Gitee-GitHub" class="headerlink" title="1.1 注册 账号 Gitee&#x2F;GitHub"></a>1.1 注册 账号 Gitee&#x2F;GitHub</h3><p>注册一个属于自己的 Github 或 Gitee 账号，</p>
-<p>Gitee在国内访问速度更快，但Gitee需要上传身份证照片若干张进行实名认证，懒得掏身份证，pass掉。</p>
-<span id="more"></span>
-<p><img src="/2019/05/06/Git_Hexo/%E5%AE%9E%E5%90%8D%E9%AA%8C%E8%AF%81.png" alt="实名认证"></p>
-<p>本文采用 Github 演示。 </p>
-<h3 id="1-2-安装-Git"><a href="#1-2-安装-Git" class="headerlink" title="1.2 安装 Git"></a>1.2 安装 Git</h3><p>选择对应的系统平台，下载后，傻瓜式安装即可。 安装完成后，打开运行 –&gt; 输入命令，回车打开命令行窗口 输入以下Git指令</p>
-<figure class="highlight ada"><table><tr><td class="code"><pre><span class="line">git <span class="comment">--version</span></span><br></pre></td></tr></table></figure>
-
-<p>出现版本号，即代表 git 安装成功</p>
-<h3 id="1-3-Git-和-Github-建立联系"><a href="#1-3-Git-和-Github-建立联系" class="headerlink" title="1.3 Git 和 Github 建立联系"></a>1.3 Git 和 Github 建立联系</h3><p>任意目录下，打开 git bash 命令行，输入以下命令生成公钥：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C 邮箱</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">为了管理多个密钥，你可以在生成密钥时为每个密钥指定不同的文件名</span></span><br><span class="line">ssh-keygen -t rsa -C &quot;your_email@example.com&quot; -f ~/.ssh/id_rsa_example_com</span><br></pre></td></tr></table></figure>
-
-
-<p>回车出现 （y&#x2F;n）, 输入 y , 连续点击回车，即可生成。</p>
-<p>在<code>~/.ssh</code> 目录，找到 <code>id_rsa_example_com.pub</code> 文件，<code>cat ~/.ssh/id_rsa_example_com.pub</code>获取公钥。</p>
-<p>到GitHub找到 <code>设置</code> 并打开，找到左侧栏 <code>Access</code>下找到<code>SSH and GPG keys</code>，点击<code>New SSH keys</code>，添加 <code>Title</code> 和 <code>Key</code></p>
-<p>云端仓库创建完成的 gitee，更改远程仓库 URL 为 SSH</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">chmod 600 ~/.ssh/id_rsa_*</span><br><span class="line">chown your_username:users ~/.ssh/id_rsa_*</span><br></pre></td></tr></table></figure>
-
-
-<p><strong>输入以下指令，进行全局配置：</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;你的用户名&quot;</span><br><span class="line">git config --global user.email &quot;你的邮箱&quot;</span><br></pre></td></tr></table></figure>
-
-<p>查看config文件是否存在，不存在新建<code>touch config</code>,<br> config文件内容如下：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">Host github.com</span><br><span class="line">    User git</span><br><span class="line">    IdentityFile ~/.ssh/id_rsa_example_com</span><br><span class="line">    PreferredAuthentications publickey</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">测试连接</span></span><br><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
-
-
-
-<p>将纳入版本库的文件，提交到 gitee 远程仓库：</p>
-<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">add</span> .</span><br><span class="line">git commit -m <span class="string">&#x27;first commit&#x27;</span></span><br><span class="line">git remote <span class="built_in">add</span> origin 你的仓库地址</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
-
-<p>此时，提交完成，打开浏览器，输入你的仓库地址，刷新即可看到文件。</p>
-<ol>
-<li><code>hexo clean</code>: 这个命令用于清理缓存文件和已生成的静态文件。它删除了<code>public</code>文件夹中的内容以及<code>.hexo</code>文件夹中的缓存文件。这是在部署博客之前的一个好习惯，因为它确保了生成的静态文件是最新的，避免了由于旧的缓存或文件导致的潜在问题。</li>
-<li><code>hexo deploy</code>: 这个命令用于将博客部署到服务器上。在执行这个命令之前，Hexo会生成所有的静态文件，并根据<code>_config.yml</code>文件中的<code>deploy</code>部分配置将它们上传到指定的服务器。这通常涉及到将文件推送到GitHub Pages、FTP服务器或其他静态网站托管服务。</li>
-</ol>
-<figure class="highlight 1c"><table><tr><td class="code"><pre><span class="line">$ hexo clean <span class="meta">&amp;&amp; hexo deploy</span></span><br></pre></td></tr></table></figure>
-
-<p>在NAS上定时执行<code>hexo clean &amp;&amp; hexo deploy</code>，实现自动更新内容。</p>
-]]></content>
-      <categories>
-        <category>技术</category>
-        <category>博客</category>
-        <category>hexo</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-        <tag>笔记</tag>
-        <tag>技术</tag>
-        <tag>ssh</tag>
-        <tag>GitHub</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>苹果全平台无缝同步群晖Obsidian库</title>
-    <url>/2019/05/24/Apple%E5%85%A8%E5%B9%B3%E5%8F%B0%E6%97%A0%E7%BC%9D%E5%90%8C%E6%AD%A5%E7%BE%A4%E6%99%96Obsidian%E5%BA%93/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><strong>前提介绍：</strong></p>
-<blockquote>
-<p><a href="https://obsidian.md/">Obsidian</a>是一款基于Markdown的笔记软件，以其强大的链接和标签功能、本地化存储及丰富的插件生态，为用户提供高效的知识管理和创作体验。 </p>
-</blockquote>
-<blockquote>
-<p><a href="https://www.synology.cn/zh-cn">群晖NAS</a>是一种基于网络连接的存储设备，它提供集中管理和共享文件的平台，支持多种功能，如数据备份、多媒体服务器等，方便用户随时随地访问和管理数据。</p>
-</blockquote>
-<h2 id="本文的目的"><a href="#本文的目的" class="headerlink" title="本文的目的"></a>本文的目的</h2><p><a href="https://obsidian.md/">Obsidian</a>作为一款优秀的markdown笔记软件，非常适合搭配hexo撰写blog。</p>
-<p>通过macOS上群晖Drive将hexo的post目录同步到iCloud，实现macOS和群晖drive的同步，然后通过iCloud在不同苹果设备上同步hexo的post目录，实现任意苹果设备撰写blog都可以在macOS通过群晖drive将新blog内容同步至群晖，再由群晖将内容自动布置到GitHub，实现blog网站的自动更新。</p>
-<span id="more"></span>
-
-
-<div class="markmap-container" style="height:400px">
-  <svg data="{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:1,&quot;p&quot;:{&quot;lines&quot;:[1,2]},&quot;v&quot;:&quot;Blog内容同步与自动更新流程&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:2,&quot;p&quot;:{&quot;lines&quot;:[3,4]},&quot;v&quot;:&quot;macOS&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[4,5]},&quot;v&quot;:&quot;群晖Drive&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:5,&quot;p&quot;:{&quot;lines&quot;:[5,6]},&quot;v&quot;:&quot;同步Hexo的post目录到iCloud&quot;}]}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:2,&quot;p&quot;:{&quot;lines&quot;:[7,8]},&quot;v&quot;:&quot;iCloud&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:4,&quot;p&quot;:{&quot;lines&quot;:[8,9]},&quot;v&quot;:&quot;同步Hexo的post目录&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:4,&quot;p&quot;:{&quot;lines&quot;:[9,10]},&quot;v&quot;:&quot;跨苹果设备同步&quot;}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:2,&quot;p&quot;:{&quot;lines&quot;:[11,12]},&quot;v&quot;:&quot;苹果设备&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[12,13]},&quot;v&quot;:&quot;任意设备&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:5,&quot;p&quot;:{&quot;lines&quot;:[13,14]},&quot;v&quot;:&quot;撰写blog&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:5,&quot;p&quot;:{&quot;lines&quot;:[14,15]},&quot;v&quot;:&quot;通过iCloud同步到macOS&quot;}]}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:2,&quot;p&quot;:{&quot;lines&quot;:[16,17]},&quot;v&quot;:&quot;macOS（继续）&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[17,18]},&quot;v&quot;:&quot;群晖Drive（继续）&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:5,&quot;p&quot;:{&quot;lines&quot;:[18,19]},&quot;v&quot;:&quot;将新blog内容同步至群晖&quot;}]}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:2,&quot;p&quot;:{&quot;lines&quot;:[20,21]},&quot;v&quot;:&quot;群晖&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:4,&quot;p&quot;:{&quot;lines&quot;:[21,22]},&quot;v&quot;:&quot;将内容自动布置到GitHub&quot;}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:2,&quot;p&quot;:{&quot;lines&quot;:[23,24]},&quot;v&quot;:&quot;GitHub&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:4,&quot;p&quot;:{&quot;lines&quot;:[24,25]},&quot;v&quot;:&quot;自动更新blog网站&quot;}]}]}"></svg>
-</div>
-
-
-
-<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><blockquote>
-<p>iPadOS和iOS端Obsidian只能识别打开iCloud Drive中Obsidian目录下的库，但macOS端的群晖Drive同步目录找不到iCloud目录，也就无法从iCloud同步至群晖。</p>
-</blockquote>
-<h2 id="解决步骤"><a href="#解决步骤" class="headerlink" title="解决步骤"></a>解决步骤</h2><h3 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h3><p>全部苹果设备开启 iCloud 同步，在 iOS&#x2F;iPadOS 下打开 obsidian 新建库，会自动生成一个<code>welcome.md</code>文件。</p>
-<h3 id="第二步"><a href="#第二步" class="headerlink" title="第二步"></a>第二步</h3><p>打开 macOS 访达，左侧打开 iCloud 云盘，点 obsidian 图标文件下载到本地管理（云箭头表示还在云上）。</p>
-<h3 id="第三步"><a href="#第三步" class="headerlink" title="第三步"></a>第三步</h3><p>显示 Mac 隐藏文件的两种方法：</p>
-<ol>
-<li>mac 终端中输入入命令：<code>defaults write com.apple.finder AppleShowAllFiles -bool true; killall Finder</code>  。</li>
-<li>快捷键组合：<code>⌘+⇧+。</code></li>
-</ol>
-<p>隐藏文件显示后，找到自己用户名下的资源库，在上方菜单栏<code>显示</code>-<code>查看显示选项</code>（<code>⌘+J</code>）中勾选<code>显示资源库文件夹</code>，这样就可以在群晖Drive同步软件中定位到 iCloud 内的文件夹。</p>
-<h3 id="第四步"><a href="#第四步" class="headerlink" title="第四步"></a>第四步</h3><p>macOS 打开群晖的配套同步软件<code>群晖 Drive Client</code>设置，创建选定<code>mac</code>用户名下<code>library</code>中的<code>moblie documents</code>文件，翻到iCloud前缀的obsidian文件夹，同步之前 iOS 中新建的库即可。</p>
-<h3 id="第五步"><a href="#第五步" class="headerlink" title="第五步"></a>第五步</h3><p>macOS 中iCloud下 Obsidian 打开库文件夹，在网络 nas 中即可找到此 iOS&#x2F;iPadOS 新建的库。</p>
-<p>完成之后，关闭显示 Mac 隐藏文件：<code>defaults write com.apple.finder AppleShowAllFiles -boolean false ; killall Finder</code></p>
-<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><p>实测多设备下修改输入，几乎都是秒刷到账，唯一要担心的是删的太快，如果在一处误删掉某内容，很快会被同步覆盖。不过群晖drive 中可以看同步日志，应问题不大。</p>
-<p>目前还没有遇上同步问题，仅提供解决方案，数据无价，请自行斟酌＼（＾ ＾）／</p>
-]]></content>
-      <categories>
-        <category>技术</category>
-        <category>博客</category>
-        <category>hexo</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-        <tag>markdown</tag>
-        <tag>Obsidian</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>在hexo博客中插入思维导图</title>
-    <url>/2019/05/24/%E5%9C%A8hexo%E5%8D%9A%E5%AE%A2%E4%B8%AD%E6%8F%92%E5%85%A5%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="https://github.com/maxchang3/hexo-markmap">hexo-markmap</a></p>
-<p><strong>使用示例</strong></p>
-<span id="more"></span>
-
-<figure class="highlight clean"><table><tr><td class="code"><pre><span class="line">&#123;% markmap <span class="number">400</span>px %&#125;</span><br><span class="line">  </span><br><span class="line"># Blog内容同步与自动更新流程  </span><br><span class="line">  </span><br><span class="line">## macOS  </span><br><span class="line">### 群晖Drive  </span><br><span class="line">- 同步Hexo的post目录到iCloud  </span><br><span class="line">  </span><br><span class="line">## iCloud  </span><br><span class="line">- 同步Hexo的post目录  </span><br><span class="line">- 跨苹果设备同步  </span><br><span class="line">  </span><br><span class="line">## 苹果设备  </span><br><span class="line">### 任意设备  </span><br><span class="line">- 撰写blog  </span><br><span class="line">- 通过iCloud同步到macOS  </span><br><span class="line">  </span><br><span class="line">## macOS（继续）  </span><br><span class="line">### 群晖Drive（继续）  </span><br><span class="line">- 将新blog内容同步至群晖  </span><br><span class="line">  </span><br><span class="line">## 群晖  </span><br><span class="line">- 将内容自动布置到GitHub  </span><br><span class="line">  </span><br><span class="line">## GitHub  </span><br><span class="line">- 自动更新blog网站</span><br><span class="line">&#123;% endmarkmap %&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>技术</category>
-        <category>博客</category>
-        <category>hexo</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-        <tag>markdown</tag>
-        <tag>插件</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>为部署在Github上的Hexo博客配置域名</title>
-    <url>/2019/05/25/%E4%B8%BA%E9%83%A8%E7%BD%B2%E5%9C%A8Github%E4%B8%8A%E7%9A%84Hexo%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE%E5%9F%9F%E5%90%8D/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="一、Hexo项目部署到Github"><a href="#一、Hexo项目部署到Github" class="headerlink" title="一、Hexo项目部署到Github"></a>一、<a href="https://so.csdn.net/so/search?q=Hexo&spm=1001.2101.3001.7020">Hexo</a>项目部署到Github</h4><p>首先要确保你的hexo项目已经部署到github上，如果不知道hexo项目如何部署到github上，请看另一篇文章↓</p>
-<a href="/2019/05/06/Git_Hexo/" title="群晖Git部署Hexo">群晖Git部署Hexo</a>
-
-<p>如果你的<strong>hexo项目已经搭建好</strong>，可直接跳转到<strong>第五步，看部署到Github</strong>的步骤。</p>
-<h4 id="二、解析域名到GitHub-Pages"><a href="#二、解析域名到GitHub-Pages" class="headerlink" title="二、解析域名到GitHub Pages"></a>二、解析域名到GitHub Pages</h4><h5 id="1：首先购买或注册一个域名"><a href="#1：首先购买或注册一个域名" class="headerlink" title="1：首先购买或注册一个域名"></a>1：首先购买或注册一个域名</h5><p>购买域名的渠道有很多，可以国内，也可以国外，本人是在国外的GoDaddy平台上买的（好处是管理比较方便，不用备案啥的了…），问题多的话我再写一篇具体申请的blog。</p>
-<h5 id="2：解析域名到Github"><a href="#2：解析域名到Github" class="headerlink" title="2：解析域名到Github"></a>2：解析域名到Github</h5><p>首先登录你域名注册商的控制面板，这里以GoDaddy为例</p>
-<span id="more"></span>
-
-<p>打开<strong>控制面板</strong></p>
-<p><img src="/2019/05/25/%E4%B8%BA%E9%83%A8%E7%BD%B2%E5%9C%A8Github%E4%B8%8A%E7%9A%84Hexo%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE%E5%9F%9F%E5%90%8D/image-20240428210042566.png"></p>
-<p>接着<strong>打开DNS配置页面</strong></p>
-<p><img src="/2019/05/25/%E4%B8%BA%E9%83%A8%E7%BD%B2%E5%9C%A8Github%E4%B8%8A%E7%9A%84Hexo%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE%E5%9F%9F%E5%90%8D/image-20240428210031684.png"></p>
-<p>接着<strong>添加以下几条解析</strong></p>
-<p><img src="/2019/05/25/%E4%B8%BA%E9%83%A8%E7%BD%B2%E5%9C%A8Github%E4%B8%8A%E7%9A%84Hexo%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE%E5%9F%9F%E5%90%8D/image-20240428210020252.png"></p>
-<p>上面几条IP地址是从<a href="">Github官网</a>上得来的，具体可以查看这个地址<a href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site#configuring-an-apex-domain">Managing a custom domain for your GitHub Pages site - GitHub Docs</a></p>
-<p>至此，域名注册服务商上的github pages域名解析我们就完成了！</p>
-<h4 id="三、配置Hexo项目"><a href="#三、配置Hexo项目" class="headerlink" title="三、配置Hexo项目"></a>三、配置Hexo项目</h4><ol>
-<li>在你的hexo项目的<strong>source</strong>文件夹根目录里添加一个<strong>CNAME</strong>文件（不带任何后缀的文件），CNAME里面的内容是你的<strong>域名</strong>。</li>
-<li>然后打开我们 hexo 项目的配置文件 <strong>_config.yml</strong> ，找到 <strong>url 配置项</strong> ，替换成我们的域名就可以了。</li>
-</ol>
-<h4 id="四、配置Github-Pages"><a href="#四、配置Github-Pages" class="headerlink" title="四、配置Github Pages"></a>四、配置Github Pages</h4><ol>
-<li>打开我们的hexo项目在github上的仓库，进入设置页面</li>
-<li>找到<strong>Pages选项</strong>，<code>Custom domain</code> 填上我们的<strong>域名</strong>，勾选上<strong>强制打开HTTPS</strong>。</li>
-<li>等DNS检查通过，稍微等一会，就可以用域名打开我们的Hexo部署在Github上的项目啦！</li>
-</ol>
-<p>原文链接： <a href="https://www.laodengai.com/domain-name-on-github-20240319/">Hexo 项目在 Github 上配置域名 | 老登 AI (laodengai.com)</a></p>
-]]></content>
-      <categories>
-        <category>技术</category>
-        <category>博客</category>
-        <category>hexo</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-        <tag>markdown</tag>
-        <tag>插件</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>鸡尾酒配方</title>
-    <url>/2020/05/04/%E9%B8%A1%E5%B0%BE%E9%85%92%E9%85%8D%E6%96%B9/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="茶酒"><a href="#茶酒" class="headerlink" title="茶酒"></a>茶酒</h2><ul>
-<li>茶：120ml</li>
-<li>酒：45ml</li>
-<li>糖浆：10ml</li>
-<li>柠檬：5ml</li>
-</ul>
-<h2 id="B52轰炸机"><a href="#B52轰炸机" class="headerlink" title="B52轰炸机"></a>B52轰炸机</h2><ul>
-<li>1&#x2F;3咖啡力娇酒</li>
-<li>1&#x2F;3百利甜</li>
-<li>1&#x2F;3君度<span id="more"></span></li>
-</ul>
-<h2 id="长岛冰茶"><a href="#长岛冰茶" class="headerlink" title="长岛冰茶"></a>长岛冰茶</h2><ul>
-<li>饮具：玻璃杯加冰</li>
-<li>黄柠汁：5ml</li>
-<li>伏特加：15ml</li>
-<li>龙舌兰：15ml</li>
-<li>金酒：15ml</li>
-<li>白朗姆：15ml</li>
-<li>可乐：填满</li>
-<li>装饰</li>
-</ul>
-<h2 id="自由古巴"><a href="#自由古巴" class="headerlink" title="自由古巴"></a>自由古巴</h2><ul>
-<li>绿柠：5ml</li>
-<li>白朗姆：45ml</li>
-<li>可乐：加满</li>
-<li>装饰</li>
-</ul>
-<h2 id="莫吉托"><a href="#莫吉托" class="headerlink" title="莫吉托"></a>莫吉托</h2><ul>
-<li>绿柠块：3块（挤压）</li>
-<li>薄荷：轻挤压</li>
-<li>薄荷糖浆：8ml</li>
-<li>白朗姆：45ml</li>
-<li>冰：满</li>
-<li>苏打水：加到杯子4&#x2F;5</li>
-<li>用勺子伸到杯底做提拉</li>
-<li>装饰：绿柠片，薄荷簇</li>
-</ul>
-<h2 id="教父"><a href="#教父" class="headerlink" title="教父"></a>教父</h2><ul>
-<li>饮具：传统杯 + 方冰</li>
-<li>金宾波本：50ml</li>
-<li>蒂萨诺：10ml</li>
-<li>用勺子搅匀</li>
-</ul>
-<h2 id="蓝色夏威夷"><a href="#蓝色夏威夷" class="headerlink" title="蓝色夏威夷"></a>蓝色夏威夷</h2><ul>
-<li>饮具：玻璃杯 + 冰</li>
-<li>白朗姆：40ml</li>
-<li>蓝橙：20ml</li>
-<li>马利宝：20ml</li>
-<li>菠萝汁：45ml</li>
-<li>雪碧：加满</li>
-<li>装饰</li>
-</ul>
-<h2 id="醉酒的梵高"><a href="#醉酒的梵高" class="headerlink" title="醉酒的梵高"></a>醉酒的梵高</h2><ul>
-<li>龙舌兰：40ml</li>
-<li>菠萝汁：45ml</li>
-<li>雪碧：加满</li>
-<li>蓝橙力娇：最后加入，不搅动</li>
-</ul>
-<h2 id="心橙大海"><a href="#心橙大海" class="headerlink" title="心橙大海"></a>心橙大海</h2><ul>
-<li>饮具：玻璃杯 + 冰</li>
-<li>伏特加：45ml</li>
-<li>橙汁：装满</li>
-</ul>
-<h2 id="金汤力"><a href="#金汤力" class="headerlink" title="金汤力"></a>金汤力</h2><ul>
-<li>饮具：玻璃杯 + 冰</li>
-<li>金酒：45ml</li>
-<li>汤力水：加满</li>
-<li>装饰</li>
-</ul>
-<h2 id="日出"><a href="#日出" class="headerlink" title="日出"></a>日出</h2><ul>
-<li>饮具：玻璃杯 + 冰</li>
-<li>龙舌兰：45ml</li>
-<li>橙汁：加满</li>
-<li>红色糖浆：适量调整着色区域</li>
-</ul>
-<h2 id="蓝色玛格丽特"><a href="#蓝色玛格丽特" class="headerlink" title="蓝色玛格丽特"></a>蓝色玛格丽特</h2><ul>
-<li>饮具：玻璃杯 + 盐边</li>
-<li>龙舌兰：30ml</li>
-<li>蓝橙力娇酒：15ml</li>
-<li>蔗糖：5ml</li>
-<li>黄柠檬：点缀</li>
-</ul>
-<h2 id="白色玛格丽特"><a href="#白色玛格丽特" class="headerlink" title="白色玛格丽特"></a>白色玛格丽特</h2><ul>
-<li>龙舌兰：30ml</li>
-<li>君度：15ml</li>
-<li>柠檬汁：几滴</li>
-<li>蔗糖：5ml</li>
-<li>加冰块摇匀</li>
-</ul>
-<h2 id="威士忌酸"><a href="#威士忌酸" class="headerlink" title="威士忌酸"></a>威士忌酸</h2><ul>
-<li>波本：45ml</li>
-<li>黄柠檬：半个</li>
-<li>蔗糖：10ml</li>
-<li>加冰块摇匀</li>
-</ul>
-<h2 id="前任"><a href="#前任" class="headerlink" title="前任"></a>前任</h2><ul>
-<li>饮具：玻璃杯 + 冰</li>
-<li>龙舌兰：45ml</li>
-<li>红柚糖浆：适量</li>
-<li>苏打水：加满</li>
-</ul>
-<h2 id="孟婆汤"><a href="#孟婆汤" class="headerlink" title="孟婆汤"></a>孟婆汤</h2><ul>
-<li>伏特加：30ml</li>
-<li>柠檬汁：15ml</li>
-<li>马力宝：15ml</li>
-<li>莫林绿薄荷糖浆：10ml</li>
-</ul>
-<h2 id="百香果莫吉托（无酒精）"><a href="#百香果莫吉托（无酒精）" class="headerlink" title="百香果莫吉托（无酒精）"></a>百香果莫吉托（无酒精）</h2><ul>
-<li>青柠汁：5ml</li>
-<li>冰：加满</li>
-<li>百香果糖浆：12ml</li>
-<li>薄荷糖浆：12ml</li>
-<li>气泡水：加满</li>
-<li>搅匀装饰</li>
-</ul>
-<h2 id="波斯猫（无酒精）"><a href="#波斯猫（无酒精）" class="headerlink" title="波斯猫（无酒精）"></a>波斯猫（无酒精）</h2><ul>
-<li>橙汁：60ml</li>
-<li>菠萝汁：40ml</li>
-<li>柠檬汁：半个</li>
-<li>红石榴糖浆：2勺</li>
-<li>蔗糖：1勺</li>
-<li>加冰块摇匀</li>
-</ul>
-<h2 id="蓝色多瑙河（无酒精）"><a href="#蓝色多瑙河（无酒精）" class="headerlink" title="蓝色多瑙河（无酒精）"></a>蓝色多瑙河（无酒精）</h2><ul>
-<li>柠檬汁：一点</li>
-<li>蓝柑糖浆：10ml</li>
-<li>蔗糖糖浆：5ml</li>
-<li>苏打水</li>
-</ul>
-<h2 id="柚恋柠檬（无酒精）"><a href="#柚恋柠檬（无酒精）" class="headerlink" title="柚恋柠檬（无酒精）"></a>柚恋柠檬（无酒精）</h2><ul>
-<li>柠檬汁：一点</li>
-<li>红柚糖浆：10ml</li>
-<li>蔗糖糖浆：5ml</li>
-<li>苏打水</li>
-</ul>
-<h2 id="清凉一夏（无酒精）"><a href="#清凉一夏（无酒精）" class="headerlink" title="清凉一夏（无酒精）"></a>清凉一夏（无酒精）</h2><ul>
-<li>饮具：威士忌杯🥃 + 方冰</li>
-<li>新鲜薄荷叶：4-5 片，拍醒</li>
-<li>可乐：加至8分满</li>
-</ul>
-<h2 id="甜蜜蜜"><a href="#甜蜜蜜" class="headerlink" title="甜蜜蜜"></a>甜蜜蜜</h2><p>60 ml 蜜茶<br>40 mlwhisky<br>5 ml 糖浆<br>1&#x2F;4 柠檬</p>
-<h2 id="威士忌可乐-Whisky-Coke"><a href="#威士忌可乐-Whisky-Coke" class="headerlink" title="威士忌可乐 Whisky Coke"></a>威士忌可乐 Whisky Coke</h2><p><span style="font-family:.PingFangSC-Regular;">威士忌</span> 45 ml<br>可乐 Cola Top</p>
-<h2 id="伏特加莱姆"><a href="#伏特加莱姆" class="headerlink" title="伏特加莱姆"></a>伏特加莱姆</h2><ul>
-<li>盐边</li>
-<li>伏特加 60 ml</li>
-<li>柠檬汁 30 ml</li>
-<li>糖水 10 ml</li>
-</ul>
-<h2 id="玛格丽特-Margarita"><a href="#玛格丽特-Margarita" class="headerlink" title="玛格丽特 Margarita"></a>玛格丽特 Margarita</h2><ul>
-<li>龙舌兰 45 ml</li>
-<li>君度橙 cointreau 15 ml</li>
-<li>柠檬汁 15 ml</li>
-<li>加冰摇一摇</li>
-<li>盐边</li>
-</ul>
-<h2 id="螺丝起子-Screwdriver"><a href="#螺丝起子-Screwdriver" class="headerlink" title="螺丝起子 Screwdriver"></a>螺丝起子 Screwdriver</h2><ul>
-<li>伏特加 45 ml</li>
-<li>橙汁</li>
-</ul>
-]]></content>
-      <categories>
-        <category>生活</category>
-        <category>鸡尾酒</category>
-      </categories>
-      <tags>
-        <tag>鸡尾酒</tag>
-        <tag>配方</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>GoPro Hero最实用的四个必备配件:打造完美生态</title>
-    <url>/2022/03/15/GoproHero/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><hr>
-<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">
-<iframe src="//player.bilibili.com/player.html?aid=244387247&bvid=BV1Av411174q&cid=229573649&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; Left: 0; top: 0;" ></iframe></div> 
-]]></content>
-      <categories>
-        <category>数码</category>
-        <category>相机</category>
-      </categories>
-      <tags>
-        <tag>数码</tag>
-        <tag>相机</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hexo Hello World</title>
     <url>/2019/05/01/hello_world/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
@@ -621,47 +266,386 @@
         <category>hexo</category>
       </categories>
       <tags>
+        <tag>markdown</tag>
         <tag>hexo</tag>
         <tag>笔记</tag>
-        <tag>markdown</tag>
       </tags>
   </entry>
   <entry>
-    <title>菜谱</title>
-    <url>/2022/04/19/%E8%8F%9C%E8%B0%B1/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="空气炸锅鸡排"><a href="#空气炸锅鸡排" class="headerlink" title="空气炸锅鸡排"></a>空气炸锅鸡排</h1><ul>
-<li>温度：200度</li>
-<li>时间：8分钟 + 4分钟</li>
-</ul>
-<h1 id="空气炸锅健身食品"><a href="#空气炸锅健身食品" class="headerlink" title="空气炸锅健身食品"></a>空气炸锅健身食品</h1><ul>
-<li>鸡胸肉（黑胡椒、13香、橄榄油）</li>
-<li>地瓜（切块、橄榄油）</li>
-<li>温度：180度</li>
-<li>时间：15分钟</li>
-</ul>
+    <title>群晖Git部署Hexo</title>
+    <url>/2019/05/06/Git_Hexo/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="一、前期准备"><a href="#一、前期准备" class="headerlink" title="一、前期准备"></a>一、前期准备</h2><h3 id="1-1-注册-账号-Gitee-GitHub"><a href="#1-1-注册-账号-Gitee-GitHub" class="headerlink" title="1.1 注册 账号 Gitee&#x2F;GitHub"></a>1.1 注册 账号 Gitee&#x2F;GitHub</h3><p>注册一个属于自己的 Github 或 Gitee 账号，</p>
+<p>Gitee在国内访问速度更快，但Gitee需要上传身份证照片若干张进行实名认证，懒得掏身份证，pass掉。</p>
 <span id="more"></span>
-<p><a href="https://www.youtube.com/watch?v=D8O7myqk0Bw">健身食品制作视频</a></p>
-<h1 id="阳春面调料"><a href="#阳春面调料" class="headerlink" title="阳春面调料"></a>阳春面调料</h1><ul>
-<li>生抽、陈醋、盐、香油或猪油、葱花</li>
-</ul>
-<h1 id="爆炒香辣鱿鱼"><a href="#爆炒香辣鱿鱼" class="headerlink" title="爆炒香辣鱿鱼"></a>爆炒香辣鱿鱼</h1><p>食材：</p>
-<ul>
-<li>鱿鱼须、葱、姜、洋葱、料酒、豆瓣酱、生抽、老抽、蚝油、白糖、盐、熟芝麻</li>
-</ul>
-<p>做法：</p>
+<p><img src="/2019/05/06/Git_Hexo/%E5%AE%9E%E5%90%8D%E9%AA%8C%E8%AF%81.png" alt="实名认证"></p>
+<p>本文采用 Github 演示。 </p>
+<h3 id="1-2-安装-Git"><a href="#1-2-安装-Git" class="headerlink" title="1.2 安装 Git"></a>1.2 安装 Git</h3><p>选择对应的系统平台，下载后，傻瓜式安装即可。 安装完成后，打开运行 –&gt; 输入命令，回车打开命令行窗口 输入以下Git指令</p>
+<figure class="highlight ada"><table><tr><td class="code"><pre><span class="line">git <span class="comment">--version</span></span><br></pre></td></tr></table></figure>
+
+<p>出现版本号，即代表 git 安装成功</p>
+<h3 id="1-3-Git-和-Github-建立联系"><a href="#1-3-Git-和-Github-建立联系" class="headerlink" title="1.3 Git 和 Github 建立联系"></a>1.3 Git 和 Github 建立联系</h3><p>任意目录下，打开 git bash 命令行，输入以下命令生成公钥：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C 邮箱</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">为了管理多个密钥，你可以在生成密钥时为每个密钥指定不同的文件名</span></span><br><span class="line">ssh-keygen -t rsa -C &quot;your_email@example.com&quot; -f ~/.ssh/id_rsa_example_com</span><br></pre></td></tr></table></figure>
+
+
+<p>回车出现 （y&#x2F;n）, 输入 y , 连续点击回车，即可生成。</p>
+<p>在<code>~/.ssh</code> 目录，找到 <code>id_rsa_example_com.pub</code> 文件，<code>cat ~/.ssh/id_rsa_example_com.pub</code>获取公钥。</p>
+<p>到GitHub找到 <code>设置</code> 并打开，找到左侧栏 <code>Access</code>下找到<code>SSH and GPG keys</code>，点击<code>New SSH keys</code>，添加 <code>Title</code> 和 <code>Key</code></p>
+<p>云端仓库创建完成的 gitee，更改远程仓库 URL 为 SSH</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">chmod 600 ~/.ssh/id_rsa_*</span><br><span class="line">chown your_username:users ~/.ssh/id_rsa_*</span><br></pre></td></tr></table></figure>
+
+
+<p><strong>输入以下指令，进行全局配置：</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;你的用户名&quot;</span><br><span class="line">git config --global user.email &quot;你的邮箱&quot;</span><br></pre></td></tr></table></figure>
+
+<p>查看config文件是否存在，不存在新建<code>touch config</code>,<br> config文件内容如下：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">Host github.com</span><br><span class="line">    User git</span><br><span class="line">    IdentityFile ~/.ssh/id_rsa_example_com</span><br><span class="line">    PreferredAuthentications publickey</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">测试连接</span></span><br><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+
+
+
+<p>将纳入版本库的文件，提交到 gitee 远程仓库：</p>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">add</span> .</span><br><span class="line">git commit -m <span class="string">&#x27;first commit&#x27;</span></span><br><span class="line">git remote <span class="built_in">add</span> origin 你的仓库地址</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
+
+<p>此时，提交完成，打开浏览器，输入你的仓库地址，刷新即可看到文件。</p>
 <ol>
-<li>鱿鱼洗净切好备用，冷水下锅，加入姜片、葱段、1勺料酒，焯水捞出备用</li>
-<li>锅中油热，倒入洋葱丝，炒出香味，加入1勺豆瓣酱炒出红油，倒入焯好水的鱿鱼须，翻炒上色</li>
-<li>加入1勺生抽、半勺老抽、1勺蚝油、适量白糖、少许盐、1勺熟芝麻，翻炒均匀，撒上葱花即可</li>
+<li><code>hexo clean</code>: 这个命令用于清理缓存文件和已生成的静态文件。它删除了<code>public</code>文件夹中的内容以及<code>.hexo</code>文件夹中的缓存文件。这是在部署博客之前的一个好习惯，因为它确保了生成的静态文件是最新的，避免了由于旧的缓存或文件导致的潜在问题。</li>
+<li><code>hexo deploy</code>: 这个命令用于将博客部署到服务器上。在执行这个命令之前，Hexo会生成所有的静态文件，并根据<code>_config.yml</code>文件中的<code>deploy</code>部分配置将它们上传到指定的服务器。这通常涉及到将文件推送到GitHub Pages、FTP服务器或其他静态网站托管服务。</li>
 </ol>
+<figure class="highlight 1c"><table><tr><td class="code"><pre><span class="line">$ hexo clean <span class="meta">&amp;&amp; hexo deploy</span></span><br></pre></td></tr></table></figure>
+
+<p>在NAS上定时执行<code>hexo clean &amp;&amp; hexo deploy</code>，实现自动更新内容。</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>博客</category>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>笔记</tag>
+        <tag>技术</tag>
+        <tag>ssh</tag>
+        <tag>GitHub</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>苹果全平台无缝同步群晖Obsidian库</title>
+    <url>/2019/05/24/Apple%E5%85%A8%E5%B9%B3%E5%8F%B0%E6%97%A0%E7%BC%9D%E5%90%8C%E6%AD%A5%E7%BE%A4%E6%99%96Obsidian%E5%BA%93/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><strong>前提介绍：</strong></p>
+<blockquote>
+<p><a href="https://obsidian.md/">Obsidian</a>是一款基于Markdown的笔记软件，以其强大的链接和标签功能、本地化存储及丰富的插件生态，为用户提供高效的知识管理和创作体验。 </p>
+</blockquote>
+<blockquote>
+<p><a href="https://www.synology.cn/zh-cn">群晖NAS</a>是一种基于网络连接的存储设备，它提供集中管理和共享文件的平台，支持多种功能，如数据备份、多媒体服务器等，方便用户随时随地访问和管理数据。</p>
+</blockquote>
+<h2 id="本文的目的"><a href="#本文的目的" class="headerlink" title="本文的目的"></a>本文的目的</h2><p><a href="https://obsidian.md/">Obsidian</a>作为一款优秀的markdown笔记软件，非常适合搭配hexo撰写blog。</p>
+<p>通过macOS上群晖Drive将hexo的post目录同步到iCloud，实现macOS和群晖drive的同步，然后通过iCloud在不同苹果设备上同步hexo的post目录，实现任意苹果设备撰写blog都可以在macOS通过群晖drive将新blog内容同步至群晖，再由群晖将内容自动布置到GitHub，实现blog网站的自动更新。</p>
+<span id="more"></span>
+
+
+<div class="markmap-container" style="height:400px">
+  <svg data="{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:1,&quot;p&quot;:{&quot;lines&quot;:[1,2]},&quot;v&quot;:&quot;Blog内容同步与自动更新流程&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:2,&quot;p&quot;:{&quot;lines&quot;:[3,4]},&quot;v&quot;:&quot;macOS&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[4,5]},&quot;v&quot;:&quot;群晖Drive&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:5,&quot;p&quot;:{&quot;lines&quot;:[5,6]},&quot;v&quot;:&quot;同步Hexo的post目录到iCloud&quot;}]}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:2,&quot;p&quot;:{&quot;lines&quot;:[7,8]},&quot;v&quot;:&quot;iCloud&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:4,&quot;p&quot;:{&quot;lines&quot;:[8,9]},&quot;v&quot;:&quot;同步Hexo的post目录&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:4,&quot;p&quot;:{&quot;lines&quot;:[9,10]},&quot;v&quot;:&quot;跨苹果设备同步&quot;}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:2,&quot;p&quot;:{&quot;lines&quot;:[11,12]},&quot;v&quot;:&quot;苹果设备&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[12,13]},&quot;v&quot;:&quot;任意设备&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:5,&quot;p&quot;:{&quot;lines&quot;:[13,14]},&quot;v&quot;:&quot;撰写blog&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:5,&quot;p&quot;:{&quot;lines&quot;:[14,15]},&quot;v&quot;:&quot;通过iCloud同步到macOS&quot;}]}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:2,&quot;p&quot;:{&quot;lines&quot;:[16,17]},&quot;v&quot;:&quot;macOS（继续）&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[17,18]},&quot;v&quot;:&quot;群晖Drive（继续）&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:5,&quot;p&quot;:{&quot;lines&quot;:[18,19]},&quot;v&quot;:&quot;将新blog内容同步至群晖&quot;}]}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:2,&quot;p&quot;:{&quot;lines&quot;:[20,21]},&quot;v&quot;:&quot;群晖&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:4,&quot;p&quot;:{&quot;lines&quot;:[21,22]},&quot;v&quot;:&quot;将内容自动布置到GitHub&quot;}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:2,&quot;p&quot;:{&quot;lines&quot;:[23,24]},&quot;v&quot;:&quot;GitHub&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:4,&quot;p&quot;:{&quot;lines&quot;:[24,25]},&quot;v&quot;:&quot;自动更新blog网站&quot;}]}]}"></svg>
+</div>
+
+
+
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><blockquote>
+<p>iPadOS和iOS端Obsidian只能识别打开iCloud Drive中Obsidian目录下的库，但macOS端的群晖Drive同步目录找不到iCloud目录，也就无法从iCloud同步至群晖。</p>
+</blockquote>
+<h2 id="解决步骤"><a href="#解决步骤" class="headerlink" title="解决步骤"></a>解决步骤</h2><h3 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h3><p>全部苹果设备开启 iCloud 同步，在 iOS&#x2F;iPadOS 下打开 obsidian 新建库，会自动生成一个<code>welcome.md</code>文件。</p>
+<h3 id="第二步"><a href="#第二步" class="headerlink" title="第二步"></a>第二步</h3><p>打开 macOS 访达，左侧打开 iCloud 云盘，点 obsidian 图标文件下载到本地管理（云箭头表示还在云上）。</p>
+<h3 id="第三步"><a href="#第三步" class="headerlink" title="第三步"></a>第三步</h3><p>显示 Mac 隐藏文件的两种方法：</p>
+<ol>
+<li>mac 终端中输入入命令：<code>defaults write com.apple.finder AppleShowAllFiles -bool true; killall Finder</code>  。</li>
+<li>快捷键组合：<code>⌘+⇧+。</code></li>
+</ol>
+<p>隐藏文件显示后，找到自己用户名下的资源库，在上方菜单栏<code>显示</code>-<code>查看显示选项</code>（<code>⌘+J</code>）中勾选<code>显示资源库文件夹</code>，这样就可以在群晖Drive同步软件中定位到 iCloud 内的文件夹。</p>
+<h3 id="第四步"><a href="#第四步" class="headerlink" title="第四步"></a>第四步</h3><p>macOS 打开群晖的配套同步软件<code>群晖 Drive Client</code>设置，创建选定<code>mac</code>用户名下<code>library</code>中的<code>moblie documents</code>文件，翻到iCloud前缀的obsidian文件夹，同步之前 iOS 中新建的库即可。</p>
+<h3 id="第五步"><a href="#第五步" class="headerlink" title="第五步"></a>第五步</h3><p>macOS 中iCloud下 Obsidian 打开库文件夹，在网络 nas 中即可找到此 iOS&#x2F;iPadOS 新建的库。</p>
+<p>完成之后，关闭显示 Mac 隐藏文件：<code>defaults write com.apple.finder AppleShowAllFiles -boolean false ; killall Finder</code></p>
+<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><p>实测多设备下修改输入，几乎都是秒刷到账，唯一要担心的是删的太快，如果在一处误删掉某内容，很快会被同步覆盖。不过群晖drive 中可以看同步日志，应问题不大。</p>
+<p>目前还没有遇上同步问题，仅提供解决方案，数据无价，请自行斟酌＼（＾ ＾）／</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>博客</category>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>markdown</tag>
+        <tag>hexo</tag>
+        <tag>Obsidian</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>在hexo博客中插入思维导图</title>
+    <url>/2019/05/24/%E5%9C%A8hexo%E5%8D%9A%E5%AE%A2%E4%B8%AD%E6%8F%92%E5%85%A5%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="https://github.com/maxchang3/hexo-markmap">hexo-markmap</a></p>
+<p><strong>使用示例</strong></p>
+<span id="more"></span>
+
+<figure class="highlight clean"><table><tr><td class="code"><pre><span class="line">&#123;% markmap <span class="number">400</span>px %&#125;</span><br><span class="line">  </span><br><span class="line"># Blog内容同步与自动更新流程  </span><br><span class="line">  </span><br><span class="line">## macOS  </span><br><span class="line">### 群晖Drive  </span><br><span class="line">- 同步Hexo的post目录到iCloud  </span><br><span class="line">  </span><br><span class="line">## iCloud  </span><br><span class="line">- 同步Hexo的post目录  </span><br><span class="line">- 跨苹果设备同步  </span><br><span class="line">  </span><br><span class="line">## 苹果设备  </span><br><span class="line">### 任意设备  </span><br><span class="line">- 撰写blog  </span><br><span class="line">- 通过iCloud同步到macOS  </span><br><span class="line">  </span><br><span class="line">## macOS（继续）  </span><br><span class="line">### 群晖Drive（继续）  </span><br><span class="line">- 将新blog内容同步至群晖  </span><br><span class="line">  </span><br><span class="line">## 群晖  </span><br><span class="line">- 将内容自动布置到GitHub  </span><br><span class="line">  </span><br><span class="line">## GitHub  </span><br><span class="line">- 自动更新blog网站</span><br><span class="line">&#123;% endmarkmap %&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>技术</category>
+        <category>博客</category>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>markdown</tag>
+        <tag>hexo</tag>
+        <tag>插件</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>为部署在Github上的Hexo博客配置域名</title>
+    <url>/2019/05/25/%E4%B8%BA%E9%83%A8%E7%BD%B2%E5%9C%A8Github%E4%B8%8A%E7%9A%84Hexo%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE%E5%9F%9F%E5%90%8D/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="一、Hexo项目部署到Github"><a href="#一、Hexo项目部署到Github" class="headerlink" title="一、Hexo项目部署到Github"></a>一、<a href="https://so.csdn.net/so/search?q=Hexo&spm=1001.2101.3001.7020">Hexo</a>项目部署到Github</h4><p>首先要确保你的hexo项目已经部署到github上，如果不知道hexo项目如何部署到github上，请看另一篇文章↓</p>
+<a href="/2019/05/06/Git_Hexo/" title="群晖Git部署Hexo">群晖Git部署Hexo</a>
+
+<p>如果你的<strong>hexo项目已经搭建好</strong>，可直接跳转到<strong>第五步，看部署到Github</strong>的步骤。</p>
+<h4 id="二、解析域名到GitHub-Pages"><a href="#二、解析域名到GitHub-Pages" class="headerlink" title="二、解析域名到GitHub Pages"></a>二、解析域名到GitHub Pages</h4><h5 id="1：首先购买或注册一个域名"><a href="#1：首先购买或注册一个域名" class="headerlink" title="1：首先购买或注册一个域名"></a>1：首先购买或注册一个域名</h5><p>购买域名的渠道有很多，可以国内，也可以国外，本人是在国外的GoDaddy平台上买的（好处是管理比较方便，不用备案啥的了…），问题多的话我再写一篇具体申请的blog。</p>
+<h5 id="2：解析域名到Github"><a href="#2：解析域名到Github" class="headerlink" title="2：解析域名到Github"></a>2：解析域名到Github</h5><p>首先登录你域名注册商的控制面板，这里以GoDaddy为例</p>
+<span id="more"></span>
+
+<p>打开<strong>控制面板</strong></p>
+<p><img src="/2019/05/25/%E4%B8%BA%E9%83%A8%E7%BD%B2%E5%9C%A8Github%E4%B8%8A%E7%9A%84Hexo%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE%E5%9F%9F%E5%90%8D/image-20240428210042566.png"></p>
+<p>接着<strong>打开DNS配置页面</strong></p>
+<p><img src="/2019/05/25/%E4%B8%BA%E9%83%A8%E7%BD%B2%E5%9C%A8Github%E4%B8%8A%E7%9A%84Hexo%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE%E5%9F%9F%E5%90%8D/image-20240428210031684.png"></p>
+<p>接着<strong>添加以下几条解析</strong></p>
+<p><img src="/2019/05/25/%E4%B8%BA%E9%83%A8%E7%BD%B2%E5%9C%A8Github%E4%B8%8A%E7%9A%84Hexo%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE%E5%9F%9F%E5%90%8D/image-20240428210020252.png"></p>
+<p>上面几条IP地址是从<a href="">Github官网</a>上得来的，具体可以查看这个地址<a href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site#configuring-an-apex-domain">Managing a custom domain for your GitHub Pages site - GitHub Docs</a></p>
+<p>至此，域名注册服务商上的github pages域名解析我们就完成了！</p>
+<h4 id="三、配置Hexo项目"><a href="#三、配置Hexo项目" class="headerlink" title="三、配置Hexo项目"></a>三、配置Hexo项目</h4><ol>
+<li>在你的hexo项目的<strong>source</strong>文件夹根目录里添加一个<strong>CNAME</strong>文件（不带任何后缀的文件），CNAME里面的内容是你的<strong>域名</strong>。</li>
+<li>然后打开我们 hexo 项目的配置文件 <strong>_config.yml</strong> ，找到 <strong>url 配置项</strong> ，替换成我们的域名就可以了。</li>
+</ol>
+<h4 id="四、配置Github-Pages"><a href="#四、配置Github-Pages" class="headerlink" title="四、配置Github Pages"></a>四、配置Github Pages</h4><ol>
+<li>打开我们的hexo项目在github上的仓库，进入设置页面</li>
+<li>找到<strong>Pages选项</strong>，<code>Custom domain</code> 填上我们的<strong>域名</strong>，勾选上<strong>强制打开HTTPS</strong>。</li>
+<li>等DNS检查通过，稍微等一会，就可以用域名打开我们的Hexo部署在Github上的项目啦！</li>
+</ol>
+<p>原文链接： <a href="https://www.laodengai.com/domain-name-on-github-20240319/">Hexo 项目在 Github 上配置域名 | 老登 AI (laodengai.com)</a></p>
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>博客</category>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>markdown</tag>
+        <tag>hexo</tag>
+        <tag>插件</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>澳洲家中日常必备清单</title>
+    <url>/2022/05/19/%E6%BE%B3%E6%B4%B2%E5%AE%B6%E4%B8%AD%E6%97%A5%E5%B8%B8%E5%BF%85%E5%A4%87%E6%B8%85%E5%8D%95/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>1⃣️ CEPACAINE漱口水！ 治疗牙龈肿痛，口腔溃疡。澳洲医生推荐买的，超级有效！猫猫家必备的，再也没有牙口烦恼。 购买地址：Chemist有售 💰价格：$15.49 问题在口腔，吃啥啥不香，买它！喵～</p>
+<hr>
+<p>2⃣️ Quick EZE胃糖 腹胀、胃酸、胃痛。消化不良、吃颗糖就能缓解～ 主要是这糖咋还那么好吃！ 购买地址：Chemist 💰价格：$4.99 胃也需要轻轻安抚，买它！喵～</p>
+<span id="more"></span>
+<hr>
+<p>3⃣️ VICKS 通鼻喷剂 在澳洲总感觉鼻子不适，鼻炎老犯，尤其总是鼻塞。这个通鼻喷剂起效快，薄荷味柔和不刺激。 购买地址：Chemist 💰价格$11.99 杜绝张口呼吸，买它！喵～</p>
+<hr>
+<p>4⃣️ Refresh眼药水 在家学习、工作、打游戏、熬夜，眼睛干涩的话最使用用人工泪液成分的眼药水。无刺激，缓解眼睛疲劳，闺蜜们都在用。 购买地址：Chemist 💰价格$13.49 缓解就靠累上加泪。买它，喵～</p>
+<hr>
+<p>5⃣️ LeQure Detox Soap排毒香皂 这款味道超级淡，小众然鹅超棒！主要可以用来控油去杂质。背部长痘痘的宝宝们一定要试试。滋养加排毒，姐妹推荐的，用过也感觉很好。 购买地址：Chemist 💰价格：$5.99 永远不进毒圈，买它，喵～</p>
+<hr>
+<p>6⃣️ Naprogesic止痛片 姨妈期最好的止痛片咯，因为成分对胃损伤小，刺激小。而且止痛的效果起效更快，当地女生首选经期续命药。小蓝片好多朋友都在用。 购买地址：Chemist 💰价格：$7.99 连我姨妈都在用！买它，喵～</p>
+<hr>
+<p>7⃣️ Dettol 洗衣消毒液 家里养宠物的朋友洗衣服都会用这个帮忙杀菌！能灭杀99.9%的细菌。尤其是合租又共用洗衣机的话这个肯定要买！ 购买地址：Coles、 WWS有售 💰价格：$8.99 再也不怕室友用洗衣机洗袜子了，买它！喵～</p>
+<hr>
+<p>8⃣️ Mr muscle通道强力剂！ 水槽，浴室如果都便秘了，那主人可就更难受了。 超强清下水道秘方，家家必备的男人。尤其是掉头发比较多的女生经常会堵掉下水道。用它就可以畅通哦。 购买地址：Coles、WWS有售 💰价格：$13.7 搞定下水道，心情好到爆，买它！喵～</p>
+<hr>
 ]]></content>
       <categories>
         <category>生活</category>
-        <category>菜谱</category>
+        <category>好物推荐</category>
       </categories>
       <tags>
-        <tag>菜谱</tag>
-        <tag>下酒菜</tag>
+        <tag>推荐</tag>
+        <tag>日常</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>SQL学习笔记</title>
+    <url>/2023/02/27/SQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="/_post/2024_02_28_%E6%8E%92%E5%BA%8F_DENSE_RANK.md">排序_DENSE_RANK</a></p>
+<h2 id="IFNULL"><a href="#IFNULL" class="headerlink" title="IFNULL"></a>IFNULL</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Write your MySQL query statement below</span><br><span class="line"></span><br><span class="line">select e.name, b.bonus</span><br><span class="line"></span><br><span class="line">from Employee e left join Bonus b</span><br><span class="line"></span><br><span class="line">on e.empId = b.empId</span><br><span class="line"></span><br><span class="line">where ifnull(bonus,0)&lt;1000</span><br><span class="line">## ifnul 就把值替换成0）</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+
+
+
+<h2 id="SQL-585"><a href="#SQL-585" class="headerlink" title="SQL 585"></a>SQL 585</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT ROUND(SUM(tiv_2016), 2) AS tiv_2016</span><br><span class="line"></span><br><span class="line">FROM Insurance</span><br><span class="line"></span><br><span class="line">WHERE tiv_2015 IN (</span><br><span class="line"></span><br><span class="line">SELECT tiv_2015</span><br><span class="line"></span><br><span class="line">FROM Insurance</span><br><span class="line"></span><br><span class="line">GROUP BY tiv_2015</span><br><span class="line"></span><br><span class="line">HAVING COUNT(*) &gt; 1</span><br><span class="line"></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">AND (lat, lon) NOT IN (</span><br><span class="line"></span><br><span class="line">SELECT lat, lon</span><br><span class="line"></span><br><span class="line">FROM Insurance</span><br><span class="line"></span><br><span class="line">GROUP BY lat, lon</span><br><span class="line"></span><br><span class="line">HAVING COUNT(*) &gt; 1</span><br><span class="line"></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="SQL-610"><a href="#SQL-610" class="headerlink" title="SQL 610"></a>SQL 610</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Write your MySQL query statement below</span><br><span class="line">select </span><br><span class="line">    *,</span><br><span class="line">    if(x+y&gt;z and x+z&gt;y and y+z&gt;x,&#x27;Yes&#x27;,&#x27;No&#x27;) as triangle</span><br><span class="line">from Triangle</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="SQL1633-ORDER-BY-2-DESC-1"><a href="#SQL1633-ORDER-BY-2-DESC-1" class="headerlink" title="SQL1633 ORDER BY 2 DESC, 1"></a>SQL1633 ORDER BY 2 DESC, 1</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ORDER BY 2 DESC, 1</span><br></pre></td></tr></table></figure>
+
+<p>这一行使用ORDER BY子句对结果进行排序。我们按照第二列（即percentage）的降序进行排序，如果百分比相同，则按照第一列（即contest_id）的升序进行排序。</p>
+<h2 id="SQL1179-CASE-WHEN"><a href="#SQL1179-CASE-WHEN" class="headerlink" title="SQL1179 CASE WHEN"></a>SQL1179 CASE WHEN</h2><p>CASE WHEN语句是SQL中用于根据条件进行条件判断和返回不同结果的表达式。它允许你根据满足特定条件的情况，选择不同的结果进行返回。</p>
+<p>CASE WHEN语句的基本语法如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CASE</span><br><span class="line">   WHEN condition1 THEN result1</span><br><span class="line">   WHEN condition2 THEN result2</span><br><span class="line">   ...</span><br><span class="line">   ELSE resultN</span><br><span class="line">END</span><br></pre></td></tr></table></figure>
+
+<p>首先，你提供一个或多个WHEN子句，每个子句后面跟着一个条件（condition）和一个对应的结果（result）。当满足某个条件时，相应的结果将被返回。ELSE子句是可选的，用于指定当没有任何条件满足时的默认结果。</p>
+<p>让我们通过一个简单的例子来说明CASE WHEN的使用。假设有一个名为”students”的表，其中包含学生的姓名和分数列。如果要将成绩分为优秀、良好和及格三个等级并进行显示，可以使用以下SQL语句：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT name,</span><br><span class="line">       CASE</span><br><span class="line">          WHEN score &gt;= 90 THEN &#x27;优秀&#x27;</span><br><span class="line">          WHEN score &gt;= 80 THEN &#x27;良好&#x27;</span><br><span class="line">          WHEN score &gt;= 60 THEN &#x27;及格&#x27;</span><br><span class="line">          ELSE &#x27;不及格&#x27;</span><br><span class="line">       END AS grade</span><br><span class="line">FROM students;</span><br></pre></td></tr></table></figure>
+
+<p>在这个例子中，对于每个学生，我们使用CASE WHEN语句根据他们的分数来判断他们的等级。如果分数大于等于90，那么他们被归类为”优秀”；如果分数大于等于80，但小于90，他们被归类为”良好”；如果分数大于等于60，但小于80，他们被归类为”及格”；否则，他们被归类为”不及格”。</p>
+<p>通过使用CASE WHEN语句，我们可以根据不同的条件返回不同的结果，从而实现灵活的数据处理和转换。</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>数据分析</category>
+        <category>SQL</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+        <tag>SQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>排序_DENSE_RANK</title>
+    <url>/2023/02/28/%E6%8E%92%E5%BA%8F_DENSE_RANK/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="rank"><a href="#rank" class="headerlink" title="rank()"></a>rank()</h2><h2 id="dense-rank"><a href="#dense-rank" class="headerlink" title="dense_rank()"></a>dense_rank()</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">DENSE_RANK() OVER (PARTITION BY column1, column2... ORDER BY column3, column4...)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>PARTITION BY子句是可选的，用于将数据分成不同的分组。如果不指定PARTITION BY子句，将对整个结果集进行排名。</li>
+<li>ORDER BY子句指定用于排序的列。可以根据一个或多个列进行排序，以确定排名的顺序。</li>
+</ul>
+<span id="more"></span>
+
+<h3 id="example"><a href="#example" class="headerlink" title="example"></a>example</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT name, salary, DENSE_RANK() OVER (ORDER BY salary DESC) AS dense_rank</span><br><span class="line">FROM employees;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>当使用DENSE_RANK函数和PARTITION BY子句时，以下是示例查询的可能返回结果：</p>
+<p>示例1：对每个客户的订单金额进行排名</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT order_id, customer_id, order_amount,</span><br><span class="line">       DENSE_RANK() OVER (PARTITION BY customer_id ORDER BY order_amount DESC) AS dense_rank</span><br><span class="line">FROM orders;</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>order_id</th>
+<th>customer_id</th>
+<th>order_amount</th>
+<th>dense_rank</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>1001</td>
+<td>500</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1001</td>
+<td>500</td>
+<td>1</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1001</td>
+<td>300</td>
+<td>2</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1002</td>
+<td>700</td>
+<td>1</td>
+</tr>
+<tr>
+<td>5</td>
+<td>1002</td>
+<td>600</td>
+<td>2</td>
+</tr>
+<tr>
+<td>6</td>
+<td>1002</td>
+<td>600</td>
+<td>2</td>
+</tr>
+<tr>
+<td>7</td>
+<td>1002</td>
+<td>400</td>
+<td>3</td>
+</tr>
+</tbody></table>
+<p>在上述结果中，我们根据每个客户的订单金额进行了排名。客户ID为1001的客户有两个订单，订单金额都是500，因此它们被分配相同的密集排名1。客户ID为1001的第三个订单金额为300，所以它被分配密集排名2。对于客户ID为1002的客户，有一个订单金额为700，它被分配密集排名1，然后有两个订单金额为600，它们被分配密集排名2，最后一个订单金额为400，它被分配密集排名3。</p>
+<p>示例2：对每个班级的学生成绩进行排名</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT student_id, class_id, exam_score,</span><br><span class="line">       DENSE_RANK() OVER (PARTITION BY class_id ORDER BY exam_score DESC) AS dense_rank</span><br><span class="line">FROM students;</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>student_id</th>
+<th>class_id</th>
+<th>exam_score</th>
+<th>dense_rank</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>A</td>
+<td>95</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>A</td>
+<td>90</td>
+<td>2</td>
+</tr>
+<tr>
+<td>3</td>
+<td>A</td>
+<td>85</td>
+<td>3</td>
+</tr>
+<tr>
+<td>4</td>
+<td>B</td>
+<td>92</td>
+<td>1</td>
+</tr>
+<tr>
+<td>5</td>
+<td>B</td>
+<td>88</td>
+<td>2</td>
+</tr>
+<tr>
+<td>6</td>
+<td>B</td>
+<td>88</td>
+<td>2</td>
+</tr>
+<tr>
+<td>7</td>
+<td>B</td>
+<td>80</td>
+<td>3</td>
+</tr>
+</tbody></table>
+<p>在上述结果中，我们根据每个班级的考试成绩进行了排名。班级ID为A的学生有三个学生，分别获得了95、90和85分，他们分别被分配密集排名1、2和3。班级ID为B的学生有四个学生，分别获得了92、88、88和80分，他们分别被分配密集排名1、2、2和3。</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>数据分析</category>
+        <category>SQL</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+        <tag>SQL</tag>
+        <tag>排序</tag>
       </tags>
   </entry>
   <entry>
@@ -715,6 +699,194 @@
       <tags>
         <tag>笔记</tag>
         <tag>SQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>鸡尾酒配方</title>
+    <url>/2020/05/04/%E9%B8%A1%E5%B0%BE%E9%85%92%E9%85%8D%E6%96%B9/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="茶酒"><a href="#茶酒" class="headerlink" title="茶酒"></a>茶酒</h2><ul>
+<li>茶：120ml</li>
+<li>酒：45ml</li>
+<li>糖浆：10ml</li>
+<li>柠檬：5ml</li>
+</ul>
+<h2 id="B52轰炸机"><a href="#B52轰炸机" class="headerlink" title="B52轰炸机"></a>B52轰炸机</h2><ul>
+<li>1&#x2F;3咖啡力娇酒</li>
+<li>1&#x2F;3百利甜</li>
+<li>1&#x2F;3君度<span id="more"></span></li>
+</ul>
+<h2 id="长岛冰茶"><a href="#长岛冰茶" class="headerlink" title="长岛冰茶"></a>长岛冰茶</h2><ul>
+<li>饮具：玻璃杯加冰</li>
+<li>黄柠汁：5ml</li>
+<li>伏特加：15ml</li>
+<li>龙舌兰：15ml</li>
+<li>金酒：15ml</li>
+<li>白朗姆：15ml</li>
+<li>可乐：填满</li>
+<li>装饰</li>
+</ul>
+<h2 id="自由古巴"><a href="#自由古巴" class="headerlink" title="自由古巴"></a>自由古巴</h2><ul>
+<li>绿柠：5ml</li>
+<li>白朗姆：45ml</li>
+<li>可乐：加满</li>
+<li>装饰</li>
+</ul>
+<h2 id="莫吉托"><a href="#莫吉托" class="headerlink" title="莫吉托"></a>莫吉托</h2><ul>
+<li>绿柠块：3块（挤压）</li>
+<li>薄荷：轻挤压</li>
+<li>薄荷糖浆：8ml</li>
+<li>白朗姆：45ml</li>
+<li>冰：满</li>
+<li>苏打水：加到杯子4&#x2F;5</li>
+<li>用勺子伸到杯底做提拉</li>
+<li>装饰：绿柠片，薄荷簇</li>
+</ul>
+<h2 id="教父"><a href="#教父" class="headerlink" title="教父"></a>教父</h2><ul>
+<li>饮具：传统杯 + 方冰</li>
+<li>金宾波本：50ml</li>
+<li>蒂萨诺：10ml</li>
+<li>用勺子搅匀</li>
+</ul>
+<h2 id="蓝色夏威夷"><a href="#蓝色夏威夷" class="headerlink" title="蓝色夏威夷"></a>蓝色夏威夷</h2><ul>
+<li>饮具：玻璃杯 + 冰</li>
+<li>白朗姆：40ml</li>
+<li>蓝橙：20ml</li>
+<li>马利宝：20ml</li>
+<li>菠萝汁：45ml</li>
+<li>雪碧：加满</li>
+<li>装饰</li>
+</ul>
+<h2 id="醉酒的梵高"><a href="#醉酒的梵高" class="headerlink" title="醉酒的梵高"></a>醉酒的梵高</h2><ul>
+<li>龙舌兰：40ml</li>
+<li>菠萝汁：45ml</li>
+<li>雪碧：加满</li>
+<li>蓝橙力娇：最后加入，不搅动</li>
+</ul>
+<h2 id="心橙大海"><a href="#心橙大海" class="headerlink" title="心橙大海"></a>心橙大海</h2><ul>
+<li>饮具：玻璃杯 + 冰</li>
+<li>伏特加：45ml</li>
+<li>橙汁：装满</li>
+</ul>
+<h2 id="金汤力"><a href="#金汤力" class="headerlink" title="金汤力"></a>金汤力</h2><ul>
+<li>饮具：玻璃杯 + 冰</li>
+<li>金酒：45ml</li>
+<li>汤力水：加满</li>
+<li>装饰</li>
+</ul>
+<h2 id="日出"><a href="#日出" class="headerlink" title="日出"></a>日出</h2><ul>
+<li>饮具：玻璃杯 + 冰</li>
+<li>龙舌兰：45ml</li>
+<li>橙汁：加满</li>
+<li>红色糖浆：适量调整着色区域</li>
+</ul>
+<h2 id="蓝色玛格丽特"><a href="#蓝色玛格丽特" class="headerlink" title="蓝色玛格丽特"></a>蓝色玛格丽特</h2><ul>
+<li>饮具：玻璃杯 + 盐边</li>
+<li>龙舌兰：30ml</li>
+<li>蓝橙力娇酒：15ml</li>
+<li>蔗糖：5ml</li>
+<li>黄柠檬：点缀</li>
+</ul>
+<h2 id="白色玛格丽特"><a href="#白色玛格丽特" class="headerlink" title="白色玛格丽特"></a>白色玛格丽特</h2><ul>
+<li>龙舌兰：30ml</li>
+<li>君度：15ml</li>
+<li>柠檬汁：几滴</li>
+<li>蔗糖：5ml</li>
+<li>加冰块摇匀</li>
+</ul>
+<h2 id="威士忌酸"><a href="#威士忌酸" class="headerlink" title="威士忌酸"></a>威士忌酸</h2><ul>
+<li>波本：45ml</li>
+<li>黄柠檬：半个</li>
+<li>蔗糖：10ml</li>
+<li>加冰块摇匀</li>
+</ul>
+<h2 id="前任"><a href="#前任" class="headerlink" title="前任"></a>前任</h2><ul>
+<li>饮具：玻璃杯 + 冰</li>
+<li>龙舌兰：45ml</li>
+<li>红柚糖浆：适量</li>
+<li>苏打水：加满</li>
+</ul>
+<h2 id="孟婆汤"><a href="#孟婆汤" class="headerlink" title="孟婆汤"></a>孟婆汤</h2><ul>
+<li>伏特加：30ml</li>
+<li>柠檬汁：15ml</li>
+<li>马力宝：15ml</li>
+<li>莫林绿薄荷糖浆：10ml</li>
+</ul>
+<h2 id="百香果莫吉托（无酒精）"><a href="#百香果莫吉托（无酒精）" class="headerlink" title="百香果莫吉托（无酒精）"></a>百香果莫吉托（无酒精）</h2><ul>
+<li>青柠汁：5ml</li>
+<li>冰：加满</li>
+<li>百香果糖浆：12ml</li>
+<li>薄荷糖浆：12ml</li>
+<li>气泡水：加满</li>
+<li>搅匀装饰</li>
+</ul>
+<h2 id="波斯猫（无酒精）"><a href="#波斯猫（无酒精）" class="headerlink" title="波斯猫（无酒精）"></a>波斯猫（无酒精）</h2><ul>
+<li>橙汁：60ml</li>
+<li>菠萝汁：40ml</li>
+<li>柠檬汁：半个</li>
+<li>红石榴糖浆：2勺</li>
+<li>蔗糖：1勺</li>
+<li>加冰块摇匀</li>
+</ul>
+<h2 id="蓝色多瑙河（无酒精）"><a href="#蓝色多瑙河（无酒精）" class="headerlink" title="蓝色多瑙河（无酒精）"></a>蓝色多瑙河（无酒精）</h2><ul>
+<li>柠檬汁：一点</li>
+<li>蓝柑糖浆：10ml</li>
+<li>蔗糖糖浆：5ml</li>
+<li>苏打水</li>
+</ul>
+<h2 id="柚恋柠檬（无酒精）"><a href="#柚恋柠檬（无酒精）" class="headerlink" title="柚恋柠檬（无酒精）"></a>柚恋柠檬（无酒精）</h2><ul>
+<li>柠檬汁：一点</li>
+<li>红柚糖浆：10ml</li>
+<li>蔗糖糖浆：5ml</li>
+<li>苏打水</li>
+</ul>
+<h2 id="清凉一夏（无酒精）"><a href="#清凉一夏（无酒精）" class="headerlink" title="清凉一夏（无酒精）"></a>清凉一夏（无酒精）</h2><ul>
+<li>饮具：威士忌杯🥃 + 方冰</li>
+<li>新鲜薄荷叶：4-5 片，拍醒</li>
+<li>可乐：加至8分满</li>
+</ul>
+<h2 id="甜蜜蜜"><a href="#甜蜜蜜" class="headerlink" title="甜蜜蜜"></a>甜蜜蜜</h2><p>60 ml 蜜茶<br>40 mlwhisky<br>5 ml 糖浆<br>1&#x2F;4 柠檬</p>
+<h2 id="威士忌可乐-Whisky-Coke"><a href="#威士忌可乐-Whisky-Coke" class="headerlink" title="威士忌可乐 Whisky Coke"></a>威士忌可乐 Whisky Coke</h2><p><span style="font-family:.PingFangSC-Regular;">威士忌</span> 45 ml<br>可乐 Cola Top</p>
+<h2 id="伏特加莱姆"><a href="#伏特加莱姆" class="headerlink" title="伏特加莱姆"></a>伏特加莱姆</h2><ul>
+<li>盐边</li>
+<li>伏特加 60 ml</li>
+<li>柠檬汁 30 ml</li>
+<li>糖水 10 ml</li>
+</ul>
+<h2 id="玛格丽特-Margarita"><a href="#玛格丽特-Margarita" class="headerlink" title="玛格丽特 Margarita"></a>玛格丽特 Margarita</h2><ul>
+<li>龙舌兰 45 ml</li>
+<li>君度橙 cointreau 15 ml</li>
+<li>柠檬汁 15 ml</li>
+<li>加冰摇一摇</li>
+<li>盐边</li>
+</ul>
+<h2 id="螺丝起子-Screwdriver"><a href="#螺丝起子-Screwdriver" class="headerlink" title="螺丝起子 Screwdriver"></a>螺丝起子 Screwdriver</h2><ul>
+<li>伏特加 45 ml</li>
+<li>橙汁</li>
+</ul>
+]]></content>
+      <categories>
+        <category>生活</category>
+        <category>鸡尾酒</category>
+      </categories>
+      <tags>
+        <tag>鸡尾酒</tag>
+        <tag>配方</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>GoPro Hero最实用的四个必备配件:打造完美生态</title>
+    <url>/2022/03/15/GoproHero/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><hr>
+<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">
+<iframe src="//player.bilibili.com/player.html?aid=244387247&bvid=BV1Av411174q&cid=229573649&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; Left: 0; top: 0;" ></iframe></div> 
+]]></content>
+      <categories>
+        <category>数码</category>
+        <category>相机</category>
+      </categories>
+      <tags>
+        <tag>数码</tag>
+        <tag>相机</tag>
       </tags>
   </entry>
   <entry>
@@ -779,333 +951,41 @@
       </tags>
   </entry>
   <entry>
-    <title>Pandas基本操作</title>
-    <url>/2023/03/15/Pandas%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="查看数据"><a href="#查看数据" class="headerlink" title="查看数据"></a>查看数据</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 查看头部 head(n)</span></span><br><span class="line">df.head()  <span class="comment">#默认查看前5条记录 </span></span><br><span class="line">df.head(<span class="number">8</span>)  <span class="comment">#指定查看前8条记录</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">## 查看尾部 tail(n)</span></span><br><span class="line">df.tail()  <span class="comment">#默认查看后面5条记录 </span></span><br><span class="line">df.tail(<span class="number">4</span>)  <span class="comment">#指定查看后面4条记录</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 随机查看样本 sample(n)</span></span><br><span class="line">df.sample()  <span class="comment">#随机查看一条记录 </span></span><br><span class="line">df.sample(<span class="number">4</span>)  <span class="comment">#随机查看4条记录</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 查看统计摘要</span></span><br><span class="line">df.describe()  <span class="comment">#返回所有数字列的统计摘要</span></span><br></pre></td></tr></table></figure>
+    <title>菜谱</title>
+    <url>/2022/04/19/%E8%8F%9C%E8%B0%B1/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="空气炸锅鸡排"><a href="#空气炸锅鸡排" class="headerlink" title="空气炸锅鸡排"></a>空气炸锅鸡排</h1><ul>
+<li>温度：200度</li>
+<li>时间：8分钟 + 4分钟</li>
+</ul>
+<h1 id="空气炸锅健身食品"><a href="#空气炸锅健身食品" class="headerlink" title="空气炸锅健身食品"></a>空气炸锅健身食品</h1><ul>
+<li>鸡胸肉（黑胡椒、13香、橄榄油）</li>
+<li>地瓜（切块、橄榄油）</li>
+<li>温度：180度</li>
+<li>时间：15分钟</li>
+</ul>
 <span id="more"></span>
-<h1 id="检索数据"><a href="#检索数据" class="headerlink" title="检索数据"></a>检索数据</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 切片[]</span></span><br><span class="line">df[<span class="number">0</span>:<span class="number">3</span>]  <span class="comment">#通过切片检索行数据</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## loc\iloc</span></span><br><span class="line">df.loc[<span class="number">1</span>]  <span class="comment">#标量标签，返回该行标签的Series数据 </span></span><br><span class="line">df.loc[[<span class="number">1</span>,<span class="number">3</span>]]  <span class="comment">#标签列表，返回标签列表的行DataFrame数据 </span></span><br><span class="line">df.loc[<span class="number">0</span>:<span class="number">3</span>]  <span class="comment">#切片对象，返回切片的行DataFrame数据 </span></span><br><span class="line">df.loc[<span class="number">0</span>:<span class="number">3</span>,<span class="string">&#x27;staff_id&#x27;</span>:<span class="string">&#x27;staff_salary&#x27;</span>]  <span class="comment">#根据行切片，列切片检索数据 </span></span><br><span class="line">df.loc[[<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="string">&#x27;staff_id&#x27;</span>,<span class="string">&#x27;staff_name&#x27;</span>,<span class="string">&#x27;staff_age&#x27;</span>]]  <span class="comment">#根据行标签列表，列标签列表检索数据</span></span><br><span class="line">df.iloc[<span class="number">1</span>]  <span class="comment">#整数标量选择，数据从0开始，为1的就是第二行的数据，返回的是Series </span></span><br><span class="line">df.iloc[[<span class="number">1</span>,<span class="number">3</span>]]  <span class="comment">#整数列表选择，选择位置为1和3的数据，返回的是DataFrame </span></span><br><span class="line">df.iloc[<span class="number">1</span>:<span class="number">3</span>]  <span class="comment">#切片选择，选择位置1至2的数据，不包含边界结束值，也就是不包含3的位置 </span></span><br><span class="line">df.iloc[<span class="number">1</span>:<span class="number">3</span>,<span class="number">1</span>:<span class="number">4</span>]  <span class="comment">#切片选择位置为1至3的行和1至4的列不含位置为3的行和位置为4的列</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## at\iat</span></span><br><span class="line">df.at[<span class="string">&#x27;A&#x27;</span>,<span class="string">&#x27;staff_name&#x27;</span>]  <span class="comment">#检索第“A”行的列标签为&quot;staff_name&quot;的数据 df.iat[0,1]  #检索第1行第2列的数据</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>技术</category>
-        <category>数据分析</category>
-        <category>python</category>
-        <category>pandas</category>
-      </categories>
-      <tags>
-        <tag>笔记</tag>
-        <tag>python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Python网站开发库大全</title>
-    <url>/2023/03/15/Python%E7%BD%91%E7%AB%99%E5%BC%80%E5%8F%91%E5%BA%93%E5%A4%A7%E5%85%A8/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
-<p>Q：Web 框架到底是什么？<br>A：Web 框架主要用于网站开发。开发者在基于 Web 框架实现自己的业务逻辑。Web 框架实现了很多功能，为实现业务逻辑提供了一套通用方法。  </p>
-</blockquote>
-<blockquote>
-<p>Q：Web 框架有什么作用？<br>A：使用 Web 框架，很多的业务逻辑外的功能不需要自己再去完善，而是使用框架已有的功能就可以。Web 框架使得在进行 网站开发的时候，减少了工作量。  </p>
-</blockquote>
-<blockquote>
-<p>Q：我们为什么要使用 Web 框架？<br>A：Web 框架主要用于网站开发，可以实现数据的交互和业务功能的完善。使用 Web 框架进行 网站开发的时候，在进行数据缓存、数据库访问、数据安全校验等方面，不需要自己再重新实现，而是将业务逻辑相关的代码写入框架就可以。</p>
-</blockquote>
-<blockquote>
-<p>库排序是<strong>按照使用人数和文档的活跃度</strong>为参考进行的, <strong>建议大家使用排名靠前的框架，因为它们的文档更齐全，技术积累要更多，社区更繁盛，能得到更好的支持，</strong> 这样在遇到自己无法解决的问题，可以更快更高效的找到解答的方案。</p>
-</blockquote>
-<span id="more"></span>
-<hr>
-<h2 id="1-Django-框架"><a href="#1-Django-框架" class="headerlink" title="1. Django 框架"></a><a href="#1-Django-%E6%A1%86%E6%9E%B6" title="1. Django 框架"></a><strong>1. Django 框架</strong></h2><p>官 网：<a href="https://github.com/django/django.git">https://github.com/django/django.git</a></p>
-<p>优 点：是一个高层次 Python Web 开发框架，特点是开发快速、代码较少、可扩展性强。Django 采用 MTV（Model、Template、View）模型组织资源，框架功能丰富，模板扩展选择最多。对于专业人员来说，Django 是当之无愧的 Python 排名第一的 Web 开发框架。</p>
-<p>缺 点：包括一些轻量级应用不需要的功能模块，不如 Flask 轻便。过度封装很多类和方法，直接使用比较简单，但改动起来比较困难。相比于 C,C++ 性能，Djang 性能偏低。模板实现了代码和样式完全分离，不允许模板里出现 Python 代码，灵活度不够。另外学习曲线也相对陡峭。</p>
-<p><a href="https://mmbiz.qpic.cn/sz_mmbiz_png/NOM5HN2icXzyamXia4vqrASM2pALYlNo8WYrEN2TT3JLXOv80vtCf8K0a96VIZhTkJyicLJaIxutXiaj3Bqg35A85Q/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1"><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/NOM5HN2icXzyamXia4vqrASM2pALYlNo8WYrEN2TT3JLXOv80vtCf8K0a96VIZhTkJyicLJaIxutXiaj3Bqg35A85Q/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1" alt="Image"></a></p>
-<p><a href="#2-Flask-%E6%A1%86%E6%9E%B6" title="2. Flask 框架"></a></p>
-<p><strong>2. Flask 框架</strong></p>
-<p>官 网：<br><a href="https://flask.palletsprojects.com/en/2.0.x/">https://flask.palletsprojects.com/en/2.0.x/</a></p>
-<p>优 点：Flask 是一个 Python Web 开发的微框架，严格来说，它仅提供 Web 服务器支持，不提供全栈开发支持。然而，Flask 非常轻量、非常简单，基于它搭建 Web 系统都以分钟来计时，特别适合小微原型系统的开发。花少时间、产生可用系统，是非常划算的选择。</p>
-<p>缺 点：对于大型网站开发，需要设计路由映射的规则，否则导致代码混乱。对新手来说，容易使用低质量的代码创建 “不良的 web 应用程序”。</p>
-<p><a href="https://mmbiz.qpic.cn/mmbiz_png/iaGGR9eXibkibjc2xlbRh5D0T8OTQYFhT7vAiaftbfrTfdtw80vC1f1v3sZeyM88EESzUMY8gMuCibp7GBn9Bhh293w/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1"><img src="https://mmbiz.qpic.cn/mmbiz_png/iaGGR9eXibkibjc2xlbRh5D0T8OTQYFhT7vAiaftbfrTfdtw80vC1f1v3sZeyM88EESzUMY8gMuCibp7GBn9Bhh293w/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1" alt="Image"></a></p>
-<p><a href="#3-Pyramid-%E6%A1%86%E6%9E%B6" title="3. Pyramid 框架"></a></p>
-<p><strong>3. Pyramid 框架</strong></p>
-<p>官 网：<a href="https://trypyramid.com/">https://trypyramid.com/</a></p>
-<p>优 点：是一个扩展性很强且灵活的 Python Web 开发框架。上手十分容易，比较适合中等规模且边开发边设计的场景。Pyramid 不提供绝对严格的框架定义，根据需求可以扩展开发，对高阶程序员十分友好。</p>
-<p>缺 点：国内知名度不高，高级用法需要通过阅读源代码获取灵感。默认使用 Chameleon 模板，灵活度没有成为一个要素。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_png/iaGGR9eXibkibjc2xlbRh5D0T8OTQYFhT7v4I1icBJbaweObDQ078rCFMiaScj58Zk10eeKzLdIu15KsnYalbmKXNhw/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1" alt="Image"></p>
-<p><a href="#4-web-py-%E6%A1%86%E6%9E%B6" title="4. web.py 框架"></a></p>
-<p><strong>4. web.py 框架</strong></p>
-<p>官 网：<a href="https://webpy.org/">https://webpy.org/</a></p>
-<p>优 点：正如其名，web.py 是一个采用 Python 作为开发语言的 Web 框架，简单且强大。俄罗斯排名第一的 Yandex 搜索引擎基于这个框架开发，Guido van Rossum 认为这是最好的 Python Web 框架，还需要说别的吗？有事实作证、有大牛认可，用起来吧！</p>
-<p>缺 点：Web.py 并未像其他框架一样保持与 Python 3 兼容性的最新状态。这不仅意味着缺乏对异步语法的支持，还意味着缺少对已弃用的函数的错误。此外，目前尚不清楚维护者是否有计划在 Python 2 到达其支持生命周期结束后保持 Web.py 的最新状态。</p>
-<p><a href="#5-Tornado-%E6%A1%86%E6%9E%B6" title="5. Tornado 框架"></a></p>
-<h2 id="5-Tornado-框架"><a href="#5-Tornado-框架" class="headerlink" title="5. Tornado 框架"></a><strong>5. Tornado 框架</strong></h2><p>官 网：</p>
-<p><a href="https://www.tornadoweb.org/en/stable/">https://www.tornadoweb.org/en/stable/</a></p>
-<p>优 点：Tornado 是一个基于异步网络功能库的 Web 开发框架，因此，它能支持几万个开放连接，Web 服务高效稳定。可见，Tornado 适合高并发场景下的 Web 系统，开发过程需要采用 Tornado 提供的框架，灵活性较差，确定场景后再考虑使用不迟。</p>
-<p>缺 点：Tornado 5.0 改进了与 Python 的本机异步功能的集成。因此不再支持 Python 3.3，并且 Python 3.5 用户必须使用 Python 3.5.2 或更高版本。Tornado 6.0 将需要 Python 3.5 及更高版本，并将完全放弃 Python 2 支持。</p>
-<p>![Image](data:image&#x2F;svg+xml,%3C%3Fxml version&#x3D;’1.0’ encoding&#x3D;’UTF-8’%3F%3E%3Csvg width&#x3D;’1px’ height&#x3D;’1px’ viewBox&#x3D;’0 0 1 1’ version&#x3D;’1.1’ xmlns&#x3D;’<a href="http://www.w3.org/2000/svg">http://www.w3.org/2000/svg</a>‘ xmlns:xlink&#x3D;’<a href="http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg">http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg</a> stroke&#x3D;’none’ stroke-width&#x3D;’1’ fill&#x3D;’none’ fill-rule&#x3D;’evenodd’ fill-opacity&#x3D;’0’%3E%3Cg transform&#x3D;’translate(-249.000000, -126.000000)’ fill&#x3D;’%23FFFFFF’%3E%3Crect x&#x3D;’249’ y&#x3D;’126’ width&#x3D;’1’ height&#x3D;’1’%3E%3C&#x2F;rect%3E%3C&#x2F;g%3E%3C&#x2F;g%3E%3C&#x2F;svg%3E)</p>
-<h2 id="6-TurboGears-框架"><a href="#6-TurboGears-框架" class="headerlink" title="6. TurboGears 框架"></a><a href="#6-TurboGears-%E6%A1%86%E6%9E%B6" title="6. TurboGears 框架"></a><strong>6. TurboGears 框架</strong></h2><p>官 网：</p>
-<p><a href="https://www.turbogears.org/">https://www.turbogears.org/</a></p>
-<p>优 点：TurboGears 最新版本 试图解决 TurboGears 最初版本、Django、Rails 等框架缺陷，它支持多数据库、JavaScript 工具集、多种数据交换格式等，当然，它开发非常高效，扩展性很强。试问它与 Django 哪个更好？还真不好说，Django 社区更为活跃或许更重要。</p>
-<p>缺 点：TurboGears 的一些缺点包括管理功能较为基础，较少的第三方应用程序以及只有初级的文档。TurboGears 的一个重大挑战是它的压倒性。因为它混搭的其他组件都提供无限的灵活性， 当试图决定何种路径来完成一个任务时它是过于复杂的。</p>
-<p>![Image](data:image&#x2F;svg+xml,%3C%3Fxml version&#x3D;’1.0’ encoding&#x3D;’UTF-8’%3F%3E%3Csvg width&#x3D;’1px’ height&#x3D;’1px’ viewBox&#x3D;’0 0 1 1’ version&#x3D;’1.1’ xmlns&#x3D;’<a href="http://www.w3.org/2000/svg">http://www.w3.org/2000/svg</a>‘ xmlns:xlink&#x3D;’<a href="http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg">http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg</a> stroke&#x3D;’none’ stroke-width&#x3D;’1’ fill&#x3D;’none’ fill-rule&#x3D;’evenodd’ fill-opacity&#x3D;’0’%3E%3Cg transform&#x3D;’translate(-249.000000, -126.000000)’ fill&#x3D;’%23FFFFFF’%3E%3Crect x&#x3D;’249’ y&#x3D;’126’ width&#x3D;’1’ height&#x3D;’1’%3E%3C&#x2F;rect%3E%3C&#x2F;g%3E%3C&#x2F;g%3E%3C&#x2F;svg%3E)</p>
-<h2 id="7-CherryPy-框架"><a href="#7-CherryPy-框架" class="headerlink" title="7. CherryPy 框架"></a><a href="#7-CherryPy-%E6%A1%86%E6%9E%B6" title="7. CherryPy 框架"></a><strong>7. CherryPy 框架</strong></h2><p>官 网：</p>
-<p><a href="https://cherrypy.org/">https://cherrypy.org/</a></p>
-<p>优 点：CherryPy 能够让开发者按照其他面向对象程序相似的设计方法开发 Web 系统，进而采用最少的代码、最简洁的方式。CherryPy 已经开发了 10 年之久，稳定性较好，非常适合小规模 Web 系统和纯粹的 Python 程序员。感受到了什么？Python 大有一统江湖之势！拭目以待。</p>
-<p>缺 点：只包含为 web 页面提供服务所需的少量内容外，它应该尽可能地让人感觉它不像 “web 框架”，而是像任何其他类型的 Python 应用程序一样。CherryPy 包含的位用作低级构建块。包括会话标识符和 cookie 处理，但不包括 HTML 模板。像 Bottle 一样，CherryPy 提供了一种将路由映射到磁盘上的目录以供静态文件服务的方法。</p>
-<p>![Image](data:image&#x2F;svg+xml,%3C%3Fxml version&#x3D;’1.0’ encoding&#x3D;’UTF-8’%3F%3E%3Csvg width&#x3D;’1px’ height&#x3D;’1px’ viewBox&#x3D;’0 0 1 1’ version&#x3D;’1.1’ xmlns&#x3D;’<a href="http://www.w3.org/2000/svg">http://www.w3.org/2000/svg</a>‘ xmlns:xlink&#x3D;’<a href="http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg">http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg</a> stroke&#x3D;’none’ stroke-width&#x3D;’1’ fill&#x3D;’none’ fill-rule&#x3D;’evenodd’ fill-opacity&#x3D;’0’%3E%3Cg transform&#x3D;’translate(-249.000000, -126.000000)’ fill&#x3D;’%23FFFFFF’%3E%3Crect x&#x3D;’249’ y&#x3D;’126’ width&#x3D;’1’ height&#x3D;’1’%3E%3C&#x2F;rect%3E%3C&#x2F;g%3E%3C&#x2F;g%3E%3C&#x2F;svg%3E)</p>
-<h2 id="8-Falcon-框架"><a href="#8-Falcon-框架" class="headerlink" title="8. Falcon 框架"></a><a href="#8-Falcon-%E6%A1%86%E6%9E%B6" title="8. Falcon 框架"></a><strong>8. Falcon 框架</strong></h2><p>官 网：</p>
-<p><a href="http://falconframework.org/">http://falconframework.org/</a></p>
-<p>优 点：Falcon 是一个支持大规模微服务 API 或移动 App 后端响应的 Web 开发框架，它完全基于 Python 并提供了非常高的性能、可靠性和可扩展性。Falcon 定位独特且特色鲜明，对于 App 开发者，后端系统构建不妨考虑 Falcon，十之八九是不会后悔的。</p>
-<p>缺 点：Falcon 缺点是其打包模块有点太少，有路由，中间件，钩子，除此之外就不提供其他功能了（裸壳）。额外其他功能，比如验证等都需要开发人员来开发扩展。因为其设计中就假设用于构建 REST API。</p>
-<p>![Image](data:image&#x2F;svg+xml,%3C%3Fxml version&#x3D;’1.0’ encoding&#x3D;’UTF-8’%3F%3E%3Csvg width&#x3D;’1px’ height&#x3D;’1px’ viewBox&#x3D;’0 0 1 1’ version&#x3D;’1.1’ xmlns&#x3D;’<a href="http://www.w3.org/2000/svg">http://www.w3.org/2000/svg</a>‘ xmlns:xlink&#x3D;’<a href="http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg">http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg</a> stroke&#x3D;’none’ stroke-width&#x3D;’1’ fill&#x3D;’none’ fill-rule&#x3D;’evenodd’ fill-opacity&#x3D;’0’%3E%3Cg transform&#x3D;’translate(-249.000000, -126.000000)’ fill&#x3D;’%23FFFFFF’%3E%3Crect x&#x3D;’249’ y&#x3D;’126’ width&#x3D;’1’ height&#x3D;’1’%3E%3C&#x2F;rect%3E%3C&#x2F;g%3E%3C&#x2F;g%3E%3C&#x2F;svg%3E)</p>
-<h2 id="9-Asgineer-框架"><a href="#9-Asgineer-框架" class="headerlink" title="9. Asgineer 框架"></a><a href="#9-Asgineer-%E6%A1%86%E6%9E%B6" title="9. Asgineer 框架"></a><strong>9. Asgineer 框架</strong></h2><p>官 网：</p>
-<p><a href="https://asgineer.readthedocs.io/">https://asgineer.readthedocs.io/</a></p>
-<p>优 点：Asgineer 是一种编写异步 Web 应用程序的工具，使用尽可能少的抽象，同时仍然提供友好的 API。只需几分钟即可阅读指南和参考资料！在 Uvicorn 上运行 Asgineer 时，它是可用的最快的 Web 框架之一。它支持 http 长轮询、服务器端事件 (SSE) 和 websockets。并且具有以正确（且快速）的方式为资产提供服务的实用程序。</p>
-<p>缺 点：中文文档匮乏。</p>
-<h2 id="10-Bottle-框架"><a href="#10-Bottle-框架" class="headerlink" title="10. Bottle 框架"></a><a href="#10-Bottle-%E6%A1%86%E6%9E%B6" title="10. Bottle 框架"></a><strong>10. Bottle 框架</strong></h2><p>官 网：</p>
-<p><a href="https://bottlepy.org/docs/dev/">https://bottlepy.org/docs/dev/</a></p>
-<p>优 点：Bottle 是一个用于 Python 的快速、简单和轻量级的 WSGI 微型网络框架。它作为单个文件模块分发，除了 Python 标准库之外没有任何依赖项。支持干净和动态的 URL。快速和 Pythonic 内置模板引擎，支持 mako、jinja2 和 cheetah 模板。方便地访问表单数据、文件上传、cookie、标题和其他与 HTTP 相关的元数据。</p>
-<p>缺 点：Bottle 极简主义的一个后果是有些功能根本就不存在。不支持表单验证，包括 CSRF 保护等功能。如果要构建支持高度用户交互的 Web 应用程序，则需要自己添加它们。</p>
-<p><a href="https://mmbiz.qpic.cn/mmbiz_png/iaGGR9eXibkibjc2xlbRh5D0T8OTQYFhT7vmZ60TGFscqJgX8Dx5ZTYeYUFQW5tzW6dHLDCTUiatwZ6He0iaT9JTB3Q/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1"><img src="https://mmbiz.qpic.cn/mmbiz_png/iaGGR9eXibkibjc2xlbRh5D0T8OTQYFhT7vmZ60TGFscqJgX8Dx5ZTYeYUFQW5tzW6dHLDCTUiatwZ6He0iaT9JTB3Q/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1" alt="Image"></a></p>
-<h2 id="11-Emmett-框架"><a href="#11-Emmett-框架" class="headerlink" title="11. Emmett 框架"></a><a href="#11-Emmett-%E6%A1%86%E6%9E%B6" title="11. Emmett 框架"></a><strong>11. Emmett 框架</strong></h2><p>官 网：</p>
-<p><a href="https://emmett.sh/">https://emmett.sh/</a></p>
-<p>优 点：编写优雅的代码，专注于您的产品，你应该把更多的时间花在你的产品而不是底层框架上。Emmett 是发明家的框架，因为它旨在简化您的开发过程，其语法简单、易于学习和理解。不要在路由器和不舒服的模式之间浪费时间：每次为应用程序写下路由时，一切都清楚地呈现在您的眼前。</p>
-<p>缺 点：中文文档匮乏。</p>
-<p>![Image](data:image&#x2F;svg+xml,%3C%3Fxml version&#x3D;’1.0’ encoding&#x3D;’UTF-8’%3F%3E%3Csvg width&#x3D;’1px’ height&#x3D;’1px’ viewBox&#x3D;’0 0 1 1’ version&#x3D;’1.1’ xmlns&#x3D;’<a href="http://www.w3.org/2000/svg">http://www.w3.org/2000/svg</a>‘ xmlns:xlink&#x3D;’<a href="http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg">http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg</a> stroke&#x3D;’none’ stroke-width&#x3D;’1’ fill&#x3D;’none’ fill-rule&#x3D;’evenodd’ fill-opacity&#x3D;’0’%3E%3Cg transform&#x3D;’translate(-249.000000, -126.000000)’ fill&#x3D;’%23FFFFFF’%3E%3Crect x&#x3D;’249’ y&#x3D;’126’ width&#x3D;’1’ height&#x3D;’1’%3E%3C&#x2F;rect%3E%3C&#x2F;g%3E%3C&#x2F;g%3E%3C&#x2F;svg%3E)</p>
-<h2 id="12-apidaora-框架"><a href="#12-apidaora-框架" class="headerlink" title="12. apidaora 框架"></a><a href="#12-apidaora-%E6%A1%86%E6%9E%B6" title="12. apidaora 框架"></a><strong>12. apidaora 框架</strong></h2><p>官 网：</p>
-<p><a href="https://github.com/dutradda/apidaora">https://github.com/dutradda/apidaora</a></p>
-<p>优 点：使用类型注释将请求 &#x2F; 响应声明为数据类和字典，使用 jsondaora 验证输入数据，最快的 python api 框架之一，可以在任何 asgi 服务器上运行。</p>
-<p>缺 点：中文文档匮乏。</p>
-<p>![Image](data:image&#x2F;svg+xml,%3C%3Fxml version&#x3D;’1.0’ encoding&#x3D;’UTF-8’%3F%3E%3Csvg width&#x3D;’1px’ height&#x3D;’1px’ viewBox&#x3D;’0 0 1 1’ version&#x3D;’1.1’ xmlns&#x3D;’<a href="http://www.w3.org/2000/svg">http://www.w3.org/2000/svg</a>‘ xmlns:xlink&#x3D;’<a href="http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg">http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg</a> stroke&#x3D;’none’ stroke-width&#x3D;’1’ fill&#x3D;’none’ fill-rule&#x3D;’evenodd’ fill-opacity&#x3D;’0’%3E%3Cg transform&#x3D;’translate(-249.000000, -126.000000)’ fill&#x3D;’%23FFFFFF’%3E%3Crect x&#x3D;’249’ y&#x3D;’126’ width&#x3D;’1’ height&#x3D;’1’%3E%3C&#x2F;rect%3E%3C&#x2F;g%3E%3C&#x2F;g%3E%3C&#x2F;svg%3E)</p>
-<h2 id="13-Quixote-框架"><a href="#13-Quixote-框架" class="headerlink" title="13. Quixote 框架"></a><a href="#13-Quixote-%E6%A1%86%E6%9E%B6" title="13. Quixote 框架"></a><strong>13. Quixote 框架</strong></h2><p>官 网：</p>
-<p><a href="http://www.quixote.ca/">http://www.quixote.ca/</a></p>
-<p>优 点：Quixote 是一个使用 Python 编写基于 Web 的应用程序的框架。它的目标是按此顺序实现灵活性和高性能。Quixote 应用程序的结构往往类似于传统应用程序。格式化网页的逻辑由 Python 类和函数组成。Quixote 不强制分离表示逻辑和 “后端” 逻辑。相反，我们鼓励您使用传统技术。例如，一种解决方案是将表示逻辑放在其自己的子包中。</p>
-<p>缺 点：虽然 Quixote 得到积极维护，但发布频率较低。最近开发的重点是修复错误、提高标准合规性和增加 Quixote 的灵活性。</p>
-<p>![Image](data:image&#x2F;svg+xml,%3C%3Fxml version&#x3D;’1.0’ encoding&#x3D;’UTF-8’%3F%3E%3Csvg width&#x3D;’1px’ height&#x3D;’1px’ viewBox&#x3D;’0 0 1 1’ version&#x3D;’1.1’ xmlns&#x3D;’<a href="http://www.w3.org/2000/svg">http://www.w3.org/2000/svg</a>‘ xmlns:xlink&#x3D;’<a href="http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg">http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg</a> stroke&#x3D;’none’ stroke-width&#x3D;’1’ fill&#x3D;’none’ fill-rule&#x3D;’evenodd’ fill-opacity&#x3D;’0’%3E%3Cg transform&#x3D;’translate(-249.000000, -126.000000)’ fill&#x3D;’%23FFFFFF’%3E%3Crect x&#x3D;’249’ y&#x3D;’126’ width&#x3D;’1’ height&#x3D;’1’%3E%3C&#x2F;rect%3E%3C&#x2F;g%3E%3C&#x2F;g%3E%3C&#x2F;svg%3E)</p>
-<h2 id="14-reahl-框架"><a href="#14-reahl-框架" class="headerlink" title="14. reahl 框架"></a><a href="#14-reahl-%E6%A1%86%E6%9E%B6" title="14. reahl 框架"></a><strong>14. reahl 框架</strong></h2><p>官 网：</p>
-<p><a href="https://www.reahl.org/">https://www.reahl.org/</a></p>
-<p>优 点：reahl 是一个可以让开发者完全用 Python 语言编写 Web 应用的开放框架，采用 Python 作为唯一开发语言是其最大特色。此外，reahl 提供了相当清晰且简明的开发组建，对于开发一般功能性 Web 系统足够清晰且可行。</p>
-<p>缺 点：提供抽象词汇时，无法掌握一些更高级的用户界面效果，目前不允许使用 Sass 构建 Bootstrap 的修改版本，并支持更高级的用户界面模式</p>
-<p>![Image](data:image&#x2F;svg+xml,%3C%3Fxml version&#x3D;’1.0’ encoding&#x3D;’UTF-8’%3F%3E%3Csvg width&#x3D;’1px’ height&#x3D;’1px’ viewBox&#x3D;’0 0 1 1’ version&#x3D;’1.1’ xmlns&#x3D;’<a href="http://www.w3.org/2000/svg">http://www.w3.org/2000/svg</a>‘ xmlns:xlink&#x3D;’<a href="http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg">http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg</a> stroke&#x3D;’none’ stroke-width&#x3D;’1’ fill&#x3D;’none’ fill-rule&#x3D;’evenodd’ fill-opacity&#x3D;’0’%3E%3Cg transform&#x3D;’translate(-249.000000, -126.000000)’ fill&#x3D;’%23FFFFFF’%3E%3Crect x&#x3D;’249’ y&#x3D;’126’ width&#x3D;’1’ height&#x3D;’1’%3E%3C&#x2F;rect%3E%3C&#x2F;g%3E%3C&#x2F;g%3E%3C&#x2F;svg%3E)</p>
-<h2 id="15-hug-框架"><a href="#15-hug-框架" class="headerlink" title="15. hug 框架"></a><a href="#15-hug-%E6%A1%86%E6%9E%B6" title="15. hug 框架"></a><strong>15. hug 框架</strong></h2><p>官 网：</p>
-<p><a href="https://hug.rest/">https://hug.rest/</a></p>
-<p>优 点：Hug 是一个 Python 3 API 开发框架。它的设计使软件工程师可以一次开发 API，然后在需要时再使用它。Hug 框架通过提供各种接口来简化 API 开发。这就是为什么该框架被称为 Python 3 中最快的框架之一的主要原因。</p>
-<p>缺 点：它使用以前的 WSGI 标准，这是一个同步框架，所以它不能处理像 WebSockets 和其他异步请求，不管怎么说，它仍然有非常好的性能表现。</p>
-<p><a href="https://mmbiz.qpic.cn/mmbiz_png/iaGGR9eXibkibjc2xlbRh5D0T8OTQYFhT7v74UvLQavzuEJFkBeosPwAWf2s29CEg6GujeX2jUSztYovC6HZsQrpg/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1"><img src="https://mmbiz.qpic.cn/mmbiz_png/iaGGR9eXibkibjc2xlbRh5D0T8OTQYFhT7v74UvLQavzuEJFkBeosPwAWf2s29CEg6GujeX2jUSztYovC6HZsQrpg/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1" alt="Image"></a></p>
-<h2 id="16-BlackSheep-框架"><a href="#16-BlackSheep-框架" class="headerlink" title="16. BlackSheep 框架"></a><a href="#16-BlackSheep-%E6%A1%86%E6%9E%B6" title="16. BlackSheep 框架"></a><strong>16. BlackSheep 框架</strong></h2><p>官 网：</p>
-<p><a href="https://github.com/Neoteroi/BlackSheep">https://github.com/Neoteroi/BlackSheep</a></p>
-<p>优 点：BlackSheep 是一个异步 Web 框架，用于使用 Python 构建基于事件的 Web 应用程序。它的灵感来自 Flask、ASP.NET Core 和 Yury Selivanov 的工作。</p>
-<p>缺 点：中文文档匮乏。</p>
-<p><a href="https://mmbiz.qpic.cn/mmbiz_png/iaGGR9eXibkibjc2xlbRh5D0T8OTQYFhT7vYGSFXA48xGBc8Rseoq1BdruQWzGeVQE5DVbkQygQemKdUHmEJU80FA/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1"><img src="https://mmbiz.qpic.cn/mmbiz_png/iaGGR9eXibkibjc2xlbRh5D0T8OTQYFhT7vYGSFXA48xGBc8Rseoq1BdruQWzGeVQE5DVbkQygQemKdUHmEJU80FA/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1" alt="Image"></a></p>
-<h2 id="17-Index-py-框架"><a href="#17-Index-py-框架" class="headerlink" title="17. Index.py 框架"></a><a href="#17-Index-py-%E6%A1%86%E6%9E%B6" title="17. Index.py 框架"></a><strong>17. Index.py 框架</strong></h2><p>官 网：</p>
-<p><a href="https://index-py.aber.sh/stable/">https://index-py.aber.sh/stable/</a></p>
-<p>优 点：实现了 ASGI3 接口并使用 Radix Tree 进行路由查找。是最快的 Python web 框架之一。一切特性都服务于快速开发高性能的 Web 服务。大量正确的类型注释，灵活且高效的路由系统，可视化 API 接口与在线调试，支持 Server-sent events 与 WebSocket，自带一键部署命令 (基于 uvicorn 与 gunicorn)，可使用任何可用的 ASGI 生态。</p>
-<p>缺 点：Index.py 不内置数据库、缓存等其他功能。选择困难者请直接使用 Django。</p>
-<p>![Image](data:image&#x2F;svg+xml,%3C%3Fxml version&#x3D;’1.0’ encoding&#x3D;’UTF-8’%3F%3E%3Csvg width&#x3D;’1px’ height&#x3D;’1px’ viewBox&#x3D;’0 0 1 1’ version&#x3D;’1.1’ xmlns&#x3D;’<a href="http://www.w3.org/2000/svg">http://www.w3.org/2000/svg</a>‘ xmlns:xlink&#x3D;’<a href="http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg">http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg</a> stroke&#x3D;’none’ stroke-width&#x3D;’1’ fill&#x3D;’none’ fill-rule&#x3D;’evenodd’ fill-opacity&#x3D;’0’%3E%3Cg transform&#x3D;’translate(-249.000000, -126.000000)’ fill&#x3D;’%23FFFFFF’%3E%3Crect x&#x3D;’249’ y&#x3D;’126’ width&#x3D;’1’ height&#x3D;’1’%3E%3C&#x2F;rect%3E%3C&#x2F;g%3E%3C&#x2F;g%3E%3C&#x2F;svg%3E)</p>
-<h2 id="18-Sanic-框架"><a href="#18-Sanic-框架" class="headerlink" title="18. Sanic 框架"></a><a href="#18-Sanic-%E6%A1%86%E6%9E%B6" title="18. Sanic 框架"></a><strong>18. Sanic 框架</strong></h2><p>官 网：</p>
-<p><a href="https://github.com/sanic-org/sanic">https://github.com/sanic-org/sanic</a></p>
-<p>优 点：Sanic 是一个 Python 3.7+ web 服务器和 web 框架，它的编写速度很快。它允许使用 Python 3.5 中添加的 async&#x2F;await 语法，这使您的代码无阻塞且快速。该项目的目标是提供一种简单的方法来启动和运行一个高性能的 HTTP 服务器，该服务器易于构建、扩展和最终扩展。</p>
-<p>缺 点：就功能方面 Sanic 模仿 Flask，比如通过共享 Blueprints 的概念，微小的子应用程序，允许开发人员在更大的应用程序中拆分和组织其代码。对于光光是数据增删改查 CRUD 应用，Sanic 也不是一个好的选择。</p>
-<p>![Image](data:image&#x2F;svg+xml,%3C%3Fxml version&#x3D;’1.0’ encoding&#x3D;’UTF-8’%3F%3E%3Csvg width&#x3D;’1px’ height&#x3D;’1px’ viewBox&#x3D;’0 0 1 1’ version&#x3D;’1.1’ xmlns&#x3D;’<a href="http://www.w3.org/2000/svg">http://www.w3.org/2000/svg</a>‘ xmlns:xlink&#x3D;’<a href="http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg">http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg</a> stroke&#x3D;’none’ stroke-width&#x3D;’1’ fill&#x3D;’none’ fill-rule&#x3D;’evenodd’ fill-opacity&#x3D;’0’%3E%3Cg transform&#x3D;’translate(-249.000000, -126.000000)’ fill&#x3D;’%23FFFFFF’%3E%3Crect x&#x3D;’249’ y&#x3D;’126’ width&#x3D;’1’ height&#x3D;’1’%3E%3C&#x2F;rect%3E%3C&#x2F;g%3E%3C&#x2F;g%3E%3C&#x2F;svg%3E)</p>
-<h2 id="19-Starlette-框架"><a href="#19-Starlette-框架" class="headerlink" title="19. Starlette 框架"></a><a href="#19-Starlette-%E6%A1%86%E6%9E%B6" title="19. Starlette 框架"></a><strong>19. Starlette 框架</strong></h2><p>官 网：</p>
-<p><a href="https://pypi.org/project/starlette/">https://pypi.org/project/starlette/</a></p>
-<p>优 点：Starlette 是一个轻量级的 ASGI 框架 &#x2F; 工具包，非常适合构建性能异步服务，它是生产就绪的，并为您提供以下内容：令人印象深刻的表现。WwbSocket 支持。GraphQL 支持。进程内后台任务。启动和关闭事件。基于请求构建的测试客户端。CORS、GZip、静态文件、流响应。会话和 Cookie 支持。100% 的测试覆盖率。100% 类型注释代码库。零硬依赖。</p>
-<p>缺 点：Starlette 提供了所有基本的 Web 微框架功能。但是它不提供自动数据验证，序列化或 API 文档。</p>
-<p>![Image](data:image&#x2F;svg+xml,%3C%3Fxml version&#x3D;’1.0’ encoding&#x3D;’UTF-8’%3F%3E%3Csvg width&#x3D;’1px’ height&#x3D;’1px’ viewBox&#x3D;’0 0 1 1’ version&#x3D;’1.1’ xmlns&#x3D;’<a href="http://www.w3.org/2000/svg">http://www.w3.org/2000/svg</a>‘ xmlns:xlink&#x3D;’<a href="http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg">http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg</a> stroke&#x3D;’none’ stroke-width&#x3D;’1’ fill&#x3D;’none’ fill-rule&#x3D;’evenodd’ fill-opacity&#x3D;’0’%3E%3Cg transform&#x3D;’translate(-249.000000, -126.000000)’ fill&#x3D;’%23FFFFFF’%3E%3Crect x&#x3D;’249’ y&#x3D;’126’ width&#x3D;’1’ height&#x3D;’1’%3E%3C&#x2F;rect%3E%3C&#x2F;g%3E%3C&#x2F;g%3E%3C&#x2F;svg%3E)</p>
-<h2 id="20-Fastapi-框架"><a href="#20-Fastapi-框架" class="headerlink" title="20. Fastapi 框架"></a><a href="#20-Fastapi-%E6%A1%86%E6%9E%B6" title="20. Fastapi 框架"></a><strong>20. Fastapi 框架</strong></h2><p>官 网：</p>
-<p><a href="https://fastapi.tiangolo.com/">https://fastapi.tiangolo.com/</a></p>
-<p>优 点：FastAPI 是一个现代、快速（高性能）的 Web 框架，用于基于标准 Python 类型提示使用 Python 3.6+ 构建 API。非常高的性能，与 NodeJS 和 Go 相当（感谢 Starlette 和 Pydantic）。可用的最快的 Python 框架之一。减少大约 40% 的人为（开发人员）引发的错误。简短，简单，直观，健壮。</p>
-<p>缺 点：本身不带模板语法，需要安装模板语法</p>
-<p>![Image](data:image&#x2F;svg+xml,%3C%3Fxml version&#x3D;’1.0’ encoding&#x3D;’UTF-8’%3F%3E%3Csvg width&#x3D;’1px’ height&#x3D;’1px’ viewBox&#x3D;’0 0 1 1’ version&#x3D;’1.1’ xmlns&#x3D;’<a href="http://www.w3.org/2000/svg">http://www.w3.org/2000/svg</a>‘ xmlns:xlink&#x3D;’<a href="http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg">http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg</a> stroke&#x3D;’none’ stroke-width&#x3D;’1’ fill&#x3D;’none’ fill-rule&#x3D;’evenodd’ fill-opacity&#x3D;’0’%3E%3Cg transform&#x3D;’translate(-249.000000, -126.000000)’ fill&#x3D;’%23FFFFFF’%3E%3Crect x&#x3D;’249’ y&#x3D;’126’ width&#x3D;’1’ height&#x3D;’1’%3E%3C&#x2F;rect%3E%3C&#x2F;g%3E%3C&#x2F;g%3E%3C&#x2F;svg%3E)</p>
-<h2 id="21-Responder-框架"><a href="#21-Responder-框架" class="headerlink" title="21. Responder 框架"></a><a href="#21-Responder-%E6%A1%86%E6%9E%B6" title="21. Responder 框架"></a><strong>21. Responder 框架</strong></h2><p>官 网：</p>
-<p><a href="https://python-responder.org/">https://python-responder.org/</a></p>
-<p>优 点：是 kennethreitz 新开发的一个项目，是一个基于 Python 的 HTTP 服务框架。底层用了 Starlette 的框架，Starlette 是一款轻量级的 ASGI 框架 &#x2F; 工具包， 可以用 Starlette 构建高性能的异步 IO 服务。相对于 Starlette , responder 对开发者更加友好一点。kennethreitz 写了 requests 号称 “HTTP for Humans” 更加清楚这一点。事实上比较下来，responder 也比 Starlette 优雅很多。</p>
-<p>缺 点：可能是新项目， 打包还不太完善。就目前版本而言，少许代码还不能正常工作。但接口形式已经定义完毕，期待后面版本会加上去。</p>
-<h2 id="22-Molten-框架"><a href="#22-Molten-框架" class="headerlink" title="22. Molten 框架"></a><a href="#22-Molten-%E6%A1%86%E6%9E%B6" title="22. Molten 框架"></a><strong>22. Molten 框架</strong></h2><p>官 网：</p>
-<p><a href="https://moltenframework.com/">https://moltenframework.com/</a></p>
-<p>优 点：Molten 是一个最小的、可扩展的、快速的和高效的框架，用于使用 Python 构建 HTTP API。计划自动验证请求，代码更容易维护。实例可自动序列化，包含 API 在现实世界中通常要求的各种功能，广泛使用 PEP484 类型提示和 mypy。</p>
-<p>缺 点：它没有使用像第三方库（如 Pydantic）提供数据验证，序列化和文档，它有自己的库。因此，这些数据类型定义将不太容易重用。依赖注入系统需要对依赖项进行预注册，并且将基于已声明的类型解决依赖问题。因此，不可能声明多个组件来提供一个特定的类型。</p>
-<p>![Image](data:image&#x2F;svg+xml,%3C%3Fxml version&#x3D;’1.0’ encoding&#x3D;’UTF-8’%3F%3E%3Csvg width&#x3D;’1px’ height&#x3D;’1px’ viewBox&#x3D;’0 0 1 1’ version&#x3D;’1.1’ xmlns&#x3D;’<a href="http://www.w3.org/2000/svg">http://www.w3.org/2000/svg</a>‘ xmlns:xlink&#x3D;’<a href="http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg">http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg</a> stroke&#x3D;’none’ stroke-width&#x3D;’1’ fill&#x3D;’none’ fill-rule&#x3D;’evenodd’ fill-opacity&#x3D;’0’%3E%3Cg transform&#x3D;’translate(-249.000000, -126.000000)’ fill&#x3D;’%23FFFFFF’%3E%3Crect x&#x3D;’249’ y&#x3D;’126’ width&#x3D;’1’ height&#x3D;’1’%3E%3C&#x2F;rect%3E%3C&#x2F;g%3E%3C&#x2F;g%3E%3C&#x2F;svg%3E)</p>
-<h2 id="23-Clastic-框架"><a href="#23-Clastic-框架" class="headerlink" title="23. Clastic 框架"></a><a href="#23-Clastic-%E6%A1%86%E6%9E%B6" title="23. Clastic 框架"></a><strong>23. Clastic 框架</strong></h2><p>官 网：</p>
-<p><a href="https://github.com/mahmoud/clastic">https://github.com/mahmoud/clastic</a></p>
-<p>优 点：一个功能强大的 Python Web 框架，可简化显式开发实践，同时消除全局状态。Clastic 是完全用 Python 语言编写的，增强可重用性和可测试性，主动 URL 路由检查，更好地控制应用程序初始化，改进的中间件范例，没有全局状态，ORM 用法，更容易的 WSGI 集成。</p>
-<p>缺 点：Clastic 没有构建全局状态；URL 路由规则参数和视图函数签名不匹配，在 Clastic 中，这种不匹配会在构建应用程序时引发异常。</p>
-<h2 id="24-Aiohttp-框架"><a href="#24-Aiohttp-框架" class="headerlink" title="24. Aiohttp 框架"></a><a href="#24-Aiohttp-%E6%A1%86%E6%9E%B6" title="24. Aiohttp 框架"></a><strong>24. Aiohttp 框架</strong></h2><p>官 网：</p>
-<p><a href="https://docs.aiohttp.org/en/stable/">https://docs.aiohttp.org/en/stable/</a></p>
-<p>优 点：用于 asyncio 和 Python 的异步 HTTP 客户端 &#x2F; 服务器。支持客户端和 HTTP 服务器，支持开箱即用的服务器 WebSockets 和客户端 WebSockets，没有回调地狱。Web 服务器具有中间件、信号和可插入路由。</p>
-<p>缺 点：根据 RFC 7231 aiohttp 2.0 版本后做了接受 HEAD 请求的调整，使用之前版本并且用 add_ get () 添加的请</p>
-<p>求，如果使用 HEAD 方法访问会返回 405。如果处理器会写入很多响应体内容，你可以在执行 HEAD 方法时跳过处理响应体内容以提高执行效率。</p>
-<p>![Image](data:image&#x2F;svg+xml,%3C%3Fxml version&#x3D;’1.0’ encoding&#x3D;’UTF-8’%3F%3E%3Csvg width&#x3D;’1px’ height&#x3D;’1px’ viewBox&#x3D;’0 0 1 1’ version&#x3D;’1.1’ xmlns&#x3D;’<a href="http://www.w3.org/2000/svg">http://www.w3.org/2000/svg</a>‘ xmlns:xlink&#x3D;’<a href="http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg">http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg</a> stroke&#x3D;’none’ stroke-width&#x3D;’1’ fill&#x3D;’none’ fill-rule&#x3D;’evenodd’ fill-opacity&#x3D;’0’%3E%3Cg transform&#x3D;’translate(-249.000000, -126.000000)’ fill&#x3D;’%23FFFFFF’%3E%3Crect x&#x3D;’249’ y&#x3D;’126’ width&#x3D;’1’ height&#x3D;’1’%3E%3C&#x2F;rect%3E%3C&#x2F;g%3E%3C&#x2F;g%3E%3C&#x2F;svg%3E)</p>
-<h2 id="25-Masonite-框架"><a href="#25-Masonite-框架" class="headerlink" title="25. Masonite 框架"></a><a href="#25-Masonite-%E6%A1%86%E6%9E%B6" title="25. Masonite 框架"></a><strong>25. Masonite 框架</strong></h2><p>官 网：</p>
-<p><a href="https://docs.masoniteproject.com/">https://docs.masoniteproject.com/</a></p>
-<p>优 点：现代和以开发人员为中心的 Python Web 框架致力于实现实际的 batteries，包括具有许多开箱即用功能的开发人员工具，具有极其可扩展的架构。Masonite 非常适合初学者开发人员进入他们的第一个 Web 应用程序，以及需要充分利用 Masonite 的全部潜力来完成他们的应用程序的经验丰富的开发人员。Masonite 努力实现从安装到部署的快速简便，因此开发人员可以尽可能快速有效地从概念到创建。将其用于您的下一个 SaaS！尝试一次，你就会坠入爱河。</p>
-<p>缺 点：对于 Masonite 来说，最大的” 竞争对手” 是 Django, 因为社区正在竭尽全力将框架推向容易，令人愉悦的下一件大事。与 Django 相比，Masonite 仍然是婴儿，期待它未来的表现。</p>
-<p>![Image](data:image&#x2F;svg+xml,%3C%3Fxml version&#x3D;’1.0’ encoding&#x3D;’UTF-8’%3F%3E%3Csvg width&#x3D;’1px’ height&#x3D;’1px’ viewBox&#x3D;’0 0 1 1’ version&#x3D;’1.1’ xmlns&#x3D;’<a href="http://www.w3.org/2000/svg">http://www.w3.org/2000/svg</a>‘ xmlns:xlink&#x3D;’<a href="http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg">http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg</a> stroke&#x3D;’none’ stroke-width&#x3D;’1’ fill&#x3D;’none’ fill-rule&#x3D;’evenodd’ fill-opacity&#x3D;’0’%3E%3Cg transform&#x3D;’translate(-249.000000, -126.000000)’ fill&#x3D;’%23FFFFFF’%3E%3Crect x&#x3D;’249’ y&#x3D;’126’ width&#x3D;’1’ height&#x3D;’1’%3E%3C&#x2F;rect%3E%3C&#x2F;g%3E%3C&#x2F;g%3E%3C&#x2F;svg%3E)</p>
-<h2 id="26-Quart-框架"><a href="#26-Quart-框架" class="headerlink" title="26. Quart 框架"></a><a href="#26-Quart-%E6%A1%86%E6%9E%B6" title="26. Quart 框架"></a><strong>26. Quart 框架</strong></h2><p>官 网：</p>
-<p><a href="https://pgjones.gitlab.io/quart/">https://pgjones.gitlab.io/quart/</a></p>
-<p>优 点：Quart 是一个 Python 网络微框架。使用 Quart，您可以呈现和提供 HTML 模板，编写（RESTful）JSON API，服务 WebSockets，流请求和响应数据，几乎可以通过 HTTP 或 WebSocket 协议做任何事情。</p>
-<p>缺 点：它仅支持 Python 3.7+。</p>
-<p>![Image](data:image&#x2F;svg+xml,%3C%3Fxml version&#x3D;’1.0’ encoding&#x3D;’UTF-8’%3F%3E%3Csvg width&#x3D;’1px’ height&#x3D;’1px’ viewBox&#x3D;’0 0 1 1’ version&#x3D;’1.1’ xmlns&#x3D;’<a href="http://www.w3.org/2000/svg">http://www.w3.org/2000/svg</a>‘ xmlns:xlink&#x3D;’<a href="http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg">http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg</a> stroke&#x3D;’none’ stroke-width&#x3D;’1’ fill&#x3D;’none’ fill-rule&#x3D;’evenodd’ fill-opacity&#x3D;’0’%3E%3Cg transform&#x3D;’translate(-249.000000, -126.000000)’ fill&#x3D;’%23FFFFFF’%3E%3Crect x&#x3D;’249’ y&#x3D;’126’ width&#x3D;’1’ height&#x3D;’1’%3E%3C&#x2F;rect%3E%3C&#x2F;g%3E%3C&#x2F;g%3E%3C&#x2F;svg%3E)</p>
-<h2 id="27-Tonberry-框架"><a href="#27-Tonberry-框架" class="headerlink" title="27. Tonberry 框架"></a><a href="#27-Tonberry-%E6%A1%86%E6%9E%B6" title="27. Tonberry 框架"></a><strong>27. Tonberry 框架</strong></h2><p>官 网：</p>
-<p><a href="https://github.com/Ayehavgunne/Tonberry">https://github.com/Ayehavgunne/Tonberry</a></p>
-<p>优 点：一个符合 ASGI 的 Web 微框架，采用基于类的路由方法。受 CherryPy 的影响但与 asyncio 兼容。一个名为 Qactuar 的配套 ASGI 服务器是从这个目前正在进行的项目中产生的。</p>
-<p>缺 点：在使用拉取请求，请使用自动格式化程序 iSort 和 Black 并使用 MyPy 验证代码。这是在不消除某些类型错误的情况下，并不总是可以使 MyPy 完全满意，但是至少尽你所能并谨慎使用注释 `# type: ignore`。最后，尝试，尽可能提供最准确的类型提示。</p>
-<p>![Image](data:image&#x2F;svg+xml,%3C%3Fxml version&#x3D;’1.0’ encoding&#x3D;’UTF-8’%3F%3E%3Csvg width&#x3D;’1px’ height&#x3D;’1px’ viewBox&#x3D;’0 0 1 1’ version&#x3D;’1.1’ xmlns&#x3D;’<a href="http://www.w3.org/2000/svg">http://www.w3.org/2000/svg</a>‘ xmlns:xlink&#x3D;’<a href="http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg">http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg</a> stroke&#x3D;’none’ stroke-width&#x3D;’1’ fill&#x3D;’none’ fill-rule&#x3D;’evenodd’ fill-opacity&#x3D;’0’%3E%3Cg transform&#x3D;’translate(-249.000000, -126.000000)’ fill&#x3D;’%23FFFFFF’%3E%3Crect x&#x3D;’249’ y&#x3D;’126’ width&#x3D;’1’ height&#x3D;’1’%3E%3C&#x2F;rect%3E%3C&#x2F;g%3E%3C&#x2F;g%3E%3C&#x2F;svg%3E)</p>
-<h2 id="28-cyclone-框架"><a href="#28-cyclone-框架" class="headerlink" title="28. cyclone 框架"></a><a href="#28-cyclone-%E6%A1%86%E6%9E%B6" title="28. cyclone 框架"></a><strong>28. cyclone 框架</strong></h2><p>官 网：</p>
-<p><a href="https://cyclone.io/">https://cyclone.io/</a></p>
-<p>优 点：Cyclone 是 Python 的 Web 服务器框架，它将 Tornado API 实现为 Twisted 协议。Twisted 是一个事件驱动的 Python 网络编程框架。它是最成熟的非阻塞 I&#x2F;O 库之一，可供公众使用。Tornado 是 FriendFeed 网络服务器的开源版本，它是最流行和最快速的 Python 网络服务器之一，具有用于构建网络应用程序的非常不错的 API。除了丰富的功能集之外，Cyclone 还解决了 C10K 问题。</p>
-<p>缺 点：Cyclone 不再支持 python 2.x 。</p>
-<h2 id="29-Klein-框架"><a href="#29-Klein-框架" class="headerlink" title="29. Klein 框架"></a><a href="#29-Klein-%E6%A1%86%E6%9E%B6" title="29. Klein 框架"></a><strong>29. Klein 框架</strong></h2><p>官 网：</p>
-<p><a href="https://github.com/twisted/klein">https://github.com/twisted/klein</a></p>
-<p>优 点：Klein 是一个微框架，用于使用 Python 开发可用于生产的 Web 服务。它是 “微” 的，因为它具有类似于 Bottle 和 Flask 的非常小的 API。它不是 “微”，因为它依赖于标准库之外的东西。这主要是因为它建立在广泛使用和经过良好测试的组件上，如 Werkzeug 和 Twisted。</p>
-<p>缺 点：也许有点过时了。</p>
-<p><a href="https://mmbiz.qpic.cn/mmbiz_png/iaGGR9eXibkibjc2xlbRh5D0T8OTQYFhT7vBnFIibORF9iby60Fibho0SD8w6yruia9Of1jRAUXYAZQsIx6CHvKoVNahA/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1"><img src="https://mmbiz.qpic.cn/mmbiz_png/iaGGR9eXibkibjc2xlbRh5D0T8OTQYFhT7vBnFIibORF9iby60Fibho0SD8w6yruia9Of1jRAUXYAZQsIx6CHvKoVNahA/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1" alt="Image"></a></p>
-<h2 id="30-nameko-框架"><a href="#30-nameko-框架" class="headerlink" title="30. nameko 框架"></a><a href="#30-nameko-%E6%A1%86%E6%9E%B6" title="30. nameko 框架"></a><strong>30. nameko 框架</strong></h2><p>官 网：</p>
-<p><a href="https://github.com/nameko/nameko">https://github.com/nameko/nameko</a></p>
-<p>优 点：AMQP RPC 和事件（发布 - 订阅），HTTPGET、POST 和 websockets，CLI 实现简单快速的开发，用于单元和集成测试的实用程序。</p>
-<p>缺 点：nameko 微服务出错不会自动打印错误日志，需要加上监控相关的依赖，计算密集型任务导致任务重试。</p>
-<p><a href="https://mmbiz.qpic.cn/mmbiz_png/iaGGR9eXibkibjc2xlbRh5D0T8OTQYFhT7vwTOiczSh8vsIDoUOAVv04ykVES8IicWhI2mtGorInh5asXf3SicZFygKg/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1"><img src="https://mmbiz.qpic.cn/mmbiz_png/iaGGR9eXibkibjc2xlbRh5D0T8OTQYFhT7vwTOiczSh8vsIDoUOAVv04ykVES8IicWhI2mtGorInh5asXf3SicZFygKg/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1" alt="Image"></a></p>
-<h2 id="31-CubicWeb-框架"><a href="#31-CubicWeb-框架" class="headerlink" title="31. CubicWeb 框架"></a><a href="#31-CubicWeb-%E6%A1%86%E6%9E%B6" title="31. CubicWeb 框架"></a><strong>31. CubicWeb 框架</strong></h2><p>官 网：</p>
-<p><a href="https://www.cubicweb.org/">https://www.cubicweb.org/</a></p>
-<p>优 点：CubicWeb 是一种语义 Web 应用程序框架，在 LGPL 下获得许可，它使开发人员能够通过重用组件（称为立方体）并遵循众所周知的面向对象设计原则来有效地构建 Web 应用程序。满足常见需求的可重用组件（数据模型和视图）库，Python 编程语言的强大功能和灵活性，用于存储后端的 SQL 数据库、LDAP 目录、Subversion 和 Mercurial 的可靠性。</p>
-<p>缺 点：要在 CubicWeb 应用程序中获取或操作持久数据，可以使用关系查询语言（RQL），RQL 提供了一种高度分离的路径来相互关联各种数据源。但是，随着它的实现，通过手动构建查询作为字符串，它可能会让习惯于 ORM 的开发人员感到过时。使用 CubicWeb 还有其他障碍。首先，设置可能很麻烦。另一个潜在的问题是缺少本机模板引擎；生成 HTML 留给开发人员。CubicWeb 支持 Python 3，但 Twisted 等模块本身并未完全移植。</p>
-<p>![Image](data:image&#x2F;svg+xml,%3C%3Fxml version&#x3D;’1.0’ encoding&#x3D;’UTF-8’%3F%3E%3Csvg width&#x3D;’1px’ height&#x3D;’1px’ viewBox&#x3D;’0 0 1 1’ version&#x3D;’1.1’ xmlns&#x3D;’<a href="http://www.w3.org/2000/svg">http://www.w3.org/2000/svg</a>‘ xmlns:xlink&#x3D;’<a href="http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg">http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg</a> stroke&#x3D;’none’ stroke-width&#x3D;’1’ fill&#x3D;’none’ fill-rule&#x3D;’evenodd’ fill-opacity&#x3D;’0’%3E%3Cg transform&#x3D;’translate(-249.000000, -126.000000)’ fill&#x3D;’%23FFFFFF’%3E%3Crect x&#x3D;’249’ y&#x3D;’126’ width&#x3D;’1’ height&#x3D;’1’%3E%3C&#x2F;rect%3E%3C&#x2F;g%3E%3C&#x2F;g%3E%3C&#x2F;svg%3E)</p>
-<h2 id="32-Zope2-框架"><a href="#32-Zope2-框架" class="headerlink" title="32. Zope2 框架"></a><a href="#32-Zope2-%E6%A1%86%E6%9E%B6" title="32. Zope2 框架"></a><strong>32. Zope2 框架</strong></h2><p>官 网：</p>
-<p><a href="https://zope.readthedocs.io/en/latest/">https://zope.readthedocs.io/en/latest/</a></p>
-<p>优 点：Zope 2 是一款基于 Python 的 Web 应用框架，是所有 Python Web 应用程序、工具的鼻祖，是 Python 家族一个强有力的分支。Zope 2 的 “对象发布” 系统非常适合面向对象开发方法，并且可以减轻开发者的学习曲线，还可以帮助你发现应用程序里一些不好的功能。</p>
-<p>缺 点：Zope 不适用于简单的 RESTful API（每 Bottle 或 Flask），甚至不适用于具有交互性的基本网站（à la Django），由于 Zope 的尺寸和复杂性，安装需要一些工作；这不是简单地将源解压缩到项目子文件夹中的问题。</p>
-<h2 id="33-Web2py-框架"><a href="#33-Web2py-框架" class="headerlink" title="33. Web2py 框架"></a><a href="#33-Web2py-%E6%A1%86%E6%9E%B6" title="33. Web2py 框架"></a><strong>33. Web2py 框架</strong></h2><p>官 网：</p>
-<p><a href="http://web2py.com/">http://web2py.com/</a></p>
-<p>优 点：Web2py 是一个用 Python 语言编写的免费的开源 Web 框架，旨在敏捷快速的开发 Web 应用，具有快速、可扩展、安全以及可移植的数据库驱动的应用，遵循 LGPLv3 开源协议。Web2py 提供一站式的解决方案，整个开发过程都可以在浏览器上进行，提供了 Web 版的在线开发，HTML 模版编写，静态文件的上传，数据库的编写的功能。其它的还有日志功能，以及一个自动化的 admin 接口。</p>
-<p>缺 点：Web2py 的一个重要限制是它仅与 Python 2.x 兼容。首先，这意味着 Web2py 无法使用 Python 3 的异步语法。如果你依赖于 Python 3 独有的外部库，那么你就不走运了。但是，正在开展使 Web2py Python 3 兼容的工作，并且在撰写本文时它已接近完成</p>
-<p>![Image](data:image&#x2F;svg+xml,%3C%3Fxml version&#x3D;’1.0’ encoding&#x3D;’UTF-8’%3F%3E%3Csvg width&#x3D;’1px’ height&#x3D;’1px’ viewBox&#x3D;’0 0 1 1’ version&#x3D;’1.1’ xmlns&#x3D;’<a href="http://www.w3.org/2000/svg">http://www.w3.org/2000/svg</a>‘ xmlns:xlink&#x3D;’<a href="http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg">http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg</a> stroke&#x3D;’none’ stroke-width&#x3D;’1’ fill&#x3D;’none’ fill-rule&#x3D;’evenodd’ fill-opacity&#x3D;’0’%3E%3Cg transform&#x3D;’translate(-249.000000, -126.000000)’ fill&#x3D;’%23FFFFFF’%3E%3Crect x&#x3D;’249’ y&#x3D;’126’ width&#x3D;’1’ height&#x3D;’1’%3E%3C&#x2F;rect%3E%3C&#x2F;g%3E%3C&#x2F;g%3E%3C&#x2F;svg%3E)</p>
-<h2 id="34-Pylons-框架"><a href="#34-Pylons-框架" class="headerlink" title="34. Pylons 框架"></a><a href="#34-Pylons-%E6%A1%86%E6%9E%B6" title="34. Pylons 框架"></a><strong>34. Pylons 框架</strong></h2><p>官 网：</p>
-<p><a href="https://docs.pylonsproject.org/projects/pylons-webframework/en/latest/">https://docs.pylonsproject.org/projects/pylons-webframework/en/latest/</a></p>
-<p>优 点：Pylons 是一个开放源代码的 Web 应用框架，使用 python 语言编写。它对 WSGI 标准进行了扩展应用，提升了重用性且将功能分割到独立的模块中。Pylons 是最新的 Web 应用框架中的典型，类似于 Django 和 TurboGears。Pylons 受 Ruby on Rails 影响很深：它的两个组件，Routes 和 WebHelpers 是 Rails 特性的 Python 实现。</p>
-<p>缺 点：Pylons 已与 repoze.bfg 合并，现在处于仅维护模式。强烈建议新项目从新合并的 Web 框架金字塔开始。</p>
-<p>![Image](data:image&#x2F;svg+xml,%3C%3Fxml version&#x3D;’1.0’ encoding&#x3D;’UTF-8’%3F%3E%3Csvg width&#x3D;’1px’ height&#x3D;’1px’ viewBox&#x3D;’0 0 1 1’ version&#x3D;’1.1’ xmlns&#x3D;’<a href="http://www.w3.org/2000/svg">http://www.w3.org/2000/svg</a>‘ xmlns:xlink&#x3D;’<a href="http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg">http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg</a> stroke&#x3D;’none’ stroke-width&#x3D;’1’ fill&#x3D;’none’ fill-rule&#x3D;’evenodd’ fill-opacity&#x3D;’0’%3E%3Cg transform&#x3D;’translate(-249.000000, -126.000000)’ fill&#x3D;’%23FFFFFF’%3E%3Crect x&#x3D;’249’ y&#x3D;’126’ width&#x3D;’1’ height&#x3D;’1’%3E%3C&#x2F;rect%3E%3C&#x2F;g%3E%3C&#x2F;g%3E%3C&#x2F;svg%3E)</p>
-<h2 id="35-Cubes-框架"><a href="#35-Cubes-框架" class="headerlink" title="35. Cubes 框架"></a><a href="#35-Cubes-%E6%A1%86%E6%9E%B6" title="35. Cubes 框架"></a><strong>35. Cubes 框架</strong></h2><p>官 网：</p>
-<p><a href="https://pythonhosted.org/cubes/">https://pythonhosted.org/cubes/</a></p>
-<p>优 点：Cubes 是一个轻量级的 Python 框架和工具集，用于开发报告和分析应用程序、在线分析处理 (OLAP)、多维分析和浏览聚合数据。它是 Data Brewery 的一部分。</p>
-<p>缺点：不再为每个多维数据集提供隐式聚合 record_count。它必须明确定义为聚合：旧的后端架构是有限制的。它只允许使用一个商店，必须在服务器启动之前知道模型，不可能从远程来源获取模型。</p>
-<h2 id="36-Dpark-框架"><a href="#36-Dpark-框架" class="headerlink" title="36. Dpark 框架"></a><a href="#36-Dpark-%E6%A1%86%E6%9E%B6" title="36. Dpark 框架"></a><strong>36. Dpark 框架</strong></h2><p>官 网：</p>
-<p><a href="https://github.com/Liangchengdeye/Dpark">https://github.com/Liangchengdeye/Dpark</a></p>
-<p>优 点：DPark 是 Spark 的 Python 克隆版本，是一个 Python 实现的分布式计算框架，可以非常方便地实现大规模数据处理和低延时的迭代计算。该计算框架类似于 MapReduce，但是比其更灵活，可以用 Python 非常方便地进行分布式计算，并且提供了更多的功能，以便更好地进行迭代式计算。DPark 由国内的豆瓣公司开发实现和负责维护，据豆瓣公司的描述，目前豆瓣公司内部的绝大多数数据分析都使用 DPark 完成，整个项目也正趋于完善。</p>
-<p>缺 点：Dpark 使用的是进程，在 Python 中，由于 GIL (Global Interpreter Lock) 的存在，即使在多核机器上使用多个线程，这些线程之间也没有办法真正地实现并发执行。</p>
-<h2 id="37-Buildbot-框架"><a href="#37-Buildbot-框架" class="headerlink" title="37. Buildbot 框架"></a><a href="#37-Buildbot-%E6%A1%86%E6%9E%B6" title="37. Buildbot 框架"></a><strong>37. Buildbot 框架</strong></h2><p>官 网：</p>
-<p><a href="https://buildbot.python.org/all/#/">https://buildbot.python.org/all/#/</a></p>
-<p>优 点：Buildbot 是 python 实现的开源持续构建和持续交付工具，为 Python, Mozilla, Chromium, WebKit 等知名项目使用。Buildbot 可以直接使用 python 包，轻松拥有上万库，具备强大的扩展能力。如果你觉得 Jenkins 已经轻松地满足你的需求，你不需要 Buildbot。如果你在 Jenkins 时觉得效率低下、扩展困难、一些用 python 等脚本可以实现的动作在 Jenkins 困难重重，那么可以看看 Buildbot。</p>
-<p>缺 点：buildbot 对多项目支持并不好。</p>
-<p>引用链接：<a href="https://mp.weixin.qq.com/s/0b_bG83S-LEpQOtaWZXv3A">https://mp.weixin.qq.com/s/0b_bG83S-LEpQOtaWZXv3A</a></p>
+<p><a href="https://www.youtube.com/watch?v=D8O7myqk0Bw">健身食品制作视频</a></p>
+<h1 id="阳春面调料"><a href="#阳春面调料" class="headerlink" title="阳春面调料"></a>阳春面调料</h1><ul>
+<li>生抽、陈醋、盐、香油或猪油、葱花</li>
+</ul>
+<h1 id="爆炒香辣鱿鱼"><a href="#爆炒香辣鱿鱼" class="headerlink" title="爆炒香辣鱿鱼"></a>爆炒香辣鱿鱼</h1><p>食材：</p>
+<ul>
+<li>鱿鱼须、葱、姜、洋葱、料酒、豆瓣酱、生抽、老抽、蚝油、白糖、盐、熟芝麻</li>
+</ul>
+<p>做法：</p>
+<ol>
+<li>鱿鱼洗净切好备用，冷水下锅，加入姜片、葱段、1勺料酒，焯水捞出备用</li>
+<li>锅中油热，倒入洋葱丝，炒出香味，加入1勺豆瓣酱炒出红油，倒入焯好水的鱿鱼须，翻炒上色</li>
+<li>加入1勺生抽、半勺老抽、1勺蚝油、适量白糖、少许盐、1勺熟芝麻，翻炒均匀，撒上葱花即可</li>
+</ol>
 ]]></content>
       <categories>
-        <category>技术</category>
-        <category>数据分析</category>
-        <category>python</category>
+        <category>生活</category>
+        <category>菜谱</category>
       </categories>
       <tags>
-        <tag>python</tag>
-        <tag>网站</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hadoop、Spark、Flink简单概要</title>
-    <url>/2023/03/28/Hadoop%E3%80%81Spark%E3%80%81Flink%E7%AE%80%E5%8D%95%E6%A6%82%E8%A6%81/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="https://zhuanlan.zhihu.com/p/526462792">Hadoop用于离线复杂大数据处理</a></p>
-<p>Spark 用于离线快速的大数据处理</p>
-<p>Flink 用于在线实时的大数据处理</p>
-<h1 id="1-数据处理"><a href="#1-数据处理" class="headerlink" title="1-数据处理"></a>1-数据处理</h1><p>Hadoop：为批处理而构建的Hadoop，它一次性在输入中获取大量数据集，对其进行处理并产生结果。批处理在处理大量数据时非常有效。由于数据的大小和系统的计算能力，输出会出现延迟。</p>
-<p>Spark：Spark也是 Hadoop生态系统的一部分。它本质上也是一个批处理系统，但它也支持流处理。</p>
-<p>Flink：Flink为流式处理和批处理提供了单一的运行时。</p>
-<span id="more"></span>
-<h1 id="2-流引擎"><a href="#2-流引擎" class="headerlink" title="2-流引擎"></a>2-流引擎</h1><p>Hadoop：Map-reduce是面向批处理的工具。它一次性在输入中获取大量数据集，对其进行处理并产生结果。</p>
-<p>Spark：Apache Spark Streaming以微批处理的形式处理数据流。每个批次都包含在批次期间到达的事件集合。但对于我们需要处理大量实时数据流并实时提供结果的用例来说，这还不够。</p>
-<p>Flink：Apache Flink是真正的流媒体引擎。它使用流来处理工作负载：流式处理、SQL、微批处理和批处理。批处理是一组有限的流数据。</p>
-<h1 id="3-数据流"><a href="#3-数据流" class="headerlink" title="3-数据流"></a>3-数据流</h1><p>Hadoop：MapReduce计算数据流没有任何循环。这是一个阶段链，在每个阶段，您都使用前一阶段的输出向前推进，并为下一阶段产生输入。</p>
-<p>Spark：虽然机器学习算法是一个循环数据流，但 Spark将其表示为（DAG）有向无环图。</p>
-<p>Flink：Flink采用了与其他方法不同的方法。它在运行时支持受控循环依赖图。这有助于以非常有效的方式表示机器学习算法。</p>
-<h1 id="4-计算模型"><a href="#4-计算模型" class="headerlink" title="4-计算模型"></a>4-计算模型</h1><p>Hadoop：MapReduce采用了面向批处理的模型，批处理正在处理静态数据，一次需要大量数据，对其进行处理，然后写出输出。</p>
-<p>Spark：Spark采用了微批处理。微批次本质上是一种“收集然后处理”的计算模型。</p>
-<p>Flink：Flink采用了连续流、基于算子的流模型。连续流算子在数据到达时对其进行处理，而不会延迟收集数据或处理数据。</p>
-<h1 id="5-性能"><a href="#5-性能" class="headerlink" title="5-性能"></a>5-性能</h1><p>Hadoop：Apache Hadoop仅支持批处理。它不处理流数据，因此与Hadoop、Spark和Flink相比，性能更慢。</p>
-<p>Spark：虽然Spark有优秀的社区背景，并且现在被认为是最成熟的社区，但它的流处理效率并不比Flink高，因为它使用的是微批处理。</p>
-<p>Flink：与任何其他数据处理系统相比，Flink的性能非常出色。比较Hadoop、Spark和Flink时可以看出，Flink使用原生闭环迭代运算符，这使得机器学习和图形处理更快。</p>
-<h1 id="6-内存管理"><a href="#6-内存管理" class="headerlink" title="6-内存管理"></a>6-内存管理</h1><p>Hadoop：提供可配置的内存管理，可以动态或静态地执行此操作。</p>
-<p>Spark：提供可配置的内存管理，Spark 1.6 的最新版本已经朝着自动化内存管理的方向发展。</p>
-<p>Flink：提供了自动内存管理，有自己的内存管理系统。</p>
-<h1 id="7-容错"><a href="#7-容错" class="headerlink" title="7-容错"></a>7-容错</h1><p>Hadoop：MapReduce具有高度容错性。如果Hadoop出现任何故障，则无需从头开始重新启动应用程序。</p>
-<p>Spark：Apache Spark Streaming恢复丢失的工作，无需额外的代码或配置。</p>
-<p>Flink：Apache Flink遵循的容错机制是基于Chandy-Lamport分布式快照。该机制是轻量级的，导致在保持高吞吐率的同时提供强大的一致性保证。</p>
-<h1 id="8-可扩展性"><a href="#8-可扩展性" class="headerlink" title="8-可扩展性"></a>8-可扩展性</h1><p>Hadoop：MapReduce具有很强的可扩展性潜力，并已在数万个节点上用于生产。</p>
-<p>Spark：它具有高度可扩展性，我们可以在集群中不断添加 n 个节点，一个已知的大型 Spark集群有8000个节点。</p>
-<p>Flink：Flink也具有很高的可扩展性，我们可以在集群中不断添加 n 个节点，一个已知的大型 Flink 集群有数千个节点。</p>
-<h1 id="9-迭代处理"><a href="#9-迭代处理" class="headerlink" title="9-迭代处理"></a>9-迭代处理</h1><p>Hadoop：不支持迭代处理。</p>
-<p>Spark：它批量迭代其数据。在Spark中，每次迭代都必须单独安排和执行。</p>
-<p>Flink：它通过使用其流式架构来迭代数据。可以指示Flink只处理实际发生变化的部分数据，从而显着提高作业的性能。</p>
-<h1 id="10-语言支持"><a href="#10-语言支持" class="headerlink" title="10-语言支持"></a>10-语言支持</h1><p>Hadoop：主要支持Java，其他支持的语言有c、c++、ruby、groovy、Perl、Python。</p>
-<p>Spark：支持Java、Scala、Python和R。Spark是在Scala中实现的，供其他语言的API，如Java、Python和 R。</p>
-<p>Flink：支持 Java、Scala、Python和R。Flink 是用 Java实现的，同时也提供了Scala API。</p>
-<h1 id="11-优化"><a href="#11-优化" class="headerlink" title="11-优化"></a>11-优化</h1><p>Hadoop：在 MapReduce 中，作业必须手动优化。有几种方法可以优化MapReduce作业：正确配置集群、使用组合器、使用LZO压缩、适当调整 MapReduce任务的数量以及为数据使用最合适和最紧凑的可写类型。</p>
-<p>Spark：在Spark中，作业必须手动优化。有一个新的可扩展优化器 Catalyst，它基于Scala中的函数式编程结构。 Catalyst 的可扩展设计有两个目的：第一，易于添加新的优化技术。其次，使外部开发人员能够扩展优化器催化剂。</p>
-<p>Flink：Apache Flink带有一个独立于实际编程接口的优化器。 Flink优化器的工作方式类似于关系数据库优化器，但将这些优化应用于Flink程序，而不是 SQL查询。</p>
-<h1 id="12-延迟"><a href="#12-延迟" class="headerlink" title="12-延迟"></a>12-延迟</h1><p>Hadoop：Hadoop的MapReduce框架相对较慢，因为它旨在支持不同的格式、结构和海量数据。这就是为什么 Hadoop的延迟比Spark和Flink都高。</p>
-<p>Spark：Spark是另一个批处理系统，但它比Hadoop MapReduce相对快，因为它通过RDD将大部分输入数据缓存在内存中，并将中间数据保存在内存中，最终在完成或需要时将数据写入磁盘。</p>
-<p>Flink：Flink的数据流运行时只需少量配置，即可实现低延迟和高吞吐量。</p>
-<h1 id="14-可视化"><a href="#14-可视化" class="headerlink" title="14-可视化"></a>14-可视化</h1><p>Hadoop：在Hadoop中，数据可视化工具是zoomdata，它可以直接连接到HDFS以及SQL-on-Hadoop技术，如 Impala、Hive、Spark SQL、Presto等。</p>
-<p>Spark：它提供了一个用于提交和执行作业的Web界面，在该界面上可以可视化生成的执行计划。 Flink和Spark都集成到Apache zeppelin中，它提供数据分析、摄取以及发现、可视化和协作。</p>
-<p>Flink：它还提供了一个用于提交和执行作业的Web界面，生成的执行计划可以在这个界面上进行可视化。</p>
-<h1 id="15-恢复"><a href="#15-恢复" class="headerlink" title="15-恢复"></a>15-恢复</h1><p>Hadoop：MapReduce自然地对系统故障或故障具有弹性。它是高度容错的系统。</p>
-<p>Spark：Apache Spark RDD允许通过重新计算DAG来恢复故障节点上的分区，同时还通过检查点支持与Hadoop更相似的恢复方式，以减少RDD的依赖关系。</p>
-<p>Flink：支持checkpointing机制，将程序存储在数据源和数据接收器中，窗口的状态，以及用户自定义的状态，在失败后恢复流式作业。</p>
-<h1 id="16-安全性"><a href="#16-安全性" class="headerlink" title="16-安全性"></a>16-安全性</h1><p>Hadoop：它支持Kerberos身份验证，管理起来有些麻烦。但是，第三方供应商已使组织能够利用Active Directory Kerberos和LDAP进行身份验证。</p>
-<p>Spark：Apache Spark的安全性有点稀疏，目前仅支持通过共享密钥（密码身份验证）进行身份验证。 当你在HDFS上运行Spark，它可以使用HDFS ACL和文件级权限。此外，Spark可以在 YARN上运行以使用Kerberos身份验证。</p>
-<p>Flink：Flink通过Hadoop &#x2F; Kerberos基础设施支持用户身份验证。如果在YARN上运行Flink，Flink会获取提交程序的用户的Kerberos令牌，并使用该令牌在YARN、HDFS和HBase上进行身份验证。Flink即将推出的连接器，流程序可以通过 SSL将自己验证为流代理。</p>
-<h1 id="17-成本"><a href="#17-成本" class="headerlink" title="17-成本"></a>17-成本</h1><p>Hadoop：MapReduce通常可以在比某些替代方案更便宜的硬件上运行，因为它不会尝试将所有内容都存储在内存中。</p>
-<p>Spark：由于Spark需要大量RAM才能在内存中运行，因此在集群中增加它会逐渐增加其成本。</p>
-<p>Flink：Apache Flink也需要大量的RAM在内存中运行，所以它的成本会逐渐增加。</p>
-<h1 id="18-兼容性"><a href="#18-兼容性" class="headerlink" title="18-兼容性"></a>18-兼容性</h1><p>Hadoop：Apache Hadoop MapReduce 和 Apache Spark相互兼容，Spark通过JDBC和ODBC共享MapReduce 对数据源、文件格式和商业智能工具的所有兼容性。</p>
-<p>Spark：Apache Spark和Hadoop相互兼容。 Spark与Hadoop数据兼容。它可以通过YARN或Spark的独立模式在 Hadoop集群中运行，并且可以处理HDFS、HBase、Cassandra、Hive和任何Hadoop InputFormat中的数据。</p>
-<p>Flink：Apache Flink是一个可扩展的数据分析框架，完全兼容Hadoop。它提供了一个Hadoop Compatibility包来包装针对Hadoop的MapReduce接口实现的函数，并将它们嵌入到Flink程序中。</p>
-<h1 id="20-使用感"><a href="#20-使用感" class="headerlink" title="20-使用感"></a>20-使用感</h1><p>Hadoop：MapReduce 开发人员需要手动编写每个操作的代码，这让编程工作变得非常困难。</p>
-<p>Spark：很容易编程，因为它有大量的高级操作符。</p>
-<p>Flink：也有高级算子，易于操作。</p>
-<h1 id="21-交互模式"><a href="#21-交互模式" class="headerlink" title="21-交互模式"></a>21-交互模式</h1><p>Hadoop：MapReduce 没有交互模式。</p>
-<p>Spark：Spark 有一个交互式Shell，可以学习如何充分利用Spark。这是一个用 Scala编写的Spark应用程序，提供一个具有自动完成功能的命令行环境，您可以在其中运行临时查询并熟悉 Spark的功能。</p>
-<p>Flink：它带有一个集成的交互式Scala Shell。它可以在本地设置和集群设置中使用。</p>
-<h1 id="22-实时分析"><a href="#22-实时分析" class="headerlink" title="22-实时分析"></a>22-实时分析</h1><p>Hadoop：MapReduce 在实时数据处理方面失败了，因为它旨在对大量数据执行批处理。</p>
-<p>Spark：它可以处理实时数据，即以每秒数百万个事件的速率来自实时事件流的数据。</p>
-<p>Flink：主要用于实时数据分析，虽然也提供了快速的批量数据处理。</p>
-<h1 id="23-调度器"><a href="#23-调度器" class="headerlink" title="23-调度器"></a>23-调度器</h1><p>Hadoop：Hadoop中的调度程序成为可插拔组件。多用户工作负载有两个调度器：公平调度器和容量调度器。为了调度复杂的流程，MapReduce需要像Oozie这样的外部作业调度程序。</p>
-<p>Spark：由于内存计算，Spark能充当自己的流调度程序。</p>
-<p>Flink：Flink可以使用YARN Scheduler，Flink也有自己的 Scheduler。</p>
-<h1 id="24-SQL支持"><a href="#24-SQL支持" class="headerlink" title="24-SQL支持"></a>24-SQL支持</h1><p>Hadoop：它使用户能够使用 Apache Hive运行SQL查询。</p>
-<p>Spark：它使用户能够使用Spark-SQL运行SQL查询。Spark提供了类似Hives的查询语言和类似DSL的Dataframe 来查询结构化数据。</p>
-<p>Flink：在Flink中，Table API是一种类似SQL的表达式语言，支持DSL等数据帧，目前仍处于测试阶段。有计划添加SQL接口，但不确定何时会进入框架。</p>
-<h1 id="25-缓存"><a href="#25-缓存" class="headerlink" title="25-缓存"></a>25-缓存</h1><p>Hadoop：MapReduce 无法将数据缓存在内存中以满足未来需求。</p>
-<p>Spark：它可以将数据缓存在内存中以进行进一步的迭代，从而提高其性能。</p>
-<p>Flink：它可以将数据缓存在内存中以供进一步迭代以提高其性能。</p>
-<h1 id="26-硬件要求"><a href="#26-硬件要求" class="headerlink" title="26-硬件要求"></a>26-硬件要求</h1><p>Hadoop：MapReduce在商品硬件上运行良好。</p>
-<p>Spark：Apache Spark需要中高级硬件。由于Spark将数据缓存在内存中以供进一步迭代，从而提高其性能。</p>
-<p>Flink：Apache Flink也需要中高级硬件。 Flink还可以将数据缓存在内存中以进行进一步的迭代，从而提高其性能。</p>
-<h1 id="27-机器学习"><a href="#27-机器学习" class="headerlink" title="27-机器学习"></a>27-机器学习</h1><p>Hadoop：需要像Apache Mahout这样的机器学习工具。</p>
-<p>Spark：有自己的一套机器学习MLlib。在内存缓存和其他实现细节中，它确实是实现ML算法的强大平台。</p>
-<p>Flink：有FlinkML，它是Flink的机器学习库。它支持运行时受控的循环依赖图。与DAG表示相比，这使得它们以非常有效的方式表示ML算法。</p>
-<h1 id="28-部署"><a href="#28-部署" class="headerlink" title="28-部署"></a>28-部署</h1><p>Hadoop：在独立模式下，Hadoop 被配置为在单节点、非分布式模式下运行。在伪分布式模式下，Hadoop以伪分布式模式运行。因此，不同之处在于每个Hadoop守护程序以伪分布式模式在单独的Java进程中运行。而在本地模式下，每个Hadoop守护程序都作为单个Java进程运行。在完全分布式模式下，所有守护进程在单独的节点中执行，形成一个多节点集群。</p>
-<p>Spark：还提供了一种简单的独立部署模式，可以在Mesos或YARN集群管理器上运行。它可以手动启动，通过手动启动 master和worker或使用我们提供的启动脚本。也可以在单台机器上运行这些守护进程进行测试。</p>
-<p>Flink：还提供了在YARN集群管理器上运行的独立部署模式。</p>
-<h1 id="29-消除重复"><a href="#29-消除重复" class="headerlink" title="29-消除重复"></a>29-消除重复</h1><p>Hadoop：Hadoop中没有重复消除。</p>
-<p>Spark：Spark还对每条记录进行一次准确的处理，因此消除了重复。</p>
-<p>Flink：Flink只处理一次记录，因此消除了重复，流应用程序可以在计算期间保持自定义状态。Flink的检查点机制确保在出现故障时状态的语义恰好只有一次。</p>
-<h1 id="30-Window标准"><a href="#30-Window标准" class="headerlink" title="30-Window标准"></a>30-Window标准</h1><p>一个数据流需要被分成许多逻辑流，每个逻辑流都可以应用一个窗口操作符。</p>
-<p>Hadoop：不支持流式传输，因此不需要窗口条件。</p>
-<p>Spark：具有基于时间的窗口标准。</p>
-<p>Flink：具有基于记录的或任何自定义的用户定义的Flink Window标准。  </p>
-]]></content>
-      <categories>
-        <category>技术</category>
-        <category>数据分析</category>
-        <category>数据库</category>
-        <category>笔记</category>
-      </categories>
-      <tags>
-        <tag>笔记</tag>
-        <tag>数据库</tag>
+        <tag>菜谱</tag>
+        <tag>下酒菜</tag>
       </tags>
   </entry>
   <entry>
@@ -11300,213 +11180,333 @@
       </tags>
   </entry>
   <entry>
-    <title>澳洲家中日常必备清单</title>
-    <url>/2022/05/19/%E6%BE%B3%E6%B4%B2%E5%AE%B6%E4%B8%AD%E6%97%A5%E5%B8%B8%E5%BF%85%E5%A4%87%E6%B8%85%E5%8D%95/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>1⃣️ CEPACAINE漱口水！ 治疗牙龈肿痛，口腔溃疡。澳洲医生推荐买的，超级有效！猫猫家必备的，再也没有牙口烦恼。 购买地址：Chemist有售 💰价格：$15.49 问题在口腔，吃啥啥不香，买它！喵～</p>
-<hr>
-<p>2⃣️ Quick EZE胃糖 腹胀、胃酸、胃痛。消化不良、吃颗糖就能缓解～ 主要是这糖咋还那么好吃！ 购买地址：Chemist 💰价格：$4.99 胃也需要轻轻安抚，买它！喵～</p>
+    <title>Pandas基本操作</title>
+    <url>/2023/03/15/Pandas%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="查看数据"><a href="#查看数据" class="headerlink" title="查看数据"></a>查看数据</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 查看头部 head(n)</span></span><br><span class="line">df.head()  <span class="comment">#默认查看前5条记录 </span></span><br><span class="line">df.head(<span class="number">8</span>)  <span class="comment">#指定查看前8条记录</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">## 查看尾部 tail(n)</span></span><br><span class="line">df.tail()  <span class="comment">#默认查看后面5条记录 </span></span><br><span class="line">df.tail(<span class="number">4</span>)  <span class="comment">#指定查看后面4条记录</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 随机查看样本 sample(n)</span></span><br><span class="line">df.sample()  <span class="comment">#随机查看一条记录 </span></span><br><span class="line">df.sample(<span class="number">4</span>)  <span class="comment">#随机查看4条记录</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 查看统计摘要</span></span><br><span class="line">df.describe()  <span class="comment">#返回所有数字列的统计摘要</span></span><br></pre></td></tr></table></figure>
 <span id="more"></span>
-<hr>
-<p>3⃣️ VICKS 通鼻喷剂 在澳洲总感觉鼻子不适，鼻炎老犯，尤其总是鼻塞。这个通鼻喷剂起效快，薄荷味柔和不刺激。 购买地址：Chemist 💰价格$11.99 杜绝张口呼吸，买它！喵～</p>
-<hr>
-<p>4⃣️ Refresh眼药水 在家学习、工作、打游戏、熬夜，眼睛干涩的话最使用用人工泪液成分的眼药水。无刺激，缓解眼睛疲劳，闺蜜们都在用。 购买地址：Chemist 💰价格$13.49 缓解就靠累上加泪。买它，喵～</p>
-<hr>
-<p>5⃣️ LeQure Detox Soap排毒香皂 这款味道超级淡，小众然鹅超棒！主要可以用来控油去杂质。背部长痘痘的宝宝们一定要试试。滋养加排毒，姐妹推荐的，用过也感觉很好。 购买地址：Chemist 💰价格：$5.99 永远不进毒圈，买它，喵～</p>
-<hr>
-<p>6⃣️ Naprogesic止痛片 姨妈期最好的止痛片咯，因为成分对胃损伤小，刺激小。而且止痛的效果起效更快，当地女生首选经期续命药。小蓝片好多朋友都在用。 购买地址：Chemist 💰价格：$7.99 连我姨妈都在用！买它，喵～</p>
-<hr>
-<p>7⃣️ Dettol 洗衣消毒液 家里养宠物的朋友洗衣服都会用这个帮忙杀菌！能灭杀99.9%的细菌。尤其是合租又共用洗衣机的话这个肯定要买！ 购买地址：Coles、 WWS有售 💰价格：$8.99 再也不怕室友用洗衣机洗袜子了，买它！喵～</p>
-<hr>
-<p>8⃣️ Mr muscle通道强力剂！ 水槽，浴室如果都便秘了，那主人可就更难受了。 超强清下水道秘方，家家必备的男人。尤其是掉头发比较多的女生经常会堵掉下水道。用它就可以畅通哦。 购买地址：Coles、WWS有售 💰价格：$13.7 搞定下水道，心情好到爆，买它！喵～</p>
-<hr>
-]]></content>
+<h1 id="检索数据"><a href="#检索数据" class="headerlink" title="检索数据"></a>检索数据</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 切片[]</span></span><br><span class="line">df[<span class="number">0</span>:<span class="number">3</span>]  <span class="comment">#通过切片检索行数据</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## loc\iloc</span></span><br><span class="line">df.loc[<span class="number">1</span>]  <span class="comment">#标量标签，返回该行标签的Series数据 </span></span><br><span class="line">df.loc[[<span class="number">1</span>,<span class="number">3</span>]]  <span class="comment">#标签列表，返回标签列表的行DataFrame数据 </span></span><br><span class="line">df.loc[<span class="number">0</span>:<span class="number">3</span>]  <span class="comment">#切片对象，返回切片的行DataFrame数据 </span></span><br><span class="line">df.loc[<span class="number">0</span>:<span class="number">3</span>,<span class="string">&#x27;staff_id&#x27;</span>:<span class="string">&#x27;staff_salary&#x27;</span>]  <span class="comment">#根据行切片，列切片检索数据 </span></span><br><span class="line">df.loc[[<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="string">&#x27;staff_id&#x27;</span>,<span class="string">&#x27;staff_name&#x27;</span>,<span class="string">&#x27;staff_age&#x27;</span>]]  <span class="comment">#根据行标签列表，列标签列表检索数据</span></span><br><span class="line">df.iloc[<span class="number">1</span>]  <span class="comment">#整数标量选择，数据从0开始，为1的就是第二行的数据，返回的是Series </span></span><br><span class="line">df.iloc[[<span class="number">1</span>,<span class="number">3</span>]]  <span class="comment">#整数列表选择，选择位置为1和3的数据，返回的是DataFrame </span></span><br><span class="line">df.iloc[<span class="number">1</span>:<span class="number">3</span>]  <span class="comment">#切片选择，选择位置1至2的数据，不包含边界结束值，也就是不包含3的位置 </span></span><br><span class="line">df.iloc[<span class="number">1</span>:<span class="number">3</span>,<span class="number">1</span>:<span class="number">4</span>]  <span class="comment">#切片选择位置为1至3的行和1至4的列不含位置为3的行和位置为4的列</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## at\iat</span></span><br><span class="line">df.at[<span class="string">&#x27;A&#x27;</span>,<span class="string">&#x27;staff_name&#x27;</span>]  <span class="comment">#检索第“A”行的列标签为&quot;staff_name&quot;的数据 df.iat[0,1]  #检索第1行第2列的数据</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
       <categories>
-        <category>生活</category>
-        <category>好物推荐</category>
+        <category>技术</category>
+        <category>数据分析</category>
+        <category>python</category>
+        <category>pandas</category>
       </categories>
       <tags>
-        <tag>推荐</tag>
-        <tag>日常</tag>
+        <tag>笔记</tag>
+        <tag>python</tag>
       </tags>
   </entry>
   <entry>
-    <title>SQL学习笔记</title>
-    <url>/2023/02/27/SQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="/_post/2024_02_28_%E6%8E%92%E5%BA%8F_DENSE_RANK.md">排序_DENSE_RANK</a></p>
-<h2 id="IFNULL"><a href="#IFNULL" class="headerlink" title="IFNULL"></a>IFNULL</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Write your MySQL query statement below</span><br><span class="line"></span><br><span class="line">select e.name, b.bonus</span><br><span class="line"></span><br><span class="line">from Employee e left join Bonus b</span><br><span class="line"></span><br><span class="line">on e.empId = b.empId</span><br><span class="line"></span><br><span class="line">where ifnull(bonus,0)&lt;1000</span><br><span class="line">## ifnul 就把值替换成0）</span><br></pre></td></tr></table></figure>
+    <title>Python网站开发库大全</title>
+    <url>/2023/03/15/Python%E7%BD%91%E7%AB%99%E5%BC%80%E5%8F%91%E5%BA%93%E5%A4%A7%E5%85%A8/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
+<p>Q：Web 框架到底是什么？<br>A：Web 框架主要用于网站开发。开发者在基于 Web 框架实现自己的业务逻辑。Web 框架实现了很多功能，为实现业务逻辑提供了一套通用方法。  </p>
+</blockquote>
+<blockquote>
+<p>Q：Web 框架有什么作用？<br>A：使用 Web 框架，很多的业务逻辑外的功能不需要自己再去完善，而是使用框架已有的功能就可以。Web 框架使得在进行 网站开发的时候，减少了工作量。  </p>
+</blockquote>
+<blockquote>
+<p>Q：我们为什么要使用 Web 框架？<br>A：Web 框架主要用于网站开发，可以实现数据的交互和业务功能的完善。使用 Web 框架进行 网站开发的时候，在进行数据缓存、数据库访问、数据安全校验等方面，不需要自己再重新实现，而是将业务逻辑相关的代码写入框架就可以。</p>
+</blockquote>
+<blockquote>
+<p>库排序是<strong>按照使用人数和文档的活跃度</strong>为参考进行的, <strong>建议大家使用排名靠前的框架，因为它们的文档更齐全，技术积累要更多，社区更繁盛，能得到更好的支持，</strong> 这样在遇到自己无法解决的问题，可以更快更高效的找到解答的方案。</p>
+</blockquote>
 <span id="more"></span>
-
-
-
-<h2 id="SQL-585"><a href="#SQL-585" class="headerlink" title="SQL 585"></a>SQL 585</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT ROUND(SUM(tiv_2016), 2) AS tiv_2016</span><br><span class="line"></span><br><span class="line">FROM Insurance</span><br><span class="line"></span><br><span class="line">WHERE tiv_2015 IN (</span><br><span class="line"></span><br><span class="line">SELECT tiv_2015</span><br><span class="line"></span><br><span class="line">FROM Insurance</span><br><span class="line"></span><br><span class="line">GROUP BY tiv_2015</span><br><span class="line"></span><br><span class="line">HAVING COUNT(*) &gt; 1</span><br><span class="line"></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">AND (lat, lon) NOT IN (</span><br><span class="line"></span><br><span class="line">SELECT lat, lon</span><br><span class="line"></span><br><span class="line">FROM Insurance</span><br><span class="line"></span><br><span class="line">GROUP BY lat, lon</span><br><span class="line"></span><br><span class="line">HAVING COUNT(*) &gt; 1</span><br><span class="line"></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-
-
-<h2 id="SQL-610"><a href="#SQL-610" class="headerlink" title="SQL 610"></a>SQL 610</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Write your MySQL query statement below</span><br><span class="line">select </span><br><span class="line">    *,</span><br><span class="line">    if(x+y&gt;z and x+z&gt;y and y+z&gt;x,&#x27;Yes&#x27;,&#x27;No&#x27;) as triangle</span><br><span class="line">from Triangle</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="SQL1633-ORDER-BY-2-DESC-1"><a href="#SQL1633-ORDER-BY-2-DESC-1" class="headerlink" title="SQL1633 ORDER BY 2 DESC, 1"></a>SQL1633 ORDER BY 2 DESC, 1</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ORDER BY 2 DESC, 1</span><br></pre></td></tr></table></figure>
-
-<p>这一行使用ORDER BY子句对结果进行排序。我们按照第二列（即percentage）的降序进行排序，如果百分比相同，则按照第一列（即contest_id）的升序进行排序。</p>
-<h2 id="SQL1179-CASE-WHEN"><a href="#SQL1179-CASE-WHEN" class="headerlink" title="SQL1179 CASE WHEN"></a>SQL1179 CASE WHEN</h2><p>CASE WHEN语句是SQL中用于根据条件进行条件判断和返回不同结果的表达式。它允许你根据满足特定条件的情况，选择不同的结果进行返回。</p>
-<p>CASE WHEN语句的基本语法如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CASE</span><br><span class="line">   WHEN condition1 THEN result1</span><br><span class="line">   WHEN condition2 THEN result2</span><br><span class="line">   ...</span><br><span class="line">   ELSE resultN</span><br><span class="line">END</span><br></pre></td></tr></table></figure>
-
-<p>首先，你提供一个或多个WHEN子句，每个子句后面跟着一个条件（condition）和一个对应的结果（result）。当满足某个条件时，相应的结果将被返回。ELSE子句是可选的，用于指定当没有任何条件满足时的默认结果。</p>
-<p>让我们通过一个简单的例子来说明CASE WHEN的使用。假设有一个名为”students”的表，其中包含学生的姓名和分数列。如果要将成绩分为优秀、良好和及格三个等级并进行显示，可以使用以下SQL语句：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT name,</span><br><span class="line">       CASE</span><br><span class="line">          WHEN score &gt;= 90 THEN &#x27;优秀&#x27;</span><br><span class="line">          WHEN score &gt;= 80 THEN &#x27;良好&#x27;</span><br><span class="line">          WHEN score &gt;= 60 THEN &#x27;及格&#x27;</span><br><span class="line">          ELSE &#x27;不及格&#x27;</span><br><span class="line">       END AS grade</span><br><span class="line">FROM students;</span><br></pre></td></tr></table></figure>
-
-<p>在这个例子中，对于每个学生，我们使用CASE WHEN语句根据他们的分数来判断他们的等级。如果分数大于等于90，那么他们被归类为”优秀”；如果分数大于等于80，但小于90，他们被归类为”良好”；如果分数大于等于60，但小于80，他们被归类为”及格”；否则，他们被归类为”不及格”。</p>
-<p>通过使用CASE WHEN语句，我们可以根据不同的条件返回不同的结果，从而实现灵活的数据处理和转换。</p>
+<hr>
+<h2 id="1-Django-框架"><a href="#1-Django-框架" class="headerlink" title="1. Django 框架"></a><a href="#1-Django-%E6%A1%86%E6%9E%B6" title="1. Django 框架"></a><strong>1. Django 框架</strong></h2><p>官 网：<a href="https://github.com/django/django.git">https://github.com/django/django.git</a></p>
+<p>优 点：是一个高层次 Python Web 开发框架，特点是开发快速、代码较少、可扩展性强。Django 采用 MTV（Model、Template、View）模型组织资源，框架功能丰富，模板扩展选择最多。对于专业人员来说，Django 是当之无愧的 Python 排名第一的 Web 开发框架。</p>
+<p>缺 点：包括一些轻量级应用不需要的功能模块，不如 Flask 轻便。过度封装很多类和方法，直接使用比较简单，但改动起来比较困难。相比于 C,C++ 性能，Djang 性能偏低。模板实现了代码和样式完全分离，不允许模板里出现 Python 代码，灵活度不够。另外学习曲线也相对陡峭。</p>
+<p><a href="https://mmbiz.qpic.cn/sz_mmbiz_png/NOM5HN2icXzyamXia4vqrASM2pALYlNo8WYrEN2TT3JLXOv80vtCf8K0a96VIZhTkJyicLJaIxutXiaj3Bqg35A85Q/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1"><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/NOM5HN2icXzyamXia4vqrASM2pALYlNo8WYrEN2TT3JLXOv80vtCf8K0a96VIZhTkJyicLJaIxutXiaj3Bqg35A85Q/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1" alt="Image"></a></p>
+<p><a href="#2-Flask-%E6%A1%86%E6%9E%B6" title="2. Flask 框架"></a></p>
+<p><strong>2. Flask 框架</strong></p>
+<p>官 网：<br><a href="https://flask.palletsprojects.com/en/2.0.x/">https://flask.palletsprojects.com/en/2.0.x/</a></p>
+<p>优 点：Flask 是一个 Python Web 开发的微框架，严格来说，它仅提供 Web 服务器支持，不提供全栈开发支持。然而，Flask 非常轻量、非常简单，基于它搭建 Web 系统都以分钟来计时，特别适合小微原型系统的开发。花少时间、产生可用系统，是非常划算的选择。</p>
+<p>缺 点：对于大型网站开发，需要设计路由映射的规则，否则导致代码混乱。对新手来说，容易使用低质量的代码创建 “不良的 web 应用程序”。</p>
+<p><a href="https://mmbiz.qpic.cn/mmbiz_png/iaGGR9eXibkibjc2xlbRh5D0T8OTQYFhT7vAiaftbfrTfdtw80vC1f1v3sZeyM88EESzUMY8gMuCibp7GBn9Bhh293w/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1"><img src="https://mmbiz.qpic.cn/mmbiz_png/iaGGR9eXibkibjc2xlbRh5D0T8OTQYFhT7vAiaftbfrTfdtw80vC1f1v3sZeyM88EESzUMY8gMuCibp7GBn9Bhh293w/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1" alt="Image"></a></p>
+<p><a href="#3-Pyramid-%E6%A1%86%E6%9E%B6" title="3. Pyramid 框架"></a></p>
+<p><strong>3. Pyramid 框架</strong></p>
+<p>官 网：<a href="https://trypyramid.com/">https://trypyramid.com/</a></p>
+<p>优 点：是一个扩展性很强且灵活的 Python Web 开发框架。上手十分容易，比较适合中等规模且边开发边设计的场景。Pyramid 不提供绝对严格的框架定义，根据需求可以扩展开发，对高阶程序员十分友好。</p>
+<p>缺 点：国内知名度不高，高级用法需要通过阅读源代码获取灵感。默认使用 Chameleon 模板，灵活度没有成为一个要素。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/iaGGR9eXibkibjc2xlbRh5D0T8OTQYFhT7v4I1icBJbaweObDQ078rCFMiaScj58Zk10eeKzLdIu15KsnYalbmKXNhw/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1" alt="Image"></p>
+<p><a href="#4-web-py-%E6%A1%86%E6%9E%B6" title="4. web.py 框架"></a></p>
+<p><strong>4. web.py 框架</strong></p>
+<p>官 网：<a href="https://webpy.org/">https://webpy.org/</a></p>
+<p>优 点：正如其名，web.py 是一个采用 Python 作为开发语言的 Web 框架，简单且强大。俄罗斯排名第一的 Yandex 搜索引擎基于这个框架开发，Guido van Rossum 认为这是最好的 Python Web 框架，还需要说别的吗？有事实作证、有大牛认可，用起来吧！</p>
+<p>缺 点：Web.py 并未像其他框架一样保持与 Python 3 兼容性的最新状态。这不仅意味着缺乏对异步语法的支持，还意味着缺少对已弃用的函数的错误。此外，目前尚不清楚维护者是否有计划在 Python 2 到达其支持生命周期结束后保持 Web.py 的最新状态。</p>
+<p><a href="#5-Tornado-%E6%A1%86%E6%9E%B6" title="5. Tornado 框架"></a></p>
+<h2 id="5-Tornado-框架"><a href="#5-Tornado-框架" class="headerlink" title="5. Tornado 框架"></a><strong>5. Tornado 框架</strong></h2><p>官 网：</p>
+<p><a href="https://www.tornadoweb.org/en/stable/">https://www.tornadoweb.org/en/stable/</a></p>
+<p>优 点：Tornado 是一个基于异步网络功能库的 Web 开发框架，因此，它能支持几万个开放连接，Web 服务高效稳定。可见，Tornado 适合高并发场景下的 Web 系统，开发过程需要采用 Tornado 提供的框架，灵活性较差，确定场景后再考虑使用不迟。</p>
+<p>缺 点：Tornado 5.0 改进了与 Python 的本机异步功能的集成。因此不再支持 Python 3.3，并且 Python 3.5 用户必须使用 Python 3.5.2 或更高版本。Tornado 6.0 将需要 Python 3.5 及更高版本，并将完全放弃 Python 2 支持。</p>
+<p>![Image](data:image&#x2F;svg+xml,%3C%3Fxml version&#x3D;’1.0’ encoding&#x3D;’UTF-8’%3F%3E%3Csvg width&#x3D;’1px’ height&#x3D;’1px’ viewBox&#x3D;’0 0 1 1’ version&#x3D;’1.1’ xmlns&#x3D;’<a href="http://www.w3.org/2000/svg">http://www.w3.org/2000/svg</a>‘ xmlns:xlink&#x3D;’<a href="http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg">http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg</a> stroke&#x3D;’none’ stroke-width&#x3D;’1’ fill&#x3D;’none’ fill-rule&#x3D;’evenodd’ fill-opacity&#x3D;’0’%3E%3Cg transform&#x3D;’translate(-249.000000, -126.000000)’ fill&#x3D;’%23FFFFFF’%3E%3Crect x&#x3D;’249’ y&#x3D;’126’ width&#x3D;’1’ height&#x3D;’1’%3E%3C&#x2F;rect%3E%3C&#x2F;g%3E%3C&#x2F;g%3E%3C&#x2F;svg%3E)</p>
+<h2 id="6-TurboGears-框架"><a href="#6-TurboGears-框架" class="headerlink" title="6. TurboGears 框架"></a><a href="#6-TurboGears-%E6%A1%86%E6%9E%B6" title="6. TurboGears 框架"></a><strong>6. TurboGears 框架</strong></h2><p>官 网：</p>
+<p><a href="https://www.turbogears.org/">https://www.turbogears.org/</a></p>
+<p>优 点：TurboGears 最新版本 试图解决 TurboGears 最初版本、Django、Rails 等框架缺陷，它支持多数据库、JavaScript 工具集、多种数据交换格式等，当然，它开发非常高效，扩展性很强。试问它与 Django 哪个更好？还真不好说，Django 社区更为活跃或许更重要。</p>
+<p>缺 点：TurboGears 的一些缺点包括管理功能较为基础，较少的第三方应用程序以及只有初级的文档。TurboGears 的一个重大挑战是它的压倒性。因为它混搭的其他组件都提供无限的灵活性， 当试图决定何种路径来完成一个任务时它是过于复杂的。</p>
+<p>![Image](data:image&#x2F;svg+xml,%3C%3Fxml version&#x3D;’1.0’ encoding&#x3D;’UTF-8’%3F%3E%3Csvg width&#x3D;’1px’ height&#x3D;’1px’ viewBox&#x3D;’0 0 1 1’ version&#x3D;’1.1’ xmlns&#x3D;’<a href="http://www.w3.org/2000/svg">http://www.w3.org/2000/svg</a>‘ xmlns:xlink&#x3D;’<a href="http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg">http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg</a> stroke&#x3D;’none’ stroke-width&#x3D;’1’ fill&#x3D;’none’ fill-rule&#x3D;’evenodd’ fill-opacity&#x3D;’0’%3E%3Cg transform&#x3D;’translate(-249.000000, -126.000000)’ fill&#x3D;’%23FFFFFF’%3E%3Crect x&#x3D;’249’ y&#x3D;’126’ width&#x3D;’1’ height&#x3D;’1’%3E%3C&#x2F;rect%3E%3C&#x2F;g%3E%3C&#x2F;g%3E%3C&#x2F;svg%3E)</p>
+<h2 id="7-CherryPy-框架"><a href="#7-CherryPy-框架" class="headerlink" title="7. CherryPy 框架"></a><a href="#7-CherryPy-%E6%A1%86%E6%9E%B6" title="7. CherryPy 框架"></a><strong>7. CherryPy 框架</strong></h2><p>官 网：</p>
+<p><a href="https://cherrypy.org/">https://cherrypy.org/</a></p>
+<p>优 点：CherryPy 能够让开发者按照其他面向对象程序相似的设计方法开发 Web 系统，进而采用最少的代码、最简洁的方式。CherryPy 已经开发了 10 年之久，稳定性较好，非常适合小规模 Web 系统和纯粹的 Python 程序员。感受到了什么？Python 大有一统江湖之势！拭目以待。</p>
+<p>缺 点：只包含为 web 页面提供服务所需的少量内容外，它应该尽可能地让人感觉它不像 “web 框架”，而是像任何其他类型的 Python 应用程序一样。CherryPy 包含的位用作低级构建块。包括会话标识符和 cookie 处理，但不包括 HTML 模板。像 Bottle 一样，CherryPy 提供了一种将路由映射到磁盘上的目录以供静态文件服务的方法。</p>
+<p>![Image](data:image&#x2F;svg+xml,%3C%3Fxml version&#x3D;’1.0’ encoding&#x3D;’UTF-8’%3F%3E%3Csvg width&#x3D;’1px’ height&#x3D;’1px’ viewBox&#x3D;’0 0 1 1’ version&#x3D;’1.1’ xmlns&#x3D;’<a href="http://www.w3.org/2000/svg">http://www.w3.org/2000/svg</a>‘ xmlns:xlink&#x3D;’<a href="http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg">http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg</a> stroke&#x3D;’none’ stroke-width&#x3D;’1’ fill&#x3D;’none’ fill-rule&#x3D;’evenodd’ fill-opacity&#x3D;’0’%3E%3Cg transform&#x3D;’translate(-249.000000, -126.000000)’ fill&#x3D;’%23FFFFFF’%3E%3Crect x&#x3D;’249’ y&#x3D;’126’ width&#x3D;’1’ height&#x3D;’1’%3E%3C&#x2F;rect%3E%3C&#x2F;g%3E%3C&#x2F;g%3E%3C&#x2F;svg%3E)</p>
+<h2 id="8-Falcon-框架"><a href="#8-Falcon-框架" class="headerlink" title="8. Falcon 框架"></a><a href="#8-Falcon-%E6%A1%86%E6%9E%B6" title="8. Falcon 框架"></a><strong>8. Falcon 框架</strong></h2><p>官 网：</p>
+<p><a href="http://falconframework.org/">http://falconframework.org/</a></p>
+<p>优 点：Falcon 是一个支持大规模微服务 API 或移动 App 后端响应的 Web 开发框架，它完全基于 Python 并提供了非常高的性能、可靠性和可扩展性。Falcon 定位独特且特色鲜明，对于 App 开发者，后端系统构建不妨考虑 Falcon，十之八九是不会后悔的。</p>
+<p>缺 点：Falcon 缺点是其打包模块有点太少，有路由，中间件，钩子，除此之外就不提供其他功能了（裸壳）。额外其他功能，比如验证等都需要开发人员来开发扩展。因为其设计中就假设用于构建 REST API。</p>
+<p>![Image](data:image&#x2F;svg+xml,%3C%3Fxml version&#x3D;’1.0’ encoding&#x3D;’UTF-8’%3F%3E%3Csvg width&#x3D;’1px’ height&#x3D;’1px’ viewBox&#x3D;’0 0 1 1’ version&#x3D;’1.1’ xmlns&#x3D;’<a href="http://www.w3.org/2000/svg">http://www.w3.org/2000/svg</a>‘ xmlns:xlink&#x3D;’<a href="http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg">http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg</a> stroke&#x3D;’none’ stroke-width&#x3D;’1’ fill&#x3D;’none’ fill-rule&#x3D;’evenodd’ fill-opacity&#x3D;’0’%3E%3Cg transform&#x3D;’translate(-249.000000, -126.000000)’ fill&#x3D;’%23FFFFFF’%3E%3Crect x&#x3D;’249’ y&#x3D;’126’ width&#x3D;’1’ height&#x3D;’1’%3E%3C&#x2F;rect%3E%3C&#x2F;g%3E%3C&#x2F;g%3E%3C&#x2F;svg%3E)</p>
+<h2 id="9-Asgineer-框架"><a href="#9-Asgineer-框架" class="headerlink" title="9. Asgineer 框架"></a><a href="#9-Asgineer-%E6%A1%86%E6%9E%B6" title="9. Asgineer 框架"></a><strong>9. Asgineer 框架</strong></h2><p>官 网：</p>
+<p><a href="https://asgineer.readthedocs.io/">https://asgineer.readthedocs.io/</a></p>
+<p>优 点：Asgineer 是一种编写异步 Web 应用程序的工具，使用尽可能少的抽象，同时仍然提供友好的 API。只需几分钟即可阅读指南和参考资料！在 Uvicorn 上运行 Asgineer 时，它是可用的最快的 Web 框架之一。它支持 http 长轮询、服务器端事件 (SSE) 和 websockets。并且具有以正确（且快速）的方式为资产提供服务的实用程序。</p>
+<p>缺 点：中文文档匮乏。</p>
+<h2 id="10-Bottle-框架"><a href="#10-Bottle-框架" class="headerlink" title="10. Bottle 框架"></a><a href="#10-Bottle-%E6%A1%86%E6%9E%B6" title="10. Bottle 框架"></a><strong>10. Bottle 框架</strong></h2><p>官 网：</p>
+<p><a href="https://bottlepy.org/docs/dev/">https://bottlepy.org/docs/dev/</a></p>
+<p>优 点：Bottle 是一个用于 Python 的快速、简单和轻量级的 WSGI 微型网络框架。它作为单个文件模块分发，除了 Python 标准库之外没有任何依赖项。支持干净和动态的 URL。快速和 Pythonic 内置模板引擎，支持 mako、jinja2 和 cheetah 模板。方便地访问表单数据、文件上传、cookie、标题和其他与 HTTP 相关的元数据。</p>
+<p>缺 点：Bottle 极简主义的一个后果是有些功能根本就不存在。不支持表单验证，包括 CSRF 保护等功能。如果要构建支持高度用户交互的 Web 应用程序，则需要自己添加它们。</p>
+<p><a href="https://mmbiz.qpic.cn/mmbiz_png/iaGGR9eXibkibjc2xlbRh5D0T8OTQYFhT7vmZ60TGFscqJgX8Dx5ZTYeYUFQW5tzW6dHLDCTUiatwZ6He0iaT9JTB3Q/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1"><img src="https://mmbiz.qpic.cn/mmbiz_png/iaGGR9eXibkibjc2xlbRh5D0T8OTQYFhT7vmZ60TGFscqJgX8Dx5ZTYeYUFQW5tzW6dHLDCTUiatwZ6He0iaT9JTB3Q/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1" alt="Image"></a></p>
+<h2 id="11-Emmett-框架"><a href="#11-Emmett-框架" class="headerlink" title="11. Emmett 框架"></a><a href="#11-Emmett-%E6%A1%86%E6%9E%B6" title="11. Emmett 框架"></a><strong>11. Emmett 框架</strong></h2><p>官 网：</p>
+<p><a href="https://emmett.sh/">https://emmett.sh/</a></p>
+<p>优 点：编写优雅的代码，专注于您的产品，你应该把更多的时间花在你的产品而不是底层框架上。Emmett 是发明家的框架，因为它旨在简化您的开发过程，其语法简单、易于学习和理解。不要在路由器和不舒服的模式之间浪费时间：每次为应用程序写下路由时，一切都清楚地呈现在您的眼前。</p>
+<p>缺 点：中文文档匮乏。</p>
+<p>![Image](data:image&#x2F;svg+xml,%3C%3Fxml version&#x3D;’1.0’ encoding&#x3D;’UTF-8’%3F%3E%3Csvg width&#x3D;’1px’ height&#x3D;’1px’ viewBox&#x3D;’0 0 1 1’ version&#x3D;’1.1’ xmlns&#x3D;’<a href="http://www.w3.org/2000/svg">http://www.w3.org/2000/svg</a>‘ xmlns:xlink&#x3D;’<a href="http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg">http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg</a> stroke&#x3D;’none’ stroke-width&#x3D;’1’ fill&#x3D;’none’ fill-rule&#x3D;’evenodd’ fill-opacity&#x3D;’0’%3E%3Cg transform&#x3D;’translate(-249.000000, -126.000000)’ fill&#x3D;’%23FFFFFF’%3E%3Crect x&#x3D;’249’ y&#x3D;’126’ width&#x3D;’1’ height&#x3D;’1’%3E%3C&#x2F;rect%3E%3C&#x2F;g%3E%3C&#x2F;g%3E%3C&#x2F;svg%3E)</p>
+<h2 id="12-apidaora-框架"><a href="#12-apidaora-框架" class="headerlink" title="12. apidaora 框架"></a><a href="#12-apidaora-%E6%A1%86%E6%9E%B6" title="12. apidaora 框架"></a><strong>12. apidaora 框架</strong></h2><p>官 网：</p>
+<p><a href="https://github.com/dutradda/apidaora">https://github.com/dutradda/apidaora</a></p>
+<p>优 点：使用类型注释将请求 &#x2F; 响应声明为数据类和字典，使用 jsondaora 验证输入数据，最快的 python api 框架之一，可以在任何 asgi 服务器上运行。</p>
+<p>缺 点：中文文档匮乏。</p>
+<p>![Image](data:image&#x2F;svg+xml,%3C%3Fxml version&#x3D;’1.0’ encoding&#x3D;’UTF-8’%3F%3E%3Csvg width&#x3D;’1px’ height&#x3D;’1px’ viewBox&#x3D;’0 0 1 1’ version&#x3D;’1.1’ xmlns&#x3D;’<a href="http://www.w3.org/2000/svg">http://www.w3.org/2000/svg</a>‘ xmlns:xlink&#x3D;’<a href="http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg">http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg</a> stroke&#x3D;’none’ stroke-width&#x3D;’1’ fill&#x3D;’none’ fill-rule&#x3D;’evenodd’ fill-opacity&#x3D;’0’%3E%3Cg transform&#x3D;’translate(-249.000000, -126.000000)’ fill&#x3D;’%23FFFFFF’%3E%3Crect x&#x3D;’249’ y&#x3D;’126’ width&#x3D;’1’ height&#x3D;’1’%3E%3C&#x2F;rect%3E%3C&#x2F;g%3E%3C&#x2F;g%3E%3C&#x2F;svg%3E)</p>
+<h2 id="13-Quixote-框架"><a href="#13-Quixote-框架" class="headerlink" title="13. Quixote 框架"></a><a href="#13-Quixote-%E6%A1%86%E6%9E%B6" title="13. Quixote 框架"></a><strong>13. Quixote 框架</strong></h2><p>官 网：</p>
+<p><a href="http://www.quixote.ca/">http://www.quixote.ca/</a></p>
+<p>优 点：Quixote 是一个使用 Python 编写基于 Web 的应用程序的框架。它的目标是按此顺序实现灵活性和高性能。Quixote 应用程序的结构往往类似于传统应用程序。格式化网页的逻辑由 Python 类和函数组成。Quixote 不强制分离表示逻辑和 “后端” 逻辑。相反，我们鼓励您使用传统技术。例如，一种解决方案是将表示逻辑放在其自己的子包中。</p>
+<p>缺 点：虽然 Quixote 得到积极维护，但发布频率较低。最近开发的重点是修复错误、提高标准合规性和增加 Quixote 的灵活性。</p>
+<p>![Image](data:image&#x2F;svg+xml,%3C%3Fxml version&#x3D;’1.0’ encoding&#x3D;’UTF-8’%3F%3E%3Csvg width&#x3D;’1px’ height&#x3D;’1px’ viewBox&#x3D;’0 0 1 1’ version&#x3D;’1.1’ xmlns&#x3D;’<a href="http://www.w3.org/2000/svg">http://www.w3.org/2000/svg</a>‘ xmlns:xlink&#x3D;’<a href="http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg">http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg</a> stroke&#x3D;’none’ stroke-width&#x3D;’1’ fill&#x3D;’none’ fill-rule&#x3D;’evenodd’ fill-opacity&#x3D;’0’%3E%3Cg transform&#x3D;’translate(-249.000000, -126.000000)’ fill&#x3D;’%23FFFFFF’%3E%3Crect x&#x3D;’249’ y&#x3D;’126’ width&#x3D;’1’ height&#x3D;’1’%3E%3C&#x2F;rect%3E%3C&#x2F;g%3E%3C&#x2F;g%3E%3C&#x2F;svg%3E)</p>
+<h2 id="14-reahl-框架"><a href="#14-reahl-框架" class="headerlink" title="14. reahl 框架"></a><a href="#14-reahl-%E6%A1%86%E6%9E%B6" title="14. reahl 框架"></a><strong>14. reahl 框架</strong></h2><p>官 网：</p>
+<p><a href="https://www.reahl.org/">https://www.reahl.org/</a></p>
+<p>优 点：reahl 是一个可以让开发者完全用 Python 语言编写 Web 应用的开放框架，采用 Python 作为唯一开发语言是其最大特色。此外，reahl 提供了相当清晰且简明的开发组建，对于开发一般功能性 Web 系统足够清晰且可行。</p>
+<p>缺 点：提供抽象词汇时，无法掌握一些更高级的用户界面效果，目前不允许使用 Sass 构建 Bootstrap 的修改版本，并支持更高级的用户界面模式</p>
+<p>![Image](data:image&#x2F;svg+xml,%3C%3Fxml version&#x3D;’1.0’ encoding&#x3D;’UTF-8’%3F%3E%3Csvg width&#x3D;’1px’ height&#x3D;’1px’ viewBox&#x3D;’0 0 1 1’ version&#x3D;’1.1’ xmlns&#x3D;’<a href="http://www.w3.org/2000/svg">http://www.w3.org/2000/svg</a>‘ xmlns:xlink&#x3D;’<a href="http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg">http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg</a> stroke&#x3D;’none’ stroke-width&#x3D;’1’ fill&#x3D;’none’ fill-rule&#x3D;’evenodd’ fill-opacity&#x3D;’0’%3E%3Cg transform&#x3D;’translate(-249.000000, -126.000000)’ fill&#x3D;’%23FFFFFF’%3E%3Crect x&#x3D;’249’ y&#x3D;’126’ width&#x3D;’1’ height&#x3D;’1’%3E%3C&#x2F;rect%3E%3C&#x2F;g%3E%3C&#x2F;g%3E%3C&#x2F;svg%3E)</p>
+<h2 id="15-hug-框架"><a href="#15-hug-框架" class="headerlink" title="15. hug 框架"></a><a href="#15-hug-%E6%A1%86%E6%9E%B6" title="15. hug 框架"></a><strong>15. hug 框架</strong></h2><p>官 网：</p>
+<p><a href="https://hug.rest/">https://hug.rest/</a></p>
+<p>优 点：Hug 是一个 Python 3 API 开发框架。它的设计使软件工程师可以一次开发 API，然后在需要时再使用它。Hug 框架通过提供各种接口来简化 API 开发。这就是为什么该框架被称为 Python 3 中最快的框架之一的主要原因。</p>
+<p>缺 点：它使用以前的 WSGI 标准，这是一个同步框架，所以它不能处理像 WebSockets 和其他异步请求，不管怎么说，它仍然有非常好的性能表现。</p>
+<p><a href="https://mmbiz.qpic.cn/mmbiz_png/iaGGR9eXibkibjc2xlbRh5D0T8OTQYFhT7v74UvLQavzuEJFkBeosPwAWf2s29CEg6GujeX2jUSztYovC6HZsQrpg/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1"><img src="https://mmbiz.qpic.cn/mmbiz_png/iaGGR9eXibkibjc2xlbRh5D0T8OTQYFhT7v74UvLQavzuEJFkBeosPwAWf2s29CEg6GujeX2jUSztYovC6HZsQrpg/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1" alt="Image"></a></p>
+<h2 id="16-BlackSheep-框架"><a href="#16-BlackSheep-框架" class="headerlink" title="16. BlackSheep 框架"></a><a href="#16-BlackSheep-%E6%A1%86%E6%9E%B6" title="16. BlackSheep 框架"></a><strong>16. BlackSheep 框架</strong></h2><p>官 网：</p>
+<p><a href="https://github.com/Neoteroi/BlackSheep">https://github.com/Neoteroi/BlackSheep</a></p>
+<p>优 点：BlackSheep 是一个异步 Web 框架，用于使用 Python 构建基于事件的 Web 应用程序。它的灵感来自 Flask、ASP.NET Core 和 Yury Selivanov 的工作。</p>
+<p>缺 点：中文文档匮乏。</p>
+<p><a href="https://mmbiz.qpic.cn/mmbiz_png/iaGGR9eXibkibjc2xlbRh5D0T8OTQYFhT7vYGSFXA48xGBc8Rseoq1BdruQWzGeVQE5DVbkQygQemKdUHmEJU80FA/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1"><img src="https://mmbiz.qpic.cn/mmbiz_png/iaGGR9eXibkibjc2xlbRh5D0T8OTQYFhT7vYGSFXA48xGBc8Rseoq1BdruQWzGeVQE5DVbkQygQemKdUHmEJU80FA/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1" alt="Image"></a></p>
+<h2 id="17-Index-py-框架"><a href="#17-Index-py-框架" class="headerlink" title="17. Index.py 框架"></a><a href="#17-Index-py-%E6%A1%86%E6%9E%B6" title="17. Index.py 框架"></a><strong>17. Index.py 框架</strong></h2><p>官 网：</p>
+<p><a href="https://index-py.aber.sh/stable/">https://index-py.aber.sh/stable/</a></p>
+<p>优 点：实现了 ASGI3 接口并使用 Radix Tree 进行路由查找。是最快的 Python web 框架之一。一切特性都服务于快速开发高性能的 Web 服务。大量正确的类型注释，灵活且高效的路由系统，可视化 API 接口与在线调试，支持 Server-sent events 与 WebSocket，自带一键部署命令 (基于 uvicorn 与 gunicorn)，可使用任何可用的 ASGI 生态。</p>
+<p>缺 点：Index.py 不内置数据库、缓存等其他功能。选择困难者请直接使用 Django。</p>
+<p>![Image](data:image&#x2F;svg+xml,%3C%3Fxml version&#x3D;’1.0’ encoding&#x3D;’UTF-8’%3F%3E%3Csvg width&#x3D;’1px’ height&#x3D;’1px’ viewBox&#x3D;’0 0 1 1’ version&#x3D;’1.1’ xmlns&#x3D;’<a href="http://www.w3.org/2000/svg">http://www.w3.org/2000/svg</a>‘ xmlns:xlink&#x3D;’<a href="http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg">http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg</a> stroke&#x3D;’none’ stroke-width&#x3D;’1’ fill&#x3D;’none’ fill-rule&#x3D;’evenodd’ fill-opacity&#x3D;’0’%3E%3Cg transform&#x3D;’translate(-249.000000, -126.000000)’ fill&#x3D;’%23FFFFFF’%3E%3Crect x&#x3D;’249’ y&#x3D;’126’ width&#x3D;’1’ height&#x3D;’1’%3E%3C&#x2F;rect%3E%3C&#x2F;g%3E%3C&#x2F;g%3E%3C&#x2F;svg%3E)</p>
+<h2 id="18-Sanic-框架"><a href="#18-Sanic-框架" class="headerlink" title="18. Sanic 框架"></a><a href="#18-Sanic-%E6%A1%86%E6%9E%B6" title="18. Sanic 框架"></a><strong>18. Sanic 框架</strong></h2><p>官 网：</p>
+<p><a href="https://github.com/sanic-org/sanic">https://github.com/sanic-org/sanic</a></p>
+<p>优 点：Sanic 是一个 Python 3.7+ web 服务器和 web 框架，它的编写速度很快。它允许使用 Python 3.5 中添加的 async&#x2F;await 语法，这使您的代码无阻塞且快速。该项目的目标是提供一种简单的方法来启动和运行一个高性能的 HTTP 服务器，该服务器易于构建、扩展和最终扩展。</p>
+<p>缺 点：就功能方面 Sanic 模仿 Flask，比如通过共享 Blueprints 的概念，微小的子应用程序，允许开发人员在更大的应用程序中拆分和组织其代码。对于光光是数据增删改查 CRUD 应用，Sanic 也不是一个好的选择。</p>
+<p>![Image](data:image&#x2F;svg+xml,%3C%3Fxml version&#x3D;’1.0’ encoding&#x3D;’UTF-8’%3F%3E%3Csvg width&#x3D;’1px’ height&#x3D;’1px’ viewBox&#x3D;’0 0 1 1’ version&#x3D;’1.1’ xmlns&#x3D;’<a href="http://www.w3.org/2000/svg">http://www.w3.org/2000/svg</a>‘ xmlns:xlink&#x3D;’<a href="http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg">http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg</a> stroke&#x3D;’none’ stroke-width&#x3D;’1’ fill&#x3D;’none’ fill-rule&#x3D;’evenodd’ fill-opacity&#x3D;’0’%3E%3Cg transform&#x3D;’translate(-249.000000, -126.000000)’ fill&#x3D;’%23FFFFFF’%3E%3Crect x&#x3D;’249’ y&#x3D;’126’ width&#x3D;’1’ height&#x3D;’1’%3E%3C&#x2F;rect%3E%3C&#x2F;g%3E%3C&#x2F;g%3E%3C&#x2F;svg%3E)</p>
+<h2 id="19-Starlette-框架"><a href="#19-Starlette-框架" class="headerlink" title="19. Starlette 框架"></a><a href="#19-Starlette-%E6%A1%86%E6%9E%B6" title="19. Starlette 框架"></a><strong>19. Starlette 框架</strong></h2><p>官 网：</p>
+<p><a href="https://pypi.org/project/starlette/">https://pypi.org/project/starlette/</a></p>
+<p>优 点：Starlette 是一个轻量级的 ASGI 框架 &#x2F; 工具包，非常适合构建性能异步服务，它是生产就绪的，并为您提供以下内容：令人印象深刻的表现。WwbSocket 支持。GraphQL 支持。进程内后台任务。启动和关闭事件。基于请求构建的测试客户端。CORS、GZip、静态文件、流响应。会话和 Cookie 支持。100% 的测试覆盖率。100% 类型注释代码库。零硬依赖。</p>
+<p>缺 点：Starlette 提供了所有基本的 Web 微框架功能。但是它不提供自动数据验证，序列化或 API 文档。</p>
+<p>![Image](data:image&#x2F;svg+xml,%3C%3Fxml version&#x3D;’1.0’ encoding&#x3D;’UTF-8’%3F%3E%3Csvg width&#x3D;’1px’ height&#x3D;’1px’ viewBox&#x3D;’0 0 1 1’ version&#x3D;’1.1’ xmlns&#x3D;’<a href="http://www.w3.org/2000/svg">http://www.w3.org/2000/svg</a>‘ xmlns:xlink&#x3D;’<a href="http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg">http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg</a> stroke&#x3D;’none’ stroke-width&#x3D;’1’ fill&#x3D;’none’ fill-rule&#x3D;’evenodd’ fill-opacity&#x3D;’0’%3E%3Cg transform&#x3D;’translate(-249.000000, -126.000000)’ fill&#x3D;’%23FFFFFF’%3E%3Crect x&#x3D;’249’ y&#x3D;’126’ width&#x3D;’1’ height&#x3D;’1’%3E%3C&#x2F;rect%3E%3C&#x2F;g%3E%3C&#x2F;g%3E%3C&#x2F;svg%3E)</p>
+<h2 id="20-Fastapi-框架"><a href="#20-Fastapi-框架" class="headerlink" title="20. Fastapi 框架"></a><a href="#20-Fastapi-%E6%A1%86%E6%9E%B6" title="20. Fastapi 框架"></a><strong>20. Fastapi 框架</strong></h2><p>官 网：</p>
+<p><a href="https://fastapi.tiangolo.com/">https://fastapi.tiangolo.com/</a></p>
+<p>优 点：FastAPI 是一个现代、快速（高性能）的 Web 框架，用于基于标准 Python 类型提示使用 Python 3.6+ 构建 API。非常高的性能，与 NodeJS 和 Go 相当（感谢 Starlette 和 Pydantic）。可用的最快的 Python 框架之一。减少大约 40% 的人为（开发人员）引发的错误。简短，简单，直观，健壮。</p>
+<p>缺 点：本身不带模板语法，需要安装模板语法</p>
+<p>![Image](data:image&#x2F;svg+xml,%3C%3Fxml version&#x3D;’1.0’ encoding&#x3D;’UTF-8’%3F%3E%3Csvg width&#x3D;’1px’ height&#x3D;’1px’ viewBox&#x3D;’0 0 1 1’ version&#x3D;’1.1’ xmlns&#x3D;’<a href="http://www.w3.org/2000/svg">http://www.w3.org/2000/svg</a>‘ xmlns:xlink&#x3D;’<a href="http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg">http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg</a> stroke&#x3D;’none’ stroke-width&#x3D;’1’ fill&#x3D;’none’ fill-rule&#x3D;’evenodd’ fill-opacity&#x3D;’0’%3E%3Cg transform&#x3D;’translate(-249.000000, -126.000000)’ fill&#x3D;’%23FFFFFF’%3E%3Crect x&#x3D;’249’ y&#x3D;’126’ width&#x3D;’1’ height&#x3D;’1’%3E%3C&#x2F;rect%3E%3C&#x2F;g%3E%3C&#x2F;g%3E%3C&#x2F;svg%3E)</p>
+<h2 id="21-Responder-框架"><a href="#21-Responder-框架" class="headerlink" title="21. Responder 框架"></a><a href="#21-Responder-%E6%A1%86%E6%9E%B6" title="21. Responder 框架"></a><strong>21. Responder 框架</strong></h2><p>官 网：</p>
+<p><a href="https://python-responder.org/">https://python-responder.org/</a></p>
+<p>优 点：是 kennethreitz 新开发的一个项目，是一个基于 Python 的 HTTP 服务框架。底层用了 Starlette 的框架，Starlette 是一款轻量级的 ASGI 框架 &#x2F; 工具包， 可以用 Starlette 构建高性能的异步 IO 服务。相对于 Starlette , responder 对开发者更加友好一点。kennethreitz 写了 requests 号称 “HTTP for Humans” 更加清楚这一点。事实上比较下来，responder 也比 Starlette 优雅很多。</p>
+<p>缺 点：可能是新项目， 打包还不太完善。就目前版本而言，少许代码还不能正常工作。但接口形式已经定义完毕，期待后面版本会加上去。</p>
+<h2 id="22-Molten-框架"><a href="#22-Molten-框架" class="headerlink" title="22. Molten 框架"></a><a href="#22-Molten-%E6%A1%86%E6%9E%B6" title="22. Molten 框架"></a><strong>22. Molten 框架</strong></h2><p>官 网：</p>
+<p><a href="https://moltenframework.com/">https://moltenframework.com/</a></p>
+<p>优 点：Molten 是一个最小的、可扩展的、快速的和高效的框架，用于使用 Python 构建 HTTP API。计划自动验证请求，代码更容易维护。实例可自动序列化，包含 API 在现实世界中通常要求的各种功能，广泛使用 PEP484 类型提示和 mypy。</p>
+<p>缺 点：它没有使用像第三方库（如 Pydantic）提供数据验证，序列化和文档，它有自己的库。因此，这些数据类型定义将不太容易重用。依赖注入系统需要对依赖项进行预注册，并且将基于已声明的类型解决依赖问题。因此，不可能声明多个组件来提供一个特定的类型。</p>
+<p>![Image](data:image&#x2F;svg+xml,%3C%3Fxml version&#x3D;’1.0’ encoding&#x3D;’UTF-8’%3F%3E%3Csvg width&#x3D;’1px’ height&#x3D;’1px’ viewBox&#x3D;’0 0 1 1’ version&#x3D;’1.1’ xmlns&#x3D;’<a href="http://www.w3.org/2000/svg">http://www.w3.org/2000/svg</a>‘ xmlns:xlink&#x3D;’<a href="http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg">http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg</a> stroke&#x3D;’none’ stroke-width&#x3D;’1’ fill&#x3D;’none’ fill-rule&#x3D;’evenodd’ fill-opacity&#x3D;’0’%3E%3Cg transform&#x3D;’translate(-249.000000, -126.000000)’ fill&#x3D;’%23FFFFFF’%3E%3Crect x&#x3D;’249’ y&#x3D;’126’ width&#x3D;’1’ height&#x3D;’1’%3E%3C&#x2F;rect%3E%3C&#x2F;g%3E%3C&#x2F;g%3E%3C&#x2F;svg%3E)</p>
+<h2 id="23-Clastic-框架"><a href="#23-Clastic-框架" class="headerlink" title="23. Clastic 框架"></a><a href="#23-Clastic-%E6%A1%86%E6%9E%B6" title="23. Clastic 框架"></a><strong>23. Clastic 框架</strong></h2><p>官 网：</p>
+<p><a href="https://github.com/mahmoud/clastic">https://github.com/mahmoud/clastic</a></p>
+<p>优 点：一个功能强大的 Python Web 框架，可简化显式开发实践，同时消除全局状态。Clastic 是完全用 Python 语言编写的，增强可重用性和可测试性，主动 URL 路由检查，更好地控制应用程序初始化，改进的中间件范例，没有全局状态，ORM 用法，更容易的 WSGI 集成。</p>
+<p>缺 点：Clastic 没有构建全局状态；URL 路由规则参数和视图函数签名不匹配，在 Clastic 中，这种不匹配会在构建应用程序时引发异常。</p>
+<h2 id="24-Aiohttp-框架"><a href="#24-Aiohttp-框架" class="headerlink" title="24. Aiohttp 框架"></a><a href="#24-Aiohttp-%E6%A1%86%E6%9E%B6" title="24. Aiohttp 框架"></a><strong>24. Aiohttp 框架</strong></h2><p>官 网：</p>
+<p><a href="https://docs.aiohttp.org/en/stable/">https://docs.aiohttp.org/en/stable/</a></p>
+<p>优 点：用于 asyncio 和 Python 的异步 HTTP 客户端 &#x2F; 服务器。支持客户端和 HTTP 服务器，支持开箱即用的服务器 WebSockets 和客户端 WebSockets，没有回调地狱。Web 服务器具有中间件、信号和可插入路由。</p>
+<p>缺 点：根据 RFC 7231 aiohttp 2.0 版本后做了接受 HEAD 请求的调整，使用之前版本并且用 add_ get () 添加的请</p>
+<p>求，如果使用 HEAD 方法访问会返回 405。如果处理器会写入很多响应体内容，你可以在执行 HEAD 方法时跳过处理响应体内容以提高执行效率。</p>
+<p>![Image](data:image&#x2F;svg+xml,%3C%3Fxml version&#x3D;’1.0’ encoding&#x3D;’UTF-8’%3F%3E%3Csvg width&#x3D;’1px’ height&#x3D;’1px’ viewBox&#x3D;’0 0 1 1’ version&#x3D;’1.1’ xmlns&#x3D;’<a href="http://www.w3.org/2000/svg">http://www.w3.org/2000/svg</a>‘ xmlns:xlink&#x3D;’<a href="http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg">http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg</a> stroke&#x3D;’none’ stroke-width&#x3D;’1’ fill&#x3D;’none’ fill-rule&#x3D;’evenodd’ fill-opacity&#x3D;’0’%3E%3Cg transform&#x3D;’translate(-249.000000, -126.000000)’ fill&#x3D;’%23FFFFFF’%3E%3Crect x&#x3D;’249’ y&#x3D;’126’ width&#x3D;’1’ height&#x3D;’1’%3E%3C&#x2F;rect%3E%3C&#x2F;g%3E%3C&#x2F;g%3E%3C&#x2F;svg%3E)</p>
+<h2 id="25-Masonite-框架"><a href="#25-Masonite-框架" class="headerlink" title="25. Masonite 框架"></a><a href="#25-Masonite-%E6%A1%86%E6%9E%B6" title="25. Masonite 框架"></a><strong>25. Masonite 框架</strong></h2><p>官 网：</p>
+<p><a href="https://docs.masoniteproject.com/">https://docs.masoniteproject.com/</a></p>
+<p>优 点：现代和以开发人员为中心的 Python Web 框架致力于实现实际的 batteries，包括具有许多开箱即用功能的开发人员工具，具有极其可扩展的架构。Masonite 非常适合初学者开发人员进入他们的第一个 Web 应用程序，以及需要充分利用 Masonite 的全部潜力来完成他们的应用程序的经验丰富的开发人员。Masonite 努力实现从安装到部署的快速简便，因此开发人员可以尽可能快速有效地从概念到创建。将其用于您的下一个 SaaS！尝试一次，你就会坠入爱河。</p>
+<p>缺 点：对于 Masonite 来说，最大的” 竞争对手” 是 Django, 因为社区正在竭尽全力将框架推向容易，令人愉悦的下一件大事。与 Django 相比，Masonite 仍然是婴儿，期待它未来的表现。</p>
+<p>![Image](data:image&#x2F;svg+xml,%3C%3Fxml version&#x3D;’1.0’ encoding&#x3D;’UTF-8’%3F%3E%3Csvg width&#x3D;’1px’ height&#x3D;’1px’ viewBox&#x3D;’0 0 1 1’ version&#x3D;’1.1’ xmlns&#x3D;’<a href="http://www.w3.org/2000/svg">http://www.w3.org/2000/svg</a>‘ xmlns:xlink&#x3D;’<a href="http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg">http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg</a> stroke&#x3D;’none’ stroke-width&#x3D;’1’ fill&#x3D;’none’ fill-rule&#x3D;’evenodd’ fill-opacity&#x3D;’0’%3E%3Cg transform&#x3D;’translate(-249.000000, -126.000000)’ fill&#x3D;’%23FFFFFF’%3E%3Crect x&#x3D;’249’ y&#x3D;’126’ width&#x3D;’1’ height&#x3D;’1’%3E%3C&#x2F;rect%3E%3C&#x2F;g%3E%3C&#x2F;g%3E%3C&#x2F;svg%3E)</p>
+<h2 id="26-Quart-框架"><a href="#26-Quart-框架" class="headerlink" title="26. Quart 框架"></a><a href="#26-Quart-%E6%A1%86%E6%9E%B6" title="26. Quart 框架"></a><strong>26. Quart 框架</strong></h2><p>官 网：</p>
+<p><a href="https://pgjones.gitlab.io/quart/">https://pgjones.gitlab.io/quart/</a></p>
+<p>优 点：Quart 是一个 Python 网络微框架。使用 Quart，您可以呈现和提供 HTML 模板，编写（RESTful）JSON API，服务 WebSockets，流请求和响应数据，几乎可以通过 HTTP 或 WebSocket 协议做任何事情。</p>
+<p>缺 点：它仅支持 Python 3.7+。</p>
+<p>![Image](data:image&#x2F;svg+xml,%3C%3Fxml version&#x3D;’1.0’ encoding&#x3D;’UTF-8’%3F%3E%3Csvg width&#x3D;’1px’ height&#x3D;’1px’ viewBox&#x3D;’0 0 1 1’ version&#x3D;’1.1’ xmlns&#x3D;’<a href="http://www.w3.org/2000/svg">http://www.w3.org/2000/svg</a>‘ xmlns:xlink&#x3D;’<a href="http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg">http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg</a> stroke&#x3D;’none’ stroke-width&#x3D;’1’ fill&#x3D;’none’ fill-rule&#x3D;’evenodd’ fill-opacity&#x3D;’0’%3E%3Cg transform&#x3D;’translate(-249.000000, -126.000000)’ fill&#x3D;’%23FFFFFF’%3E%3Crect x&#x3D;’249’ y&#x3D;’126’ width&#x3D;’1’ height&#x3D;’1’%3E%3C&#x2F;rect%3E%3C&#x2F;g%3E%3C&#x2F;g%3E%3C&#x2F;svg%3E)</p>
+<h2 id="27-Tonberry-框架"><a href="#27-Tonberry-框架" class="headerlink" title="27. Tonberry 框架"></a><a href="#27-Tonberry-%E6%A1%86%E6%9E%B6" title="27. Tonberry 框架"></a><strong>27. Tonberry 框架</strong></h2><p>官 网：</p>
+<p><a href="https://github.com/Ayehavgunne/Tonberry">https://github.com/Ayehavgunne/Tonberry</a></p>
+<p>优 点：一个符合 ASGI 的 Web 微框架，采用基于类的路由方法。受 CherryPy 的影响但与 asyncio 兼容。一个名为 Qactuar 的配套 ASGI 服务器是从这个目前正在进行的项目中产生的。</p>
+<p>缺 点：在使用拉取请求，请使用自动格式化程序 iSort 和 Black 并使用 MyPy 验证代码。这是在不消除某些类型错误的情况下，并不总是可以使 MyPy 完全满意，但是至少尽你所能并谨慎使用注释 `# type: ignore`。最后，尝试，尽可能提供最准确的类型提示。</p>
+<p>![Image](data:image&#x2F;svg+xml,%3C%3Fxml version&#x3D;’1.0’ encoding&#x3D;’UTF-8’%3F%3E%3Csvg width&#x3D;’1px’ height&#x3D;’1px’ viewBox&#x3D;’0 0 1 1’ version&#x3D;’1.1’ xmlns&#x3D;’<a href="http://www.w3.org/2000/svg">http://www.w3.org/2000/svg</a>‘ xmlns:xlink&#x3D;’<a href="http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg">http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg</a> stroke&#x3D;’none’ stroke-width&#x3D;’1’ fill&#x3D;’none’ fill-rule&#x3D;’evenodd’ fill-opacity&#x3D;’0’%3E%3Cg transform&#x3D;’translate(-249.000000, -126.000000)’ fill&#x3D;’%23FFFFFF’%3E%3Crect x&#x3D;’249’ y&#x3D;’126’ width&#x3D;’1’ height&#x3D;’1’%3E%3C&#x2F;rect%3E%3C&#x2F;g%3E%3C&#x2F;g%3E%3C&#x2F;svg%3E)</p>
+<h2 id="28-cyclone-框架"><a href="#28-cyclone-框架" class="headerlink" title="28. cyclone 框架"></a><a href="#28-cyclone-%E6%A1%86%E6%9E%B6" title="28. cyclone 框架"></a><strong>28. cyclone 框架</strong></h2><p>官 网：</p>
+<p><a href="https://cyclone.io/">https://cyclone.io/</a></p>
+<p>优 点：Cyclone 是 Python 的 Web 服务器框架，它将 Tornado API 实现为 Twisted 协议。Twisted 是一个事件驱动的 Python 网络编程框架。它是最成熟的非阻塞 I&#x2F;O 库之一，可供公众使用。Tornado 是 FriendFeed 网络服务器的开源版本，它是最流行和最快速的 Python 网络服务器之一，具有用于构建网络应用程序的非常不错的 API。除了丰富的功能集之外，Cyclone 还解决了 C10K 问题。</p>
+<p>缺 点：Cyclone 不再支持 python 2.x 。</p>
+<h2 id="29-Klein-框架"><a href="#29-Klein-框架" class="headerlink" title="29. Klein 框架"></a><a href="#29-Klein-%E6%A1%86%E6%9E%B6" title="29. Klein 框架"></a><strong>29. Klein 框架</strong></h2><p>官 网：</p>
+<p><a href="https://github.com/twisted/klein">https://github.com/twisted/klein</a></p>
+<p>优 点：Klein 是一个微框架，用于使用 Python 开发可用于生产的 Web 服务。它是 “微” 的，因为它具有类似于 Bottle 和 Flask 的非常小的 API。它不是 “微”，因为它依赖于标准库之外的东西。这主要是因为它建立在广泛使用和经过良好测试的组件上，如 Werkzeug 和 Twisted。</p>
+<p>缺 点：也许有点过时了。</p>
+<p><a href="https://mmbiz.qpic.cn/mmbiz_png/iaGGR9eXibkibjc2xlbRh5D0T8OTQYFhT7vBnFIibORF9iby60Fibho0SD8w6yruia9Of1jRAUXYAZQsIx6CHvKoVNahA/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1"><img src="https://mmbiz.qpic.cn/mmbiz_png/iaGGR9eXibkibjc2xlbRh5D0T8OTQYFhT7vBnFIibORF9iby60Fibho0SD8w6yruia9Of1jRAUXYAZQsIx6CHvKoVNahA/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1" alt="Image"></a></p>
+<h2 id="30-nameko-框架"><a href="#30-nameko-框架" class="headerlink" title="30. nameko 框架"></a><a href="#30-nameko-%E6%A1%86%E6%9E%B6" title="30. nameko 框架"></a><strong>30. nameko 框架</strong></h2><p>官 网：</p>
+<p><a href="https://github.com/nameko/nameko">https://github.com/nameko/nameko</a></p>
+<p>优 点：AMQP RPC 和事件（发布 - 订阅），HTTPGET、POST 和 websockets，CLI 实现简单快速的开发，用于单元和集成测试的实用程序。</p>
+<p>缺 点：nameko 微服务出错不会自动打印错误日志，需要加上监控相关的依赖，计算密集型任务导致任务重试。</p>
+<p><a href="https://mmbiz.qpic.cn/mmbiz_png/iaGGR9eXibkibjc2xlbRh5D0T8OTQYFhT7vwTOiczSh8vsIDoUOAVv04ykVES8IicWhI2mtGorInh5asXf3SicZFygKg/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1"><img src="https://mmbiz.qpic.cn/mmbiz_png/iaGGR9eXibkibjc2xlbRh5D0T8OTQYFhT7vwTOiczSh8vsIDoUOAVv04ykVES8IicWhI2mtGorInh5asXf3SicZFygKg/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1" alt="Image"></a></p>
+<h2 id="31-CubicWeb-框架"><a href="#31-CubicWeb-框架" class="headerlink" title="31. CubicWeb 框架"></a><a href="#31-CubicWeb-%E6%A1%86%E6%9E%B6" title="31. CubicWeb 框架"></a><strong>31. CubicWeb 框架</strong></h2><p>官 网：</p>
+<p><a href="https://www.cubicweb.org/">https://www.cubicweb.org/</a></p>
+<p>优 点：CubicWeb 是一种语义 Web 应用程序框架，在 LGPL 下获得许可，它使开发人员能够通过重用组件（称为立方体）并遵循众所周知的面向对象设计原则来有效地构建 Web 应用程序。满足常见需求的可重用组件（数据模型和视图）库，Python 编程语言的强大功能和灵活性，用于存储后端的 SQL 数据库、LDAP 目录、Subversion 和 Mercurial 的可靠性。</p>
+<p>缺 点：要在 CubicWeb 应用程序中获取或操作持久数据，可以使用关系查询语言（RQL），RQL 提供了一种高度分离的路径来相互关联各种数据源。但是，随着它的实现，通过手动构建查询作为字符串，它可能会让习惯于 ORM 的开发人员感到过时。使用 CubicWeb 还有其他障碍。首先，设置可能很麻烦。另一个潜在的问题是缺少本机模板引擎；生成 HTML 留给开发人员。CubicWeb 支持 Python 3，但 Twisted 等模块本身并未完全移植。</p>
+<p>![Image](data:image&#x2F;svg+xml,%3C%3Fxml version&#x3D;’1.0’ encoding&#x3D;’UTF-8’%3F%3E%3Csvg width&#x3D;’1px’ height&#x3D;’1px’ viewBox&#x3D;’0 0 1 1’ version&#x3D;’1.1’ xmlns&#x3D;’<a href="http://www.w3.org/2000/svg">http://www.w3.org/2000/svg</a>‘ xmlns:xlink&#x3D;’<a href="http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg">http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg</a> stroke&#x3D;’none’ stroke-width&#x3D;’1’ fill&#x3D;’none’ fill-rule&#x3D;’evenodd’ fill-opacity&#x3D;’0’%3E%3Cg transform&#x3D;’translate(-249.000000, -126.000000)’ fill&#x3D;’%23FFFFFF’%3E%3Crect x&#x3D;’249’ y&#x3D;’126’ width&#x3D;’1’ height&#x3D;’1’%3E%3C&#x2F;rect%3E%3C&#x2F;g%3E%3C&#x2F;g%3E%3C&#x2F;svg%3E)</p>
+<h2 id="32-Zope2-框架"><a href="#32-Zope2-框架" class="headerlink" title="32. Zope2 框架"></a><a href="#32-Zope2-%E6%A1%86%E6%9E%B6" title="32. Zope2 框架"></a><strong>32. Zope2 框架</strong></h2><p>官 网：</p>
+<p><a href="https://zope.readthedocs.io/en/latest/">https://zope.readthedocs.io/en/latest/</a></p>
+<p>优 点：Zope 2 是一款基于 Python 的 Web 应用框架，是所有 Python Web 应用程序、工具的鼻祖，是 Python 家族一个强有力的分支。Zope 2 的 “对象发布” 系统非常适合面向对象开发方法，并且可以减轻开发者的学习曲线，还可以帮助你发现应用程序里一些不好的功能。</p>
+<p>缺 点：Zope 不适用于简单的 RESTful API（每 Bottle 或 Flask），甚至不适用于具有交互性的基本网站（à la Django），由于 Zope 的尺寸和复杂性，安装需要一些工作；这不是简单地将源解压缩到项目子文件夹中的问题。</p>
+<h2 id="33-Web2py-框架"><a href="#33-Web2py-框架" class="headerlink" title="33. Web2py 框架"></a><a href="#33-Web2py-%E6%A1%86%E6%9E%B6" title="33. Web2py 框架"></a><strong>33. Web2py 框架</strong></h2><p>官 网：</p>
+<p><a href="http://web2py.com/">http://web2py.com/</a></p>
+<p>优 点：Web2py 是一个用 Python 语言编写的免费的开源 Web 框架，旨在敏捷快速的开发 Web 应用，具有快速、可扩展、安全以及可移植的数据库驱动的应用，遵循 LGPLv3 开源协议。Web2py 提供一站式的解决方案，整个开发过程都可以在浏览器上进行，提供了 Web 版的在线开发，HTML 模版编写，静态文件的上传，数据库的编写的功能。其它的还有日志功能，以及一个自动化的 admin 接口。</p>
+<p>缺 点：Web2py 的一个重要限制是它仅与 Python 2.x 兼容。首先，这意味着 Web2py 无法使用 Python 3 的异步语法。如果你依赖于 Python 3 独有的外部库，那么你就不走运了。但是，正在开展使 Web2py Python 3 兼容的工作，并且在撰写本文时它已接近完成</p>
+<p>![Image](data:image&#x2F;svg+xml,%3C%3Fxml version&#x3D;’1.0’ encoding&#x3D;’UTF-8’%3F%3E%3Csvg width&#x3D;’1px’ height&#x3D;’1px’ viewBox&#x3D;’0 0 1 1’ version&#x3D;’1.1’ xmlns&#x3D;’<a href="http://www.w3.org/2000/svg">http://www.w3.org/2000/svg</a>‘ xmlns:xlink&#x3D;’<a href="http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg">http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg</a> stroke&#x3D;’none’ stroke-width&#x3D;’1’ fill&#x3D;’none’ fill-rule&#x3D;’evenodd’ fill-opacity&#x3D;’0’%3E%3Cg transform&#x3D;’translate(-249.000000, -126.000000)’ fill&#x3D;’%23FFFFFF’%3E%3Crect x&#x3D;’249’ y&#x3D;’126’ width&#x3D;’1’ height&#x3D;’1’%3E%3C&#x2F;rect%3E%3C&#x2F;g%3E%3C&#x2F;g%3E%3C&#x2F;svg%3E)</p>
+<h2 id="34-Pylons-框架"><a href="#34-Pylons-框架" class="headerlink" title="34. Pylons 框架"></a><a href="#34-Pylons-%E6%A1%86%E6%9E%B6" title="34. Pylons 框架"></a><strong>34. Pylons 框架</strong></h2><p>官 网：</p>
+<p><a href="https://docs.pylonsproject.org/projects/pylons-webframework/en/latest/">https://docs.pylonsproject.org/projects/pylons-webframework/en/latest/</a></p>
+<p>优 点：Pylons 是一个开放源代码的 Web 应用框架，使用 python 语言编写。它对 WSGI 标准进行了扩展应用，提升了重用性且将功能分割到独立的模块中。Pylons 是最新的 Web 应用框架中的典型，类似于 Django 和 TurboGears。Pylons 受 Ruby on Rails 影响很深：它的两个组件，Routes 和 WebHelpers 是 Rails 特性的 Python 实现。</p>
+<p>缺 点：Pylons 已与 repoze.bfg 合并，现在处于仅维护模式。强烈建议新项目从新合并的 Web 框架金字塔开始。</p>
+<p>![Image](data:image&#x2F;svg+xml,%3C%3Fxml version&#x3D;’1.0’ encoding&#x3D;’UTF-8’%3F%3E%3Csvg width&#x3D;’1px’ height&#x3D;’1px’ viewBox&#x3D;’0 0 1 1’ version&#x3D;’1.1’ xmlns&#x3D;’<a href="http://www.w3.org/2000/svg">http://www.w3.org/2000/svg</a>‘ xmlns:xlink&#x3D;’<a href="http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg">http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg</a> stroke&#x3D;’none’ stroke-width&#x3D;’1’ fill&#x3D;’none’ fill-rule&#x3D;’evenodd’ fill-opacity&#x3D;’0’%3E%3Cg transform&#x3D;’translate(-249.000000, -126.000000)’ fill&#x3D;’%23FFFFFF’%3E%3Crect x&#x3D;’249’ y&#x3D;’126’ width&#x3D;’1’ height&#x3D;’1’%3E%3C&#x2F;rect%3E%3C&#x2F;g%3E%3C&#x2F;g%3E%3C&#x2F;svg%3E)</p>
+<h2 id="35-Cubes-框架"><a href="#35-Cubes-框架" class="headerlink" title="35. Cubes 框架"></a><a href="#35-Cubes-%E6%A1%86%E6%9E%B6" title="35. Cubes 框架"></a><strong>35. Cubes 框架</strong></h2><p>官 网：</p>
+<p><a href="https://pythonhosted.org/cubes/">https://pythonhosted.org/cubes/</a></p>
+<p>优 点：Cubes 是一个轻量级的 Python 框架和工具集，用于开发报告和分析应用程序、在线分析处理 (OLAP)、多维分析和浏览聚合数据。它是 Data Brewery 的一部分。</p>
+<p>缺点：不再为每个多维数据集提供隐式聚合 record_count。它必须明确定义为聚合：旧的后端架构是有限制的。它只允许使用一个商店，必须在服务器启动之前知道模型，不可能从远程来源获取模型。</p>
+<h2 id="36-Dpark-框架"><a href="#36-Dpark-框架" class="headerlink" title="36. Dpark 框架"></a><a href="#36-Dpark-%E6%A1%86%E6%9E%B6" title="36. Dpark 框架"></a><strong>36. Dpark 框架</strong></h2><p>官 网：</p>
+<p><a href="https://github.com/Liangchengdeye/Dpark">https://github.com/Liangchengdeye/Dpark</a></p>
+<p>优 点：DPark 是 Spark 的 Python 克隆版本，是一个 Python 实现的分布式计算框架，可以非常方便地实现大规模数据处理和低延时的迭代计算。该计算框架类似于 MapReduce，但是比其更灵活，可以用 Python 非常方便地进行分布式计算，并且提供了更多的功能，以便更好地进行迭代式计算。DPark 由国内的豆瓣公司开发实现和负责维护，据豆瓣公司的描述，目前豆瓣公司内部的绝大多数数据分析都使用 DPark 完成，整个项目也正趋于完善。</p>
+<p>缺 点：Dpark 使用的是进程，在 Python 中，由于 GIL (Global Interpreter Lock) 的存在，即使在多核机器上使用多个线程，这些线程之间也没有办法真正地实现并发执行。</p>
+<h2 id="37-Buildbot-框架"><a href="#37-Buildbot-框架" class="headerlink" title="37. Buildbot 框架"></a><a href="#37-Buildbot-%E6%A1%86%E6%9E%B6" title="37. Buildbot 框架"></a><strong>37. Buildbot 框架</strong></h2><p>官 网：</p>
+<p><a href="https://buildbot.python.org/all/#/">https://buildbot.python.org/all/#/</a></p>
+<p>优 点：Buildbot 是 python 实现的开源持续构建和持续交付工具，为 Python, Mozilla, Chromium, WebKit 等知名项目使用。Buildbot 可以直接使用 python 包，轻松拥有上万库，具备强大的扩展能力。如果你觉得 Jenkins 已经轻松地满足你的需求，你不需要 Buildbot。如果你在 Jenkins 时觉得效率低下、扩展困难、一些用 python 等脚本可以实现的动作在 Jenkins 困难重重，那么可以看看 Buildbot。</p>
+<p>缺 点：buildbot 对多项目支持并不好。</p>
+<p>引用链接：<a href="https://mp.weixin.qq.com/s/0b_bG83S-LEpQOtaWZXv3A">https://mp.weixin.qq.com/s/0b_bG83S-LEpQOtaWZXv3A</a></p>
 ]]></content>
       <categories>
         <category>技术</category>
         <category>数据分析</category>
-        <category>SQL</category>
+        <category>python</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
-        <tag>SQL</tag>
+        <tag>python</tag>
+        <tag>网站</tag>
       </tags>
   </entry>
   <entry>
-    <title>排序_DENSE_RANK</title>
-    <url>/2023/02/28/%E6%8E%92%E5%BA%8F_DENSE_RANK/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="rank"><a href="#rank" class="headerlink" title="rank()"></a>rank()</h2><h2 id="dense-rank"><a href="#dense-rank" class="headerlink" title="dense_rank()"></a>dense_rank()</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">DENSE_RANK() OVER (PARTITION BY column1, column2... ORDER BY column3, column4...)</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>PARTITION BY子句是可选的，用于将数据分成不同的分组。如果不指定PARTITION BY子句，将对整个结果集进行排名。</li>
-<li>ORDER BY子句指定用于排序的列。可以根据一个或多个列进行排序，以确定排名的顺序。</li>
-</ul>
+    <title>Hadoop、Spark、Flink简单概要</title>
+    <url>/2023/03/28/Hadoop%E3%80%81Spark%E3%80%81Flink%E7%AE%80%E5%8D%95%E6%A6%82%E8%A6%81/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="https://zhuanlan.zhihu.com/p/526462792">Hadoop用于离线复杂大数据处理</a></p>
+<p>Spark 用于离线快速的大数据处理</p>
+<p>Flink 用于在线实时的大数据处理</p>
+<h1 id="1-数据处理"><a href="#1-数据处理" class="headerlink" title="1-数据处理"></a>1-数据处理</h1><p>Hadoop：为批处理而构建的Hadoop，它一次性在输入中获取大量数据集，对其进行处理并产生结果。批处理在处理大量数据时非常有效。由于数据的大小和系统的计算能力，输出会出现延迟。</p>
+<p>Spark：Spark也是 Hadoop生态系统的一部分。它本质上也是一个批处理系统，但它也支持流处理。</p>
+<p>Flink：Flink为流式处理和批处理提供了单一的运行时。</p>
 <span id="more"></span>
-
-<h3 id="example"><a href="#example" class="headerlink" title="example"></a>example</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT name, salary, DENSE_RANK() OVER (ORDER BY salary DESC) AS dense_rank</span><br><span class="line">FROM employees;</span><br></pre></td></tr></table></figure>
-
-
-
-<p>当使用DENSE_RANK函数和PARTITION BY子句时，以下是示例查询的可能返回结果：</p>
-<p>示例1：对每个客户的订单金额进行排名</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT order_id, customer_id, order_amount,</span><br><span class="line">       DENSE_RANK() OVER (PARTITION BY customer_id ORDER BY order_amount DESC) AS dense_rank</span><br><span class="line">FROM orders;</span><br></pre></td></tr></table></figure>
-
-<table>
-<thead>
-<tr>
-<th>order_id</th>
-<th>customer_id</th>
-<th>order_amount</th>
-<th>dense_rank</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td>1001</td>
-<td>500</td>
-<td>1</td>
-</tr>
-<tr>
-<td>2</td>
-<td>1001</td>
-<td>500</td>
-<td>1</td>
-</tr>
-<tr>
-<td>3</td>
-<td>1001</td>
-<td>300</td>
-<td>2</td>
-</tr>
-<tr>
-<td>4</td>
-<td>1002</td>
-<td>700</td>
-<td>1</td>
-</tr>
-<tr>
-<td>5</td>
-<td>1002</td>
-<td>600</td>
-<td>2</td>
-</tr>
-<tr>
-<td>6</td>
-<td>1002</td>
-<td>600</td>
-<td>2</td>
-</tr>
-<tr>
-<td>7</td>
-<td>1002</td>
-<td>400</td>
-<td>3</td>
-</tr>
-</tbody></table>
-<p>在上述结果中，我们根据每个客户的订单金额进行了排名。客户ID为1001的客户有两个订单，订单金额都是500，因此它们被分配相同的密集排名1。客户ID为1001的第三个订单金额为300，所以它被分配密集排名2。对于客户ID为1002的客户，有一个订单金额为700，它被分配密集排名1，然后有两个订单金额为600，它们被分配密集排名2，最后一个订单金额为400，它被分配密集排名3。</p>
-<p>示例2：对每个班级的学生成绩进行排名</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT student_id, class_id, exam_score,</span><br><span class="line">       DENSE_RANK() OVER (PARTITION BY class_id ORDER BY exam_score DESC) AS dense_rank</span><br><span class="line">FROM students;</span><br></pre></td></tr></table></figure>
-
-<table>
-<thead>
-<tr>
-<th>student_id</th>
-<th>class_id</th>
-<th>exam_score</th>
-<th>dense_rank</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td>A</td>
-<td>95</td>
-<td>1</td>
-</tr>
-<tr>
-<td>2</td>
-<td>A</td>
-<td>90</td>
-<td>2</td>
-</tr>
-<tr>
-<td>3</td>
-<td>A</td>
-<td>85</td>
-<td>3</td>
-</tr>
-<tr>
-<td>4</td>
-<td>B</td>
-<td>92</td>
-<td>1</td>
-</tr>
-<tr>
-<td>5</td>
-<td>B</td>
-<td>88</td>
-<td>2</td>
-</tr>
-<tr>
-<td>6</td>
-<td>B</td>
-<td>88</td>
-<td>2</td>
-</tr>
-<tr>
-<td>7</td>
-<td>B</td>
-<td>80</td>
-<td>3</td>
-</tr>
-</tbody></table>
-<p>在上述结果中，我们根据每个班级的考试成绩进行了排名。班级ID为A的学生有三个学生，分别获得了95、90和85分，他们分别被分配密集排名1、2和3。班级ID为B的学生有四个学生，分别获得了92、88、88和80分，他们分别被分配密集排名1、2、2和3。</p>
+<h1 id="2-流引擎"><a href="#2-流引擎" class="headerlink" title="2-流引擎"></a>2-流引擎</h1><p>Hadoop：Map-reduce是面向批处理的工具。它一次性在输入中获取大量数据集，对其进行处理并产生结果。</p>
+<p>Spark：Apache Spark Streaming以微批处理的形式处理数据流。每个批次都包含在批次期间到达的事件集合。但对于我们需要处理大量实时数据流并实时提供结果的用例来说，这还不够。</p>
+<p>Flink：Apache Flink是真正的流媒体引擎。它使用流来处理工作负载：流式处理、SQL、微批处理和批处理。批处理是一组有限的流数据。</p>
+<h1 id="3-数据流"><a href="#3-数据流" class="headerlink" title="3-数据流"></a>3-数据流</h1><p>Hadoop：MapReduce计算数据流没有任何循环。这是一个阶段链，在每个阶段，您都使用前一阶段的输出向前推进，并为下一阶段产生输入。</p>
+<p>Spark：虽然机器学习算法是一个循环数据流，但 Spark将其表示为（DAG）有向无环图。</p>
+<p>Flink：Flink采用了与其他方法不同的方法。它在运行时支持受控循环依赖图。这有助于以非常有效的方式表示机器学习算法。</p>
+<h1 id="4-计算模型"><a href="#4-计算模型" class="headerlink" title="4-计算模型"></a>4-计算模型</h1><p>Hadoop：MapReduce采用了面向批处理的模型，批处理正在处理静态数据，一次需要大量数据，对其进行处理，然后写出输出。</p>
+<p>Spark：Spark采用了微批处理。微批次本质上是一种“收集然后处理”的计算模型。</p>
+<p>Flink：Flink采用了连续流、基于算子的流模型。连续流算子在数据到达时对其进行处理，而不会延迟收集数据或处理数据。</p>
+<h1 id="5-性能"><a href="#5-性能" class="headerlink" title="5-性能"></a>5-性能</h1><p>Hadoop：Apache Hadoop仅支持批处理。它不处理流数据，因此与Hadoop、Spark和Flink相比，性能更慢。</p>
+<p>Spark：虽然Spark有优秀的社区背景，并且现在被认为是最成熟的社区，但它的流处理效率并不比Flink高，因为它使用的是微批处理。</p>
+<p>Flink：与任何其他数据处理系统相比，Flink的性能非常出色。比较Hadoop、Spark和Flink时可以看出，Flink使用原生闭环迭代运算符，这使得机器学习和图形处理更快。</p>
+<h1 id="6-内存管理"><a href="#6-内存管理" class="headerlink" title="6-内存管理"></a>6-内存管理</h1><p>Hadoop：提供可配置的内存管理，可以动态或静态地执行此操作。</p>
+<p>Spark：提供可配置的内存管理，Spark 1.6 的最新版本已经朝着自动化内存管理的方向发展。</p>
+<p>Flink：提供了自动内存管理，有自己的内存管理系统。</p>
+<h1 id="7-容错"><a href="#7-容错" class="headerlink" title="7-容错"></a>7-容错</h1><p>Hadoop：MapReduce具有高度容错性。如果Hadoop出现任何故障，则无需从头开始重新启动应用程序。</p>
+<p>Spark：Apache Spark Streaming恢复丢失的工作，无需额外的代码或配置。</p>
+<p>Flink：Apache Flink遵循的容错机制是基于Chandy-Lamport分布式快照。该机制是轻量级的，导致在保持高吞吐率的同时提供强大的一致性保证。</p>
+<h1 id="8-可扩展性"><a href="#8-可扩展性" class="headerlink" title="8-可扩展性"></a>8-可扩展性</h1><p>Hadoop：MapReduce具有很强的可扩展性潜力，并已在数万个节点上用于生产。</p>
+<p>Spark：它具有高度可扩展性，我们可以在集群中不断添加 n 个节点，一个已知的大型 Spark集群有8000个节点。</p>
+<p>Flink：Flink也具有很高的可扩展性，我们可以在集群中不断添加 n 个节点，一个已知的大型 Flink 集群有数千个节点。</p>
+<h1 id="9-迭代处理"><a href="#9-迭代处理" class="headerlink" title="9-迭代处理"></a>9-迭代处理</h1><p>Hadoop：不支持迭代处理。</p>
+<p>Spark：它批量迭代其数据。在Spark中，每次迭代都必须单独安排和执行。</p>
+<p>Flink：它通过使用其流式架构来迭代数据。可以指示Flink只处理实际发生变化的部分数据，从而显着提高作业的性能。</p>
+<h1 id="10-语言支持"><a href="#10-语言支持" class="headerlink" title="10-语言支持"></a>10-语言支持</h1><p>Hadoop：主要支持Java，其他支持的语言有c、c++、ruby、groovy、Perl、Python。</p>
+<p>Spark：支持Java、Scala、Python和R。Spark是在Scala中实现的，供其他语言的API，如Java、Python和 R。</p>
+<p>Flink：支持 Java、Scala、Python和R。Flink 是用 Java实现的，同时也提供了Scala API。</p>
+<h1 id="11-优化"><a href="#11-优化" class="headerlink" title="11-优化"></a>11-优化</h1><p>Hadoop：在 MapReduce 中，作业必须手动优化。有几种方法可以优化MapReduce作业：正确配置集群、使用组合器、使用LZO压缩、适当调整 MapReduce任务的数量以及为数据使用最合适和最紧凑的可写类型。</p>
+<p>Spark：在Spark中，作业必须手动优化。有一个新的可扩展优化器 Catalyst，它基于Scala中的函数式编程结构。 Catalyst 的可扩展设计有两个目的：第一，易于添加新的优化技术。其次，使外部开发人员能够扩展优化器催化剂。</p>
+<p>Flink：Apache Flink带有一个独立于实际编程接口的优化器。 Flink优化器的工作方式类似于关系数据库优化器，但将这些优化应用于Flink程序，而不是 SQL查询。</p>
+<h1 id="12-延迟"><a href="#12-延迟" class="headerlink" title="12-延迟"></a>12-延迟</h1><p>Hadoop：Hadoop的MapReduce框架相对较慢，因为它旨在支持不同的格式、结构和海量数据。这就是为什么 Hadoop的延迟比Spark和Flink都高。</p>
+<p>Spark：Spark是另一个批处理系统，但它比Hadoop MapReduce相对快，因为它通过RDD将大部分输入数据缓存在内存中，并将中间数据保存在内存中，最终在完成或需要时将数据写入磁盘。</p>
+<p>Flink：Flink的数据流运行时只需少量配置，即可实现低延迟和高吞吐量。</p>
+<h1 id="14-可视化"><a href="#14-可视化" class="headerlink" title="14-可视化"></a>14-可视化</h1><p>Hadoop：在Hadoop中，数据可视化工具是zoomdata，它可以直接连接到HDFS以及SQL-on-Hadoop技术，如 Impala、Hive、Spark SQL、Presto等。</p>
+<p>Spark：它提供了一个用于提交和执行作业的Web界面，在该界面上可以可视化生成的执行计划。 Flink和Spark都集成到Apache zeppelin中，它提供数据分析、摄取以及发现、可视化和协作。</p>
+<p>Flink：它还提供了一个用于提交和执行作业的Web界面，生成的执行计划可以在这个界面上进行可视化。</p>
+<h1 id="15-恢复"><a href="#15-恢复" class="headerlink" title="15-恢复"></a>15-恢复</h1><p>Hadoop：MapReduce自然地对系统故障或故障具有弹性。它是高度容错的系统。</p>
+<p>Spark：Apache Spark RDD允许通过重新计算DAG来恢复故障节点上的分区，同时还通过检查点支持与Hadoop更相似的恢复方式，以减少RDD的依赖关系。</p>
+<p>Flink：支持checkpointing机制，将程序存储在数据源和数据接收器中，窗口的状态，以及用户自定义的状态，在失败后恢复流式作业。</p>
+<h1 id="16-安全性"><a href="#16-安全性" class="headerlink" title="16-安全性"></a>16-安全性</h1><p>Hadoop：它支持Kerberos身份验证，管理起来有些麻烦。但是，第三方供应商已使组织能够利用Active Directory Kerberos和LDAP进行身份验证。</p>
+<p>Spark：Apache Spark的安全性有点稀疏，目前仅支持通过共享密钥（密码身份验证）进行身份验证。 当你在HDFS上运行Spark，它可以使用HDFS ACL和文件级权限。此外，Spark可以在 YARN上运行以使用Kerberos身份验证。</p>
+<p>Flink：Flink通过Hadoop &#x2F; Kerberos基础设施支持用户身份验证。如果在YARN上运行Flink，Flink会获取提交程序的用户的Kerberos令牌，并使用该令牌在YARN、HDFS和HBase上进行身份验证。Flink即将推出的连接器，流程序可以通过 SSL将自己验证为流代理。</p>
+<h1 id="17-成本"><a href="#17-成本" class="headerlink" title="17-成本"></a>17-成本</h1><p>Hadoop：MapReduce通常可以在比某些替代方案更便宜的硬件上运行，因为它不会尝试将所有内容都存储在内存中。</p>
+<p>Spark：由于Spark需要大量RAM才能在内存中运行，因此在集群中增加它会逐渐增加其成本。</p>
+<p>Flink：Apache Flink也需要大量的RAM在内存中运行，所以它的成本会逐渐增加。</p>
+<h1 id="18-兼容性"><a href="#18-兼容性" class="headerlink" title="18-兼容性"></a>18-兼容性</h1><p>Hadoop：Apache Hadoop MapReduce 和 Apache Spark相互兼容，Spark通过JDBC和ODBC共享MapReduce 对数据源、文件格式和商业智能工具的所有兼容性。</p>
+<p>Spark：Apache Spark和Hadoop相互兼容。 Spark与Hadoop数据兼容。它可以通过YARN或Spark的独立模式在 Hadoop集群中运行，并且可以处理HDFS、HBase、Cassandra、Hive和任何Hadoop InputFormat中的数据。</p>
+<p>Flink：Apache Flink是一个可扩展的数据分析框架，完全兼容Hadoop。它提供了一个Hadoop Compatibility包来包装针对Hadoop的MapReduce接口实现的函数，并将它们嵌入到Flink程序中。</p>
+<h1 id="20-使用感"><a href="#20-使用感" class="headerlink" title="20-使用感"></a>20-使用感</h1><p>Hadoop：MapReduce 开发人员需要手动编写每个操作的代码，这让编程工作变得非常困难。</p>
+<p>Spark：很容易编程，因为它有大量的高级操作符。</p>
+<p>Flink：也有高级算子，易于操作。</p>
+<h1 id="21-交互模式"><a href="#21-交互模式" class="headerlink" title="21-交互模式"></a>21-交互模式</h1><p>Hadoop：MapReduce 没有交互模式。</p>
+<p>Spark：Spark 有一个交互式Shell，可以学习如何充分利用Spark。这是一个用 Scala编写的Spark应用程序，提供一个具有自动完成功能的命令行环境，您可以在其中运行临时查询并熟悉 Spark的功能。</p>
+<p>Flink：它带有一个集成的交互式Scala Shell。它可以在本地设置和集群设置中使用。</p>
+<h1 id="22-实时分析"><a href="#22-实时分析" class="headerlink" title="22-实时分析"></a>22-实时分析</h1><p>Hadoop：MapReduce 在实时数据处理方面失败了，因为它旨在对大量数据执行批处理。</p>
+<p>Spark：它可以处理实时数据，即以每秒数百万个事件的速率来自实时事件流的数据。</p>
+<p>Flink：主要用于实时数据分析，虽然也提供了快速的批量数据处理。</p>
+<h1 id="23-调度器"><a href="#23-调度器" class="headerlink" title="23-调度器"></a>23-调度器</h1><p>Hadoop：Hadoop中的调度程序成为可插拔组件。多用户工作负载有两个调度器：公平调度器和容量调度器。为了调度复杂的流程，MapReduce需要像Oozie这样的外部作业调度程序。</p>
+<p>Spark：由于内存计算，Spark能充当自己的流调度程序。</p>
+<p>Flink：Flink可以使用YARN Scheduler，Flink也有自己的 Scheduler。</p>
+<h1 id="24-SQL支持"><a href="#24-SQL支持" class="headerlink" title="24-SQL支持"></a>24-SQL支持</h1><p>Hadoop：它使用户能够使用 Apache Hive运行SQL查询。</p>
+<p>Spark：它使用户能够使用Spark-SQL运行SQL查询。Spark提供了类似Hives的查询语言和类似DSL的Dataframe 来查询结构化数据。</p>
+<p>Flink：在Flink中，Table API是一种类似SQL的表达式语言，支持DSL等数据帧，目前仍处于测试阶段。有计划添加SQL接口，但不确定何时会进入框架。</p>
+<h1 id="25-缓存"><a href="#25-缓存" class="headerlink" title="25-缓存"></a>25-缓存</h1><p>Hadoop：MapReduce 无法将数据缓存在内存中以满足未来需求。</p>
+<p>Spark：它可以将数据缓存在内存中以进行进一步的迭代，从而提高其性能。</p>
+<p>Flink：它可以将数据缓存在内存中以供进一步迭代以提高其性能。</p>
+<h1 id="26-硬件要求"><a href="#26-硬件要求" class="headerlink" title="26-硬件要求"></a>26-硬件要求</h1><p>Hadoop：MapReduce在商品硬件上运行良好。</p>
+<p>Spark：Apache Spark需要中高级硬件。由于Spark将数据缓存在内存中以供进一步迭代，从而提高其性能。</p>
+<p>Flink：Apache Flink也需要中高级硬件。 Flink还可以将数据缓存在内存中以进行进一步的迭代，从而提高其性能。</p>
+<h1 id="27-机器学习"><a href="#27-机器学习" class="headerlink" title="27-机器学习"></a>27-机器学习</h1><p>Hadoop：需要像Apache Mahout这样的机器学习工具。</p>
+<p>Spark：有自己的一套机器学习MLlib。在内存缓存和其他实现细节中，它确实是实现ML算法的强大平台。</p>
+<p>Flink：有FlinkML，它是Flink的机器学习库。它支持运行时受控的循环依赖图。与DAG表示相比，这使得它们以非常有效的方式表示ML算法。</p>
+<h1 id="28-部署"><a href="#28-部署" class="headerlink" title="28-部署"></a>28-部署</h1><p>Hadoop：在独立模式下，Hadoop 被配置为在单节点、非分布式模式下运行。在伪分布式模式下，Hadoop以伪分布式模式运行。因此，不同之处在于每个Hadoop守护程序以伪分布式模式在单独的Java进程中运行。而在本地模式下，每个Hadoop守护程序都作为单个Java进程运行。在完全分布式模式下，所有守护进程在单独的节点中执行，形成一个多节点集群。</p>
+<p>Spark：还提供了一种简单的独立部署模式，可以在Mesos或YARN集群管理器上运行。它可以手动启动，通过手动启动 master和worker或使用我们提供的启动脚本。也可以在单台机器上运行这些守护进程进行测试。</p>
+<p>Flink：还提供了在YARN集群管理器上运行的独立部署模式。</p>
+<h1 id="29-消除重复"><a href="#29-消除重复" class="headerlink" title="29-消除重复"></a>29-消除重复</h1><p>Hadoop：Hadoop中没有重复消除。</p>
+<p>Spark：Spark还对每条记录进行一次准确的处理，因此消除了重复。</p>
+<p>Flink：Flink只处理一次记录，因此消除了重复，流应用程序可以在计算期间保持自定义状态。Flink的检查点机制确保在出现故障时状态的语义恰好只有一次。</p>
+<h1 id="30-Window标准"><a href="#30-Window标准" class="headerlink" title="30-Window标准"></a>30-Window标准</h1><p>一个数据流需要被分成许多逻辑流，每个逻辑流都可以应用一个窗口操作符。</p>
+<p>Hadoop：不支持流式传输，因此不需要窗口条件。</p>
+<p>Spark：具有基于时间的窗口标准。</p>
+<p>Flink：具有基于记录的或任何自定义的用户定义的Flink Window标准。  </p>
 ]]></content>
       <categories>
         <category>技术</category>
         <category>数据分析</category>
-        <category>SQL</category>
+        <category>数据库</category>
+        <category>笔记</category>
       </categories>
       <tags>
         <tag>笔记</tag>
-        <tag>SQL</tag>
-        <tag>排序</tag>
+        <tag>数据库</tag>
       </tags>
   </entry>
 </search>
