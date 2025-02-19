@@ -695,186 +695,6 @@
       </tags>
   </entry>
   <entry>
-    <title>SQL学习笔记</title>
-    <url>/2023/02/27/SQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="/_post/2024_02_28_%E6%8E%92%E5%BA%8F_DENSE_RANK.md">排序_DENSE_RANK</a></p>
-<h2 id="IFNULL"><a href="#IFNULL" class="headerlink" title="IFNULL"></a>IFNULL</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Write your MySQL query statement below</span><br><span class="line"></span><br><span class="line">select e.name, b.bonus</span><br><span class="line"></span><br><span class="line">from Employee e left join Bonus b</span><br><span class="line"></span><br><span class="line">on e.empId = b.empId</span><br><span class="line"></span><br><span class="line">where ifnull(bonus,0)&lt;1000</span><br><span class="line">## ifnul 就把值替换成0）</span><br></pre></td></tr></table></figure>
-<span id="more"></span>
-
-
-
-<h2 id="SQL-585"><a href="#SQL-585" class="headerlink" title="SQL 585"></a>SQL 585</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT ROUND(SUM(tiv_2016), 2) AS tiv_2016</span><br><span class="line"></span><br><span class="line">FROM Insurance</span><br><span class="line"></span><br><span class="line">WHERE tiv_2015 IN (</span><br><span class="line"></span><br><span class="line">SELECT tiv_2015</span><br><span class="line"></span><br><span class="line">FROM Insurance</span><br><span class="line"></span><br><span class="line">GROUP BY tiv_2015</span><br><span class="line"></span><br><span class="line">HAVING COUNT(*) &gt; 1</span><br><span class="line"></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">AND (lat, lon) NOT IN (</span><br><span class="line"></span><br><span class="line">SELECT lat, lon</span><br><span class="line"></span><br><span class="line">FROM Insurance</span><br><span class="line"></span><br><span class="line">GROUP BY lat, lon</span><br><span class="line"></span><br><span class="line">HAVING COUNT(*) &gt; 1</span><br><span class="line"></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-
-
-<h2 id="SQL-610"><a href="#SQL-610" class="headerlink" title="SQL 610"></a>SQL 610</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Write your MySQL query statement below</span><br><span class="line">select </span><br><span class="line">    *,</span><br><span class="line">    if(x+y&gt;z and x+z&gt;y and y+z&gt;x,&#x27;Yes&#x27;,&#x27;No&#x27;) as triangle</span><br><span class="line">from Triangle</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="SQL1633-ORDER-BY-2-DESC-1"><a href="#SQL1633-ORDER-BY-2-DESC-1" class="headerlink" title="SQL1633 ORDER BY 2 DESC, 1"></a>SQL1633 ORDER BY 2 DESC, 1</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ORDER BY 2 DESC, 1</span><br></pre></td></tr></table></figure>
-
-<p>这一行使用ORDER BY子句对结果进行排序。我们按照第二列（即percentage）的降序进行排序，如果百分比相同，则按照第一列（即contest_id）的升序进行排序。</p>
-<h2 id="SQL1179-CASE-WHEN"><a href="#SQL1179-CASE-WHEN" class="headerlink" title="SQL1179 CASE WHEN"></a>SQL1179 CASE WHEN</h2><p>CASE WHEN语句是SQL中用于根据条件进行条件判断和返回不同结果的表达式。它允许你根据满足特定条件的情况，选择不同的结果进行返回。</p>
-<p>CASE WHEN语句的基本语法如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CASE</span><br><span class="line">   WHEN condition1 THEN result1</span><br><span class="line">   WHEN condition2 THEN result2</span><br><span class="line">   ...</span><br><span class="line">   ELSE resultN</span><br><span class="line">END</span><br></pre></td></tr></table></figure>
-
-<p>首先，你提供一个或多个WHEN子句，每个子句后面跟着一个条件（condition）和一个对应的结果（result）。当满足某个条件时，相应的结果将被返回。ELSE子句是可选的，用于指定当没有任何条件满足时的默认结果。</p>
-<p>让我们通过一个简单的例子来说明CASE WHEN的使用。假设有一个名为”students”的表，其中包含学生的姓名和分数列。如果要将成绩分为优秀、良好和及格三个等级并进行显示，可以使用以下SQL语句：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT name,</span><br><span class="line">       CASE</span><br><span class="line">          WHEN score &gt;= 90 THEN &#x27;优秀&#x27;</span><br><span class="line">          WHEN score &gt;= 80 THEN &#x27;良好&#x27;</span><br><span class="line">          WHEN score &gt;= 60 THEN &#x27;及格&#x27;</span><br><span class="line">          ELSE &#x27;不及格&#x27;</span><br><span class="line">       END AS grade</span><br><span class="line">FROM students;</span><br></pre></td></tr></table></figure>
-
-<p>在这个例子中，对于每个学生，我们使用CASE WHEN语句根据他们的分数来判断他们的等级。如果分数大于等于90，那么他们被归类为”优秀”；如果分数大于等于80，但小于90，他们被归类为”良好”；如果分数大于等于60，但小于80，他们被归类为”及格”；否则，他们被归类为”不及格”。</p>
-<p>通过使用CASE WHEN语句，我们可以根据不同的条件返回不同的结果，从而实现灵活的数据处理和转换。</p>
-]]></content>
-      <categories>
-        <category>技术</category>
-        <category>数据分析</category>
-        <category>SQL</category>
-      </categories>
-      <tags>
-        <tag>笔记</tag>
-        <tag>SQL</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>排序_DENSE_RANK</title>
-    <url>/2023/02/28/%E6%8E%92%E5%BA%8F_DENSE_RANK/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="rank"><a href="#rank" class="headerlink" title="rank()"></a>rank()</h2><h2 id="dense-rank"><a href="#dense-rank" class="headerlink" title="dense_rank()"></a>dense_rank()</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">DENSE_RANK() OVER (PARTITION BY column1, column2... ORDER BY column3, column4...)</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>PARTITION BY子句是可选的，用于将数据分成不同的分组。如果不指定PARTITION BY子句，将对整个结果集进行排名。</li>
-<li>ORDER BY子句指定用于排序的列。可以根据一个或多个列进行排序，以确定排名的顺序。</li>
-</ul>
-<span id="more"></span>
-
-<h3 id="example"><a href="#example" class="headerlink" title="example"></a>example</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT name, salary, DENSE_RANK() OVER (ORDER BY salary DESC) AS dense_rank</span><br><span class="line">FROM employees;</span><br></pre></td></tr></table></figure>
-
-
-
-<p>当使用DENSE_RANK函数和PARTITION BY子句时，以下是示例查询的可能返回结果：</p>
-<p>示例1：对每个客户的订单金额进行排名</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT order_id, customer_id, order_amount,</span><br><span class="line">       DENSE_RANK() OVER (PARTITION BY customer_id ORDER BY order_amount DESC) AS dense_rank</span><br><span class="line">FROM orders;</span><br></pre></td></tr></table></figure>
-
-<table>
-<thead>
-<tr>
-<th>order_id</th>
-<th>customer_id</th>
-<th>order_amount</th>
-<th>dense_rank</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td>1001</td>
-<td>500</td>
-<td>1</td>
-</tr>
-<tr>
-<td>2</td>
-<td>1001</td>
-<td>500</td>
-<td>1</td>
-</tr>
-<tr>
-<td>3</td>
-<td>1001</td>
-<td>300</td>
-<td>2</td>
-</tr>
-<tr>
-<td>4</td>
-<td>1002</td>
-<td>700</td>
-<td>1</td>
-</tr>
-<tr>
-<td>5</td>
-<td>1002</td>
-<td>600</td>
-<td>2</td>
-</tr>
-<tr>
-<td>6</td>
-<td>1002</td>
-<td>600</td>
-<td>2</td>
-</tr>
-<tr>
-<td>7</td>
-<td>1002</td>
-<td>400</td>
-<td>3</td>
-</tr>
-</tbody></table>
-<p>在上述结果中，我们根据每个客户的订单金额进行了排名。客户ID为1001的客户有两个订单，订单金额都是500，因此它们被分配相同的密集排名1。客户ID为1001的第三个订单金额为300，所以它被分配密集排名2。对于客户ID为1002的客户，有一个订单金额为700，它被分配密集排名1，然后有两个订单金额为600，它们被分配密集排名2，最后一个订单金额为400，它被分配密集排名3。</p>
-<p>示例2：对每个班级的学生成绩进行排名</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT student_id, class_id, exam_score,</span><br><span class="line">       DENSE_RANK() OVER (PARTITION BY class_id ORDER BY exam_score DESC) AS dense_rank</span><br><span class="line">FROM students;</span><br></pre></td></tr></table></figure>
-
-<table>
-<thead>
-<tr>
-<th>student_id</th>
-<th>class_id</th>
-<th>exam_score</th>
-<th>dense_rank</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td>A</td>
-<td>95</td>
-<td>1</td>
-</tr>
-<tr>
-<td>2</td>
-<td>A</td>
-<td>90</td>
-<td>2</td>
-</tr>
-<tr>
-<td>3</td>
-<td>A</td>
-<td>85</td>
-<td>3</td>
-</tr>
-<tr>
-<td>4</td>
-<td>B</td>
-<td>92</td>
-<td>1</td>
-</tr>
-<tr>
-<td>5</td>
-<td>B</td>
-<td>88</td>
-<td>2</td>
-</tr>
-<tr>
-<td>6</td>
-<td>B</td>
-<td>88</td>
-<td>2</td>
-</tr>
-<tr>
-<td>7</td>
-<td>B</td>
-<td>80</td>
-<td>3</td>
-</tr>
-</tbody></table>
-<p>在上述结果中，我们根据每个班级的考试成绩进行了排名。班级ID为A的学生有三个学生，分别获得了95、90和85分，他们分别被分配密集排名1、2和3。班级ID为B的学生有四个学生，分别获得了92、88、88和80分，他们分别被分配密集排名1、2、2和3。</p>
-]]></content>
-      <categories>
-        <category>技术</category>
-        <category>数据分析</category>
-        <category>SQL</category>
-      </categories>
-      <tags>
-        <tag>笔记</tag>
-        <tag>SQL</tag>
-        <tag>排序</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>DATEDIFF_日期之差</title>
     <url>/2023/03/02/DATEDIFF_%E6%97%A5%E6%9C%9F%E4%B9%8B%E5%B7%AE/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>DATEDIFF是一个SQL函数，用于计算两个日期之间的差距。</p>
@@ -1382,94 +1202,183 @@
       </tags>
   </entry>
   <entry>
-    <title>ChatGPT Prompt</title>
-    <url>/2023/08/12/ChatGPT_Prompt/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="English-Vesion"><a href="#English-Vesion" class="headerlink" title="English Vesion"></a>English Vesion</h2><details>
-  <summary>English Version</summary>
-  <p> 
-
-<ol>
-<li><p>Brainstorm 10 content ideas related to [topic] that [your audience] would find interesting and beneficial.</p>
-</li>
-<li><p>Write a fun bedtime story for [whomever you want], with them as a main character.</p>
-</li>
-<li><p>Write an article about [topic]. Consider diverse perspectives and write it in a [preferred tone] tone.</p>
-</li>
-<li><p>Summarize [LinkedIn profile url] and list the top 5 pain points they likely face in their current role.</p>
-</li>
-<li><p>Create social media content for 7 days that is focused on [topic] and that will engage [target audience].</p>
-</li>
-</ol>
-<p>  Instructions: Create social media content that is appropriate for the chosen topic and target audience. Content should be varied. Content should also include calls to action that encourage users to engage with the content, such as likes, shares, and comments.</p>
-<ol start="6">
-<li><p>I enjoy [list a few interests or hobbies]. What are some completely unrelated activities that I might find interesting?</p>
-</li>
-<li><p>Write 10 [subject lines &#x2F; headlines &#x2F; social media threads &#x2F; ad headlines &#x2F; etc.] with a curiosity gap that discuss [topic].</p>
-</li>
-<li><p>Pretend you are [role], come up with 10 ideas of how to do [task or problem]. Compare each of these ideas and list the pros and cons of each idea.</p>
-</li>
-<li><p>Summarize in table format the features, benefits, and pain solved for this product: [url to product features page].</p>
-</li>
-<li><p>Create a list of [10] frequently asked questions about [keyword] and provide answers for each one of them considering the SERP and rich result guidelines.</p>
-</li>
-<li><p>Create 5 social media posts promoting this blog post: [blog post URL].</p>
-</li>
-<li><p>Create a step by step guide to instruct how to [topic].</p>
-  </p>
-</details>
-<span id="more"></span></li>
-</ol>
-<h2 id="中文版本"><a href="#中文版本" class="headerlink" title="中文版本"></a>中文版本</h2><details>
-  <summary>中文版本</summary>
-  <p> 
-  
-<ol>
-<li><p>脑筋急转弯10个与[topic]相关的内容想法，让[your audience]感兴趣和受益。</p>
-</li>
-<li><p>为[whomever you want]编写一个fun的睡前故事，ta是故事的主要角色。</p>
-</li>
-<li><p>编写一个关于[topic]的的文章，考虑多种角度，使用[preferred tone]的口调。</p>
-</li>
-<li><p>总结[LinkedIn profile url]并 listing the top 5 pain points they likely face in their current role.</p>
-</li>
-<li><p>创建7天social media content，聚焦于[topic]，让[target audience]参与。</p>
-</li>
-</ol>
-<p>  Instructions: 创建social media content，符合choosen topic and target audience。Content should be varied. Content should also include calls to action that encourage users to engage with the content, such as likes, shares, and comments.</p>
-<ol start="6">
-<li><p>我享受[list a few interests or hobbies]。哪些是不完全related的activity？</p>
-</li>
-<li><p>写10个与curiosity gap相关的[topic] theme的subject lines &#x2F; headlines &#x2F; social media threads &#x2F; ad headlines &#x2F; etc.</p>
-</li>
-<li><p>假设你是[role]，列出10个做[task or problem]的方法。比较每个方法并list the pros and cons of each idea.</p>
-</li>
-<li><p>用表格格式 summarize the features, benefits, and pain solved for this product: [url to product features page].</p>
-</li>
-<li><p>创建一个包含常见问题及回答的列表，关于[keyword]。</p>
-</li>
-<li><p>创建5个social media posts promoting this blog post: [blog post URL]。</p>
-</li>
-<li><p>创建一个step by step guide to instruct how to [topic]。</p>
-</li>
-</ol>
-  </p>
-</details>
+    <title>SQL学习笔记</title>
+    <url>/2023/02/27/SQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="/_post/2024_02_28_%E6%8E%92%E5%BA%8F_DENSE_RANK.md">排序_DENSE_RANK</a></p>
+<h2 id="IFNULL"><a href="#IFNULL" class="headerlink" title="IFNULL"></a>IFNULL</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Write your MySQL query statement below</span><br><span class="line"></span><br><span class="line">select e.name, b.bonus</span><br><span class="line"></span><br><span class="line">from Employee e left join Bonus b</span><br><span class="line"></span><br><span class="line">on e.empId = b.empId</span><br><span class="line"></span><br><span class="line">where ifnull(bonus,0)&lt;1000</span><br><span class="line">## ifnul 就把值替换成0）</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
 
 
 
+<h2 id="SQL-585"><a href="#SQL-585" class="headerlink" title="SQL 585"></a>SQL 585</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT ROUND(SUM(tiv_2016), 2) AS tiv_2016</span><br><span class="line"></span><br><span class="line">FROM Insurance</span><br><span class="line"></span><br><span class="line">WHERE tiv_2015 IN (</span><br><span class="line"></span><br><span class="line">SELECT tiv_2015</span><br><span class="line"></span><br><span class="line">FROM Insurance</span><br><span class="line"></span><br><span class="line">GROUP BY tiv_2015</span><br><span class="line"></span><br><span class="line">HAVING COUNT(*) &gt; 1</span><br><span class="line"></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">AND (lat, lon) NOT IN (</span><br><span class="line"></span><br><span class="line">SELECT lat, lon</span><br><span class="line"></span><br><span class="line">FROM Insurance</span><br><span class="line"></span><br><span class="line">GROUP BY lat, lon</span><br><span class="line"></span><br><span class="line">HAVING COUNT(*) &gt; 1</span><br><span class="line"></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="SQL-610"><a href="#SQL-610" class="headerlink" title="SQL 610"></a>SQL 610</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Write your MySQL query statement below</span><br><span class="line">select </span><br><span class="line">    *,</span><br><span class="line">    if(x+y&gt;z and x+z&gt;y and y+z&gt;x,&#x27;Yes&#x27;,&#x27;No&#x27;) as triangle</span><br><span class="line">from Triangle</span><br></pre></td></tr></table></figure>
 
 
 
+<h2 id="SQL1633-ORDER-BY-2-DESC-1"><a href="#SQL1633-ORDER-BY-2-DESC-1" class="headerlink" title="SQL1633 ORDER BY 2 DESC, 1"></a>SQL1633 ORDER BY 2 DESC, 1</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ORDER BY 2 DESC, 1</span><br></pre></td></tr></table></figure>
 
+<p>这一行使用ORDER BY子句对结果进行排序。我们按照第二列（即percentage）的降序进行排序，如果百分比相同，则按照第一列（即contest_id）的升序进行排序。</p>
+<h2 id="SQL1179-CASE-WHEN"><a href="#SQL1179-CASE-WHEN" class="headerlink" title="SQL1179 CASE WHEN"></a>SQL1179 CASE WHEN</h2><p>CASE WHEN语句是SQL中用于根据条件进行条件判断和返回不同结果的表达式。它允许你根据满足特定条件的情况，选择不同的结果进行返回。</p>
+<p>CASE WHEN语句的基本语法如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CASE</span><br><span class="line">   WHEN condition1 THEN result1</span><br><span class="line">   WHEN condition2 THEN result2</span><br><span class="line">   ...</span><br><span class="line">   ELSE resultN</span><br><span class="line">END</span><br></pre></td></tr></table></figure>
+
+<p>首先，你提供一个或多个WHEN子句，每个子句后面跟着一个条件（condition）和一个对应的结果（result）。当满足某个条件时，相应的结果将被返回。ELSE子句是可选的，用于指定当没有任何条件满足时的默认结果。</p>
+<p>让我们通过一个简单的例子来说明CASE WHEN的使用。假设有一个名为”students”的表，其中包含学生的姓名和分数列。如果要将成绩分为优秀、良好和及格三个等级并进行显示，可以使用以下SQL语句：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT name,</span><br><span class="line">       CASE</span><br><span class="line">          WHEN score &gt;= 90 THEN &#x27;优秀&#x27;</span><br><span class="line">          WHEN score &gt;= 80 THEN &#x27;良好&#x27;</span><br><span class="line">          WHEN score &gt;= 60 THEN &#x27;及格&#x27;</span><br><span class="line">          ELSE &#x27;不及格&#x27;</span><br><span class="line">       END AS grade</span><br><span class="line">FROM students;</span><br></pre></td></tr></table></figure>
+
+<p>在这个例子中，对于每个学生，我们使用CASE WHEN语句根据他们的分数来判断他们的等级。如果分数大于等于90，那么他们被归类为”优秀”；如果分数大于等于80，但小于90，他们被归类为”良好”；如果分数大于等于60，但小于80，他们被归类为”及格”；否则，他们被归类为”不及格”。</p>
+<p>通过使用CASE WHEN语句，我们可以根据不同的条件返回不同的结果，从而实现灵活的数据处理和转换。</p>
 ]]></content>
       <categories>
         <category>技术</category>
-        <category>人工智能</category>
-        <category>Prompt</category>
+        <category>数据分析</category>
+        <category>SQL</category>
       </categories>
       <tags>
-        <tag>Prompt</tag>
-        <tag>GPT</tag>
+        <tag>笔记</tag>
+        <tag>SQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>排序_DENSE_RANK</title>
+    <url>/2023/02/28/%E6%8E%92%E5%BA%8F_DENSE_RANK/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="rank"><a href="#rank" class="headerlink" title="rank()"></a>rank()</h2><h2 id="dense-rank"><a href="#dense-rank" class="headerlink" title="dense_rank()"></a>dense_rank()</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">DENSE_RANK() OVER (PARTITION BY column1, column2... ORDER BY column3, column4...)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>PARTITION BY子句是可选的，用于将数据分成不同的分组。如果不指定PARTITION BY子句，将对整个结果集进行排名。</li>
+<li>ORDER BY子句指定用于排序的列。可以根据一个或多个列进行排序，以确定排名的顺序。</li>
+</ul>
+<span id="more"></span>
+
+<h3 id="example"><a href="#example" class="headerlink" title="example"></a>example</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT name, salary, DENSE_RANK() OVER (ORDER BY salary DESC) AS dense_rank</span><br><span class="line">FROM employees;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>当使用DENSE_RANK函数和PARTITION BY子句时，以下是示例查询的可能返回结果：</p>
+<p>示例1：对每个客户的订单金额进行排名</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT order_id, customer_id, order_amount,</span><br><span class="line">       DENSE_RANK() OVER (PARTITION BY customer_id ORDER BY order_amount DESC) AS dense_rank</span><br><span class="line">FROM orders;</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>order_id</th>
+<th>customer_id</th>
+<th>order_amount</th>
+<th>dense_rank</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>1001</td>
+<td>500</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1001</td>
+<td>500</td>
+<td>1</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1001</td>
+<td>300</td>
+<td>2</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1002</td>
+<td>700</td>
+<td>1</td>
+</tr>
+<tr>
+<td>5</td>
+<td>1002</td>
+<td>600</td>
+<td>2</td>
+</tr>
+<tr>
+<td>6</td>
+<td>1002</td>
+<td>600</td>
+<td>2</td>
+</tr>
+<tr>
+<td>7</td>
+<td>1002</td>
+<td>400</td>
+<td>3</td>
+</tr>
+</tbody></table>
+<p>在上述结果中，我们根据每个客户的订单金额进行了排名。客户ID为1001的客户有两个订单，订单金额都是500，因此它们被分配相同的密集排名1。客户ID为1001的第三个订单金额为300，所以它被分配密集排名2。对于客户ID为1002的客户，有一个订单金额为700，它被分配密集排名1，然后有两个订单金额为600，它们被分配密集排名2，最后一个订单金额为400，它被分配密集排名3。</p>
+<p>示例2：对每个班级的学生成绩进行排名</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT student_id, class_id, exam_score,</span><br><span class="line">       DENSE_RANK() OVER (PARTITION BY class_id ORDER BY exam_score DESC) AS dense_rank</span><br><span class="line">FROM students;</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>student_id</th>
+<th>class_id</th>
+<th>exam_score</th>
+<th>dense_rank</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>A</td>
+<td>95</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>A</td>
+<td>90</td>
+<td>2</td>
+</tr>
+<tr>
+<td>3</td>
+<td>A</td>
+<td>85</td>
+<td>3</td>
+</tr>
+<tr>
+<td>4</td>
+<td>B</td>
+<td>92</td>
+<td>1</td>
+</tr>
+<tr>
+<td>5</td>
+<td>B</td>
+<td>88</td>
+<td>2</td>
+</tr>
+<tr>
+<td>6</td>
+<td>B</td>
+<td>88</td>
+<td>2</td>
+</tr>
+<tr>
+<td>7</td>
+<td>B</td>
+<td>80</td>
+<td>3</td>
+</tr>
+</tbody></table>
+<p>在上述结果中，我们根据每个班级的考试成绩进行了排名。班级ID为A的学生有三个学生，分别获得了95、90和85分，他们分别被分配密集排名1、2和3。班级ID为B的学生有四个学生，分别获得了92、88、88和80分，他们分别被分配密集排名1、2、2和3。</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>数据分析</category>
+        <category>SQL</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+        <tag>SQL</tag>
+        <tag>排序</tag>
       </tags>
   </entry>
   <entry>
@@ -1510,69 +1419,6 @@
         <tag>笔记</tag>
         <tag>python</tag>
         <tag>网站</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>数据分析师常用的Prompt技巧1/2</title>
-    <url>/2023/04/23/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E5%B8%B8%E7%94%A8%E7%9A%84Prompt%E6%8A%80%E5%B7%A7/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>Prompt在数据分析中的作用非常重要，特别是在使用ChatGPT辅助数据分析工作时。Prompt可以被看作是向模型提供的任务说明或问题，它能够引导模型按照我们期望的方式进行工作。</p>
-<p>一个好的prompt可以明确指示模型执行具体的任务，例如进行数据清洗、数据可视化、统计分析等，并能够提供足够的上下文信息帮助模型理解任务的需求和目标。通过使用优秀的prompt，我们可以更高效地利用AI技术来协助我们的数据分析工作，大幅提升工作效率，同时也能帮助我们更深入地理解数据，从而得出更有价值的洞见。因此，学习如何编写有效的prompt是进行数据分析工作的重要技能。</p>
-<p>下面将通过数据分析工作中的几个常见任务来分别给出示例，演示如何正确、高效使用Prompt。</p>
-<h3 id="1-形成分析思路"><a href="#1-形成分析思路" class="headerlink" title="1. 形成分析思路"></a>1. 形成分析思路</h3><p>❌【普通人的prompt】:</p>
-<p><code>我需要找出销量最高的产品。</code></p>
-<p> ✅【数据分析师本的prompt】 :</p>
-<p><code>我有一个含&#39;product_id&#39;，&#39;order_id&#39;，&#39;purchase_date&#39;和&#39;sales_volume&#39;等字段的销售数据库。我想找出在过去一年内销量最高的十种产品。请帮我构建一个数据分析思路来进行这项工作。</code></p>
-<p>【两个版本的差异】: 较好版本的prompt明确了所需的数据库字段、时间范围以及具体的分析目标，使模型有更多的信息可以生成具体的分析思路。</p>
-<h3 id="2-构建指标体系"><a href="#2-构建指标体系" class="headerlink" title="2. 构建指标体系"></a>2. 构建指标体系</h3><p>❌【普通人的prompt】: </p>
-<p><code>我需要一些电商指标。</code> </p>
-<p> ✅【数据分析师本的prompt】:</p>
-<p><code>我正在为一家电商网站构建一个业务指标体系，包括了用户行为、销售绩效、市场营销效果等方面的指标。请帮我列出每个方面下可能包含的几个关键指标。</code> </p>
-<p>【两个版本的差异】: 较好版本的prompt明确了需要电商的哪几个方面的指标，使模型可以根据这些方向提供更具体的指标。</p>
-<h3 id="3-数据清洗"><a href="#3-数据清洗" class="headerlink" title="3. 数据清洗"></a>3. 数据清洗</h3><p>❌【普通人的prompt】: </p>
-<p><code>我需要进行数据清洗。</code></p>
-<p> ✅【数据分析师本的prompt】: </p>
-<p><code>我有一份包含用户年龄、性别、购买记录等信息的数据，但我注意到其中有些年龄数据存在负数，有些购买记录数据为空。请帮我规划一下数据清洗的流程，包括如何处理这些异常数据，以及我应该注意哪些可能的数据质量问题。</code></p>
-<p>【两个版本的差异】: 较好版本的prompt详细描述了数据的具体情况和存在的问题，使模型可以给出更具体的数据清洗策略和注意事项。</p>
-<h3 id="4-完成SQL代码"><a href="#4-完成SQL代码" class="headerlink" title="4. 完成SQL代码"></a>4. 完成SQL代码</h3><p>❌【普通人的prompt】: </p>
-<p><code>我需要查询用户的购买信息。</code> </p>
-<p> ✅【数据分析师本的prompt】: </p>
-<p><code>我有一个&#39;orders&#39;表，包含&#39;user_id&#39;, &#39;product_id&#39;, &#39;purchase_date&#39;, &#39;amount&#39;等字段。我想查询出在过去30天内购买金额超过500的用户的列表，并按照购买金额降序排序。请帮我写出对应的SQL代码。</code> </p>
-<p>【两个版本的差异】: 较好版本的prompt提供了明确的表字段、查询条件以及排序要求，使模型可以生成更精确的SQL代码。</p>
-<h3 id="5-SQL性能优化"><a href="#5-SQL性能优化" class="headerlink" title="5. SQL性能优化"></a>5. SQL性能优化</h3><p>❌【普通人的prompt】: </p>
-<p><code>我需要优化我的SQL查询。</code> </p>
-<p> ✅【数据分析师本的prompt】:</p>
-<p><code>我正在运行一个查询，它包含多个联接和子查询，并且查询时间很长。我在&#39;user&#39;表和&#39;order&#39;表之间进行了联接，然后在结果中进行了聚合操作。请帮我提供一些优化此查询性能的策略或建议。</code> </p>
-<p>【两个版本的差异】: 较好版本的prompt详细描述了查询的具体情况，使模型可以给出更具体的优化建议。</p>
-<h3 id="6-统计学分析"><a href="#6-统计学分析" class="headerlink" title="6. 统计学分析"></a>6. 统计学分析</h3><p>❌【普通人的prompt】:</p>
-<p><code>我需要进行一些统计分析。</code> </p>
-<p> ✅【数据分析师本的prompt】: </p>
-<p><code>我想对我们网站的用户年龄进行描述性统计分析，包括计算年龄的平均值、中位数、分位数、最小值、最大值以及标准差。并希望能理解年龄和用户购买金额之间的关系，需要进行相关性分析。请帮我设计一个分析流程。</code> </p>
-<p>【两个版本的差异】: 较好版本的prompt提供了具体的统计分析需求和数据内容，使模型能够生成更具体和有针对性的分析建议。</p>
-<h3 id="7-数据可视化"><a href="#7-数据可视化" class="headerlink" title="7. 数据可视化"></a>7. 数据可视化</h3><p>❌【普通人的prompt】:</p>
-<p><code>我需要进行数据可视化。</code></p>
-<p> ✅【数据分析师本的prompt】:</p>
-<p><code>我正在分析一个包含用户购买行为数据的数据集，我想对用户的购买金额分布和购买金额与购买次数的关系进行可视化展示。请帮我选择合适的可视化图表类型，以及如何设计图表以使信息展示得更清晰易懂。</code></p>
-<p>【两个版本的差异】:较好版本的prompt提供了具体的可视化目标和数据情况，使模型可以给出更具体的可视化建议。</p>
-<h3 id="8-AB-Test-结果分析"><a href="#8-AB-Test-结果分析" class="headerlink" title="8. AB Test 结果分析"></a>8. AB Test 结果分析</h3><p>❌【普通人的prompt】:</p>
-<p><code>我需要进行AB测试的显著性检验。</code></p>
-<p> ✅【数据分析师本的prompt】:</p>
-<p><code>我进行了一次AB测试，A组有500人，其中有200人完成了购买行为；B组有550人，其中有250人完成了购买行为。我想知道B组的转化率是否显著高于A组，需要进行显著性检验。请帮我设计一个检验流程，包括使用哪种统计检验方法，如何进行计算，以及如何解读结果。</code></p>
-<p>【两个版本的差异】:较好版本的prompt提供了具体的AB测试数据和目标，使模型可以生成更具体和有针对性的显著性检验方法和步骤。</p>
-<h3 id="9-完成分析报告"><a href="#9-完成分析报告" class="headerlink" title="9. 完成分析报告"></a>9. 完成分析报告</h3><p>❌【普通人的prompt】:</p>
-<p><code>我需要写一个分析报告。</code> </p>
-<p> ✅【数据分析师本的prompt】:</p>
-<p><code>我已经完成了对用户年龄和购买行为的关系的分析，发现年龄和购买金额之间存在中等程度的正相关性。请帮我撰写一个分析报告来呈现这个发现，包括报告的背景、方法、结果和讨论等部分。</code> </p>
-<p>【两个版本的差异】:较好版本的prompt提供了具体的分析结果以及报告的结构要求，使模型可以生成结构清晰、内容完整的分析报告。</p>
-]]></content>
-      <categories>
-        <category>技术</category>
-        <category>人工智能</category>
-        <category>Prompt</category>
-      </categories>
-      <tags>
-        <tag>Prompt</tag>
-        <tag>GPT</tag>
-        <tag>数据分析</tag>
       </tags>
   </entry>
   <entry>
@@ -11361,6 +11207,64 @@
       </tags>
   </entry>
   <entry>
+    <title>关于Obsidian笔记软件的笔记</title>
+    <url>/2024/04/28/%E5%85%B3%E4%BA%8EObsidian%E7%AC%94%E8%AE%B0%E8%BD%AF%E4%BB%B6%E7%9A%84%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
+<p>这篇文章分享关于 obsidian 的使用心得分享，并利用 obsidian 同步 markdown 文件进行 hexo 博客更新。持续更新中……</p>
+</blockquote>
+<h2 id="同步方案"><a href="#同步方案" class="headerlink" title="同步方案"></a>同步方案</h2><blockquote>
+<p>之前分享过以 macOS 为中心，使用群晖 Drive 和 iCloud 同步群晖和苹果生态中的 obsidian 库（详见 <a href="/2019/05/24/Apple%E5%85%A8%E5%B9%B3%E5%8F%B0%E6%97%A0%E7%BC%9D%E5%90%8C%E6%AD%A5%E7%BE%A4%E6%99%96Obsidian%E5%BA%93/" title="苹果全平台无缝同步群晖Obsidian库">苹果全平台无缝同步群晖Obsidian库</a>），但这个方案有一个致命缺点就是需要一个 Mac 作为中继，同步群晖和 iCloud。无法做到任意设备的实时同步。</p>
+</blockquote>
+<blockquote>
+<p>一个可以实时同步的方案顺便分享一些不错的 obsidian 第三方插件。</p>
+</blockquote>
+<span id="more"></span>
+
+<h3 id="Remotely-save"><a href="#Remotely-save" class="headerlink" title="Remotely save"></a><a href="https://github.com/remotely-save/remotely-save">Remotely save</a></h3><blockquote>
+<p>一个非官方的 Obsidian 插件允许用户在本地设备和云服务之间同步笔记。支持 S 3、Dropbox、OneDrive、webdav。</p>
+</blockquote>
+<p><img src="/2024/04/28/%E5%85%B3%E4%BA%8EObsidian%E7%AC%94%E8%AE%B0%E8%BD%AF%E4%BB%B6%E7%9A%84%E7%AC%94%E8%AE%B0/image-20240428171635.png"></p>
+<p>按需求链接，这里以 webdav 为例，输入地址、用户名、密码进行连接。<br><img src="/2024/04/28/%E5%85%B3%E4%BA%8EObsidian%E7%AC%94%E8%AE%B0%E8%BD%AF%E4%BB%B6%E7%9A%84%E7%AC%94%E8%AE%B0/image-20240428174602.png"></p>
+<p>可以加密同步，我是为了同步到群晖，自动 git push 到 GitHub pages，所以就没有选择加密。<br><img src="/2024/04/28/%E5%85%B3%E4%BA%8EObsidian%E7%AC%94%E8%AE%B0%E8%BD%AF%E4%BB%B6%E7%9A%84%E7%AC%94%E8%AE%B0/image-20240428180548964.png"></p>
+<p>还有其他功能设置，可自行按需设置。</p>
+<h2 id="Obsidian-第三方插件"><a href="#Obsidian-第三方插件" class="headerlink" title="Obsidian 第三方插件"></a>Obsidian 第三方插件</h2><h3 id="Completr-自动联想补全插件"><a href="#Completr-自动联想补全插件" class="headerlink" title="Completr 自动联想补全插件"></a>Completr 自动联想补全插件</h3><blockquote>
+<p>[!summary] 插件提供了 LaTex，Frontmatter，callout 的自动联想补全功能，还提供了扫描当前文件所有文字作为联想备选文字的功能。另外，你还可以自己提供放了文字的文件作为联想的数据。</p>
+</blockquote>
+<ul>
+<li><p>输入 <code>&gt;[</code> 就会出现所有 ob 提供的 callout，点击确认即可自动补全。<br><img src="/2024/04/28/%E5%85%B3%E4%BA%8EObsidian%E7%AC%94%E8%AE%B0%E8%BD%AF%E4%BB%B6%E7%9A%84%E7%AC%94%E8%AE%B0/image-20240428190857.png"></p>
+</li>
+<li><p>提供字库作为联想备用文字<br><img src="/2024/04/28/%E5%85%B3%E4%BA%8EObsidian%E7%AC%94%E8%AE%B0%E8%BD%AF%E4%BB%B6%E7%9A%84%E7%AC%94%E8%AE%B0/image-20240428190944.png"></p>
+</li>
+<li><p>自动补全 LaTex<br><img src="/2024/04/28/%E5%85%B3%E4%BA%8EObsidian%E7%AC%94%E8%AE%B0%E8%BD%AF%E4%BB%B6%E7%9A%84%E7%AC%94%E8%AE%B0/image-20240428190956.png"></p>
+</li>
+</ul>
+<h4 id="简单配置"><a href="#简单配置" class="headerlink" title="简单配置"></a><strong>简单配置</strong></h4><p>默认无法扫描到中文，如果需要中文联想，需要在设置的第一项 Word character regex 的开头插入：<code>\u4e00-\u9fa5</code>，这样就可以扫描到中文了</p>
+<p>不要去掉原来的 <code>a-zA-ZöäüÖÄÜß</code>，那是用来匹配字母的。结果为 <code>\u4e00-\u9fa5a-zA-ZöäüÖÄÜß</code>；</p>
+<p>插件提供的可以修改的设置有:</p>
+<ol>
+<li>最小开始联想的字符；</li>
+<li>替换的方式（是否忽略大小写，是直接替换还是结尾补全等）</li>
+<li>是否启用 LaTex 补全（以及是否需要在代码块中提供补全，是否忽略大小写等）</li>
+<li>是否启用 Frontmatter 补全（以及是否忽略大小写，是否添加后缀）</li>
+<li>是否需要扫描文件作为补全的字库（以及是否包括当前文件）</li>
+<li>是否需要我们自己提供文件作为字库；</li>
+<li>是否启用 Callout 补全功能；</li>
+</ol>
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>博客</category>
+        <category>obsidian</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+        <tag>Obsidian</tag>
+        <tag>插件</tag>
+        <tag>分享</tag>
+        <tag>webdav</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>不要回应负能量</title>
     <url>/2024/04/30/%E4%B8%8D%E8%A6%81%E5%9B%9E%E5%BA%94%E8%B4%9F%E8%83%BD%E9%87%8F%20copy/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
@@ -11452,61 +11356,157 @@
       </tags>
   </entry>
   <entry>
-    <title>关于Obsidian笔记软件的笔记</title>
-    <url>/2024/04/28/%E5%85%B3%E4%BA%8EObsidian%E7%AC%94%E8%AE%B0%E8%BD%AF%E4%BB%B6%E7%9A%84%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
-<p>这篇文章分享关于 obsidian 的使用心得分享，并利用 obsidian 同步 markdown 文件进行 hexo 博客更新。持续更新中……</p>
-</blockquote>
-<h2 id="同步方案"><a href="#同步方案" class="headerlink" title="同步方案"></a>同步方案</h2><blockquote>
-<p>之前分享过以 macOS 为中心，使用群晖 Drive 和 iCloud 同步群晖和苹果生态中的 obsidian 库（详见 <a href="/2019/05/24/Apple%E5%85%A8%E5%B9%B3%E5%8F%B0%E6%97%A0%E7%BC%9D%E5%90%8C%E6%AD%A5%E7%BE%A4%E6%99%96Obsidian%E5%BA%93/" title="苹果全平台无缝同步群晖Obsidian库">苹果全平台无缝同步群晖Obsidian库</a>），但这个方案有一个致命缺点就是需要一个 Mac 作为中继，同步群晖和 iCloud。无法做到任意设备的实时同步。</p>
-</blockquote>
-<blockquote>
-<p>一个可以实时同步的方案顺便分享一些不错的 obsidian 第三方插件。</p>
-</blockquote>
-<span id="more"></span>
+    <title>ChatGPT Prompt</title>
+    <url>/2023/08/12/ChatGPT_Prompt/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="English-Vesion"><a href="#English-Vesion" class="headerlink" title="English Vesion"></a>English Vesion</h2><details>
+  <summary>English Version</summary>
+  <p> 
 
-<h3 id="Remotely-save"><a href="#Remotely-save" class="headerlink" title="Remotely save"></a><a href="https://github.com/remotely-save/remotely-save">Remotely save</a></h3><blockquote>
-<p>一个非官方的 Obsidian 插件允许用户在本地设备和云服务之间同步笔记。支持 S 3、Dropbox、OneDrive、webdav。</p>
-</blockquote>
-<p><img src="/2024/04/28/%E5%85%B3%E4%BA%8EObsidian%E7%AC%94%E8%AE%B0%E8%BD%AF%E4%BB%B6%E7%9A%84%E7%AC%94%E8%AE%B0/image-20240428171635.png"></p>
-<p>按需求链接，这里以 webdav 为例，输入地址、用户名、密码进行连接。<br><img src="/2024/04/28/%E5%85%B3%E4%BA%8EObsidian%E7%AC%94%E8%AE%B0%E8%BD%AF%E4%BB%B6%E7%9A%84%E7%AC%94%E8%AE%B0/image-20240428174602.png"></p>
-<p>可以加密同步，我是为了同步到群晖，自动 git push 到 GitHub pages，所以就没有选择加密。<br><img src="/2024/04/28/%E5%85%B3%E4%BA%8EObsidian%E7%AC%94%E8%AE%B0%E8%BD%AF%E4%BB%B6%E7%9A%84%E7%AC%94%E8%AE%B0/image-20240428180548964.png"></p>
-<p>还有其他功能设置，可自行按需设置。</p>
-<h2 id="Obsidian-第三方插件"><a href="#Obsidian-第三方插件" class="headerlink" title="Obsidian 第三方插件"></a>Obsidian 第三方插件</h2><h3 id="Completr-自动联想补全插件"><a href="#Completr-自动联想补全插件" class="headerlink" title="Completr 自动联想补全插件"></a>Completr 自动联想补全插件</h3><blockquote>
-<p>[!summary] 插件提供了 LaTex，Frontmatter，callout 的自动联想补全功能，还提供了扫描当前文件所有文字作为联想备选文字的功能。另外，你还可以自己提供放了文字的文件作为联想的数据。</p>
-</blockquote>
-<ul>
-<li><p>输入 <code>&gt;[</code> 就会出现所有 ob 提供的 callout，点击确认即可自动补全。<br><img src="/2024/04/28/%E5%85%B3%E4%BA%8EObsidian%E7%AC%94%E8%AE%B0%E8%BD%AF%E4%BB%B6%E7%9A%84%E7%AC%94%E8%AE%B0/image-20240428190857.png"></p>
-</li>
-<li><p>提供字库作为联想备用文字<br><img src="/2024/04/28/%E5%85%B3%E4%BA%8EObsidian%E7%AC%94%E8%AE%B0%E8%BD%AF%E4%BB%B6%E7%9A%84%E7%AC%94%E8%AE%B0/image-20240428190944.png"></p>
-</li>
-<li><p>自动补全 LaTex<br><img src="/2024/04/28/%E5%85%B3%E4%BA%8EObsidian%E7%AC%94%E8%AE%B0%E8%BD%AF%E4%BB%B6%E7%9A%84%E7%AC%94%E8%AE%B0/image-20240428190956.png"></p>
-</li>
-</ul>
-<h4 id="简单配置"><a href="#简单配置" class="headerlink" title="简单配置"></a><strong>简单配置</strong></h4><p>默认无法扫描到中文，如果需要中文联想，需要在设置的第一项 Word character regex 的开头插入：<code>\u4e00-\u9fa5</code>，这样就可以扫描到中文了</p>
-<p>不要去掉原来的 <code>a-zA-ZöäüÖÄÜß</code>，那是用来匹配字母的。结果为 <code>\u4e00-\u9fa5a-zA-ZöäüÖÄÜß</code>；</p>
-<p>插件提供的可以修改的设置有:</p>
 <ol>
-<li>最小开始联想的字符；</li>
-<li>替换的方式（是否忽略大小写，是直接替换还是结尾补全等）</li>
-<li>是否启用 LaTex 补全（以及是否需要在代码块中提供补全，是否忽略大小写等）</li>
-<li>是否启用 Frontmatter 补全（以及是否忽略大小写，是否添加后缀）</li>
-<li>是否需要扫描文件作为补全的字库（以及是否包括当前文件）</li>
-<li>是否需要我们自己提供文件作为字库；</li>
-<li>是否启用 Callout 补全功能；</li>
+<li><p>Brainstorm 10 content ideas related to [topic] that [your audience] would find interesting and beneficial.</p>
+</li>
+<li><p>Write a fun bedtime story for [whomever you want], with them as a main character.</p>
+</li>
+<li><p>Write an article about [topic]. Consider diverse perspectives and write it in a [preferred tone] tone.</p>
+</li>
+<li><p>Summarize [LinkedIn profile url] and list the top 5 pain points they likely face in their current role.</p>
+</li>
+<li><p>Create social media content for 7 days that is focused on [topic] and that will engage [target audience].</p>
+</li>
 </ol>
+<p>  Instructions: Create social media content that is appropriate for the chosen topic and target audience. Content should be varied. Content should also include calls to action that encourage users to engage with the content, such as likes, shares, and comments.</p>
+<ol start="6">
+<li><p>I enjoy [list a few interests or hobbies]. What are some completely unrelated activities that I might find interesting?</p>
+</li>
+<li><p>Write 10 [subject lines &#x2F; headlines &#x2F; social media threads &#x2F; ad headlines &#x2F; etc.] with a curiosity gap that discuss [topic].</p>
+</li>
+<li><p>Pretend you are [role], come up with 10 ideas of how to do [task or problem]. Compare each of these ideas and list the pros and cons of each idea.</p>
+</li>
+<li><p>Summarize in table format the features, benefits, and pain solved for this product: [url to product features page].</p>
+</li>
+<li><p>Create a list of [10] frequently asked questions about [keyword] and provide answers for each one of them considering the SERP and rich result guidelines.</p>
+</li>
+<li><p>Create 5 social media posts promoting this blog post: [blog post URL].</p>
+</li>
+<li><p>Create a step by step guide to instruct how to [topic].</p>
+  </p>
+</details>
+<span id="more"></span></li>
+</ol>
+<h2 id="中文版本"><a href="#中文版本" class="headerlink" title="中文版本"></a>中文版本</h2><details>
+  <summary>中文版本</summary>
+  <p> 
+  
+<ol>
+<li><p>脑筋急转弯10个与[topic]相关的内容想法，让[your audience]感兴趣和受益。</p>
+</li>
+<li><p>为[whomever you want]编写一个fun的睡前故事，ta是故事的主要角色。</p>
+</li>
+<li><p>编写一个关于[topic]的的文章，考虑多种角度，使用[preferred tone]的口调。</p>
+</li>
+<li><p>总结[LinkedIn profile url]并 listing the top 5 pain points they likely face in their current role.</p>
+</li>
+<li><p>创建7天social media content，聚焦于[topic]，让[target audience]参与。</p>
+</li>
+</ol>
+<p>  Instructions: 创建social media content，符合choosen topic and target audience。Content should be varied. Content should also include calls to action that encourage users to engage with the content, such as likes, shares, and comments.</p>
+<ol start="6">
+<li><p>我享受[list a few interests or hobbies]。哪些是不完全related的activity？</p>
+</li>
+<li><p>写10个与curiosity gap相关的[topic] theme的subject lines &#x2F; headlines &#x2F; social media threads &#x2F; ad headlines &#x2F; etc.</p>
+</li>
+<li><p>假设你是[role]，列出10个做[task or problem]的方法。比较每个方法并list the pros and cons of each idea.</p>
+</li>
+<li><p>用表格格式 summarize the features, benefits, and pain solved for this product: [url to product features page].</p>
+</li>
+<li><p>创建一个包含常见问题及回答的列表，关于[keyword]。</p>
+</li>
+<li><p>创建5个social media posts promoting this blog post: [blog post URL]。</p>
+</li>
+<li><p>创建一个step by step guide to instruct how to [topic]。</p>
+</li>
+</ol>
+  </p>
+</details>
+
+
+
+
+
+
+
 ]]></content>
       <categories>
         <category>技术</category>
-        <category>博客</category>
-        <category>obsidian</category>
+        <category>人工智能</category>
+        <category>Prompt</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
-        <tag>Obsidian</tag>
-        <tag>插件</tag>
-        <tag>分享</tag>
-        <tag>webdav</tag>
+        <tag>Prompt</tag>
+        <tag>GPT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数据分析师常用的Prompt技巧1/2</title>
+    <url>/2023/04/23/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E5%B8%B8%E7%94%A8%E7%9A%84Prompt%E6%8A%80%E5%B7%A7/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>Prompt在数据分析中的作用非常重要，特别是在使用ChatGPT辅助数据分析工作时。Prompt可以被看作是向模型提供的任务说明或问题，它能够引导模型按照我们期望的方式进行工作。</p>
+<p>一个好的prompt可以明确指示模型执行具体的任务，例如进行数据清洗、数据可视化、统计分析等，并能够提供足够的上下文信息帮助模型理解任务的需求和目标。通过使用优秀的prompt，我们可以更高效地利用AI技术来协助我们的数据分析工作，大幅提升工作效率，同时也能帮助我们更深入地理解数据，从而得出更有价值的洞见。因此，学习如何编写有效的prompt是进行数据分析工作的重要技能。</p>
+<p>下面将通过数据分析工作中的几个常见任务来分别给出示例，演示如何正确、高效使用Prompt。</p>
+<h3 id="1-形成分析思路"><a href="#1-形成分析思路" class="headerlink" title="1. 形成分析思路"></a>1. 形成分析思路</h3><p>❌【普通人的prompt】:</p>
+<p><code>我需要找出销量最高的产品。</code></p>
+<p> ✅【数据分析师本的prompt】 :</p>
+<p><code>我有一个含&#39;product_id&#39;，&#39;order_id&#39;，&#39;purchase_date&#39;和&#39;sales_volume&#39;等字段的销售数据库。我想找出在过去一年内销量最高的十种产品。请帮我构建一个数据分析思路来进行这项工作。</code></p>
+<p>【两个版本的差异】: 较好版本的prompt明确了所需的数据库字段、时间范围以及具体的分析目标，使模型有更多的信息可以生成具体的分析思路。</p>
+<h3 id="2-构建指标体系"><a href="#2-构建指标体系" class="headerlink" title="2. 构建指标体系"></a>2. 构建指标体系</h3><p>❌【普通人的prompt】: </p>
+<p><code>我需要一些电商指标。</code> </p>
+<p> ✅【数据分析师本的prompt】:</p>
+<p><code>我正在为一家电商网站构建一个业务指标体系，包括了用户行为、销售绩效、市场营销效果等方面的指标。请帮我列出每个方面下可能包含的几个关键指标。</code> </p>
+<p>【两个版本的差异】: 较好版本的prompt明确了需要电商的哪几个方面的指标，使模型可以根据这些方向提供更具体的指标。</p>
+<h3 id="3-数据清洗"><a href="#3-数据清洗" class="headerlink" title="3. 数据清洗"></a>3. 数据清洗</h3><p>❌【普通人的prompt】: </p>
+<p><code>我需要进行数据清洗。</code></p>
+<p> ✅【数据分析师本的prompt】: </p>
+<p><code>我有一份包含用户年龄、性别、购买记录等信息的数据，但我注意到其中有些年龄数据存在负数，有些购买记录数据为空。请帮我规划一下数据清洗的流程，包括如何处理这些异常数据，以及我应该注意哪些可能的数据质量问题。</code></p>
+<p>【两个版本的差异】: 较好版本的prompt详细描述了数据的具体情况和存在的问题，使模型可以给出更具体的数据清洗策略和注意事项。</p>
+<h3 id="4-完成SQL代码"><a href="#4-完成SQL代码" class="headerlink" title="4. 完成SQL代码"></a>4. 完成SQL代码</h3><p>❌【普通人的prompt】: </p>
+<p><code>我需要查询用户的购买信息。</code> </p>
+<p> ✅【数据分析师本的prompt】: </p>
+<p><code>我有一个&#39;orders&#39;表，包含&#39;user_id&#39;, &#39;product_id&#39;, &#39;purchase_date&#39;, &#39;amount&#39;等字段。我想查询出在过去30天内购买金额超过500的用户的列表，并按照购买金额降序排序。请帮我写出对应的SQL代码。</code> </p>
+<p>【两个版本的差异】: 较好版本的prompt提供了明确的表字段、查询条件以及排序要求，使模型可以生成更精确的SQL代码。</p>
+<h3 id="5-SQL性能优化"><a href="#5-SQL性能优化" class="headerlink" title="5. SQL性能优化"></a>5. SQL性能优化</h3><p>❌【普通人的prompt】: </p>
+<p><code>我需要优化我的SQL查询。</code> </p>
+<p> ✅【数据分析师本的prompt】:</p>
+<p><code>我正在运行一个查询，它包含多个联接和子查询，并且查询时间很长。我在&#39;user&#39;表和&#39;order&#39;表之间进行了联接，然后在结果中进行了聚合操作。请帮我提供一些优化此查询性能的策略或建议。</code> </p>
+<p>【两个版本的差异】: 较好版本的prompt详细描述了查询的具体情况，使模型可以给出更具体的优化建议。</p>
+<h3 id="6-统计学分析"><a href="#6-统计学分析" class="headerlink" title="6. 统计学分析"></a>6. 统计学分析</h3><p>❌【普通人的prompt】:</p>
+<p><code>我需要进行一些统计分析。</code> </p>
+<p> ✅【数据分析师本的prompt】: </p>
+<p><code>我想对我们网站的用户年龄进行描述性统计分析，包括计算年龄的平均值、中位数、分位数、最小值、最大值以及标准差。并希望能理解年龄和用户购买金额之间的关系，需要进行相关性分析。请帮我设计一个分析流程。</code> </p>
+<p>【两个版本的差异】: 较好版本的prompt提供了具体的统计分析需求和数据内容，使模型能够生成更具体和有针对性的分析建议。</p>
+<h3 id="7-数据可视化"><a href="#7-数据可视化" class="headerlink" title="7. 数据可视化"></a>7. 数据可视化</h3><p>❌【普通人的prompt】:</p>
+<p><code>我需要进行数据可视化。</code></p>
+<p> ✅【数据分析师本的prompt】:</p>
+<p><code>我正在分析一个包含用户购买行为数据的数据集，我想对用户的购买金额分布和购买金额与购买次数的关系进行可视化展示。请帮我选择合适的可视化图表类型，以及如何设计图表以使信息展示得更清晰易懂。</code></p>
+<p>【两个版本的差异】:较好版本的prompt提供了具体的可视化目标和数据情况，使模型可以给出更具体的可视化建议。</p>
+<h3 id="8-AB-Test-结果分析"><a href="#8-AB-Test-结果分析" class="headerlink" title="8. AB Test 结果分析"></a>8. AB Test 结果分析</h3><p>❌【普通人的prompt】:</p>
+<p><code>我需要进行AB测试的显著性检验。</code></p>
+<p> ✅【数据分析师本的prompt】:</p>
+<p><code>我进行了一次AB测试，A组有500人，其中有200人完成了购买行为；B组有550人，其中有250人完成了购买行为。我想知道B组的转化率是否显著高于A组，需要进行显著性检验。请帮我设计一个检验流程，包括使用哪种统计检验方法，如何进行计算，以及如何解读结果。</code></p>
+<p>【两个版本的差异】:较好版本的prompt提供了具体的AB测试数据和目标，使模型可以生成更具体和有针对性的显著性检验方法和步骤。</p>
+<h3 id="9-完成分析报告"><a href="#9-完成分析报告" class="headerlink" title="9. 完成分析报告"></a>9. 完成分析报告</h3><p>❌【普通人的prompt】:</p>
+<p><code>我需要写一个分析报告。</code> </p>
+<p> ✅【数据分析师本的prompt】:</p>
+<p><code>我已经完成了对用户年龄和购买行为的关系的分析，发现年龄和购买金额之间存在中等程度的正相关性。请帮我撰写一个分析报告来呈现这个发现，包括报告的背景、方法、结果和讨论等部分。</code> </p>
+<p>【两个版本的差异】:较好版本的prompt提供了具体的分析结果以及报告的结构要求，使模型可以生成结构清晰、内容完整的分析报告。</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>人工智能</category>
+        <category>Prompt</category>
+      </categories>
+      <tags>
+        <tag>Prompt</tag>
+        <tag>GPT</tag>
+        <tag>数据分析</tag>
       </tags>
   </entry>
 </search>
